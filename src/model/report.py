@@ -24,8 +24,8 @@ def m(x):
 
 
 def main():
-    po, pf, ba, sc = (j("summary_polls_only.json"), j("summary_polls_fundamentals.json"),
-                      j("summary_polls_fundamentals_biasadj.json"), j("summary_scenario_polls_overstate_dems.json"))
+    po, pf, ba = (j("summary_polls_only.json"), j("summary_polls_fundamentals.json"), j("summary_polls_fundamentals_biasadj.json"))
+    rt = j("bias_realtime.json")
     nat = j("national_inputs.json")
     bt = j("backtest_summary.json")
     sen = pd.read_csv(OUT / "senate_polls_fundamentals.csv")
@@ -38,9 +38,9 @@ def main():
     import datetime as dt
     a(f"_Generated {dt.datetime.now():%Y-%m-%d %H:%M} from the latest data snapshot. Refresh data + rerun everything: `python src/run_all.py`._\n")
     a("## Topline\n")
-    V = (po, pf, ba, sc)
-    a(f"| | Polls-only | Polls + fundamentals (unadjusted) | Polls + fundamentals, bias-adjusted ({ba['national']['bias_shift']:+.1f}) | Scenario: full historical bias ({sc['national']['bias_shift']:+.1f}) |")
-    a("|---|---|---|---|---|")
+    V = (po, pf, ba)
+    a(f"| | Polls-only | Polls + fundamentals (unadjusted) | Polls + fundamentals, bias-adjusted ({ba['national']['bias_shift']:+.1f} national, state-lean term) |")
+    a("|---|---|---|---|")
     a("| National House environment (two-party) | " + " | ".join(m(x['national']['G_used']) for x in V) + " |")
     for lab, key in [("**P(Democratic House majority)**", "p_dem_majority"), ("P(Republican House majority)", "p_rep_majority")]:
         a(f"| {lab} | " + " | ".join(pct(x['house'][key]) for x in V) + " |")
@@ -169,14 +169,18 @@ def main():
     a(f"- **Polling bias.** On a two-party basis, final generic-ballot averages overstated Democrats by 3.1 pts on average over 1998–2022 "
       f"(9 of 13 elections; 2018 was the main exception at +0.5). A decay-weighted re-estimate that up-weights recent midterms gives "
       f"{nat['generic_hist_bias']:+.1f}; adding party in the White House, House incumbency, a second-term flag or a president-specific effect "
-      f"makes out-of-sample prediction worse, so none is used. The bias-adjusted model shifts every race by {ba['national']['bias_shift']:+.1f} "
-      f"(the estimate less 1 pt because the 2026 aggregators already adjust to likely voters, which ran 1–1.5 pts less Democratic than "
-      f"registered-voter polls in 2020/2022). The scenario column applies the full {sc['national']['bias_shift']:+.1f}. "
-      f"Details: `src/model/bias_decay.py`, `data/processed/bias_decay.json`.")
+      f"makes out-of-sample prediction worse, so none is used. The bias-adjusted model shifts the generic-ballot polls by {ba['national']['bias_shift']:+.1f} "
+      f"(the estimate plus the estimated likely-voter discount). In a real-time test (estimate from earlier elections only), this shift cut "
+      f"generic-ballot error from {rt['generic']['summary']['all']['none']:.2f} to {rt['generic']['summary']['all']['shift_mean']:.2f} pts "
+      f"({rt['generic']['summary']['midterms']['none']:.2f} to {rt['generic']['summary']['midterms']['shift_mean']:.2f} in midterms). "
+      f"A Senate-wide shift on Senate race polls did not pass the same test (midterm cycle error {rt['senate_level']['summary']['midterms']['cycle_none']:.2f} "
+      f"to {rt['senate_level']['summary']['midterms']['cycle_shift_mean']:.2f}), so Senate polls are not shifted. "
+      f"Details: `src/model/bias_realtime.py`, `data/processed/bias_realtime.json`.")
     a("- **State-level poll misses.** Since 2010, results have landed further toward a state's partisan lean than final poll averages "
-      "(about 0.08 pts per point of lean, symmetric in red and blue states; a real-time 2014–2022 backtest improved race-level RMSE from 5.6 to 5.3). "
-      "This is an outcome-based pattern, not a test of differential non-response by party: no source here records response rates. Not applied "
-      "in the published models; `APPLY_LEAN_CORRECTION` in `src/model/forecast.py`.")
+      f"(about 0.08 pts per point of lean, symmetric in red and blue states). In a real-time Senate test the lean term cut competitive-race error "
+      f"from {rt['lean']['summary']['all']['comp_none']:.2f} to {rt['lean']['summary']['all']['comp_lean']:.2f} pts, improving "
+      f"{rt['lean']['summary']['all']['cycles_improved']} of {rt['lean']['summary']['all']['n']} test years. Applied in the bias-adjusted model. "
+      "This is an outcome-based pattern, not a test of differential non-response by party: no source here records response rates.")
     a("- **Michigan**: Haley Stevens endorsed Mike Rogers on Nov 1, after most polls were taken. Not modeled; Silver Bulletin estimates ~1 pt effect.")
     a("- **Alaska** uses ranked-choice voting and has multiple 'Dan Sullivan' candidates on the ballot; modeled as a head-to-head.")
     a("- **Montana** is a genuine three-way race (Alme R, Bankhead D, Bodnar I); modeled from polls only, best non-R vs. R.")

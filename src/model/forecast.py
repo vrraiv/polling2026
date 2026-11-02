@@ -57,9 +57,12 @@ _BC = OUT / "bias_confidence.json"
 _bc = json.loads(_BC.read_text()) if _BC.exists() else {}
 LV_DISCOUNT = float(_bc.get("lv_discount_est", 1.0))
 BIAS_ADJ = GENERIC_BIAS + LV_DISCOUNT            # national (generic-ballot / House) shift for the adjusted model
-# Senate shift for the adjusted model: the historical miss of the pollsters actually polling the 2026 battleground
-# Senate races (2014-2022, result - poll), plus the same LV discount. Falls back to the national shift.
-SENATE_BIAS_ADJ = float(_bc["senate_mix_bias"]) + LV_DISCOUNT if "senate_mix_bias" in _bc else BIAS_ADJ
+# Candidate Senate-wide shift: the historical miss of the pollsters polling the 2026 battleground Senate races
+# (2014-2022, result - poll) plus the LV discount. NOT used by the published Bias-adjusted model: a real-time test
+# (src/model/bias_realtime.py) finds no out-of-sample gain from a Senate-wide level shift, while the generic-ballot
+# shift and the state-lean term both improve real-time error. Kept for the off-site pocket scenario.
+SENATE_BIAS_ADJ_CANDIDATE = float(_bc["senate_mix_bias"]) + LV_DISCOUNT if "senate_mix_bias" in _bc else BIAS_ADJ
+SENATE_BIAS_ADJ = 0.0
 # Senate state-lean differential (adjusted model only): results since 2010 landed further toward state lean than polls.
 ADJ_USE_LEAN = True
 SD_NAT_SENATE = float(np.sqrt(np.mean(np.square(SEN_CYC))))     # shared Senate polling miss per cycle
@@ -415,9 +418,14 @@ def simulate(h, s, sd_nat_house, sd_nat_senate=None, sigma_region=None):
     return h, s, res
 
 
-def run(model, shift=0.0, tag=None, bias_removed=False, sigma_region=None, senate_shift=None, use_lean=False):
+def run(model, shift=0.0, tag=None, bias_removed=False, sigma_region=None, senate_shift=None, use_lean=False,
+        senate_bias_removed=None, out_dir=None):
     """bias_removed=True: the polls' historical bias is taken out as a mean shift, so the national polling SD
-    drops from the RMSE (which includes the bias) to the predictive SD of the bias estimate (BIAS_SD)."""
+    drops from the RMSE (which includes the bias) to the predictive SD of the bias estimate (BIAS_SD).
+    senate_bias_removed (default = bias_removed): whether the shared Senate polling SD is narrowed the same way. The
+    Bias-adjusted model removes no Senate-wide bias, so it keeps the full Senate RMSE."""
+    if senate_bias_removed is None:
+        senate_bias_removed = bias_removed
     nat, polls = national_inputs()
     sd_polls = BIAS_SD if bias_removed else SD_NAT_GENERIC
     if model == "polls_only":
@@ -429,7 +437,7 @@ def run(model, shift=0.0, tag=None, bias_removed=False, sigma_region=None, senat
         G = w_polls * (nat["G_polls"] + shift) + (1 - w_polls) * nat["fundamentals_margin_D"]
         econ_adj = state_unemp_change()
         sd_nat = 1 / np.sqrt(1 / sd_polls ** 2 + 1 / FUND["SD"] ** 2)
-    sd_sen = SD_NAT_SENATE * (sd_polls / SD_NAT_GENERIC)
+    sd_sen = SD_NAT_SENATE * (sd_polls / SD_NAT_GENERIC) if senate_bias_removed else SD_NAT_SENATE
     s = senate_races(polls)
     global APPLY_LEAN_CORRECTION
     keep_lean = APPLY_LEAN_CORRECTION
@@ -455,9 +463,11 @@ def run(model, shift=0.0, tag=None, bias_removed=False, sigma_region=None, senat
     res["national"]["sigma_region"] = SIGMA_REGION if sigma_region is None else sigma_region
     res["national"]["sigma_lean_slope"] = SIGMA_LEAN_SLOPE
     res["model"] = model
-    hmod.to_csv(OUT / f"house_{model}.csv", index=False)
-    smod.to_csv(OUT / f"senate_{model}.csv", index=False)
-    (OUT / f"summary_{model}.json").write_text(json.dumps(res, indent=1, default=float))
+    od = out_dir or OUT
+    od.mkdir(parents=True, exist_ok=True)
+    hmod.to_csv(od / f"house_{model}.csv", index=False)
+    smod.to_csv(od / f"senate_{model}.csv", index=False)
+    (od / f"summary_{model}.json").write_text(json.dumps(res, indent=1, default=float))
     (OUT / "national_inputs.json").write_text(json.dumps(nat, indent=1, default=float))
     return hmod, smod, res
 
@@ -484,11 +494,20 @@ def sensitivity():
 
 if __name__ == "__main__":
     pd.set_option("display.width", 220)
+    # off-site scenarios (not published; kept for the post-election scorecard) -> data/processed/pocket/
+    POCKET = OUT / "pocket"
+    for f in OUT.glob("*scenario_polls_overstate_dems*"):
+        f.unlink()
+    for tag, kw in [("pocket_senate_wide_shift", dict(shift=BIAS_ADJ, bias_removed=True, senate_shift=SENATE_BIAS_ADJ_CANDIDATE,
+                                                      use_lean=ADJ_USE_LEAN)),
+                    ("pocket_full_historical_bias", dict(shift=GENERIC_BIAS, bias_removed=True))]:
+        _, _, r = run("polls_fundamentals", tag=tag, out_dir=POCKET, **kw)
+        print(f"pocket {tag}: Senate P(D) {r['senate']['p_dem_control_without_osborn']:.1%}, House P(D) {r['house']['p_dem_majority']:.1%}")
     for m, shift, tag in [("polls_only", 0.0, None), ("polls_fundamentals", 0.0, None),
-                          ("polls_fundamentals", BIAS_ADJ, "polls_fundamentals_biasadj"),
-                          ("polls_fundamentals", GENERIC_BIAS, "scenario_polls_overstate_dems")]:
+                          ("polls_fundamentals", BIAS_ADJ, "polls_fundamentals_biasadj")]:
         adj = tag == "polls_fundamentals_biasadj"
-        h, s, res = run(m, shift, tag, bias_removed=bool(shift), senate_shift=SENATE_BIAS_ADJ if adj else None, use_lean=adj and ADJ_USE_LEAN)
+        h, s, res = run(m, shift, tag, bias_removed=bool(shift), senate_shift=SENATE_BIAS_ADJ if adj else None, use_lean=adj and ADJ_USE_LEAN,
+                        senate_bias_removed=False)
         m = tag or m
         print(f"\n===== {m} =====  G used: D{res['national']['G_used']:+.2f}  (polls {res['national']['G_polls']:+.2f}, "
               f"fundamentals {res['national']['fundamentals_margin_D']:+.2f}, approval {res['national']['approval']:.1f})")

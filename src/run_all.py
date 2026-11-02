@@ -31,6 +31,7 @@ STEPS = [
     ["src/collect/history.py", "fred_long"],
     ["src/model/calibrate.py"],
     ["src/model/bias_analysis.py"],
+    ["src/model/bias_realtime.py"],
     ["src/model/bias_confidence.py"],
     ["src/model/bias_decay.py"],
     ["src/model/error_structure.py"],

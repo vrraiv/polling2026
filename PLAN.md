@@ -149,3 +149,4 @@ started. `run_all.py` refuses to run after 23:00 UTC Nov 3 (polls closing; Wikip
 - Results source: Wikipedia race tables once settled (vandalism guard on), cross-checked against state certifications
   for close races; MEDSL later.
 - Publish as a "Scorecard" tab on the site.
+- Also score the off-site pocket scenarios in `data/final/pocket/` (not published): `pocket_senate_wide_shift` (the dropped -1.56 Senate-wide shift on top of Bias-adjusted) and `pocket_full_historical_bias` (full -2.93 on all polls). Did dropping the Senate-wide shift help or hurt?

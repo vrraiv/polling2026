@@ -38,7 +38,7 @@ def records(df, cols):
 
 def main():
     models = {}
-    for key in ["polls_only", "polls_fundamentals", "polls_fundamentals_biasadj", "scenario_polls_overstate_dems"]:
+    for key in ["polls_only", "polls_fundamentals", "polls_fundamentals_biasadj"]:
         s = json.loads((PROC / f"summary_{key}.json").read_text())
         sen = pd.read_csv(PROC / f"senate_{key}.csv")
         house = pd.read_csv(PROC / f"house_{key}.csv")
@@ -122,6 +122,7 @@ def main():
         "pollster_fx": pollster_fx,
         "sdn": json.loads((PROC / "calibration.json").read_text()).get("pollavg_sd_by_n"),
         "bias_confidence": json.loads((PROC / "bias_confidence.json").read_text()),
+        "bias_realtime": json.loads((PROC / "bias_realtime.json").read_text()),
         "bias_decomposition": json.loads((PROC / "bias_decomposition.json").read_text()) if (PROC / "bias_decomposition.json").exists() else None,
         "errors": {"structure": json.loads((PROC / "error_structure.json").read_text()),
                    "sensitivity": json.loads((PROC / "error_sensitivity.json").read_text())},

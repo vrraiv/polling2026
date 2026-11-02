@@ -11,9 +11,9 @@ import forecast as F  # noqa: E402
 def main():
     res = {}
     cases = [("unadjusted", dict(shift=0.0, bias_removed=False)),
-             ("shift_only_sd_unchanged", dict(shift=F.BIAS_ADJ, bias_removed=False, senate_shift=F.SENATE_BIAS_ADJ, use_lean=F.ADJ_USE_LEAN)),
-             ("sd_only_no_shift", dict(shift=0.0, bias_removed=True)),
-             ("adjusted", dict(shift=F.BIAS_ADJ, bias_removed=True, senate_shift=F.SENATE_BIAS_ADJ, use_lean=F.ADJ_USE_LEAN)),
+             ("lean_only", dict(shift=0.0, bias_removed=False, use_lean=True)),
+             ("adjusted", dict(shift=F.BIAS_ADJ, bias_removed=True, senate_shift=F.SENATE_BIAS_ADJ, use_lean=F.ADJ_USE_LEAN,
+                               senate_bias_removed=False)),
              ("flat_minus1", dict(shift=-1.0, bias_removed=True)), ("flat_minus2", dict(shift=-2.0, bias_removed=True)),
              ("flat_minus3", dict(shift=-3.0, bias_removed=True)), ("flat_minus4", dict(shift=-4.0, bias_removed=True))]
     for lab, kw in cases:
