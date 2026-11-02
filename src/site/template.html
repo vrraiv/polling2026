@@ -4,296 +4,329 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>2026 Midterm Forecast</title>
-<meta name="description" content="A polls-based and polls-plus-fundamentals forecast of the 2026 U.S. House and Senate elections.">
+<meta name="description" content="A polls-plus-fundamentals forecast of the 2026 U.S. House and Senate elections.">
+<meta property="og:title" content="2026 Midterm Forecast">
+<meta property="og:description" content="House and Senate forecast from polls and estimated fundamentals, with and without a historical polling-bias adjustment.">
+<meta property="og:image" content="https://polling2026.vikramrai.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1d1e22">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <style>
 :root {
-  color-scheme: light;
-  --surface: #fcfcfb; --surface-2: #f3f2ef; --border: #e2e0da;
-  --text: #0b0b0b; --text-2: #52514e; --text-3: #7a7974;
-  --dem: #2a78d6; --rep: #e34948; --ind: #6250d6; --neutral: #d9d7d0;
-  --dem-soft: #cde2fb; --rep-soft: #f9d4d3;
-  --accent: #2a78d6;
-}
-@media (prefers-color-scheme: dark) {
-  :root:where(:not([data-theme="light"])) {
-    color-scheme: dark;
-    --surface: #1a1a19; --surface-2: #232321; --border: #383835;
-    --text: #f0efec; --text-2: #c3c2b7; --text-3: #94938b;
-    --dem: #3987e5; --rep: #e66767; --ind: #9085e9; --neutral: #4a4a46;
-    --dem-soft: #1c3a5f; --rep-soft: #5a2626;
-    --accent: #3987e5;
-  }
-}
-:root[data-theme="dark"] {
   color-scheme: dark;
-  --surface: #1a1a19; --surface-2: #232321; --border: #383835;
-  --text: #f0efec; --text-2: #c3c2b7; --text-3: #94938b;
-  --dem: #3987e5; --rep: #e66767; --ind: #9085e9; --neutral: #4a4a46;
-  --dem-soft: #1c3a5f; --rep-soft: #5a2626;
-  --accent: #3987e5;
+  --bg: #1d1e22; --surface: #23252b; --surface-2: #2a2d36; --border: #363a47;
+  --primary: #3a4660; --tint: #8e9fc4; --ochre: #b58835; --teal: #2f9e86;
+  --text: #e8e6e1; --text-2: #a9adb8; --text-3: #80848f;
+  --dem: #5a8ad2; --rep: #d0605a; --toss: #6a6c74;
+  --d-likely: #4f73ab; --d-lean: #4a5f82; --r-likely: #a9544f; --r-lean: #835048; --off: #2a2d36;
 }
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: var(--surface); color: var(--text);
-  font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-.wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
-header.top { border-bottom: 1px solid var(--border); }
-header.top .wrap { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-top: 28px; padding-bottom: 18px; flex-wrap: wrap; }
-h1 { font-size: clamp(1.6rem, 4vw, 2.3rem); line-height: 1.15; margin: 0; letter-spacing: -0.01em; }
-.sub { color: var(--text-2); margin: 6px 0 0; }
-nav.toc { display: flex; gap: 16px; flex-wrap: wrap; font-size: .92rem; }
-nav.toc a { color: var(--text-2); text-decoration: none; }
-nav.toc a:hover { color: var(--text); text-decoration: underline; }
-section { padding: 34px 0 10px; }
-h2 { font-size: 1.35rem; margin: 0 0 6px; }
-h3 { font-size: 1.05rem; margin: 22px 0 8px; }
-p { max-width: 72ch; }
-.muted { color: var(--text-2); }
-.small { font-size: .88rem; }
-a { color: var(--accent); }
+body { margin: 0; background: var(--bg); color: var(--text); font: 15.5px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+a { color: var(--tint); }
+h1 { font-size: clamp(1.35rem, 3.4vw, 1.75rem); margin: 0; letter-spacing: -0.01em; }
+h2 { font-size: 1.2rem; margin: 0 0 6px; }
+h3 { font-size: 1rem; margin: 20px 0 8px; }
+p { max-width: 74ch; margin: 8px 0; }
+.muted { color: var(--text-2); } .small { font-size: .86rem; } .tiny { font-size: .78rem; color: var(--text-3); }
+code { font-size: .86em; background: var(--surface-2); padding: 1px 5px; border-radius: 4px; }
+
+/* header + tabs */
+header.top { border-bottom: 1px solid var(--border); background: var(--bg); position: sticky; top: 0; z-index: 10; }
+.topbar { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; padding-top: 14px; flex-wrap: wrap; }
+.stamp { color: var(--text-3); font-size: .8rem; }
+nav.tabs { display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; margin-top: 10px; }
+nav.tabs::-webkit-scrollbar { display: none; }
+nav.tabs a { color: var(--text-2); text-decoration: none; padding: 8px 12px 9px; border-bottom: 2px solid transparent; white-space: nowrap; font-size: .92rem; }
+nav.tabs a:hover { color: var(--text); }
+nav.tabs a.on { color: var(--text); border-bottom-color: var(--ochre); }
+main { padding-top: 18px; min-height: 70vh; }
+section.page { display: none; } section.page.on { display: block; }
 
 /* controls */
-.controls { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 18px 0 8px; }
+.controls { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 4px 0 12px; }
 .seg { display: inline-flex; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; flex-wrap: wrap; }
-.seg button { font: inherit; font-size: .9rem; padding: 7px 12px; border: 0; background: transparent; color: var(--text-2); cursor: pointer; }
+.seg button { font: inherit; font-size: .84rem; padding: 6px 11px; border: 0; background: transparent; color: var(--text-2); cursor: pointer; }
 .seg button + button { border-left: 1px solid var(--border); }
-.seg button[aria-pressed="true"] { background: var(--surface-2); color: var(--text); font-weight: 600; }
-.theme-btn { font: inherit; font-size: .85rem; padding: 5px 10px; border: 1px solid var(--border); border-radius: 8px; background: transparent; color: var(--text-2); cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--primary); color: var(--text); }
+input.search { font: inherit; font-size: .88rem; background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px; min-width: 200px; }
 
-/* hero */
-.hero { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 8px; }
-.card { border: 1px solid var(--border); border-radius: 12px; padding: 18px 18px 14px; background: var(--surface); min-width: 0; }
-.card h3 { margin: 0 0 2px; font-size: .95rem; color: var(--text-2); font-weight: 600; text-transform: uppercase; letter-spacing: .04em; }
-.big { font-size: clamp(2.2rem, 6vw, 3.2rem); font-weight: 700; line-height: 1.05; font-variant-numeric: tabular-nums; }
-.big small { font-size: 1rem; font-weight: 500; color: var(--text-2); }
-.split { display: flex; height: 10px; border-radius: 5px; overflow: hidden; margin: 12px 0 8px; gap: 2px; }
-.split span { display: block; height: 100%; }
-.kv { display: flex; justify-content: space-between; gap: 8px; font-size: .9rem; color: var(--text-2); flex-wrap: wrap; }
-.kv b { color: var(--text); font-variant-numeric: tabular-nums; }
-.chart { width: 100%; margin-top: 10px; position: relative; }
+/* headline + cards */
+.headline { font-size: clamp(1.05rem, 2.4vw, 1.25rem); font-weight: 600; max-width: 62ch; margin: 2px 0 14px; line-height: 1.4; }
+.cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px 12px; min-width: 0; }
+.card .lab { font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; color: var(--text-2); font-weight: 600; }
+.big { font-size: clamp(2rem, 5.5vw, 2.7rem); font-weight: 700; line-height: 1.05; font-variant-numeric: tabular-nums; margin-top: 2px; }
+.big small { font-size: .95rem; font-weight: 500; color: var(--text-2); }
+.seats { font-size: 1rem; margin-top: 2px; } .seats b { font-variant-numeric: tabular-nums; }
+.pair { display: grid; grid-template-columns: auto 1fr auto auto; gap: 4px 10px; align-items: center; font-size: .85rem; margin-top: 10px; font-variant-numeric: tabular-nums; }
+.pair .k { color: var(--text-2); }
+.pair .bar { height: 8px; border-radius: 4px; background: var(--rep); position: relative; overflow: hidden; }
+.pair .bar span { position: absolute; inset: 0 auto 0 0; background: var(--dem); border-right: 2px solid var(--surface); }
+.chart { width: 100%; position: relative; margin-top: 8px; }
 .chart svg { display: block; width: 100%; height: auto; overflow: visible; }
-#calChart, #errChart { max-width: 380px; }
-.legend { display: flex; gap: 14px; font-size: .82rem; color: var(--text-2); flex-wrap: wrap; margin-top: 4px; }
-.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
-.tip { position: absolute; pointer-events: none; background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
-  padding: 6px 9px; font-size: .82rem; box-shadow: 0 4px 14px rgba(0,0,0,.12); white-space: nowrap; opacity: 0; transition: opacity .08s; z-index: 5; }
-.note { border-left: 3px solid var(--border); padding: 4px 0 4px 12px; color: var(--text-2); font-size: .92rem; max-width: 80ch; }
+.legend { display: flex; gap: 12px; font-size: .78rem; color: var(--text-2); flex-wrap: wrap; margin-top: 2px; }
+.legend i { display: inline-block; width: 12px; height: 3px; border-radius: 2px; margin-right: 5px; vertical-align: 3px; }
+.legend i.sq { width: 10px; height: 10px; vertical-align: -1px; }
+.ovgrid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 14px; margin-top: 14px; }
+.watch { display: grid; gap: 6px; }
+.watch button { all: unset; cursor: pointer; display: grid; grid-template-columns: 2.4em 1fr 3.2em; gap: 8px; align-items: center; padding: 5px 8px; border-radius: 8px; font-size: .86rem; }
+.watch button:hover, .watch button:focus-visible { background: var(--surface-2); outline: none; }
+.watch .st { font-weight: 700; } .watch .nm { color: var(--text-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.watch .pv { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* tile map */
+.tilemap svg text { pointer-events: none; }
+.tilemap rect.t { cursor: pointer; }
+.tilemap rect.t:hover { stroke: var(--text); stroke-width: 1.5; }
 
 /* tables */
-.tbl-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 10px; margin-top: 10px; }
-table { border-collapse: collapse; width: 100%; font-size: .9rem; font-variant-numeric: tabular-nums; }
+.tbl-wrap { overflow: auto; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); }
+.tbl-wrap.scroll { max-height: 62vh; }
+table { border-collapse: collapse; width: 100%; font-size: .88rem; font-variant-numeric: tabular-nums; }
 th, td { padding: 7px 10px; text-align: left; border-bottom: 1px solid var(--border); white-space: nowrap; }
-th { font-size: .78rem; text-transform: uppercase; letter-spacing: .04em; color: var(--text-2); font-weight: 600; background: var(--surface-2); position: sticky; top: 0; }
-th.sortable { cursor: pointer; }
-th.sortable:hover { color: var(--text); }
-tr:last-child td { border-bottom: 0; }
+th { font-size: .74rem; text-transform: uppercase; letter-spacing: .05em; color: var(--text); font-weight: 600; background: var(--primary); position: sticky; top: 0; z-index: 1; }
+th.sortable { cursor: pointer; } th.sortable:hover { color: #fff; }
+tbody tr:last-child td { border-bottom: 0; }
 td.num, th.num { text-align: right; }
-.pbar { position: relative; width: 120px; height: 14px; border-radius: 3px; background: var(--rep); overflow: hidden; display: inline-block; vertical-align: middle; }
+.pbar { position: relative; width: 110px; height: 12px; border-radius: 3px; background: var(--rep); overflow: hidden; display: inline-block; vertical-align: middle; }
 .pbar > span { position: absolute; left: 0; top: 0; bottom: 0; background: var(--dem); border-right: 2px solid var(--surface); }
-.pbar.ind > span { background: var(--ind); }
-.pval { display: inline-block; width: 3.4em; text-align: right; margin-left: 6px; }
-.tag { display: inline-block; font-size: .72rem; padding: 1px 6px; border-radius: 4px; border: 1px solid var(--border); color: var(--text-2); }
-.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 5px; }
+.pval { display: inline-block; width: 3.3em; text-align: right; margin-left: 6px; }
+.tag { display: inline-block; font-size: .7rem; padding: 0 6px; border-radius: 4px; border: 1px solid var(--border); color: var(--text-2); vertical-align: 1px; }
+tr.race { cursor: pointer; } tr.race:hover td { background: var(--surface-2); }
+tr.race td:first-child::before { content: "▸"; display: inline-block; width: 1em; color: var(--text-3); transition: transform .12s; }
+tr.race.open td:first-child::before { transform: rotate(90deg); color: var(--ochre); }
+tr.race.open td { background: var(--surface-2); }
+tr.detail td { white-space: normal; background: #1f2127; padding: 10px 14px 14px; }
+.detail-grid { display: grid; grid-template-columns: minmax(0, 220px) minmax(0, 1fr); gap: 16px; }
+.mini td, .mini th { padding: 4px 8px; font-size: .8rem; white-space: nowrap; } .mini th { background: var(--surface-2); color: var(--text-2); position: static; }
+.kvs { font-size: .84rem; display: grid; grid-template-columns: auto auto; gap: 3px 12px; align-content: start; }
+.kvs span:nth-child(odd) { color: var(--text-2); }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-top: 10px; }
+.stat { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; }
+.stat .v { font-size: 1.35rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.stat .l { font-size: .78rem; color: var(--text-2); }
 .grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-top: 10px; }
-.stat { border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; }
-.stat .v { font-size: 1.5rem; font-weight: 700; font-variant-numeric: tabular-nums; }
-.stat .l { font-size: .82rem; color: var(--text-2); }
-ol.steps li, ul.list li { margin: 6px 0; max-width: 78ch; }
-code { font-size: .88em; background: var(--surface-2); padding: 1px 5px; border-radius: 4px; }
-footer { border-top: 1px solid var(--border); margin-top: 40px; padding: 18px 0 40px; color: var(--text-3); font-size: .85rem; }
-@media (max-width: 720px) {
-  .hero, .grid2 { grid-template-columns: 1fr; }
-  header.top .wrap { padding-top: 20px; }
-  .pbar { width: 80px; }
+details { border: 1px solid var(--border); border-radius: 10px; padding: 8px 12px; background: var(--surface); margin-top: 10px; }
+details summary { cursor: pointer; font-weight: 600; }
+ol.steps li, ul.list li { margin: 5px 0; max-width: 80ch; }
+.note { border-left: 3px solid var(--ochre); padding: 3px 0 3px 12px; color: var(--text-2); font-size: .88rem; max-width: 80ch; margin-top: 14px; }
+.show-sm { display: none; font-size: .74rem; color: var(--text-2); white-space: normal; max-width: 150px; }
+.tip { position: absolute; pointer-events: none; background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px; padding: 6px 9px; font-size: .8rem; box-shadow: 0 6px 18px rgba(0,0,0,.4); white-space: nowrap; opacity: 0; transition: opacity .08s; z-index: 20; }
+footer { border-top: 1px solid var(--border); margin-top: 30px; padding: 14px 0 28px; color: var(--text-3); font-size: .78rem; }
+footer a { color: var(--text-2); }
+@media (max-width: 760px) {
+  .cards, .ovgrid, .grid2, .detail-grid { grid-template-columns: 1fr; }
+  .pbar { width: 70px; }
+  th, td { padding: 6px 8px; }
+  .hide-sm { display: none; }
+  .show-sm { display: block; }
+  .pval { width: 2.8em; }
 }
 </style>
 </head>
 <body>
 <header class="top">
   <div class="wrap">
-    <div>
-      <h1>2026 Midterm Forecast</h1>
-      <p class="sub">U.S. House and Senate · Election Day Tuesday, November 3, 2026 · <span id="gen"></span></p>
-    </div>
-    <nav class="toc" aria-label="Sections">
-      <a href="#forecast">Forecast</a><a href="#senate">Senate</a><a href="#house">House</a>
-      <a href="#inputs">Inputs</a><a href="#method">Method</a><a href="#appendix">Appendix</a><a href="#bias">Bias</a><a href="#backtest">Backtest</a><a href="#data">Data</a>
-      <button class="theme-btn" id="theme" type="button" aria-label="Toggle color theme">Theme</button>
+    <div class="topbar"><h1>2026 Midterm Forecast</h1><span class="stamp" id="gen"></span></div>
+    <nav class="tabs" aria-label="Pages">
+      <a href="#overview" data-p="overview">Overview</a><a href="#senate" data-p="senate">Senate</a><a href="#house" data-p="house">House</a>
+      <a href="#method" data-p="method">How it works</a><a href="#bias" data-p="bias">Polling bias</a><a href="#backtest" data-p="backtest">Backtest</a>
+      <a href="#appendix" data-p="appendix">Technical appendix</a><a href="#data" data-p="data">Data</a>
     </nav>
   </div>
 </header>
 
 <main class="wrap">
-<section id="forecast">
-  <div class="controls" role="group" aria-label="Model">
-    <span class="muted small">Model:</span>
-    <div class="seg" id="modelSeg">
-      <button type="button" data-m="polls_fundamentals" aria-pressed="true">Unadjusted</button>
-      <button type="button" data-m="polls_fundamentals_biasadj" aria-pressed="false">Bias-adjusted</button>
-      <button type="button" data-m="polls_only" aria-pressed="false">Polls only</button>
-      <button type="button" data-m="scenario_polls_overstate_dems" aria-pressed="false">Full historical bias</button>
-    </div>
-  </div>
-  <p class="muted small" id="modelDesc"></p>
-  <div class="hero">
+<!-- ================= OVERVIEW ================= -->
+<section class="page" id="p-overview">
+  <p class="headline" id="headline"></p>
+  <div class="cards">
     <div class="card" id="houseCard"></div>
     <div class="card" id="senateCard"></div>
   </div>
-  <h3>All variants</h3>
-  <div class="tbl-wrap"><table id="cmpTable"></table></div>
-  <p class="muted small">Unadjusted and bias-adjusted are the two headline models. They differ only in whether the national polling environment is shifted for the historical tendency of final polls to overstate Democrats. See <a href="#bias">Polling bias</a>.</p>
+  <div class="ovgrid">
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap">
+        <span class="lab">Senate map</span>
+        <div class="seg modelSeg" role="group" aria-label="Model for map"></div>
+      </div>
+      <div class="chart tilemap" id="tilemap"></div>
+      <div class="legend" id="mapLegend"></div>
+    </div>
+    <div class="card">
+      <span class="lab">Closest Senate races</span>
+      <div class="watch" id="watch" style="margin-top:8px"></div>
+      <p class="tiny" style="margin-top:8px">Click a race or a state to see its polls.</p>
+    </div>
+  </div>
   <p class="note" id="benchNote"></p>
 </section>
 
-<section id="senate">
+<!-- ================= SENATE ================= -->
+<section class="page" id="p-senate">
   <h2>Senate races</h2>
-  <p class="muted">35 races (33 regular + Florida and Ohio specials). Probability is the chance the Democrat — or the independent where no Democrat is the main challenger — wins. Margins are two-party, D−R. Click a column to sort.</p>
-  <div class="tbl-wrap"><table id="senTable"></table></div>
-  <p class="muted small">Prior = 2×PVI + national environment + incumbency. Forecast blends the poll average (<span id="raceW">about two-thirds</span> weight in polled races) with the prior. Expert ratings are shown for comparison only.</p>
-</section>
-
-<section id="house">
-  <h2>House: competitive seats</h2>
-  <p class="muted" id="houseIntro"></p>
-  <div class="tbl-wrap"><table id="houseTable"></table></div>
-</section>
-
-<section id="inputs">
-  <h2>Inputs</h2>
-  <div class="stats" id="natStats"></div>
-  <div class="grid2">
-    <div><h3>Generic ballot, aggregators (Oct 30)</h3><div class="tbl-wrap"><table id="genTable"></table></div></div>
-    <div><h3>Trump approval, aggregators (Oct 30)</h3><div class="tbl-wrap"><table id="appTable"></table></div></div>
+  <div class="controls">
+    <div class="seg modelSeg" role="group" aria-label="Model"></div>
+    <div class="seg" id="senFilter" role="group" aria-label="Which races">
+      <button type="button" data-f="comp" aria-pressed="true">Competitive</button><button type="button" data-f="all" aria-pressed="false">All 35</button>
+    </div>
   </div>
-  <h3>Data sources</h3>
-  <div class="tbl-wrap"><table>
-    <thead><tr><th>Input</th><th>Source</th><th>Use</th></tr></thead>
-    <tbody>
-      <tr><td>2026 Senate &amp; House district polls</td><td>VoteHub API (<span id="vhN"></span> polls snapshot)</td><td>Race poll averages</td></tr>
-      <tr><td>Generic ballot, approval</td><td>Wikipedia aggregator tables (DDHQ, FiftyPlusOne, NBC, RCP, Silver Bulletin, others)</td><td>National environment; fundamentals</td></tr>
-      <tr><td>District lean (2026 lines)</td><td>Wikipedia 2026 House elections page (2026 PVI, all 435 districts)</td><td>House prior</td></tr>
-      <tr><td>Candidates, incumbency, ratings</td><td>Wikipedia 2026 House &amp; Senate pages; FEC API</td><td>Structure; ratings benchmark only</td></tr>
-      <tr><td>2018/2022 polls</td><td>538 archived poll files (Internet Archive, Feb 2025)</td><td>Backtest</td></tr>
-      <tr><td>Poll-vs-result history 1998–2022</td><td>538 <code>raw_polls.csv</code> (GitHub)</td><td>Error calibration</td></tr>
-      <tr><td>National economy</td><td>FRED: unemployment, CPI, real disposable income per capita, GDP, sentiment (ALFRED vintages for 2018/2022)</td><td>Fundamentals</td></tr>
-      <tr><td>State economy</td><td>FRED state unemployment (BLS series, 1976+)</td><td>Tested; not used (no held-out gain)</td></tr>
-    </tbody>
-  </table></div>
+  <p class="muted small" id="senIntro"></p>
+  <div class="tbl-wrap"><table id="senTable"></table></div>
 </section>
 
-<section id="method">
-  <h2>How the model works</h2>
+<!-- ================= HOUSE ================= -->
+<section class="page" id="p-house">
+  <h2>House: competitive seats</h2>
+  <div class="controls">
+    <div class="seg modelSeg" role="group" aria-label="Model"></div>
+    <input class="search" id="houseSearch" type="search" placeholder="Filter: state, district, name…" aria-label="Filter districts">
+  </div>
+  <p class="muted small" id="houseIntro"></p>
+  <div class="tbl-wrap scroll"><table id="houseTable"></table></div>
+</section>
+
+<!-- ================= METHOD ================= -->
+<section class="page" id="p-method">
+  <h2>How it works</h2>
   <ol class="steps">
-    <li><b>National environment.</b> Polls-only: the mean of the generic-ballot aggregators, converted to a two-party margin. Polls + fundamentals: that number blended, by inverse variance, with an <a href="#appendix">estimated fundamentals model</a> (Gallup approval, the previous House result, real gas-price change; inflation, income and unemployment tested). The polls get about 55% of the weight (about 70% in the bias-adjusted model, whose polling SD is smaller once the bias is removed). The polling bias shifts only the polls, not the fundamentals.</li>
-    <li><b>Race priors.</b> Each race starts at 2×PVI + national environment + incumbency (+2.5 points for House incumbents, +2 for Senate). PVI is Cook-style, on the 2026 district lines, so it already reflects mid-decade redistricting in TX, CA, MO, NC, UT, OH, VA, FL, TN, LA and AL.</li>
-    <li><b>Poll averages.</b> Recency-weighted (21-day half-life), scaled by √sample size, likely voters preferred over registered voters and adults. Pollsters with many polls are down-weighted, and partisan-sponsored polls are shifted against their sponsor (2 pts for Senate, 4 pts for House district polls).</li>
-    <li><b>Blend.</b> Poll average and prior are combined by precision (normal–normal). The poll-average error is set from history (race-level SD 7.4 pts in midterms, two-party); the Senate prior's error is assumed at 10 pts and the House district error at 6 pts.</li>
-    <li><b>Simulation.</b> 40,000 draws. Each draw shares a national polling error across every race and both chambers, plus a Census-region shock and a random slope on state lean (a polarisation miss), plus race-specific errors. Each race's total variance is held fixed. All national and race errors are fat-tailed (t-distribution, 5 df). Details in the <a href="#appendix">technical appendix</a>.</li>
-    <li><b>Control.</b> House: 218 seats; same-party and uncontested seats are fixed; CA-6 (Kevin Kiley, independent) is counted for neither party. Senate: Democrats need 51 seats (VP Vance breaks ties); 34 Dem-caucus and 31 Republican seats are not up. Independents (Osborn, NE; Achilles, ID) are reported separately.</li>
+    <li><b>National environment.</b> The mean of five generic-ballot polling averages (two-party), blended with an <a href="#appendix">estimated fundamentals model</a>: Gallup approval, the previous House result and the real change in gas prices, with inflation, income and unemployment tested and found weak. <span id="wText"></span></li>
+    <li><b>Race priors.</b> Each race starts at 2×PVI + national environment + incumbency (+2.5 House, +2 Senate). PVI is on the 2026 district lines, so it reflects the mid-decade redistricting in 11 states.</li>
+    <li><b>Poll averages.</b> Recency-weighted (21-day half-life), scaled by √sample size, likely voters preferred, prolific pollsters down-weighted, and party-sponsored polls shifted 2 pts (Senate) or 4 pts (House) against the sponsor.</li>
+    <li><b>Blend.</b> Poll average and prior are combined by precision. <span id="raceW"></span></li>
+    <li><b>Simulation.</b> 40,000 draws with a shared national polling error, Census-region shocks, a random slope on state lean, and race-specific errors, all fat-tailed. Control: 218 House seats; 51 Senate seats (VP Vance breaks ties).</li>
+    <li><b>Two headline versions.</b> <i>Face value</i> takes the polls as they are. <i>Adjusted</i> shifts the polls (not the fundamentals) by the historical tendency of final polls to overstate Democrats. See <a href="#bias">Polling bias</a>.</li>
   </ol>
-  <h3>Judgment calls &amp; caveats</h3>
-  <ul class="list">
-    <li><b>Fundamentals are estimated on 1962–2022, and 2026 is outside that range on two inputs.</b> Approval (Gallup-equivalent about 35.6%) is below every past midterm, and the 29% real rise in gas prices is above the largest in the data. Both push toward Democrats, so the fundamentals estimate leans on extrapolation. <span id="sensText"></span></li>
-    <li><b>Polling bias.</b> See the <a href="#bias">Polling bias</a> section: the bias-adjusted model shifts every race by the expected miss; the unadjusted model takes the polls at face value.</li>
-    <li><b>Michigan.</b> Haley Stevens endorsed Mike Rogers on Nov 1, after most polls were taken. This isn't in the model.</li>
-    <li><b>Alaska</b> uses ranked-choice voting and has several "Dan Sullivan" candidates on the ballot. It's modeled as a head-to-head. <b>Montana</b> is a genuine three-way race, modeled from polls only (best non-Republican vs. Republican).</li>
-    <li>District polls are sparse, and many are sponsored by parties or PACs (48 of 132 since July are Democratic-sponsored). They are shrunk toward the prior.</li>
-  </ul>
+  <h3>All model versions</h3>
+  <div class="tbl-wrap"><table id="cmpTable"></table></div>
+  <details>
+    <summary>Judgment calls and caveats</summary>
+    <ul class="list small">
+      <li><b>Fundamentals extrapolate.</b> 2026 approval (Gallup-equivalent ~35.6%) is below every past midterm, and the 29% real rise in gas prices is above anything in the 1962–2022 data. <span id="sensText"></span></li>
+      <li><b>House model.</b> The district error (SD 6) and incumbency (+2.5) are assumptions and weren't backtested; the seat total matches Silver Bulletin's.</li>
+      <li><b>Michigan.</b> Haley Stevens endorsed Mike Rogers on Nov 1, after most polls were taken. Not in the model.</li>
+      <li><b>Alaska</b> uses ranked-choice voting and has several "Dan Sullivan" candidates on the ballot; modeled as a head-to-head. <b>Montana</b> is a three-way race, modeled from polls only.</li>
+      <li><b>Independents</b> (Osborn NE, Achilles ID, Bengs SD) are counted separately from either party. <b>CA-6</b> (Kevin Kiley, independent) is counted for neither party.</li>
+      <li>District polls are sparse and often party-sponsored; they're shrunk toward the prior.</li>
+    </ul>
+  </details>
 </section>
 
-<section id="appendix">
-  <h2>Technical appendix</h2>
+<!-- ================= BIAS ================= -->
+<section class="page" id="p-bias">
+  <h2>Polling bias</h2>
+  <p class="muted small">How far the final generic-ballot average missed the national House vote, two-party, 1998–2022. Positive = Democrats beat their polls.</p>
+  <div class="grid2">
+    <div class="card"><div class="chart" id="biasChart"></div></div>
+    <div><div class="stats" id="biasStats" style="margin-top:0"></div><p class="muted small" id="biasText"></p></div>
+  </div>
+  <details>
+    <summary>Re-estimating the bias for 2026 (decay weights and covariates)</summary>
+    <p class="small">Elections are weighted by recency (half-lives of 6–16 years), midterms 2–3× presidential years, and covariates are tested: party in the White House, House majority, second term, and a president-specific effect. Specifications are compared by leave-one-election-out error.</p>
+    <div class="tbl-wrap"><table id="biasSpecs"></table></div>
+  </details>
+  <details>
+    <summary>State-level pattern</summary>
+    <p class="small" id="leanText"></p>
+  </details>
+</section>
 
+<!-- ================= BACKTEST ================= -->
+<section class="page" id="p-backtest">
+  <h2>Backtest: 2018 &amp; 2022</h2>
+  <p class="muted small">The poll-averaging and uncertainty method, run on archived 538 polls up to five days before each election, scored against results. Polls only, no PVI prior. Error scales were fitted on data that include these cycles (in-sample).</p>
+  <div class="stats" id="btStats"></div>
+  <div class="grid2" style="margin-top:12px">
+    <div class="card"><span class="lab">Calibration, 58 Senate races</span><div class="chart" id="calChart"></div></div>
+    <div class="card"><span class="lab">Shared Senate polling miss by cycle</span><div class="chart" id="errChart"></div></div>
+  </div>
+  <details><summary>Calibration table and generic ballot</summary>
+    <div class="grid2"><div class="tbl-wrap"><table id="calTable"></table></div><div class="tbl-wrap"><table id="btGen"></table></div></div>
+  </details>
+</section>
+
+<!-- ================= APPENDIX ================= -->
+<section class="page" id="p-appendix">
+  <h2>Technical appendix</h2>
   <h3>A. Fundamentals model (estimated)</h3>
-  <p>Outcome: the two-party House vote margin of the president's party (1962–2022, Wikipedia infoboxes). Predictors are measured before the election: Gallup approval (polls ending July 15–October 31; American Presidency Project), the president's party's House margin two years earlier, CPI inflation (September over September, unrevised CPI-U), the real change in gasoline prices (gasoline CPI ÷ CPI-U, September over September), real disposable income per capita growth, and the 12-month change in unemployment. Every subset of up to four predictors is fit by OLS and scored by leave-one-election-out RMSE. The 2026 estimate averages the top five specifications, weighted by 1/RMSE².</p>
+  <p class="small">Outcome: the two-party House vote margin of the president's party, 1962–2022. Predictors are measured before the election: Gallup approval (polls ending July 15–October 31), the president's party's House margin two years earlier, CPI inflation and the real change in gasoline prices (September over September), real disposable income per capita growth, and the change and level of unemployment. Every subset of up to four predictors is fit by OLS and scored by leave-one-election-out RMSE; the 2026 estimate averages the top five, weighted by 1/RMSE².</p>
   <div class="tbl-wrap"><table id="fundTop"></table></div>
   <p class="muted small" id="fundTopNote"></p>
-  <h3>Inflation and gas prices specifically</h3>
+  <h3>Inflation, gas prices and unemployment</h3>
   <div class="tbl-wrap"><table id="fundReq"></table></div>
   <p class="muted small" id="fundReqNote"></p>
-  <h3>Unemployment</h3>
   <p class="muted small" id="unempNote"></p>
   <h3>2026 inputs vs. the historical range</h3>
   <div class="tbl-wrap"><table id="fundRange"></table></div>
-
   <h3>B. Error model</h3>
-  <p>For race <i>r</i> in simulation <i>s</i>: margin = μ<sub>r</sub> + σ<sub>nat</sub>·z<sub>s</sub> + u<sub>region(r),s</sub> + b<sub>s</sub>·lean<sub>r</sub> + ε<sub>r,s</sub>. The national shock z is t(5), shared by every House and Senate race. Region shocks u (four Census regions) and the lean slope b are normal. The race term ε is t(5) with variance sd<sub>race</sub>² − σ<sub>region</sub>² − σ<sub>b</sub>²·lean² (floored at a quarter of the total), so each race's marginal probability matches its calibrated error and only the joint distribution changes.</p>
+  <p class="small">For race <i>r</i> in simulation <i>s</i>: margin = μ<sub>r</sub> + σ<sub>nat</sub>·z<sub>s</sub> + u<sub>region(r),s</sub> + b<sub>s</sub>·lean<sub>r</sub> + ε<sub>r,s</sub>. The national shock z is t(5), shared by every House and Senate race; region shocks u (four Census regions) and the lean slope b are normal; ε is t(5) with variance sd<sub>race</sub>² − σ<sub>region</sub>² − σ<sub>b</sub>²·lean² (floored at a quarter of the total), so each race's own probability stays calibrated and only the joint distribution changes.</p>
   <div class="stats" id="errStats"></div>
-  <h3>Implied error correlations (Senate, polls + fundamentals)</h3>
+  <h3>Implied error correlations (Senate)</h3>
   <div class="tbl-wrap"><table id="corrTable"></table></div>
   <p class="muted small" id="corrNote"></p>
-
   <h3>C. Estimators at a glance</h3>
   <ul class="list small">
-    <li><b>Poll weight</b> = ½<sup>age/half-life</sup> × √(min(n, 3000)/600) × population weight (LV 1.0, RV 0.8, adults 0.5) ÷ √(polls by that pollster). Half-life: 21 days for races, 14 for the generic ballot. Two-party margins throughout.</li>
-    <li><b>Poll-average SD</b> (Senate) = √(7.4² + max(spread, 4)²/n<sub>eff</sub>), with n<sub>eff</sub> = (Σw)²/Σw². <b>Blend</b>: μ = (μ<sub>poll</sub>/σ<sub>poll</sub>² + μ<sub>prior</sub>/σ<sub>prior</sub>²) / (1/σ<sub>poll</sub>² + 1/σ<sub>prior</sub>²).</li>
-    <li><b>National SDs</b>: RMSE of the final generic-ballot miss, two-party, 1998–2022 (unadjusted models); the predictive SD of the decay-weighted bias estimate (bias-adjusted models). Senate national SD is the Senate per-cycle miss RMSE, scaled the same way.</li>
-    <li><b>Calibration data</b>: 538's <code>raw_polls.csv</code> (final 21 days, 1998–2022), averaged within race before comparing to results.</li>
-    <li><b>Monte Carlo error</b>: with 40,000 draws, a probability near 50% has a standard error of about 0.25 points.</li>
+    <li><b>Poll weight</b> = ½<sup>age/half-life</sup> × √(min(n, 3000)/600) × population weight (LV 1.0, RV 0.8, adults 0.5) ÷ √(polls by that pollster). Half-life 21 days for races, 14 for the generic ballot. Two-party margins throughout.</li>
+    <li><b>Poll-average SD</b> (Senate) = √(7.4² + max(spread, 4)²/n<sub>eff</sub>), n<sub>eff</sub> = (Σw)²/Σw². <b>Blend</b>: μ = (μ<sub>poll</sub>/σ<sub>poll</sub>² + μ<sub>prior</sub>/σ<sub>prior</sub>²)/(1/σ<sub>poll</sub>² + 1/σ<sub>prior</sub>²), σ<sub>prior</sub> = 10 (Senate), 6 (House).</li>
+    <li><b>National SDs</b>: RMSE of the final generic-ballot miss (face value); predictive SD of the decay-weighted bias estimate (adjusted). The Senate national SD is the Senate per-cycle miss RMSE, scaled the same way.</li>
+    <li><b>Calibration data</b>: 538's <code>raw_polls.csv</code> (final 21 days, 1998–2022), averaged within race before comparison with results.</li>
+    <li><b>Monte Carlo error</b>: 40,000 draws, so a probability near 50% has a standard error of about 0.25 points.</li>
   </ul>
 </section>
 
-<section id="bias">
-  <h2>Polling bias</h2>
-  <p class="muted">How far the final generic-ballot polling average has missed the national House vote, on a two-party basis, 1998–2022. Positive means Democrats beat their polls.</p>
-  <div class="grid2">
-    <div><div class="chart" id="biasChart"></div></div>
-    <div><div class="stats" id="biasStats"></div></div>
+<!-- ================= DATA ================= -->
+<section class="page" id="p-data">
+  <h2>Data &amp; sources</h2>
+  <div class="stats" id="natStats"></div>
+  <div class="grid2" style="margin-top:12px">
+    <div><h3>Generic ballot averages</h3><div class="tbl-wrap"><table id="genTable"></table></div></div>
+    <div><h3>Trump approval averages</h3><div class="tbl-wrap"><table id="appTable"></table></div></div>
   </div>
-  <h3>Re-estimating the bias for 2026</h3>
-  <p>A flat average treats 1998 and 2022 alike. The re-estimate weights elections by recency (half-lives of 6 to 16 years), weights midterms 2–3× presidential years, and tests covariates: party in the White House, which party held the House, a second-term flag, and a president-specific effect shrunk toward the mean. Specifications are compared by leave-one-election-out prediction error, weighted toward recent midterms.</p>
-  <div class="tbl-wrap"><table id="biasSpecs"></table></div>
-  <p class="muted small" id="biasText"></p>
-  <h3>State-level pattern</h3>
-  <p class="muted small" id="leanText"></p>
-</section>
-
-<section id="backtest">
-  <h2>Backtest: 2018 &amp; 2022</h2>
-  <p class="muted">The same poll-averaging and uncertainty method, run on archived 538 polls up to five days before each election and scored against actual results. Polls-only, without the PVI prior. The error scales were fitted on data that include these cycles, so this is an in-sample check.</p>
-  <div class="stats" id="btStats"></div>
-  <div class="grid2">
-    <div><h3>Calibration (58 Senate races)</h3><div class="chart" id="calChart"></div><div class="tbl-wrap"><table id="calTable"></table></div></div>
-    <div><h3>Generic ballot vs. result</h3><div class="tbl-wrap"><table id="btGen"></table></div>
-      <h3>Shared Senate polling miss by cycle</h3><div class="chart" id="errChart"></div></div>
-  </div>
-</section>
-
-<section id="data">
-  <h2>Data downloads</h2>
-  <ul class="list small" id="dlList"></ul>
-  <p class="muted small">Source code and raw snapshots live in the project repository. To rebuild, run <code>python src/run_all.py</code> and then <code>python src/site/build.py</code>.</p>
+  <details open><summary>Downloads</summary><ul class="list small" id="dlList"></ul></details>
+  <details><summary>Sources and how each is used</summary>
+    <div class="tbl-wrap" style="margin-top:8px"><table>
+      <thead><tr><th>Input</th><th>Source</th><th>Use</th></tr></thead>
+      <tbody>
+        <tr><td>2026 Senate &amp; House polls</td><td>VoteHub API (<span id="vhN"></span> polls)</td><td>Race poll averages</td></tr>
+        <tr><td>Generic ballot, approval</td><td>Wikipedia aggregator tables (DDHQ, FiftyPlusOne, NBC, RCP, Silver Bulletin…)</td><td>National environment</td></tr>
+        <tr><td>District lean, candidates, ratings</td><td>Wikipedia 2026 House &amp; Senate pages</td><td>Priors; ratings for comparison</td></tr>
+        <tr><td>Historical polls</td><td>538 archive (Internet Archive; GitHub <code>raw_polls.csv</code>)</td><td>Calibration, backtest, bias</td></tr>
+        <tr><td>Approval history</td><td>American Presidency Project (Gallup)</td><td>Fundamentals</td></tr>
+        <tr><td>House vote history</td><td>Wikipedia election pages, 1946–2024</td><td>Fundamentals</td></tr>
+        <tr><td>Economy</td><td>FRED: CPI, gasoline CPI, income, unemployment (national and state)</td><td>Fundamentals; state test</td></tr>
+        <tr><td>Candidate filings</td><td>FEC API</td><td>Audit cross-check</td></tr>
+      </tbody>
+    </table></div>
+  </details>
+  <p class="muted small">Rebuild with <code>python src/run_all.py</code>.</p>
 </section>
 </main>
-<footer><div class="wrap">An independent statistical forecast built from public data. Probabilities, not predictions: a 70% favorite loses 3 times in 10.</div></footer>
+
+<footer><div class="wrap">
+  An independent statistical forecast from public data. Probabilities, not predictions: a 70% favorite loses 3 times in 10.<br>
+  Data: <a href="https://votehub.com">VoteHub</a> polls; <a href="https://en.wikipedia.org/wiki/2026_United_States_elections">Wikipedia</a> (CC BY-SA 4.0) for race tables, district PVI, aggregator averages and expert ratings;
+  538 archives via the <a href="https://web.archive.org">Internet Archive</a> and <a href="https://github.com/fivethirtyeight/data">GitHub</a> (CC BY 4.0); <a href="https://fred.stlouisfed.org">FRED</a>;
+  <a href="https://www.presidency.ucsb.edu">American Presidency Project</a> (Gallup approval); <a href="https://www.fec.gov">FEC</a>. Benchmark figures from Silver Bulletin's free summary.
+</div></footer>
 <div class="tip" id="tip" role="status"></div>
 
 <script>
 const DATA = /*__DATA__*/null;
 const $ = (s) => document.querySelector(s);
+const $$ = (s) => [...document.querySelectorAll(s)];
 const fmtP = (p) => p == null ? "—" : p < 0.005 ? "<1%" : p >= 0.995 ? ">99%" : Math.round(p * 100) + "%";
 const fmtM = (x) => x == null ? "—" : Math.abs(x) < 0.05 ? "EVEN" : (x >= 0 ? "D+" : "R+") + Math.abs(x).toFixed(1);
 const fmtPVI = (x) => x == null ? "—" : x === 0 ? "EVEN" : (x > 0 ? "D+" : "R+") + Math.abs(x);
 const css = (v) => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
 const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const STATE = {AL:"Alabama",AK:"Alaska",AZ:"Arizona",AR:"Arkansas",CA:"California",CO:"Colorado",CT:"Connecticut",DE:"Delaware",FL:"Florida",GA:"Georgia",HI:"Hawaii",ID:"Idaho",IL:"Illinois",IN:"Indiana",IA:"Iowa",KS:"Kansas",KY:"Kentucky",LA:"Louisiana",ME:"Maine",MD:"Maryland",MA:"Massachusetts",MI:"Michigan",MN:"Minnesota",MS:"Mississippi",MO:"Missouri",MT:"Montana",NE:"Nebraska",NV:"Nevada",NH:"New Hampshire",NJ:"New Jersey",NM:"New Mexico",NY:"New York",NC:"North Carolina",ND:"North Dakota",OH:"Ohio",OK:"Oklahoma",OR:"Oregon",PA:"Pennsylvania",RI:"Rhode Island",SC:"South Carolina",SD:"South Dakota",TN:"Tennessee",TX:"Texas",UT:"Utah",VT:"Vermont",VA:"Virginia",WA:"Washington",WV:"West Virginia",WI:"Wisconsin",WY:"Wyoming"};
-let model = "polls_fundamentals";
-try { const m = localStorage.getItem("pf-model"); if (m && DATA.models[m]) model = m; } catch (e) {}
-
-// ---------- theme ----------
-(function () {
-  let t = null; try { t = localStorage.getItem("pf-theme"); } catch (e) {}
-  if (t) document.documentElement.dataset.theme = t;
-  $("#theme").addEventListener("click", () => {
-    const cur = document.documentElement.dataset.theme ||
-      (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-    const nxt = cur === "dark" ? "light" : "dark";
-    document.documentElement.dataset.theme = nxt;
-    try { localStorage.setItem("pf-theme", nxt); } catch (e) {}
-    renderAll();
-  });
-})();
+const MODELS = { polls_fundamentals: "Face value", polls_fundamentals_biasadj: "Adjusted", polls_only: "Polls only", scenario_polls_overstate_dems: "Stress test" };
+const MODEL_LONG = { polls_fundamentals: "Polls at face value (+ fundamentals)", polls_fundamentals_biasadj: "Adjusted for typical poll bias", polls_only: "Polls only, no fundamentals", scenario_polls_overstate_dems: "Stress test: full historical bias" };
+const FV = "polls_fundamentals", AD = "polls_fundamentals_biasadj";
+let model = FV;
+try { const m = localStorage.getItem("pf-model2"); if (m && DATA.models[m]) model = m; } catch (e) {}
 
 // ---------- tooltip ----------
 const tip = $("#tip");
@@ -307,275 +340,289 @@ function showTip(evt, html) {
 }
 const hideTip = () => { tip.style.opacity = 0; };
 
-// ---------- seat histogram ----------
-function histogram(el, hist, threshold, label, nTotal) {
-  // trim empty tails
-  let lo = hist.findIndex((v) => v > 0), hi = hist.length - 1 - [...hist].reverse().findIndex((v) => v > 0);
-  const tot = hist.reduce((a, b) => a + b, 0);
-  // keep 99.8% central mass for readability
-  let acc = 0; for (let i = lo; i <= hi; i++) { acc += hist[i]; if (acc / tot > 0.001) { lo = i; break; } }
-  acc = 0; for (let i = hi; i >= lo; i--) { acc += hist[i]; if (acc / tot > 0.001) { hi = i; break; } }
-  lo = Math.min(lo, threshold - 2); hi = Math.max(hi, threshold + 1);
-  const W = 520, H = 170, m = { l: 6, r: 6, t: 14, b: 26 };
-  const n = hi - lo + 1, bw = (W - m.l - m.r) / n;
-  const maxV = Math.max(...hist.slice(lo, hi + 1));
-  const y = (v) => m.t + (H - m.t - m.b) * (1 - v / maxV);
-  const dem = css("--dem"), rep = css("--rep"), surf = css("--surface"), t2 = css("--text-2"), t3 = css("--text-3"), bd = css("--border");
-  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(label)}">`;
+// ---------- routing ----------
+const PAGES = ["overview", "senate", "house", "method", "bias", "backtest", "appendix", "data"];
+let openRace = null;
+function route() {
+  let h = location.hash.slice(1) || "overview";
+  if (h.startsWith("senate/")) { openRace = decodeURIComponent(h.slice(7)); h = "senate"; }
+  if (!PAGES.includes(h)) h = "overview";
+  $$("section.page").forEach(s => s.classList.toggle("on", s.id === "p-" + h));
+  $$("nav.tabs a").forEach(a => a.classList.toggle("on", a.dataset.p === h));
+  if (h === "senate") renderSenate();
+  window.scrollTo(0, 0);
+}
+window.addEventListener("hashchange", route);
+const goRace = (key) => { location.hash = "senate/" + encodeURIComponent(key); };
+
+// ---------- model selector ----------
+function renderModelSegs() {
+  $$(".modelSeg").forEach(seg => {
+    seg.innerHTML = Object.keys(MODELS).map(k => `<button type="button" data-m="${k}" aria-pressed="${k === model}" title="${MODEL_LONG[k]}">${MODELS[k]}</button>`).join("");
+    seg.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+      model = b.dataset.m; try { localStorage.setItem("pf-model2", model); } catch (e) {}
+      renderModelSegs(); renderMap(); renderWatch(); renderSenate(); renderHouse();
+    }));
+  });
+}
+
+// ---------- overview ----------
+function distChart(el, hA, hB, threshold, label) {
+  // two seat distributions as lines (face value vs adjusted)
+  const tot = (h) => h.reduce((a, b) => a + b, 0);
+  const tA = tot(hA), tB = tot(hB);
+  const nz = (h) => { let lo = h.findIndex(v => v > 0), hi = h.length - 1 - [...h].reverse().findIndex(v => v > 0); return [lo, hi]; };
+  const trim = (h, t) => { let lo = 0, hi = h.length - 1, a = 0; for (let i = 0; i < h.length; i++) { a += h[i]; if (a / t > 0.002) { lo = i; break; } } a = 0; for (let i = h.length - 1; i >= 0; i--) { a += h[i]; if (a / t > 0.002) { hi = i; break; } } return [lo, hi]; };
+  const [a1, a2] = trim(hA, tA), [b1, b2] = trim(hB, tB);
+  let lo = Math.min(a1, b1, threshold - 2), hi = Math.max(a2, b2, threshold + 2);
+  const W = 520, H = 130, m = { l: 6, r: 6, t: 14, b: 22 };
+  const sm = (h, t) => h.map((v, i) => { let s = 0, n = 0; for (let k = -1; k <= 1; k++) { if (h[i + k] != null) { s += h[i + k]; n++; } } return s / n / t; });
+  const sA = sm(hA, tA), sB = sm(hB, tB);
+  const maxV = Math.max(...sA.slice(lo, hi + 1), ...sB.slice(lo, hi + 1));
+  const x = (i) => m.l + (i - lo) / (hi - lo) * (W - m.l - m.r), y = (v) => m.t + (H - m.t - m.b) * (1 - v / maxV);
+  const path = (s) => s.slice(lo, hi + 1).map((v, j) => `${j ? "L" : "M"}${x(lo + j).toFixed(1)},${y(v).toFixed(1)}`).join("");
+  const area = (s) => path(s) + `L${x(hi)},${H - m.b}L${x(lo)},${H - m.b}Z`;
+  const tint = css("--tint"), ochre = css("--ochre"), t3 = css("--text-3"), bd = css("--border");
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${label}">`;
   s += `<line x1="${m.l}" x2="${W - m.r}" y1="${H - m.b}" y2="${H - m.b}" stroke="${bd}"/>`;
-  const gap = bw > 4 ? 1 : 0;
-  for (let i = lo; i <= hi; i++) {
-    const v = hist[i]; if (!v) continue;
-    const x = m.l + (i - lo) * bw, yy = y(v), h = H - m.b - yy;
-    const r = Math.min(2, bw / 2 - gap);
-    s += `<path d="M${x + gap},${H - m.b} V${yy + r} q0,-${r} ${r},-${r} H${x + bw - gap - r} q${r},0 ${r},${r} V${H - m.b} Z" fill="${i >= threshold ? dem : rep}" data-i="${i}" data-v="${v}"/>`;
-  }
-  const tx = m.l + (threshold - lo) * bw;
-  s += `<line x1="${tx}" x2="${tx}" y1="${m.t - 6}" y2="${H - m.b}" stroke="${t2}" stroke-dasharray="3 3"/>`;
-  s += `<text x="${tx + 4}" y="${m.t - 2}" font-size="11" fill="${t2}">${threshold} for control</text>`;
-  const step = n > 60 ? 10 : n > 25 ? 5 : 2;
-  for (let i = Math.ceil(lo / step) * step; i <= hi; i += step) {
-    s += `<text x="${m.l + (i - lo + 0.5) * bw}" y="${H - 8}" font-size="11" fill="${t3}" text-anchor="middle">${i}</text>`;
-  }
-  // hit targets: full-height columns
-  for (let i = lo; i <= hi; i++) s += `<rect x="${m.l + (i - lo) * bw}" y="${m.t}" width="${bw}" height="${H - m.t - m.b}" fill="transparent" data-i="${i}"/>`;
+  s += `<path d="${area(sA)}" fill="${tint}" opacity=".12"/><path d="${area(sB)}" fill="${ochre}" opacity=".12"/>`;
+  s += `<path d="${path(sA)}" fill="none" stroke="${tint}" stroke-width="2"/><path d="${path(sB)}" fill="none" stroke="${ochre}" stroke-width="2"/>`;
+  const tx = x(threshold - 0.5);
+  s += `<line x1="${tx}" x2="${tx}" y1="${m.t - 8}" y2="${H - m.b}" stroke="${t3}" stroke-dasharray="3 3"/><text x="${tx + 4}" y="${m.t - 1}" font-size="11" fill="${t3}">${threshold} = control</text>`;
+  const step = (hi - lo) > 60 ? 10 : (hi - lo) > 25 ? 5 : 2;
+  for (let i = Math.ceil(lo / step) * step; i <= hi; i += step) s += `<text x="${x(i)}" y="${H - 6}" font-size="11" fill="${t3}" text-anchor="middle">${i}</text>`;
+  for (let i = lo; i <= hi; i++) s += `<rect x="${x(i) - (W - m.l - m.r) / (hi - lo) / 2}" y="${m.t}" width="${(W - m.l - m.r) / (hi - lo)}" height="${H - m.t - m.b}" fill="transparent" data-i="${i}"/>`;
   s += `</svg>`;
   el.innerHTML = s;
-  el.querySelectorAll("rect[data-i]").forEach((r) => {
-    r.addEventListener("mousemove", (e) => {
-      const i = +r.dataset.i; const v = hist[i] || 0;
-      const cum = hist.slice(i).reduce((a, b) => a + b, 0);
-      showTip(e, `<b>${i}</b> Dem seats: ${(100 * v / tot).toFixed(1)}% of sims<br><span style="color:${t2}">≥ ${i}: ${(100 * cum / tot).toFixed(0)}%</span>`);
-    });
+  el.querySelectorAll("rect[data-i]").forEach(r => {
+    r.addEventListener("mousemove", e => { const i = +r.dataset.i; const ca = hA.slice(i).reduce((a, b) => a + b, 0) / tA, cb = hB.slice(i).reduce((a, b) => a + b, 0) / tB;
+      showTip(e, `<b>${i}+</b> Dem seats<br><span style="color:${tint}">Face value</span> ${fmtP(ca)} · <span style="color:${ochre}">Adjusted</span> ${fmtP(cb)}`); });
     r.addEventListener("mouseleave", hideTip);
   });
 }
 
-function splitBar(parts) {
-  return `<div class="split" aria-hidden="true">${parts.filter(p => p.v > 0.0005).map(p => `<span style="flex:${p.v};background:var(${p.c})"></span>`).join("")}</div>`;
+function rangeTxt(a, b, f) { const lo = Math.min(a, b), hi = Math.max(a, b); return f(lo) === f(hi) ? f(lo) : `${f(lo)}–${f(hi)}`; }
+
+function renderOverview() {
+  const F = DATA.models[FV], A = DATA.models[AD];
+  const hF = F.house, hA = A.house, sF = F.senate, sA = A.senate;
+  const pct = (p) => Math.round(p * 100);
+  const senWord = sA.p_dem_control_without_osborn < 0.45 ? "a toss-up leaning Republican" : sA.p_dem_control_without_osborn < 0.55 ? "a toss-up" : "leaning Democratic";
+  $("#headline").textContent = `Democrats are strong favorites to win the House (${pct(hA.p_dem_majority)}–${pct(hF.p_dem_majority)}%, about ${Math.round(hA.dem_seats_mean)}–${Math.round(hF.dem_seats_mean)} seats). The Senate is ${senWord} to leaning Democratic (${pct(sA.p_dem_control_without_osborn)}–${pct(sF.p_dem_control_without_osborn)}%), depending on whether this year's polls are as accurate as they look.`;
+  const row = (k, p, seats, w, c) => `<span class="k"><i style="display:inline-block;width:10px;height:3px;background:${c};vertical-align:3px;margin-right:6px;border-radius:2px"></i>${k}</span><span class="bar" aria-hidden="true"><span style="width:${(p * 100).toFixed(1)}%"></span></span><b>${fmtP(p)}</b><span class="muted">${seats}</span>`;
+  $("#houseCard").innerHTML = `<span class="lab">House · 218 for control</span>
+    <div class="big">${pct(hA.p_dem_majority)}–${pct(hF.p_dem_majority)}% <small>chance Democrats win</small></div>
+    <div class="seats">Democratic seats: <b>${Math.round(hA.dem_seats_mean)}–${Math.round(hF.dem_seats_mean)}</b> <span class="muted small">(average outcome; Republicans now hold 218)</span></div>
+    <div class="pair">${row("Face value", hF.p_dem_majority, Math.round(hF.dem_seats_mean) + " seats", 0, "var(--tint)")}${row("Adjusted", hA.p_dem_majority, Math.round(hA.dem_seats_mean) + " seats", 0, "var(--ochre)")}</div>
+    <div class="chart" id="houseDist"></div>`;
+  distChart($("#houseDist"), hF.hist, hA.hist, 218, "Distribution of Democratic House seats: face value vs adjusted");
+  $("#senateCard").innerHTML = `<span class="lab">Senate · 51 for control (VP breaks ties)</span>
+    <div class="big">${pct(sA.p_dem_control_without_osborn)}–${pct(sF.p_dem_control_without_osborn)}% <small>chance Democrats win</small></div>
+    <div class="seats">Democratic-caucus seats: <b>${sA.dem_seats_mean.toFixed(1)}–${sF.dem_seats_mean.toFixed(1)}</b> <span class="muted small">(average; now 47)</span></div>
+    <div class="pair">${row("Face value", sF.p_dem_control_without_osborn, sF.dem_seats_mean.toFixed(1) + " seats", 0, "var(--tint)")}${row("Adjusted", sA.p_dem_control_without_osborn, sA.dem_seats_mean.toFixed(1) + " seats", 0, "var(--ochre)")}</div>
+    <div class="chart" id="senDist"></div>`;
+  distChart($("#senDist"), sF.hist, sA.hist, 51, "Distribution of Democratic Senate seats: face value vs adjusted");
+  $("#benchNote").innerHTML = `<b>Face value</b> takes this year's polls as they are. <b>Adjusted</b> shifts them toward Republicans by the amount final polls have typically overstated Democrats (about ${Math.abs(A.shift).toFixed(1)} pts after accounting for likely-voter screens). Benchmark: Silver Bulletin's free summary gives Democrats about 95% for the House and a ~25-seat gain (≈238). <a href="#method">How it works</a>.`;
 }
 
-const DESC = {
-  polls_fundamentals: "Unadjusted: generic-ballot polls blended with the estimated fundamentals model, then race polls and district lean. Takes the polls at face value.",
-  polls_fundamentals_biasadj: "Bias-adjusted: the same model with every race shifted toward Republicans by the expected polling bias (historical about 3 pts, less 1 pt for the aggregators' likely-voter adjustment).",
-  polls_only: "National environment from generic-ballot polls alone, then race polls and district lean.",
-  scenario_polls_overstate_dems: "Stress test: every race shifted by the full historical generic-ballot bias (about 3 pts toward Republicans), with no likely-voter discount.",
-};
-
-function renderHero() {
-  const M = DATA.models[model], h = M.house, s = M.senate;
-  $("#modelDesc").textContent = DESC[model] + " National environment used: " + fmtM(M.G) + " (two-party)" + (M.shift ? `, polls shifted ${M.shift.toFixed(1)}` : "") + (model !== "polls_only" ? `; ${Math.round(M.w_polls * 100)}% weight on polls vs. fundamentals` : "") + ".";
-  if ($("#raceW")) $("#raceW").textContent = `on average ${Math.round(M.race_w * 100)}%`;
-  const NAMES = { polls_fundamentals: "Unadjusted (polls + fundamentals)", polls_fundamentals_biasadj: "Bias-adjusted (polls + fundamentals)", polls_only: "Polls only", scenario_polls_overstate_dems: "Full historical bias (stress test)" };
-  $("#cmpTable").innerHTML = `<thead><tr><th>Variant</th><th class="num">Environment</th><th class="num">P(Dem House)</th><th class="num">Dem seats (80%)</th><th class="num">P(Dem Senate)</th><th class="num">Dem-caucus seats (80%)</th></tr></thead><tbody>` +
-    Object.keys(NAMES).map(k => { const X = DATA.models[k]; return `<tr${k === model ? ' style="font-weight:600"' : ""}><td>${NAMES[k]}</td><td class="num">${fmtM(X.G)}</td><td class="num">${fmtP(X.house.p_dem_majority)}</td><td class="num">${Math.round(X.house.dem_seats_mean)} (${X.house.dem_seats_p10}–${X.house.dem_seats_p90})</td><td class="num">${fmtP(X.senate.p_dem_control_without_osborn)}</td><td class="num">${X.senate.dem_seats_mean.toFixed(1)} (${X.senate.dem_seats_p10}–${X.senate.dem_seats_p90})</td></tr>`; }).join("") + "</tbody>";
-  $("#houseCard").innerHTML = `
-    <h3>House</h3>
-    <div class="big">${fmtP(h.p_dem_majority)} <small>chance Democrats win the majority</small></div>
-    ${splitBar([{ v: h.p_dem_majority, c: "--dem" }, { v: h.p_no_majority, c: "--neutral" }, { v: h.p_rep_majority, c: "--rep" }])}
-    <div class="kv"><span><span class="dot" style="background:var(--dem)"></span>Dem seats <b>${Math.round(h.dem_seats_mean)}</b> (80%: ${h.dem_seats_p10}–${h.dem_seats_p90})</span>
-      <span><span class="dot" style="background:var(--rep)"></span>GOP majority <b>${fmtP(h.p_rep_majority)}</b></span></div>
-    <div class="chart" id="houseHist"></div>
-    <div class="legend"><span><i style="background:var(--dem)"></i>Dem majority outcomes</span><span><i style="background:var(--rep)"></i>No Dem majority</span></div>`;
-  histogram($("#houseHist"), h.hist, 218, "Distribution of Democratic House seats across simulations");
-  const indNames = (s.independent_races || []).join(", ");
-  $("#senateCard").innerHTML = `
-    <h3>Senate</h3>
-    <div class="big">${fmtP(s.p_dem_control_without_osborn)} <small>chance Democrats win control</small></div>
-    ${splitBar([{ v: s.p_dem_control_without_osborn, c: "--dem" }, { v: Math.max(0, 1 - s.p_dem_control_without_osborn - s.p_rep_control), c: "--ind" }, { v: s.p_rep_control, c: "--rep" }])}
-    <div class="kv"><span><span class="dot" style="background:var(--dem)"></span>Dem-caucus seats <b>${s.dem_seats_mean.toFixed(1)}</b> (80%: ${s.dem_seats_p10}–${s.dem_seats_p90})</span>
-      <span><span class="dot" style="background:var(--rep)"></span>GOP control <b>${fmtP(s.p_rep_control)}</b></span></div>
-    <div class="chart" id="senHist"></div>
-    <div class="legend"><span><i style="background:var(--dem)"></i>51+ Dem seats</span><span><i style="background:var(--rep)"></i>50 or fewer (VP breaks ties)</span><span><i style="background:var(--ind)"></i>Control hinges on independents (${esc(indNames)}): ${fmtP(s.p_independents_pivotal)}</span></div>`;
-  histogram($("#senHist"), s.hist, 51, "Distribution of Democratic-caucus Senate seats across simulations");
-  const pp = DATA.models.polls_fundamentals.house;
-  $("#benchNote").innerHTML = `<b>Benchmark.</b> Silver Bulletin's FLIPR model (Nov 1, free summary) gives Democrats about a 95% chance of winning the House, with a net gain of about 25 seats (≈238). This model's polls + fundamentals version: ${fmtP(pp.p_dem_majority)} and ${Math.round(pp.dem_seats_mean)} seats. FLIPR's Senate numbers are paywalled.`;
-}
-
-// ---------- tables ----------
-function sortableTable(el, cols, rows, initial) {
-  let sortKey = initial.key, dir = initial.dir;
-  function draw() {
-    const r = [...rows].sort((a, b) => {
-      const va = cols.find(c => c.key === sortKey).sort(a), vb = cols.find(c => c.key === sortKey).sort(b);
-      return (va > vb ? 1 : va < vb ? -1 : 0) * dir;
-    });
-    el.innerHTML = `<thead><tr>${cols.map(c => `<th class="${c.num ? "num " : ""}${c.sort ? "sortable" : ""}" data-k="${c.key}" scope="col">${c.label}${c.key === sortKey ? (dir > 0 ? " ▲" : " ▼") : ""}</th>`).join("")}</tr></thead>
-      <tbody>${r.map(row => `<tr>${cols.map(c => `<td class="${c.num ? "num" : ""}">${c.render(row)}</td>`).join("")}</tr>`).join("")}</tbody>`;
-    el.querySelectorAll("th.sortable").forEach(th => th.addEventListener("click", () => {
-      const k = th.dataset.k; if (k === sortKey) dir = -dir; else { sortKey = k; dir = cols.find(c => c.key === k).defaultDir || 1; }
-      draw();
-    }));
-  }
-  draw();
-}
-const pbar = (p, ind) => `<span class="pbar${ind ? " ind" : ""}" role="img" aria-label="${fmtP(p)}"><span style="width:${(p * 100).toFixed(1)}%"></span></span><span class="pval">${fmtP(p)}</span>`;
-
-function renderSenate() {
-  const M = DATA.models[model];
-  const po = Object.fromEntries(DATA.models.polls_only.senate_races.map(r => [r.race_key, r.p_dside]));
-  const cols = [
-    { key: "state", label: "Race", sort: r => r.state, render: r => `${STATE[r.state] || r.state}${r.special ? ' <span class="tag">special</span>' : ""}` },
-    { key: "dem", label: "Dem / Ind.", sort: r => r.dem || "", render: r => `${esc(r.dem)}${r.dside === "I" ? ' <span class="tag">ind.</span>' : ""}${r.inc_party === "D" && r.prior != null ? "" : ""}` },
-    { key: "rep", label: "Republican", sort: r => r.rep || "", render: r => esc(r.rep) },
-    { key: "p", label: "Chance D/I wins", sort: r => r.p_dside, defaultDir: -1, render: r => pbar(r.p_dside, r.dside === "I") },
-    { key: "mu", label: "Forecast margin", num: true, sort: r => r.mu, defaultDir: -1, render: r => fmtM(r.mu) },
-    { key: "poll", label: "Poll avg (n)", num: true, sort: r => r.poll_avg ?? -999, defaultDir: -1, render: r => r.poll_avg == null ? "—" : `${fmtM(r.poll_avg)} <span class="muted">(${r.n_polls})</span>` },
-    { key: "prior", label: "Prior", num: true, sort: r => r.prior, defaultDir: -1, render: r => r.state === "MT" ? "—" : fmtM(r.prior) },
-    { key: "pvi", label: "PVI", num: true, sort: r => r.pvi, defaultDir: -1, render: r => fmtPVI(r.pvi) },
-    { key: "cook", label: "Cook", sort: r => r.rating_cook || "", render: r => esc(r.rating_cook) },
-    { key: "silver", label: "Silver Bulletin", sort: r => r.rating_silver || "", render: r => esc(r.rating_silver) },
-  ];
-  sortableTable($("#senTable"), cols, M.senate_races, { key: "p", dir: -1 });
-}
-
-function renderHouse() {
-  const M = DATA.models[model], c = M.house_counts;
-  $("#houseIntro").innerHTML = `${c.competitive} seats have a Democratic win probability between 5% and 95% in this model. Of the rest, ${c.safe_d + c.fixed_d} are safe or certain for Democrats and ${c.safe_r + c.fixed_r} for Republicans (${c.fixed_d + c.fixed_r} are fixed: same-party top-two or no major-party opponent). Full table: <a href="data/house_${model}.csv">house_${model}.csv</a>.`;
-  const cols = [
-    { key: "label", label: "District", sort: r => r.label, render: r => r.label },
-    { key: "inc", label: "Incumbent", sort: r => r.inc, render: r => `${esc(r.inc)} <span class="muted">(${esc(r.inc_party)})</span>${r.inc_running ? "" : ' <span class="tag">open</span>'}` },
-    { key: "p", label: "Chance D wins", sort: r => r.p_dem, defaultDir: -1, render: r => pbar(r.p_dem) },
-    { key: "mu", label: "Forecast margin", num: true, sort: r => r.mu, defaultDir: -1, render: r => fmtM(r.mu) },
-    { key: "pvi", label: "PVI", num: true, sort: r => r.pvi, defaultDir: -1, render: r => fmtPVI(r.pvi) },
-    { key: "poll", label: "District polls", num: true, sort: r => r.poll_avg ?? -999, defaultDir: -1, render: r => fmtM(r.poll_avg) },
-    { key: "c", label: "Candidates (D / R)", sort: r => r.dem_cand || "", render: r => `<span class="muted">${esc(r.dem_cand)} / ${esc(r.rep_cand)}</span>` },
-  ];
-  sortableTable($("#houseTable"), cols, M.house_comp, { key: "p", dir: -1 });
-}
-
-function renderInputs() {
-  const N = DATA.national, e = N.econ;
-  const stat = (v, l) => `<div class="stat"><div class="v">${v}</div><div class="l">${l}</div></div>`;
-  $("#natStats").innerHTML =
-    stat(fmtM(N.G_polls), "Generic ballot, two-party (aggregator mean)") +
-    stat(N.approval.toFixed(1) + "%", "Trump approval (aggregator mean)") +
-    stat(fmtM(N.fundamentals_margin_D), "Fundamentals-only House environment") +
-    stat(e.unemployment.toFixed(1) + "%", `Unemployment (${e.unemp_chg_12m >= 0 ? "+" : ""}${e.unemp_chg_12m.toFixed(1)} over 12 mo)`) +
-    stat(e.cpi_yoy.toFixed(1) + "%", "CPI inflation, year over year") +
-    stat((e.rdi_pc_growth_yoy >= 0 ? "+" : "") + e.rdi_pc_growth_yoy.toFixed(1) + "%", "Real disposable income per capita, y/y");
-  $("#genTable").innerHTML = `<thead><tr><th>Aggregator</th><th class="num">Dem</th><th class="num">Rep</th><th class="num">Two-party</th></tr></thead><tbody>` +
-    N.generic_aggregators.map(r => `<tr><td>${esc(String(r["Source of poll aggregation"]).replace(/\[.*?\]/g, ""))}</td><td class="num">${r.D.toFixed(1)}</td><td class="num">${r.R.toFixed(1)}</td><td class="num">${fmtM(r.two_party)}</td></tr>`).join("") + "</tbody>";
-  $("#appTable").innerHTML = `<thead><tr><th>Aggregator</th><th class="num">Approve</th></tr></thead><tbody>` +
-    N.approval_aggregators.map(r => `<tr><td>${esc(r.Aggregator)}</td><td class="num">${esc(r.Approve)}</td></tr>`).join("") + "</tbody>";
-  $("#vhN").textContent = DATA.inputs.votehub_polls.toLocaleString();
-  const sv = DATA.sensitivity;
-  if (sv) $("#sensText").textContent = `Across the ten top fundamentals specifications (both samples), the fundamentals-only environment ranges from ${fmtM(sv.F_min)} to ${fmtM(sv.F_max)}; after blending with polls, ${fmtM(sv.G_min)} to ${fmtM(sv.G_max)}: P(Dem House) ${fmtP(sv.pH_min)}–${fmtP(sv.pH_max)}, P(Dem Senate) ${fmtP(sv.pS_min)}–${fmtP(sv.pS_max)}.`;
-}
-
-function renderBacktest() {
-  const B = DATA.backtest;
-  const stat = (v, l) => `<div class="stat"><div class="v">${v}</div><div class="l">${l}</div></div>`;
-  $("#btStats").innerHTML = ["2018", "2022"].map(c =>
-    stat(Math.round(B[c].winner_accuracy * B[c].races) + "/" + B[c].races, `${c} Senate winners called`) +
-    stat(B[c].brier.toFixed(3), `${c} Brier score (lower is better)`)).join("");
-  // calibration dot chart
-  const bins = DATA.calibration_bins;
-  $("#calTable").innerHTML = `<thead><tr><th>Forecast bin</th><th class="num">Races</th><th class="num">Avg forecast</th><th class="num">Dem win rate</th></tr></thead><tbody>` +
-    bins.map(b => `<tr><td>${b.bin}</td><td class="num">${b.n}</td><td class="num">${fmtP(b.p)}</td><td class="num">${Math.round(b.won * 100)}%</td></tr>`).join("") + "</tbody>";
-  const W = 320, H = 220, m = { l: 36, r: 10, t: 10, b: 32 };
-  const x = v => m.l + v * (W - m.l - m.r), y = v => H - m.b - v * (H - m.t - m.b);
-  const t3 = css("--text-3"), bd = css("--border"), dem = css("--dem"), surf = css("--surface");
-  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Calibration: forecast probability vs. observed Democratic win rate">`;
-  [0, .5, 1].forEach(v => {
-    s += `<line x1="${x(0)}" x2="${x(1)}" y1="${y(v)}" y2="${y(v)}" stroke="${bd}"/>`;
-    s += `<text x="${m.l - 6}" y="${y(v) + 4}" font-size="11" fill="${t3}" text-anchor="end">${v * 100}%</text>`;
-    s += `<text x="${x(v)}" y="${H - 12}" font-size="11" fill="${t3}" text-anchor="middle">${v * 100}%</text>`;
-  });
-  s += `<line x1="${x(0)}" y1="${y(0)}" x2="${x(1)}" y2="${y(1)}" stroke="${t3}" stroke-dasharray="3 3"/>`;
-  s += `<text x="${x(0.5)}" y="${H}" font-size="11" fill="${t3}" text-anchor="middle" dy="-0">forecast probability →</text>`;
-  bins.forEach((b, i) => {
-    const r = 4 + Math.sqrt(b.n) * 1.6;
-    s += `<circle cx="${x(b.p)}" cy="${y(b.won)}" r="${r}" fill="${dem}" stroke="${surf}" stroke-width="2" data-i="${i}"/>`;
+// tile map
+const TILES = {AK:[0,0],ME:[11,0],WI:[6,1],VT:[10,1],NH:[11,1],WA:[1,2],ID:[2,2],MT:[3,2],ND:[4,2],MN:[5,2],IL:[6,2],MI:[7,2],NY:[9,2],MA:[10,2],OR:[1,3],NV:[2,3],WY:[3,3],SD:[4,3],IA:[5,3],IN:[6,3],OH:[7,3],PA:[8,3],NJ:[9,3],CT:[10,3],RI:[11,3],CA:[1,4],UT:[2,4],CO:[3,4],NE:[4,4],MO:[5,4],KY:[6,4],WV:[7,4],VA:[8,4],MD:[9,4],DE:[10,4],AZ:[2,5],NM:[3,5],KS:[4,5],AR:[5,5],TN:[6,5],NC:[7,5],SC:[8,5],OK:[4,6],LA:[5,6],MS:[6,6],AL:[7,6],GA:[8,6],HI:[0,7],TX:[4,7],FL:[9,7]};
+const BINS = [[0.95, "--dem", "Safe D"], [0.80, "--d-likely", "Likely D"], [0.60, "--d-lean", "Lean D"], [0.40, "--toss", "Toss-up"], [0.20, "--r-lean", "Lean R"], [0.05, "--r-likely", "Likely R"], [-1, "--rep", "Safe R"]];
+const binOf = (p) => BINS.find(b => p >= b[0]);
+function renderMap() {
+  const races = Object.fromEntries(DATA.models[model].senate_races.map(r => [r.state, r]));
+  const S = 44, G = 4, W = 12 * (S + G), H = 8 * (S + G);
+  const off = css("--off"), t3 = css("--text-3"), txt = "#f2f0ec";
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Senate map: chance the Democrat or independent wins each race">`;
+  Object.entries(TILES).forEach(([st, [c, r]]) => {
+    const race = races[st], x = c * (S + G), y = r * (S + G);
+    const fill = race ? css(binOf(race.p_dside)[1]) : off;
+    s += `<rect class="${race ? "t" : ""}" x="${x}" y="${y}" width="${S}" height="${S}" rx="5" fill="${fill}" data-st="${st}"/>`;
+    s += `<text x="${x + S / 2}" y="${y + (race ? 19 : 27)}" font-size="${race ? 13 : 11}" font-weight="${race ? 700 : 500}" fill="${race ? txt : t3}" text-anchor="middle">${st}</text>`;
+    if (race) s += `<text x="${x + S / 2}" y="${y + 35}" font-size="10.5" fill="${txt}" text-anchor="middle" opacity=".9">${race.dside === "I" ? "I " : ""}${fmtP(race.p_dside)}</text>`;
   });
   s += `</svg>`;
-  const el = $("#calChart"); el.innerHTML = s;
-  el.querySelectorAll("circle").forEach(c => {
-    c.addEventListener("mousemove", e => { const b = bins[+c.dataset.i]; showTip(e, `<b>${b.bin}</b>: ${b.n} races<br>forecast ${fmtP(b.p)} · Dems won ${Math.round(b.won * 100)}%`); });
-    c.addEventListener("mouseleave", hideTip);
-  });
-  $("#btGen").innerHTML = `<thead><tr><th>Cycle</th><th class="num">Poll avg</th><th class="num">Actual</th><th class="num">Error</th></tr></thead><tbody>` +
-    B.generic.map(g => `<tr><td>${g.cycle}</td><td class="num">${fmtM(g.generic_avg_two_party)}</td><td class="num">${fmtM(g.actual_house_margin)}</td><td class="num">${g.error >= 0 ? "+" : ""}${g.error.toFixed(1)}</td></tr>`).join("") + "</tbody>";
-  // shared Senate miss by cycle (diverging bars around 0)
-  const cyc = DATA.error_model.sen_cycles.filter(c => c.cycle % 2 === 0);
-  const W2 = 360, H2 = 190, m2 = { l: 34, r: 8, t: 10, b: 26 };
-  const maxA = Math.max(...cyc.map(c => Math.abs(c.mean))) * 1.1;
-  const bw = (W2 - m2.l - m2.r) / cyc.length;
-  const yy = v => m2.t + (H2 - m2.t - m2.b) * (1 - (v + maxA) / (2 * maxA));
-  const rep = css("--rep");
-  let s2 = `<svg viewBox="0 0 ${W2} ${H2}" role="img" aria-label="Average Senate polling error by cycle, positive means Democrats beat their polls">`;
-  [-5, 0, 5].forEach(v => { if (Math.abs(v) <= maxA) { s2 += `<line x1="${m2.l}" x2="${W2 - m2.r}" y1="${yy(v)}" y2="${yy(v)}" stroke="${v === 0 ? t3 : bd}"/><text x="${m2.l - 6}" y="${yy(v) + 4}" font-size="11" fill="${t3}" text-anchor="end">${v > 0 ? "D+" + v : v < 0 ? "R+" + (-v) : "0"}</text>`; } });
-  cyc.forEach((c, i) => {
-    const x0 = m2.l + i * bw + 2, w = bw - 4, y0 = yy(0), y1 = yy(c.mean);
-    s2 += `<rect x="${x0}" y="${Math.min(y0, y1)}" width="${w}" height="${Math.max(1, Math.abs(y1 - y0))}" rx="2" fill="${c.mean >= 0 ? dem : rep}"/>`;
-    s2 += `<text x="${x0 + w / 2}" y="${H2 - 8}" font-size="10" fill="${t3}" text-anchor="middle">'${String(c.cycle).slice(2)}</text>`;
-    s2 += `<rect x="${m2.l + i * bw}" y="${m2.t}" width="${bw}" height="${H2 - m2.t - m2.b}" fill="transparent" data-i="${i}"/>`;
-  });
-  s2 += `</svg>`;
-  const el2 = $("#errChart"); el2.innerHTML = s2 + `<div class="legend"><span><i style="background:var(--dem)"></i>Dems beat their polls</span><span><i style="background:var(--rep)"></i>Reps beat their polls</span></div>`;
-  el2.querySelectorAll("rect[data-i]").forEach(r => {
-    r.addEventListener("mousemove", e => { const c = cyc[+r.dataset.i]; showTip(e, `<b>${c.cycle}</b>: average miss ${fmtM(c.mean)} across ${c.size} races`); });
+  const el = $("#tilemap"); el.innerHTML = s;
+  el.querySelectorAll("rect.t").forEach(r => {
+    const race = races[r.dataset.st];
+    r.addEventListener("mousemove", e => showTip(e, `<b>${STATE[race.state]}${race.special ? " (special)" : ""}</b><br>${esc(race.dem)}${race.dside === "I" ? " (I)" : ""} vs ${esc(race.rep)}<br>Chance ${race.dside === "I" ? "independent" : "Democrat"} wins: <b>${fmtP(race.p_dside)}</b> · margin ${fmtM(race.mu)}`));
     r.addEventListener("mouseleave", hideTip);
+    r.addEventListener("click", () => { hideTip(); goRace(race.race_key); });
   });
+  $("#mapLegend").innerHTML = BINS.map(b => `<span><i class="sq" style="background:var(${b[1]})"></i>${b[2]}</span>`).join("") + `<span><i class="sq" style="background:var(--off)"></i>Not up</span>` + `<span class="tiny">${MODELS[model]} model · % = chance Democrat (or independent, "I") wins</span>`;
 }
 
-function renderDownloads() {
-  const files = [
-    ["summary_polls_fundamentals.json", "Topline summary, polls + fundamentals (includes seat histograms)"],
-    ["summary_polls_only.json", "Topline summary, polls only"],
-    ["summary_polls_fundamentals_biasadj.json", "Topline summary, bias-adjusted"],
-    ["summary_scenario_polls_overstate_dems.json", "Topline summary, full-historical-bias stress test"],
-    ["bias_decay.json", "Generic-ballot bias history and decay-weighted re-estimate"],
-    ["fundamentals.json", "Fundamentals model: specifications, coefficients, 2026 inputs"],
-    ["fundamentals_dataset.csv", "Fundamentals dataset 1946–2026 (vote, approval, inflation, gas, income, unemployment)"],
-    ["error_structure.json", "Regional and lean-slope error components"],
-    ["error_sensitivity.json", "Error-structure sensitivity and implied correlations"],
-    ["bias_analysis.json", "National and state-level polling-bias analysis, 1998–2022"],
-    ["senate_polls_fundamentals.csv", "Senate race-level forecast"],
-    ["house_polls_fundamentals.csv", "House district-level forecast (all 435)"],
-    ["national_inputs.json", "National inputs: generic ballot, approval, economy, error scales"],
-    ["house_2026_races.csv", "House race structure: PVI, incumbents, candidates (from Wikipedia)"],
-    ["senate_2026_races.csv", "Senate race structure and expert ratings (from Wikipedia)"],
-    ["backtest_senate_2018_2022.csv", "Backtest: race-level 2018/2022 results"],
-    ["calibration.json", "Polling-error calibration, 1998–2022"],
+function renderWatch() {
+  const rs = [...DATA.models[model].senate_races].sort((a, b) => Math.abs(a.p_dside - 0.5) - Math.abs(b.p_dside - 0.5)).slice(0, 9)
+    .sort((a, b) => b.p_dside - a.p_dside);
+  $("#watch").innerHTML = rs.map(r => `<button type="button" data-k="${r.race_key}"><span class="st">${r.state}</span><span class="nm">${esc(r.dem)}${r.dside === "I" ? " (I)" : ""} vs ${esc(r.rep)}</span><span class="pv">${pbarMini(r.p_dside)}</span></button>`).join("");
+  $$("#watch button").forEach(b => b.addEventListener("click", () => goRace(b.dataset.k)));
+}
+const pbarMini = (p) => `<b style="color:${p >= 0.5 ? "var(--dem)" : "var(--rep)"}">${fmtP(p)}</b>`;
+
+// ---------- tables ----------
+const pbar = (p) => `<span class="pbar" role="img" aria-label="${fmtP(p)}"><span style="width:${(p * 100).toFixed(1)}%"></span></span><span class="pval">${fmtP(p)}</span>`;
+let senFilter = "comp", senSort = { key: "p", dir: -1 };
+function renderSenate() {
+  const M = DATA.models[model];
+  const all = M.senate_races;
+  const rows = all.filter(r => senFilter === "all" || (r.p_dside > 0.03 && r.p_dside < 0.97));
+  if (openRace && !rows.find(r => r.race_key === openRace)) {
+    if (senFilter !== "all" && all.find(r => r.race_key === openRace)) { senFilter = "all"; return renderSenate(); }
+    if (!all.find(r => r.race_key === openRace)) openRace = null;
+  }
+  $("#senIntro").innerHTML = `${rows.length} of 35 races shown. Chance = the Democrat (or the independent, where no Democrat is the main challenger) wins. Margins are two-party, D−R. Click a race for its polls. Model: <b>${MODEL_LONG[model]}</b>. Forecast blends the poll average (about ${Math.round(M.race_w * 100)}% weight) with the prior (2×PVI + environment + incumbency).`;
+  $$("#senFilter button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.f === senFilter)));
+  const cols = [
+    { key: "state", label: "Race", sort: r => r.state, render: r => `${STATE[r.state]}${r.special ? ' <span class="tag">special</span>' : ""}<span class="show-sm">${esc(r.dem)}${r.dside === "I" ? " (I)" : ""} vs ${esc(r.rep)}</span>` },
+    { key: "dem", label: "Dem / Ind.", cls: "hide-sm", sort: r => r.dem || "", render: r => `${esc(r.dem)}${r.dside === "I" ? ' <span class="tag">ind.</span>' : ""}` },
+    { key: "rep", label: "Republican", cls: "hide-sm", sort: r => r.rep || "", render: r => esc(r.rep) },
+    { key: "p", label: "Chance D/I wins", sort: r => r.p_dside, render: r => pbar(r.p_dside) },
+    { key: "mu", label: "Margin", num: true, sort: r => r.mu, render: r => fmtM(r.mu) },
+    { key: "poll", label: "Poll avg (n)", num: true, cls: "hide-sm", sort: r => r.poll_avg ?? -999, render: r => r.poll_avg == null ? "—" : `${fmtM(r.poll_avg)} <span class="muted">(${r.n_polls})</span>` },
+    { key: "cook", label: "Cook", cls: "hide-sm", sort: r => r.rating_cook || "", render: r => esc(r.rating_cook) },
   ];
+  const sorted = [...rows].sort((a, b) => { const c = cols.find(c => c.key === senSort.key); const va = c.sort(a), vb = c.sort(b); return (va > vb ? 1 : va < vb ? -1 : 0) * senSort.dir; });
+  const T = $("#senTable");
+  T.innerHTML = `<thead><tr>${cols.map(c => `<th class="sortable ${c.num ? "num " : ""}${c.cls || ""}" data-k="${c.key}" scope="col">${c.label}${c.key === senSort.key ? (senSort.dir > 0 ? " ▲" : " ▼") : ""}</th>`).join("")}</tr></thead><tbody>` +
+    sorted.map(r => `<tr class="race${r.race_key === openRace ? " open" : ""}" data-k="${r.race_key}" tabindex="0" aria-expanded="${r.race_key === openRace}">${cols.map(c => `<td class="${c.num ? "num " : ""}${c.cls || ""}">${c.render(r)}</td>`).join("")}</tr>` +
+      (r.race_key === openRace ? `<tr class="detail"><td colspan="${cols.length}">${raceDetail(r)}</td></tr>` : "")).join("") + "</tbody>";
+  T.querySelectorAll("th.sortable").forEach(th => th.addEventListener("click", () => { const k = th.dataset.k; senSort = k === senSort.key ? { key: k, dir: -senSort.dir } : { key: k, dir: ["state", "dem", "rep", "cook"].includes(k) ? 1 : -1 }; renderSenate(); }));
+  T.querySelectorAll("tr.race").forEach(tr => {
+    const toggle = () => { openRace = openRace === tr.dataset.k ? null : tr.dataset.k; history.replaceState(null, "", openRace ? "#senate/" + encodeURIComponent(openRace) : "#senate"); renderSenate(); };
+    tr.addEventListener("click", toggle);
+    tr.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); } });
+  });
+  const o = T.querySelector("tr.open"); if (o) o.scrollIntoView({ block: "nearest" });
+}
+function raceDetail(r) {
+  const P = (DATA.senate_polls || {})[r.race_key];
+  const left = `<div class="kvs">
+    <span>Forecast margin</span><b>${fmtM(r.mu)}</b>
+    <span>Poll average</span><span>${fmtM(r.poll_avg)}${r.n_polls ? ` (${r.n_polls} polls)` : ""}</span>
+    <span>Prior</span><span>${r.state === "MT" ? "— (3-way race)" : fmtM(r.prior)}</span>
+    <span>Weight on polls</span><span>${r.n_polls ? Math.round(r.poll_weight * 100) + "%" : "—"}</span>
+    <span>State lean (PVI)</span><span>${fmtPVI(r.pvi)}</span>
+    <span>Cook / Silver</span><span>${esc(r.rating_cook)} / ${esc(r.rating_silver)}</span></div>`;
+  let right;
+  if (!P || !P.polls.length) right = `<p class="muted small">No polls since mid-June with both nominees. The forecast rests on the prior.</p>`;
+  else right = `<table class="mini"><thead><tr><th>Ended</th><th>Pollster</th><th class="num">n</th><th class="num">${esc(r.dem.split(" ").slice(-1)[0])}</th><th class="num">${esc(r.rep.split(" ").slice(-1)[0])}</th><th class="num">Margin (2-party)</th></tr></thead><tbody>` +
+    P.polls.map(p => `<tr><td>${esc(p.end)}</td><td>${p.url ? `<a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.pollster)}</a>` : esc(p.pollster)}${p.partisan ? ` <span class="tag">${esc(p.partisan)}-sponsored</span>` : ""}</td><td class="num">${p.n ? p.n.toLocaleString() + " " + esc(p.pop) : esc(p.pop)}</td><td class="num">${p.d}</td><td class="num">${p.r}</td><td class="num">${fmtM(p.margin2)}</td></tr>`).join("") +
+    `</tbody></table><p class="tiny">${P.polls.length < P.n_total ? `Latest ${P.polls.length} of ${P.n_total} polls since mid-June. ` : ""}Source: VoteHub. Party-sponsored polls are shifted 2 pts against the sponsor in the average.</p>`;
+  return `<div class="detail-grid"><div>${left}</div><div style="overflow-x:auto">${right}</div></div>`;
+}
+$$("#senFilter button").forEach(b => b.addEventListener("click", () => { senFilter = b.dataset.f; renderSenate(); }));
+
+let houseSort = { key: "p", dir: -1 }, houseQ = "";
+function renderHouse() {
+  const M = DATA.models[model], c = M.house_counts;
+  $("#houseIntro").innerHTML = `${c.competitive} seats have a 5–95% Democratic win probability (${MODELS[model]} model). ${c.safe_d + c.fixed_d} more are safe or certain for Democrats and ${c.safe_r + c.fixed_r} for Republicans. All 435: <a href="data/house_${model}.csv">CSV</a>.`;
+  const cols = [
+    { key: "label", label: "District", sort: r => r.label, render: r => `${r.label}<span class="show-sm">${esc(r.inc)} (${esc(r.inc_party)})${r.inc_running ? "" : " · open"}</span>` },
+    { key: "inc", label: "Incumbent", cls: "hide-sm", sort: r => r.inc, render: r => `${esc(r.inc)} <span class="muted">(${esc(r.inc_party)})</span>${r.inc_running ? "" : ' <span class="tag">open</span>'}` },
+    { key: "p", label: "Chance D wins", sort: r => r.p_dem, render: r => pbar(r.p_dem) },
+    { key: "mu", label: "Margin", num: true, sort: r => r.mu, render: r => fmtM(r.mu) },
+    { key: "pvi", label: "PVI", num: true, cls: "hide-sm", sort: r => r.pvi, render: r => fmtPVI(r.pvi) },
+    { key: "poll", label: "Polls", num: true, cls: "hide-sm", sort: r => r.poll_avg ?? -999, render: r => fmtM(r.poll_avg) },
+    { key: "c", label: "Candidates (D / R)", cls: "hide-sm", sort: r => r.dem_cand || "", render: r => `<span class="muted">${esc(r.dem_cand)} / ${esc(r.rep_cand)}</span>` },
+  ];
+  const q = houseQ.toLowerCase();
+  const rows = M.house_comp.filter(r => !q || [r.label, r.inc, r.dem_cand, r.rep_cand, STATE[r.label.split("-")[0]]].join(" ").toLowerCase().includes(q));
+  const sorted = [...rows].sort((a, b) => { const cc = cols.find(x => x.key === houseSort.key); const va = cc.sort(a), vb = cc.sort(b); return (va > vb ? 1 : va < vb ? -1 : 0) * houseSort.dir; });
+  const T = $("#houseTable");
+  T.innerHTML = `<thead><tr>${cols.map(cc => `<th class="sortable ${cc.num ? "num " : ""}${cc.cls || ""}" data-k="${cc.key}">${cc.label}${cc.key === houseSort.key ? (houseSort.dir > 0 ? " ▲" : " ▼") : ""}</th>`).join("")}</tr></thead><tbody>` +
+    sorted.map(r => `<tr>${cols.map(cc => `<td class="${cc.num ? "num " : ""}${cc.cls || ""}">${cc.render(r)}</td>`).join("")}</tr>`).join("") + "</tbody>";
+  T.querySelectorAll("th.sortable").forEach(th => th.addEventListener("click", () => { const k = th.dataset.k; houseSort = k === houseSort.key ? { key: k, dir: -houseSort.dir } : { key: k, dir: ["label", "inc", "c"].includes(k) ? 1 : -1 }; renderHouse(); }));
+}
+$("#houseSearch").addEventListener("input", e => { houseQ = e.target.value; renderHouse(); });
+
+// ---------- method ----------
+function renderMethod() {
+  const F = DATA.models[FV], A = DATA.models[AD];
+  $("#wText").textContent = `Polls get ${Math.round(F.w_polls * 100)}% of the weight (${Math.round(A.w_polls * 100)}% in the adjusted model, whose polling uncertainty is smaller once the bias is taken out).`;
+  $("#raceW").textContent = `In polled Senate races the poll average gets about ${Math.round(F.race_w * 100)}% of the weight; the prior's error is 10 pts (Senate) or 6 pts (House district), the poll average's about 7.4 pts.`;
+  $("#cmpTable").innerHTML = `<thead><tr><th>Version</th><th class="num">Environment</th><th class="num">Dem House</th><th class="num">Dem seats (80%)</th><th class="num">Dem Senate</th><th class="num">Dem seats (80%)</th></tr></thead><tbody>` +
+    Object.keys(MODELS).map(k => { const X = DATA.models[k]; return `<tr><td>${MODEL_LONG[k]}</td><td class="num">${fmtM(X.G)}</td><td class="num">${fmtP(X.house.p_dem_majority)}</td><td class="num">${Math.round(X.house.dem_seats_mean)} (${X.house.dem_seats_p10}–${X.house.dem_seats_p90})</td><td class="num">${fmtP(X.senate.p_dem_control_without_osborn)}</td><td class="num">${X.senate.dem_seats_mean.toFixed(1)} (${X.senate.dem_seats_p10}–${X.senate.dem_seats_p90})</td></tr>`; }).join("") + "</tbody>";
+  const sv = DATA.sensitivity;
+  if (sv) $("#sensText").textContent = `Across the ten top fundamentals specifications, the blended environment ranges ${fmtM(sv.G_min)} to ${fmtM(sv.G_max)}: Dem House ${fmtP(sv.pH_min)}–${fmtP(sv.pH_max)}, Dem Senate ${fmtP(sv.pS_min)}–${fmtP(sv.pS_max)} (face value).`;
+}
+
+// ---------- data page ----------
+function renderData() {
+  const N = DATA.national, e = N.econ;
+  const stat = (v, l) => `<div class="stat"><div class="v">${v}</div><div class="l">${l}</div></div>`;
+  $("#natStats").innerHTML = stat(fmtM(N.G_polls), "Generic ballot (two-party)") + stat(N.approval.toFixed(1) + "%", "Trump approval") + stat(fmtM(N.fundamentals_margin_D), "Fundamentals estimate") +
+    stat((e.real_gas_change_yoy >= 0 ? "+" : "") + e.real_gas_change_yoy.toFixed(0) + "%", "Real gas price, y/y") + stat(e.cpi_yoy.toFixed(1) + "%", "CPI inflation, y/y") + stat(e.unemployment.toFixed(1) + "%", "Unemployment");
+  $("#genTable").innerHTML = `<thead><tr><th>Average</th><th class="num">Dem</th><th class="num">Rep</th><th class="num">Two-party</th></tr></thead><tbody>` +
+    N.generic_aggregators.map(r => `<tr><td>${esc(String(r["Source of poll aggregation"]).replace(/\[.*?\]/g, ""))}</td><td class="num">${r.D.toFixed(1)}</td><td class="num">${r.R.toFixed(1)}</td><td class="num">${fmtM(r.two_party)}</td></tr>`).join("") + "</tbody>";
+  $("#appTable").innerHTML = `<thead><tr><th>Average</th><th class="num">Approve</th></tr></thead><tbody>` +
+    N.approval_aggregators.filter(r => !/average/i.test(r.Aggregator)).map(r => `<tr><td>${esc(r.Aggregator)}</td><td class="num">${esc(r.Approve)}</td></tr>`).join("") + "</tbody>";
+  $("#vhN").textContent = DATA.inputs.votehub_polls.toLocaleString();
+  const files = [["summary_polls_fundamentals.json", "Topline, face value (incl. seat histograms)"], ["summary_polls_fundamentals_biasadj.json", "Topline, adjusted"], ["summary_polls_only.json", "Topline, polls only"], ["summary_scenario_polls_overstate_dems.json", "Topline, stress test"],
+    ["senate_polls_fundamentals.csv", "Senate race forecasts"], ["house_polls_fundamentals.csv", "House district forecasts (all 435)"], ["national_inputs.json", "National inputs"], ["house_2026_races.csv", "House race structure (Wikipedia)"], ["senate_2026_races.csv", "Senate race structure and ratings (Wikipedia)"],
+    ["fundamentals.json", "Fundamentals model"], ["fundamentals_dataset.csv", "Fundamentals dataset 1946–2026"], ["bias_decay.json", "Polling-bias re-estimate"], ["bias_analysis.json", "Polling-bias analysis"], ["state_econ.json", "State unemployment test"],
+    ["error_structure.json", "Error components"], ["error_sensitivity.json", "Error-structure sensitivity"], ["backtest_senate_2018_2022.csv", "Backtest races"], ["calibration.json", "Polling-error calibration"]];
   $("#dlList").innerHTML = files.map(([f, d]) => `<li><a href="data/${f}">${f}</a> — ${d}</li>`).join("");
 }
 
-function renderBias() {
-  const B = DATA.bias, hist = B.history;
-  const W = 420, H = 200, m = { l: 36, r: 8, t: 10, b: 26 };
-  const maxA = Math.max(...hist.map(c => Math.abs(c.err))) * 1.1;
-  const bw = (W - m.l - m.r) / hist.length;
+// ---------- bias ----------
+function barChart(el, items, label, fmtTip, W = 420, H = 190) {
+  const m = { l: 36, r: 8, t: 10, b: 24 };
+  const maxA = Math.max(...items.map(c => Math.abs(c.v))) * 1.12;
+  const bw = (W - m.l - m.r) / items.length;
   const yy = v => m.t + (H - m.t - m.b) * (1 - (v + maxA) / (2 * maxA));
   const dem = css("--dem"), rep = css("--rep"), t3 = css("--text-3"), bd = css("--border");
-  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Generic-ballot polling miss by election, two-party">`;
-  [-6, -3, 0, 3].forEach(v => { if (Math.abs(v) <= maxA) s += `<line x1="${m.l}" x2="${W - m.r}" y1="${yy(v)}" y2="${yy(v)}" stroke="${v === 0 ? t3 : bd}"/><text x="${m.l - 6}" y="${yy(v) + 4}" font-size="11" fill="${t3}" text-anchor="end">${v > 0 ? "D+" + v : v < 0 ? "R+" + (-v) : "0"}</text>`; });
-  hist.forEach((c, i) => {
-    const x0 = m.l + i * bw + 2, w = bw - 4, y0 = yy(0), y1 = yy(c.err);
-    s += `<rect x="${x0}" y="${Math.min(y0, y1)}" width="${w}" height="${Math.max(1, Math.abs(y1 - y0))}" rx="2" fill="${c.err >= 0 ? dem : rep}" opacity="${c.midterm ? 1 : 0.45}"/>`;
-    s += `<text x="${x0 + w / 2}" y="${H - 8}" font-size="10" fill="${t3}" text-anchor="middle">'${String(c.cycle).slice(2)}</text>`;
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${label}">`;
+  [-6, -3, 0, 3, 6].forEach(v => { if (Math.abs(v) <= maxA) s += `<line x1="${m.l}" x2="${W - m.r}" y1="${yy(v)}" y2="${yy(v)}" stroke="${v === 0 ? t3 : bd}"/><text x="${m.l - 6}" y="${yy(v) + 4}" font-size="11" fill="${t3}" text-anchor="end">${v > 0 ? "D+" + v : v < 0 ? "R+" + (-v) : "0"}</text>`; });
+  items.forEach((c, i) => {
+    const x0 = m.l + i * bw + 2, w = bw - 4, y0 = yy(0), y1 = yy(c.v);
+    s += `<rect x="${x0}" y="${Math.min(y0, y1)}" width="${w}" height="${Math.max(1, Math.abs(y1 - y0))}" rx="2" fill="${c.v >= 0 ? dem : rep}" opacity="${c.faded ? 0.45 : 1}"/>`;
+    s += `<text x="${x0 + w / 2}" y="${H - 8}" font-size="10" fill="${t3}" text-anchor="middle">'${String(c.k).slice(2)}</text>`;
     s += `<rect x="${m.l + i * bw}" y="${m.t}" width="${bw}" height="${H - m.t - m.b}" fill="transparent" data-i="${i}"/>`;
   });
-  s += `</svg>`;
-  const el = $("#biasChart");
-  el.innerHTML = s + `<div class="legend"><span><i style="background:var(--dem)"></i>Dems beat polls</span><span><i style="background:var(--rep)"></i>Reps beat polls</span><span><i style="background:var(--rep);opacity:.45"></i>presidential year (faded)</span></div>`;
-  el.querySelectorAll("rect[data-i]").forEach(r => {
-    r.addEventListener("mousemove", e => { const c = hist[+r.dataset.i]; showTip(e, `<b>${c.cycle}</b> (${c.president}, ${c.midterm ? "midterm" : "presidential"})<br>polls ${fmtM(c.poll)} · result ${fmtM(c.act)} · miss ${c.err >= 0 ? "+" : ""}${c.err.toFixed(1)}`); });
-    r.addEventListener("mouseleave", hideTip);
-  });
+  el.innerHTML = s + `</svg>`;
+  el.querySelectorAll("rect[data-i]").forEach(r => { r.addEventListener("mousemove", e => showTip(e, fmtTip(items[+r.dataset.i]))); r.addEventListener("mouseleave", hideTip); });
+}
+function renderBias() {
+  const B = DATA.bias, hist = B.history;
+  barChart($("#biasChart"), hist.map(c => ({ k: c.cycle, v: c.err, faded: !c.midterm, c })), "Generic-ballot polling miss by election",
+    it => `<b>${it.c.cycle}</b> (${it.c.president}, ${it.c.midterm ? "midterm" : "presidential"})<br>polls ${fmtM(it.c.poll)} · result ${fmtM(it.c.act)} · miss ${it.c.err >= 0 ? "+" : ""}${it.c.err.toFixed(1)}`);
+  $("#biasChart").insertAdjacentHTML("beforeend", `<div class="legend"><span><i class="sq" style="background:var(--dem)"></i>Dems beat polls</span><span><i class="sq" style="background:var(--rep)"></i>Reps beat polls</span><span><i class="sq" style="background:var(--rep);opacity:.45"></i>presidential year</span></div>`);
   const stat = (v, l) => `<div class="stat"><div class="v">${v}</div><div class="l">${l}</div></div>`;
-  const nDem = hist.filter(c => c.err < 0).length;
-  $("#biasStats").innerHTML = stat(B.flat_mean.toFixed(1), "Flat mean miss, 1998–2022 (two-party)") + stat(`${nDem}/${hist.length}`, "Elections where polls overstated Democrats") +
-    stat(B.decay_estimate.toFixed(1), "Decay-weighted estimate for 2026") + stat(DATA.models.polls_fundamentals_biasadj.shift.toFixed(1), "Shift used by the bias-adjusted model (after 1-pt likely-voter discount)");
-  const label = c => c === "(mean only)" ? "none (decay-weighted mean)" : c.replace("pres_D", "Democratic president").replace("house_D", "Democratic House").replace("second_term", "second term").split("+").join(" + ");
+  $("#biasStats").innerHTML = stat(B.flat_mean.toFixed(1), "Average miss, 1998–2022") + stat(`${hist.filter(c => c.err < 0).length}/${hist.length}`, "Elections polls overstated Dems") +
+    stat(B.decay_estimate.toFixed(1), "Recency-weighted estimate") + stat(DATA.models[AD].shift.toFixed(1), "Shift used by Adjusted");
+  $("#biasText").textContent = `The recency-weighted estimate ranges ${B.decay_range[0].toFixed(1)} to ${B.decay_range[1].toFixed(1)} across specifications; party in the White House, House incumbency, second terms and president-specific effects all make out-of-sample prediction worse. The Adjusted model applies the estimate less 1 pt, because today's averages already screen for likely voters (which ran 1–1.5 pts less Democratic than registered-voter polls in 2020 and 2022). The spread is wide: 2018's +0.5 is only about 1.3 SD from the estimate.`;
+  const label = c => c === "(mean only)" ? "none (recency-weighted mean)" : c.replace("pres_D", "Democratic president").replace("house_D", "Democratic House").replace("second_term", "second term").split("+").join(" + ");
   $("#biasSpecs").innerHTML = `<thead><tr><th>Covariate (half-life 10 yrs, midterms ×2)</th><th class="num">2026 estimate</th><th class="num">Predictive SD</th><th class="num">Leave-one-out RMSE</th></tr></thead><tbody>` +
     B.covariate_specs.map(r => `<tr><td>${label(r.covariates)}</td><td class="num">${r.pred_2026.toFixed(1)}</td><td class="num">${r.pred_sd.toFixed(1)}</td><td class="num">${r.loo_rmse_weighted.toFixed(2)}</td></tr>`).join("") + "</tbody>";
-  $("#biasText").textContent = `Every covariate raises the out-of-sample error; the best specifications are decay-weighted means, which land between ${B.decay_range[0].toFixed(1)} and ${B.decay_range[1].toFixed(1)}. With 13 elections and a predictive SD near 2.6, 2018's +0.5 is about 1.3 SD from the estimate: not a refutation, a reminder of the spread. The likely-voter discount of 1 pt is a judgment call: in 538's archive, likely-voter generic polls ran 1.1–1.7 pts less Democratic than registered-voter polls in 2020 and 2022 (about equal in 2018).`;
   const st = B.state;
-  $("#leanText").textContent = `Across 584 Senate and governor races, results since 2010 have landed further toward the state's partisan lean than the final poll averages: ${st.post2010.slope.toFixed(3)} pts per point of lean (clustered SE ${st.post2010.se_cluster.toFixed(3)}), about equal in Republican-leaning (${st.post2010_asym.leanR.slope.toFixed(3)}) and Democratic-leaning (${st.post2010_asym.leanD.slope.toFixed(3)}) states. In a real-time backtest (fit on 2010 through the prior election, tested 2014–2022) a symmetric correction cut race-level RMSE from ${st.realtime_rmse.none.toFixed(2)} to ${st.realtime_rmse.sym.toFixed(2)} and raised winners called from ${fmtP(st.realtime_winner.none)} to ${fmtP(st.realtime_winner.sym)}. This is a pattern in outcomes, not evidence about differential non-response by party: none of the sources used here records response rates. It is not applied in the published models.`;
+  $("#leanText").textContent = `Across 584 Senate and governor races, results since 2010 have landed further toward the state's partisan lean than the final polls: ${st.post2010.slope.toFixed(3)} pts per point of lean (SE ${st.post2010.se_cluster.toFixed(3)}), about equal in red (${st.post2010_asym.leanR.slope.toFixed(3)}) and blue (${st.post2010_asym.leanD.slope.toFixed(3)}) states. A real-time backtest (2014–2022) of a correction cut race-level RMSE from ${st.realtime_rmse.none.toFixed(2)} to ${st.realtime_rmse.sym.toFixed(2)}. This is an outcome pattern, not evidence about party response rates (no source here records those). Not applied.`;
 }
 
+// ---------- backtest ----------
+function renderBacktest() {
+  const B = DATA.backtest;
+  const stat = (v, l) => `<div class="stat"><div class="v">${v}</div><div class="l">${l}</div></div>`;
+  $("#btStats").innerHTML = ["2018", "2022"].map(c => stat(Math.round(B[c].winner_accuracy * B[c].races) + "/" + B[c].races, `${c} Senate winners called`) + stat(B[c].brier.toFixed(3), `${c} Brier score`)).join("");
+  const bins = DATA.calibration_bins;
+  $("#calTable").innerHTML = `<thead><tr><th>Forecast bin</th><th class="num">Races</th><th class="num">Avg forecast</th><th class="num">Dem win rate</th></tr></thead><tbody>` +
+    bins.map(b => `<tr><td>${b.bin}</td><td class="num">${b.n}</td><td class="num">${fmtP(b.p)}</td><td class="num">${Math.round(b.won * 100)}%</td></tr>`).join("") + "</tbody>";
+  const W = 320, H = 210, m = { l: 36, r: 10, t: 10, b: 30 };
+  const x = v => m.l + v * (W - m.l - m.r), y = v => H - m.b - v * (H - m.t - m.b);
+  const t3 = css("--text-3"), bd = css("--border"), teal = css("--teal"), surf = css("--surface");
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Calibration">`;
+  [0, .5, 1].forEach(v => { s += `<line x1="${x(0)}" x2="${x(1)}" y1="${y(v)}" y2="${y(v)}" stroke="${bd}"/><text x="${m.l - 6}" y="${y(v) + 4}" font-size="11" fill="${t3}" text-anchor="end">${v * 100}%</text><text x="${x(v)}" y="${H - 14}" font-size="11" fill="${t3}" text-anchor="middle">${v * 100}%</text>`; });
+  s += `<line x1="${x(0)}" y1="${y(0)}" x2="${x(1)}" y2="${y(1)}" stroke="${t3}" stroke-dasharray="3 3"/><text x="${x(0.5)}" y="${H - 1}" font-size="11" fill="${t3}" text-anchor="middle">forecast → actual Dem win rate ↑</text>`;
+  bins.forEach((b, i) => { s += `<circle cx="${x(b.p)}" cy="${y(b.won)}" r="${4 + Math.sqrt(b.n) * 1.6}" fill="${teal}" stroke="${surf}" stroke-width="2" data-i="${i}"/>`; });
+  const el = $("#calChart"); el.innerHTML = s + `</svg>`;
+  el.querySelectorAll("circle").forEach(c => { c.addEventListener("mousemove", e => { const b = bins[+c.dataset.i]; showTip(e, `<b>${b.bin}</b>: ${b.n} races<br>forecast ${fmtP(b.p)} · Dems won ${Math.round(b.won * 100)}%`); }); c.addEventListener("mouseleave", hideTip); });
+  $("#btGen").innerHTML = `<thead><tr><th>Generic ballot</th><th class="num">Poll avg</th><th class="num">Actual</th><th class="num">Miss</th></tr></thead><tbody>` +
+    B.generic.map(g => `<tr><td>${g.cycle}</td><td class="num">${fmtM(g.generic_avg_two_party)}</td><td class="num">${fmtM(g.actual_house_margin)}</td><td class="num">${g.error >= 0 ? "+" : ""}${g.error.toFixed(1)}</td></tr>`).join("") + "</tbody>";
+  const cyc = DATA.error_model.sen_cycles.filter(c => c.cycle % 2 === 0);
+  barChart($("#errChart"), cyc.map(c => ({ k: c.cycle, v: c.mean, c })), "Average Senate polling miss by cycle", it => `<b>${it.c.cycle}</b>: average miss ${fmtM(it.c.mean)} across ${it.c.size} races`, 380, 210);
+}
+
+// ---------- appendix ----------
 function renderAppendix() {
   const F = DATA.fund, E = DATA.errors;
   const VN = { approval: "Approval", prev: "Previous House margin", infl: "Inflation", gas: "Real gas change", rdi: "Real income growth", unemp: "Unemployment change", unemp_level: "Unemployment level", midterm: "Midterm", const: "Constant" };
@@ -586,45 +633,33 @@ function renderAppendix() {
   });
   $("#fundTop").innerHTML = `<thead><tr><th>Sample</th><th>Predictors</th><th class="num">Weight</th><th class="num">LOO RMSE</th><th>Coefficients (SE), pts of margin</th><th class="num">2026 (D−R)</th></tr></thead><tbody>${rows.join("")}</tbody>`;
   const a = F.all_1962_2022, mm = F.midterms_1962_2022;
-  $("#fundTopNote").textContent = `Averaged 2026 estimate: ${fmtM(-a.pred_2026_pres_party)} (all elections; LOO RMSE ${a.loo_rmse_avg.toFixed(1)}) and ${fmtM(-mm.pred_2026_pres_party)} (midterms only; ${mm.loo_rmse_avg.toFixed(1)}). A no-predictor model has LOO RMSE ${a.null_loo_rmse.toFixed(1)} and ${mm.null_loo_rmse.toFixed(1)}. The forecast uses the all-elections average with SD 4.5 (LOO RMSE inflated about 15% for specification search and for 2026 inputs outside the historical range). Approval uses Gallup; the 2026 aggregator mean is adjusted by Gallup's average house effect (${F.gallup_offset.toFixed(1)} pts, 2017–2024). Coefficients are stable when 1974, 1980 or 2022 is dropped.`;
+  $("#fundTopNote").textContent = `Averaged 2026 estimate: ${fmtM(-a.pred_2026_pres_party)} (all elections; LOO RMSE ${a.loo_rmse_avg.toFixed(1)}) and ${fmtM(-mm.pred_2026_pres_party)} (midterms only; ${mm.loo_rmse_avg.toFixed(1)}); no-predictor models have ${a.null_loo_rmse.toFixed(1)} and ${mm.null_loo_rmse.toFixed(1)}. The forecast uses the all-elections average with SD 4.5 (LOO RMSE inflated ~15% for specification search and out-of-range inputs). Approval is Gallup; the 2026 aggregator mean is adjusted by Gallup's average house effect (${F.gallup_offset.toFixed(1)} pts). The previous-margin coefficient near 0.8–1.0 reflects persistence (seat exposure carries forward). Coefficients are stable when 1974, 1980 or 2022 is dropped.`;
   const req = a.requested_specs;
-  $("#fundReq").innerHTML = `<thead><tr><th>Specification (all elections + midterm dummy)</th><th class="num">LOO RMSE</th><th>Inflation coef.</th><th>Real gas coef.</th><th class="num">2026 (D−R)</th></tr></thead><tbody>` +
-    Object.keys(req).map(k => { const r = req[k]; const c = (v) => r.coef[v] == null ? "—" : `${r.coef[v] >= 0 ? "+" : ""}${r.coef[v].toFixed(2)} <span class="muted">(±${r.se[v].toFixed(2)})</span>`;
-      return `<tr><td>${k.split(" + ").map(v => VN[v]).join(" + ")}</td><td class="num">${r.loo_rmse.toFixed(2)}</td><td>${c("infl")}</td><td>${c("gas")}</td><td class="num">${fmtM(-r.pred_2026)}</td></tr>`; }).join("") + "</tbody>";
-  $("#fundReqNote").textContent = `Inflation adds nothing once approval and the previous result are in the model: its coefficient is near zero with a large standard error, and it raises the out-of-sample error. Inflation's effect appears to run through approval. Real gas prices have the expected sign (higher prices hurt the president's party, about −0.08 pts per 1% rise) and enter the best all-elections specification, but the coefficient is only about 1.5 standard errors from zero. This year's 29% real rise contributes roughly 2 pts toward Democrats in specifications that include it. Inflation and real gas changes are correlated (r ≈ 0.5).`;
+  const c = (r, v) => r.coef[v] == null ? "—" : `${r.coef[v] >= 0 ? "+" : ""}${r.coef[v].toFixed(2)} <span class="muted">(±${r.se[v].toFixed(2)})</span>`;
+  $("#fundReq").innerHTML = `<thead><tr><th>Specification (all elections + midterm dummy)</th><th class="num">LOO RMSE</th><th>Inflation</th><th>Real gas</th><th>Unemp. change</th><th>Unemp. level</th><th class="num">2026 (D−R)</th></tr></thead><tbody>` +
+    Object.keys(req).map(k => { const r = req[k]; return `<tr><td>${k.split(" + ").map(v => VN[v]).join(" + ")}</td><td class="num">${r.loo_rmse.toFixed(2)}</td><td>${c(r, "infl")}</td><td>${c(r, "gas")}</td><td>${c(r, "unemp")}</td><td>${c(r, "unemp_level")}</td><td class="num">${fmtM(-r.pred_2026)}</td></tr>`; }).join("") + "</tbody>";
+  $("#fundReqNote").textContent = `Inflation adds nothing once approval and the previous result are in the model (its effect appears to run through approval). Real gas prices have the expected sign (about −0.08 pts per 1% rise for the president's party) and enter the best specification, but only ~1.5 SE from zero; this year's 29% real rise contributes about 2 pts toward Democrats where included.`;
   const U = DATA.state_econ, ru = a.requested_specs["approval + prev + unemp"], rl = a.requested_specs["approval + prev + unemp_level"];
   const mU = mm.requested_specs["approval + prev + unemp"], mL = mm.requested_specs["approval + prev + unemp_level"];
-  $("#unempNote").textContent = `National: the 12-month change in unemployment has coefficient ${mU.coef.unemp.toFixed(2)} (±${mU.se.unemp.toFixed(2)}) in midterms and ${ru.coef.unemp.toFixed(2)} (±${ru.se.unemp.toFixed(2)}) across all elections; the September level has ${mL.coef.unemp_level.toFixed(2)} (±${mL.se.unemp_level.toFixed(2)}) and ${rl.coef.unemp_level.toFixed(2)} (±${rl.se.unemp_level.toFixed(2)}). Both have the expected sign (worse job markets hurt the president's party) but are within about 1.5 SE of zero; each enters one of the averaged specifications with about 19% weight. 2026 unemployment (4.2%, down 0.2 over the year) is unremarkable, so these terms barely move the estimate. State level (${U.n_races} Senate and governor races, 1998–2022): relative to state lean and the national environment, a state whose unemployment rose more than the nation's showed ${U.struct.coef >= 0 ? "+" : ""}${U.struct.coef.toFixed(2)} pts (cluster SE ${U.struct.se_cluster.toFixed(2)}) for the out-party, the wrong sign, with no gain in held-out accuracy, so the Senate prior's state-economy term is set to ${U.coef_used.toFixed(1)} (it was an assumed 0.5). Against final poll averages the effect is ${U.miss.coef >= 0 ? "+" : ""}${U.miss.coef.toFixed(2)} (SE ${U.miss.se_cluster.toFixed(2)}): polls may slightly understate a local-economy penalty, but the held-out improvement is 0.1%, so it isn't applied.`;
-  const rc = a.range_check;
-  $("#fundRange").innerHTML = `<thead><tr><th>Input</th><th class="num">Historical min</th><th class="num">Historical max</th><th class="num">2026</th><th></th></tr></thead><tbody>` +
-    ["approval", "prev", "infl", "gas", "rdi", "unemp", "unemp_level"].map(v => { const r = rc[v]; const out = r["2026"] < r.min || r["2026"] > r.max; return `<tr><td>${VN[v]}</td><td class="num">${r.min.toFixed(1)}</td><td class="num">${r.max.toFixed(1)}</td><td class="num">${r["2026"].toFixed(1)}</td><td>${out ? '<span class="tag">outside range</span>' : ""}</td></tr>`; }).join("") + "</tbody>";
+  $("#unempNote").textContent = `Unemployment: the 12-month change has ${mU.coef.unemp.toFixed(2)} (±${mU.se.unemp.toFixed(2)}) in midterms and ${ru.coef.unemp.toFixed(2)} (±${ru.se.unemp.toFixed(2)}) across all elections; the level has ${mL.coef.unemp_level.toFixed(2)} (±${mL.se.unemp_level.toFixed(2)}) and ${rl.coef.unemp_level.toFixed(2)} (±${rl.se.unemp_level.toFixed(2)}). Expected sign, within ~1.5 SE of zero. State level (${U.n_races} races): a state whose unemployment rose more than the nation's showed ${U.struct.coef >= 0 ? "+" : ""}${U.struct.coef.toFixed(2)} pts (SE ${U.struct.se_cluster.toFixed(2)}) for the out-party relative to lean and environment — wrong sign, no held-out gain — so the Senate prior's state-economy term is ${U.coef_used.toFixed(1)}. Against final polls the effect is ${U.miss.coef >= 0 ? "+" : ""}${U.miss.coef.toFixed(2)} (SE ${U.miss.se_cluster.toFixed(2)}), but the held-out gain is 0.1%, so it isn't applied.`;
+  const rc = mm.range_check;
+  $("#fundRange").innerHTML = `<thead><tr><th>Input</th><th class="num">Midterm min</th><th class="num">Midterm max</th><th class="num">2026</th><th></th></tr></thead><tbody>` +
+    ["approval", "prev", "infl", "gas", "rdi", "unemp", "unemp_level"].map(v => { const r = rc[v]; if (!r) return ""; const out = r["2026"] < r.min || r["2026"] > r.max; return `<tr><td>${VN[v]}</td><td class="num">${r.min.toFixed(1)}</td><td class="num">${r.max.toFixed(1)}</td><td class="num">${r["2026"].toFixed(1)}</td><td>${out ? '<span class="tag" style="border-color:var(--ochre);color:var(--ochre)">outside range</span>' : ""}</td></tr>`; }).join("") + "</tbody>";
   const stat = (v, l) => `<div class="stat"><div class="v">${v}</div><div class="l">${l}</div></div>`;
-  const M = DATA.models.polls_fundamentals;
-  $("#errStats").innerHTML = stat(M.sd_nat_house.toFixed(1), "National SD, House (pts, after fundamentals blend)") + stat(M.sd_nat_senate.toFixed(1), "National SD, Senate") +
-    stat(E.structure.sigma_region.toFixed(1), "Census-region shock SD") + stat(E.structure.lean_slope.all.sd_true.toFixed(3), "Lean-slope SD (pts per pt of lean)");
+  const M = DATA.models[FV];
+  $("#errStats").innerHTML = stat(M.sd_nat_house.toFixed(1), "National SD, House (after blend)") + stat(M.sd_nat_senate.toFixed(1), "National SD, Senate") + stat(E.structure.sigma_region.toFixed(1), "Region shock SD") + stat(E.structure.lean_slope.all.sd_true.toFixed(3), "Lean-slope SD");
   const s = E.sensitivity, pairs = Object.keys(s.estimated.corr_pairs);
   const nm = k => k.replace(/-sp/g, " (sp.)").replace("~", " – ");
-  $("#corrTable").innerHTML = `<thead><tr><th>Pair</th><th class="num">National factor only</th><th class="num">Estimated structure</th><th class="num">Strong regional factor (2 pts)</th></tr></thead><tbody>` +
+  $("#corrTable").innerHTML = `<thead><tr><th>Pair</th><th class="num">National only</th><th class="num">Estimated</th><th class="num">Strong regional (2 pts)</th></tr></thead><tbody>` +
     pairs.map(p => `<tr><td>${nm(p)}</td><td class="num">${s.national_only.corr_pairs[p].toFixed(2)}</td><td class="num">${s.estimated.corr_pairs[p].toFixed(2)}</td><td class="num">${s.strong_region_2pt.corr_pairs[p].toFixed(2)}</td></tr>`).join("") +
-    `<tr><td><b>P(Dem Senate)</b></td><td class="num">${fmtP(s.national_only.p_dem_senate)}</td><td class="num">${fmtP(s.estimated.p_dem_senate)}</td><td class="num">${fmtP(s.strong_region_2pt.p_dem_senate)}</td></tr>` +
-    `<tr><td><b>Dem Senate seats, 80% range</b></td><td class="num">${s.national_only.senate_p10}–${s.national_only.senate_p90}</td><td class="num">${s.estimated.senate_p10}–${s.estimated.senate_p90}</td><td class="num">${s.strong_region_2pt.senate_p10}–${s.strong_region_2pt.senate_p90}</td></tr></tbody>`;
-  $("#corrNote").textContent = `The regional component estimated from 1998–2022 statewide races is small: Census-region cells vary barely more than sampling noise would produce (cell-mean variance ${E.structure.var_cell_means.toFixed(2)} vs. noise ${E.structure.cell_noise_var.toFixed(2)}). Past correlated misses (2016, 2020) ran along education and partisanship rather than geography, which the lean slope partly captures. Same-region pairs (Michigan, Ohio, Iowa) gain correlation under a strong regional factor; pairs in different regions don't. Control probabilities move by only 1–2 points across structures, because the national factor dominates. The 2018/2022 backtest scores races one at a time, so it can't validate the joint structure.`;
+    `<tr><td><b>Dem Senate</b></td><td class="num">${fmtP(s.national_only.p_dem_senate)}</td><td class="num">${fmtP(s.estimated.p_dem_senate)}</td><td class="num">${fmtP(s.strong_region_2pt.p_dem_senate)}</td></tr></tbody>`;
+  $("#corrNote").textContent = `The regional component is small: region-by-cycle averages vary barely more than sampling noise (${E.structure.var_cell_means.toFixed(2)} vs ${E.structure.cell_noise_var.toFixed(2)}). Past correlated misses ran along education and partisanship more than geography, which the lean slope partly captures. Control odds move 1–2 pts across structures because the national factor dominates. The backtest scores races one at a time, so it can't validate the joint structure.`;
 }
 
-function renderAll() { renderHero(); renderSenate(); renderHouse(); renderInputs(); renderAppendix(); renderBias(); renderBacktest(); renderDownloads(); }
-
-document.querySelectorAll("#modelSeg button").forEach(b => {
-  b.setAttribute("aria-pressed", String(b.dataset.m === model));
-  b.addEventListener("click", () => {
-    model = b.dataset.m;
-    try { localStorage.setItem("pf-model", model); } catch (e) {}
-    document.querySelectorAll("#modelSeg button").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
-    renderHero(); renderSenate(); renderHouse();
-  });
-});
+// ---------- init ----------
 $("#gen").textContent = "Updated " + DATA.generated;
-renderAll();
-matchMedia("(prefers-color-scheme: dark)").addEventListener("change", renderAll);
+renderModelSegs(); renderOverview(); renderMap(); renderWatch(); renderHouse(); renderMethod(); renderData(); renderBias(); renderBacktest(); renderAppendix();
+route();
 </script>
 </body>
 </html>

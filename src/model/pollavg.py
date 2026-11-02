@@ -150,3 +150,28 @@ def senate_multi(polls, race, since="2026-08-01", half_life=21):
             others = [v for k, v in a.items() if k != rl]
             rows.append((x, max(others) - a[rl]))
     return weighted_avg(rows, half_life)
+
+
+def senate_poll_list(polls, races, since="2026-06-15", limit=12):
+    """Latest matched polls per Senate race, for display (same matching rules as the averages)."""
+    out = {}
+    for _, r in races.iterrows():
+        dn, rn = r.get("dem_nominee"), r.get("rep_nominee")
+        if not isinstance(dn, str) or not isinstance(rn, str):
+            continue
+        dl, rl = lastname(dn), lastname(rn)
+        rows = []
+        for x in polls:
+            if x["poll_type"] != "us-senator" or x["subject"] != f"2026 {r['state_name']}" or x["end"] < pd.Timestamp(since):
+                continue
+            a = {lastname(y["choice"]): y["pct"] for y in x["answers"]}
+            if dl in a and rl in a:
+                others = [y for y in x["answers"] if lastname(y["choice"]) not in (dl, rl)]
+                rows.append({"end": x["end_date"], "start": x.get("start_date"), "pollster": x["pollster"],
+                             "n": x.get("sample_size"), "pop": (x.get("population") or "").upper(),
+                             "d": a[dl], "r": a[rl], "other": round(sum(y["pct"] for y in others), 1) if others else None,
+                             "partisan": x.get("partisan"), "sponsors": x.get("sponsors") or [], "url": x.get("url"),
+                             "margin2": round(two_party(a[dl], a[rl]), 1)})
+        rows.sort(key=lambda z: z["end"], reverse=True)
+        out[r["race_key"]] = {"n_total": len(rows), "polls": rows[:limit]}
+    return out

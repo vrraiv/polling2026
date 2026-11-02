@@ -80,6 +80,11 @@ def main():
                      "slope_by_cycle": bstate["slope_by_cycle"]}
     cal = json.loads((PROC / "calibration.json").read_text())
     h_int = pd.read_csv(ROOT / "data/interim/house_2026_races.csv")
+    sys.path.insert(0, str(ROOT / "src" / "model")); sys.path.insert(0, str(ROOT / "src" / "collect"))
+    import pollavg as P
+    from forecast import senate_races
+    vh = P.load_votehub()
+    poll_lists = P.senate_poll_list(vh, senate_races(vh))
     data = {
         "generated": dt.datetime.now().strftime("%Y-%m-%d %H:%M"),
         "models": models,
@@ -88,6 +93,7 @@ def main():
         "calibration_bins": [{"bin": str(r.bin), "n": int(r.n), "p": float(r.p), "won": float(r.won)} for _, r in calib.iterrows()],
         "sensitivity": sens,
         "bias": bias,
+        "senate_polls": poll_lists,
         "fund": json.loads((PROC / "fundamentals.json").read_text()),
         "state_econ": json.loads((PROC / "state_econ.json").read_text()),
         "errors": {"structure": json.loads((PROC / "error_structure.json").read_text()),
@@ -108,6 +114,10 @@ def main():
     shutil.copy(ROOT / "data/interim/fundamentals_dataset.csv", SITE / "data" / "fundamentals_dataset.csv")
     html = TEMPLATE.read_text(encoding="utf-8").replace("/*__DATA__*/null", json.dumps(data, default=clean).replace("</", "<\\/"))
     (SITE / "index.html").write_text(html, encoding="utf-8")
+    shutil.copy(Path(__file__).with_name("favicon.svg"), SITE / "favicon.svg")
+    og = Path(__file__).with_name("og.png")
+    if og.exists():
+        shutil.copy(og, SITE / "og.png")
     (SITE / "404.html").write_text('<!doctype html><meta charset="utf-8"><title>Not found</title>'
                                    '<p style="font-family:system-ui;padding:2rem">Not found. <a href="/">Back to the forecast</a></p>',
                                    encoding="utf-8")
