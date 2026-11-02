@@ -415,7 +415,43 @@ def simulate(h, s, sd_nat_house, sd_nat_senate=None, sigma_region=None):
                    "p_independents_pivotal": float(((d_total < 51) & (d_total + ind_win >= 51)).mean()),
                    "hist": np.bincount(d_total, minlength=101).tolist()},
     }
+    res["senate"]["reading"] = senate_reading(s, swin, sm, is_ind, d_total, keys)
     return h, s, res
+
+
+def senate_reading(s, swin, sm, is_ind, d_total, keys):
+    """How to read race probabilities as a map: the all-favorites map and how often it happens, the most common
+    exact maps, upsets per simulation, and the tipping-point race (the one that delivers the 51st Dem seat)."""
+    p = swin.mean(0)
+    fav = p > 0.5
+    comp = (p > 0.05) & (p < 0.95)
+    ck = [k for k, c in zip(keys, comp) if c]
+    upsets = (swin[:, comp] != fav[comp][None, :]).sum(1)
+    fav_map = (swin[:, comp] == fav[comp][None, :]).all(1)
+    rows, inv, cnt = np.unique(swin[:, comp], axis=0, return_inverse=True, return_counts=True)
+    inv = np.asarray(inv).ravel()
+    top = np.argsort(-cnt)[:5]
+    maps = []
+    for t in top:
+        sel = inv == t
+        diff = [{"race": k, "winner": ("I" if is_ind[comp][j] else "D") if rows[t][j] else "R"}
+                for j, k in enumerate(ck) if rows[t][j] != fav[comp][j]]
+        maps.append({"p": float(cnt[t] / len(inv)), "upsets": diff, "dem_seats": int(np.median(d_total[sel])),
+                     "ind_wins": int(rows[t][is_ind[comp]].sum())})
+    need = 51 - SENATE_NOT_UP["D"]
+    dm = sm[:, ~is_ind]
+    dkeys = [k for k, i in zip(keys, is_ind) if not i]
+    tp_idx = np.argsort(-dm, axis=1)[:, need - 1]
+    tp = np.bincount(tp_idx, minlength=len(dkeys)) / len(tp_idx)
+    order = np.argsort(-tp)[:5]
+    return {"n_comp": int(comp.sum()), "comp_races": ck,
+            "fav_dem": int((fav & ~is_ind).sum()), "fav_ind": int((fav & is_ind).sum()),
+            "seats_if_favorites_win": int(SENATE_NOT_UP["D"] + (fav & ~is_ind).sum()),
+            "p_favorites_map": float(fav_map.mean()), "upsets_mean": float(upsets.mean()),
+            "p_upsets": [float((upsets == k).mean()) for k in range(6)],
+            "expected_comp_dem_wins": float(p[comp & ~is_ind].sum()),
+            "maps": maps,
+            "tipping_point": [{"race": dkeys[i], "p": float(tp[i])} for i in order]}
 
 
 def run(model, shift=0.0, tag=None, bias_removed=False, sigma_region=None, senate_shift=None, use_lean=False,

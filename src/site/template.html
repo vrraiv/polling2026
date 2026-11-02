@@ -167,6 +167,7 @@ footer a { color: var(--text-2); }
       <span class="lab">Closest Senate races</span>
       <div class="watch" id="watch" style="margin-top:8px"></div>
       <p class="tiny" style="margin-top:8px">Click a race or a state to see its polls.</p>
+      <p class="small muted" id="watchRead" style="margin-top:10px"></p>
     </div>
   </div>
   <p class="note" id="benchNote"></p>
@@ -182,6 +183,7 @@ footer a { color: var(--text-2); }
     </div>
   </div>
   <p class="muted small" id="senIntro"></p>
+  <div class="note" id="senRead" style="margin:4px 0 14px"></div>
   <div class="tbl-wrap"><table id="senTable"></table></div>
 </section>
 
@@ -511,6 +513,32 @@ function renderWatch() {
     .sort((a, b) => b.p_dside - a.p_dside);
   $("#watch").innerHTML = rs.map(r => `<button type="button" data-k="${r.race_key}"><span class="st">${r.state}</span><span class="nm">${esc(r.dem)}${r.dside === "I" ? " (I)" : ""} vs ${esc(r.rep)}</span><span class="pv">${pbarMini(r.p_dside)}</span></button>`).join("");
   $$("#watch button").forEach(b => b.addEventListener("click", () => goRace(b.dataset.k)));
+  $("#watchRead").innerHTML = senateReading(false);
+}
+// how to read race probabilities as a map (from the simulations: senate.reading)
+const raceName = (k) => { const [st, sp] = k.split("-"); return STATE[st] + (sp ? " (special)" : ""); };
+function senateReading(full) {
+  const M = DATA.models[model], R = M.senate.reading;
+  if (!R) return "";
+  const notUp = R.seats_if_favorites_win - R.fav_dem, need = 51 - notUp;
+  const ladder = M.senate_races.filter(r => r.dside !== "I").sort((a, b) => b.p_dside - a.p_dside);
+  const nth = ladder[need - 1];
+  const med = seatMed(M.senate.hist), pc = M.senate.p_dem_control_without_osborn;
+  const tp = R.tipping_point.slice(0, full ? 5 : 3).map(t => `${raceName(t.race)} ${fmtP(t.p)}`).join(", ");
+  const indTxt = R.fav_ind ? ` (plus ${R.fav_ind} independent${R.fav_ind > 1 ? "s" : ""})` : "";
+  const p3 = R.p_upsets.slice(0, 3).reduce((a, b) => a + b, 0);
+  const nthName = raceName(nth.state + (nth.special ? "-sp" : ""));
+  if (!full) return `<b>Reading this as a map:</b> Democrats are favored in ${R.fav_dem} races${indTxt}, or ${R.seats_if_favorites_win} seats if every favorite won, but that exact map came up in only ${fmtP(R.p_favorites_map)} of simulations. A typical simulation has ${Math.round(R.upsets_mean)} or so upsets, which roughly cancel: median ${med} seats. The race that would bring Democrats to 51 is ${nthName} (${fmtP(nth.p_dside)}); control is ${fmtP(pc)} because the 51st seat can come from several states. <a href="#senate">More</a>`;
+  let t = `<b>Reading the probabilities as a map.</b> Democrats are favored in ${R.fav_dem} of the races up${indTxt}, which would mean ${R.seats_if_favorites_win} seats if every favorite won. ` +
+    `But that exact map came up in only ${fmtP(R.p_favorites_map)} of simulations: of the ${R.n_comp} races where neither side is above 95%, a typical simulation has ${R.upsets_mean.toFixed(1)} upsets (two or fewer in only ${fmtP(p3)}). ` +
+    `Upsets in both directions roughly cancel, so the median outcome is ${med} seats; no single state-by-state map is the forecast. ` +
+    `Counting down from the most likely Democratic win, the race that would bring them to 51 is ${raceName(nth.state + (nth.special ? "-sp" : ""))} at ${fmtP(nth.p_dside)}. Control (${fmtP(pc)}) isn't that race's probability, because the 51st seat can come from any of several states. ` +
+    `Races most likely to supply it: ${tp}.`;
+  if (full) {
+    const mp = R.maps.slice(0, 3).map(m => `${m.upsets.length ? "favorites everywhere except " + m.upsets.map(u => `${raceName(u.race)} to ${u.winner === "R" ? "the Republican" : u.winner === "I" ? "the independent" : "the Democrat"}`).join(" and ") : "every favorite wins"} (${m.dem_seats} seats, ${fmtP(m.p)})`).join("; ");
+    t += ` The three most common exact maps: ${mp}.`;
+  }
+  return t;
 }
 const pbarMini = (p) => `<b style="color:${p >= 0.5 ? "var(--dem)" : "var(--rep)"}">${fmtP(p)}</b>`;
 
@@ -526,6 +554,7 @@ function renderSenate() {
     if (!all.find(r => r.race_key === openRace)) openRace = null;
   }
   $("#senIntro").innerHTML = `${rows.length} of 35 races shown. Chance = the Democrat (or the independent, where no Democrat is the main challenger) wins. Margins are two-party, D−R. Click a race for its polls. Model: <b>${MODEL_LONG[model]}</b>. Forecast blends the poll average (about ${Math.round(M.race_w * 100)}% weight) with the prior (2×PVI + environment + incumbency).`;
+  $("#senRead").innerHTML = senateReading(true);
   $$("#senFilter button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.f === senFilter)));
   const cols = [
     { key: "state", label: "Race", sort: r => r.state, render: r => `${STATE[r.state]}${r.special ? ' <span class="tag">special</span>' : ""}<span class="show-sm">${esc(r.dem)}${r.dside === "I" ? " (I)" : ""} vs ${esc(r.rep)}</span>` },

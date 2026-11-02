@@ -580,7 +580,125 @@
    0,
    0,
    0
-  ]
+  ],
+  "reading": {
+   "n_comp": 17,
+   "comp_races": [
+    "AK",
+    "FL-sp",
+    "GA",
+    "ID",
+    "IA",
+    "KS",
+    "LA",
+    "ME",
+    "MI",
+    "MN",
+    "MS",
+    "MT",
+    "NE",
+    "NH",
+    "OH-sp",
+    "SC",
+    "TX"
+   ],
+   "fav_dem": 19,
+   "fav_ind": 0,
+   "seats_if_favorites_win": 53,
+   "p_favorites_map": 0.014325,
+   "upsets_mean": 3.671625,
+   "p_upsets": [
+    0.014325,
+    0.076025,
+    0.168175,
+    0.232625,
+    0.218025,
+    0.14865
+   ],
+   "expected_comp_dem_wins": 8.109925,
+   "maps": [
+    {
+     "p": 0.02065,
+     "upsets": [
+      {
+       "race": "IA",
+       "winner": "D"
+      }
+     ],
+     "dem_seats": 54,
+     "ind_wins": 0
+    },
+    {
+     "p": 0.014325,
+     "upsets": [],
+     "dem_seats": 53,
+     "ind_wins": 0
+    },
+    {
+     "p": 0.012525,
+     "upsets": [
+      {
+       "race": "AK",
+       "winner": "R"
+      }
+     ],
+     "dem_seats": 52,
+     "ind_wins": 0
+    },
+    {
+     "p": 0.012325,
+     "upsets": [
+      {
+       "race": "IA",
+       "winner": "D"
+      },
+      {
+       "race": "NE",
+       "winner": "I"
+      }
+     ],
+     "dem_seats": 54,
+     "ind_wins": 1
+    },
+    {
+     "p": 0.011275,
+     "upsets": [
+      {
+       "race": "IA",
+       "winner": "D"
+      },
+      {
+       "race": "SC",
+       "winner": "D"
+      }
+     ],
+     "dem_seats": 55,
+     "ind_wins": 0
+    }
+   ],
+   "tipping_point": [
+    {
+     "race": "TX",
+     "p": 0.123925
+    },
+    {
+     "race": "OH-sp",
+     "p": 0.114975
+    },
+    {
+     "race": "KS",
+     "p": 0.0994
+    },
+    {
+     "race": "MI",
+     "p": 0.098275
+    },
+    {
+     "race": "ME",
+     "p": 0.096525
+    }
+   ]
+  }
  },
  "national": {
   "G_polls": 9.106131059651924,
