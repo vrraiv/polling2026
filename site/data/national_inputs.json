@@ -40,7 +40,7 @@
   "latest": "2026-10-04",
   "spread_sd": 2.9206059417836694
  },
- "approval": 36.790000000000006,
+ "approval": 36.78888888888889,
  "approval_aggregators": [
   {
    "Aggregator": "Ballotpedia",
@@ -77,10 +77,6 @@
   {
    "Aggregator": "The New York Times",
    "Approve": "37.0%"
-  },
-  {
-   "Aggregator": "Average",
-   "Approve": "36.8%"
   }
  ],
  "econ": {
@@ -90,12 +86,12 @@
   "cpi_yoy": 4.023310268457836,
   "econ_asof": "2026-09-01"
  },
- "fundamentals_margin_D": 9.32135671282359,
+ "fundamentals_margin_D": 9.322023379490261,
  "fund_weight_on_polls": 0.7005558128763315,
- "G_fund": 9.119045907306138,
+ "G_fund": 9.119245536764222,
  "sd_nat_polls": 3.595830919273041,
  "sd_nat_fund": 3.009682152734898,
- "generic_hist_bias": -2.6630769230769236,
+ "generic_hist_bias": -3.051339708578957,
  "sd_nat_senate": 3.1269830631014104,
  "sd_race_pollavg": 6.180364892099825
 }

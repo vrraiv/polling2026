@@ -37,7 +37,7 @@ def records(df, cols):
 
 def main():
     models = {}
-    for key in ["polls_only", "polls_fundamentals", "scenario_polls_overstate_dems"]:
+    for key in ["polls_only", "polls_fundamentals", "polls_fundamentals_biasadj", "scenario_polls_overstate_dems"]:
         s = json.loads((PROC / f"summary_{key}.json").read_text())
         sen = pd.read_csv(PROC / f"senate_{key}.csv")
         house = pd.read_csv(PROC / f"house_{key}.csv")
@@ -47,7 +47,7 @@ def main():
         models[key] = {
             "house": {k: v for k, v in s["house"].items()},
             "senate": {k: v for k, v in s["senate"].items()},
-            "G": s["national"]["G_used"],
+            "G": s["national"]["G_used"], "shift": s["national"].get("bias_shift", 0.0),
             "senate_races": records(sen.sort_values("p_dside", ascending=False),
                                     ["race_key", "state", "special", "dem", "rep", "dside", "inc_party", "pvi", "prior",
                                      "poll_avg", "n_polls", "poll_weight", "mu", "sd_race", "p_dside", "rating_cook", "rating_silver"]),
@@ -66,6 +66,16 @@ def main():
     btr["bin"] = pd.cut(btr.p_dem, [0, .1, .3, .5, .7, .9, 1.0001], labels=["0–10%", "10–30%", "30–50%", "50–70%", "70–90%", "90–100%"])
     calib = btr.groupby("bin", observed=True).agg(n=("dem_won", "size"), p=("p_dem", "mean"), won=("dem_won", "mean")).reset_index()
     sens = json.loads((PROC / "sensitivity.json").read_text()) if (PROC / "sensitivity.json").exists() else None
+    bd = json.loads((PROC / "bias_decay.json").read_text())
+    bdf = pd.DataFrame(bd["specs"])
+    bias = {"history": bd["history"], "flat_mean": bd["flat_mean"], "decay_estimate": bd["top10_avg_pred_2026"],
+            "decay_range": bd["top10_range"],
+            "specs": bdf.sort_values("loo_rmse_weighted").head(12)[["half_life", "midterm_mult", "covariates", "president_effect", "pred_2026", "pred_sd", "loo_rmse_weighted"]].to_dict("records"),
+            "covariate_specs": bdf[(bdf.half_life.astype(str) == "10") & (bdf.midterm_mult == 2) & (~bdf.president_effect)][["covariates", "pred_2026", "pred_sd", "loo_rmse_weighted"]].to_dict("records")}
+    bstate = json.loads((PROC / "bias_analysis.json").read_text())["state"]
+    bias["state"] = {"post2010": bstate["post2010_symmetric"], "post2010_asym": bstate["post2010_asymmetric"],
+                     "realtime_rmse": bstate["realtime_rmse_within"], "realtime_winner": bstate["realtime_winner"],
+                     "slope_by_cycle": bstate["slope_by_cycle"]}
     cal = json.loads((PROC / "calibration.json").read_text())
     h_int = pd.read_csv(ROOT / "data/interim/house_2026_races.csv")
     data = {
@@ -75,6 +85,7 @@ def main():
         "backtest": bt,
         "calibration_bins": [{"bin": str(r.bin), "n": int(r.n), "p": float(r.p), "won": float(r.won)} for _, r in calib.iterrows()],
         "sensitivity": sens,
+        "bias": bias,
         "error_model": {"sen_cycles": cal["Sen-G"]["cycles"], "gen_cycles": cal["House-G-US"]["cycles"]},
         "inputs": {
             "house_districts": int(len(h_int)), "house_open": int((~h_int.status.fillna("").str.contains("renominated|advanced|re-elected|running", case=False)).sum()),

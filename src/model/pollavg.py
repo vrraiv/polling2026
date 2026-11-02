@@ -72,7 +72,10 @@ def generic_ballot(polls, since="2026-08-01", half_life=14):
 
 
 def lastname(s):
-    s = re.sub(r"\b(Jr\.?|Sr\.?|III|II|IV)\b", "", s).strip()
+    """Surname key for matching poll answers to nominees. Strips suffixes (Jr., Sr., III) and accents."""
+    import unicodedata
+    s = re.sub(r"\s+(Jr|Sr|III|II|IV)\.?\s*$", "", str(s)).replace(".", " ").strip()
+    s = unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode()
     return s.split()[-1].lower() if s else ""
 
 

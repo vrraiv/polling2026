@@ -118,7 +118,7 @@ footer { border-top: 1px solid var(--border); margin-top: 40px; padding: 18px 0 
     </div>
     <nav class="toc" aria-label="Sections">
       <a href="#forecast">Forecast</a><a href="#senate">Senate</a><a href="#house">House</a>
-      <a href="#inputs">Inputs</a><a href="#method">Method</a><a href="#backtest">Backtest</a><a href="#data">Data</a>
+      <a href="#inputs">Inputs</a><a href="#method">Method</a><a href="#bias">Bias</a><a href="#backtest">Backtest</a><a href="#data">Data</a>
       <button class="theme-btn" id="theme" type="button" aria-label="Toggle color theme">Theme</button>
     </nav>
   </div>
@@ -129,9 +129,10 @@ footer { border-top: 1px solid var(--border); margin-top: 40px; padding: 18px 0 
   <div class="controls" role="group" aria-label="Model">
     <span class="muted small">Model:</span>
     <div class="seg" id="modelSeg">
-      <button type="button" data-m="polls_fundamentals" aria-pressed="true">Polls + fundamentals</button>
+      <button type="button" data-m="polls_fundamentals" aria-pressed="true">Unadjusted</button>
+      <button type="button" data-m="polls_fundamentals_biasadj" aria-pressed="false">Bias-adjusted</button>
       <button type="button" data-m="polls_only" aria-pressed="false">Polls only</button>
-      <button type="button" data-m="scenario_polls_overstate_dems" aria-pressed="false">Scenario: polls overstate Dems</button>
+      <button type="button" data-m="scenario_polls_overstate_dems" aria-pressed="false">Full historical bias</button>
     </div>
   </div>
   <p class="muted small" id="modelDesc"></p>
@@ -139,6 +140,9 @@ footer { border-top: 1px solid var(--border); margin-top: 40px; padding: 18px 0 
     <div class="card" id="houseCard"></div>
     <div class="card" id="senateCard"></div>
   </div>
+  <h3>All variants</h3>
+  <div class="tbl-wrap"><table id="cmpTable"></table></div>
+  <p class="muted small">Unadjusted and bias-adjusted are the two headline models. They differ only in whether the national polling environment is shifted for the historical tendency of final polls to overstate Democrats. See <a href="#bias">Polling bias</a>.</p>
   <p class="note" id="benchNote"></p>
 </section>
 
@@ -191,11 +195,26 @@ footer { border-top: 1px solid var(--border); margin-top: 40px; padding: 18px 0 
   <h3>Judgment calls &amp; caveats</h3>
   <ul class="list">
     <li><b>Fundamentals coefficients are assumed, not estimated.</b> Two midterms can't identify them. President's-party House margin = −4 + 0.6×(approval − 45) + 0.5×(real disposable income growth − 1.5). <span id="sensText"></span></li>
-    <li><b>Polling bias.</b> Since 1998, final generic-ballot averages have overstated Democrats by 2.7 pts on average (they were accurate in 2018). The scenario button shifts every race by that amount.</li>
+    <li><b>Polling bias.</b> See the <a href="#bias">Polling bias</a> section: the bias-adjusted model shifts every race by the expected miss; the unadjusted model takes the polls at face value.</li>
     <li><b>Michigan.</b> Haley Stevens endorsed Mike Rogers on Nov 1, after most polls were taken. This isn't in the model.</li>
     <li><b>Alaska</b> uses ranked-choice voting and has several "Dan Sullivan" candidates on the ballot. It's modeled as a head-to-head. <b>Montana</b> is a genuine three-way race, modeled from polls only (best non-Republican vs. Republican).</li>
     <li>District polls are sparse, and many are sponsored by parties or PACs (48 of 132 since July are Democratic-sponsored). They are shrunk toward the prior.</li>
   </ul>
+</section>
+
+<section id="bias">
+  <h2>Polling bias</h2>
+  <p class="muted">How far the final generic-ballot polling average has missed the national House vote, on a two-party basis, 1998–2022. Positive means Democrats beat their polls.</p>
+  <div class="grid2">
+    <div><div class="chart" id="biasChart"></div></div>
+    <div><div class="stats" id="biasStats"></div></div>
+  </div>
+  <h3>Re-estimating the bias for 2026</h3>
+  <p>A flat average treats 1998 and 2022 alike. The re-estimate weights elections by recency (half-lives of 6 to 16 years), weights midterms 2–3× presidential years, and tests covariates: party in the White House, which party held the House, a second-term flag, and a president-specific effect shrunk toward the mean. Specifications are compared by leave-one-election-out prediction error, weighted toward recent midterms.</p>
+  <div class="tbl-wrap"><table id="biasSpecs"></table></div>
+  <p class="muted small" id="biasText"></p>
+  <h3>State-level pattern</h3>
+  <p class="muted small" id="leanText"></p>
 </section>
 
 <section id="backtest">
@@ -305,14 +324,18 @@ function splitBar(parts) {
 }
 
 const DESC = {
-  polls_fundamentals: "Generic-ballot polls blended with an approval + economy estimate (about 70% weight on polls), then race polls and district lean.",
+  polls_fundamentals: "Unadjusted: generic-ballot polls blended with an approval + economy estimate (about 70% weight on polls), then race polls and district lean. Takes the polls at face value.",
+  polls_fundamentals_biasadj: "Bias-adjusted: the same model with every race shifted toward Republicans by the expected polling bias (historical about 3 pts, less 1 pt for the aggregators' likely-voter adjustment).",
   polls_only: "National environment from generic-ballot polls alone, then race polls and district lean.",
-  scenario_polls_overstate_dems: "Sensitivity scenario: every race shifted 2.7 pts toward Republicans, the average generic-ballot polling error since 1998.",
+  scenario_polls_overstate_dems: "Stress test: every race shifted by the full historical generic-ballot bias (about 3 pts toward Republicans), with no likely-voter discount.",
 };
 
 function renderHero() {
   const M = DATA.models[model], h = M.house, s = M.senate;
-  $("#modelDesc").textContent = DESC[model] + " National environment used: " + fmtM(M.G) + " (two-party).";
+  $("#modelDesc").textContent = DESC[model] + " National environment used: " + fmtM(M.G) + " (two-party)" + (M.shift ? `, shift ${M.shift.toFixed(1)}` : "") + ".";
+  const NAMES = { polls_fundamentals: "Unadjusted (polls + fundamentals)", polls_fundamentals_biasadj: "Bias-adjusted (polls + fundamentals)", polls_only: "Polls only", scenario_polls_overstate_dems: "Full historical bias (stress test)" };
+  $("#cmpTable").innerHTML = `<thead><tr><th>Variant</th><th class="num">Environment</th><th class="num">P(Dem House)</th><th class="num">Dem seats (80%)</th><th class="num">P(Dem Senate)</th><th class="num">Dem-caucus seats (80%)</th></tr></thead><tbody>` +
+    Object.keys(NAMES).map(k => { const X = DATA.models[k]; return `<tr${k === model ? ' style="font-weight:600"' : ""}><td>${NAMES[k]}</td><td class="num">${fmtM(X.G)}</td><td class="num">${fmtP(X.house.p_dem_majority)}</td><td class="num">${Math.round(X.house.dem_seats_mean)} (${X.house.dem_seats_p10}–${X.house.dem_seats_p90})</td><td class="num">${fmtP(X.senate.p_dem_control_without_osborn)}</td><td class="num">${X.senate.dem_seats_mean.toFixed(1)} (${X.senate.dem_seats_p10}–${X.senate.dem_seats_p90})</td></tr>`; }).join("") + "</tbody>";
   $("#houseCard").innerHTML = `
     <h3>House</h3>
     <div class="big">${fmtP(h.p_dem_majority)} <small>chance Democrats win the majority</small></div>
@@ -467,7 +490,10 @@ function renderDownloads() {
   const files = [
     ["summary_polls_fundamentals.json", "Topline summary, polls + fundamentals (includes seat histograms)"],
     ["summary_polls_only.json", "Topline summary, polls only"],
-    ["summary_scenario_polls_overstate_dems.json", "Topline summary, polling-bias scenario"],
+    ["summary_polls_fundamentals_biasadj.json", "Topline summary, bias-adjusted"],
+    ["summary_scenario_polls_overstate_dems.json", "Topline summary, full-historical-bias stress test"],
+    ["bias_decay.json", "Generic-ballot bias history and decay-weighted re-estimate"],
+    ["bias_analysis.json", "National and state-level polling-bias analysis, 1998–2022"],
     ["senate_polls_fundamentals.csv", "Senate race-level forecast"],
     ["house_polls_fundamentals.csv", "House district-level forecast (all 435)"],
     ["national_inputs.json", "National inputs: generic ballot, approval, economy, error scales"],
@@ -479,7 +505,41 @@ function renderDownloads() {
   $("#dlList").innerHTML = files.map(([f, d]) => `<li><a href="data/${f}">${f}</a> — ${d}</li>`).join("");
 }
 
-function renderAll() { renderHero(); renderSenate(); renderHouse(); renderInputs(); renderBacktest(); renderDownloads(); }
+function renderBias() {
+  const B = DATA.bias, hist = B.history;
+  const W = 420, H = 200, m = { l: 36, r: 8, t: 10, b: 26 };
+  const maxA = Math.max(...hist.map(c => Math.abs(c.err))) * 1.1;
+  const bw = (W - m.l - m.r) / hist.length;
+  const yy = v => m.t + (H - m.t - m.b) * (1 - (v + maxA) / (2 * maxA));
+  const dem = css("--dem"), rep = css("--rep"), t3 = css("--text-3"), bd = css("--border");
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Generic-ballot polling miss by election, two-party">`;
+  [-6, -3, 0, 3].forEach(v => { if (Math.abs(v) <= maxA) s += `<line x1="${m.l}" x2="${W - m.r}" y1="${yy(v)}" y2="${yy(v)}" stroke="${v === 0 ? t3 : bd}"/><text x="${m.l - 6}" y="${yy(v) + 4}" font-size="11" fill="${t3}" text-anchor="end">${v > 0 ? "D+" + v : v < 0 ? "R+" + (-v) : "0"}</text>`; });
+  hist.forEach((c, i) => {
+    const x0 = m.l + i * bw + 2, w = bw - 4, y0 = yy(0), y1 = yy(c.err);
+    s += `<rect x="${x0}" y="${Math.min(y0, y1)}" width="${w}" height="${Math.max(1, Math.abs(y1 - y0))}" rx="2" fill="${c.err >= 0 ? dem : rep}" opacity="${c.midterm ? 1 : 0.45}"/>`;
+    s += `<text x="${x0 + w / 2}" y="${H - 8}" font-size="10" fill="${t3}" text-anchor="middle">'${String(c.cycle).slice(2)}</text>`;
+    s += `<rect x="${m.l + i * bw}" y="${m.t}" width="${bw}" height="${H - m.t - m.b}" fill="transparent" data-i="${i}"/>`;
+  });
+  s += `</svg>`;
+  const el = $("#biasChart");
+  el.innerHTML = s + `<div class="legend"><span><i style="background:var(--dem)"></i>Dems beat polls</span><span><i style="background:var(--rep)"></i>Reps beat polls</span><span><i style="background:var(--rep);opacity:.45"></i>presidential year (faded)</span></div>`;
+  el.querySelectorAll("rect[data-i]").forEach(r => {
+    r.addEventListener("mousemove", e => { const c = hist[+r.dataset.i]; showTip(e, `<b>${c.cycle}</b> (${c.president}, ${c.midterm ? "midterm" : "presidential"})<br>polls ${fmtM(c.poll)} · result ${fmtM(c.act)} · miss ${c.err >= 0 ? "+" : ""}${c.err.toFixed(1)}`); });
+    r.addEventListener("mouseleave", hideTip);
+  });
+  const stat = (v, l) => `<div class="stat"><div class="v">${v}</div><div class="l">${l}</div></div>`;
+  const nDem = hist.filter(c => c.err < 0).length;
+  $("#biasStats").innerHTML = stat(B.flat_mean.toFixed(1), "Flat mean miss, 1998–2022 (two-party)") + stat(`${nDem}/${hist.length}`, "Elections where polls overstated Democrats") +
+    stat(B.decay_estimate.toFixed(1), "Decay-weighted estimate for 2026") + stat(DATA.models.polls_fundamentals_biasadj.shift.toFixed(1), "Shift used by the bias-adjusted model (after 1-pt likely-voter discount)");
+  const label = c => c === "(mean only)" ? "none (decay-weighted mean)" : c.replace("pres_D", "Democratic president").replace("house_D", "Democratic House").replace("second_term", "second term").split("+").join(" + ");
+  $("#biasSpecs").innerHTML = `<thead><tr><th>Covariate (half-life 10 yrs, midterms ×2)</th><th class="num">2026 estimate</th><th class="num">Predictive SD</th><th class="num">Leave-one-out RMSE</th></tr></thead><tbody>` +
+    B.covariate_specs.map(r => `<tr><td>${label(r.covariates)}</td><td class="num">${r.pred_2026.toFixed(1)}</td><td class="num">${r.pred_sd.toFixed(1)}</td><td class="num">${r.loo_rmse_weighted.toFixed(2)}</td></tr>`).join("") + "</tbody>";
+  $("#biasText").textContent = `Every covariate raises the out-of-sample error; the best specifications are decay-weighted means, which land between ${B.decay_range[0].toFixed(1)} and ${B.decay_range[1].toFixed(1)}. With 13 elections and a predictive SD near 2.6, 2018's +0.5 is about 1.3 SD from the estimate: not a refutation, a reminder of the spread. The likely-voter discount of 1 pt is a judgment call: in 538's archive, likely-voter generic polls ran 1.1–1.7 pts less Democratic than registered-voter polls in 2020 and 2022 (about equal in 2018).`;
+  const st = B.state;
+  $("#leanText").textContent = `Across 584 Senate and governor races, results since 2010 have landed further toward the state's partisan lean than the final poll averages: ${st.post2010.slope.toFixed(3)} pts per point of lean (clustered SE ${st.post2010.se_cluster.toFixed(3)}), about equal in Republican-leaning (${st.post2010_asym.leanR.slope.toFixed(3)}) and Democratic-leaning (${st.post2010_asym.leanD.slope.toFixed(3)}) states. In a real-time backtest (fit on 2010 through the prior election, tested 2014–2022) a symmetric correction cut race-level RMSE from ${st.realtime_rmse.none.toFixed(2)} to ${st.realtime_rmse.sym.toFixed(2)} and raised winners called from ${fmtP(st.realtime_winner.none)} to ${fmtP(st.realtime_winner.sym)}. This is a pattern in outcomes, not evidence about differential non-response by party: none of the sources used here records response rates. It is not applied in the published models.`;
+}
+
+function renderAll() { renderHero(); renderSenate(); renderHouse(); renderInputs(); renderBias(); renderBacktest(); renderDownloads(); }
 
 document.querySelectorAll("#modelSeg button").forEach(b => {
   b.setAttribute("aria-pressed", String(b.dataset.m === model));

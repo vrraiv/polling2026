@@ -37,10 +37,14 @@ CAL = json.loads((OUT / "calibration.json").read_text())
 GEN_CYC = [c["mean"] for c in CAL["House-G-US"]["cycles"]]
 SEN_CYC = [c["mean"] for c in CAL["Sen-G"]["cycles"] if c["cycle"] % 2 == 0]
 SD_NAT_GENERIC = float(np.sqrt(np.mean(np.square(GEN_CYC))))   # RMSE of final generic-ballot avg vs result (incl. bias)
-GENERIC_BIAS = float(np.mean(GEN_CYC))                          # historical mean (negative = polls overstated Dems)
-USE_TWO_PARTY_BIAS = False  # off for the first published build (raw-margin -2.7); two-party estimate is -3.1
-if USE_TWO_PARTY_BIAS and (OUT / "bias_analysis.json").exists():
-    GENERIC_BIAS = json.loads((OUT / "bias_analysis.json").read_text())["national"]["generic"]["mean"]
+GENERIC_BIAS = float(np.mean(GEN_CYC))  # raw-margin mean 1998-2022 (fallback only)
+# Two-party, decay-weighted estimate of the final generic-ballot miss (src/model/bias_decay.py): about -3.0 pts
+# (negative = polls overstated Democrats). Predictive SD about 2.6.
+_BD = OUT / "bias_decay.json"
+if _BD.exists():
+    GENERIC_BIAS = float(json.loads(_BD.read_text())["top10_avg_pred_2026"])
+LV_DISCOUNT = 1.0   # the 2026 aggregators adjust to likely voters; LV polls ran ~1-1.5 pts less Democratic than RV in 2020/2022
+BIAS_ADJ = GENERIC_BIAS + LV_DISCOUNT   # about -2.0: the shift used by the "bias-adjusted" model
 SD_NAT_SENATE = float(np.sqrt(np.mean(np.square(SEN_CYC))))     # shared Senate polling miss per cycle
 SD_RACE_POLLAVG = CAL["Sen-G"]["race_resid_sd_midterms"]        # race-level error of a final poll average
 SD_SENATE_PRIOR = 10.0    # race error of 2*PVI + G + incumbency prior (assumed; candidate effects are large, e.g. ME 2020 missed by ~20)
@@ -85,6 +89,7 @@ def national_inputs():
 
     ahtml = latest("wikipedia", "Opinion_polling_on_the_second_Trump_presidency.html").read_text(encoding="utf-8")
     at = next(t for t in pd.read_html(StringIO(ahtml)) if "Aggregator" in t.columns and "Approve" in t.columns)
+    at = at[~at.Aggregator.astype(str).str.contains("average", case=False)]  # drop Wikipedia's own "Average" row
     approval = float(at.Approve.map(pct).mean())
 
     def series(name, src="fred"):
@@ -322,6 +327,7 @@ def run(model, shift=0.0, tag=None):
     hmod, smod, res = simulate(hmod, smod, sd_nat)
     res["national"] = {k: v for k, v in nat.items() if k not in ("generic_aggregators", "approval_aggregators")}
     res["national"]["G_used"] = G
+    res["national"]["bias_shift"] = shift
     res["national"]["sd_nat_house_used"] = sd_nat
     res["model"] = model
     hmod.to_csv(OUT / f"house_{model}.csv", index=False)
@@ -354,7 +360,8 @@ def sensitivity():
 if __name__ == "__main__":
     pd.set_option("display.width", 220)
     for m, shift, tag in [("polls_only", 0.0, None), ("polls_fundamentals", 0.0, None),
-                          ("polls_only", GENERIC_BIAS, "scenario_polls_overstate_dems")]:
+                          ("polls_fundamentals", BIAS_ADJ, "polls_fundamentals_biasadj"),
+                          ("polls_fundamentals", GENERIC_BIAS, "scenario_polls_overstate_dems")]:
         h, s, res = run(m, shift, tag)
         m = tag or m
         print(f"\n===== {m} =====  G used: D{res['national']['G_used']:+.2f}  (polls {res['national']['G_polls']:+.2f}, "

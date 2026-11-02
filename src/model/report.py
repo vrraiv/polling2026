@@ -24,7 +24,8 @@ def m(x):
 
 
 def main():
-    po, pf, sc = j("summary_polls_only.json"), j("summary_polls_fundamentals.json"), j("summary_scenario_polls_overstate_dems.json")
+    po, pf, ba, sc = (j("summary_polls_only.json"), j("summary_polls_fundamentals.json"),
+                      j("summary_polls_fundamentals_biasadj.json"), j("summary_scenario_polls_overstate_dems.json"))
     nat = j("national_inputs.json")
     bt = j("backtest_summary.json")
     sen = pd.read_csv(OUT / "senate_polls_fundamentals.csv")
@@ -37,18 +38,19 @@ def main():
     import datetime as dt
     a(f"_Generated {dt.datetime.now():%Y-%m-%d %H:%M} from the latest data snapshot. Refresh data + rerun everything: `python src/run_all.py`._\n")
     a("## Topline\n")
-    a("| | Polls-only | Polls + fundamentals | Scenario: polls overstate Dems by historical avg |")
-    a("|---|---|---|---|")
-    a(f"| National House environment (two-party) | {m(po['national']['G_used'])} | {m(pf['national']['G_used'])} | {m(sc['national']['G_used'])} |")
+    V = (po, pf, ba, sc)
+    a(f"| | Polls-only | Polls + fundamentals (unadjusted) | Polls + fundamentals, bias-adjusted ({ba['national']['bias_shift']:+.1f}) | Scenario: full historical bias ({sc['national']['bias_shift']:+.1f}) |")
+    a("|---|---|---|---|---|")
+    a("| National House environment (two-party) | " + " | ".join(m(x['national']['G_used']) for x in V) + " |")
     for lab, key in [("**P(Democratic House majority)**", "p_dem_majority"), ("P(Republican House majority)", "p_rep_majority")]:
-        a(f"| {lab} | {pct(po['house'][key])} | {pct(pf['house'][key])} | {pct(sc['house'][key])} |")
+        a(f"| {lab} | " + " | ".join(pct(x['house'][key]) for x in V) + " |")
     a("| Dem House seats, mean (80% range) | " + " | ".join(
-        f"{x['house']['dem_seats_mean']:.0f} ({x['house']['dem_seats_p10']:.0f}–{x['house']['dem_seats_p90']:.0f})" for x in (po, pf, sc)) + " |")
-    a("| **P(Democratic Senate control)** | " + " | ".join(pct(x["senate"]["p_dem_control_without_osborn"]) for x in (po, pf, sc)) + " |")
-    a("| P(Dem control if independents caucus D) | " + " | ".join(pct(x["senate"]["p_dem_control_if_independents_caucus_D"]) for x in (po, pf, sc)) + " |")
-    a("| P(Republican Senate control) | " + " | ".join(pct(x["senate"]["p_rep_control"]) for x in (po, pf, sc)) + " |")
+        f"{x['house']['dem_seats_mean']:.0f} ({x['house']['dem_seats_p10']:.0f}–{x['house']['dem_seats_p90']:.0f})" for x in V) + " |")
+    a("| **P(Democratic Senate control)** | " + " | ".join(pct(x["senate"]["p_dem_control_without_osborn"]) for x in V) + " |")
+    a("| P(Dem control if independents caucus D) | " + " | ".join(pct(x["senate"]["p_dem_control_if_independents_caucus_D"]) for x in V) + " |")
+    a("| P(Republican Senate control) | " + " | ".join(pct(x["senate"]["p_rep_control"]) for x in V) + " |")
     a("| Dem-caucus Senate seats, mean (80% range) | " + " | ".join(
-        f"{x['senate']['dem_seats_mean']:.1f} ({x['senate']['dem_seats_p10']:.0f}–{x['senate']['dem_seats_p90']:.0f})" for x in (po, pf, sc)) + " |")
+        f"{x['senate']['dem_seats_mean']:.1f} ({x['senate']['dem_seats_p10']:.0f}–{x['senate']['dem_seats_p90']:.0f})" for x in V) + " |")
     a("")
     a("Democrats need 51 Senate seats for control (VP Vance breaks 50–50 ties); 34 Dem-caucus and 31 Republican seats are not up. "
       "Independent candidates (Osborn in NE, Achilles in ID) are counted separately; neither has committed to a caucus.\n")
@@ -116,8 +118,17 @@ def main():
       "wasn't available (UCSB tables are JavaScript-rendered; MEDSL now requires a guestbook form). Formula: president's-party House margin = "
       "−4 + 0.6×(approval − 45) + 0.5×(real disposable income growth − 1.5). It happens to land within 0.3 pts of the polls this year, so the "
       "two models nearly agree. State economics enter the Senate prior only as a small adjustment (0.5 pts per point of state-vs-national change in unemployment).")
-    a("- **Polling bias scenario**: final generic-ballot averages have overstated Democrats by 2.7 pts on average since 1998 (but were accurate in 2018). "
-      "The third column shifts every race by that amount.")
+    a(f"- **Polling bias.** On a two-party basis, final generic-ballot averages overstated Democrats by 3.1 pts on average over 1998–2022 "
+      f"(9 of 13 elections; 2018 was the main exception at +0.5). A decay-weighted re-estimate that up-weights recent midterms gives "
+      f"{nat['generic_hist_bias']:+.1f}; adding party in the White House, House incumbency, a second-term flag or a president-specific effect "
+      f"makes out-of-sample prediction worse, so none is used. The bias-adjusted model shifts every race by {ba['national']['bias_shift']:+.1f} "
+      f"(the estimate less 1 pt because the 2026 aggregators already adjust to likely voters, which ran 1–1.5 pts less Democratic than "
+      f"registered-voter polls in 2020/2022). The scenario column applies the full {sc['national']['bias_shift']:+.1f}. "
+      f"Details: `src/model/bias_decay.py`, `data/processed/bias_decay.json`.")
+    a("- **State-level poll misses.** Since 2010, results have landed further toward a state's partisan lean than final poll averages "
+      "(about 0.08 pts per point of lean, symmetric in red and blue states; a real-time 2014–2022 backtest improved race-level RMSE from 5.6 to 5.3). "
+      "This is an outcome-based pattern, not a test of differential non-response by party: no source here records response rates. Not applied "
+      "in the published models; `APPLY_LEAN_CORRECTION` in `src/model/forecast.py`.")
     a("- **Michigan**: Haley Stevens endorsed Mike Rogers on Nov 1, after most polls were taken. Not modeled; Silver Bulletin estimates ~1 pt effect.")
     a("- **Alaska** uses ranked-choice voting and has multiple 'Dan Sullivan' candidates on the ballot; modeled as a head-to-head.")
     a("- **Montana** is a genuine three-way race (Alme R, Bankhead D, Bodnar I); modeled from polls only, best non-R vs. R.")
