@@ -48,7 +48,7 @@ def make(models, out_path, updated, final=False):
             y = 440 + i * 36
             d.rectangle([x + 28, y + 12, x + 44, y + 16], fill=col)
             d.text((x + 52, y), lab, font=font("segoeui.ttf", 21), fill=TEXT2)
-            bx, bw = x + 180, 230
+            bx, bw = x + 200, 210
             d.rounded_rectangle([bx, y + 6, bx + bw, y + 22], radius=6, fill=REP)
             d.rounded_rectangle([bx, y + 6, bx + int(bw * p), y + 22], radius=6, fill=DEM)
             d.text((bx + bw + 14, y - 1), f"{round(100 * p)}%", font=font("seguisb.ttf", 22), fill=TEXT)
