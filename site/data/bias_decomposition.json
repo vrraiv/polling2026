@@ -1,0 +1,90 @@
+{
+ "unadjusted": {
+  "shift": 0.0,
+  "senate_shift": 0.0,
+  "lean": false,
+  "sd_nat_house": 2.977302993873907,
+  "sd_nat_senate": 3.2922356210659323,
+  "p_sen": 0.743725,
+  "sen_seats": 52.054225,
+  "p_house": 0.969725,
+  "house_seats": 237.459075
+ },
+ "shift_only_sd_unchanged": {
+  "shift": -2.5540952480150283,
+  "senate_shift": -1.55786537427245,
+  "lean": true,
+  "sd_nat_house": 2.977302993873907,
+  "sd_nat_senate": 3.2922356210659323,
+  "p_sen": 0.518275,
+  "sen_seats": 50.55435,
+  "p_house": 0.914275,
+  "house_seats": 230.71735
+ },
+ "sd_only_no_shift": {
+  "shift": 0.0,
+  "senate_shift": 0.0,
+  "lean": false,
+  "sd_nat_house": 2.2635933578150804,
+  "sd_nat_senate": 2.1716077941542395,
+  "p_sen": 0.793625,
+  "sen_seats": 52.15665,
+  "p_house": 0.98285,
+  "house_seats": 236.57375
+ },
+ "adjusted": {
+  "shift": -2.5540952480150283,
+  "senate_shift": -1.55786537427245,
+  "lean": true,
+  "sd_nat_house": 2.2635933578150804,
+  "sd_nat_senate": 2.1716077941542395,
+  "p_sen": 0.51095,
+  "sen_seats": 50.53375,
+  "p_house": 0.921825,
+  "house_seats": 228.5944
+ },
+ "flat_minus1": {
+  "shift": -1.0,
+  "senate_shift": -1.0,
+  "lean": false,
+  "sd_nat_house": 2.2635933578150804,
+  "sd_nat_senate": 2.1716077941542395,
+  "p_sen": 0.6769,
+  "sen_seats": 51.4154,
+  "p_house": 0.968825,
+  "house_seats": 233.3641
+ },
+ "flat_minus2": {
+  "shift": -2.0,
+  "senate_shift": -2.0,
+  "lean": false,
+  "sd_nat_house": 2.2635933578150804,
+  "sd_nat_senate": 2.1716077941542395,
+  "p_sen": 0.5375,
+  "sen_seats": 50.667225,
+  "p_house": 0.94585,
+  "house_seats": 230.351025
+ },
+ "flat_minus3": {
+  "shift": -3.0,
+  "senate_shift": -3.0,
+  "lean": false,
+  "sd_nat_house": 2.2635933578150804,
+  "sd_nat_senate": 2.1716077941542395,
+  "p_sen": 0.389525,
+  "sen_seats": 49.833875,
+  "p_house": 0.901225,
+  "house_seats": 227.3283
+ },
+ "flat_minus4": {
+  "shift": -4.0,
+  "senate_shift": -4.0,
+  "lean": false,
+  "sd_nat_house": 2.2635933578150804,
+  "sd_nat_senate": 2.1716077941542395,
+  "p_sen": 0.256425,
+  "sen_seats": 49.0161,
+  "p_house": 0.828575,
+  "house_seats": 224.488075
+ }
+}

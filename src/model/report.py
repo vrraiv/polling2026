@@ -160,7 +160,7 @@ def main():
     ps = json.loads((OUT / "poll_settings.json").read_text())["chosen"]
     a(f"- **Poll-averaging settings (estimated, `src/model/poll_settings.py`)**: sponsor shift {ps['partisan_shift_statewide']} pts statewide / "
       f"{ps['partisan_shift_house']} House; population weights RV {ps['pop_weight']['rv']}, adults {ps['pop_weight']['a']}, with RV/adult polls shifted "
-      f"{ps['pop_dem_lean']['rv']}/{ps['pop_dem_lean']['a']} pts toward Republicans; half-life {ps['half_life_races']} days (backtest prefers no decay); "
+      f"{abs(ps['pop_dem_lean']['rv']):.2f} pts toward {'Democrats' if ps['pop_dem_lean']['rv'] < 0 else 'Republicans'} (paired LV-vs-RV surveys, historical prior + 2026 pairs); half-life {ps['half_life_races']} days (backtest prefers no decay); "
       f"t with {ps['df_t']} df.")
     es = json.loads((OUT / "error_structure.json").read_text())
     a(f"- **Correlated errors.** Beyond the shared national miss, each simulation draws a Census-region shock (SD {es['sigma_region']:.1f}) and a random "

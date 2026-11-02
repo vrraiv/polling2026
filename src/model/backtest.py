@@ -33,6 +33,18 @@ import pollavg as PA  # noqa: E402  (same estimated settings as the 2026 forecas
 POP_W = PA.POP_W
 
 
+# the likely-voter adjustment for a backtest cycle is that cycle's own paired LV-vs-RV difference (538 archive)
+_PSJ = ROOT / "data/processed/poll_settings.json"
+_LVC = json.loads(_PSJ.read_text()).get("lv_paired", {}).get("prior_by_cycle", {}) if _PSJ.exists() else {}
+CYCLE_POP_LEAN = None
+
+
+def set_cycle(cyc):
+    global CYCLE_POP_LEAN
+    v = _LVC.get(str(cyc), _LVC.get(cyc))
+    CYCLE_POP_LEAN = {"rv": -v, "a": -v} if v is not None else None
+
+
 def wavg(df, asof, half_life):
     age = (asof - df.end).dt.days
     w = 0.5 ** (age / half_life) * np.sqrt(df.n.clip(upper=3000).fillna(600) / 600) * df.population.str.lower().map(POP_W).fillna(0.7)
@@ -45,7 +57,7 @@ def wavg(df, asof, half_life):
     else:
         spadj = np.where(df.partisan == "DEM", PA.PARTISAN_SHIFT, np.where(df.partisan == "REP", -PA.PARTISAN_SHIFT, 0))
     m = (df.m - spadj
-         - df.population.str.lower().map(PA.POP_DEM_LEAN).fillna(0.0))
+         - df.population.str.lower().map(CYCLE_POP_LEAN or PA.POP_DEM_LEAN).fillna(0.0))
     avg = np.average(m, weights=w)
     neff = w.sum() ** 2 / (w ** 2).sum()
     spread = np.sqrt(np.average((m - avg) ** 2, weights=w))
@@ -77,6 +89,7 @@ def senate():
     q["population"] = q.population.fillna("lv").astype(str)
     rows = []
     for (cyc, rid), g in q.groupby(["cycle", "race_id"]):
+        set_cycle(cyc)
         cutoff = ELECTION[cyc] - pd.Timedelta(days=5)
         g = g[(g.end <= cutoff) & (g.end >= cutoff - pd.Timedelta(days=140))]
         if g.empty or rid not in act.index:
@@ -112,6 +125,7 @@ def generic():
     act = act[act.type_simple == "House-G-US"]
     out = []
     for cyc in [2018, 2022]:
+        set_cycle(cyc)
         cutoff = ELECTION[cyc] - pd.Timedelta(days=5)
         x = g[(g.cycle == cyc) & (g.end <= cutoff) & (g.end >= cutoff - pd.Timedelta(days=90))]
         avg, neff, spread, n = wavg(x, cutoff, 14)

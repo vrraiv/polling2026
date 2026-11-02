@@ -33,13 +33,13 @@
  ],
  "G_polls": 9.106131059651924,
  "G_votehub_own_avg": {
-  "avg": 7.473844999848155,
+  "avg": 8.367921806447203,
   "n_polls": 11,
   "n_recent": 0,
   "n_pollsters": 8,
   "neff": 4.950706063984913,
   "latest": "2026-10-04",
-  "spread_sd": 2.9425459631372526
+  "spread_sd": 3.0076773521527183
  },
  "approval": 36.800000000000004,
  "approval_aggregators": [

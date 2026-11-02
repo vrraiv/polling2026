@@ -2,9 +2,9 @@
  "2018": {
   "races": 30,
   "winner_accuracy": 0.9,
-  "brier": 0.0444918487017074,
-  "mean_error": -0.10467766037555735,
-  "mae": 5.431192305562887,
+  "brier": 0.044496581974551655,
+  "mean_error": -0.06518297579213052,
+  "mae": 5.450960447903429,
   "misses": [
    {
     "state": "Florida",
@@ -20,7 +20,7 @@
    },
    {
     "state": "Nevada",
-    "poll_avg": -0.48,
+    "poll_avg": -0.47,
     "actual": 5.03,
     "p_dem": 0.46
    }
@@ -29,25 +29,25 @@
  "2022": {
   "races": 28,
   "winner_accuracy": 1.0,
-  "brier": 0.0348541610323406,
-  "mean_error": -1.9977668920506813,
-  "mae": 4.745537176069779,
+  "brier": 0.03496879741085564,
+  "mean_error": -1.9536493321180255,
+  "mae": 4.7448670134837405,
   "misses": []
  },
  "generic": [
   {
    "cycle": 2018,
    "n_polls": 414,
-   "generic_avg_two_party": 7.48,
+   "generic_avg_two_party": 7.47,
    "actual_house_margin": 8.51,
-   "error": 1.03
+   "error": 1.04
   },
   {
    "cycle": 2022,
    "n_polls": 321,
-   "generic_avg_two_party": -0.86,
+   "generic_avg_two_party": -0.96,
    "actual_house_margin": -2.64,
-   "error": -1.78
+   "error": -1.68
   }
  ]
 }

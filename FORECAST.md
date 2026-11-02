@@ -1,6 +1,6 @@
 # 2026 Midterm Forecast
 
-_Generated 2026-11-02 11:31 from the latest data snapshot. Refresh data + rerun everything: `python src/run_all.py`._
+_Generated 2026-11-02 11:50 from the latest data snapshot. Refresh data + rerun everything: `python src/run_all.py`._
 
 ## Topline
 
@@ -9,21 +9,21 @@ _Generated 2026-11-02 11:31 from the latest data snapshot. Refresh data + rerun 
 | National House environment (two-party) | D+9.1 | D+9.7 | D+7.5 | D+7.3 |
 | **P(Democratic House majority)** | 93% | 97% | 92% | 90% |
 | P(Republican House majority) | 7% | 3% | 8% | 10% |
-| Dem House seats, mean (80% range) | 236 (220–253) | 237 (224–252) | 229 (218–239) | 227 (218–238) |
-| **P(Democratic Senate control)** | 73% | 74% | 49% | 38% |
-| P(Dem control if independents caucus D) | 75% | 76% | 53% | 42% |
-| P(Republican Senate control) | 25% | 24% | 47% | 58% |
-| Dem-caucus Senate seats, mean (80% range) | 51.9 (48–55) | 52.0 (49–55) | 50.5 (48–53) | 49.8 (47–53) |
+| Dem House seats, mean (80% range) | 236 (220–254) | 237 (224–252) | 229 (218–239) | 227 (218–238) |
+| **P(Democratic Senate control)** | 74% | 75% | 51% | 40% |
+| P(Dem control if independents caucus D) | 76% | 77% | 54% | 43% |
+| P(Republican Senate control) | 24% | 23% | 46% | 57% |
+| Dem-caucus Senate seats, mean (80% range) | 52.0 (49–55) | 52.1 (49–55) | 50.5 (48–53) | 49.9 (47–53) |
 
 Democrats need 51 Senate seats for control (VP Vance breaks 50–50 ties); 34 Dem-caucus and 31 Republican seats are not up. Independent candidates (Osborn in NE, Achilles in ID) are counted separately; neither has committed to a caucus.
 
-**Fundamentals sensitivity** (each of the ten top estimated specifications, both samples): fundamentals-only environment ranges D+8.0 to D+11.8; after blending with polls, D+8.6 to D+10.3, P(D House) 95%–98%, P(D Senate) 73%–74%.
+**Fundamentals sensitivity** (each of the ten top estimated specifications, both samples): fundamentals-only environment ranges D+8.0 to D+11.8; after blending with polls, D+8.6 to D+10.3, P(D House) 95%–98%, P(D Senate) 74%–75%.
 
 **Benchmark:** Silver Bulletin's FLIPR (Nov 1 free summary) gives Democrats ~95% to win the House with a ~25-seat net gain (≈238 seats); Senate numbers are paywalled (described as a meaningful Democratic edge).
 
 ## National inputs
 
-- **Generic ballot**: mean of 5 aggregators on Wikipedia (DDHQ, FiftyPlusOne, NBC, RCP, Silver Bulletin; updated Oct 30), converted to two-party: **D+9.1**. Own average of VoteHub polls (through early Oct, VoteHub stopped tracking): D+7.5.
+- **Generic ballot**: mean of 5 aggregators on Wikipedia (DDHQ, FiftyPlusOne, NBC, RCP, Silver Bulletin; updated Oct 30), converted to two-party: **D+9.1**. Own average of VoteHub polls (through early Oct, VoteHub stopped tracking): D+8.4.
 - **Trump approval**: 36.8% (mean of 8 aggregators).
 - **Economy** (FRED, as of 2026-09-01): unemployment 4.2% (-0.1 over 12 months), CPI inflation 4.0% y/y, real disposable income per capita +0.7% y/y.
 - **Real gas prices** +29.3% y/y (Sept; gasoline CPI ÷ CPI-U); **CPI inflation** 3.7% (Sept/Sept, unrevised CPI-U).
@@ -36,39 +36,39 @@ Margins are two-party D−R (Montana: best non-R minus R). The forecast blends t
 
 | Race | Democrat / Ind. | Republican | PVI | Poll avg (n) | Prior | Forecast margin | P(D/I win) polls-only | P(D/I win) +fund | Cook | Silver |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MA | Ed Markey | John Deaton | D+28.0 | D+30.2 (9) | D+39.7 | D+31.1 | >99% | >99% | Solid D | Solid D |
+| MA | Ed Markey | John Deaton | D+28.0 | D+30.5 (9) | D+39.7 | D+31.4 | >99% | >99% | Solid D | Solid D |
 | RI | Jack Reed | Raymond McKay | D+16.0 | D+27.0 (5) | D+27.7 | D+27.1 | >99% | >99% | Solid D | Solid D |
 | OR | Jeff Merkley | David Brock Smith | D+16.0 | — (0) | D+27.7 | D+27.7 | 99% | 99% | Solid D | Solid D |
 | DE | Chris Coons | Michael Katz | D+16.0 | — (0) | D+27.7 | D+27.7 | 99% | 99% | Solid D | Solid D |
 | CO | John Hickenlooper | Mark Baisley | D+12.0 | — (0) | D+23.7 | D+23.7 | 98% | 99% | Solid D | Solid D |
 | NJ | Cory Booker | Justin Murphy | D+8.0 | — (0) | D+19.7 | D+19.7 | 97% | 97% | Solid D | Solid D |
+| VA | Mark Warner | Bert Mizusawa | D+6.0 | D+20.5 (2) | D+17.7 | D+19.6 | 97% | 97% | Solid D | Solid D |
 | IL | Juliana Stratton | Don Tracy | D+12.0 | D+13.9 (3) | D+21.7 | D+15.3 | 97% | 97% | Solid D | Solid D |
-| VA | Mark Warner | Bert Mizusawa | D+6.0 | D+19.5 (2) | D+17.7 | D+19.0 | 96% | 97% | Solid D | Solid D |
 | NM | Ben Ray Luján | Larry Marker | D+8.0 | D+18.6 (2) | D+19.7 | D+19.0 | 96% | 97% | Solid D | Solid D |
-| NC | Roy Cooper | Michael Whatley | R+2.0 | D+10.6 (25) | D+7.7 | D+10.4 | 96% | 96% | Likely D (flip) | Solid D (flip) |
+| NC | Roy Cooper | Michael Whatley | R+2.0 | D+10.7 (25) | D+7.7 | D+10.5 | 96% | 96% | Likely D (flip) | Solid D (flip) |
 | GA | Jon Ossoff | Mike Collins | R+2.0 | D+9.6 (11) | D+9.7 | D+9.6 | 94% | 94% | Likely D | Solid D |
 | NH | Chris Pappas | John E. Sununu | D+4.0 | D+7.6 (10) | D+13.7 | D+8.2 | 91% | 91% | Lean D | Likely D |
+| MI | Abdul El-Sayed | Mike Rogers | D+0.0 | D+4.0 (36) | D+9.7 | D+4.3 | 81% | 81% | Tossup | Likely D |
 | MN | Peggy Flanagan | Michele Tafoya | D+6.0 | D+3.9 (7) | D+15.7 | D+5.3 | 81% | 81% | Lean D | Likely D |
-| MI | Abdul El-Sayed | Mike Rogers | D+0.0 | D+3.9 (36) | D+9.7 | D+4.2 | 81% | 81% | Tossup | Likely D |
-| ME | Troy Jackson | Susan Collins | D+8.0 | D+3.1 (20) | D+15.7 | D+4.1 | 78% | 79% | Tossup | Likely D (flip) |
-| OH (sp.) | Sherrod Brown | Jon Husted | R+10.0 | D+3.8 (23) | R+2.3 | D+3.4 | 74% | 75% | Tossup | Lean D (flip) |
-| TX | James Talarico | Ken Paxton | R+12.0 | D+2.8 (39) | R+2.3 | D+2.5 | 69% | 70% | Tossup | Likely D (flip) |
+| ME | Troy Jackson | Susan Collins | D+8.0 | D+3.2 (20) | D+15.7 | D+4.2 | 79% | 80% | Tossup | Likely D (flip) |
+| OH (sp.) | Sherrod Brown | Jon Husted | R+10.0 | D+3.9 (23) | R+2.3 | D+3.4 | 75% | 75% | Tossup | Lean D (flip) |
+| TX | James Talarico | Ken Paxton | R+12.0 | D+2.9 (39) | R+2.3 | D+2.6 | 70% | 71% | Tossup | Likely D (flip) |
 | KS | Adam Hamilton | Roger Marshall | R+16.0 | D+3.8 (7) | R+8.3 | D+2.5 | 67% | 67% | Tossup | Lean D (flip) |
-| AK | Mary Peltola | Dan S. Sullivan | R+12.0 | D+1.0 (9) | R+4.3 | D+0.4 | 52% | 53% | Tossup | Tossup |
-| IA | Josh Turek | Ashley Hinson | R+12.0 | R+0.3 (22) | R+2.3 | R+0.5 | 45% | 46% | Tossup | Tossup |
+| AK | Mary Peltola | Dan S. Sullivan | R+12.0 | D+1.2 (9) | R+4.3 | D+0.6 | 53% | 54% | Tossup | Tossup |
+| IA | Josh Turek | Ashley Hinson | R+12.0 | R+0.2 (22) | R+2.3 | R+0.3 | 47% | 47% | Tossup | Tossup |
 | SC | Annie Andrews | Darline Graham | R+16.0 | R+2.2 (4) | R+8.3 | R+3.2 | 31% | 31% | Lean R | Lean R |
 | NE | Dan Osborn (I) | Pete Ricketts | R+20.0 | R+1.8 (4) | R+12.3 | R+3.5 | 29% | 30% | Lean R | Lean R |
 | MS | Scott Colom | Cindy Hyde-Smith | R+22.0 | R+5.7 (2) | R+14.3 | R+7.8 | 16% | 17% | Likely R | Solid R |
-| FL (sp.) | Angie Nixon | Ashley Moody | R+10.0 | R+6.8 (15) | R+2.3 | R+6.4 | 12% | 12% | Likely R | Likely R |
+| FL (sp.) | Angie Nixon | Ashley Moody | R+10.0 | R+6.7 (15) | R+2.3 | R+6.3 | 12% | 13% | Likely R | Likely R |
 | ID | Todd Achilles (I) | Jim Risch | R+36.0 | R+6.2 (1) | R+28.3 | R+13.1 | 9% | 9% | Solid R | Solid R |
 | LA | Jamie Davis | Julia Letlow | R+22.0 | — (0) | R+12.3 | R+12.3 | 7% | 8% | Solid R | Likely R |
-| MT | Alani Bankhead | Kurt Alme | R+20.0 | R+13.0 (6) | R+10.3 | R+13.0 | 5% | 5% | Solid R | Likely R |
+| MT | Alani Bankhead | Kurt Alme | R+20.0 | R+12.4 (6) | R+10.3 | R+12.4 | 5% | 5% | Solid R | Likely R |
 | AR | Hallie Shoffner | Tom Cotton | R+30.0 | R+12.8 (4) | R+22.3 | R+14.3 | 3% | 3% | Solid R | Solid R |
 | SD | Brian Bengs (I) | Mike Rounds | R+30.0 | R+13.2 (4) | R+22.3 | R+14.4 | 3% | 3% | Solid R | Solid R |
 | KY | Charles Booker | Andy Barr | R+30.0 | — (0) | R+20.3 | R+20.3 | 2% | 2% | Solid R | Solid R |
-| TN | Marquita Bradshaw | Bill Hagerty | R+28.0 | R+25.9 (1) | R+20.3 | R+24.2 | 2% | 2% | Solid R | Solid R |
+| TN | Marquita Bradshaw | Bill Hagerty | R+28.0 | R+23.9 (1) | R+20.3 | R+22.8 | 2% | 2% | Solid R | Solid R |
 | OK | N'Kiyla Jasmine Thomas | Kevin Hern | R+34.0 | — (0) | R+24.3 | R+24.3 | 1% | 1% | Solid R | Solid R |
-| AL | Everett Wess | Barry Moore | R+30.0 | R+17.6 (5) | R+20.3 | R+18.0 | 1% | 1% | Solid R | Solid R |
+| AL | Everett Wess | Barry Moore | R+30.0 | R+17.3 (5) | R+20.3 | R+17.7 | 1% | 1% | Solid R | Solid R |
 | WV | Rachel Fetty Anderson | Shelley Moore Capito | R+42.0 | — (0) | R+34.3 | R+34.3 | <1% | <1% | Solid R | Solid R |
 | WY | James W. Byrd | Harriet Hageman | R+46.0 | — (0) | R+36.3 | R+36.3 | <1% | <1% | Solid R | Solid R |
 
@@ -84,7 +84,7 @@ Margins are two-party D−R (Montana: best non-R minus R). The forecast blends t
 | FL-14 | Kathy Castor (D) | R+4 |  | D+5.5 | D+5.5 | 83% | 85% |
 | WA-3 | Marie Gluesenkamp Perez (D) | R+2 |  | R+0.6 | D+5.1 | 82% | 84% |
 | MI-7 | Tom Barrett (R) | EVEN |  | D+5.4 | D+4.5 | 78% | 81% |
-| PA-7 | Ryan Mackenzie (R) | R+1 |  | D+5.4 | D+3.5 | 73% | 76% |
+| PA-7 | Ryan Mackenzie (R) | R+1 |  | D+5.9 | D+3.7 | 75% | 77% |
 | NY-17 | Mike Lawler (R) | D+1 |  | R+0.1 | D+3.1 | 71% | 74% |
 | NJ-7 | Thomas Kean Jr. (R) | EVEN |  | — | D+3.8 | 70% | 73% |
 | AZ-6 | Juan Ciscomani (R) | EVEN |  | — | D+3.8 | 70% | 73% |
@@ -94,7 +94,7 @@ Margins are two-party D−R (Montana: best non-R minus R). The forecast blends t
 | OH-9 | Marcy Kaptur (D) | R+5 |  | R+1.2 | D+1.7 | 60% | 64% |
 | VA-2 | Jen Kiggans (R) | EVEN |  | R+1.2 | D+1.8 | 61% | 64% |
 | IA-2 | Ashley Hinson (R) | R+4 | open | D+2.0 | D+1.5 | 59% | 62% |
-| MT-1 | Ryan Zinke (R) | R+5 | open | D+4.3 | D+1.4 | 59% | 61% |
+| MT-1 | Ryan Zinke (R) | R+5 | open | D+4.8 | D+1.6 | 60% | 62% |
 | MI-10 | John James (R) | R+3 | open | R+1.2 | D+1.2 | 57% | 59% |
 | TX-35 | None (new seat) (O) | R+4 | open | D+0.7 | D+0.9 | 55% | 58% |
 | FL-22 | None (new seat) (O) | R+4 | open | D+0.0 | D+0.6 | 53% | 55% |
@@ -119,11 +119,11 @@ Margins are two-party D−R (Montana: best non-R minus R). The forecast blends t
 | NY-1 | Nick LaLota (R) | R+4 |  | — | R+3.4 | 28% | 29% |
 | TX-23 | Vacant (O) | R+7 | open | R+1.2 | R+3.1 | 27% | 27% |
 | CO-3 | Jeff Hurd (R) | R+5 |  | R+0.1 | R+3.2 | 26% | 26% |
+| FL-16 | Vern Buchanan (R) | R+6 | open | R+4.4 | R+3.3 | 26% | 26% |
 | FL-11 | Daniel Webster (R) | R+7 | open | — | R+4.4 | 23% | 24% |
 | MN-1 | Brad Finstad (R) | R+6 |  | D+0.3 | R+3.8 | 22% | 22% |
 | OH-15 | Mike Carey (R) | R+5 |  | R+2.0 | R+3.8 | 22% | 22% |
 | NV-2 | Mark Amodei (R) | R+7 | open | R+3.4 | R+4.0 | 22% | 22% |
-| FL-16 | Vern Buchanan (R) | R+6 | open | R+6.4 | R+4.1 | 21% | 21% |
 | NE-1 | Mike Flood (R) | R+6 |  | R+0.3 | R+4.1 | 21% | 21% |
 | FL-4 | Aaron Bean (R) | R+5 |  | — | R+5.2 | 20% | 20% |
 | WA-5 | Michael Baumgartner (R) | R+5 |  | — | R+5.2 | 19% | 20% |
@@ -138,18 +138,18 @@ Margins are two-party D−R (Montana: best non-R minus R). The forecast blends t
 | NC-3 | Greg Murphy (R) | R+6 |  | — | R+7.1 | 13% | 14% |
 | AR-2 | French Hill (R) | R+8 |  | R+0.2 | R+6.2 | 13% | 12% |
 | VA-5 | John McGuire (R) | R+6 |  | R+5.2 | R+6.3 | 12% | 12% |
+| NY-21 | Elise Stefanik (R) | R+10 | open | R+1.9 | R+6.5 | 11% | 11% |
 | TX-9 | None (new seat) (O) | R+9 | open | — | R+8.0 | 11% | 11% |
-| NY-21 | Elise Stefanik (R) | R+10 | open | R+2.3 | R+6.7 | 11% | 11% |
 
 _PVI column in the House table is Cook-style share PVI (district vs. nation); in the Senate table it is shown as the implied margin (2×PVI)._
 
 ## Backtest (2018 & 2022, poll-average component)
 
-- **2018 Senate**: 30 races, winner called correctly 90%, Brier 0.044, mean error -0.1 (D−R), MAE 5.4. Misses: Florida (polls D+0.5, actual R+0.1), Indiana (polls D+0.6, actual R+5.9), Nevada (polls R+0.5, actual D+5.0)
+- **2018 Senate**: 30 races, winner called correctly 90%, Brier 0.044, mean error -0.1 (D−R), MAE 5.5. Misses: Florida (polls D+0.5, actual R+0.1), Indiana (polls D+0.6, actual R+5.9), Nevada (polls R+0.5, actual D+5.0)
 - **2022 Senate**: 28 races, winner called correctly 100%, Brier 0.035, mean error -2.0 (D−R), MAE 4.7. Misses: 
 - **2018 generic ballot**: my average D+7.5 vs. actual House vote D+8.5 (error +1.0).
-- **2022 generic ballot**: my average R+0.9 vs. actual House vote R+2.6 (error -1.8).
-- Calibration by forecast bin: 0%–10%: forecast 2%, Dems won 0% of 13; 10%–30%: forecast 19%, Dems won 0% of 5; 30%–50%: forecast 41%, Dems won 25% of 4; 50%–70%: forecast 56%, Dems won 60% of 5; 70%–90%: forecast 85%, Dems won 100% of 5; 90%–100%: forecast 98%, Dems won 100% of 26. The middle bins resolve more decisively than forecast, i.e. the model is somewhat under-confident with the two-party error scales. Caveat: error scales were estimated on data that include these cycles (in-sample).
+- **2022 generic ballot**: my average R+1.0 vs. actual House vote R+2.6 (error -1.7).
+- Calibration by forecast bin: 0%–10%: forecast 3%, Dems won 0% of 14; 10%–30%: forecast 21%, Dems won 0% of 4; 30%–50%: forecast 41%, Dems won 25% of 4; 50%–70%: forecast 56%, Dems won 60% of 5; 70%–90%: forecast 85%, Dems won 100% of 5; 90%–100%: forecast 98%, Dems won 100% of 26. The middle bins resolve more decisively than forecast, i.e. the model is somewhat under-confident with the two-party error scales. Caveat: error scales were estimated on data that include these cycles (in-sample).
 
 ## Caveats and judgment calls
 
@@ -158,7 +158,7 @@ _PVI column in the House table is Cook-style share PVI (district vs. nation); in
 - **Polls vs. partisanship (Senate).** On 328 races 1998–2022, the optimal weight on final-three-week polls vs. a lean + environment prior is 0.87 (SE 0.05); the prior's errors are fat-tailed (robust SD 9.7, SD 16.4). Polled races use prior SD 18.7 (≈0.87 weight on polls); unpolled races use 9.7. Previously an assumed 10 for both (0.64 weight). See `src/model/prior_weight.py`.
 - **House district model (estimated)** on 3752 contested races 2006–2024: margin = 0.75 + 0.91×(2×PVI) + 0.78×national ± 4.5 incumbency; district SD 7.4; district polls get ~0.46 weight (poll SD 8.1). Incumbency fell from ~20 pts (2006) to ~4 (2018–2024). Expected-seat RMSE over 2006–2024: 6.7 vs 11.9 for the old assumed model; recent cycles undercount Democratic contested-seat wins by ~6.
 - **Is the bias adjustment justified?** Polls overstated Democrats in 11 of 14 elections 1998–2024 (mean -3.1, predictive SD 2.5; P(overstate again) 88%); LV-only polls 2018–2024 averaged -2.3; Senate polls missed against Democrats in all five cycles since 2014 (mean -3.7). Nothing observable predicts the size. This year's generic-ballot pollsters are a typical mix (house effect -0.06); the battleground Senate pollsters lean slightly Republican (-0.49; historical miss -1.9). The Bias-adjusted model: national shift -2.55 (estimate + LV discount 0.38), Senate shift -1.56 (battleground pollsters' record + discount) plus the state-lean term. The Senate moves ~10 pts of control probability per point of national shift because five races in R-leaning states sit within 3 pts of even.
-- **Poll-averaging settings (estimated, `src/model/poll_settings.py`)**: sponsor shift 4.3 pts statewide / 6.3 House; population weights RV 0.69, adults 0.5, with RV/adult polls shifted 1.5/3.4 pts toward Republicans; half-life 60 days (backtest prefers no decay); t with 3.9 df.
+- **Poll-averaging settings (estimated, `src/model/poll_settings.py`)**: sponsor shift 4.3 pts statewide / 6.3 House; population weights RV 0.69, adults 0.5, with RV/adult polls shifted 0.45 pts toward Democrats (paired LV-vs-RV surveys, historical prior + 2026 pairs); half-life 60 days (backtest prefers no decay); t with 3.9 df.
 - **Correlated errors.** Beyond the shared national miss, each simulation draws a Census-region shock (SD 0.5) and a random slope on state lean (SD 0.078 per point), with each race's total variance held fixed. The regional component is small in 1998–2022 data; a 2-pt regional sensitivity moves Senate control by about 1 point (see `data/processed/error_sensitivity.json`).
 - **Polling bias.** On a two-party basis, final generic-ballot averages overstated Democrats by 3.1 pts on average over 1998–2022 (9 of 13 elections; 2018 was the main exception at +0.5). A decay-weighted re-estimate that up-weights recent midterms gives -2.9; adding party in the White House, House incumbency, a second-term flag or a president-specific effect makes out-of-sample prediction worse, so none is used. The bias-adjusted model shifts every race by -2.6 (the estimate less 1 pt because the 2026 aggregators already adjust to likely voters, which ran 1–1.5 pts less Democratic than registered-voter polls in 2020/2022). The scenario column applies the full -2.9. Details: `src/model/bias_decay.py`, `data/processed/bias_decay.json`.
 - **State-level poll misses.** Since 2010, results have landed further toward a state's partisan lean than final poll averages (about 0.08 pts per point of lean, symmetric in red and blue states; a real-time 2014–2022 backtest improved race-level RMSE from 5.6 to 5.3). This is an outcome-based pattern, not a test of differential non-response by party: no source here records response rates. Not applied in the published models; `APPLY_LEAN_CORRECTION` in `src/model/forecast.py`.

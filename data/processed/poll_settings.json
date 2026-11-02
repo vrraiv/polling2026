@@ -64,46 +64,46 @@
  },
  "half_life": {
   "7": {
-   "rmse": 8.463008072633018,
-   "rmse_within": 8.416343753315372,
-   "brier": 0.05236877035546096,
-   "generic_abs_err": 1.2618353732742003
+   "rmse": 8.466154847744608,
+   "rmse_within": 8.429882431091583,
+   "brier": 0.048229895761946154,
+   "generic_abs_err": 1.2391953181031963
   },
   "14": {
-   "rmse": 8.049485894245445,
-   "rmse_within": 7.968870121479631,
-   "brier": 0.049792489907646294,
-   "generic_abs_err": 1.354799568448314
+   "rmse": 8.022931938552267,
+   "rmse_within": 7.96241651236034,
+   "brier": 0.044258759941277905,
+   "generic_abs_err": 1.4015504339975804
   },
   "21": {
-   "rmse": 7.858820586347215,
-   "rmse_within": 7.753125363481007,
-   "brier": 0.04863356534906765,
-   "generic_abs_err": 1.4698144135122009
+   "rmse": 7.816439394004542,
+   "rmse_within": 7.736230642357208,
+   "brier": 0.04248453599910365,
+   "generic_abs_err": 1.5434827287610458
   },
   "30": {
-   "rmse": 7.742360897481541,
-   "rmse_within": 7.614940209989754,
-   "brier": 0.047830939880597556,
-   "generic_abs_err": 1.5789981613386264
+   "rmse": 7.692202307104563,
+   "rmse_within": 7.593767444857784,
+   "brier": 0.04131892706642815,
+   "generic_abs_err": 1.6592734110058753
   },
   "45": {
-   "rmse": 7.659719897335914,
-   "rmse_within": 7.510674936356468,
-   "brier": 0.04708553720021415,
-   "generic_abs_err": 1.6799472881410589
+   "rmse": 7.606003201293864,
+   "rmse_within": 7.488636230802274,
+   "brier": 0.04035291127249871,
+   "generic_abs_err": 1.7651104935117674
   },
   "60": {
-   "rmse": 7.623203964179843,
-   "rmse_within": 7.4614725233807775,
-   "brier": 0.04664446702177204,
-   "generic_abs_err": 1.728288312566488
+   "rmse": 7.568891375154149,
+   "rmse_within": 7.440142763413477,
+   "brier": 0.03983917189580619,
+   "generic_abs_err": 1.8225554946989475
   },
   "1000": {
-   "rmse": 7.546862925916628,
-   "rmse_within": 7.34170098030325,
-   "brier": 0.04502215622020716,
-   "generic_abs_err": 1.8863786186829015
+   "rmse": 7.4964877578121305,
+   "rmse_within": 7.327762725953785,
+   "brier": 0.03818578228744155,
+   "generic_abs_err": 1.9958133966047238
   }
  },
  "tails": {
@@ -114,6 +114,179 @@
   "ks_t": 0.032046330369834286,
   "ks_normal": 0.07721929829218824,
   "tail_share_gt_2sd": 0.04113475177304964
+ },
+ "lv_paired": {
+  "n_pairs_2026": 29,
+  "mean_2026": 0.9262238236580355,
+  "se_2026": 0.5010162133572729,
+  "weight_on_2026": 0.7786142434321546,
+  "posterior_lv_minus_rv": 0.4481933657580672,
+  "posterior_sd": 0.44209230158327706,
+  "prior_mean": -1.2330409154602284,
+  "prior_sd": 0.939589412394013,
+  "prior_by_cycle": {
+   "2018": -1.8855898910794195,
+   "2020": -0.28611917849648183,
+   "2022": -2.1810631684627473,
+   "2024": -0.5793914238022659
+  },
+  "n_hist_pairs": 653,
+  "pairs_2026": [
+   {
+    "type": "generic",
+    "pollster": "McLaughlin & Associates",
+    "lv_minus_rv": 1.4
+   },
+   {
+    "type": "generic",
+    "pollster": "NewsNation/Decision Desk HQ",
+    "lv_minus_rv": -1.12
+   },
+   {
+    "type": "generic",
+    "pollster": "Marquette University Law School",
+    "lv_minus_rv": 3.9
+   },
+   {
+    "type": "generic",
+    "pollster": "The Argument/Verasight",
+    "lv_minus_rv": 1.6
+   },
+   {
+    "type": "generic",
+    "pollster": "Big Data Poll",
+    "lv_minus_rv": 1.05
+   },
+   {
+    "type": "generic",
+    "pollster": "The Argument/Verasight",
+    "lv_minus_rv": 3.6
+   },
+   {
+    "type": "generic",
+    "pollster": "The Argument/Verasight",
+    "lv_minus_rv": 6.0
+   },
+   {
+    "type": "generic",
+    "pollster": "Marquette University Law School",
+    "lv_minus_rv": 2.87
+   },
+   {
+    "type": "generic",
+    "pollster": "Focaldata",
+    "lv_minus_rv": 2.82
+   },
+   {
+    "type": "generic",
+    "pollster": "The Argument/Verasight",
+    "lv_minus_rv": 0.0
+   },
+   {
+    "type": "generic",
+    "pollster": "Big Data Poll",
+    "lv_minus_rv": 0.23
+   },
+   {
+    "type": "generic",
+    "pollster": "The Public Sentiment Institute",
+    "lv_minus_rv": -0.92
+   },
+   {
+    "type": "generic",
+    "pollster": "HarrisX/Harris",
+    "lv_minus_rv": 0.0
+   },
+   {
+    "type": "generic",
+    "pollster": "HarrisX/Harris",
+    "lv_minus_rv": 2.0
+   },
+   {
+    "type": "senate",
+    "pollster": "High Point University Survey Research Center/YouGov",
+    "race": "North Carolina",
+    "lv_minus_rv": -2.67
+   },
+   {
+    "type": "generic",
+    "pollster": "Marquette University Law School",
+    "lv_minus_rv": 6.07
+   },
+   {
+    "type": "generic",
+    "pollster": "HarrisX/Harris",
+    "lv_minus_rv": 0.0
+   },
+   {
+    "type": "generic",
+    "pollster": "Big Data Poll",
+    "lv_minus_rv": -0.25
+   },
+   {
+    "type": "generic",
+    "pollster": "HarrisX",
+    "lv_minus_rv": 1.03
+   },
+   {
+    "type": "generic",
+    "pollster": "Big Data Poll",
+    "lv_minus_rv": 0.22
+   },
+   {
+    "type": "generic",
+    "pollster": "Marquette University Law School",
+    "lv_minus_rv": -0.07
+   },
+   {
+    "type": "generic",
+    "pollster": "HarrisX",
+    "lv_minus_rv": -0.05
+   },
+   {
+    "type": "generic",
+    "pollster": "The Public Sentiment Institute",
+    "lv_minus_rv": -1.8
+   },
+   {
+    "type": "senate",
+    "pollster": "Change Research",
+    "race": "Florida",
+    "lv_minus_rv": 3.37
+   },
+   {
+    "type": "senate",
+    "pollster": "Elon University/YouGov",
+    "race": "North Carolina",
+    "lv_minus_rv": -7.03
+   },
+   {
+    "type": "senate",
+    "pollster": "High Point University Survey Research Center",
+    "race": "North Carolina",
+    "lv_minus_rv": -2.6
+   },
+   {
+    "type": "senate",
+    "pollster": "Michigan State University Institute for Public Policy and Social Research/YouGov",
+    "race": "Michigan",
+    "lv_minus_rv": 0.92
+   },
+   {
+    "type": "senate",
+    "pollster": "YouGov",
+    "race": "Iowa",
+    "lv_minus_rv": 3.3
+   },
+   {
+    "type": "senate",
+    "pollster": "Targoz Market Research",
+    "race": "Florida",
+    "lv_minus_rv": 3.0
+   }
+  ],
+  "mean_generic_2026": 1.299090909090909,
+  "mean_senate_2026": -0.24428571428571427
  },
  "chosen": {
   "partisan_shift_statewide": 4.3,
@@ -126,6 +299,10 @@
   "half_life_races": 60,
   "half_life_best_tested": "1000",
   "pop_dem_lean": {
+   "rv": -0.45,
+   "a": -0.45
+  },
+  "pop_dem_lean_crosspoll_old": {
    "rv": 1.5,
    "a": 3.4
   },
