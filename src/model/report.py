@@ -136,6 +136,11 @@ def main():
       f"environment, a worse local job trend is associated with {se['struct']['coef']:+.2f} pts for Democrats-under-a-Republican-president "
       f"(cluster SE {se['struct']['se_cluster']:.2f}; wrong sign, no held-out gain), so the Senate prior uses {se['coef_used']:.1f}. As a correction to poll "
       f"averages the effect is {se['miss']['coef']:+.2f} (SE {se['miss']['se_cluster']:.2f}), but it improves held-out error by only 0.1%, so it is not applied.")
+    pw = json.loads((OUT / "prior_weight.json").read_text())
+    a(f"- **Polls vs. partisanship (Senate).** On {pw['n_races']} races 1998–2022, the optimal weight on final-three-week polls vs. a lean + environment "
+      f"prior is {pw['w']:.2f} (SE {pw['w_se']:.2f}); the prior's errors are fat-tailed (robust SD {pw['prior_sd_robust']:.1f}, SD {pw['sd_prior_resid']:.1f}). "
+      f"Polled races use prior SD {pw['implied_prior_sd']:.1f} (≈{pw['w']:.2f} weight on polls); unpolled races use {pw['prior_sd_robust']:.1f}. "
+      f"Previously an assumed 10 for both (0.64 weight). See `src/model/prior_weight.py`.")
     es = json.loads((OUT / "error_structure.json").read_text())
     a(f"- **Correlated errors.** Beyond the shared national miss, each simulation draws a Census-region shock (SD {es['sigma_region']:.1f}) and a random "
       f"slope on state lean (SD {es['lean_slope']['all']['sd_true']:.3f} per point), with each race's total variance held fixed. The regional component is "

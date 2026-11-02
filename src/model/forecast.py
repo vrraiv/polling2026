@@ -52,7 +52,12 @@ LV_DISCOUNT = 1.0   # the 2026 aggregators adjust to likely voters; LV polls ran
 BIAS_ADJ = GENERIC_BIAS + LV_DISCOUNT   # about -2.0: the shift used by the "bias-adjusted" model
 SD_NAT_SENATE = float(np.sqrt(np.mean(np.square(SEN_CYC))))     # shared Senate polling miss per cycle
 SD_RACE_POLLAVG = CAL["Sen-G"]["race_resid_sd_midterms"]        # race-level error of a final poll average
-SD_SENATE_PRIOR = 10.0    # race error of 2*PVI + G + incumbency prior (assumed; candidate effects are large, e.g. ME 2020 missed by ~20)
+# Senate prior error: estimated in src/model/prior_weight.py from 1998-2022 races (optimal weight on late polls
+# ~0.87 => prior SD ~18.7 given the poll-average SD). Previously an assumed 10, which over-weighted partisanship.
+_PW = OUT / "prior_weight.json"
+_pw = json.loads(_PW.read_text()) if _PW.exists() else {}
+SD_SENATE_PRIOR = float(_pw.get("implied_prior_sd", 10.0))          # sets the weight on polls in polled races (~0.86)
+SD_SENATE_PRIOR_UNPOLLED = float(_pw.get("prior_sd_robust", 10.0))   # error of the prior alone (robust; tails come from t5)
 MULTI_CANDIDATE = {"MT"}   # genuine 3-way races: use raw (best non-R minus R) poll margin, no PVI prior
 SD_HOUSE_DISTRICT = 6.0   # district error around 2*PVI + G + incumbency (assumed, typical of district models)
 SD_HOUSE_POLL = 7.5       # district polls: mostly sparse/internal, so noisy (assumed)
@@ -250,7 +255,7 @@ def senate_model(s, polls, G, sd_nat, econ_adj=None):
             mu = wp * pa["avg"] + (1 - wp) * prior
             sd = 1 / np.sqrt(1 / sd_p ** 2 + 1 / SD_SENATE_PRIOR ** 2)
         else:
-            wp, mu, sd = 0.0, prior, SD_SENATE_PRIOR
+            wp, mu, sd = 0.0, prior, SD_SENATE_PRIOR_UNPOLLED
         rows.append(dict(race_key=r.race_key, state=r.state, special=r.special, dem=r.dem_nominee, rep=r.rep_nominee,
                          dside=r.dside_party, inc_party=r.inc_party, pvi=r.pvi, prior=prior,
                          poll_avg=pa["avg"] if pa else np.nan, poll_avg_raw=pa.get("raw_avg", pa["avg"]) if pa else np.nan,

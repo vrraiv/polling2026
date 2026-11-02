@@ -1,6 +1,6 @@
 # 2026 Midterm Forecast
 
-_Generated 2026-11-02 06:02 from the latest data snapshot. Refresh data + rerun everything: `python src/run_all.py`._
+_Generated 2026-11-02 07:39 from the latest data snapshot. Refresh data + rerun everything: `python src/run_all.py`._
 
 ## Topline
 
@@ -10,14 +10,14 @@ _Generated 2026-11-02 06:02 from the latest data snapshot. Refresh data + rerun 
 | **P(Democratic House majority)** | 90% | 96% | 93% | 88% |
 | P(Republican House majority) | 10% | 4% | 7% | 12% |
 | Dem House seats, mean (80% range) | 239 (218–261) | 240 (223–259) | 232 (219–245) | 228 (217–240) |
-| **P(Democratic Senate control)** | 68% | 70% | 50% | 38% |
-| P(Dem control if independents caucus D) | 69% | 71% | 51% | 39% |
-| P(Republican Senate control) | 31% | 29% | 49% | 61% |
-| Dem-caucus Senate seats, mean (80% range) | 51.6 (48–55) | 51.8 (49–55) | 50.5 (48–53) | 49.9 (47–53) |
+| **P(Democratic Senate control)** | 72% | 73% | 54% | 41% |
+| P(Dem control if independents caucus D) | 75% | 75% | 58% | 44% |
+| P(Republican Senate control) | 25% | 25% | 42% | 56% |
+| Dem-caucus Senate seats, mean (80% range) | 51.9 (49–55) | 52.0 (49–55) | 50.7 (48–53) | 50.0 (47–53) |
 
 Democrats need 51 Senate seats for control (VP Vance breaks 50–50 ties); 34 Dem-caucus and 31 Republican seats are not up. Independent candidates (Osborn in NE, Achilles in ID) are counted separately; neither has committed to a caucus.
 
-**Fundamentals sensitivity** (each of the ten top estimated specifications, both samples): fundamentals-only environment ranges D+8.0 to D+11.8; after blending with polls, D+8.6 to D+10.3, P(D House) 94%–97%, P(D Senate) 66%–72%.
+**Fundamentals sensitivity** (each of the ten top estimated specifications, both samples): fundamentals-only environment ranges D+8.0 to D+11.8; after blending with polls, D+8.6 to D+10.3, P(D House) 94%–97%, P(D Senate) 71%–74%.
 
 **Benchmark:** Silver Bulletin's FLIPR (Nov 1 free summary) gives Democrats ~95% to win the House with a ~25-seat net gain (≈238 seats); Senate numbers are paywalled (described as a meaningful Democratic edge).
 
@@ -32,44 +32,44 @@ Democrats need 51 Senate seats for control (VP Vance breaks 50–50 ties); 34 De
 
 ## Senate races
 
-Margins are two-party D−R (Montana: best non-R minus R). The forecast blends the poll average (on average 64% weight in polled races) with a structural prior (2×PVI + environment + incumbency). Nationally, polls get 56% of the weight vs. the fundamentals.
+Margins are two-party D−R (Montana: best non-R minus R). The forecast blends the poll average (on average 86% weight in polled races) with a structural prior (2×PVI + environment + incumbency). Nationally, polls get 56% of the weight vs. the fundamentals.
 
 | Race | Democrat / Ind. | Republican | PVI | Poll avg (n) | Prior | Forecast margin | P(D/I win) polls-only | P(D/I win) +fund | Cook | Silver |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MA | Ed Markey | John Deaton | D+28.0 | D+30.8 (9) | D+39.7 | D+34.0 | >99% | >99% | Solid D | Solid D |
-| RI | Jack Reed | Raymond McKay | D+16.0 | D+28.6 (5) | D+27.7 | D+28.3 | >99% | >99% | Solid D | Solid D |
-| VA | Mark Warner | Bert Mizusawa | D+6.0 | D+20.2 (2) | D+17.7 | D+19.3 | 99% | 99% | Solid D | Solid D |
-| NM | Ben Ray Luján | Larry Marker | D+8.0 | D+19.2 (2) | D+19.7 | D+19.4 | 99% | 99% | Solid D | Solid D |
+| MA | Ed Markey | John Deaton | D+28.0 | D+30.8 (9) | D+39.7 | D+32.0 | >99% | >99% | Solid D | Solid D |
+| RI | Jack Reed | Raymond McKay | D+16.0 | D+28.6 (5) | D+27.7 | D+28.5 | >99% | >99% | Solid D | Solid D |
 | DE | Chris Coons | Michael Katz | D+16.0 | — (0) | D+27.7 | D+27.7 | 99% | 99% | Solid D | Solid D |
 | OR | Jeff Merkley | David Brock Smith | D+16.0 | — (0) | D+27.7 | D+27.7 | 99% | 99% | Solid D | Solid D |
-| IL | Juliana Stratton | Don Tracy | D+12.0 | D+13.5 (3) | D+21.7 | D+16.6 | 99% | 99% | Solid D | Solid D |
-| CO | John Hickenlooper | Mark Baisley | D+12.0 | — (0) | D+23.7 | D+23.7 | 98% | 98% | Solid D | Solid D |
+| VA | Mark Warner | Bert Mizusawa | D+6.0 | D+20.2 (2) | D+17.7 | D+19.9 | 99% | 99% | Solid D | Solid D |
+| NM | Ben Ray Luján | Larry Marker | D+8.0 | D+19.2 (2) | D+19.7 | D+19.2 | 99% | 99% | Solid D | Solid D |
+| CO | John Hickenlooper | Mark Baisley | D+12.0 | — (0) | D+23.7 | D+23.7 | 98% | 99% | Solid D | Solid D |
 | NJ | Cory Booker | Justin Murphy | D+8.0 | — (0) | D+19.7 | D+19.7 | 97% | 97% | Solid D | Solid D |
-| NH | Chris Pappas | John E. Sununu | D+4.0 | D+8.7 (10) | D+13.7 | D+10.5 | 94% | 94% | Lean D | Likely D |
-| GA | Jon Ossoff | Mike Collins | R+2.0 | D+10.0 (11) | D+9.7 | D+9.9 | 93% | 94% | Likely D | Solid D |
-| NC | Roy Cooper | Michael Whatley | R+2.0 | D+11.1 (25) | D+7.7 | D+9.9 | 93% | 94% | Likely D (flip) | Solid D (flip) |
-| MN | Peggy Flanagan | Michele Tafoya | D+6.0 | D+3.6 (7) | D+15.7 | D+8.1 | 89% | 90% | Lean D | Likely D |
-| ME | Troy Jackson | Susan Collins | D+8.0 | D+3.7 (20) | D+15.7 | D+8.0 | 89% | 90% | Tossup | Likely D (flip) |
-| MI | Abdul El-Sayed | Mike Rogers | D+0.0 | D+4.8 (36) | D+9.7 | D+6.6 | 85% | 85% | Tossup | Likely D |
-| OH (sp.) | Sherrod Brown | Jon Husted | R+10.0 | D+4.1 (23) | R+2.3 | D+1.8 | 61% | 62% | Tossup | Lean D (flip) |
-| TX | James Talarico | Ken Paxton | R+12.0 | D+3.1 (39) | R+2.3 | D+1.2 | 56% | 58% | Tossup | Likely D (flip) |
-| KS | Adam Hamilton | Roger Marshall | R+16.0 | D+4.2 (7) | R+8.3 | R+0.3 | 47% | 48% | Tossup | Lean D (flip) |
-| IA | Josh Turek | Ashley Hinson | R+12.0 | D+0.2 (22) | R+2.3 | R+0.7 | 44% | 46% | Tossup | Tossup |
-| AK | Mary Peltola | Dan S. Sullivan | R+12.0 | D+1.0 (9) | R+4.3 | R+1.0 | 42% | 43% | Tossup | Tossup |
-| SC | Annie Andrews | Darline Graham | R+16.0 | R+2.3 (4) | R+8.3 | R+4.6 | 22% | 23% | Lean R | Lean R |
-| FL (sp.) | Angie Nixon | Ashley Moody | R+10.0 | R+6.6 (15) | R+2.3 | R+5.1 | 19% | 20% | Likely R | Likely R |
-| NE | Dan Osborn (I) | Pete Ricketts | R+20.0 | R+2.1 (4) | R+12.3 | R+5.9 | 16% | 17% | Lean R | Lean R |
+| IL | Juliana Stratton | Don Tracy | D+12.0 | D+13.5 (3) | D+21.7 | D+14.7 | 97% | 97% | Solid D | Solid D |
+| NC | Roy Cooper | Michael Whatley | R+2.0 | D+11.1 (25) | D+7.7 | D+10.6 | 93% | 93% | Likely D (flip) | Solid D (flip) |
+| GA | Jon Ossoff | Mike Collins | R+2.0 | D+10.0 (11) | D+9.7 | D+9.9 | 92% | 92% | Likely D | Solid D |
+| NH | Chris Pappas | John E. Sununu | D+4.0 | D+8.7 (10) | D+13.7 | D+9.4 | 90% | 90% | Lean D | Likely D |
+| MI | Abdul El-Sayed | Mike Rogers | D+0.0 | D+4.8 (36) | D+9.7 | D+5.5 | 79% | 79% | Tossup | Likely D |
+| MN | Peggy Flanagan | Michele Tafoya | D+6.0 | D+3.6 (7) | D+15.7 | D+5.4 | 78% | 78% | Lean D | Likely D |
+| ME | Troy Jackson | Susan Collins | D+8.0 | D+3.7 (20) | D+15.7 | D+5.4 | 78% | 78% | Tossup | Likely D (flip) |
+| OH (sp.) | Sherrod Brown | Jon Husted | R+10.0 | D+4.1 (23) | R+2.3 | D+3.3 | 69% | 69% | Tossup | Lean D (flip) |
+| KS | Adam Hamilton | Roger Marshall | R+16.0 | D+4.2 (7) | R+8.3 | D+2.5 | 64% | 64% | Tossup | Lean D (flip) |
+| TX | James Talarico | Ken Paxton | R+12.0 | D+3.1 (39) | R+2.3 | D+2.4 | 63% | 64% | Tossup | Likely D (flip) |
+| AK | Mary Peltola | Dan S. Sullivan | R+12.0 | D+1.0 (9) | R+4.3 | D+0.2 | 51% | 51% | Tossup | Tossup |
+| IA | Josh Turek | Ashley Hinson | R+12.0 | D+0.2 (22) | R+2.3 | R+0.2 | 48% | 49% | Tossup | Tossup |
+| SC | Annie Andrews | Darline Graham | R+16.0 | R+2.3 (4) | R+8.3 | R+3.2 | 31% | 32% | Lean R | Lean R |
+| NE | Dan Osborn (I) | Pete Ricketts | R+20.0 | R+2.1 (4) | R+12.3 | R+3.5 | 30% | 30% | Lean R | Lean R |
+| MS | Scott Colom | Cindy Hyde-Smith | R+22.0 | R+4.8 (2) | R+14.3 | R+6.3 | 19% | 19% | Likely R | Solid R |
+| FL (sp.) | Angie Nixon | Ashley Moody | R+10.0 | R+6.6 (15) | R+2.3 | R+6.0 | 19% | 19% | Likely R | Likely R |
 | MT | Alani Bankhead | Kurt Alme | R+20.0 | R+10.0 (6) | R+10.3 | R+10.0 | 12% | 12% | Solid R | Likely R |
+| ID | Todd Achilles (I) | Jim Risch | R+36.0 | R+6.2 (1) | R+28.3 | R+10.0 | 10% | 10% | Solid R | Solid R |
 | LA | Jamie Davis | Julia Letlow | R+22.0 | — (0) | R+12.3 | R+12.3 | 9% | 10% | Solid R | Likely R |
-| MS | Scott Colom | Cindy Hyde-Smith | R+22.0 | R+4.8 (2) | R+14.3 | R+8.6 | 9% | 10% | Likely R | Solid R |
-| KY | Charles Booker | Andy Barr | R+30.0 | — (0) | R+20.3 | R+20.3 | 2% | 3% | Solid R | Solid R |
-| ID | Todd Achilles (I) | Jim Risch | R+36.0 | R+6.2 (1) | R+28.3 | R+15.4 | 2% | 2% | Solid R | Solid R |
-| SD | Brian Bengs (I) | Mike Rounds | R+30.0 | R+12.1 (4) | R+22.3 | R+16.5 | 1% | 2% | Solid R | Solid R |
+| SD | Brian Bengs (I) | Mike Rounds | R+30.0 | R+12.1 (4) | R+22.3 | R+14.0 | 4% | 5% | Solid R | Solid R |
+| AR | Hallie Shoffner | Tom Cotton | R+30.0 | R+13.0 (4) | R+22.3 | R+14.4 | 3% | 3% | Solid R | Solid R |
+| KY | Charles Booker | Andy Barr | R+30.0 | — (0) | R+20.3 | R+20.3 | 2% | 2% | Solid R | Solid R |
+| AL | Everett Wess | Barry Moore | R+30.0 | R+16.5 (5) | R+20.3 | R+17.1 | 2% | 2% | Solid R | Solid R |
 | OK | N'Kiyla Jasmine Thomas | Kevin Hern | R+34.0 | — (0) | R+24.3 | R+24.3 | 1% | 1% | Solid R | Solid R |
-| AR | Hallie Shoffner | Tom Cotton | R+30.0 | R+13.0 (4) | R+22.3 | R+16.5 | 1% | 1% | Solid R | Solid R |
-| AL | Everett Wess | Barry Moore | R+30.0 | R+16.5 (5) | R+20.3 | R+18.0 | 1% | 1% | Solid R | Solid R |
+| TN | Marquita Bradshaw | Bill Hagerty | R+28.0 | R+24.4 (1) | R+20.3 | R+23.7 | 1% | 1% | Solid R | Solid R |
 | WV | Rachel Fetty Anderson | Shelley Moore Capito | R+42.0 | — (0) | R+34.3 | R+34.3 | <1% | <1% | Solid R | Solid R |
-| TN | Marquita Bradshaw | Bill Hagerty | R+28.0 | R+24.4 (1) | R+20.3 | R+22.7 | <1% | <1% | Solid R | Solid R |
 | WY | James W. Byrd | Harriet Hageman | R+46.0 | — (0) | R+36.3 | R+36.3 | <1% | <1% | Solid R | Solid R |
 
 ## Competitive House seats
@@ -160,6 +160,7 @@ _PVI column in the House table is Cook-style share PVI (district vs. nation); in
 
 - **Fundamentals are estimated** (`src/model/fundamentals.py`): president's-party House margin on Gallup approval, the previous House margin, real gas-price change, inflation, real income growth and unemployment change; every subset of up to 4 predictors scored by leave-one-out RMSE, top five averaged. Best specification: const -10.72 (±3.33), approval +0.26 (±0.07), prev +0.79 (±0.11), gas -0.08 (±0.05), midterm -8.96 (±1.59). Inflation adds nothing once approval is in; real gas has the expected sign but is only ~1.5 SE from zero. 2026 approval and the gas-price rise are both outside the 1962–2022 range, so the estimate extrapolates. Unemployment (12-month change and level) was tested nationally: both are weak (coefficients within ~1.5 SE of zero) and enter only as minor terms in the averaged model.
 - **State unemployment** (`src/model/state_econ.py`, 584 Senate/governor races 1998–2022). Relative to state lean and the national environment, a worse local job trend is associated with -1.71 pts for Democrats-under-a-Republican-president (cluster SE 1.29; wrong sign, no held-out gain), so the Senate prior uses 0.0. As a correction to poll averages the effect is +0.78 (SE 0.39), but it improves held-out error by only 0.1%, so it is not applied.
+- **Polls vs. partisanship (Senate).** On 328 races 1998–2022, the optimal weight on final-three-week polls vs. a lean + environment prior is 0.87 (SE 0.05); the prior's errors are fat-tailed (robust SD 9.7, SD 16.4). Polled races use prior SD 18.7 (≈0.87 weight on polls); unpolled races use 9.7. Previously an assumed 10 for both (0.64 weight). See `src/model/prior_weight.py`.
 - **Correlated errors.** Beyond the shared national miss, each simulation draws a Census-region shock (SD 0.5) and a random slope on state lean (SD 0.078 per point), with each race's total variance held fixed. The regional component is small in 1998–2022 data; a 2-pt regional sensitivity moves Senate control by about 1 point (see `data/processed/error_sensitivity.json`).
 - **Polling bias.** On a two-party basis, final generic-ballot averages overstated Democrats by 3.1 pts on average over 1998–2022 (9 of 13 elections; 2018 was the main exception at +0.5). A decay-weighted re-estimate that up-weights recent midterms gives -3.1; adding party in the White House, House incumbency, a second-term flag or a president-specific effect makes out-of-sample prediction worse, so none is used. The bias-adjusted model shifts every race by -2.1 (the estimate less 1 pt because the 2026 aggregators already adjust to likely voters, which ran 1–1.5 pts less Democratic than registered-voter polls in 2020/2022). The scenario column applies the full -3.1. Details: `src/model/bias_decay.py`, `data/processed/bias_decay.json`.
 - **State-level poll misses.** Since 2010, results have landed further toward a state's partisan lean than final poll averages (about 0.08 pts per point of lean, symmetric in red and blue states; a real-time 2014–2022 backtest improved race-level RMSE from 5.6 to 5.3). This is an outcome-based pattern, not a test of differential non-response by party: no source here records response rates. Not applied in the published models; `APPLY_LEAN_CORRECTION` in `src/model/forecast.py`.

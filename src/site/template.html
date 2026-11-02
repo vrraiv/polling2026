@@ -205,7 +205,8 @@ footer a { color: var(--text-2); }
     <summary>Judgment calls and caveats</summary>
     <ul class="list small">
       <li><b>Fundamentals extrapolate.</b> 2026 approval (Gallup-equivalent ~35.6%) is below every past midterm, and the 29% real rise in gas prices is above anything in the 1962–2022 data. <span id="sensText"></span></li>
-      <li><b>House model.</b> The district error (SD 6) and incumbency (+2.5) are assumptions and weren't backtested; the seat total matches Silver Bulletin's.</li>
+      <li><b>House model.</b> The district error (SD 6) and incumbency (+2.5) are assumptions and weren't backtested; the seat total matches Silver Bulletin's. The Senate test (appendix C) suggests district polls may deserve more weight than they get, but most are party-sponsored, so they're left shrunk.</li>
+      <li><b>Idaho</b> has a single poll, from August; with few late polls its forecast leans on that poll more than its age warrants.</li>
       <li><b>Michigan.</b> Haley Stevens endorsed Mike Rogers on Nov 1, after most polls were taken. Not in the model.</li>
       <li><b>Alaska</b> uses ranked-choice voting and has several "Dan Sullivan" candidates on the ballot; modeled as a head-to-head. <b>Montana</b> is a three-way race, modeled from polls only.</li>
       <li><b>Independents</b> (Osborn NE, Achilles ID, Bengs SD) are counted separately from either party. <b>CA-6</b> (Kevin Kiley, independent) is counted for neither party.</li>
@@ -266,10 +267,13 @@ footer a { color: var(--text-2); }
   <h3>Implied error correlations (Senate)</h3>
   <div class="tbl-wrap"><table id="corrTable"></table></div>
   <p class="muted small" id="corrNote"></p>
-  <h3>C. Estimators at a glance</h3>
+  <h3>C. How much to trust late polls vs. partisanship (Senate)</h3>
+  <p class="small" id="pwText"></p>
+  <div class="tbl-wrap"><table id="pwTable"></table></div>
+  <h3>D. Estimators at a glance</h3>
   <ul class="list small">
     <li><b>Poll weight</b> = ½<sup>age/half-life</sup> × √(min(n, 3000)/600) × population weight (LV 1.0, RV 0.8, adults 0.5) ÷ √(polls by that pollster). Half-life 21 days for races, 14 for the generic ballot. Two-party margins throughout.</li>
-    <li><b>Poll-average SD</b> (Senate) = √(7.4² + max(spread, 4)²/n<sub>eff</sub>), n<sub>eff</sub> = (Σw)²/Σw². <b>Blend</b>: μ = (μ<sub>poll</sub>/σ<sub>poll</sub>² + μ<sub>prior</sub>/σ<sub>prior</sub>²)/(1/σ<sub>poll</sub>² + 1/σ<sub>prior</sub>²), σ<sub>prior</sub> = 10 (Senate), 6 (House).</li>
+    <li><b>Poll-average SD</b> (Senate) = √(7.4² + max(spread, 4)²/n<sub>eff</sub>), n<sub>eff</sub> = (Σw)²/Σw². <b>Blend</b>: μ = (μ<sub>poll</sub>/σ<sub>poll</sub>² + μ<sub>prior</sub>/σ<sub>prior</sub>²)/(1/σ<sub>poll</sub>² + 1/σ<sub>prior</sub>²), σ<sub>prior</sub> = <span class="pwSd"></span> in polled Senate races (set so polls get the historically optimal weight; see D), <span class="pwRob"></span> for unpolled Senate races (robust error of the prior alone), 6 for House districts (assumed).</li>
     <li><b>National SDs</b>: RMSE of the final generic-ballot miss (face value); predictive SD of the decay-weighted bias estimate (adjusted). The Senate national SD is the Senate per-cycle miss RMSE, scaled the same way.</li>
     <li><b>Calibration data</b>: 538's <code>raw_polls.csv</code> (final 21 days, 1998–2022), averaged within race before comparison with results.</li>
     <li><b>Monte Carlo error</b>: 40,000 draws, so a probability near 50% has a standard error of about 0.25 points.</li>
@@ -540,7 +544,8 @@ $("#houseSearch").addEventListener("input", e => { houseQ = e.target.value; rend
 function renderMethod() {
   const F = DATA.models[FV], A = DATA.models[AD];
   $("#wText").textContent = `Polls get ${Math.round(F.w_polls * 100)}% of the weight (${Math.round(A.w_polls * 100)}% in the adjusted model, whose polling uncertainty is smaller once the bias is taken out).`;
-  $("#raceW").textContent = `In polled Senate races the poll average gets about ${Math.round(F.race_w * 100)}% of the weight; the prior's error is 10 pts (Senate) or 6 pts (House district), the poll average's about 7.4 pts.`;
+  const PW = DATA.prior_weight;
+  $("#raceW").textContent = `In polled Senate races the poll average gets about ${Math.round(F.race_w * 100)}% of the weight, matching the weight that predicted 1998–2022 Senate results best (${PW.w.toFixed(2)}). Unpolled races rest on the prior, whose typical error is about ${PW.prior_sd_robust.toFixed(0)} pts. House districts use an assumed 6-pt prior error.`;
   $("#cmpTable").innerHTML = `<thead><tr><th>Version</th><th class="num">Environment</th><th class="num">Dem House</th><th class="num">Dem seats (80%)</th><th class="num">Dem Senate</th><th class="num">Dem seats (80%)</th></tr></thead><tbody>` +
     Object.keys(MODELS).map(k => { const X = DATA.models[k]; return `<tr><td>${MODEL_LONG[k]}</td><td class="num">${fmtM(X.G)}</td><td class="num">${fmtP(X.house.p_dem_majority)}</td><td class="num">${Math.round(X.house.dem_seats_mean)} (${X.house.dem_seats_p10}–${X.house.dem_seats_p90})</td><td class="num">${fmtP(X.senate.p_dem_control_without_osborn)}</td><td class="num">${X.senate.dem_seats_mean.toFixed(1)} (${X.senate.dem_seats_p10}–${X.senate.dem_seats_p90})</td></tr>`; }).join("") + "</tbody>";
   const sv = DATA.sensitivity;
@@ -656,9 +661,20 @@ function renderAppendix() {
   $("#corrNote").textContent = `The regional component is small: region-by-cycle averages vary barely more than sampling noise (${E.structure.var_cell_means.toFixed(2)} vs ${E.structure.cell_noise_var.toFixed(2)}). Past correlated misses ran along education and partisanship more than geography, which the lean slope partly captures. Control odds move 1–2 pts across structures because the national factor dominates. The backtest scores races one at a time, so it can't validate the joint structure.`;
 }
 
+function renderPriorWeight() {
+  const PW = DATA.prior_weight;
+  $$(".pwSd").forEach(e => e.textContent = PW.implied_prior_sd.toFixed(1));
+  $$(".pwRob").forEach(e => e.textContent = PW.prior_sd_robust.toFixed(1));
+  $("#pwText").textContent = `Test on ${PW.n_races} Senate races (1998–2022) with polls in the final three weeks. The prior is the state's previous presidential lean plus that cycle's final generic-ballot average (no incumbency term). Regressing result − prior on poll − prior within each cycle gives the weight on polls: ${PW.w.toFixed(2)} (SE ${PW.w_se.toFixed(2)}); ${PW.w_2010plus.w.toFixed(2)} since 2010; ${PW.w_by_npolls["1-2 polls"].w.toFixed(2)} even with only 1–2 polls. The prior's errors are fat-tailed: typical miss ${PW.prior_sd_robust.toFixed(1)} pts (robust), but SD ${PW.sd_prior_resid.toFixed(1)} because popular incumbents and independents (Maine, North Dakota, Montana, West Virginia) beat partisanship by 50+ points. Where the prior favored a candidate by 15+ pts, the underdog won ${PW.upsets_prior_gt15.upsets} of ${PW.upsets_prior_gt15.n}. The forecast now weights polls about ${PW.w.toFixed(2)} in polled races (it was 0.64 under an assumed prior SD of 10). When polls and the prior disagree by 3–8 pts (as in Alaska), the estimated weight is ${PW.w_moderate_disagreement.w.toFixed(2)} (SE ${PW.w_moderate_disagreement.se.toFixed(2)}, n=${PW.w_moderate_disagreement.n}), so a somewhat stronger pull toward partisanship there can't be ruled out.`;
+  const keys = ["0.5", "0.64", "0.75", "0.85", "0.9", "1.0"];
+  $("#pwTable").innerHTML = `<thead><tr><th>Weight on polls</th>${keys.map(k => `<th class="num">${k}</th>`).join("")}</tr></thead><tbody>` +
+    `<tr><td>Held-out RMSE (pts, within cycle)</td>${keys.map(k => `<td class="num">${PW.loco_rmse[k].toFixed(2)}</td>`).join("")}</tr>` +
+    `<tr><td>Winners called</td>${keys.map(k => `<td class="num">${Math.round(PW.winner_acc[k] * 100)}%</td>`).join("")}</tr></tbody>`;
+}
+
 // ---------- init ----------
 $("#gen").textContent = "Updated " + DATA.generated;
-renderModelSegs(); renderOverview(); renderMap(); renderWatch(); renderHouse(); renderMethod(); renderData(); renderBias(); renderBacktest(); renderAppendix();
+renderModelSegs(); renderPriorWeight(); renderOverview(); renderMap(); renderWatch(); renderHouse(); renderMethod(); renderData(); renderBias(); renderBacktest(); renderAppendix();
 route();
 </script>
 </body>
