@@ -1,0 +1,754 @@
+{
+ "series_with_2024": {
+  "1998": -2.56,
+  "2000": -2.94,
+  "2002": -6.06,
+  "2004": -5.52,
+  "2006": -5.65,
+  "2008": 1.07,
+  "2010": -0.93,
+  "2012": 0.13,
+  "2014": -4.66,
+  "2016": -5.58,
+  "2018": 0.46,
+  "2020": -4.73,
+  "2022": -3.63,
+  "2024": -2.71
+ },
+ "recent_by_population": [
+  {
+   "cycle": 2018,
+   "actual": 8.76,
+   "n": 141,
+   "all": 0.27,
+   "lv": 0.57,
+   "n_lv": 62,
+   "rv": 0.64,
+   "n_rv": 55,
+   "a": -1.35,
+   "n_a": 24
+  },
+  {
+   "cycle": 2020,
+   "actual": 3.18,
+   "n": 71,
+   "all": -5.04,
+   "lv": -4.76,
+   "n_lv": 56,
+   "rv": -6.07,
+   "n_rv": 15,
+   "a": NaN,
+   "n_a": 0
+  },
+  {
+   "cycle": 2022,
+   "actual": -2.77,
+   "n": 93,
+   "all": -3.06,
+   "lv": -2.09,
+   "n_lv": 51,
+   "rv": -3.79,
+   "n_rv": 29,
+   "a": -5.23,
+   "n_a": 13
+  },
+  {
+   "cycle": 2024,
+   "actual": -2.68,
+   "n": 47,
+   "all": -2.71,
+   "lv": -2.74,
+   "n_lv": 29,
+   "rv": -2.65,
+   "n_rv": 18,
+   "a": NaN,
+   "n_a": 0
+  }
+ ],
+ "lv_only_2018_2024": {
+  "mean": -2.2552460854574194,
+  "cycles": 4,
+  "values": [
+   {
+    "cycle": 2018,
+    "lv": 0.57
+   },
+   {
+    "cycle": 2020,
+    "lv": -4.76
+   },
+   {
+    "cycle": 2022,
+    "lv": -2.09
+   },
+   {
+    "cycle": 2024,
+    "lv": -2.74
+   }
+  ]
+ },
+ "lv_discount_est": 0.37821464418512285,
+ "pred_all_14": {
+  "n": 14,
+  "mean": -3.0946308846474864,
+  "sd": 2.4549444408314423,
+  "pred_sd": 2.5411089130751283,
+  "p_overstate_dems": 0.8775336010039284,
+  "p_overstate_by_2plus": 0.6631537017716982,
+  "q10": -6.5255631807446175,
+  "q50": -3.0946308846474864,
+  "q90": 0.33630141144964476
+ },
+ "pred_2010plus": {
+  "n": 8,
+  "mean": -2.7065647089187905,
+  "sd": 2.3382612078621485,
+  "pred_sd": 2.4801005343971587,
+  "p_overstate_dems": 0.8443661079089478,
+  "p_overstate_by_2plus": 0.6080149378594926,
+  "q10": -6.215718298016143,
+  "q50": -2.7065647089187905,
+  "q90": 0.8025888801785626
+ },
+ "pred_2014plus": {
+  "n": 6,
+  "mean": -3.475077226041247,
+  "sd": 2.1692170830146096,
+  "pred_sd": 2.3430222389290605,
+  "p_overstate_dems": 0.9009292684027795,
+  "p_overstate_by_2plus": 0.7216879542388632,
+  "q10": -6.93310637451767,
+  "q50": -3.475077226041247,
+  "q90": -0.017048077564823405
+ },
+ "covariate_fits": {
+  "err ~ poll": {
+   "coef": -0.011208503651216718,
+   "se": 0.14802267621069296,
+   "p": 0.9410002611350116,
+   "r2": 0.0005209784620090474
+  },
+  "err ~ np.abs(poll)": {
+   "coef": 0.08812236697113533,
+   "se": 0.18392383847593724,
+   "p": 0.6412334094977784,
+   "r2": 0.02044247722665271
+  },
+  "err ~ approval": {
+   "coef": -0.09327462862691015,
+   "se": 0.06681192527862512,
+   "p": 0.19022729143073436,
+   "r2": 0.15051568602943688
+  },
+  "err_pres ~ approval": {
+   "coef": 0.028680145609529435,
+   "se": 0.11708448147930402,
+   "p": 0.8110027073557289,
+   "r2": 0.005425113562831485
+  }
+ },
+ "pollster_mix": {
+  "generic": {
+   "label": "2026 generic-ballot pollsters (VoteHub)",
+   "n_polls_2026": 307,
+   "matched_share": 0.745928338762215,
+   "mix_house_effect": -0.06354934771944612,
+   "mix_raw_miss": 3.3186989149860198,
+   "pollsters": [
+    {
+     "pollster": "YouGov",
+     "matched": "YouGov",
+     "n_2026": 57,
+     "n_hist": 432,
+     "house_effect": 0.0,
+     "raw_miss": 3.52
+    },
+    {
+     "pollster": "Morning Consult",
+     "matched": "Morning Consult",
+     "n_2026": 42,
+     "n_hist": 165,
+     "house_effect": 0.43,
+     "raw_miss": 4.39
+    },
+    {
+     "pollster": "Ipsos",
+     "matched": "Ipsos",
+     "n_2026": 29,
+     "n_hist": 362,
+     "house_effect": 0.21,
+     "raw_miss": 4.14
+    },
+    {
+     "pollster": "Marquette University Law School",
+     "matched": "Marquette University Law School",
+     "n_2026": 10,
+     "n_hist": 26,
+     "house_effect": -0.4,
+     "raw_miss": 2.68
+    },
+    {
+     "pollster": "Big Data Poll",
+     "matched": "Big Village",
+     "n_2026": 9,
+     "n_hist": 48,
+     "house_effect": -0.21,
+     "raw_miss": 2.92
+    },
+    {
+     "pollster": "Cygnal",
+     "matched": "Cygnal",
+     "n_2026": 9,
+     "n_hist": 57,
+     "house_effect": -1.4,
+     "raw_miss": 1.06
+    },
+    {
+     "pollster": "Echelon Insights",
+     "matched": "Echelon Insights",
+     "n_2026": 8,
+     "n_hist": 14,
+     "house_effect": 0.04,
+     "raw_miss": 2.53
+    },
+    {
+     "pollster": "RMG Research",
+     "matched": "RMG Research",
+     "n_2026": 6,
+     "n_hist": 48,
+     "house_effect": -0.28,
+     "raw_miss": 4.21
+    },
+    {
+     "pollster": "Emerson College",
+     "matched": "Emerson College",
+     "n_2026": 6,
+     "n_hist": 312,
+     "house_effect": -1.3,
+     "raw_miss": 0.29
+    },
+    {
+     "pollster": "McLaughlin & Associates",
+     "matched": "McLaughlin & Associates",
+     "n_2026": 5,
+     "n_hist": 22,
+     "house_effect": -2.77,
+     "raw_miss": -1.18
+    },
+    {
+     "pollster": "Clarity Campaign Labs",
+     "matched": "Clarity Campaign Labs",
+     "n_2026": 4,
+     "n_hist": 26,
+     "house_effect": 1.77,
+     "raw_miss": 4.95
+    },
+    {
+     "pollster": "John Zogby Strategies",
+     "matched": "John Zogby Strategies",
+     "n_2026": 4,
+     "n_hist": 5,
+     "house_effect": -0.9,
+     "raw_miss": 2.5
+    },
+    {
+     "pollster": "Change Research",
+     "matched": "Change Research",
+     "n_2026": 4,
+     "n_hist": 142,
+     "house_effect": 0.22,
+     "raw_miss": 3.79
+    },
+    {
+     "pollster": "TIPP Insights",
+     "matched": "TIPP Insights",
+     "n_2026": 3,
+     "n_hist": 15,
+     "house_effect": -1.56,
+     "raw_miss": 1.61
+    },
+    {
+     "pollster": "The Winston Group",
+     "matched": "The Winston Group",
+     "n_2026": 3,
+     "n_hist": 11,
+     "house_effect": -0.58,
+     "raw_miss": 2.83
+    }
+   ]
+  },
+  "senate_key": {
+   "label": "pollsters of the 12 key Senate races since Aug 1",
+   "n_polls_2026": 186,
+   "matched_share": 0.6397849462365591,
+   "mix_house_effect": -0.49190228067271013,
+   "mix_raw_miss": 1.9360800184575728,
+   "pollsters": [
+    {
+     "pollster": "InsiderAdvantage",
+     "matched": "InsiderAdvantage",
+     "n_2026": 14,
+     "n_hist": 85,
+     "house_effect": -1.27,
+     "raw_miss": 0.06
+    },
+    {
+     "pollster": "Emerson College",
+     "matched": "Emerson College",
+     "n_2026": 9,
+     "n_hist": 312,
+     "house_effect": -1.3,
+     "raw_miss": 0.29
+    },
+    {
+     "pollster": "Beacon Research/Shaw & Co. Research",
+     "matched": "Beacon Research/Shaw & Co. Research",
+     "n_2026": 9,
+     "n_hist": 94,
+     "house_effect": -0.36,
+     "raw_miss": 2.67
+    },
+    {
+     "pollster": "co/efficient",
+     "matched": "co/efficient",
+     "n_2026": 8,
+     "n_hist": 20,
+     "house_effect": -1.81,
+     "raw_miss": -1.09
+    },
+    {
+     "pollster": "YouGov",
+     "matched": "YouGov",
+     "n_2026": 7,
+     "n_hist": 432,
+     "house_effect": 0.0,
+     "raw_miss": 3.52
+    },
+    {
+     "pollster": "Marist University",
+     "matched": "Marist College",
+     "n_2026": 7,
+     "n_hist": 118,
+     "house_effect": 0.88,
+     "raw_miss": 3.56
+    },
+    {
+     "pollster": "ActiVote",
+     "matched": "ActiVote",
+     "n_2026": 5,
+     "n_hist": 8,
+     "house_effect": 0.19,
+     "raw_miss": 3.15
+    },
+    {
+     "pollster": "Echelon Insights",
+     "matched": "Echelon Insights",
+     "n_2026": 5,
+     "n_hist": 14,
+     "house_effect": 0.04,
+     "raw_miss": 2.53
+    },
+    {
+     "pollster": "SurveyUSA",
+     "matched": "SurveyUSA",
+     "n_2026": 4,
+     "n_hist": 202,
+     "house_effect": 0.51,
+     "raw_miss": 3.0
+    },
+    {
+     "pollster": "High Point University Survey Research Center",
+     "matched": "High Point University Survey Research Center",
+     "n_2026": 4,
+     "n_hist": 8,
+     "house_effect": 0.06,
+     "raw_miss": 3.54
+    },
+    {
+     "pollster": "Big Data Poll",
+     "matched": "Big Village",
+     "n_2026": 4,
+     "n_hist": 48,
+     "house_effect": -0.21,
+     "raw_miss": 2.92
+    },
+    {
+     "pollster": "Change Research",
+     "matched": "Change Research",
+     "n_2026": 3,
+     "n_hist": 142,
+     "house_effect": 0.22,
+     "raw_miss": 3.79
+    },
+    {
+     "pollster": "Harper Polling",
+     "matched": "Harper Polling",
+     "n_2026": 3,
+     "n_hist": 19,
+     "house_effect": -0.56,
+     "raw_miss": 3.74
+    },
+    {
+     "pollster": "Fabrizio, Lee & Associates/Impact Research",
+     "matched": "Fabrizio, Lee & Associates",
+     "n_2026": 3,
+     "n_hist": 14,
+     "house_effect": -1.64,
+     "raw_miss": 0.68
+    },
+    {
+     "pollster": "East Carolina University",
+     "matched": "East Carolina University Center for Survey Research",
+     "n_2026": 3,
+     "n_hist": 18,
+     "house_effect": -0.37,
+     "raw_miss": 3.02
+    }
+   ]
+  },
+  "all_pollsters_raw_miss_2014_2022": 3.0506039449675373,
+  "house_effect_sd": 4.707200602213207
+ },
+ "senate_mix_bias": -1.9360800184575728,
+ "generic_mix_bias": -3.3186989149860198,
+ "methodology": [
+  {
+   "meth": "Live Phone",
+   "n": 2507,
+   "rel": 0.14,
+   "miss": 3.13
+  },
+  {
+   "meth": "Online Panel",
+   "n": 1826,
+   "rel": 0.49,
+   "miss": 4.29
+  },
+  {
+   "meth": "IVR (mixed)",
+   "n": 1472,
+   "rel": -0.85,
+   "miss": 1.69
+  },
+  {
+   "meth": "IVR",
+   "n": 520,
+   "rel": -1.15,
+   "miss": 1.23
+  },
+  {
+   "meth": "Live Phone (mixed)",
+   "n": 326,
+   "rel": 0.92,
+   "miss": 3.55
+  },
+  {
+   "meth": "Online Panel (mixed)",
+   "n": 215,
+   "rel": 0.7,
+   "miss": 3.62
+  },
+  {
+   "meth": "Probability Panel",
+   "n": 147,
+   "rel": 0.34,
+   "miss": 3.58
+  },
+  {
+   "meth": "Text-to-Web (mixed)",
+   "n": 138,
+   "rel": 0.27,
+   "miss": 3.89
+  },
+  {
+   "meth": "Online Ad",
+   "n": 83,
+   "rel": 0.58,
+   "miss": 5.28
+  },
+  {
+   "meth": "Text",
+   "n": 46,
+   "rel": -1.24,
+   "miss": -1.41
+  },
+  {
+   "meth": "Text-to-Web",
+   "n": 33,
+   "rel": -0.63,
+   "miss": 2.28
+  },
+  {
+   "meth": "unknown",
+   "n": 31,
+   "rel": -2.74,
+   "miss": -0.81
+  },
+  {
+   "meth": "Email",
+   "n": 31,
+   "rel": 3.1,
+   "miss": 5.14
+  },
+  {
+   "meth": "Mail-to-Web (mixed)",
+   "n": 23,
+   "rel": 4.08,
+   "miss": 6.43
+  },
+  {
+   "meth": "App Panel",
+   "n": 10,
+   "rel": 1.99,
+   "miss": 4.95
+  },
+  {
+   "meth": "Mail",
+   "n": 10,
+   "rel": -2.31,
+   "miss": 4.55
+  },
+  {
+   "meth": "Mixed",
+   "n": 4,
+   "rel": 1.3,
+   "miss": 5.84
+  }
+ ],
+ "senate_vs_generic": {
+  "slope": 0.6306968827527433,
+  "se": 0.3510154108113362,
+  "intercept": 1.4242577679924449,
+  "corr": 0.47633915178124714,
+  "sen_mean_2014plus": -3.743826405149334,
+  "sen_by_cycle": {
+   "1998": 4.08,
+   "2000": 2.56,
+   "2002": -1.4,
+   "2004": -2.44,
+   "2006": 2.45,
+   "2008": 0.87,
+   "2010": 2.03,
+   "2012": 3.48,
+   "2014": -3.29,
+   "2016": -4.95,
+   "2018": -1.58,
+   "2020": -6.62,
+   "2022": -2.27
+  }
+ },
+ "lean_based": {
+  "slope": 0.0820784840431592,
+  "se": 0.02224762220546075,
+  "races": [
+   {
+    "state": "RI",
+    "pvi": 8,
+    "poll_avg": 27.05,
+    "mu": 27.14,
+    "p_dside": 1.0,
+    "lean_adj": 1.31
+   },
+   {
+    "state": "MA",
+    "pvi": 14,
+    "poll_avg": 30.17,
+    "mu": 31.51,
+    "p_dside": 1.0,
+    "lean_adj": 2.3
+   },
+   {
+    "state": "VA",
+    "pvi": 3,
+    "poll_avg": 19.55,
+    "mu": 19.27,
+    "p_dside": 0.99,
+    "lean_adj": 0.49
+   },
+   {
+    "state": "NM",
+    "pvi": 4,
+    "poll_avg": 18.62,
+    "mu": 18.78,
+    "p_dside": 0.98,
+    "lean_adj": 0.66
+   },
+   {
+    "state": "IL",
+    "pvi": 6,
+    "poll_avg": 12.74,
+    "mu": 14.05,
+    "p_dside": 0.97,
+    "lean_adj": 0.98
+   },
+   {
+    "state": "NC",
+    "pvi": -1,
+    "poll_avg": 10.38,
+    "mu": 10.01,
+    "p_dside": 0.93,
+    "lean_adj": -0.16
+   },
+   {
+    "state": "GA",
+    "pvi": -1,
+    "poll_avg": 9.56,
+    "mu": 9.58,
+    "p_dside": 0.92,
+    "lean_adj": -0.16
+   },
+   {
+    "state": "NH",
+    "pvi": 2,
+    "poll_avg": 7.57,
+    "mu": 8.42,
+    "p_dside": 0.9,
+    "lean_adj": 0.33
+   },
+   {
+    "state": "MN",
+    "pvi": 3,
+    "poll_avg": 3.3,
+    "mu": 5.05,
+    "p_dside": 0.79,
+    "lean_adj": 0.49
+   },
+   {
+    "state": "ME",
+    "pvi": 4,
+    "poll_avg": 3.11,
+    "mu": 4.83,
+    "p_dside": 0.78,
+    "lean_adj": 0.66
+   },
+   {
+    "state": "MI",
+    "pvi": 0,
+    "poll_avg": 4.14,
+    "mu": 4.9,
+    "p_dside": 0.78,
+    "lean_adj": 0.0
+   },
+   {
+    "state": "OH",
+    "pvi": -5,
+    "poll_avg": 4.32,
+    "mu": 3.41,
+    "p_dside": 0.71,
+    "lean_adj": -0.82
+   },
+   {
+    "state": "KS",
+    "pvi": -8,
+    "poll_avg": 3.8,
+    "mu": 2.11,
+    "p_dside": 0.63,
+    "lean_adj": -1.31
+   },
+   {
+    "state": "TX",
+    "pvi": -6,
+    "poll_avg": 2.77,
+    "mu": 2.08,
+    "p_dside": 0.63,
+    "lean_adj": -0.98
+   },
+   {
+    "state": "AK",
+    "pvi": -6,
+    "poll_avg": 0.5,
+    "mu": -0.17,
+    "p_dside": 0.49,
+    "lean_adj": -0.98
+   },
+   {
+    "state": "IA",
+    "pvi": -6,
+    "poll_avg": 0.32,
+    "mu": -0.04,
+    "p_dside": 0.49,
+    "lean_adj": -0.98
+   },
+   {
+    "state": "SC",
+    "pvi": -8,
+    "poll_avg": -2.23,
+    "mu": -3.11,
+    "p_dside": 0.31,
+    "lean_adj": -1.31
+   },
+   {
+    "state": "NE",
+    "pvi": -10,
+    "poll_avg": -2.55,
+    "mu": -3.95,
+    "p_dside": 0.27,
+    "lean_adj": -1.64
+   },
+   {
+    "state": "FL",
+    "pvi": -5,
+    "poll_avg": -6.32,
+    "mu": -5.77,
+    "p_dside": 0.18,
+    "lean_adj": -0.82
+   },
+   {
+    "state": "MS",
+    "pvi": -11,
+    "poll_avg": -6.95,
+    "mu": -8.07,
+    "p_dside": 0.12,
+    "lean_adj": -1.81
+   },
+   {
+    "state": "ID",
+    "pvi": -18,
+    "poll_avg": -6.25,
+    "mu": -9.95,
+    "p_dside": 0.09,
+    "lean_adj": -2.95
+   },
+   {
+    "state": "MT",
+    "pvi": -10,
+    "poll_avg": -13.09,
+    "mu": -13.09,
+    "p_dside": 0.06,
+    "lean_adj": -1.64
+   },
+   {
+    "state": "SD",
+    "pvi": -15,
+    "poll_avg": -13.34,
+    "mu": -14.88,
+    "p_dside": 0.03,
+    "lean_adj": -2.46
+   },
+   {
+    "state": "AR",
+    "pvi": -15,
+    "poll_avg": -12.7,
+    "mu": -14.09,
+    "p_dside": 0.03,
+    "lean_adj": -2.46
+   },
+   {
+    "state": "AL",
+    "pvi": -15,
+    "poll_avg": -17.17,
+    "mu": -17.64,
+    "p_dside": 0.02,
+    "lean_adj": -2.46
+   },
+   {
+    "state": "TN",
+    "pvi": -14,
+    "poll_avg": -25.89,
+    "mu": -24.95,
+    "p_dside": 0.01,
+    "lean_adj": -2.3
+   }
+  ]
+ }
+}

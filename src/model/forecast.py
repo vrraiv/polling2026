@@ -51,8 +51,17 @@ if _BD.exists():
     _specs = json.loads(_BD.read_text())["specs"]
     _top = sorted(_specs, key=lambda r: r["loo_rmse_weighted"])[:10]
     BIAS_SD = float(np.mean([r["pred_sd"] for r in _top]))  # predictive SD of the bias estimate (~2.6)
-LV_DISCOUNT = 1.0   # the 2026 aggregators adjust to likely voters; LV polls ran ~1-1.5 pts less Democratic than RV in 2020/2022
-BIAS_ADJ = GENERIC_BIAS + LV_DISCOUNT   # about -2.0: the shift used by the "bias-adjusted" model
+# Likely-voter discount: the historical miss is measured on all polls; today's averages approximate likely voters.
+# Estimated in src/model/bias_confidence.py as (LV-poll miss - all-poll miss) over 2018-2024 (~0.4). Was an assumed 1.0.
+_BC = OUT / "bias_confidence.json"
+_bc = json.loads(_BC.read_text()) if _BC.exists() else {}
+LV_DISCOUNT = float(_bc.get("lv_discount_est", 1.0))
+BIAS_ADJ = GENERIC_BIAS + LV_DISCOUNT            # national (generic-ballot / House) shift for the adjusted model
+# Senate shift for the adjusted model: the historical miss of the pollsters actually polling the 2026 battleground
+# Senate races (2014-2022, result - poll), plus the same LV discount. Falls back to the national shift.
+SENATE_BIAS_ADJ = float(_bc["senate_mix_bias"]) + LV_DISCOUNT if "senate_mix_bias" in _bc else BIAS_ADJ
+# Senate state-lean differential (adjusted model only): results since 2010 landed further toward state lean than polls.
+ADJ_USE_LEAN = True
 SD_NAT_SENATE = float(np.sqrt(np.mean(np.square(SEN_CYC))))     # shared Senate polling miss per cycle
 SD_RACE_POLLAVG = CAL["Sen-G"]["race_resid_sd_midterms"]        # race-level error of a final poll average
 # Senate prior error: estimated in src/model/prior_weight.py from 1998-2022 races (optimal weight on late polls
@@ -303,7 +312,7 @@ def house_model(h, polls, G):
             inc = INC_HOUSE if r.inc_party == "D" else -INC_HOUSE if r.inc_party in ("R", "I") else 0.0
         prior = H_CONST + H_B_LEAN * 2 * r.pvi + H_G_NAT * G + inc
         pa = pav.get(r.race_key)
-        if pa and APPLY_LEAN_CORRECTION:
+        if pa and APPLY_LEAN_CORRECTION and False:  # House: lean pattern was estimated on statewide races only
             pa = dict(pa, avg=pa["avg"] + LEAN_SLOPE * 2 * r.pvi)
         if pa:
             sd_p = np.sqrt(SD_HOUSE_POLL ** 2 + (max(pa["spread_sd"], 4.0) ** 2) / pa["neff"])
@@ -396,7 +405,7 @@ def simulate(h, s, sd_nat_house, sd_nat_senate=None, sigma_region=None):
     return h, s, res
 
 
-def run(model, shift=0.0, tag=None, bias_removed=False, sigma_region=None):
+def run(model, shift=0.0, tag=None, bias_removed=False, sigma_region=None, senate_shift=None, use_lean=False):
     """bias_removed=True: the polls' historical bias is taken out as a mean shift, so the national polling SD
     drops from the RMSE (which includes the bias) to the predictive SD of the bias estimate (BIAS_SD)."""
     nat, polls = national_inputs()
@@ -412,8 +421,14 @@ def run(model, shift=0.0, tag=None, bias_removed=False, sigma_region=None):
         sd_nat = 1 / np.sqrt(1 / sd_polls ** 2 + 1 / FUND["SD"] ** 2)
     sd_sen = SD_NAT_SENATE * (sd_polls / SD_NAT_GENERIC)
     s = senate_races(polls)
+    global APPLY_LEAN_CORRECTION
+    keep_lean = APPLY_LEAN_CORRECTION
+    APPLY_LEAN_CORRECTION = bool(use_lean)
     smod = senate_model(s, polls, G, sd_nat, econ_adj)
-    smod["mu"] = smod.mu + shift * smod.poll_weight  # polls part shifts too (prior part already via G)
+    APPLY_LEAN_CORRECTION = keep_lean
+    sshift = shift if senate_shift is None else senate_shift
+    # Senate poll averages shift by the Senate-specific amount; the prior's environment (G) already carries the national shift
+    smod["mu"] = smod.mu + sshift * smod.poll_weight
     hmod = house_model(house_races(), polls, G)
     hmod["mu"] = hmod.mu + shift * hmod.poll_weight
     model = tag or model
@@ -421,6 +436,8 @@ def run(model, shift=0.0, tag=None, bias_removed=False, sigma_region=None):
     res["national"] = {k: v for k, v in nat.items() if k not in ("generic_aggregators", "approval_aggregators")}
     res["national"]["G_used"] = G
     res["national"]["bias_shift"] = shift
+    res["national"]["senate_bias_shift"] = sshift
+    res["national"]["senate_lean_correction"] = bool(use_lean)
     res["national"]["w_polls_national"] = w_polls
     res["national"]["race_poll_weight_mean_polled"] = float(smod.loc[smod.n_polls > 0, "poll_weight"].mean())
     res["national"]["sd_nat_house_used"] = sd_nat
@@ -460,7 +477,8 @@ if __name__ == "__main__":
     for m, shift, tag in [("polls_only", 0.0, None), ("polls_fundamentals", 0.0, None),
                           ("polls_fundamentals", BIAS_ADJ, "polls_fundamentals_biasadj"),
                           ("polls_fundamentals", GENERIC_BIAS, "scenario_polls_overstate_dems")]:
-        h, s, res = run(m, shift, tag, bias_removed=bool(shift))
+        adj = tag == "polls_fundamentals_biasadj"
+        h, s, res = run(m, shift, tag, bias_removed=bool(shift), senate_shift=SENATE_BIAS_ADJ if adj else None, use_lean=adj and ADJ_USE_LEAN)
         m = tag or m
         print(f"\n===== {m} =====  G used: D{res['national']['G_used']:+.2f}  (polls {res['national']['G_polls']:+.2f}, "
               f"fundamentals {res['national']['fundamentals_margin_D']:+.2f}, approval {res['national']['approval']:.1f})")

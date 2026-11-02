@@ -49,6 +49,7 @@ def main():
             "senate": {k: v for k, v in s["senate"].items()},
             "G": s["national"]["G_used"], "shift": s["national"].get("bias_shift", 0.0),
             "sd_nat_house": s["national"].get("sd_nat_house_used", 0.0), "sd_nat_senate": s["national"].get("sd_nat_senate_used", 0.0),
+            "senate_shift": s["national"].get("senate_bias_shift", s["national"].get("bias_shift", 0.0)), "lean": s["national"].get("senate_lean_correction", False),
             "w_polls": s["national"].get("w_polls_national", 1.0), "race_w": s["national"].get("race_poll_weight_mean_polled", 0.0),
             "senate_races": records(sen.sort_values("p_dside", ascending=False),
                                     ["race_key", "state", "special", "dem", "rep", "dside", "inc_party", "pvi", "prior",
@@ -71,6 +72,7 @@ def main():
     bd = json.loads((PROC / "bias_decay.json").read_text())
     bdf = pd.DataFrame(bd["specs"])
     bias = {"history": bd["history"], "flat_mean": bd["flat_mean"], "decay_estimate": bd["top10_avg_pred_2026"],
+            "with_covariates": bd.get("top10_with_covariates", bd["top10_avg_pred_2026"]),
             "decay_range": bd["top10_range"],
             "specs": bdf.sort_values("loo_rmse_weighted").head(12)[["half_life", "midterm_mult", "covariates", "president_effect", "pred_2026", "pred_sd", "loo_rmse_weighted"]].to_dict("records"),
             "covariate_specs": bdf[(bdf.half_life.astype(str) == "10") & (bdf.midterm_mult == 2) & (~bdf.president_effect)][["covariates", "pred_2026", "pred_sd", "loo_rmse_weighted"]].to_dict("records")}
@@ -99,6 +101,8 @@ def main():
         "prior_weight": json.loads((PROC / "prior_weight.json").read_text()),
         "house_structure": json.loads((PROC / "house_structure.json").read_text()),
         "poll_settings": json.loads((PROC / "poll_settings.json").read_text()),
+        "bias_confidence": json.loads((PROC / "bias_confidence.json").read_text()),
+        "bias_decomposition": json.loads((PROC / "bias_decomposition.json").read_text()) if (PROC / "bias_decomposition.json").exists() else None,
         "errors": {"structure": json.loads((PROC / "error_structure.json").read_text()),
                    "sensitivity": json.loads((PROC / "error_sensitivity.json").read_text())},
         "error_model": {"sen_cycles": cal["Sen-G"]["cycles"], "gen_cycles": cal["House-G-US"]["cycles"]},

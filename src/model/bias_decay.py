@@ -30,13 +30,20 @@ CYCLE_INFO = {  # president, party, term, House majority going into the election
     2004: ("Bush", "R", 1, "R"), 2006: ("Bush", "R", 2, "R"), 2008: ("Bush", "R", 2, "D"),
     2010: ("Obama", "D", 1, "D"), 2012: ("Obama", "D", 1, "R"), 2014: ("Obama", "D", 2, "R"),
     2016: ("Obama", "D", 2, "R"), 2018: ("Trump", "R", 1, "R"), 2020: ("Trump", "R", 1, "D"),
-    2022: ("Biden", "D", 1, "D"), 2026: ("Trump", "R", 2, "R"),
+    2022: ("Biden", "D", 1, "D"), 2024: ("Biden", "D", 1, "R"), 2026: ("Trump", "R", 2, "R"),
 }
 
 
 def frame():
     r = BA.load()
     gen = BA.race_level(r, ["House-G-US"])[["cycle", "poll", "act", "err"]]
+    try:  # 2024 is not in raw_polls; take it from the archived generic-ballot file (same final-21-day definition)
+        import bias_confidence as BC
+        rec = BC.generic_recent_by_population()
+        e24 = float(rec.loc[rec.cycle == 2024, "all"].iloc[0]); a24 = float(rec.loc[rec.cycle == 2024, "actual"].iloc[0])
+        gen = pd.concat([gen, pd.DataFrame([{"cycle": 2024, "poll": a24 - e24, "act": a24, "err": e24}])], ignore_index=True)
+    except Exception as ex:  # noqa: BLE001
+        print("2024 not added:", ex)
     rows = []
     for c, (pres, party, term, house) in CYCLE_INFO.items():
         e = gen.loc[gen.cycle == c, "err"]
@@ -111,13 +118,18 @@ def main():
     print("\nBaselines (mean only, no president effect):")
     print(res[(res.covariates == "(mean only)") & (~res.president_effect)][show].round(2).to_string(index=False))
     # Bayesian-model-average style summary: weight specs by exp(-0.5 * (loo_rmse_w / min)^2 * n_eff)? keep simple:
-    top = res.sort_values("loo_rmse_weighted").head(10)
-    wts = 1 / top.loo_rmse_weighted ** 2
-    avg = float(np.average(top.pred_2026, weights=wts))
-    spread = (float(top.pred_2026.min()), float(top.pred_2026.max()))
-    print(f"\nTop-10 average 2026 prediction: {avg:+.2f} (range {spread[0]:+.2f} to {spread[1]:+.2f})")
+    # The forecast uses decay-weighted MEANS only: no covariate improves held-out prediction by more than noise, and the
+    # "second term" covariate (five elections) swings the estimate by a point depending on whether 2024 is in the sample.
+    mean_only = res[res.covariates == "(mean only)"].sort_values("loo_rmse_weighted").head(10)
+    wts = 1 / mean_only.loo_rmse_weighted ** 2
+    avg = float(np.average(mean_only.pred_2026, weights=wts))
+    spread = (float(mean_only.pred_2026.min()), float(mean_only.pred_2026.max()))
+    top_any = res.sort_values("loo_rmse_weighted").head(10)
+    avg_any = float(np.average(top_any.pred_2026, weights=1 / top_any.loo_rmse_weighted ** 2))
+    print(f"\nDecay-weighted means, top-10 average 2026 prediction: {avg:+.2f} (range {spread[0]:+.2f} to {spread[1]:+.2f}); "
+          f"with covariate specs allowed: {avg_any:+.2f}")
     out = {"history": hist.to_dict("records"), "specs": res.to_dict("records"),
-           "top10_avg_pred_2026": avg, "top10_range": spread,
+           "top10_avg_pred_2026": avg, "top10_range": spread, "top10_with_covariates": avg_any,
            "flat_mean": float(hist.err.mean())}
     (ROOT / "data/processed/bias_decay.json").write_text(json.dumps(out, indent=1, default=float))
 

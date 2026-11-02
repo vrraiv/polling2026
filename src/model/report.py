@@ -147,6 +147,16 @@ def main():
       f"{c['g_nat']:.2f}×national ± {c['inc']:.1f} incumbency; district SD {c['sd_district']:.1f}; district polls get ~{hs['district_polls']['w']:.2f} weight "
       f"(poll SD {hs['district_polls']['implied_poll_sd']:.1f}). Incumbency fell from ~20 pts (2006) to ~4 (2018–2024). Expected-seat RMSE over 2006–2024: 6.7 vs 11.9 "
       "for the old assumed model; recent cycles undercount Democratic contested-seat wins by ~6.")
+    bc = json.loads((OUT / "bias_confidence.json").read_text())
+    pr = bc["pred_all_14"]
+    a(f"- **Is the bias adjustment justified?** Polls overstated Democrats in 11 of 14 elections 1998–2024 (mean {pr['mean']:.1f}, predictive SD "
+      f"{pr['pred_sd']:.1f}; P(overstate again) {pr['p_overstate_dems']:.0%}); LV-only polls 2018–2024 averaged {bc['lv_only_2018_2024']['mean']:.1f}; "
+      f"Senate polls missed against Democrats in all five cycles since 2014 (mean {bc['senate_vs_generic']['sen_mean_2014plus']:.1f}). Nothing observable "
+      f"predicts the size. This year's generic-ballot pollsters are a typical mix (house effect {bc['pollster_mix']['generic']['mix_house_effect']:+.2f}); "
+      f"the battleground Senate pollsters lean slightly Republican ({bc['pollster_mix']['senate_key']['mix_house_effect']:+.2f}; historical miss "
+      f"{-bc['pollster_mix']['senate_key']['mix_raw_miss']:.1f}). The Adjusted model: national shift {ba['national']['bias_shift']:+.2f} "
+      f"(estimate + LV discount {bc['lv_discount_est']:.2f}), Senate shift {ba['national']['senate_bias_shift']:+.2f} (battleground pollsters' record + discount) "
+      f"plus the state-lean term. The Senate moves ~10 pts of control probability per point of national shift because five races in R-leaning states sit within 3 pts of even.")
     ps = json.loads((OUT / "poll_settings.json").read_text())["chosen"]
     a(f"- **Poll-averaging settings (estimated, `src/model/poll_settings.py`)**: sponsor shift {ps['partisan_shift_statewide']} pts statewide / "
       f"{ps['partisan_shift_house']} House; population weights RV {ps['pop_weight']['rv']}, adults {ps['pop_weight']['a']}, with RV/adult polls shifted "

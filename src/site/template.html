@@ -200,7 +200,7 @@ footer a { color: var(--text-2); }
     <li><b>Poll averages.</b> <span id="psText"></span> Prolific pollsters are down-weighted and larger samples count more. All of these settings were <a href="#appendix">estimated from 538's poll archive</a>.</li>
     <li><b>Blend.</b> Poll average and prior are combined by precision. <span id="raceW"></span></li>
     <li><b>Simulation.</b> 40,000 draws with a shared national polling error, Census-region shocks, a random slope on state lean, and race-specific errors, all fat-tailed. Control: 218 House seats; 51 Senate seats (VP Vance breaks ties).</li>
-    <li><b>Two headline versions.</b> <i>Face value</i> takes the polls as they are. <i>Adjusted</i> shifts the polls (not the fundamentals) by the historical tendency of final polls to overstate Democrats. See <a href="#bias">Polling bias</a>.</li>
+    <li><b>Two headline versions.</b> <i>Face value</i> takes the polls as they are, treating the historical bias as symmetric noise. <i>Adjusted</i> treats it as a mean shift with its own uncertainty: the polls (not the fundamentals) move by <span id="adjNat"></span> pts nationally; Senate poll averages move by <span id="adjSen"></span> pts (the historical miss of the pollsters polling this year's battlegrounds) plus a state-lean term (results since 2010 have landed further toward state partisanship than polls, 0.08 pts per point of lean). See <a href="#bias">Polling bias</a>.</li>
   </ol>
   <h3>All model versions</h3>
   <div class="tbl-wrap"><table id="cmpTable"></table></div>
@@ -226,6 +226,17 @@ footer a { color: var(--text-2); }
     <div class="card"><div class="chart" id="biasChart"></div></div>
     <div><div class="stats" id="biasStats" style="margin-top:0"></div><p class="muted small" id="biasText"></p></div>
   </div>
+  <h3>Is the adjustment justified?</h3>
+  <div class="tbl-wrap"><table id="evTable"></table></div>
+  <p class="muted small" id="evNote"></p>
+  <h3>What moves the Senate number</h3>
+  <div class="grid2">
+    <div><div class="tbl-wrap"><table id="decTable"></table></div></div>
+    <div><div class="tbl-wrap"><table id="sensTable"></table></div></div>
+  </div>
+  <p class="muted small" id="decNote"></p>
+  <h3>How the Adjusted model is built</h3>
+  <p class="small" id="adjDef"></p>
   <details>
     <summary>Re-estimating the bias for 2026 (decay weights and covariates)</summary>
     <p class="small">Elections are weighted by recency (half-lives of 6–16 years), midterms 2–3× presidential years, and covariates are tested: party in the White House, House majority, second term, and a president-specific effect. Specifications are compared by leave-one-election-out error.</p>
@@ -442,7 +453,7 @@ function renderOverview() {
     <div class="pair">${row("Face value", sF.p_dem_control_without_osborn, sF.hist, "var(--tint)")}${row("Adjusted", sA.p_dem_control_without_osborn, sA.hist, "var(--ochre)")}</div>
     <div class="chart" id="senDist"></div>`;
   distChart($("#senDist"), sF.hist, sA.hist, 51, "Distribution of Democratic Senate seats: face value vs adjusted");
-  $("#benchNote").innerHTML = `<b>Face value</b> takes this year's polls as they are. <b>Adjusted</b> shifts them toward Republicans by the amount final polls have typically overstated Democrats (about ${Math.abs(A.shift).toFixed(1)} pts after accounting for likely-voter screens). Benchmark: Silver Bulletin's free summary gives Democrats about 95% for the House and a ~25-seat gain (≈238). <a href="#method">How it works</a>.`;
+  $("#benchNote").innerHTML = `<b>Face value</b> takes this year's polls as they are. <b>Adjusted</b> shifts them toward Republicans by the amount final polls have typically overstated Democrats: ${Math.abs(A.shift).toFixed(1)} pts nationally and ${Math.abs(A.senate_shift).toFixed(1)} pts in Senate races (based on this year's Senate pollsters' records), plus a state-lean term. <a href="#bias">Is that justified?</a> Benchmark: Silver Bulletin's free summary gives Democrats about 95% for the House and a ~25-seat gain (≈238). <a href="#method">How it works</a>.`;
 }
 
 // tile map
@@ -610,9 +621,37 @@ function renderBias() {
     it => `<b>${it.c.cycle}</b> (${it.c.president}, ${it.c.midterm ? "midterm" : "presidential"})<br>polls ${fmtM(it.c.poll)} · result ${fmtM(it.c.act)} · miss ${it.c.err >= 0 ? "+" : ""}${it.c.err.toFixed(1)}`);
   $("#biasChart").insertAdjacentHTML("beforeend", `<div class="legend"><span><i class="sq" style="background:var(--dem)"></i>Dems beat polls</span><span><i class="sq" style="background:var(--rep)"></i>Reps beat polls</span><span><i class="sq" style="background:var(--rep);opacity:.45"></i>presidential year</span></div>`);
   const stat = (v, l) => `<div class="stat"><div class="v">${v}</div><div class="l">${l}</div></div>`;
-  $("#biasStats").innerHTML = stat(B.flat_mean.toFixed(1), "Average miss, 1998–2022") + stat(`${hist.filter(c => c.err < 0).length}/${hist.length}`, "Elections polls overstated Dems") +
-    stat(B.decay_estimate.toFixed(1), "Recency-weighted estimate") + stat(DATA.models[AD].shift.toFixed(1), "Shift used by Adjusted");
-  $("#biasText").textContent = `The recency-weighted estimate ranges ${B.decay_range[0].toFixed(1)} to ${B.decay_range[1].toFixed(1)} across specifications; party in the White House, House incumbency, second terms and president-specific effects all make out-of-sample prediction worse. The Adjusted model applies the estimate less 1 pt, because today's averages already screen for likely voters (which ran 1–1.5 pts less Democratic than registered-voter polls in 2020 and 2022). The spread is wide: 2018's +0.5 is only about 1.3 SD from the estimate.`;
+  const C = DATA.bias_confidence, pr = C.pred_all_14, A2 = DATA.models[AD];
+  $("#biasStats").innerHTML = stat(pr.mean.toFixed(1), `Average miss, 1998–2024 (${pr.n} elections)`) + stat(`${hist.filter(c => c.err < 0).length}/${hist.length}`, "Elections where polls overstated Dems") +
+    stat(fmtP(pr.p_overstate_dems), "Chance 2026 polls overstate Dems (predictive)") + stat(`${A2.shift.toFixed(1)} / ${A2.senate_shift.toFixed(1)}`, "Shift used by Adjusted: national / Senate");
+  $("#biasText").textContent = `Treating the elections as draws from one distribution, the 2026 miss has mean ${pr.mean.toFixed(1)}, predictive SD ${pr.pred_sd.toFixed(1)}, an 80% range of ${pr.q10.toFixed(1)} to ${pr.q90.toFixed(1)}, and a ${fmtP(pr.p_overstate_by_2plus)} chance of overstating Democrats by 2 or more. The direction is well supported; the size is not predictable year to year (see below). The Adjusted model's probabilities integrate over that spread: the 47–49% for the Senate is not "assume a 2-pt miss" but the average over the whole distribution of misses.`;
+  // evidence table
+  const lv = C.lv_only_2018_2024, pm = C.pollster_mix, sg = C.senate_vs_generic, meth = C.methodology;
+  const ev = [
+    ["Sign of the miss, 1998–2024", `Polls overstated Democrats in ${hist.filter(c => c.err < 0).length} of ${hist.length} elections; mean ${pr.mean.toFixed(1)}, SD ${pr.sd.toFixed(1)}`, "Direction: strong"],
+    ["Recent elections (2018–2024)", `${[2018, 2020, 2022, 2024].map(y => `${y} ${C.series_with_2024[y] >= 0 ? "+" : ""}${C.series_with_2024[y].toFixed(1)}`).join(", ")}`, "3 of 4 against Democrats, after pollsters' post-2016 and post-2020 fixes"],
+    ["Likely-voter polls only, 2018–2024", `Mean ${lv.mean.toFixed(1)} (all polls in those years: ${C.recent_by_population.reduce((a, r) => a + r.all, 0) / 4 < 0 ? "" : "+"}${(C.recent_by_population.reduce((a, r) => a + r.all, 0) / 4).toFixed(1)})`, `LV screening removes only ${C.lv_discount_est.toFixed(1)} pts of it; the Adjusted model's LV discount uses that`],
+    ["Senate polls, 2014–2022", `Average cycle miss ${sg.sen_mean_2014plus.toFixed(1)}, against Democrats in all 5 cycles; correlation with the generic-ballot miss ${sg.corr.toFixed(2)}`, "Direction: strong for the Senate too"],
+    ["This year's generic-ballot pollsters", `House effect ${pm.generic.mix_house_effect >= 0 ? "+" : ""}${pm.generic.mix_house_effect.toFixed(2)} vs. other polls of the same race; their historical miss ${(-pm.generic.mix_raw_miss).toFixed(1)} vs. ${(-pm.all_pollsters_raw_miss_2014_2022).toFixed(1)} for all pollsters (${fmtP(pm.generic.matched_share)} of polls matched)`, "A typical mix: no reason to expect less bias than usual"],
+    ["This year's battleground Senate pollsters", `House effect ${pm.senate_key.mix_house_effect.toFixed(2)}; historical miss ${(-pm.senate_key.mix_raw_miss).toFixed(1)} (${fmtP(pm.senate_key.matched_share)} matched)`, "Lean slightly Republican relative to peers: the Adjusted Senate shift uses their record"],
+    ["Method mix, 2014–2022", `${meth.slice(0, 4).map(m => `${m.meth} ${(-m.miss).toFixed(1)}`).join("; ")}`, "IVR-based polls missed least; online panels most. 2026 generic polls are mostly online panels"],
+    ["Predictors of the size", `Poll level, size of the lead, approval, party in the White House, House majority, second term, president: none predicts it (all p > 0.19; each worsens out-of-sample error)`, "Magnitude: not predictable; treat as a distribution"],
+  ];
+  $("#evTable").innerHTML = `<thead><tr><th>Evidence</th><th>Finding</th><th>Reading</th></tr></thead><tbody>` + ev.map(r => `<tr><td>${r[0]}</td><td style="white-space:normal;min-width:260px">${r[1]}</td><td style="white-space:normal">${r[2]}</td></tr>`).join("") + "</tbody>";
+  $("#evNote").textContent = `The honest summary: the direction is about as well established as anything in this model (roughly ${fmtP(pr.p_overstate_dems)} that polls overstate Democrats again), the size is a coin-flip around 2–3 points, and nothing observable this year predicts it. What is specific to 2026 is the pollster mix, which is ordinary for the generic ballot and slightly Republican-leaning in the Senate battlegrounds.`;
+  // decomposition + sensitivity
+  const D = DATA.bias_decomposition;
+  if (D) {
+    const rowD = (lab, k) => `<tr><td>${lab}</td><td class="num">${D[k].shift.toFixed(1)}</td><td class="num">${D[k].sd_nat_house.toFixed(1)}</td><td class="num">${fmtP(D[k].p_sen)}</td><td class="num">${fmtP(D[k].p_house)}</td></tr>`;
+    $("#decTable").innerHTML = `<thead><tr><th>Variant</th><th class="num">Shift</th><th class="num">National SD</th><th class="num">Dem Senate</th><th class="num">Dem House</th></tr></thead><tbody>` +
+      rowD("Face value (bias as symmetric noise)", "unadjusted") + rowD("Shift only, SD unchanged", "shift_only_sd_unchanged") + rowD("Narrower SD only, no shift", "sd_only_no_shift") + rowD("Adjusted (both)", "adjusted") + "</tbody>";
+    const sens = ["flat_minus1", "flat_minus2", "flat_minus3", "flat_minus4"];
+    $("#sensTable").innerHTML = `<thead><tr><th>Flat national shift</th><th class="num">Dem Senate</th><th class="num">Dem seats</th><th class="num">Dem House</th></tr></thead><tbody>` +
+      sens.map(k => `<tr><td>${D[k].shift.toFixed(0)} pts</td><td class="num">${fmtP(D[k].p_sen)}</td><td class="num">${D[k].sen_seats.toFixed(1)}</td><td class="num">${fmtP(D[k].p_house)}</td></tr>`).join("") + "</tbody>";
+    $("#decNote").textContent = `The whole move comes from the shift; narrowing the national error on its own slightly raises Democratic odds. The Senate is extremely sensitive, about ${Math.round((D.flat_minus1.p_sen - D.flat_minus3.p_sen) * 50)} points of control probability per point of national shift, because five races (Ohio, Texas, Kansas, Iowa, Alaska) sit within 3 points of even and all in Republican-leaning states, so a shared polling miss moves them together. That sensitivity is a property of this year's map, not of the adjustment.`;
+  }
+  $("#adjDef").textContent = `National shift ${A2.shift.toFixed(2)} = recency-weighted historical miss (${B.decay_estimate.toFixed(2)}) plus the estimated likely-voter discount (+${C.lv_discount_est.toFixed(2)}). Senate shift ${A2.senate_shift.toFixed(2)} = the 2014–2022 average miss of the pollsters polling this year's twelve battleground Senate races (${(-pm.senate_key.mix_raw_miss).toFixed(2)}) plus the same discount; it applies to the poll-average part of each race, while the prior carries the national shift. Each Senate race also gets the state-lean term: ${(C.lean_based.slope).toFixed(3)} × (2×PVI), e.g. Texas ${C.lean_based.races.find(r => r.state === "TX").lean_adj.toFixed(1)}, Kansas ${C.lean_based.races.find(r => r.state === "KS").lean_adj.toFixed(1)}, Maine +${C.lean_based.races.find(r => r.state === "ME").lean_adj.toFixed(1)}. The national polling SD is the predictive SD of the bias estimate rather than the historical RMSE (which double-counts the bias as variance). Every component is estimated; earlier versions assumed a 1-pt discount and applied the national shift to the Senate. The historical estimate uses decay-weighted means only: allowing covariates would let a "second term" effect (five elections) pull it to ${B.with_covariates.toFixed(1)}, which the out-of-sample tests don't support.`;
+  $("#adjNat").textContent = A2.shift.toFixed(1); $("#adjSen").textContent = A2.senate_shift.toFixed(1);
   const label = c => c === "(mean only)" ? "none (recency-weighted mean)" : c.replace("pres_D", "Democratic president").replace("house_D", "Democratic House").replace("second_term", "second term").split("+").join(" + ");
   $("#biasSpecs").innerHTML = `<thead><tr><th>Covariate (half-life 10 yrs, midterms ×2)</th><th class="num">2026 estimate</th><th class="num">Predictive SD</th><th class="num">Leave-one-out RMSE</th></tr></thead><tbody>` +
     B.covariate_specs.map(r => `<tr><td>${label(r.covariates)}</td><td class="num">${r.pred_2026.toFixed(1)}</td><td class="num">${r.pred_sd.toFixed(1)}</td><td class="num">${r.loo_rmse_weighted.toFixed(2)}</td></tr>`).join("") + "</tbody>";
