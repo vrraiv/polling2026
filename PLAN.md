@@ -7,6 +7,7 @@ _Written 2026-11-01. Election Day is **Tuesday, 2026-11-03**._
 > - BLS flat files return 403 to scripts. State unemployment comes from FRED `<ST>UR` instead, and state income from FRED `<ST>PCPI` / `<ST>OTOT`.
 > - MEDSL Dataverse downloads now require a guestbook form (personal details), so it was not used. Past results come from 538 `raw_polls.csv` actuals.
 > - Wikipedia's 2026 House page provides 2026 PVI for all 435 districts on the new lines.
+> - Live site: https://polling2026.vikramrai.com (Cloudflare Worker `polling2026`, rebuilt on every push to `main`). Headline models: unadjusted and bias-adjusted; see `src/model/bias_decay.py`.
 > - Keys in `.env` (`fec_api_key`, `bea_api_key`) are loaded by `src/collect/common.py:env_key`.
 
 ## Goal
