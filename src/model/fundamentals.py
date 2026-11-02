@@ -9,6 +9,7 @@ Candidate predictors (measured as of September of the election year, i.e. before
   gas        real gasoline price change, Sept/Sept (gasoline CPI CUUR0000SETB01 / CPI-U)
   rdi        real disposable income per capita growth, Sept/Sept (A229RX0, 1959+; current vintage = revised data)
   unemp      change in the unemployment rate over the prior 12 months
+  unemp_level unemployment rate in September of the election year
   midterm    1 in midterm years (only in the all-elections model)
 
 Model selection: every subset of up to 4 predictors, OLS, scored by leave-one-election-out RMSE on a
@@ -33,7 +34,7 @@ PRES_PARTY = {1946: "D", 1948: "D", 1950: "D", 1952: "D", 1954: "R", 1956: "R", 
               1982: "R", 1984: "R", 1986: "R", 1988: "R", 1990: "R", 1992: "R", 1994: "D", 1996: "D", 1998: "D",
               2000: "D", 2002: "R", 2004: "R", 2006: "R", 2008: "R", 2010: "D", 2012: "D", 2014: "D", 2016: "D",
               2018: "R", 2020: "R", 2022: "D", 2026: "R"}
-PREDICTORS = ["approval", "prev", "infl", "gas", "rdi", "unemp"]
+PREDICTORS = ["approval", "prev", "infl", "gas", "rdi", "unemp", "unemp_level"]
 
 
 def fred(sid):
@@ -95,6 +96,7 @@ def build():
             approval=appr, approval_source=src,
             infl=yoy(cpi, y), gas=yoy(real_gas, y), rdi=yoy(rdi, y),
             unemp=yoy(ur, y, pct=False),
+            unemp_level=float(ur.get(pd.Timestamp(year=y, month=9, day=1), np.nan)),
             gas_nominal_level=float(fred("APU000074714").get(pd.Timestamp(year=y, month=9, day=1), np.nan)) if y >= 1977 else np.nan,
         ))
     df = pd.DataFrame(rows)
@@ -162,7 +164,7 @@ def main():
         # requested predictors, shown even if they don't win
         shown = {}
         for xs in (["approval"], ["approval", "prev"], ["approval", "infl"], ["approval", "gas"], ["approval", "prev", "infl"],
-                   ["approval", "prev", "gas"], ["approval", "prev", "rdi"], ["infl"], ["gas"], ["approval", "prev", "infl", "gas"]):
+                   ["approval", "prev", "gas"], ["approval", "prev", "rdi"], ["approval", "prev", "unemp"], ["approval", "prev", "unemp_level"], ["infl"], ["gas"], ["approval", "prev", "infl", "gas"]):
             xs2 = xs + list(extra)
             m = fit(data, xs2)
             e = loo(data, xs2)

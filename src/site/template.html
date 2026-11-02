@@ -177,7 +177,7 @@ footer { border-top: 1px solid var(--border); margin-top: 40px; padding: 18px 0 
       <tr><td>2018/2022 polls</td><td>538 archived poll files (Internet Archive, Feb 2025)</td><td>Backtest</td></tr>
       <tr><td>Poll-vs-result history 1998–2022</td><td>538 <code>raw_polls.csv</code> (GitHub)</td><td>Error calibration</td></tr>
       <tr><td>National economy</td><td>FRED: unemployment, CPI, real disposable income per capita, GDP, sentiment (ALFRED vintages for 2018/2022)</td><td>Fundamentals</td></tr>
-      <tr><td>State economy</td><td>FRED state unemployment and personal income (BEA/BLS series)</td><td>Small Senate adjustment</td></tr>
+      <tr><td>State economy</td><td>FRED state unemployment (BLS series, 1976+)</td><td>Tested; not used (no held-out gain)</td></tr>
     </tbody>
   </table></div>
 </section>
@@ -212,6 +212,8 @@ footer { border-top: 1px solid var(--border); margin-top: 40px; padding: 18px 0 
   <h3>Inflation and gas prices specifically</h3>
   <div class="tbl-wrap"><table id="fundReq"></table></div>
   <p class="muted small" id="fundReqNote"></p>
+  <h3>Unemployment</h3>
+  <p class="muted small" id="unempNote"></p>
   <h3>2026 inputs vs. the historical range</h3>
   <div class="tbl-wrap"><table id="fundRange"></table></div>
 
@@ -576,7 +578,7 @@ function renderBias() {
 
 function renderAppendix() {
   const F = DATA.fund, E = DATA.errors;
-  const VN = { approval: "Approval", prev: "Previous House margin", infl: "Inflation", gas: "Real gas change", rdi: "Real income growth", unemp: "Unemployment change", midterm: "Midterm", const: "Constant" };
+  const VN = { approval: "Approval", prev: "Previous House margin", infl: "Inflation", gas: "Real gas change", rdi: "Real income growth", unemp: "Unemployment change", unemp_level: "Unemployment level", midterm: "Midterm", const: "Constant" };
   const coefs = t => Object.keys(t.coef).filter(k => k !== "const").map(k => `${VN[k] || k} ${t.coef[k] >= 0 ? "+" : ""}${t.coef[k].toFixed(2)} <span class="muted">(±${t.se[k].toFixed(2)})</span>`).join("; ");
   const rows = [];
   [["all_1962_2022", "All elections + midterm dummy"], ["midterms_1962_2022", "Midterms only"]].forEach(([k, lab]) => {
@@ -590,9 +592,12 @@ function renderAppendix() {
     Object.keys(req).map(k => { const r = req[k]; const c = (v) => r.coef[v] == null ? "—" : `${r.coef[v] >= 0 ? "+" : ""}${r.coef[v].toFixed(2)} <span class="muted">(±${r.se[v].toFixed(2)})</span>`;
       return `<tr><td>${k.split(" + ").map(v => VN[v]).join(" + ")}</td><td class="num">${r.loo_rmse.toFixed(2)}</td><td>${c("infl")}</td><td>${c("gas")}</td><td class="num">${fmtM(-r.pred_2026)}</td></tr>`; }).join("") + "</tbody>";
   $("#fundReqNote").textContent = `Inflation adds nothing once approval and the previous result are in the model: its coefficient is near zero with a large standard error, and it raises the out-of-sample error. Inflation's effect appears to run through approval. Real gas prices have the expected sign (higher prices hurt the president's party, about −0.08 pts per 1% rise) and enter the best all-elections specification, but the coefficient is only about 1.5 standard errors from zero. This year's 29% real rise contributes roughly 2 pts toward Democrats in specifications that include it. Inflation and real gas changes are correlated (r ≈ 0.5).`;
+  const U = DATA.state_econ, ru = a.requested_specs["approval + prev + unemp"], rl = a.requested_specs["approval + prev + unemp_level"];
+  const mU = mm.requested_specs["approval + prev + unemp"], mL = mm.requested_specs["approval + prev + unemp_level"];
+  $("#unempNote").textContent = `National: the 12-month change in unemployment has coefficient ${mU.coef.unemp.toFixed(2)} (±${mU.se.unemp.toFixed(2)}) in midterms and ${ru.coef.unemp.toFixed(2)} (±${ru.se.unemp.toFixed(2)}) across all elections; the September level has ${mL.coef.unemp_level.toFixed(2)} (±${mL.se.unemp_level.toFixed(2)}) and ${rl.coef.unemp_level.toFixed(2)} (±${rl.se.unemp_level.toFixed(2)}). Both have the expected sign (worse job markets hurt the president's party) but are within about 1.5 SE of zero; each enters one of the averaged specifications with about 19% weight. 2026 unemployment (4.2%, down 0.2 over the year) is unremarkable, so these terms barely move the estimate. State level (${U.n_races} Senate and governor races, 1998–2022): relative to state lean and the national environment, a state whose unemployment rose more than the nation's showed ${U.struct.coef >= 0 ? "+" : ""}${U.struct.coef.toFixed(2)} pts (cluster SE ${U.struct.se_cluster.toFixed(2)}) for the out-party, the wrong sign, with no gain in held-out accuracy, so the Senate prior's state-economy term is set to ${U.coef_used.toFixed(1)} (it was an assumed 0.5). Against final poll averages the effect is ${U.miss.coef >= 0 ? "+" : ""}${U.miss.coef.toFixed(2)} (SE ${U.miss.se_cluster.toFixed(2)}): polls may slightly understate a local-economy penalty, but the held-out improvement is 0.1%, so it isn't applied.`;
   const rc = a.range_check;
   $("#fundRange").innerHTML = `<thead><tr><th>Input</th><th class="num">Historical min</th><th class="num">Historical max</th><th class="num">2026</th><th></th></tr></thead><tbody>` +
-    ["approval", "prev", "infl", "gas", "rdi", "unemp"].map(v => { const r = rc[v]; const out = r["2026"] < r.min || r["2026"] > r.max; return `<tr><td>${VN[v]}</td><td class="num">${r.min.toFixed(1)}</td><td class="num">${r.max.toFixed(1)}</td><td class="num">${r["2026"].toFixed(1)}</td><td>${out ? '<span class="tag">outside range</span>' : ""}</td></tr>`; }).join("") + "</tbody>";
+    ["approval", "prev", "infl", "gas", "rdi", "unemp", "unemp_level"].map(v => { const r = rc[v]; const out = r["2026"] < r.min || r["2026"] > r.max; return `<tr><td>${VN[v]}</td><td class="num">${r.min.toFixed(1)}</td><td class="num">${r.max.toFixed(1)}</td><td class="num">${r["2026"].toFixed(1)}</td><td>${out ? '<span class="tag">outside range</span>' : ""}</td></tr>`; }).join("") + "</tbody>";
   const stat = (v, l) => `<div class="stat"><div class="v">${v}</div><div class="l">${l}</div></div>`;
   const M = DATA.models.polls_fundamentals;
   $("#errStats").innerHTML = stat(M.sd_nat_house.toFixed(1), "National SD, House (pts, after fundamentals blend)") + stat(M.sd_nat_senate.toFixed(1), "National SD, Senate") +

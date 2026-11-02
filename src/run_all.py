@@ -19,6 +19,7 @@ STEPS = [
     ["src/model/bias_analysis.py"],
     ["src/model/bias_decay.py"],
     ["src/model/error_structure.py"],
+    ["src/model/state_econ.py"],
     ["src/model/fundamentals.py"],
     ["src/model/forecast.py"],
     ["src/model/backtest.py"],

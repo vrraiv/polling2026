@@ -130,7 +130,12 @@ def main():
       "top five averaged. Best specification: " + ", ".join(f"{k} {v:+.2f} (±{best['se'][k]:.2f})" for k, v in best["coef"].items()) + ". "
       "Inflation adds nothing once approval is in; real gas has the expected sign but is only ~1.5 SE from zero. "
       "2026 approval and the gas-price rise are both outside the 1962–2022 range, so the estimate extrapolates. "
-      "State economics enter the Senate prior only as a small assumed adjustment (0.5 pts per point of state-vs-national change in unemployment).")
+      "Unemployment (12-month change and level) was tested nationally: both are weak (coefficients within ~1.5 SE of zero) and enter only as minor terms in the averaged model.")
+    se = json.loads((OUT / "state_econ.json").read_text())
+    a(f"- **State unemployment** (`src/model/state_econ.py`, {se['n_races']} Senate/governor races 1998–2022). Relative to state lean and the national "
+      f"environment, a worse local job trend is associated with {se['struct']['coef']:+.2f} pts for Democrats-under-a-Republican-president "
+      f"(cluster SE {se['struct']['se_cluster']:.2f}; wrong sign, no held-out gain), so the Senate prior uses {se['coef_used']:.1f}. As a correction to poll "
+      f"averages the effect is {se['miss']['coef']:+.2f} (SE {se['miss']['se_cluster']:.2f}), but it improves held-out error by only 0.1%, so it is not applied.")
     es = json.loads((OUT / "error_structure.json").read_text())
     a(f"- **Correlated errors.** Beyond the shared national miss, each simulation draws a Census-region shock (SD {es['sigma_region']:.1f}) and a random "
       f"slope on state lean (SD {es['lean_slope']['all']['sd_true']:.3f} per point), with each race's total variance held fixed. The regional component is "

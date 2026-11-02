@@ -103,7 +103,10 @@ def fundamentals_margin_pres(approval_agg, set_=None, spec=None):
 _BIAS = ROOT / "data/processed/bias_analysis.json"
 LEAN_SLOPE = json.loads(_BIAS.read_text())["state"]["post2010_symmetric"]["slope"] if _BIAS.exists() else 0.0
 APPLY_LEAN_CORRECTION = False  # off for the first published build; see bias_analysis.py
-STATE_ECON_COEF = 0.5     # Senate: D gain per point that state unemployment rose more than national (12m)
+# State-economy term in the Senate prior, estimated in src/model/state_econ.py (D gain per point that state
+# unemployment rose more than national over 12 months, R president). Set to 0 there unless it improves held-out error.
+_SE = OUT / "state_econ.json"
+STATE_ECON_COEF = float(json.loads(_SE.read_text())["coef_used"]) if _SE.exists() else 0.0
 
 
 def tdraw(size):
