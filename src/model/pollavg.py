@@ -45,18 +45,44 @@ def weight(x, half_life):
 HOUSE_PARTISAN_SHIFT = float(json.loads(_PS.read_text())["chosen"]["partisan_shift_house"]) if _PS.exists() else 4.0
 
 
-def sponsor_adj(x, shift=PARTISAN_SHIFT):
+_PE = ROOT / "data/processed/pollster_effects.json"
+PE_EST = json.loads(_PE.read_text()) if _PE.exists() else None
+SPONSOR_LOG = {}   # pollster -> adjustment applied (for the site table)
+
+
+def sponsor_adj(x, shift=PARTISAN_SHIFT, level="statewide"):
+    """Sponsored-poll adjustment (added to the poll's D-R margin).
+    With pollster_effects.json: pollsters with a track record (>=10 polls in 538's archive) get the within-pollster sponsor
+    effect (beta ~1.2); pollsters without one get the thin-history shift (~4 statewide). VoteHub flags some polls by the
+    pollster's affiliation rather than a paying client: a flagged poll with NO listed sponsor from an established pollster
+    whose 538 record is mostly nonpartisan work (<50% partisan) gets no sponsor adjustment.
+    Without the file: the flat shift."""
     p = (x.get("partisan") or "").upper()
     if x.get("internal"):
-        p = p or "DEM"  # VoteHub sets none today; placeholder so internals are never unadjusted
-    return -shift if p == "DEM" else shift if p == "REP" else 0.0
+        p = p or "DEM"
+    sg = 1 if p == "DEM" else -1 if p == "REP" else 0
+    if sg == 0:
+        return 0.0
+    if PE_EST is None:
+        return -shift * sg
+    import pollster_effects as PEm
+    _, key = PEm.adjustment(PE_EST, x["pollster"], sg, "tiered")
+    if key is not None:
+        if not x.get("sponsors") and PE_EST.get("partisan_work", {}).get(key, 1.0) < 0.5:
+            adj = 0.0
+        else:
+            adj = PE_EST["beta"] * sg
+    else:
+        adj = PE_EST["thin_by_level"][level] * sg
+    SPONSOR_LOG[(x["pollster"], p, bool(x.get("sponsors")))] = adj
+    return -adj
 
 
-def weighted_avg(rows, half_life, shift=PARTISAN_SHIFT):
+def weighted_avg(rows, half_life, shift=PARTISAN_SHIFT, level="statewide"):
     """rows: list of (poll, margin). Down-weight pollsters with many polls (each pollster ~ sqrt(k) total weight)."""
     if not rows:
         return None
-    df = pd.DataFrame([{"pollster": p["pollster"], "m": m + sponsor_adj(p, shift) - POP_DEM_LEAN.get((p.get("population") or "lv").lower(), 0.0),
+    df = pd.DataFrame([{"pollster": p["pollster"], "m": m + sponsor_adj(p, shift, level) - POP_DEM_LEAN.get((p.get("population") or "lv").lower(), 0.0),
                         "w": weight(p, half_life),
                         "end": p["end"], "n": p.get("sample_size") or 600} for p, m in rows])
     df["k"] = df.groupby("pollster").pollster.transform("size")
@@ -132,7 +158,7 @@ def house(polls, races, since="2026-07-01", half_life=None):
             rr = [a[l] for l in rls if l in a]
             if len(d) == 1 and len(rr) == 1:
                 rows.append((x, two_party(d[0], rr[0])))
-        res = weighted_avg(rows, half_life, shift=HOUSE_PARTISAN_SHIFT)
+        res = weighted_avg(rows, half_life, shift=HOUSE_PARTISAN_SHIFT, level="house")
         if res:
             out[key] = res
     return out

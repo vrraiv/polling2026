@@ -293,6 +293,9 @@ footer a { color: var(--text-2); }
   <h3>E. Poll-averaging settings (estimated)</h3>
   <div class="tbl-wrap"><table id="psTable"></table></div>
   <p class="muted small" id="psNote"></p>
+  <h3>Sponsored polls: pollster track records</h3>
+  <p class="small" id="pfxText"></p>
+  <div class="tbl-wrap"><table id="pfxTable"></table></div>
   <h3>F. Estimators at a glance</h3>
   <ul class="list small">
     <li><b>Poll weight</b> = ½<sup>age/half-life</sup> × √(min(n, 3000)/600) × population weight ÷ √(polls by that pollster); settings in section E. Two-party margins throughout.</li>
@@ -542,7 +545,7 @@ function raceDetail(r) {
   if (!P || !P.polls.length) right = `<p class="muted small">No polls since mid-June with both nominees. The forecast rests on the prior.</p>`;
   else right = `<table class="mini"><thead><tr><th>Ended</th><th>Pollster</th><th class="num">n</th><th class="num">${esc(r.dem.split(" ").slice(-1)[0])}</th><th class="num">${esc(r.rep.split(" ").slice(-1)[0])}</th><th class="num">Margin (2-party)</th></tr></thead><tbody>` +
     P.polls.map(p => `<tr><td>${esc(p.end)}</td><td>${p.url ? `<a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.pollster)}</a>` : esc(p.pollster)}${p.partisan ? ` <span class="tag">${esc(p.partisan)}-sponsored</span>` : ""}</td><td class="num">${p.n ? p.n.toLocaleString() + " " + esc(p.pop) : esc(p.pop)}</td><td class="num">${p.d}</td><td class="num">${p.r}</td><td class="num">${fmtM(p.margin2)}</td></tr>`).join("") +
-    `</tbody></table><p class="tiny">${P.polls.length < P.n_total ? `Latest ${P.polls.length} of ${P.n_total} polls since mid-June. ` : ""}Source: VoteHub. In the average, party-sponsored polls are shifted ${DATA.poll_settings.chosen.partisan_shift_statewide} pts against the sponsor and registered-voter polls ${DATA.poll_settings.chosen.pop_dem_lean.rv} pts toward Republicans.</p>`;
+    `</tbody></table><p class="tiny">${P.polls.length < P.n_total ? `Latest ${P.polls.length} of ${P.n_total} polls since mid-June. ` : ""}Source: VoteHub. In the average, party-sponsored polls are shifted against the sponsor (${DATA.pollster_fx.beta.toFixed(1)} pts for established pollsters, ${DATA.pollster_fx.thin.statewide.toFixed(1)} for firms without a track record) and registered-voter polls ${DATA.poll_settings.chosen.pop_dem_lean.rv} pts toward Republicans.</p>`;
   return `<div class="detail-grid"><div>${left}</div><div style="overflow-x:auto">${right}</div></div>`;
 }
 $$("#senFilter button").forEach(b => b.addEventListener("click", () => { senFilter = b.dataset.f; renderSenate(); }));
@@ -744,11 +747,11 @@ function renderHouseStructure() {
 function renderPollSettings() {
   const P = DATA.poll_settings, c = P.chosen, sp = P.sponsor, pw = P.population, hl = P.half_life, tl = P.tails;
   $$(".dfT").forEach(e => e.textContent = c.df_t.toFixed(1));
-  $("#psText").textContent = `Polls since mid-June, weighted with a ${c.half_life_races}-day half-life; registered-voter polls get ${c.pop_weight.rv} of a likely-voter poll's weight and adult polls ${c.pop_weight.a}, and they're shifted ${c.pop_dem_lean.rv} and ${c.pop_dem_lean.a} pts toward Republicans to match likely-voter polls; party-sponsored polls are shifted ${c.partisan_shift_statewide} pts (Senate) or ${c.partisan_shift_house} pts (House) against the sponsor.`;
+  $("#psText").textContent = `Polls since mid-June, weighted with a ${c.half_life_races}-day half-life; registered-voter polls get ${c.pop_weight.rv} of a likely-voter poll's weight and adult polls ${c.pop_weight.a}, and they're shifted ${c.pop_dem_lean.rv} and ${c.pop_dem_lean.a} pts toward Republicans to match likely-voter polls; polls paid for by a party or allied group are shifted ${DATA.pollster_fx.beta.toFixed(1)} pts against the sponsor if the pollster has a track record, or ${DATA.pollster_fx.thin.statewide.toFixed(1)} (statewide) / ${DATA.pollster_fx.thin.house.toFixed(1)} (House) if it doesn't.`;
   const row = (k, was, est, src) => `<tr><td>${k}</td><td class="num">${was}</td><td class="num"><b>${est}</b></td><td>${src}</td></tr>`;
   $("#psTable").innerHTML = `<thead><tr><th>Setting</th><th class="num">Was (assumed)</th><th class="num">Estimated</th><th>Evidence</th></tr></thead><tbody>` +
-    row("Sponsor shift, statewide", "2", `${sp.statewide.shift.toFixed(1)} ± ${sp.statewide.se.toFixed(1)}`, `${sp.statewide.n_polls} sponsored polls in ${sp.statewide.n_races} races vs. independent polls of the same race (1998–2022); symmetric for both parties`) +
-    row("Sponsor shift, House districts", "4", `${sp.house_district.shift.toFixed(1)} ± ${sp.house_district.se.toFixed(1)}`, `${sp.house_district.n_polls} polls in ${sp.house_district.n_races} races`) +
+    row("Sponsor shift, established pollsters", "2 (later 4.3)", `${DATA.pollster_fx.beta.toFixed(1)} ± ${DATA.pollster_fx.beta_se.toFixed(1)}`, `Within-pollster: the same pollster's sponsored vs. unsponsored polls, relative to other polls of the same race (2010–2022, pollster fixed effects)`) +
+    row("Sponsor shift, no track record", "2 / 4 (later 4.3 / 6.3)", `${DATA.pollster_fx.thin.statewide.toFixed(1)} / ${DATA.pollster_fx.thin.house.toFixed(1)}`, `Statewide / House: sponsored polls from firms with under 10 polls in 538's archive (${DATA.pollster_fx.thin.n_statewide} / ${DATA.pollster_fx.thin.n_house} polls). The old flat 4.3 was mostly these firms`) +
     row("Weight: registered-voter poll", "0.8", c.pop_weight.rv.toFixed(2), `Within-race error vs. likely-voter polls (2018–2024, ${pw.n.rv} RV / ${pw.n.lv} LV polls)`) +
     row("Weight: adult poll", "0.5", c.pop_weight.a.toFixed(2), `${pw.n.a} polls; few, so imprecise`) +
     row("Lean adjustment: RV / adults", "none", `${c.pop_dem_lean.rv} / ${c.pop_dem_lean.a} pts`, `RV polls ran ${pw.lean_vs_lv.rv.dem_lean_vs_lv.toFixed(1)} ± ${pw.lean_vs_lv.rv.se.toFixed(1)} pts more Democratic than LV polls of the same race; adults ${pw.lean_vs_lv.a.dem_lean_vs_lv.toFixed(1)} ± ${pw.lean_vs_lv.a.se.toFixed(1)}`) +
@@ -757,10 +760,17 @@ function renderPollSettings() {
   $("#psNote").textContent = `Backtest with the estimated settings: Brier ${DATA.backtest["2018"].brier.toFixed(3)} (2018) and ${DATA.backtest["2022"].brier.toFixed(3)} (2022), down from 0.050 and 0.047. The generic-ballot half-life isn't used: the national environment comes from published averages.`;
 }
 
+function renderPollsterFx() {
+  const X = DATA.pollster_fx, bl = X.big_loco, bt = X.backtest;
+  $("#pfxText").textContent = `VoteHub flags a poll "DEM" or "REP" mostly when a party or allied group paid for it, but sometimes by the pollster's usual clients (e.g. PPP polls with no sponsor, or for a media outlet). 538's archive shows the sponsor effect depends on the pollster: within the same pollster, sponsored polls lean ${X.beta.toFixed(1)} pts toward the sponsor (SE ${X.beta_se.toFixed(1)}), while sponsored polls from firms without a track record lean ${X.thin.statewide.toFixed(1)}. The forecast now uses that tiered rule, and a flagged poll with no listed sponsor from an established, mostly nonpartisan pollster gets no sponsor adjustment. Full pollster-by-pollster house effects (538-style; spread ${X.tau.toFixed(1)} pts) were tested but not applied. Backtests: on ${bl.n_races} Senate and governor races (2010–2022, each year held out) the flat penalty, tiered rule and house effects score RMSE ${bl.flat.rmse.toFixed(2)}, ${bl.tier.rmse.toFixed(2)} and ${bl.house.rmse.toFixed(2)}; race-by-race the tiered rule's difference from flat is ${bl.paired_tier_vs_flat_all.mean_sq_err_gain.toFixed(2)} ± ${bl.paired_tier_vs_flat_all.se.toFixed(2)} in squared error, i.e. no detectable difference. The tiered rule is adopted because the poll-level evidence measures the lean directly.`;
+  $("#pfxTable").innerHTML = `<thead><tr><th>Pollster</th><th>Flag</th><th>Sponsor listed?</th><th class="num">2026 polls</th><th class="num">Old adjustment</th><th class="num">New adjustment</th></tr></thead><tbody>` +
+    X.table.map(r => `<tr><td>${esc(r.pollster)}</td><td>${r.flag}</td><td>${r.sponsor_listed ? "yes" : "no"}</td><td class="num">${r.n}</td><td class="num">${r.old.toFixed(1)}</td><td class="num"><b>${r.new.toFixed(1)}</b></td></tr>`).join("") + "</tbody>";
+}
+
 // ---------- init ----------
 $("#gen").textContent = (DATA.final ? "Final forecast · " : "Updated ") + DATA.generated;
 if (DATA.final) { const fb = $("#finalBanner"); fb.hidden = false; fb.innerHTML = `<b>Final pre-election forecast</b>, made ${DATA.generated}. It won't be updated as results come in; a scorecard comparing it with the results will follow.`; }
-renderModelSegs(); renderPollSettings(); renderPriorWeight(); renderHouseStructure(); renderOverview(); renderMap(); renderWatch(); renderHouse(); renderMethod(); renderData(); renderBias(); renderBacktest(); renderAppendix();
+renderModelSegs(); renderPollsterFx(); renderPollSettings(); renderPriorWeight(); renderHouseStructure(); renderOverview(); renderMap(); renderWatch(); renderHouse(); renderMethod(); renderData(); renderBias(); renderBacktest(); renderAppendix();
 route();
 </script>
 </body>

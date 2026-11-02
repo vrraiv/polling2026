@@ -38,7 +38,13 @@ def wavg(df, asof, half_life):
     w = 0.5 ** (age / half_life) * np.sqrt(df.n.clip(upper=3000).fillna(600) / 600) * df.population.str.lower().map(POP_W).fillna(0.7)
     k = df.groupby("pollster").pollster.transform("size")
     w = w / np.sqrt(k)
-    m = (df.m + np.where(df.partisan == "DEM", -PA.PARTISAN_SHIFT, np.where(df.partisan == "REP", PA.PARTISAN_SHIFT, 0))
+    if PA.PE_EST is not None:   # same tiered sponsor rule as the forecast (538 'partisan' = paying client)
+        import pollster_effects as PEm
+        sg = np.where(df.partisan == "DEM", 1, np.where(df.partisan == "REP", -1, 0))
+        spadj = np.array([PEm.adjustment(PA.PE_EST, pn, g_, "tiered")[0] if g_ else 0.0 for pn, g_ in zip(df.pollster, sg)])
+    else:
+        spadj = np.where(df.partisan == "DEM", PA.PARTISAN_SHIFT, np.where(df.partisan == "REP", -PA.PARTISAN_SHIFT, 0))
+    m = (df.m - spadj
          - df.population.str.lower().map(PA.POP_DEM_LEAN).fillna(0.0))
     avg = np.average(m, weights=w)
     neff = w.sum() ** 2 / (w ** 2).sum()

@@ -37,6 +37,7 @@ STEPS = [
     ["src/model/state_econ.py"],
     ["src/model/prior_weight.py"],
     ["src/model/house_structure.py"],
+    ["src/model/pollster_effects.py"],
     ["src/model/poll_settings.py"],
     ["src/model/fundamentals.py"],
     ["src/model/forecast.py"],

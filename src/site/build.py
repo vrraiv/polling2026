@@ -88,6 +88,22 @@ def main():
     from forecast import senate_races
     vh = P.load_votehub()
     poll_lists = P.senate_poll_list(vh, senate_races(vh))
+    # sponsored-poll adjustments actually applied to 2026 polls (new tiered rule vs the old flat shift)
+    pe = json.loads((PROC / "pollster_effects.json").read_text())
+    rows_sp = {}
+    for x in vh:
+        if x["poll_type"] not in ("us-senator", "us-representative") or x["end_date"] < "2026-06-15" or not x.get("partisan"):
+            continue
+        lvl = "house" if x["poll_type"] == "us-representative" else "statewide"
+        new = -P.sponsor_adj(x, level=lvl) * (1 if x["partisan"].upper() == "DEM" else -1)
+        old = 4.3 if lvl == "statewide" else 6.3
+        k = (x["pollster"], x["partisan"].upper(), bool(x.get("sponsors")))
+        r_ = rows_sp.setdefault(k, {"pollster": x["pollster"], "flag": x["partisan"].upper(), "sponsor_listed": bool(x.get("sponsors")),
+                                    "n": 0, "old": old, "new": round(new, 2), "levels": set()})
+        r_["n"] += 1; r_["levels"].add(lvl)
+    sp_table = sorted(({**v, "levels": sorted(v["levels"])} for v in rows_sp.values()), key=lambda z: -z["n"])[:14]
+    pollster_fx = {"beta": pe["beta"], "beta_se": pe["beta_se"], "thin": pe["thin_by_level"], "tau": pe["tau"],
+                   "backtest": pe["backtest"], "big_loco": pe.get("big_loco"), "table": sp_table}
     data = {
         "generated": dt.datetime.now().strftime("%Y-%m-%d %H:%M"),
         "final": os.environ.get("FORECAST_FINAL") == "1" or (ROOT / "data" / "final" / "MADE_AT.txt").exists(),
@@ -103,6 +119,7 @@ def main():
         "prior_weight": json.loads((PROC / "prior_weight.json").read_text()),
         "house_structure": json.loads((PROC / "house_structure.json").read_text()),
         "poll_settings": json.loads((PROC / "poll_settings.json").read_text()),
+        "pollster_fx": pollster_fx,
         "bias_confidence": json.loads((PROC / "bias_confidence.json").read_text()),
         "bias_decomposition": json.loads((PROC / "bias_decomposition.json").read_text()) if (PROC / "bias_decomposition.json").exists() else None,
         "errors": {"structure": json.loads((PROC / "error_structure.json").read_text()),

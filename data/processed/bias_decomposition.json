@@ -5,10 +5,10 @@
   "lean": false,
   "sd_nat_house": 2.977302993873907,
   "sd_nat_senate": 3.2922356210659323,
-  "p_sen": 0.705975,
-  "sen_seats": 51.7603,
-  "p_house": 0.956525,
-  "house_seats": 234.47635
+  "p_sen": 0.7037,
+  "sen_seats": 51.7567,
+  "p_house": 0.9695,
+  "house_seats": 237.386075
  },
  "shift_only_sd_unchanged": {
   "shift": -2.5540952480150283,
@@ -16,10 +16,10 @@
   "lean": true,
   "sd_nat_house": 2.977302993873907,
   "sd_nat_senate": 3.2922356210659323,
-  "p_sen": 0.4917,
-  "sen_seats": 50.4144,
-  "p_house": 0.8753,
-  "house_seats": 228.1136
+  "p_sen": 0.487925,
+  "sen_seats": 50.406575,
+  "p_house": 0.913575,
+  "house_seats": 230.651925
  },
  "sd_only_no_shift": {
   "shift": 0.0,
@@ -27,10 +27,10 @@
   "lean": false,
   "sd_nat_house": 2.2635933578150804,
   "sd_nat_senate": 2.1716077941542395,
-  "p_sen": 0.742225,
-  "sen_seats": 51.813,
-  "p_house": 0.972075,
-  "house_seats": 233.573175
+  "p_sen": 0.740275,
+  "sen_seats": 51.8067,
+  "p_house": 0.982625,
+  "house_seats": 236.5011
  },
  "adjusted": {
   "shift": -2.5540952480150283,
@@ -38,10 +38,10 @@
   "lean": true,
   "sd_nat_house": 2.2635933578150804,
   "sd_nat_senate": 2.1716077941542395,
-  "p_sen": 0.4716,
-  "sen_seats": 50.355875,
-  "p_house": 0.87545,
-  "house_seats": 226.054525
+  "p_sen": 0.468725,
+  "sen_seats": 50.345825,
+  "p_house": 0.920975,
+  "house_seats": 228.529825
  },
  "flat_minus1": {
   "shift": -1.0,
@@ -49,10 +49,10 @@
   "lean": false,
   "sd_nat_house": 2.2635933578150804,
   "sd_nat_senate": 2.1716077941542395,
-  "p_sen": 0.627225,
-  "sen_seats": 51.14005,
-  "p_house": 0.9495,
-  "house_seats": 230.5121
+  "p_sen": 0.624775,
+  "sen_seats": 51.1332,
+  "p_house": 0.96855,
+  "house_seats": 233.2959
  },
  "flat_minus2": {
   "shift": -2.0,
@@ -60,10 +60,10 @@
   "lean": false,
   "sd_nat_house": 2.2635933578150804,
   "sd_nat_senate": 2.1716077941542395,
-  "p_sen": 0.4988,
-  "sen_seats": 50.475,
-  "p_house": 0.91055,
-  "house_seats": 227.70345
+  "p_sen": 0.497375,
+  "sen_seats": 50.470575,
+  "p_house": 0.945475,
+  "house_seats": 230.285425
  },
  "flat_minus3": {
   "shift": -3.0,
@@ -71,10 +71,10 @@
   "lean": false,
   "sd_nat_house": 2.2635933578150804,
   "sd_nat_senate": 2.1716077941542395,
-  "p_sen": 0.365025,
-  "sen_seats": 49.74655,
-  "p_house": 0.846025,
-  "house_seats": 224.893025
+  "p_sen": 0.364075,
+  "sen_seats": 49.745175,
+  "p_house": 0.900175,
+  "house_seats": 227.267625
  },
  "flat_minus4": {
   "shift": -4.0,
@@ -82,9 +82,9 @@
   "lean": false,
   "sd_nat_house": 2.2635933578150804,
   "sd_nat_senate": 2.1716077941542395,
-  "p_sen": 0.2479,
-  "sen_seats": 49.04775,
-  "p_house": 0.747075,
-  "house_seats": 222.2756
+  "p_sen": 0.246925,
+  "sen_seats": 49.052925,
+  "p_house": 0.82665,
+  "house_seats": 224.43065
  }
 }
