@@ -158,8 +158,8 @@ def main():
       f"(estimate + LV discount {bc['lv_discount_est']:.2f}), Senate shift {ba['national']['senate_bias_shift']:+.2f} (battleground pollsters' record + discount) "
       f"plus the state-lean term. The Senate moves ~10 pts of control probability per point of national shift because five races in R-leaning states sit within 3 pts of even.")
     ps = json.loads((OUT / "poll_settings.json").read_text())["chosen"]
-    a(f"- **Poll-averaging settings (estimated, `src/model/poll_settings.py`)**: sponsor shift {ps['partisan_shift_statewide']} pts statewide / "
-      f"{ps['partisan_shift_house']} House; population weights RV {ps['pop_weight']['rv']}, adults {ps['pop_weight']['a']}, with RV/adult polls shifted "
+    a(f"- **Poll-averaging settings (estimated, `src/model/poll_settings.py`)**: sponsor shift by pollster track record (see pollster_effects.json: ~1.2 pts for established pollsters, ~4 for firms without a record);"
+      f" population weights RV {ps['pop_weight']['rv']}, adults {ps['pop_weight']['a']}, with RV/adult polls shifted "
       f"{abs(ps['pop_dem_lean']['rv']):.2f} pts toward {'Democrats' if ps['pop_dem_lean']['rv'] < 0 else 'Republicans'} (paired LV-vs-RV surveys, historical prior + 2026 pairs); half-life {ps['half_life_races']} days (backtest prefers no decay); "
       f"t with {ps['df_t']} df.")
     es = json.loads((OUT / "error_structure.json").read_text())
