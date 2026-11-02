@@ -118,9 +118,15 @@ def main():
     html = TEMPLATE.read_text(encoding="utf-8").replace("/*__DATA__*/null", json.dumps(data, default=clean).replace("</", "<\\/"))
     (SITE / "index.html").write_text(html, encoding="utf-8")
     shutil.copy(Path(__file__).with_name("favicon.svg"), SITE / "favicon.svg")
-    og = Path(__file__).with_name("og.png")
-    if og.exists():
-        shutil.copy(og, SITE / "og.png")
+    try:  # regenerate the link-preview card from today's numbers
+        sys.path.insert(0, str(Path(__file__).parent))
+        import og_image
+        og_image.make(models, SITE / "og.png", data["generated"])
+    except Exception as ex:  # noqa: BLE001
+        print("og image skipped:", ex)
+        og = Path(__file__).with_name("og.png")
+        if og.exists():
+            shutil.copy(og, SITE / "og.png")
     (SITE / "404.html").write_text('<!doctype html><meta charset="utf-8"><title>Not found</title>'
                                    '<p style="font-family:system-ui;padding:2rem">Not found. <a href="/">Back to the forecast</a></p>',
                                    encoding="utf-8")

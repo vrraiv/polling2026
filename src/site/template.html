@@ -62,6 +62,9 @@ input.search { font: inherit; font-size: .88rem; background: var(--surface); col
 .seats { font-size: 1rem; margin-top: 2px; } .seats b { font-variant-numeric: tabular-nums; }
 .pair { display: grid; grid-template-columns: auto 1fr auto auto; gap: 4px 10px; align-items: center; font-size: .85rem; margin-top: 10px; font-variant-numeric: tabular-nums; }
 .pair .k { color: var(--text-2); }
+.seatcell { display: flex; flex-direction: column; line-height: 1.15; color: var(--text-2); }
+.seatcell .rng, .rng-line { font-size: .74rem; color: var(--text-3); }
+.rng-line { margin-top: 1px; }
 .pair .bar { height: 8px; border-radius: 4px; background: var(--rep); position: relative; overflow: hidden; }
 .pair .bar span { position: absolute; inset: 0 auto 0 0; background: var(--dem); border-right: 2px solid var(--surface); }
 .chart { width: 100%; position: relative; margin-top: 8px; }
@@ -411,6 +414,10 @@ function distChart(el, hA, hB, threshold, label) {
   });
 }
 
+// quantile of a seat histogram (counts indexed by seat number)
+function seatQ(hist, q) { const tot = hist.reduce((a, b) => a + b, 0); let acc = 0; for (let i = 0; i < hist.length; i++) { acc += hist[i]; if (acc / tot >= q) return i; } return hist.length - 1; }
+const seatMed = (h) => seatQ(h, 0.5);
+const seat95 = (h) => [seatQ(h, 0.025), seatQ(h, 0.975)];
 function rangeTxt(a, b, f) { const lo = Math.min(a, b), hi = Math.max(a, b); return f(lo) === f(hi) ? f(lo) : `${f(lo)}–${f(hi)}`; }
 
 function renderOverview() {
@@ -418,18 +425,21 @@ function renderOverview() {
   const hF = F.house, hA = A.house, sF = F.senate, sA = A.senate;
   const pct = (p) => Math.round(p * 100);
   const senWord = sA.p_dem_control_without_osborn < 0.45 ? "a toss-up leaning Republican" : sA.p_dem_control_without_osborn < 0.55 ? "a toss-up" : "leaning Democratic";
-  $("#headline").textContent = `Democrats are strong favorites to win the House (${pct(hA.p_dem_majority)}–${pct(hF.p_dem_majority)}%, about ${Math.round(hA.dem_seats_mean)}–${Math.round(hF.dem_seats_mean)} seats). The Senate is ${senWord} to leaning Democratic (${pct(sA.p_dem_control_without_osborn)}–${pct(sF.p_dem_control_without_osborn)}%), depending on whether this year's polls are as accurate as they look.`;
-  const row = (k, p, seats, w, c) => `<span class="k"><i style="display:inline-block;width:10px;height:3px;background:${c};vertical-align:3px;margin-right:6px;border-radius:2px"></i>${k}</span><span class="bar" aria-hidden="true"><span style="width:${(p * 100).toFixed(1)}%"></span></span><b>${fmtP(p)}</b><span class="muted">${seats}</span>`;
+  $("#headline").textContent = `Democrats are strong favorites to win the House (${pct(hA.p_dem_majority)}–${pct(hF.p_dem_majority)}%, about ${seatMed(hA.hist)}–${seatMed(hF.hist)} seats). The Senate is ${senWord} to leaning Democratic (${pct(sA.p_dem_control_without_osborn)}–${pct(sF.p_dem_control_without_osborn)}%), depending on whether this year's polls are as accurate as they look.`;
+  const row = (k, p, hist, c) => { const [lo, hi] = seat95(hist); return `<span class="k"><i style="display:inline-block;width:10px;height:3px;background:${c};vertical-align:3px;margin-right:6px;border-radius:2px"></i>${k}</span><span class="bar" aria-hidden="true"><span style="width:${(p * 100).toFixed(1)}%"></span></span><b>${fmtP(p)}</b><span class="seatcell"><span>${seatMed(hist)} seats</span><span class="rng">95%: ${lo}–${hi}</span></span>`; };
+  const both95 = (h1, h2) => { const a = seat95(h1), b = seat95(h2); return [Math.min(a[0], b[0]), Math.max(a[1], b[1])]; };
   $("#houseCard").innerHTML = `<span class="lab">House · 218 for control</span>
     <div class="big">${pct(hA.p_dem_majority)}–${pct(hF.p_dem_majority)}% <small>chance Democrats win</small></div>
-    <div class="seats">Democratic seats: <b>${Math.round(hA.dem_seats_mean)}–${Math.round(hF.dem_seats_mean)}</b> <span class="muted small">(average outcome; Republicans now hold 218)</span></div>
-    <div class="pair">${row("Face value", hF.p_dem_majority, Math.round(hF.dem_seats_mean) + " seats", 0, "var(--tint)")}${row("Adjusted", hA.p_dem_majority, Math.round(hA.dem_seats_mean) + " seats", 0, "var(--ochre)")}</div>
+    <div class="seats">Democratic seats: <b>${seatMed(hA.hist)}–${seatMed(hF.hist)}</b> <span class="muted small">(median outcome; Republicans now hold 218)</span></div>
+    <div class="rng-line">Realistic range (95%, both versions): ${both95(hA.hist, hF.hist).join("–")} seats</div>
+    <div class="pair">${row("Face value", hF.p_dem_majority, hF.hist, "var(--tint)")}${row("Adjusted", hA.p_dem_majority, hA.hist, "var(--ochre)")}</div>
     <div class="chart" id="houseDist"></div>`;
   distChart($("#houseDist"), hF.hist, hA.hist, 218, "Distribution of Democratic House seats: face value vs adjusted");
   $("#senateCard").innerHTML = `<span class="lab">Senate · 51 for control (VP breaks ties)</span>
     <div class="big">${pct(sA.p_dem_control_without_osborn)}–${pct(sF.p_dem_control_without_osborn)}% <small>chance Democrats win</small></div>
-    <div class="seats">Democratic-caucus seats: <b>${sA.dem_seats_mean.toFixed(1)}–${sF.dem_seats_mean.toFixed(1)}</b> <span class="muted small">(average; now 47)</span></div>
-    <div class="pair">${row("Face value", sF.p_dem_control_without_osborn, sF.dem_seats_mean.toFixed(1) + " seats", 0, "var(--tint)")}${row("Adjusted", sA.p_dem_control_without_osborn, sA.dem_seats_mean.toFixed(1) + " seats", 0, "var(--ochre)")}</div>
+    <div class="seats">Democratic-caucus seats: <b>${rangeTxt(seatMed(sA.hist), seatMed(sF.hist), x => x)}</b> <span class="muted small">(median; now 47)</span></div>
+    <div class="rng-line">Realistic range (95%, both versions): ${both95(sA.hist, sF.hist).join("–")} seats</div>
+    <div class="pair">${row("Face value", sF.p_dem_control_without_osborn, sF.hist, "var(--tint)")}${row("Adjusted", sA.p_dem_control_without_osborn, sA.hist, "var(--ochre)")}</div>
     <div class="chart" id="senDist"></div>`;
   distChart($("#senDist"), sF.hist, sA.hist, 51, "Distribution of Democratic Senate seats: face value vs adjusted");
   $("#benchNote").innerHTML = `<b>Face value</b> takes this year's polls as they are. <b>Adjusted</b> shifts them toward Republicans by the amount final polls have typically overstated Democrats (about ${Math.abs(A.shift).toFixed(1)} pts after accounting for likely-voter screens). Benchmark: Silver Bulletin's free summary gives Democrats about 95% for the House and a ~25-seat gain (≈238). <a href="#method">How it works</a>.`;
@@ -459,7 +469,7 @@ function renderMap() {
     r.addEventListener("mouseleave", hideTip);
     r.addEventListener("click", () => { hideTip(); goRace(race.race_key); });
   });
-  $("#mapLegend").innerHTML = BINS.map(b => `<span><i class="sq" style="background:var(${b[1]})"></i>${b[2]}</span>`).join("") + `<span><i class="sq" style="background:var(--off)"></i>Not up</span>` + `<span class="tiny">${MODELS[model]} model · % = chance Democrat (or independent, "I") wins</span>`;
+  $("#mapLegend").innerHTML = BINS.map(b => `<span><i class="sq" style="background:var(${b[1]})"></i>${b[2]}</span>`).join("") + `<span><i class="sq" style="background:var(--off)"></i>Not up</span>` + `<span class="tiny">${MODELS[model]} model · % = chance Democrat (or independent, "I") wins. Colors group probabilities for readability; they aren't calls. Seat totals count every race by its probability (a 51% race adds about half a seat), simulated jointly.</span>`;
 }
 
 function renderWatch() {
