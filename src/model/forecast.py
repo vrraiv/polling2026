@@ -63,7 +63,17 @@ SENATE_BIAS_ADJ = float(_bc["senate_mix_bias"]) + LV_DISCOUNT if "senate_mix_bia
 # Senate state-lean differential (adjusted model only): results since 2010 landed further toward state lean than polls.
 ADJ_USE_LEAN = True
 SD_NAT_SENATE = float(np.sqrt(np.mean(np.square(SEN_CYC))))     # shared Senate polling miss per cycle
-SD_RACE_POLLAVG = CAL["Sen-G"]["race_resid_sd_midterms"]        # race-level error of a final poll average
+SD_RACE_POLLAVG = CAL["Sen-G"]["race_resid_sd_midterms"]        # race-level error of a final poll average (flat; kept for reference)
+_SDN = CAL.get("pollavg_sd_by_n")
+
+
+def pollavg_sd(pa):
+    """Error of a race's poll average as a function of how many polls it has (calibrate.py: SD(n) = sqrt(a^2 + b^2/n),
+    fitted on final-3-week averages 1998-2022). n = polls in the last 21 days; older polls count half (staler)."""
+    if not _SDN:
+        return np.sqrt(SD_RACE_POLLAVG ** 2 + (max(pa["spread_sd"], 4.0) ** 2) / pa["neff"])
+    n = max(pa.get("n_recent", 0) + 0.5 * (pa["n_polls"] - pa.get("n_recent", 0)), 1.0)
+    return float(np.sqrt(_SDN["a"] ** 2 + _SDN["b"] ** 2 / n))
 # Senate prior error: estimated in src/model/prior_weight.py from 1998-2022 races (optimal weight on late polls
 # ~0.87 => prior SD ~18.7 given the poll-average SD). Previously an assumed 10, which over-weighted partisanship.
 _PW = OUT / "prior_weight.json"
@@ -266,11 +276,11 @@ def senate_model(s, polls, G, sd_nat, econ_adj=None):
             pa = P.senate_multi(polls, r)
         if pa and r.state in MULTI_CANDIDATE:
             wp, mu = 1.0, pa["avg"]
-            sd = np.sqrt(SD_RACE_POLLAVG ** 2 + 3.0 ** 2 + (max(pa["spread_sd"], 4.0) ** 2) / pa["neff"])
+            sd = np.sqrt(pollavg_sd(pa) ** 2 + 3.0 ** 2)
         elif pa:
             lean_adj = LEAN_SLOPE * 2 * r.pvi if APPLY_LEAN_CORRECTION else 0.0
             pa = dict(pa, raw_avg=pa["avg"], avg=pa["avg"] + lean_adj)
-            sd_p = np.sqrt(SD_RACE_POLLAVG ** 2 + (max(pa["spread_sd"], 4.0) ** 2) / pa["neff"])
+            sd_p = pollavg_sd(pa)
             wp = (1 / sd_p ** 2) / (1 / sd_p ** 2 + 1 / SD_SENATE_PRIOR ** 2)
             mu = wp * pa["avg"] + (1 - wp) * prior
             sd = 1 / np.sqrt(1 / sd_p ** 2 + 1 / SD_SENATE_PRIOR ** 2)

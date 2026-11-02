@@ -5,8 +5,8 @@
   "lean": false,
   "sd_nat_house": 2.977302993873907,
   "sd_nat_senate": 3.2922356210659323,
-  "p_sen": 0.7037,
-  "sen_seats": 51.7567,
+  "p_sen": 0.7344,
+  "sen_seats": 51.984075,
   "p_house": 0.9695,
   "house_seats": 237.386075
  },
@@ -16,8 +16,8 @@
   "lean": true,
   "sd_nat_house": 2.977302993873907,
   "sd_nat_senate": 3.2922356210659323,
-  "p_sen": 0.487925,
-  "sen_seats": 50.406575,
+  "p_sen": 0.50665,
+  "sen_seats": 50.4839,
   "p_house": 0.913575,
   "house_seats": 230.651925
  },
@@ -27,8 +27,8 @@
   "lean": false,
   "sd_nat_house": 2.2635933578150804,
   "sd_nat_senate": 2.1716077941542395,
-  "p_sen": 0.740275,
-  "sen_seats": 51.8067,
+  "p_sen": 0.783625,
+  "sen_seats": 52.086975,
   "p_house": 0.982625,
   "house_seats": 236.5011
  },
@@ -38,8 +38,8 @@
   "lean": true,
   "sd_nat_house": 2.2635933578150804,
   "sd_nat_senate": 2.1716077941542395,
-  "p_sen": 0.468725,
-  "sen_seats": 50.345825,
+  "p_sen": 0.496025,
+  "sen_seats": 50.459075,
   "p_house": 0.920975,
   "house_seats": 228.529825
  },
@@ -49,8 +49,8 @@
   "lean": false,
   "sd_nat_house": 2.2635933578150804,
   "sd_nat_senate": 2.1716077941542395,
-  "p_sen": 0.624775,
-  "sen_seats": 51.1332,
+  "p_sen": 0.66315,
+  "sen_seats": 51.340475,
   "p_house": 0.96855,
   "house_seats": 233.2959
  },
@@ -60,8 +60,8 @@
   "lean": false,
   "sd_nat_house": 2.2635933578150804,
   "sd_nat_senate": 2.1716077941542395,
-  "p_sen": 0.497375,
-  "sen_seats": 50.470575,
+  "p_sen": 0.523275,
+  "sen_seats": 50.588775,
   "p_house": 0.945475,
   "house_seats": 230.285425
  },
@@ -71,8 +71,8 @@
   "lean": false,
   "sd_nat_house": 2.2635933578150804,
   "sd_nat_senate": 2.1716077941542395,
-  "p_sen": 0.364075,
-  "sen_seats": 49.745175,
+  "p_sen": 0.376325,
+  "sen_seats": 49.757425,
   "p_house": 0.900175,
   "house_seats": 227.267625
  },
@@ -82,8 +82,8 @@
   "lean": false,
   "sd_nat_house": 2.2635933578150804,
   "sd_nat_senate": 2.1716077941542395,
-  "p_sen": 0.246925,
-  "sen_seats": 49.052925,
+  "p_sen": 0.2464,
+  "sen_seats": 48.94115,
   "p_house": 0.82665,
   "house_seats": 224.43065
  }

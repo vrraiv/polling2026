@@ -2,7 +2,7 @@
  "2018": {
   "races": 30,
   "winner_accuracy": 0.9,
-  "brier": 0.04730280060314852,
+  "brier": 0.0444918487017074,
   "mean_error": -0.10467766037555735,
   "mae": 5.431192305562887,
   "misses": [
@@ -10,26 +10,26 @@
     "state": "Florida",
     "poll_avg": 0.53,
     "actual": -0.12,
-    "p_dem": 0.54
+    "p_dem": 0.55
    },
    {
     "state": "Indiana",
     "poll_avg": 0.56,
     "actual": -5.89,
-    "p_dem": 0.54
+    "p_dem": 0.55
    },
    {
     "state": "Nevada",
     "poll_avg": -0.48,
     "actual": 5.03,
-    "p_dem": 0.47
+    "p_dem": 0.46
    }
   ]
  },
  "2022": {
   "races": 28,
   "winner_accuracy": 1.0,
-  "brier": 0.041783218770042416,
+  "brier": 0.0348541610323406,
   "mean_error": -1.9977668920506813,
   "mae": 4.745537176069779,
   "misses": []

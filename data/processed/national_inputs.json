@@ -35,6 +35,7 @@
  "G_votehub_own_avg": {
   "avg": 7.473844999848155,
   "n_polls": 11,
+  "n_recent": 0,
   "n_pollsters": 8,
   "neff": 4.950706063984913,
   "latest": "2026-10-04",

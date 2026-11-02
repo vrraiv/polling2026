@@ -82,7 +82,13 @@ def senate():
         if g.empty or rid not in act.index:
             continue
         avg, neff, spread, n = wavg(g, cutoff, PA.HALF_LIFE)
-        sd_race = np.sqrt(SD_RACE ** 2 + max(spread, 4.0) ** 2 / neff)
+        sdn = CAL.get("pollavg_sd_by_n")
+        if sdn:
+            n_rec = int((g.end >= cutoff - pd.Timedelta(days=21)).sum())
+            n_use = max(n_rec + 0.5 * (n - n_rec), 1.0)
+            sd_race = np.sqrt(sdn["a"] ** 2 + sdn["b"] ** 2 / n_use)
+        else:
+            sd_race = np.sqrt(SD_RACE ** 2 + max(spread, 4.0) ** 2 / neff)
         sd = np.sqrt(SD_NAT ** 2 + sd_race ** 2)
         pd_ = stats.t.cdf(avg / (sd * np.sqrt((DF_T - 2) / DF_T)), DF_T)
         rows.append(dict(cycle=cyc, race_id=rid, state=g.state.iloc[0], n_polls=n, poll_avg=avg,

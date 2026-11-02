@@ -32,10 +32,30 @@ def summarize(r, kind):
            "national_sd_midterms": float(cyc[cyc.cycle % 4 == 2]["mean"].std())}
     return out
 
+def sd_by_n(r):
+    """Error of a final-21-day poll average vs. number of polls n, Senate + governor races, cycle mean removed.
+    Fit E[resid^2] = a^2 + b^2 / n by least squares on race-level squared residuals."""
+    s = r[r.type_simple.isin(["Sen-G", "Gov-G"])]
+    races = s.groupby(["cycle", "race_id"]).agg(poll=("poll_m", "mean"), act=("act_m", "first"), n=("poll_m", "size")).reset_index()
+    races["err"] = races.act - races.poll
+    races["resid"] = races.err - races.groupby("cycle").err.transform("mean")
+    X = np.column_stack([np.ones(len(races)), 1.0 / races.n.values])
+    coef, *_ = np.linalg.lstsq(X, races.resid.values ** 2, rcond=None)
+    a2, b2 = max(coef[0], 1.0), max(coef[1], 0.0)
+    bins = {}
+    for lo, hi in [(1, 2), (3, 5), (6, 9), (10, 999)]:
+        g = races[(races.n >= lo) & (races.n <= hi)]
+        bins[f"{lo}-{hi}"] = {"sd": float(g.resid.std()), "n_races": int(len(g)), "fit": float(np.sqrt(a2 + b2 / g.n.mean()))}
+    return {"a": float(np.sqrt(a2)), "b": float(np.sqrt(b2)), "bins": bins, "n_races": int(len(races))}
+
+
 if __name__ == "__main__":
     r = load()
     res = {k: summarize(r, k) for k in ["Sen-G", "House-G-US", "House-G", "Gov-G"]}
-    for k, v in res.items():
+    res["pollavg_sd_by_n"] = sd_by_n(r)
+    v = res["pollavg_sd_by_n"]
+    print(f"poll-average error SD(n) = sqrt({v['a']:.2f}^2 + {v['b']:.2f}^2 / n);", {k: (round(b["sd"], 2), round(b["fit"], 2), b["n_races"]) for k, b in v["bins"].items()})
+    for k, v in [(k, v) for k, v in res.items() if k != "pollavg_sd_by_n"]:
         print(k, "races", v["n_races"], "national sd %.2f (midterms %.2f)" % (v["national_sd"], v["national_sd_midterms"]),
               "race resid sd %.2f (midterms %.2f)" % (v["race_resid_sd"], v["race_resid_sd_midterms"]))
         print("   per-cycle mean err:", [(c["cycle"], c["mean"]) for c in v["cycles"]])

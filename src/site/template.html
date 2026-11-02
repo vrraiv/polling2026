@@ -301,7 +301,7 @@ footer a { color: var(--text-2); }
   <h3>F. Estimators at a glance</h3>
   <ul class="list small">
     <li><b>Poll weight</b> = ½<sup>age/half-life</sup> × √(min(n, 3000)/600) × population weight ÷ √(polls by that pollster); settings in section E. Two-party margins throughout.</li>
-    <li><b>Poll-average SD</b> (Senate) = √(7.4² + max(spread, 4)²/n<sub>eff</sub>), n<sub>eff</sub> = (Σw)²/Σw². <b>Blend</b>: μ = (μ<sub>poll</sub>/σ<sub>poll</sub>² + μ<sub>prior</sub>/σ<sub>prior</sub>²)/(1/σ<sub>poll</sub>² + 1/σ<sub>prior</sub>²), σ<sub>prior</sub> = <span class="pwSd"></span> in polled Senate races (set so polls get the historically optimal weight; see C), <span class="pwRob"></span> for unpolled Senate races (robust error of the prior alone), <span class="hsSd"></span> for House districts (estimated; see D).</li>
+    <li><b>Poll-average SD</b> (Senate) = √(<span class="sdnA"></span>² + <span class="sdnB"></span>²/n), n = polls in the last three weeks (older polls count half). Fitted on 705 final-three-week averages, 1998–2022: <span id="sdnBins"></span>. <b>Blend</b>: μ = (μ<sub>poll</sub>/σ<sub>poll</sub>² + μ<sub>prior</sub>/σ<sub>prior</sub>²)/(1/σ<sub>poll</sub>² + 1/σ<sub>prior</sub>²), σ<sub>prior</sub> = <span class="pwSd"></span> in polled Senate races (set so polls get the historically optimal weight; see C), <span class="pwRob"></span> for unpolled Senate races (robust error of the prior alone), <span class="hsSd"></span> for House districts (estimated; see D).</li>
     <li><b>National SDs</b>: RMSE of the final generic-ballot miss (polls only; polls + fundamentals); predictive SD of the decay-weighted bias estimate (adjusted). The Senate national SD is the Senate per-cycle miss RMSE, scaled the same way.</li>
     <li><b>Calibration data</b>: 538's <code>raw_polls.csv</code> (final 21 days, 1998–2022), averaged within race before comparison with results.</li>
     <li><b>Monte Carlo error</b>: 40,000 draws, so a probability near 50% has a standard error of about 0.25 points.</li>
@@ -465,6 +465,7 @@ function renderOverview() {
     <div class="big">${rng(sp, pct)}% <small>chance Democrats win</small></div>
     <div class="seats">Democratic-caucus seats: <b>${rng(sMed)}</b> <span class="muted small">(median; now 47)</span></div>
     <div class="rng-line">Realistic range (95%, all three versions): ${all95(V.map(v => v.m.senate.hist)).join("–")} seats</div>
+    <div class="rng-line">Counting independents (Osborn, NE) as Democrats, as Silver Bulletin does: ${rng(V.map(v => v.m.senate.p_dem_control_if_independents_caucus_D), pct)}%</div>
     <div class="pair">${V.map(v => row(v, v.m.senate.p_dem_control_without_osborn, v.m.senate.hist)).join("")}</div>
     <div class="chart" id="senDist"></div>`;
   distChart($("#senDist"), V.map(v => ({ name: v.name, hist: v.m.senate.hist, color: v.color })), 51, "Distribution of Democratic Senate seats by model version");
@@ -613,7 +614,7 @@ function renderMethod() {
   const F = DATA.models[FV], A = DATA.models[AD];
   $("#wText").textContent = `Polls get ${Math.round(F.w_polls * 100)}% of the weight (${Math.round(A.w_polls * 100)}% in the adjusted model, whose polling uncertainty is smaller once the bias is taken out).`;
   const PW = DATA.prior_weight;
-  $("#raceW").textContent = `In polled Senate races the poll average gets about ${Math.round(F.race_w * 100)}% of the weight, matching the weight that predicted 1998–2022 Senate results best (${PW.w.toFixed(2)}). Unpolled races rest on the prior, whose typical error is about ${PW.prior_sd_robust.toFixed(0)} pts. House districts use an assumed 6-pt prior error.`;
+  $("#raceW").textContent = `In polled Senate races the poll average gets about ${Math.round(F.race_w * 100)}% of the weight, matching the weight that predicted 1998–2022 Senate results best (${PW.w.toFixed(2)}). The poll average's own error shrinks with the number of recent polls (about 5 pts with 10+ polls, 10 with one or two). Unpolled races rest on the prior, whose typical error is about ${PW.prior_sd_robust.toFixed(0)} pts. House districts use an assumed 6-pt prior error.`;
   $("#cmpTable").innerHTML = `<thead><tr><th>Version</th><th class="num">Environment</th><th class="num">Dem House</th><th class="num">Dem seats (80%)</th><th class="num">Dem Senate</th><th class="num">Dem seats (80%)</th></tr></thead><tbody>` +
     Object.keys(MODELS).map(k => { const X = DATA.models[k]; return `<tr><td>${MODEL_LONG[k]}</td><td class="num">${fmtM(X.G)}</td><td class="num">${fmtP(X.house.p_dem_majority)}</td><td class="num">${Math.round(X.house.dem_seats_mean)} (${X.house.dem_seats_p10}–${X.house.dem_seats_p90})</td><td class="num">${fmtP(X.senate.p_dem_control_without_osborn)}</td><td class="num">${X.senate.dem_seats_mean.toFixed(1)} (${X.senate.dem_seats_p10}–${X.senate.dem_seats_p90})</td></tr>`; }).join("") + "</tbody>";
   const sv = DATA.sensitivity;
@@ -802,10 +803,16 @@ function renderPollsterFx() {
     X.table.map(r => `<tr><td>${esc(r.pollster)}</td><td>${r.flag}</td><td>${r.sponsor_listed ? "yes" : "no"}</td><td class="num">${r.n}</td><td class="num">${r.old.toFixed(1)}</td><td class="num"><b>${r.new.toFixed(1)}</b></td></tr>`).join("") + "</tbody>";
 }
 
+function renderSdN() {
+  const S = DATA.sdn; if (!S) return;
+  $$(".sdnA").forEach(e => e.textContent = S.a.toFixed(1)); $$(".sdnB").forEach(e => e.textContent = S.b.toFixed(1));
+  $("#sdnBins").textContent = Object.entries(S.bins).map(([k, v]) => `${k.replace("-999", "+")} polls: observed ${v.sd.toFixed(1)}, fitted ${v.fit.toFixed(1)}`).join("; ") + ". This replaced a flat 7.4 that was too wide for well-polled races and too narrow for thinly polled ones";
+}
+
 // ---------- init ----------
 $("#gen").textContent = (DATA.final ? "Final forecast · " : "Updated ") + DATA.generated;
 if (DATA.final) { const fb = $("#finalBanner"); fb.hidden = false; fb.innerHTML = `<b>Final pre-election forecast</b>, made ${DATA.generated}. It won't be updated as results come in; a scorecard comparing it with the results will follow.`; }
-renderModelSegs(); renderPollsterFx(); renderPollSettings(); renderPriorWeight(); renderHouseStructure(); renderOverview(); renderMap(); renderWatch(); renderHouse(); renderMethod(); renderData(); renderBias(); renderBacktest(); renderAppendix();
+renderModelSegs(); renderSdN(); renderPollsterFx(); renderPollSettings(); renderPriorWeight(); renderHouseStructure(); renderOverview(); renderMap(); renderWatch(); renderHouse(); renderMethod(); renderData(); renderBias(); renderBacktest(); renderAppendix();
 route();
 </script>
 </body>

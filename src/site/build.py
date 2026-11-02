@@ -120,6 +120,7 @@ def main():
         "house_structure": json.loads((PROC / "house_structure.json").read_text()),
         "poll_settings": json.loads((PROC / "poll_settings.json").read_text()),
         "pollster_fx": pollster_fx,
+        "sdn": json.loads((PROC / "calibration.json").read_text()).get("pollavg_sd_by_n"),
         "bias_confidence": json.loads((PROC / "bias_confidence.json").read_text()),
         "bias_decomposition": json.loads((PROC / "bias_decomposition.json").read_text()) if (PROC / "bias_decomposition.json").exists() else None,
         "errors": {"structure": json.loads((PROC / "error_structure.json").read_text()),

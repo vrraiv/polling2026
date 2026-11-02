@@ -89,7 +89,8 @@ def weighted_avg(rows, half_life, shift=PARTISAN_SHIFT, level="statewide"):
     df["w"] = df.w / np.sqrt(df.k)
     avg = float(np.average(df.m, weights=df.w))
     neff = df.w.sum() ** 2 / (df.w ** 2).sum()
-    return {"avg": avg, "n_polls": len(df), "n_pollsters": df.pollster.nunique(), "neff": float(neff),
+    n_recent = int((df.end >= ASOF - pd.Timedelta(days=21)).sum())
+    return {"avg": avg, "n_polls": len(df), "n_recent": n_recent, "n_pollsters": df.pollster.nunique(), "neff": float(neff),
             "latest": str(df.end.max().date()), "spread_sd": float(np.sqrt(np.average((df.m - avg) ** 2, weights=df.w)))}
 
 
