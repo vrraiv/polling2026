@@ -1,0 +1,17 @@
+{
+  "raw_polls.csv": {
+    "url": "https://raw.githubusercontent.com/fivethirtyeight/data/master/pollster-ratings/raw_polls.csv",
+    "retrieved": "2026-11-01T21:13:41",
+    "bytes": 4961378
+  },
+  "pollster-ratings-combined.csv": {
+    "url": "https://raw.githubusercontent.com/fivethirtyeight/data/master/pollster-ratings/pollster-ratings-combined.csv",
+    "retrieved": "2026-11-01T21:13:41",
+    "bytes": 40046
+  },
+  "generic_topline_historical.csv": {
+    "url": "https://raw.githubusercontent.com/fivethirtyeight/data/master/congress-generic-ballot/generic_topline_historical.csv",
+    "retrieved": "2026-11-01T21:13:41",
+    "bytes": 754089
+  }
+}

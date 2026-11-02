@@ -1,0 +1,27 @@
+{
+  "Opinion_polling_on_the_second_Trump_presidency.html": {
+    "url": "https://en.wikipedia.org/api/rest_v1/page/html/Opinion_polling_on_the_second_Trump_presidency",
+    "retrieved": "2026-11-01T21:29:45",
+    "bytes": 726595
+  },
+  "United_States_presidential_approval_rating.html": {
+    "url": "https://en.wikipedia.org/api/rest_v1/page/html/United_States_presidential_approval_rating",
+    "retrieved": "2026-11-01T21:20:53",
+    "bytes": 166166
+  },
+  "2026_United_States_House_of_Representatives_elections.html": {
+    "url": "https://en.wikipedia.org/api/rest_v1/page/html/2026_United_States_House_of_Representatives_elections",
+    "retrieved": "2026-11-01T21:29:45",
+    "bytes": 2749177
+  },
+  "2026_United_States_Senate_elections.html": {
+    "url": "https://en.wikipedia.org/api/rest_v1/page/html/2026_United_States_Senate_elections",
+    "retrieved": "2026-11-01T21:29:45",
+    "bytes": 2166240
+  },
+  "2025\u20132026_United_States_redistricting.html": {
+    "url": "https://en.wikipedia.org/api/rest_v1/page/html/2025%E2%80%932026_United_States_redistricting",
+    "retrieved": "2026-11-01T21:29:45",
+    "bytes": 696986
+  }
+}

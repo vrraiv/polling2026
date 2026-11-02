@@ -1,0 +1,167 @@
+{
+  "UNRATE_2018.csv": {
+    "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=UNRATE&vintage_date=2018-10-01",
+    "retrieved": "2026-11-01T21:13:43",
+    "bytes": 12764
+  },
+  "UNRATE_2022.csv": {
+    "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=UNRATE&vintage_date=2022-10-01",
+    "retrieved": "2026-11-01T21:13:44",
+    "bytes": 13488
+  },
+  "UNRATE_2026.csv": {
+    "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=UNRATE&vintage_date=2026-10-01",
+    "retrieved": "2026-11-01T21:13:44",
+    "bytes": 14205
+  },
+  "UNRATE_2014.csv": {
+    "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=UNRATE&vintage_date=2014-10-01",
+    "retrieved": "2026-11-01T21:13:44",
+    "bytes": 12044
+  },
+  "UNRATE_2010.csv": {
+    "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=UNRATE&vintage_date=2010-10-01",
+    "retrieved": "2026-11-01T21:13:45",
+    "bytes": 11326
+  },
+  "UNRATE_2006.csv": {
+    "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=UNRATE&vintage_date=2006-10-01",
+    "retrieved": "2026-11-01T21:13:45",
+    "bytes": 10603
+  },
+  "A191RL1Q225SBEA_2018.csv": {
+    "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=A191RL1Q225SBEA&vintage_date=2018-10-01",
+    "retrieved": "2026-11-01T21:13:46",
+    "bytes": 4369
+  },
+  "A191RL1Q225SBEA_2022.csv": {
+    "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=A191RL1Q225SBEA&vintage_date=2022-10-01",
+    "retrieved": "2026-11-01T21:13:46",
+    "bytes": 4615
+  },
+  "A191RL1Q225SBEA_2026.csv": {
+    "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=A191RL1Q225SBEA&vintage_date=2026-10-01",
+    "retrieved": "2026-11-01T21:13:46",
+    "bytes": 4854
+  },
+  "A191RL1Q225SBEA_2014.csv": {
+    "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=A191RL1Q225SBEA&vintage_date=2014-10-01",
+    "retrieved": "2026-11-01T21:13:47",
+    "bytes": 4130
+  },
+  "A229RX0_2018.csv": {
+    "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=A229RX0&vintage_date=2018-10-01",
+    "retrieved": "2026-11-01T21:14:12",
+    "bytes": 12206
+  },
+  "A229RX0_2022.csv": {
+    "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=A229RX0&vintage_date=2022-10-01",
+    "retrieved": "2026-11-01T21:14:12",
+    "bytes": 13022
+  },
+  "A229RX0_2026.csv": {
+    "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=A229RX0&vintage_date=2026-10-01",
+    "retrieved": "2026-11-01T21:14:13",
+    "bytes": 13838
+  },
+  "A229RX0_2014.csv": {
+    "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=A229RX0&vintage_date=2014-10-01",
+    "retrieved": "2026-11-01T21:14:13",
+    "bytes": 11390
+  },
+  "A229RX0_2010.csv": {
+    "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=A229RX0&vintage_date=2010-10-01",
+    "retrieved": "2026-11-01T21:14:14",
+    "bytes": 10574
+  },
+  "CPIAUCSL_2018.csv": {
+    "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=CPIAUCSL&vintage_date=2018-10-01",
+    "retrieved": "2026-11-01T21:14:27",
+    "bytes": 15936
+  },
+  "CPIAUCSL_2022.csv": {
+    "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=CPIAUCSL&vintage_date=2022-10-01",
+    "retrieved": "2026-11-01T21:14:27",
+    "bytes": 16848
+  },
+  "CPIAUCSL_2026.csv": {
+    "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=CPIAUCSL&vintage_date=2026-10-01",
+    "retrieved": "2026-11-01T21:14:27",
+    "bytes": 17753
+  },
+  "CPIAUCSL_2014.csv": {
+    "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=CPIAUCSL&vintage_date=2014-10-01",
+    "retrieved": "2026-11-01T21:14:28",
+    "bytes": 15024
+  },
+  "CPIAUCSL_2010.csv": {
+    "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=CPIAUCSL&vintage_date=2010-10-01",
+    "retrieved": "2026-11-01T21:14:28",
+    "bytes": 14112
+  },
+  "CPIAUCSL_2006.csv": {
+    "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=CPIAUCSL&vintage_date=2006-10-01",
+    "retrieved": "2026-11-01T21:14:29",
+    "bytes": 12484
+  },
+  "UMCSENT_2018.csv": {
+    "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=UMCSENT&vintage_date=2018-10-01",
+    "retrieved": "2026-11-01T21:14:29",
+    "bytes": 11909
+  },
+  "UMCSENT_2022.csv": {
+    "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=UMCSENT&vintage_date=2022-10-01",
+    "retrieved": "2026-11-01T21:14:30",
+    "bytes": 12679
+  },
+  "UMCSENT_2026.csv": {
+    "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=UMCSENT&vintage_date=2026-10-01",
+    "retrieved": "2026-11-01T21:14:30",
+    "bytes": 13447
+  },
+  "UMCSENT_2014.csv": {
+    "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=UMCSENT&vintage_date=2014-10-01",
+    "retrieved": "2026-11-01T21:14:31",
+    "bytes": 7138
+  },
+  "UMCSENT_2010.csv": {
+    "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=UMCSENT&vintage_date=2010-10-01",
+    "retrieved": "2026-11-01T21:14:32",
+    "bytes": 6370
+  },
+  "UMCSENT_2006.csv": {
+    "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=UMCSENT&vintage_date=2006-10-01",
+    "retrieved": "2026-11-01T21:14:32",
+    "bytes": 5602
+  },
+  "PAYEMS_2018.csv": {
+    "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=PAYEMS&vintage_date=2018-10-01",
+    "retrieved": "2026-11-01T21:14:33",
+    "bytes": 16668
+  },
+  "PAYEMS_2022.csv": {
+    "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=PAYEMS&vintage_date=2022-10-01",
+    "retrieved": "2026-11-01T21:14:33",
+    "bytes": 17532
+  },
+  "PAYEMS_2026.csv": {
+    "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=PAYEMS&vintage_date=2026-10-01",
+    "retrieved": "2026-11-01T21:14:33",
+    "bytes": 18396
+  },
+  "PAYEMS_2014.csv": {
+    "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=PAYEMS&vintage_date=2014-10-01",
+    "retrieved": "2026-11-01T21:14:34",
+    "bytes": 15804
+  },
+  "PAYEMS_2010.csv": {
+    "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=PAYEMS&vintage_date=2010-10-01",
+    "retrieved": "2026-11-01T21:14:34",
+    "bytes": 14940
+  },
+  "PAYEMS_2006.csv": {
+    "url": "https://alfred.stlouisfed.org/graph/alfredgraph.csv?id=PAYEMS&vintage_date=2006-10-01",
+    "retrieved": "2026-11-01T21:14:34",
+    "bytes": 14076
+  }
+}

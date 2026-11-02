@@ -1,0 +1,27 @@
+{
+  "senate_polls_historical.csv": {
+    "url": "https://web.archive.org/web/20250210111722id_/https://projects.fivethirtyeight.com/polls/data/senate_polls_historical.csv",
+    "retrieved": "2026-11-01T21:13:32",
+    "bytes": 4530569
+  },
+  "house_polls_historical.csv": {
+    "url": "https://web.archive.org/web/20250209145115id_/https://projects.fivethirtyeight.com/polls/data/house_polls_historical.csv",
+    "retrieved": "2026-11-01T21:13:35",
+    "bytes": 1906993
+  },
+  "generic_ballot_polls_historical.csv": {
+    "url": "https://web.archive.org/web/20250207030755id_/https://projects.fivethirtyeight.com/polls/data/generic_ballot_polls_historical.csv",
+    "retrieved": "2026-11-01T21:13:36",
+    "bytes": 1773075
+  },
+  "president_approval_polls_historical.csv": {
+    "url": "https://web.archive.org/web/20250305204636id_/https://projects.fivethirtyeight.com/polls/data/president_approval_polls_historical.csv",
+    "retrieved": "2026-11-01T21:13:37",
+    "bytes": 5028875
+  },
+  "governor_polls_historical.csv": {
+    "url": "https://web.archive.org/web/20250203110129id_/https://projects.fivethirtyeight.com/polls/data/governor_polls_historical.csv",
+    "retrieved": "2026-11-01T21:13:39",
+    "bytes": 2989936
+  }
+}

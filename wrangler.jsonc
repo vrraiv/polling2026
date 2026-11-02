@@ -1,0 +1,11 @@
+{
+  // Static-assets-only Worker: no script, no container. Serves the generated site/ folder.
+  // The name must match the Worker you linked in the Cloudflare dashboard.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "polling2026",
+  "compatibility_date": "2025-10-01",
+  "assets": {
+    "directory": "./site",
+    "not_found_handling": "404-page"
+  }
+}

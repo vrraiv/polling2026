@@ -1,0 +1,101 @@
+{
+ "generic_aggregators": [
+  {
+   "Source of poll aggregation": "Decision Desk HQ[81]",
+   "D": 51.5,
+   "R": 42.6,
+   "two_party": 9.46
+  },
+  {
+   "Source of poll aggregation": "FiftyPlusOne[82]",
+   "D": 52.2,
+   "R": 43.4,
+   "two_party": 9.21
+  },
+  {
+   "Source of poll aggregation": "NBC News[83]",
+   "D": 52.0,
+   "R": 44.0,
+   "two_party": 8.33
+  },
+  {
+   "Source of poll aggregation": "RealClearPolitics[84]",
+   "D": 51.4,
+   "R": 43.2,
+   "two_party": 8.67
+  },
+  {
+   "Source of poll aggregation": "Silver Bulletin[85]",
+   "D": 51.3,
+   "R": 42.4,
+   "two_party": 9.5
+  }
+ ],
+ "G_polls": 9.03257057787339,
+ "G_votehub_own_avg": {
+  "avg": 8.205894339018835,
+  "n_polls": 11,
+  "n_pollsters": 8,
+  "neff": 4.8641802377280765,
+  "latest": "2026-10-04",
+  "spread_sd": 2.9206059417836694
+ },
+ "approval": 36.790000000000006,
+ "approval_aggregators": [
+  {
+   "Aggregator": "Ballotpedia",
+   "Approve": "38.0%"
+  },
+  {
+   "Aggregator": "CNN",
+   "Approve": "34.0%"
+  },
+  {
+   "Aggregator": "Decision Desk HQ",
+   "Approve": "39.1%"
+  },
+  {
+   "Aggregator": "FiftyPlusOne",
+   "Approve": "35.3%"
+  },
+  {
+   "Aggregator": "NBC News",
+   "Approve": "38.0%"
+  },
+  {
+   "Aggregator": "Real Clear Politics",
+   "Approve": "38.4%"
+  },
+  {
+   "Aggregator": "Silver Bulletin",
+   "Approve": "37.3%"
+  },
+  {
+   "Aggregator": "The Economist",
+   "Approve": "34.0%"
+  },
+  {
+   "Aggregator": "The New York Times",
+   "Approve": "37.0%"
+  },
+  {
+   "Aggregator": "Average",
+   "Approve": "36.8%"
+  }
+ ],
+ "econ": {
+  "rdi_pc_growth_yoy": 0.7092865743528076,
+  "unemployment": 4.2,
+  "unemp_chg_12m": -0.09999999999999964,
+  "cpi_yoy": 4.023310268457836,
+  "econ_asof": "2026-09-01"
+ },
+ "fundamentals_margin_D": 9.32135671282359,
+ "fund_weight_on_polls": 0.7005558128763315,
+ "G_fund": 9.119045907306138,
+ "sd_nat_polls": 3.595830919273041,
+ "sd_nat_fund": 3.009682152734898,
+ "generic_hist_bias": -2.6630769230769236,
+ "sd_nat_senate": 3.1269830631014104,
+ "sd_race_pollavg": 6.180364892099825
+}

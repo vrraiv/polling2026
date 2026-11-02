@@ -1,0 +1,37 @@
+{
+  "UNRATE.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=UNRATE",
+    "retrieved": "2026-11-01T21:13:42",
+    "bytes": 14211
+  },
+  "A191RL1Q225SBEA.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=A191RL1Q225SBEA",
+    "retrieved": "2026-11-01T21:13:42",
+    "bytes": 4860
+  },
+  "A229RX0.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=A229RX0",
+    "retrieved": "2026-11-01T21:13:43",
+    "bytes": 13846
+  },
+  "CPIAUCSL.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=CPIAUCSL",
+    "retrieved": "2026-11-01T21:13:43",
+    "bytes": 17763
+  },
+  "UMCSENT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=UMCSENT",
+    "retrieved": "2026-11-01T21:13:43",
+    "bytes": 13438
+  },
+  "GASREGW.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=GASREGW",
+    "retrieved": "2026-11-01T21:13:43",
+    "bytes": 32108
+  },
+  "PAYEMS.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PAYEMS",
+    "retrieved": "2026-11-01T21:13:43",
+    "bytes": 18405
+  }
+}
