@@ -16,7 +16,16 @@ from common import ROOT, latest  # noqa: E402
 
 ASOF = pd.Timestamp.today().normalize()  # polls are weighted by age as of today
 POP_W = {"lv": 1.0, "rv": 0.8, "a": 0.5, "v": 0.9}
-PARTISAN_SHIFT = 2.0  # sponsored polls: shift 2 pts against the sponsor's party
+PARTISAN_SHIFT = 2.0  # sponsored polls: shift against the sponsor's party
+POP_DEM_LEAN = {}     # registered-voter / adult polls lean Democratic relative to likely-voter polls (subtracted)
+HALF_LIFE = 21
+_PS = ROOT / "data/processed/poll_settings.json"
+if _PS.exists():  # estimated in src/model/poll_settings.py
+    _ch = json.loads(_PS.read_text())["chosen"]
+    POP_W = dict(_ch["pop_weight"], v=_ch["pop_weight"]["lv"])
+    PARTISAN_SHIFT = float(_ch["partisan_shift_statewide"])
+    POP_DEM_LEAN = dict(_ch.get("pop_dem_lean", {}))
+    HALF_LIFE = int(_ch["half_life_races"])
 
 
 def load_votehub():
@@ -27,12 +36,13 @@ def load_votehub():
 
 
 def weight(x, half_life):
+    half_life = half_life or HALF_LIFE
     age = (ASOF - x["end"]).days
     n = min(x.get("sample_size") or 600, 3000)
     return 0.5 ** (age / half_life) * np.sqrt(n / 600) * POP_W.get((x.get("population") or "lv").lower(), 0.7)
 
 
-HOUSE_PARTISAN_SHIFT = 4.0  # district polls: sponsored polls are mostly party/PAC releases (48 of 132 DEM-sponsored)
+HOUSE_PARTISAN_SHIFT = float(json.loads(_PS.read_text())["chosen"]["partisan_shift_house"]) if _PS.exists() else 4.0
 
 
 def sponsor_adj(x, shift=PARTISAN_SHIFT):
@@ -46,7 +56,8 @@ def weighted_avg(rows, half_life, shift=PARTISAN_SHIFT):
     """rows: list of (poll, margin). Down-weight pollsters with many polls (each pollster ~ sqrt(k) total weight)."""
     if not rows:
         return None
-    df = pd.DataFrame([{"pollster": p["pollster"], "m": m + sponsor_adj(p, shift), "w": weight(p, half_life),
+    df = pd.DataFrame([{"pollster": p["pollster"], "m": m + sponsor_adj(p, shift) - POP_DEM_LEAN.get((p.get("population") or "lv").lower(), 0.0),
+                        "w": weight(p, half_life),
                         "end": p["end"], "n": p.get("sample_size") or 600} for p, m in rows])
     df["k"] = df.groupby("pollster").pollster.transform("size")
     df["w"] = df.w / np.sqrt(df.k)
@@ -79,7 +90,7 @@ def lastname(s):
     return s.split()[-1].lower() if s else ""
 
 
-def senate(polls, races, since="2026-06-15", half_life=21):
+def senate(polls, races, since="2026-06-15", half_life=None):
     out = {}
     for _, r in races.iterrows():
         st_name = r["state_name"]
@@ -100,8 +111,9 @@ def senate(polls, races, since="2026-06-15", half_life=21):
     return out
 
 
-def house(polls, races, since="2026-07-01", half_life=21):
+def house(polls, races, since="2026-07-01", half_life=None):
     """District polls; matched to nominees by last name."""
+    half_life = half_life or HALF_LIFE
     out = {}
     idx = {f"{s}-{d:02d}" if d else f"{s}-01": k for s, d, k in zip(races.state, races.district, races.race_key)}
     for seat in {x.get("seat_name") for x in polls if x["poll_type"] == "us-representative"}:
@@ -138,8 +150,9 @@ def approval(polls, subject="Donald Trump", since="2026-09-01", half_life=14):
     return res
 
 
-def senate_multi(polls, race, since="2026-08-01", half_life=21):
+def senate_multi(polls, race, since="2026-08-01", half_life=None):
     """3-way races: raw margin of the best non-R candidate over the Republican (no two-party conversion)."""
+    half_life = half_life or HALF_LIFE
     rl = lastname(race["rep_nominee"])
     rows = []
     for x in polls:

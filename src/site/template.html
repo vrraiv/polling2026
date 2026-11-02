@@ -194,7 +194,7 @@ footer a { color: var(--text-2); }
   <ol class="steps">
     <li><b>National environment.</b> The mean of five generic-ballot polling averages (two-party), blended with an <a href="#appendix">estimated fundamentals model</a>: Gallup approval, the previous House result and the real change in gas prices, with inflation, income and unemployment tested and found weak. <span id="wText"></span></li>
     <li><b>Race priors.</b> Senate races start at 2×PVI + national environment + incumbency (+2). House districts use a model <a href="#appendix">estimated on 2006–2024 district results</a>: <span id="houseEq"></span>. PVI is on the 2026 district lines, so it reflects the mid-decade redistricting in 11 states.</li>
-    <li><b>Poll averages.</b> Recency-weighted (21-day half-life), scaled by √sample size, likely voters preferred, prolific pollsters down-weighted, and party-sponsored polls shifted 2 pts (Senate) or 4 pts (House) against the sponsor.</li>
+    <li><b>Poll averages.</b> <span id="psText"></span> Prolific pollsters are down-weighted and larger samples count more. All of these settings were <a href="#appendix">estimated from 538's poll archive</a>.</li>
     <li><b>Blend.</b> Poll average and prior are combined by precision. <span id="raceW"></span></li>
     <li><b>Simulation.</b> 40,000 draws with a shared national polling error, Census-region shocks, a random slope on state lean, and race-specific errors, all fat-tailed. Control: 218 House seats; 51 Senate seats (VP Vance breaks ties).</li>
     <li><b>Two headline versions.</b> <i>Face value</i> takes the polls as they are. <i>Adjusted</i> shifts the polls (not the fundamentals) by the historical tendency of final polls to overstate Democrats. See <a href="#bias">Polling bias</a>.</li>
@@ -262,7 +262,7 @@ footer a { color: var(--text-2); }
   <h3>2026 inputs vs. the historical range</h3>
   <div class="tbl-wrap"><table id="fundRange"></table></div>
   <h3>B. Error model</h3>
-  <p class="small">For race <i>r</i> in simulation <i>s</i>: margin = μ<sub>r</sub> + σ<sub>nat</sub>·z<sub>s</sub> + u<sub>region(r),s</sub> + b<sub>s</sub>·lean<sub>r</sub> + ε<sub>r,s</sub>. The national shock z is t(5), shared by every House and Senate race; region shocks u (four Census regions) and the lean slope b are normal; ε is t(5) with variance sd<sub>race</sub>² − σ<sub>region</sub>² − σ<sub>b</sub>²·lean² (floored at a quarter of the total), so each race's own probability stays calibrated and only the joint distribution changes.</p>
+  <p class="small">For race <i>r</i> in simulation <i>s</i>: margin = μ<sub>r</sub> + σ<sub>nat</sub>·z<sub>s</sub> + u<sub>region(r),s</sub> + b<sub>s</sub>·lean<sub>r</sub> + ε<sub>r,s</sub>. The national shock z is t(<span class="dfT"></span>), shared by every House and Senate race; region shocks u (four Census regions) and the lean slope b are normal; ε is t(<span class="dfT"></span>) with variance sd<sub>race</sub>² − σ<sub>region</sub>² − σ<sub>b</sub>²·lean² (floored at a quarter of the total), so each race's own probability stays calibrated and only the joint distribution changes.</p>
   <div class="stats" id="errStats"></div>
   <h3>Implied error correlations (Senate)</h3>
   <div class="tbl-wrap"><table id="corrTable"></table></div>
@@ -273,9 +273,12 @@ footer a { color: var(--text-2); }
   <h3>D. House district model (estimated)</h3>
   <p class="small" id="hsText"></p>
   <div class="tbl-wrap"><table id="hsTable"></table></div>
-  <h3>E. Estimators at a glance</h3>
+  <h3>E. Poll-averaging settings (estimated)</h3>
+  <div class="tbl-wrap"><table id="psTable"></table></div>
+  <p class="muted small" id="psNote"></p>
+  <h3>F. Estimators at a glance</h3>
   <ul class="list small">
-    <li><b>Poll weight</b> = ½<sup>age/half-life</sup> × √(min(n, 3000)/600) × population weight (LV 1.0, RV 0.8, adults 0.5) ÷ √(polls by that pollster). Half-life 21 days for races, 14 for the generic ballot. Two-party margins throughout.</li>
+    <li><b>Poll weight</b> = ½<sup>age/half-life</sup> × √(min(n, 3000)/600) × population weight ÷ √(polls by that pollster); settings in section E. Two-party margins throughout.</li>
     <li><b>Poll-average SD</b> (Senate) = √(7.4² + max(spread, 4)²/n<sub>eff</sub>), n<sub>eff</sub> = (Σw)²/Σw². <b>Blend</b>: μ = (μ<sub>poll</sub>/σ<sub>poll</sub>² + μ<sub>prior</sub>/σ<sub>prior</sub>²)/(1/σ<sub>poll</sub>² + 1/σ<sub>prior</sub>²), σ<sub>prior</sub> = <span class="pwSd"></span> in polled Senate races (set so polls get the historically optimal weight; see C), <span class="pwRob"></span> for unpolled Senate races (robust error of the prior alone), <span class="hsSd"></span> for House districts (estimated; see D).</li>
     <li><b>National SDs</b>: RMSE of the final generic-ballot miss (face value); predictive SD of the decay-weighted bias estimate (adjusted). The Senate national SD is the Senate per-cycle miss RMSE, scaled the same way.</li>
     <li><b>Calibration data</b>: 538's <code>raw_polls.csv</code> (final 21 days, 1998–2022), averaged within race before comparison with results.</li>
@@ -515,7 +518,7 @@ function raceDetail(r) {
   if (!P || !P.polls.length) right = `<p class="muted small">No polls since mid-June with both nominees. The forecast rests on the prior.</p>`;
   else right = `<table class="mini"><thead><tr><th>Ended</th><th>Pollster</th><th class="num">n</th><th class="num">${esc(r.dem.split(" ").slice(-1)[0])}</th><th class="num">${esc(r.rep.split(" ").slice(-1)[0])}</th><th class="num">Margin (2-party)</th></tr></thead><tbody>` +
     P.polls.map(p => `<tr><td>${esc(p.end)}</td><td>${p.url ? `<a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.pollster)}</a>` : esc(p.pollster)}${p.partisan ? ` <span class="tag">${esc(p.partisan)}-sponsored</span>` : ""}</td><td class="num">${p.n ? p.n.toLocaleString() + " " + esc(p.pop) : esc(p.pop)}</td><td class="num">${p.d}</td><td class="num">${p.r}</td><td class="num">${fmtM(p.margin2)}</td></tr>`).join("") +
-    `</tbody></table><p class="tiny">${P.polls.length < P.n_total ? `Latest ${P.polls.length} of ${P.n_total} polls since mid-June. ` : ""}Source: VoteHub. Party-sponsored polls are shifted 2 pts against the sponsor in the average.</p>`;
+    `</tbody></table><p class="tiny">${P.polls.length < P.n_total ? `Latest ${P.polls.length} of ${P.n_total} polls since mid-June. ` : ""}Source: VoteHub. In the average, party-sponsored polls are shifted ${DATA.poll_settings.chosen.partisan_shift_statewide} pts against the sponsor and registered-voter polls ${DATA.poll_settings.chosen.pop_dem_lean.rv} pts toward Republicans.</p>`;
   return `<div class="detail-grid"><div>${left}</div><div style="overflow-x:auto">${right}</div></div>`;
 }
 $$("#senFilter button").forEach(b => b.addEventListener("click", () => { senFilter = b.dataset.f; renderSenate(); }));
@@ -686,9 +689,25 @@ function renderHouseStructure() {
     H.loyo.map(r => `<tr><td>${r.year}</td><td class="num">${fmtM(r.nat)}</td><td class="num">${r.bias_free >= 0 ? "+" : ""}${r.bias_free.toFixed(1)}</td><td class="num">${r.bias_constrained >= 0 ? "+" : ""}${r.bias_constrained.toFixed(1)}</td><td class="num">${r.rmse_free.toFixed(1)}</td><td class="num">${r.rmse_constrained.toFixed(1)}</td></tr>`).join("") + "</tbody>";
 }
 
+function renderPollSettings() {
+  const P = DATA.poll_settings, c = P.chosen, sp = P.sponsor, pw = P.population, hl = P.half_life, tl = P.tails;
+  $$(".dfT").forEach(e => e.textContent = c.df_t.toFixed(1));
+  $("#psText").textContent = `Polls since mid-June, weighted with a ${c.half_life_races}-day half-life; registered-voter polls get ${c.pop_weight.rv} of a likely-voter poll's weight and adult polls ${c.pop_weight.a}, and they're shifted ${c.pop_dem_lean.rv} and ${c.pop_dem_lean.a} pts toward Republicans to match likely-voter polls; party-sponsored polls are shifted ${c.partisan_shift_statewide} pts (Senate) or ${c.partisan_shift_house} pts (House) against the sponsor.`;
+  const row = (k, was, est, src) => `<tr><td>${k}</td><td class="num">${was}</td><td class="num"><b>${est}</b></td><td>${src}</td></tr>`;
+  $("#psTable").innerHTML = `<thead><tr><th>Setting</th><th class="num">Was (assumed)</th><th class="num">Estimated</th><th>Evidence</th></tr></thead><tbody>` +
+    row("Sponsor shift, statewide", "2", `${sp.statewide.shift.toFixed(1)} ± ${sp.statewide.se.toFixed(1)}`, `${sp.statewide.n_polls} sponsored polls in ${sp.statewide.n_races} races vs. independent polls of the same race (1998–2022); symmetric for both parties`) +
+    row("Sponsor shift, House districts", "4", `${sp.house_district.shift.toFixed(1)} ± ${sp.house_district.se.toFixed(1)}`, `${sp.house_district.n_polls} polls in ${sp.house_district.n_races} races`) +
+    row("Weight: registered-voter poll", "0.8", c.pop_weight.rv.toFixed(2), `Within-race error vs. likely-voter polls (2018–2024, ${pw.n.rv} RV / ${pw.n.lv} LV polls)`) +
+    row("Weight: adult poll", "0.5", c.pop_weight.a.toFixed(2), `${pw.n.a} polls; few, so imprecise`) +
+    row("Lean adjustment: RV / adults", "none", `${c.pop_dem_lean.rv} / ${c.pop_dem_lean.a} pts`, `RV polls ran ${pw.lean_vs_lv.rv.dem_lean_vs_lv.toFixed(1)} ± ${pw.lean_vs_lv.rv.se.toFixed(1)} pts more Democratic than LV polls of the same race; adults ${pw.lean_vs_lv.a.dem_lean_vs_lv.toFixed(1)} ± ${pw.lean_vs_lv.a.se.toFixed(1)}`) +
+    row("Recency half-life (races)", "21 days", `${c.half_life_races} days`, `2018/2022 backtest RMSE: 21 d ${hl["21"].rmse_within.toFixed(2)}, 60 d ${hl["60"].rmse_within.toFixed(2)}, no decay ${hl["1000"].rmse_within.toFixed(2)} (judgment: 60 keeps some responsiveness)`) +
+    row("Fat tails (t degrees of freedom)", "5", c.df_t.toFixed(1), `Fitted to ${tl.n} race-level misses; excess kurtosis ${tl.excess_kurtosis.toFixed(1)}; fits better than a normal (KS ${tl.ks_t.toFixed(3)} vs ${tl.ks_normal.toFixed(3)})`) + "</tbody>";
+  $("#psNote").textContent = `Backtest with the estimated settings: Brier ${DATA.backtest["2018"].brier.toFixed(3)} (2018) and ${DATA.backtest["2022"].brier.toFixed(3)} (2022), down from 0.050 and 0.047. The generic-ballot half-life isn't used: the national environment comes from published averages.`;
+}
+
 // ---------- init ----------
 $("#gen").textContent = "Updated " + DATA.generated;
-renderModelSegs(); renderPriorWeight(); renderHouseStructure(); renderOverview(); renderMap(); renderWatch(); renderHouse(); renderMethod(); renderData(); renderBias(); renderBacktest(); renderAppendix();
+renderModelSegs(); renderPollSettings(); renderPriorWeight(); renderHouseStructure(); renderOverview(); renderMap(); renderWatch(); renderHouse(); renderMethod(); renderData(); renderBias(); renderBacktest(); renderAppendix();
 route();
 </script>
 </body>

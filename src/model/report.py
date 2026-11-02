@@ -79,7 +79,7 @@ def main():
       f"({nat['fund_weight_on_polls']:.0%} weight on polls) → {m(nat['G_fund'])}.")
     a(f"- **Uncertainty** (from 538 poll-vs-result archive, 1998–2022): national generic-ballot miss RMSE {nat['sd_nat_polls']:.1f} pts "
       f"(historical mean {nat['generic_hist_bias']:+.1f}: polls have tended to overstate Democrats); Senate shared miss {nat['sd_nat_senate']:.1f}; "
-      f"race-level poll-average error {nat['sd_race_pollavg']:.1f}. All errors are fat-tailed (t, 5 df), 40,000 simulations.\n")
+      f"race-level poll-average error {nat['sd_race_pollavg']:.1f}. All errors are fat-tailed (t, estimated df), 40,000 simulations.\n")
 
     a("## Senate races\n")
     a(f"Margins are two-party D−R (Montana: best non-R minus R). The forecast blends the poll average (on average "
@@ -147,6 +147,11 @@ def main():
       f"{c['g_nat']:.2f}×national ± {c['inc']:.1f} incumbency; district SD {c['sd_district']:.1f}; district polls get ~{hs['district_polls']['w']:.2f} weight "
       f"(poll SD {hs['district_polls']['implied_poll_sd']:.1f}). Incumbency fell from ~20 pts (2006) to ~4 (2018–2024). Expected-seat RMSE over 2006–2024: 6.7 vs 11.9 "
       "for the old assumed model; recent cycles undercount Democratic contested-seat wins by ~6.")
+    ps = json.loads((OUT / "poll_settings.json").read_text())["chosen"]
+    a(f"- **Poll-averaging settings (estimated, `src/model/poll_settings.py`)**: sponsor shift {ps['partisan_shift_statewide']} pts statewide / "
+      f"{ps['partisan_shift_house']} House; population weights RV {ps['pop_weight']['rv']}, adults {ps['pop_weight']['a']}, with RV/adult polls shifted "
+      f"{ps['pop_dem_lean']['rv']}/{ps['pop_dem_lean']['a']} pts toward Republicans; half-life {ps['half_life_races']} days (backtest prefers no decay); "
+      f"t with {ps['df_t']} df.")
     es = json.loads((OUT / "error_structure.json").read_text())
     a(f"- **Correlated errors.** Beyond the shared national miss, each simulation draws a Census-region shock (SD {es['sigma_region']:.1f}) and a random "
       f"slope on state lean (SD {es['lean_slope']['all']['sd_true']:.3f} per point), with each race's total variance held fixed. The regional component is "
@@ -169,7 +174,7 @@ def main():
       "**CA-6** (Kevin Kiley, now independent) is excluded from both parties' House counts.")
     a("- **House district leans** are Wikipedia's 2026 PVI on the new lines (mid-decade maps in TX, CA, MO, NC, UT, OH, VA, FL, TN, LA, AL). "
       "District error SD 6 pts and incumbency +2.5 pts are assumptions typical of district models. Same-party and uncontested seats are fixed.")
-    a("- **District polls** (VoteHub, ~180) are sparse and often internal; partisan-sponsored polls are shifted 2 pts against the sponsor and shrunk toward the prior.")
+    a("- **District polls** (VoteHub, ~180) are sparse and often internal; partisan-sponsored polls are shifted against the sponsor (estimated: 6.3 pts for districts) and shrunk toward the prior.")
     a("- Expert ratings (Cook, Silver) are shown for comparison only and are not model inputs.")
     (ROOT / "FORECAST.md").write_text("\n".join(L), encoding="utf-8")
     print("wrote FORECAST.md", len(comp), "competitive House seats")

@@ -1,54 +1,53 @@
 {
  "2018": {
   "races": 30,
-  "winner_accuracy": 0.9333333333333333,
-  "brier": 0.05018079923896764,
-  "mean_error": -0.2943249337863686,
-  "mae": 5.5759708861597135,
+  "winner_accuracy": 0.9,
+  "brier": 0.04859299399385513,
+  "mean_error": -0.12237247408123555,
+  "mae": 5.460474499208197,
   "misses": [
    {
     "state": "Florida",
-    "poll_avg": 1.13,
+    "poll_avg": 0.88,
     "actual": -0.12,
-    "p_dem": 0.57
+    "p_dem": 0.56
    },
    {
     "state": "Indiana",
-    "poll_avg": 0.49,
+    "poll_avg": 0.98,
     "actual": -5.89,
-    "p_dem": 0.53
+    "p_dem": 0.56
+   },
+   {
+    "state": "Nevada",
+    "poll_avg": -0.09,
+    "actual": 5.03,
+    "p_dem": 0.49
    }
   ]
  },
  "2022": {
   "races": 28,
-  "winner_accuracy": 0.9642857142857143,
-  "brier": 0.04697581475274626,
-  "mean_error": -1.823531260063463,
-  "mae": 4.607626820746246,
-  "misses": [
-   {
-    "state": "Nevada",
-    "poll_avg": -0.07,
-    "actual": 0.78,
-    "p_dem": 0.5
-   }
-  ]
+  "winner_accuracy": 1.0,
+  "brier": 0.038656615510998714,
+  "mean_error": -2.112666798039798,
+  "mae": 4.609995696768663,
+  "misses": []
  },
  "generic": [
   {
    "cycle": 2018,
    "n_polls": 414,
-   "generic_avg_two_party": 8.4,
+   "generic_avg_two_party": 7.48,
    "actual_house_margin": 8.51,
-   "error": 0.11
+   "error": 1.03
   },
   {
    "cycle": 2022,
    "n_polls": 321,
-   "generic_avg_two_party": -0.03,
+   "generic_avg_two_party": -0.79,
    "actual_house_margin": -2.64,
-   "error": -2.6
+   "error": -1.84
   }
  ]
 }

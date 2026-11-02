@@ -24,8 +24,13 @@ SD_RACE = CAL["Sen-G"]["race_resid_sd_midterms"]
 SEN_CYC = [c["mean"] for c in CAL["Sen-G"]["cycles"] if c["cycle"] % 2 == 0]
 SD_NAT = float(np.sqrt(np.mean(np.square(SEN_CYC))))
 DF_T = 5
+_PSB = ROOT / "data/processed/poll_settings.json"
+if _PSB.exists():
+    DF_T = float(json.loads(_PSB.read_text())["chosen"]["df_t"])
 ELECTION = {2018: pd.Timestamp("2018-11-06"), 2022: pd.Timestamp("2022-11-08")}
-POP_W = {"lv": 1.0, "rv": 0.8, "a": 0.5, "v": 0.9}
+sys.path.insert(0, str(HERE))
+import pollavg as PA  # noqa: E402  (same estimated settings as the 2026 forecast)
+POP_W = PA.POP_W
 
 
 def wavg(df, asof, half_life):
@@ -33,7 +38,8 @@ def wavg(df, asof, half_life):
     w = 0.5 ** (age / half_life) * np.sqrt(df.n.clip(upper=3000).fillna(600) / 600) * df.population.str.lower().map(POP_W).fillna(0.7)
     k = df.groupby("pollster").pollster.transform("size")
     w = w / np.sqrt(k)
-    m = df.m + np.where(df.partisan == "DEM", -2, np.where(df.partisan == "REP", 2, 0))
+    m = (df.m + np.where(df.partisan == "DEM", -PA.PARTISAN_SHIFT, np.where(df.partisan == "REP", PA.PARTISAN_SHIFT, 0))
+         - df.population.str.lower().map(PA.POP_DEM_LEAN).fillna(0.0))
     avg = np.average(m, weights=w)
     neff = w.sum() ** 2 / (w ** 2).sum()
     spread = np.sqrt(np.average((m - avg) ** 2, weights=w))
@@ -69,7 +75,7 @@ def senate():
         g = g[(g.end <= cutoff) & (g.end >= cutoff - pd.Timedelta(days=140))]
         if g.empty or rid not in act.index:
             continue
-        avg, neff, spread, n = wavg(g, cutoff, 21)
+        avg, neff, spread, n = wavg(g, cutoff, PA.HALF_LIFE)
         sd_race = np.sqrt(SD_RACE ** 2 + max(spread, 4.0) ** 2 / neff)
         sd = np.sqrt(SD_NAT ** 2 + sd_race ** 2)
         pd_ = stats.t.cdf(avg / (sd * np.sqrt((DF_T - 2) / DF_T)), DF_T)

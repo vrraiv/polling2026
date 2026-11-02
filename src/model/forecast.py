@@ -31,6 +31,9 @@ ABBR_STATE = {v: k for k, v in STATE_ABBR.items()}
 RNG = np.random.default_rng(2026)
 NSIM = 40000
 DF_T = 5  # t-distribution degrees of freedom (fat tails)
+_PSF = Path(__file__).resolve().parents[2] / "data/processed/poll_settings.json"
+if _PSF.exists():  # estimated: Student-t fitted to race-level poll-average misses (src/model/poll_settings.py)
+    DF_T = float(json.loads(_PSF.read_text())["chosen"]["df_t"])
 
 # ---------------- parameters ----------------
 CAL = json.loads((OUT / "calibration.json").read_text())
