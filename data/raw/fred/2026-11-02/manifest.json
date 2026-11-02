@@ -1,0 +1,27 @@
+{
+  "CPIAUCSL.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=CPIAUCSL",
+    "retrieved": "2026-11-02T05:33:49",
+    "bytes": 17763
+  },
+  "CUUR0000SETB01.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=CUUR0000SETB01",
+    "retrieved": "2026-11-02T05:33:49",
+    "bytes": 19325
+  },
+  "CUSR0000SETB01.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=CUSR0000SETB01",
+    "retrieved": "2026-11-02T05:33:49",
+    "bytes": 13344
+  },
+  "A229RX0.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=A229RX0",
+    "retrieved": "2026-11-02T05:33:49",
+    "bytes": 13846
+  },
+  "UNRATE.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=UNRATE",
+    "retrieved": "2026-11-02T05:33:49",
+    "bytes": 14211
+  }
+}

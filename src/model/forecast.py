@@ -43,6 +43,11 @@ GENERIC_BIAS = float(np.mean(GEN_CYC))  # raw-margin mean 1998-2022 (fallback on
 _BD = OUT / "bias_decay.json"
 if _BD.exists():
     GENERIC_BIAS = float(json.loads(_BD.read_text())["top10_avg_pred_2026"])
+BIAS_SD = 2.6
+if _BD.exists():
+    _specs = json.loads(_BD.read_text())["specs"]
+    _top = sorted(_specs, key=lambda r: r["loo_rmse_weighted"])[:10]
+    BIAS_SD = float(np.mean([r["pred_sd"] for r in _top]))  # predictive SD of the bias estimate (~2.6)
 LV_DISCOUNT = 1.0   # the 2026 aggregators adjust to likely voters; LV polls ran ~1-1.5 pts less Democratic than RV in 2020/2022
 BIAS_ADJ = GENERIC_BIAS + LV_DISCOUNT   # about -2.0: the shift used by the "bias-adjusted" model
 SD_NAT_SENATE = float(np.sqrt(np.mean(np.square(SEN_CYC))))     # shared Senate polling miss per cycle
@@ -53,7 +58,19 @@ SD_HOUSE_DISTRICT = 6.0   # district error around 2*PVI + G + incumbency (assume
 SD_HOUSE_POLL = 7.5       # district polls: mostly sparse/internal, so noisy (assumed)
 INC_HOUSE = 2.5           # incumbency bonus, margin points (assumed)
 INC_SENATE = 2.0
-T_SCALE = np.sqrt((DF_T - 2) / DF_T)  # so scaled t has the stated SD
+T_SCALE = np.sqrt((DF_T - 2) / DF_T)
+
+# Correlated-error structure beyond the national factor (src/model/error_structure.py):
+# a shared shock per Census region and a per-simulation random slope on state lean.
+_ES = OUT / "error_structure.json"
+if _ES.exists():
+    _es = json.loads(_ES.read_text())
+    SIGMA_REGION = float(_es["sigma_region"])
+    SIGMA_LEAN_SLOPE = float(_es["lean_slope"]["all"]["sd_true"])
+    STATE_REGION = {st: r for r, sts in _es["regions"].items() for st in sts}
+else:
+    SIGMA_REGION, SIGMA_LEAN_SLOPE, STATE_REGION = 0.0, 0.0, {}
+REGIONS = ["Northeast", "Midwest", "South", "West"]  # so scaled t has the stated SD
 
 # Fundamentals (ASSUMED coefficients, not estimated here: two midterms can't identify them and keyless
 # historical approval data wasn't available). President's-party House margin in a midterm:
@@ -264,12 +281,28 @@ def house_model(h, polls, G):
 SENATE_NOT_UP = {"R": 31, "D": 34}  # 53 R / 47 D-caucus (incl. King, Sanders) minus seats up in 2026 (22 R, 13 D)
 
 
-def simulate(h, s, sd_nat_house):
-    z = tdraw(NSIM)  # one shared national draw
+def correlated_part(df, region_shock, slope, sigma_region):
+    """Region shock + lean-slope term for each race, and the idiosyncratic SD that keeps total variance unchanged."""
+    ridx = np.array([REGIONS.index(STATE_REGION.get(st, "South")) for st in df.state])
+    lean = 2.0 * df.pvi.values  # lean in margin units (same units as the historical estimate)
+    corr = region_shock[:, ridx] + slope[:, None] * lean[None, :]
+    var_corr = sigma_region ** 2 + (SIGMA_LEAN_SLOPE * lean) ** 2
+    sd = df.sd_race.values
+    sd_idio = np.sqrt(np.maximum(sd ** 2 - var_corr, (0.5 * sd) ** 2))
+    return corr, sd_idio
+
+
+def simulate(h, s, sd_nat_house, sd_nat_senate=None, sigma_region=None):
+    sd_nat_senate = SD_NAT_SENATE if sd_nat_senate is None else sd_nat_senate
+    sigma_region = SIGMA_REGION if sigma_region is None else sigma_region
+    z = tdraw(NSIM)  # one shared national draw (House and Senate)
+    region_shock = RNG.standard_normal((NSIM, len(REGIONS))) * sigma_region   # shared by House and Senate races in a region
+    slope = RNG.standard_normal(NSIM) * SIGMA_LEAN_SLOPE                      # polarisation miss, centred at 0
     # House
     fixed = h.fixed.notna().values
-    mu = h.mu.values[None, :] + (sd_nat_house * z)[:, None]
-    margins = mu + tdraw((NSIM, len(h))) * h.sd_race.values[None, :]
+    hcorr, h_idio = correlated_part(h, region_shock, slope, sigma_region)
+    mu = h.mu.values[None, :] + (sd_nat_house * z)[:, None] + hcorr
+    margins = mu + tdraw((NSIM, len(h))) * h_idio[None, :]
     dwin = margins > 0
     dwin[:, fixed] = (h.fixed.values[fixed] == "D")[None, :]
     is_kiley = ((h.state == "CA") & (h.district == 6)).values
@@ -279,8 +312,15 @@ def simulate(h, s, sd_nat_house):
     h = h.copy()
     h["p_dem"] = dwin.mean(0)
     # Senate: national Senate error shares the same z, scaled to the Senate calibration
-    smu = s.mu.values[None, :] + (SD_NAT_SENATE * z)[:, None]
-    sm = smu + tdraw((NSIM, len(s))) * s.sd_race.values[None, :]
+    scorr, s_idio = correlated_part(s, region_shock, slope, sigma_region)
+    smu = s.mu.values[None, :] + (sd_nat_senate * z)[:, None] + scorr
+    sm = smu + tdraw((NSIM, len(s))) * s_idio[None, :]
+    # implied error correlations for selected Senate pairs
+    err = sm - s.mu.values[None, :]
+    keys = list(s.state + np.where(s.special, "-sp", ""))
+    pairs = [("MI", "OH-sp"), ("MI", "IA"), ("OH-sp", "IA"), ("TX", "KS"), ("ME", "NC"), ("TX", "ME"), ("AK", "IA")]
+    corr_pairs = {f"{a}~{b}": float(np.corrcoef(err[:, keys.index(a)], err[:, keys.index(b)])[0, 1])
+                  for a, b in pairs if a in keys and b in keys}
     swin = sm > 0
     s = s.copy()
     s["p_dside"] = swin.mean(0)
@@ -305,18 +345,26 @@ def simulate(h, s, sd_nat_house):
                    "independent_races": s.loc[is_ind, "state"].tolist(),
                    "p_indep_wins_each": dict(zip(s.loc[is_ind, "state"], swin[:, is_ind].mean(0).tolist())),
                    "p_osborn_wins": float(swin[:, (s.state == "NE").values].mean()),
+                   "error_corr_pairs": corr_pairs,
+                   "p_house_and_senate_D": float(((d_seats >= 218) & (d_total >= 51)).mean()),
+                   "p_house_D_senate_R": float(((d_seats >= 218) & (r_total >= 50)).mean()),
                    "p_independents_pivotal": float(((d_total < 51) & (d_total + ind_win >= 51)).mean()),
                    "hist": np.bincount(d_total, minlength=101).tolist()},
     }
     return h, s, res
 
 
-def run(model, shift=0.0, tag=None):
+def run(model, shift=0.0, tag=None, bias_removed=False, sigma_region=None):
+    """bias_removed=True: the polls' historical bias is taken out as a mean shift, so the national polling SD
+    drops from the RMSE (which includes the bias) to the predictive SD of the bias estimate (BIAS_SD)."""
     nat, polls = national_inputs()
+    sd_polls = BIAS_SD if bias_removed else SD_NAT_GENERIC
     if model == "polls_only":
-        G, sd_nat, econ_adj = nat["G_polls"], SD_NAT_GENERIC, None
+        G, sd_nat, econ_adj = nat["G_polls"], sd_polls, None
     else:
-        G, sd_nat, econ_adj = nat["G_fund"], nat["sd_nat_fund"], state_unemp_change()
+        G, econ_adj = nat["G_fund"], state_unemp_change()
+        sd_nat = 1 / np.sqrt(1 / sd_polls ** 2 + 1 / FUND["SD"] ** 2)
+    sd_sen = SD_NAT_SENATE * (sd_polls / SD_NAT_GENERIC)
     G = G + shift
     s = senate_races(polls)
     smod = senate_model(s, polls, G, sd_nat, econ_adj)
@@ -324,11 +372,14 @@ def run(model, shift=0.0, tag=None):
     hmod = house_model(house_races(), polls, G)
     hmod["mu"] = hmod.mu + shift * hmod.poll_weight
     model = tag or model
-    hmod, smod, res = simulate(hmod, smod, sd_nat)
+    hmod, smod, res = simulate(hmod, smod, sd_nat, sd_sen, sigma_region)
     res["national"] = {k: v for k, v in nat.items() if k not in ("generic_aggregators", "approval_aggregators")}
     res["national"]["G_used"] = G
     res["national"]["bias_shift"] = shift
     res["national"]["sd_nat_house_used"] = sd_nat
+    res["national"]["sd_nat_senate_used"] = sd_sen
+    res["national"]["sigma_region"] = SIGMA_REGION if sigma_region is None else sigma_region
+    res["national"]["sigma_lean_slope"] = SIGMA_LEAN_SLOPE
     res["model"] = model
     hmod.to_csv(OUT / f"house_{model}.csv", index=False)
     smod.to_csv(OUT / f"senate_{model}.csv", index=False)
@@ -362,7 +413,7 @@ if __name__ == "__main__":
     for m, shift, tag in [("polls_only", 0.0, None), ("polls_fundamentals", 0.0, None),
                           ("polls_fundamentals", BIAS_ADJ, "polls_fundamentals_biasadj"),
                           ("polls_fundamentals", GENERIC_BIAS, "scenario_polls_overstate_dems")]:
-        h, s, res = run(m, shift, tag)
+        h, s, res = run(m, shift, tag, bias_removed=bool(shift))
         m = tag or m
         print(f"\n===== {m} =====  G used: D{res['national']['G_used']:+.2f}  (polls {res['national']['G_polls']:+.2f}, "
               f"fundamentals {res['national']['fundamentals_margin_D']:+.2f}, approval {res['national']['approval']:.1f})")
@@ -375,4 +426,21 @@ if __name__ == "__main__":
         print(s[["race_key", "dem", "rep", "pvi", "prior", "poll_avg", "n_polls", "poll_weight", "mu", "sd_race", "p_dside", "rating_cook"]]
               .sort_values("p_dside").round(2).to_string())
     sensitivity()
+    # error-structure sensitivity: national factor only vs. estimated structure vs. strong regional factor
+    es = {}
+    for lab, sr, sl in [("national_only", 0.0, 0.0), ("estimated", None, None), ("strong_region_2pt", 2.0, None)]:
+        keep = SIGMA_LEAN_SLOPE
+        if sl is not None:
+            SIGMA_LEAN_SLOPE = sl
+        _, _, r = run("polls_fundamentals", tag="_errsens", sigma_region=sr)
+        SIGMA_LEAN_SLOPE = keep
+        es[lab] = {"p_dem_senate": r["senate"]["p_dem_control_without_osborn"], "senate_p10": r["senate"]["dem_seats_p10"],
+                   "senate_p90": r["senate"]["dem_seats_p90"], "p_dem_house": r["house"]["p_dem_majority"],
+                   "house_p10": r["house"]["dem_seats_p10"], "house_p90": r["house"]["dem_seats_p90"],
+                   "corr_pairs": r["senate"]["error_corr_pairs"]}
+        print("error structure", lab, {k: (round(v, 3) if isinstance(v, float) else v) for k, v in es[lab].items() if k != "corr_pairs"},
+              {k: round(v, 2) for k, v in es[lab]["corr_pairs"].items()})
+    for f in OUT.glob("*_errsens*"):
+        f.unlink()
+    (OUT / "error_sensitivity.json").write_text(json.dumps(es, indent=1))
     run("polls_fundamentals")  # restore national_inputs.json etc. to the base model

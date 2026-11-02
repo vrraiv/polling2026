@@ -1,103 +1,91 @@
 {
  "Sen-G": {
   "kind": "Sen-G",
-  "n_races": 403,
+  "n_races": 400,
   "cycles": [
    {
     "cycle": 1998,
-    "mean": 2.86,
-    "std": 7.73,
+    "mean": 4.08,
+    "std": 11.55,
     "size": 29
    },
    {
     "cycle": 2000,
-    "mean": 1.81,
-    "std": 6.67,
+    "mean": 2.56,
+    "std": 9.0,
     "size": 31
    },
    {
     "cycle": 2002,
-    "mean": -1.16,
-    "std": 7.18,
+    "mean": -1.4,
+    "std": 9.19,
     "size": 27
    },
    {
     "cycle": 2004,
-    "mean": -2.57,
-    "std": 6.25,
+    "mean": -2.44,
+    "std": 8.09,
     "size": 27
    },
    {
     "cycle": 2006,
-    "mean": 3.22,
-    "std": 5.07,
+    "mean": 2.45,
+    "std": 5.8,
     "size": 28
    },
    {
     "cycle": 2008,
-    "mean": 0.79,
-    "std": 5.26,
+    "mean": 0.87,
+    "std": 4.88,
     "size": 34
    },
    {
     "cycle": 2010,
-    "mean": 0.82,
-    "std": 6.77,
+    "mean": 2.03,
+    "std": 7.1,
     "size": 36
    },
    {
     "cycle": 2012,
-    "mean": 3.49,
-    "std": 3.99,
+    "mean": 3.48,
+    "std": 3.63,
     "size": 28
    },
    {
-    "cycle": 2013,
-    "mean": -2.2,
-    "std": 5.7,
-    "size": 2
-   },
-   {
     "cycle": 2014,
-    "mean": -3.39,
-    "std": 4.41,
+    "mean": -3.29,
+    "std": 4.68,
     "size": 34
    },
    {
     "cycle": 2016,
-    "mean": -4.73,
-    "std": 5.4,
+    "mean": -4.95,
+    "std": 5.92,
     "size": 33
    },
    {
-    "cycle": 2017,
-    "mean": 4.55,
-    "std": NaN,
-    "size": 1
-   },
-   {
     "cycle": 2018,
-    "mean": -0.9,
-    "std": 4.52,
+    "mean": -1.58,
+    "std": 5.94,
     "size": 32
    },
    {
     "cycle": 2020,
-    "mean": -6.59,
-    "std": 5.72,
+    "mean": -6.62,
+    "std": 5.51,
     "size": 32
    },
    {
     "cycle": 2022,
-    "mean": -2.4,
-    "std": 7.52,
+    "mean": -2.27,
+    "std": 6.55,
     "size": 29
    }
   ],
-  "national_sd": 3.272799963041564,
-  "race_resid_sd": 5.869679744213325,
-  "race_resid_sd_midterms": 6.180364892099825,
-  "national_sd_midterms": 2.532526170395135
+  "national_sd": 3.3797061380981246,
+  "race_resid_sd": 6.892718542127005,
+  "race_resid_sd_midterms": 7.368864399918581,
+  "national_sd_midterms": 2.8045161594914085
  },
  "House-G-US": {
   "kind": "House-G-US",
@@ -105,382 +93,262 @@
   "cycles": [
    {
     "cycle": 1998,
-    "mean": -2.27,
+    "mean": -2.56,
     "std": NaN,
     "size": 1
    },
    {
     "cycle": 2000,
-    "mean": -2.47,
+    "mean": -2.94,
     "std": NaN,
     "size": 1
    },
    {
     "cycle": 2002,
-    "mean": -5.62,
+    "mean": -6.06,
     "std": NaN,
     "size": 1
    },
    {
     "cycle": 2004,
-    "mean": -5.05,
+    "mean": -5.52,
     "std": NaN,
     "size": 1
    },
    {
     "cycle": 2006,
-    "mean": -4.48,
+    "mean": -5.65,
     "std": NaN,
     "size": 1
    },
    {
     "cycle": 2008,
-    "mean": 2.08,
+    "mean": 1.07,
     "std": NaN,
     "size": 1
    },
    {
     "cycle": 2010,
-    "mean": -1.24,
+    "mean": -0.93,
     "std": NaN,
     "size": 1
    },
    {
     "cycle": 2012,
-    "mean": 0.2,
+    "mean": 0.13,
     "std": NaN,
     "size": 1
    },
    {
     "cycle": 2014,
-    "mean": -4.48,
+    "mean": -4.66,
     "std": NaN,
     "size": 1
    },
    {
     "cycle": 2016,
-    "mean": -4.84,
+    "mean": -5.58,
     "std": NaN,
     "size": 1
    },
    {
     "cycle": 2018,
-    "mean": 1.13,
+    "mean": 0.46,
     "std": NaN,
     "size": 1
    },
    {
     "cycle": 2020,
-    "mean": -4.16,
+    "mean": -4.73,
     "std": NaN,
     "size": 1
    },
    {
     "cycle": 2022,
-    "mean": -3.42,
+    "mean": -3.63,
     "std": NaN,
     "size": 1
    }
   ],
-  "national_sd": 2.514399997354229,
+  "national_sd": 2.5525516283908303,
   "race_resid_sd": 0.0,
   "race_resid_sd_midterms": 0.0,
-  "national_sd_midterms": 2.3124089029410175
+  "national_sd_midterms": 2.42923450286753
  },
  "House-G": {
   "kind": "House-G",
-  "n_races": 1080,
+  "n_races": 1060,
   "cycles": [
    {
     "cycle": 1998,
-    "mean": 2.78,
-    "std": 9.7,
+    "mean": 2.22,
+    "std": 11.5,
     "size": 30
    },
    {
     "cycle": 2000,
-    "mean": -0.25,
-    "std": 5.76,
+    "mean": -0.91,
+    "std": 7.03,
     "size": 29
    },
    {
     "cycle": 2002,
-    "mean": -1.0,
-    "std": 6.34,
+    "mean": -0.37,
+    "std": 7.18,
     "size": 56
    },
    {
     "cycle": 2004,
-    "mean": -1.42,
-    "std": 7.42,
+    "mean": -0.39,
+    "std": 9.61,
     "size": 52
    },
    {
     "cycle": 2006,
-    "mean": 0.27,
-    "std": 6.86,
+    "mean": 0.28,
+    "std": 7.88,
     "size": 103
    },
    {
-    "cycle": 2007,
-    "mean": -1.71,
-    "std": 2.28,
-    "size": 2
-   },
-   {
     "cycle": 2008,
-    "mean": -0.6,
-    "std": 7.31,
+    "mean": -0.64,
+    "std": 8.05,
     "size": 91
    },
    {
-    "cycle": 2009,
-    "mean": 13.33,
-    "std": 15.99,
-    "size": 3
-   },
-   {
     "cycle": 2010,
-    "mean": -0.85,
-    "std": 8.46,
+    "mean": -0.53,
+    "std": 9.14,
     "size": 159
    },
    {
-    "cycle": 2011,
-    "mean": -0.86,
-    "std": 9.1,
-    "size": 4
-   },
-   {
     "cycle": 2012,
-    "mean": 3.82,
-    "std": 7.61,
+    "mean": 4.72,
+    "std": 8.29,
     "size": 102
    },
    {
-    "cycle": 2013,
-    "mean": -14.4,
-    "std": NaN,
-    "size": 1
-   },
-   {
     "cycle": 2014,
-    "mean": -4.14,
-    "std": 8.12,
+    "mean": -4.13,
+    "std": 9.05,
     "size": 74
    },
    {
-    "cycle": 2015,
-    "mean": -22.95,
-    "std": NaN,
-    "size": 1
-   },
-   {
     "cycle": 2016,
-    "mean": -3.79,
-    "std": 7.23,
+    "mean": -3.78,
+    "std": 7.83,
     "size": 62
    },
    {
-    "cycle": 2017,
-    "mean": 5.2,
-    "std": 8.83,
-    "size": 5
-   },
-   {
     "cycle": 2018,
-    "mean": 0.63,
-    "std": 7.74,
+    "mean": 1.4,
+    "std": 8.1,
     "size": 143
    },
    {
-    "cycle": 2019,
-    "mean": -8.12,
-    "std": 7.26,
-    "size": 2
-   },
-   {
     "cycle": 2020,
-    "mean": -6.84,
-    "std": 4.65,
+    "mean": -6.89,
+    "std": 4.91,
     "size": 86
    },
    {
-    "cycle": 2021,
-    "mean": 1.62,
-    "std": 10.07,
-    "size": 2
-   },
-   {
     "cycle": 2022,
-    "mean": -0.35,
-    "std": 7.93,
+    "mean": -0.4,
+    "std": 7.89,
     "size": 73
    }
   ],
-  "national_sd": 7.215955665575512,
-  "race_resid_sd": 7.429071389887335,
-  "race_resid_sd_midterms": 7.813462898093527,
-  "national_sd_midterms": 2.0873246750821695
+  "national_sd": 2.9325620478291174,
+  "race_resid_sd": 8.166580444320978,
+  "race_resid_sd_midterms": 8.49517693144142,
+  "national_sd_midterms": 2.009774400325296
  },
  "Gov-G": {
   "kind": "Gov-G",
-  "n_races": 333,
+  "n_races": 305,
   "cycles": [
    {
     "cycle": 1998,
-    "mean": 3.7,
-    "std": 10.0,
+    "mean": 4.62,
+    "std": 12.22,
     "size": 30
    },
    {
-    "cycle": 1999,
-    "mean": 5.79,
-    "std": 0.42,
-    "size": 2
-   },
-   {
     "cycle": 2000,
-    "mean": -0.14,
-    "std": 4.57,
+    "mean": -0.67,
+    "std": 4.86,
     "size": 11
-   },
-   {
-    "cycle": 2001,
-    "mean": -1.52,
-    "std": 1.59,
-    "size": 2
    },
    {
     "cycle": 2002,
-    "mean": -3.64,
-    "std": 6.12,
+    "mean": -3.61,
+    "std": 7.47,
     "size": 36
    },
    {
-    "cycle": 2003,
-    "mean": -2.54,
-    "std": 5.95,
-    "size": 4
-   },
-   {
     "cycle": 2004,
-    "mean": -2.33,
-    "std": 3.14,
+    "mean": -3.28,
+    "std": 5.37,
     "size": 10
    },
    {
-    "cycle": 2005,
-    "mean": 3.99,
-    "std": 1.31,
-    "size": 2
-   },
-   {
     "cycle": 2006,
-    "mean": 0.78,
-    "std": 4.21,
+    "mean": 0.59,
+    "std": 4.73,
     "size": 35
-   },
-   {
-    "cycle": 2007,
-    "mean": -1.14,
-    "std": NaN,
-    "size": 1
    },
    {
     "cycle": 2008,
-    "mean": -0.43,
-    "std": 6.83,
+    "mean": -1.58,
+    "std": 9.76,
     "size": 11
-   },
-   {
-    "cycle": 2009,
-    "mean": -4.25,
-    "std": 2.85,
-    "size": 2
    },
    {
     "cycle": 2010,
-    "mean": -0.47,
-    "std": 6.54,
+    "mean": -0.4,
+    "std": 9.24,
     "size": 37
    },
    {
-    "cycle": 2011,
-    "mean": -7.48,
-    "std": 0.54,
-    "size": 3
-   },
-   {
     "cycle": 2012,
-    "mean": 2.26,
-    "std": 4.01,
+    "mean": 2.95,
+    "std": 4.51,
     "size": 9
    },
    {
-    "cycle": 2013,
-    "mean": -0.41,
-    "std": 5.41,
-    "size": 2
-   },
-   {
     "cycle": 2014,
-    "mean": -4.33,
-    "std": 5.34,
+    "mean": -4.04,
+    "std": 5.39,
     "size": 35
-   },
-   {
-    "cycle": 2015,
-    "mean": -2.89,
-    "std": 8.3,
-    "size": 3
    },
    {
     "cycle": 2016,
-    "mean": -5.3,
-    "std": 4.88,
+    "mean": -5.95,
+    "std": 5.02,
     "size": 12
    },
    {
-    "cycle": 2017,
-    "mean": 1.63,
-    "std": 4.47,
-    "size": 2
-   },
-   {
     "cycle": 2018,
-    "mean": 0.75,
-    "std": 4.93,
+    "mean": 1.11,
+    "std": 5.42,
     "size": 35
    },
    {
-    "cycle": 2019,
-    "mean": -2.61,
-    "std": 2.67,
-    "size": 3
-   },
-   {
     "cycle": 2020,
-    "mean": -7.88,
-    "std": 4.76,
+    "mean": -6.61,
+    "std": 6.21,
     "size": 11
    },
    {
-    "cycle": 2021,
-    "mean": -3.91,
-    "std": 0.91,
-    "size": 2
-   },
-   {
     "cycle": 2022,
-    "mean": -2.51,
-    "std": 6.58,
+    "mean": -2.85,
+    "std": 6.34,
     "size": 33
    }
   ],
-  "national_sd": 3.3689605732463805,
-  "race_resid_sd": 5.819167905675163,
-  "race_resid_sd_midterms": 6.304807345475535,
-  "national_sd_midterms": 2.848978177934541
+  "national_sd": 3.3192886374209203,
+  "race_resid_sd": 7.176774421967441,
+  "race_resid_sd_midterms": 7.468010844775993,
+  "national_sd_midterms": 3.097547609169721
  }
 }

@@ -10,20 +10,14 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "collect"))
 from common import ROOT, latest
 
 def load():
-    r = pd.read_csv(latest("538_github", "raw_polls.csv"), low_memory=False)
+    """Final-21-day polls vs results, oriented to TWO-PARTY D-R margins (same basis as the forecast)."""
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    import bias_analysis as BA
+    r = BA.load()   # even-year D-vs-R polls with poll2 / act2 two-party margins
     r = r[r.type_simple.isin(["Sen-G", "House-G-US", "House-G", "Gov-G"])].copy()
-    # orient to D-R; keep only D-vs-R matchups
-    def orient(row):
-        p1, p2 = row.cand1_party, row.cand2_party
-        if p1 == "DEM" and p2 == "REP":
-            return row.cand1_pct - row.cand2_pct, row.cand1_actual - row.cand2_actual
-        if p1 == "REP" and p2 == "DEM":
-            return row.cand2_pct - row.cand1_pct, row.cand2_actual - row.cand1_actual
-        return np.nan, np.nan
-    o = r.apply(orient, axis=1, result_type="expand")
-    r["poll_m"], r["act_m"] = o[0], o[1]
-    r = r.dropna(subset=["poll_m", "act_m"])
+    r["poll_m"], r["act_m"] = r.poll2, r.act2
     return r
+
 
 def summarize(r, kind):
     s = r[r.type_simple == kind]
