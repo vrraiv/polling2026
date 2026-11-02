@@ -82,8 +82,9 @@ def main():
       f"race-level poll-average error {nat['sd_race_pollavg']:.1f}. All errors are fat-tailed (t, 5 df), 40,000 simulations.\n")
 
     a("## Senate races\n")
-    a("Margins are two-party D−R (Montana: best non-R minus R). The forecast blends the poll average (~70% weight when "
-      "polled) with a structural prior (2×PVI + environment + incumbency).\n")
+    a(f"Margins are two-party D−R (Montana: best non-R minus R). The forecast blends the poll average (on average "
+      f"{pf['national']['race_poll_weight_mean_polled']:.0%} weight in polled races) with a structural prior (2×PVI + environment + incumbency). "
+      f"Nationally, polls get {pf['national']['w_polls_national']:.0%} of the weight vs. the fundamentals.\n")
     a("| Race | Democrat / Ind. | Republican | PVI | Poll avg (n) | Prior | Forecast margin | P(D/I win) polls-only | P(D/I win) +fund | Cook | Silver |")
     a("|---|---|---|---|---|---|---|---|---|---|---|")
     for _, r in sen.sort_values("p_dside", ascending=False).iterrows():
@@ -114,7 +115,12 @@ def main():
           ", ".join(f"{x['state']} (polls {m(x['poll_avg'])}, actual {m(x['actual'])})" for x in b["misses"]))
     for g in bt["generic"]:
         a(f"- **{g['cycle']} generic ballot**: my average {m(g['generic_avg_two_party'])} vs. actual House vote {m(g['actual_house_margin'])} (error {g['error']:+.1f}).")
-    a("- Calibration: races given 90%+ went 24/24; 70–90% went 6/6; the model was, if anything, slightly under-confident. "
+    btr = pd.read_csv(OUT / "backtest_senate_2018_2022.csv")
+    btr["bin"] = pd.cut(btr.p_dem, [0, .1, .3, .5, .7, .9, 1.0001])
+    cb = btr.groupby("bin", observed=True).agg(n=("dem_won", "size"), p=("p_dem", "mean"), w=("dem_won", "mean"))
+    a("- Calibration by forecast bin: " + "; ".join(f"{iv.left:.0%}–{min(iv.right, 1):.0%}: forecast {r.p:.0%}, Dems won {r.w:.0%} of {int(r.n)}"
+                                                     for iv, r in cb.iterrows()) +
+      ". The middle bins resolve more decisively than forecast, i.e. the model is somewhat under-confident with the two-party error scales. "
       "Caveat: error scales were estimated on data that include these cycles (in-sample).\n")
 
     a("## Caveats and judgment calls\n")

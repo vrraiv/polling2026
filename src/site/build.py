@@ -49,6 +49,7 @@ def main():
             "senate": {k: v for k, v in s["senate"].items()},
             "G": s["national"]["G_used"], "shift": s["national"].get("bias_shift", 0.0),
             "sd_nat_house": s["national"].get("sd_nat_house_used", 0.0), "sd_nat_senate": s["national"].get("sd_nat_senate_used", 0.0),
+            "w_polls": s["national"].get("w_polls_national", 1.0), "race_w": s["national"].get("race_poll_weight_mean_polled", 0.0),
             "senate_races": records(sen.sort_values("p_dside", ascending=False),
                                     ["race_key", "state", "special", "dem", "rep", "dside", "inc_party", "pvi", "prior",
                                      "poll_avg", "n_polls", "poll_weight", "mu", "sd_race", "p_dside", "rating_cook", "rating_silver"]),

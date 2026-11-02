@@ -1,19 +1,19 @@
 # 2026 Midterm Forecast
 
-_Generated 2026-11-02 05:48 from the latest data snapshot. Refresh data + rerun everything: `python src/run_all.py`._
+_Generated 2026-11-02 05:53 from the latest data snapshot. Refresh data + rerun everything: `python src/run_all.py`._
 
 ## Topline
 
 | | Polls-only | Polls + fundamentals (unadjusted) | Polls + fundamentals, bias-adjusted (-2.1) | Scenario: full historical bias (-3.1) |
 |---|---|---|---|---|
-| National House environment (two-party) | D+9.1 | D+9.5 | D+7.5 | D+6.5 |
-| **P(Democratic House majority)** | 90% | 95% | 91% | 83% |
-| P(Republican House majority) | 10% | 5% | 9% | 17% |
-| Dem House seats, mean (80% range) | 239 (218–261) | 240 (223–258) | 230 (218–243) | 226 (215–238) |
-| **P(Democratic Senate control)** | 68% | 69% | 47% | 35% |
-| P(Dem control if independents caucus D) | 69% | 70% | 49% | 36% |
-| P(Republican Senate control) | 31% | 30% | 51% | 64% |
-| Dem-caucus Senate seats, mean (80% range) | 51.6 (48–55) | 51.7 (49–55) | 50.4 (48–53) | 49.8 (47–52) |
+| National House environment (two-party) | D+9.1 | D+9.5 | D+7.8 | D+7.1 |
+| **P(Democratic House majority)** | 90% | 95% | 93% | 87% |
+| P(Republican House majority) | 10% | 5% | 7% | 13% |
+| Dem House seats, mean (80% range) | 239 (218–261) | 240 (223–258) | 231 (219–244) | 228 (216–240) |
+| **P(Democratic Senate control)** | 68% | 69% | 49% | 38% |
+| P(Dem control if independents caucus D) | 69% | 70% | 51% | 39% |
+| P(Republican Senate control) | 31% | 30% | 49% | 61% |
+| Dem-caucus Senate seats, mean (80% range) | 51.6 (48–55) | 51.7 (49–55) | 50.5 (48–53) | 49.9 (47–53) |
 
 Democrats need 51 Senate seats for control (VP Vance breaks 50–50 ties); 34 Dem-caucus and 31 Republican seats are not up. Independent candidates (Osborn in NE, Achilles in ID) are counted separately; neither has committed to a caucus.
 
@@ -32,7 +32,7 @@ Democrats need 51 Senate seats for control (VP Vance breaks 50–50 ties); 34 De
 
 ## Senate races
 
-Margins are two-party D−R (Montana: best non-R minus R). The forecast blends the poll average (~70% weight when polled) with a structural prior (2×PVI + environment + incumbency).
+Margins are two-party D−R (Montana: best non-R minus R). The forecast blends the poll average (on average 64% weight in polled races) with a structural prior (2×PVI + environment + incumbency). Nationally, polls get 56% of the weight vs. the fundamentals.
 
 | Race | Democrat / Ind. | Republican | PVI | Poll avg (n) | Prior | Forecast margin | P(D/I win) polls-only | P(D/I win) +fund | Cook | Silver |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -154,7 +154,7 @@ _PVI column in the House table is Cook-style share PVI (district vs. nation); in
 - **2022 Senate**: 28 races, winner called correctly 96%, Brier 0.047, mean error -1.8 (D−R), MAE 4.6. Misses: Nevada (polls R+0.1, actual D+0.8)
 - **2018 generic ballot**: my average D+8.4 vs. actual House vote D+8.5 (error +0.1).
 - **2022 generic ballot**: my average R+0.0 vs. actual House vote R+2.6 (error -2.6).
-- Calibration: races given 90%+ went 24/24; 70–90% went 6/6; the model was, if anything, slightly under-confident. Caveat: error scales were estimated on data that include these cycles (in-sample).
+- Calibration by forecast bin: 0%–10%: forecast 2%, Dems won 0% of 12; 10%–30%: forecast 21%, Dems won 0% of 5; 30%–50%: forecast 40%, Dems won 20% of 5; 50%–70%: forecast 55%, Dems won 67% of 6; 70%–90%: forecast 80%, Dems won 100% of 6; 90%–100%: forecast 98%, Dems won 100% of 24. The middle bins resolve more decisively than forecast, i.e. the model is somewhat under-confident with the two-party error scales. Caveat: error scales were estimated on data that include these cycles (in-sample).
 
 ## Caveats and judgment calls
 

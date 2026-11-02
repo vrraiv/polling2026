@@ -150,7 +150,7 @@ footer { border-top: 1px solid var(--border); margin-top: 40px; padding: 18px 0 
   <h2>Senate races</h2>
   <p class="muted">35 races (33 regular + Florida and Ohio specials). Probability is the chance the Democrat — or the independent where no Democrat is the main challenger — wins. Margins are two-party, D−R. Click a column to sort.</p>
   <div class="tbl-wrap"><table id="senTable"></table></div>
-  <p class="muted small">Prior = 2×PVI + national environment + incumbency. Forecast blends the poll average (about 70% weight when a race is well polled) with the prior. Expert ratings are shown for comparison only.</p>
+  <p class="muted small">Prior = 2×PVI + national environment + incumbency. Forecast blends the poll average (<span id="raceW">about two-thirds</span> weight in polled races) with the prior. Expert ratings are shown for comparison only.</p>
 </section>
 
 <section id="house">
@@ -185,7 +185,7 @@ footer { border-top: 1px solid var(--border); margin-top: 40px; padding: 18px 0 
 <section id="method">
   <h2>How the model works</h2>
   <ol class="steps">
-    <li><b>National environment.</b> Polls-only: the mean of the generic-ballot aggregators, converted to a two-party margin. Polls + fundamentals: that number blended, by inverse variance, with an <a href="#appendix">estimated fundamentals model</a> (Gallup approval, the previous House result, real gas-price change; inflation, income and unemployment tested). The polls get about 55% of the weight.</li>
+    <li><b>National environment.</b> Polls-only: the mean of the generic-ballot aggregators, converted to a two-party margin. Polls + fundamentals: that number blended, by inverse variance, with an <a href="#appendix">estimated fundamentals model</a> (Gallup approval, the previous House result, real gas-price change; inflation, income and unemployment tested). The polls get about 55% of the weight (about 70% in the bias-adjusted model, whose polling SD is smaller once the bias is removed). The polling bias shifts only the polls, not the fundamentals.</li>
     <li><b>Race priors.</b> Each race starts at 2×PVI + national environment + incumbency (+2.5 points for House incumbents, +2 for Senate). PVI is Cook-style, on the 2026 district lines, so it already reflects mid-decade redistricting in TX, CA, MO, NC, UT, OH, VA, FL, TN, LA and AL.</li>
     <li><b>Poll averages.</b> Recency-weighted (21-day half-life), scaled by √sample size, likely voters preferred over registered voters and adults. Pollsters with many polls are down-weighted, and partisan-sponsored polls are shifted against their sponsor (2 pts for Senate, 4 pts for House district polls).</li>
     <li><b>Blend.</b> Poll average and prior are combined by precision (normal–normal). The poll-average error is set from history (race-level SD 7.4 pts in midterms, two-party); the Senate prior's error is assumed at 10 pts and the House district error at 6 pts.</li>
@@ -354,7 +354,7 @@ function splitBar(parts) {
 }
 
 const DESC = {
-  polls_fundamentals: "Unadjusted: generic-ballot polls blended with an approval + economy estimate (about 70% weight on polls), then race polls and district lean. Takes the polls at face value.",
+  polls_fundamentals: "Unadjusted: generic-ballot polls blended with the estimated fundamentals model, then race polls and district lean. Takes the polls at face value.",
   polls_fundamentals_biasadj: "Bias-adjusted: the same model with every race shifted toward Republicans by the expected polling bias (historical about 3 pts, less 1 pt for the aggregators' likely-voter adjustment).",
   polls_only: "National environment from generic-ballot polls alone, then race polls and district lean.",
   scenario_polls_overstate_dems: "Stress test: every race shifted by the full historical generic-ballot bias (about 3 pts toward Republicans), with no likely-voter discount.",
@@ -362,7 +362,8 @@ const DESC = {
 
 function renderHero() {
   const M = DATA.models[model], h = M.house, s = M.senate;
-  $("#modelDesc").textContent = DESC[model] + " National environment used: " + fmtM(M.G) + " (two-party)" + (M.shift ? `, shift ${M.shift.toFixed(1)}` : "") + ".";
+  $("#modelDesc").textContent = DESC[model] + " National environment used: " + fmtM(M.G) + " (two-party)" + (M.shift ? `, polls shifted ${M.shift.toFixed(1)}` : "") + (model !== "polls_only" ? `; ${Math.round(M.w_polls * 100)}% weight on polls vs. fundamentals` : "") + ".";
+  if ($("#raceW")) $("#raceW").textContent = `on average ${Math.round(M.race_w * 100)}%`;
   const NAMES = { polls_fundamentals: "Unadjusted (polls + fundamentals)", polls_fundamentals_biasadj: "Bias-adjusted (polls + fundamentals)", polls_only: "Polls only", scenario_polls_overstate_dems: "Full historical bias (stress test)" };
   $("#cmpTable").innerHTML = `<thead><tr><th>Variant</th><th class="num">Environment</th><th class="num">P(Dem House)</th><th class="num">Dem seats (80%)</th><th class="num">P(Dem Senate)</th><th class="num">Dem-caucus seats (80%)</th></tr></thead><tbody>` +
     Object.keys(NAMES).map(k => { const X = DATA.models[k]; return `<tr${k === model ? ' style="font-weight:600"' : ""}><td>${NAMES[k]}</td><td class="num">${fmtM(X.G)}</td><td class="num">${fmtP(X.house.p_dem_majority)}</td><td class="num">${Math.round(X.house.dem_seats_mean)} (${X.house.dem_seats_p10}–${X.house.dem_seats_p90})</td><td class="num">${fmtP(X.senate.p_dem_control_without_osborn)}</td><td class="num">${X.senate.dem_seats_mean.toFixed(1)} (${X.senate.dem_seats_p10}–${X.senate.dem_seats_p90})</td></tr>`; }).join("") + "</tbody>";

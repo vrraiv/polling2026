@@ -76,6 +76,34 @@ def clean(s):
     return re.sub(r"\[.*?\]", "", str(s)).replace(" ", " ").strip()
 
 
+def guard_changes(new, path, key="race_key", hard=("pvi", "inc_party"), soft=("status", "dem_cand", "rep_cand", "ind_cand",
+                  "cands_D", "cands_R", "cands_I", "incumbent")):
+    """Compare a freshly parsed race table with the previous one before overwriting it (vandalism guard).
+    Prints every changed field; stops the pipeline if PVI or incumbent party changed, unless ALLOW_WIKI_CHANGES=1."""
+    import os
+    if not path.exists():
+        return
+    old = pd.read_csv(path)
+    m = old.merge(new, on=key, how="outer", suffixes=("_old", "_new"), indicator=True)
+    added, dropped = m[m._merge == "right_only"][key].tolist(), m[m._merge == "left_only"][key].tolist()
+    m = m[m._merge == "both"]
+    hard_hits = []
+    for c in hard + soft:
+        if f"{c}_old" not in m.columns:
+            continue
+        a = m[f"{c}_old"].fillna("").astype(str).str.replace(r"\.0$", "", regex=True)
+        b = m[f"{c}_new"].fillna("").astype(str).str.replace(r"\.0$", "", regex=True)
+        for _, r in m[a != b].iterrows():
+            print(f"  [wiki change] {r[key]} {c}: {str(r[c + '_old'])[:60]!r} -> {str(r[c + '_new'])[:60]!r}")
+            if c in hard:
+                hard_hits.append((r[key], c))
+    if added or dropped:
+        print(f"  [wiki change] races added {added} dropped {dropped}")
+    if (hard_hits or added or dropped) and os.environ.get("ALLOW_WIKI_CHANGES") != "1":
+        raise SystemExit(f"STOP: {len(hard_hits)} PVI/party changes and {len(added) + len(dropped)} added/dropped races vs the previous "
+                         f"snapshot ({path.name}). Inspect the Wikipedia revision history; rerun with ALLOW_WIKI_CHANGES=1 if legitimate.")
+
+
 def house():
     html = latest("wikipedia", PAGES[0] + ".html").read_text(encoding="utf-8")
     rows = []
@@ -107,6 +135,7 @@ def house():
                 ind_cand="; ".join(cands.get("I", [])), candidates_raw=clean(r[ccol])))
     df = pd.DataFrame(rows).drop_duplicates(["state", "district"])
     df["race_key"] = "2026|" + df.state + "|H|" + df.district.astype(str)
+    guard_changes(df, INTERIM / "house_2026_races.csv")
     df.to_csv(INTERIM / "house_2026_races.csv", index=False)
     print("house rows", len(df), "missing pvi", df.pvi.isna().sum())
     return df
@@ -152,6 +181,7 @@ def senate():
         df[f"cands_{k}"] = ["; ".join(candidates(summ[s][2]).get(k, [])) if s in summ and not sp else ""
                             for s, sp in zip(df.state, df.special)]
     df["race_key"] = "2026|" + df.state + "|S|" + df.special.map({True: "special", False: "regular"})
+    guard_changes(df, INTERIM / "senate_2026_races.csv")
     df.to_csv(INTERIM / "senate_2026_races.csv", index=False)
     print("senate rows", len(df))
     print(df[["race_key", "pvi", "incumbent", "inc_party", "cands_D", "cands_R", "cands_I", "rating_Cook"]].to_string())

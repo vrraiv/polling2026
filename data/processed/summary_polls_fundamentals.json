@@ -612,6 +612,8 @@
   "sd_race_pollavg": 7.368864399918581,
   "G_used": 9.547600716854639,
   "bias_shift": 0.0,
+  "w_polls_national": 0.562255154699727,
+  "race_poll_weight_mean_polled": 0.639418931034988,
   "sd_nat_house_used": 2.977302993873907,
   "sd_nat_senate_used": 3.2922356210659323,
   "sigma_region": 0.47638341360970904,

@@ -383,12 +383,15 @@ def run(model, shift=0.0, tag=None, bias_removed=False, sigma_region=None):
     nat, polls = national_inputs()
     sd_polls = BIAS_SD if bias_removed else SD_NAT_GENERIC
     if model == "polls_only":
-        G, sd_nat, econ_adj = nat["G_polls"], sd_polls, None
+        G, sd_nat, econ_adj = nat["G_polls"] + shift, sd_polls, None
+        w_polls = 1.0
     else:
-        G, econ_adj = nat["G_fund"], state_unemp_change()
+        # the polling bias applies to the polls only, not to the fundamentals; blend weight and SD use the same sd_polls
+        w_polls = (1 / sd_polls ** 2) / (1 / sd_polls ** 2 + 1 / FUND["SD"] ** 2)
+        G = w_polls * (nat["G_polls"] + shift) + (1 - w_polls) * nat["fundamentals_margin_D"]
+        econ_adj = state_unemp_change()
         sd_nat = 1 / np.sqrt(1 / sd_polls ** 2 + 1 / FUND["SD"] ** 2)
     sd_sen = SD_NAT_SENATE * (sd_polls / SD_NAT_GENERIC)
-    G = G + shift
     s = senate_races(polls)
     smod = senate_model(s, polls, G, sd_nat, econ_adj)
     smod["mu"] = smod.mu + shift * smod.poll_weight  # polls part shifts too (prior part already via G)
@@ -399,6 +402,8 @@ def run(model, shift=0.0, tag=None, bias_removed=False, sigma_region=None):
     res["national"] = {k: v for k, v in nat.items() if k not in ("generic_aggregators", "approval_aggregators")}
     res["national"]["G_used"] = G
     res["national"]["bias_shift"] = shift
+    res["national"]["w_polls_national"] = w_polls
+    res["national"]["race_poll_weight_mean_polled"] = float(smod.loc[smod.n_polls > 0, "poll_weight"].mean())
     res["national"]["sd_nat_house_used"] = sd_nat
     res["national"]["sd_nat_senate_used"] = sd_sen
     res["national"]["sigma_region"] = SIGMA_REGION if sigma_region is None else sigma_region
