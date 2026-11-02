@@ -24,13 +24,14 @@ def q(hist, p):
     return int(np.searchsorted(c, p))
 
 
-def make(models, out_path, updated):
+def make(models, out_path, updated, final=False):
     F, A = models["polls_fundamentals"], models["polls_fundamentals_biasadj"]
     im = Image.new("RGB", (1200, 630), BG)
     d = ImageDraw.Draw(im)
     d.rectangle([0, 0, 1200, 8], fill=OCHRE)
     d.text((60, 44), "2026 Midterm Forecast", font=font("segoeuib.ttf", 46), fill=TEXT)
-    d.text((60, 104), f"Polls + estimated fundamentals · updated {updated}", font=font("segoeui.ttf", 22), fill=TEXT3)
+    d.text((60, 104), (f"Final pre-election forecast · {updated}" if final else f"Polls + estimated fundamentals · updated {updated}"),
+           font=font("segoeui.ttf", 22), fill=OCHRE if final else TEXT3)
 
     def card(x, title, pF, pA, hF, hA, thr):
         d.rounded_rectangle([x, 160, x + 520, 560], radius=18, fill=SURF, outline=BORDER, width=2)

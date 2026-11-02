@@ -132,3 +132,20 @@ Use direct downloads and APIs wherever possible. Use Chrome only for sources wit
 3. Snapshot the Wikipedia Senate race list, retirements, and redistricting status.
 4. Snapshot Silver Bulletin's current averages and expert ratings via Chrome (benchmarks).
 5. Pull the archived 538 historical poll files and MEDSL results (stable, but quick).
+
+
+## Election week
+
+**Morning of Nov 3 (before 6 pm ET): final forecast.** Run `python src/run_all.py --final`. It refreshes all data,
+re-estimates everything, builds the site with a "Final pre-election forecast" banner, copies every model output to
+`data/final/` (frozen for scoring), commits, tags `final-forecast-2026`, and pushes. Then confirm the Cloudflare build
+started. `run_all.py` refuses to run after 23:00 UTC Nov 3 (polls closing; Wikipedia fills with partial results).
+
+**After results settle: scorecard (not built yet).** Score the frozen `data/final/` forecasts against results:
+- Senate: Brier score and log loss per race, face value vs. adjusted; which races each version got wrong.
+- House: seat-total error vs. the 95% range; district-level Brier for the competitive seats.
+- National: actual House popular vote vs. the generic-ballot average, i.e. this year's polling miss vs. the -2.55 /
+  -1.56 shifts the adjusted model assumed. Did the adjustment pay off?
+- Results source: Wikipedia race tables once settled (vandalism guard on), cross-checked against state certifications
+  for close races; MEDSL later.
+- Publish as a "Scorecard" tab on the site.

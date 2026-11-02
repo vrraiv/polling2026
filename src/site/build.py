@@ -8,6 +8,7 @@ Reads data/processed/* and data/interim/*, writes:
 """
 import datetime as dt
 import json
+import os
 import shutil
 import sys
 from pathlib import Path
@@ -89,6 +90,7 @@ def main():
     poll_lists = P.senate_poll_list(vh, senate_races(vh))
     data = {
         "generated": dt.datetime.now().strftime("%Y-%m-%d %H:%M"),
+        "final": os.environ.get("FORECAST_FINAL") == "1" or (ROOT / "data" / "final" / "MADE_AT.txt").exists(),
         "models": models,
         "national": nat,
         "backtest": bt,
@@ -125,7 +127,7 @@ def main():
     try:  # regenerate the link-preview card from today's numbers
         sys.path.insert(0, str(Path(__file__).parent))
         import og_image
-        og_image.make(models, SITE / "og.png", data["generated"])
+        og_image.make(models, SITE / "og.png", data["generated"], final=data["final"])
     except Exception as ex:  # noqa: BLE001
         print("og image skipped:", ex)
         og = Path(__file__).with_name("og.png")

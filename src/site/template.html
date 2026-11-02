@@ -116,6 +116,8 @@ details summary { cursor: pointer; font-weight: 600; }
 ol.steps li, ul.list li { margin: 5px 0; max-width: 80ch; }
 .note { border-left: 3px solid var(--ochre); padding: 3px 0 3px 12px; color: var(--text-2); font-size: .88rem; max-width: 80ch; margin-top: 14px; }
 .show-sm { display: none; font-size: .74rem; color: var(--text-2); white-space: normal; max-width: 150px; }
+.final-banner { margin: 0 0 14px; padding: 9px 14px; border: 1px solid var(--ochre); border-radius: 10px; background: #2a2418; color: var(--text); font-size: .9rem; }
+.final-banner b { color: var(--ochre); }
 .tip { position: absolute; pointer-events: none; background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px; padding: 6px 9px; font-size: .8rem; box-shadow: 0 6px 18px rgba(0,0,0,.4); white-space: nowrap; opacity: 0; transition: opacity .08s; z-index: 20; }
 footer { border-top: 1px solid var(--border); margin-top: 30px; padding: 14px 0 28px; color: var(--text-3); font-size: .78rem; }
 footer a { color: var(--text-2); }
@@ -142,6 +144,7 @@ footer a { color: var(--text-2); }
 </header>
 
 <main class="wrap">
+<div id="finalBanner" class="final-banner" hidden></div>
 <!-- ================= OVERVIEW ================= -->
 <section class="page" id="p-overview">
   <p class="headline" id="headline"></p>
@@ -755,7 +758,8 @@ function renderPollSettings() {
 }
 
 // ---------- init ----------
-$("#gen").textContent = "Updated " + DATA.generated;
+$("#gen").textContent = (DATA.final ? "Final forecast · " : "Updated ") + DATA.generated;
+if (DATA.final) { const fb = $("#finalBanner"); fb.hidden = false; fb.innerHTML = `<b>Final pre-election forecast</b>, made ${DATA.generated}. It won't be updated as results come in; a scorecard comparing it with the results will follow.`; }
 renderModelSegs(); renderPollSettings(); renderPriorWeight(); renderHouseStructure(); renderOverview(); renderMap(); renderWatch(); renderHouse(); renderMethod(); renderData(); renderBias(); renderBacktest(); renderAppendix();
 route();
 </script>
