@@ -154,7 +154,7 @@ def main():
       f"Senate polls missed against Democrats in all five cycles since 2014 (mean {bc['senate_vs_generic']['sen_mean_2014plus']:.1f}). Nothing observable "
       f"predicts the size. This year's generic-ballot pollsters are a typical mix (house effect {bc['pollster_mix']['generic']['mix_house_effect']:+.2f}); "
       f"the battleground Senate pollsters lean slightly Republican ({bc['pollster_mix']['senate_key']['mix_house_effect']:+.2f}; historical miss "
-      f"{-bc['pollster_mix']['senate_key']['mix_raw_miss']:.1f}). The Adjusted model: national shift {ba['national']['bias_shift']:+.2f} "
+      f"{-bc['pollster_mix']['senate_key']['mix_raw_miss']:.1f}). The Bias-adjusted model: national shift {ba['national']['bias_shift']:+.2f} "
       f"(estimate + LV discount {bc['lv_discount_est']:.2f}), Senate shift {ba['national']['senate_bias_shift']:+.2f} (battleground pollsters' record + discount) "
       f"plus the state-lean term. The Senate moves ~10 pts of control probability per point of national shift because five races in R-leaning states sit within 3 pts of even.")
     ps = json.loads((OUT / "poll_settings.json").read_text())["chosen"]

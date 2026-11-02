@@ -25,7 +25,7 @@ def q(hist, p):
 
 
 def make(models, out_path, updated, final=False):
-    F, A = models["polls_fundamentals"], models["polls_fundamentals_biasadj"]
+    F, A, PO = models["polls_fundamentals"], models["polls_fundamentals_biasadj"], models["polls_only"]
     im = Image.new("RGB", (1200, 630), BG)
     d = ImageDraw.Draw(im)
     d.rectangle([0, 0, 1200, 8], fill=OCHRE)
@@ -33,19 +33,19 @@ def make(models, out_path, updated, final=False):
     d.text((60, 104), (f"Final pre-election forecast · {updated}" if final else f"Polls + estimated fundamentals · updated {updated}"),
            font=font("segoeui.ttf", 22), fill=OCHRE if final else TEXT3)
 
-    def card(x, title, pF, pA, hF, hA, thr):
+    def card(x, title, pF, pA, hF, hA, thr, pP, hP):
         d.rounded_rectangle([x, 160, x + 520, 560], radius=18, fill=SURF, outline=BORDER, width=2)
         d.text((x + 28, 184), title, font=font("seguisb.ttf", 22), fill=TEXT2)
-        lo, hi = sorted([round(100 * pA), round(100 * pF)])
+        lo, hi = min(round(100 * v) for v in (pA, pF, pP)), max(round(100 * v) for v in (pA, pF, pP))
         d.text((x + 26, 214), f"{lo}–{hi}%", font=font("segoeuib.ttf", 78), fill=TEXT)
         d.text((x + 28, 314), "chance Democrats win", font=font("segoeui.ttf", 24), fill=TEXT2)
-        mF, mA = q(hF, .5), q(hA, .5)
-        r = [min(q(hA, .025), q(hF, .025)), max(q(hA, .975), q(hF, .975))]
-        seats = f"{min(mA, mF)}–{max(mA, mF)}" if mA != mF else f"{mA}"
+        meds = [q(h, .5) for h in (hF, hA, hP)]
+        r = [min(q(h, .025) for h in (hF, hA, hP)), max(q(h, .975) for h in (hF, hA, hP))]
+        seats = f"{min(meds)}–{max(meds)}" if min(meds) != max(meds) else f"{meds[0]}"
         d.text((x + 28, 362), f"Dem seats: {seats}", font=font("seguisb.ttf", 28), fill=TEXT)
         d.text((x + 28, 400), f"95% range {r[0]}–{r[1]} · {thr} for control", font=font("segoeui.ttf", 20), fill=TEXT3)
-        for i, (lab, p, col) in enumerate([("Face value", pF, TINT), ("Adjusted", pA, OCHRE)]):
-            y = 452 + i * 44
+        for i, (lab, p, col) in enumerate([("Polls only", pP, "#2f9e86"), ("Polls + fund.", pF, TINT), ("Bias-adjusted", pA, OCHRE)]):
+            y = 440 + i * 36
             d.rectangle([x + 28, y + 12, x + 44, y + 16], fill=col)
             d.text((x + 52, y), lab, font=font("segoeui.ttf", 21), fill=TEXT2)
             bx, bw = x + 180, 230
@@ -53,9 +53,10 @@ def make(models, out_path, updated, final=False):
             d.rounded_rectangle([bx, y + 6, bx + int(bw * p), y + 22], radius=6, fill=DEM)
             d.text((bx + bw + 14, y - 1), f"{round(100 * p)}%", font=font("seguisb.ttf", 22), fill=TEXT)
 
-    card(60, "HOUSE", F["house"]["p_dem_majority"], A["house"]["p_dem_majority"], F["house"]["hist"], A["house"]["hist"], 218)
+    card(60, "HOUSE", F["house"]["p_dem_majority"], A["house"]["p_dem_majority"], F["house"]["hist"], A["house"]["hist"], 218,
+         PO["house"]["p_dem_majority"], PO["house"]["hist"])
     card(620, "SENATE", F["senate"]["p_dem_control_without_osborn"], A["senate"]["p_dem_control_without_osborn"],
-         F["senate"]["hist"], A["senate"]["hist"], 51)
-    d.text((60, 584), "Face value = polls as they are · Adjusted = shifted for typical polling bias", font=font("segoeui.ttf", 20), fill=TEXT3)
+         F["senate"]["hist"], A["senate"]["hist"], 51, PO["senate"]["p_dem_control_without_osborn"], PO["senate"]["hist"])
+    d.text((60, 584), "Three versions: polls only · polls + fundamentals · bias-adjusted", font=font("segoeui.ttf", 20), fill=TEXT3)
     d.text((1140, 584), "polling2026.vikramrai.com", font=font("segoeui.ttf", 20), fill=TINT, anchor="ra")
     im.save(out_path, optimize=True)
