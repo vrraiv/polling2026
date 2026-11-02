@@ -82,6 +82,14 @@ input.search { font: inherit; font-size: .88rem; background: var(--surface); col
 /* tile map */
 .tilemap svg text { pointer-events: none; }
 .tilemap rect.t { cursor: pointer; }
+.minimaps { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; margin-top: 8px; }
+.minimap { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; }
+.minimap .hd { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.minimap .hd b { font-size: 1.05rem; font-variant-numeric: tabular-nums; }
+.minimap .sub { font-size: .78rem; color: var(--text-2); min-height: 2.4em; margin-top: 2px; }
+.minimap svg { width: 100%; margin-top: auto; padding-top: 6px; display: block; }
+tr.pivot td { background: var(--surface-2); }
+tr.pivot td:first-child { box-shadow: inset 3px 0 0 var(--ochre); }
 .tilemap rect.t:hover { stroke: var(--text); stroke-width: 1.5; }
 
 /* tables */
@@ -183,8 +191,24 @@ footer a { color: var(--text-2); }
     </div>
   </div>
   <p class="muted small" id="senIntro"></p>
-  <div class="note" id="senRead" style="margin:4px 0 14px"></div>
+  <p class="small muted" style="margin:0 0 12px">Chances don't add up to a map: the races are simulated together, and most simulations have several upsets. <a href="#senate" onclick="document.getElementById('senate-path').scrollIntoView({behavior:'smooth'});return false;">How Senate control gets decided ↓</a></p>
   <div class="tbl-wrap"><table id="senTable"></table></div>
+
+  <h2 id="senate-path" style="margin-top:34px">How Senate control gets decided</h2>
+  <p class="muted small" id="pathIntro"></p>
+  <div class="stats" id="pathStats"></div>
+  <div class="grid2" style="margin-top:14px">
+    <div class="card"><span class="lab">Upsets per simulation</span><div class="chart" id="upsetChart"></div></div>
+    <div><p class="small" id="upsetText"></p></div>
+  </div>
+  <h3>The most common exact maps</h3>
+  <p class="muted small" id="mapsIntro"></p>
+  <div class="minimaps" id="miniMaps"></div>
+  <div class="legend" id="miniLegend"></div>
+  <h3>The path to 51</h3>
+  <p class="muted small" id="ladderIntro"></p>
+  <div class="tbl-wrap"><table id="ladderTable"></table></div>
+  <p class="muted small" id="ladderNote"></p>
 </section>
 
 <!-- ================= HOUSE ================= -->
@@ -540,6 +564,78 @@ function senateReading(full) {
   }
   return t;
 }
+// ---------- how Senate control gets decided (Senate page section) ----------
+function raceOf(M, k) { const [st, sp] = k.split("-"); return M.senate_races.find(r => r.state === st && !!r.special === !!sp); }
+function miniMap(M, mp) {
+  const S = 22, G = 2, W = 12 * (S + G), H = 8 * (S + G);
+  const byState = Object.fromEntries(M.senate_races.map(r => [r.state, r]));
+  const up = new Set(mp.upsets.map(u => u.race.split("-")[0]));
+  const col = { D: css("--dem"), R: css("--rep"), I: css("--teal") }, off = css("--off"), t3 = css("--text-3"), och = css("--ochre");
+  let s = `<svg viewBox="-2 -2 ${W + 4} ${H + 4}" role="img" aria-label="Simulated Senate map">`;
+  Object.entries(TILES).forEach(([st, [c, r]]) => {
+    const race = byState[st], x = c * (S + G), y = r * (S + G);
+    let fill = off, lab = t3;
+    if (race) {
+      const k = st + (race.special ? "-sp" : "");
+      const w = mp.winners[k] || (race.p_dside > 0.5 ? (race.dside === "I" ? "I" : "D") : "R");
+      fill = col[w]; lab = "#f2f0ec";
+    }
+    s += `<rect x="${x}" y="${y}" width="${S}" height="${S}" rx="3" fill="${fill}"${up.has(st) ? ` stroke="${och}" stroke-width="2.5"` : ""}/>`;
+    s += `<text x="${x + S / 2}" y="${y + S / 2 + 3}" font-size="8" font-weight="${race ? 700 : 400}" fill="${lab}" text-anchor="middle">${st}</text>`;
+  });
+  return s + `</svg>`;
+}
+function renderPath() {
+  const M = DATA.models[model], R = M.senate.reading;
+  if (!R) return;
+  const stat = (v, l) => `<div class="stat"><div class="v">${v}</div><div class="l">${l}</div></div>`;
+  const med = seatMed(M.senate.hist), pc = M.senate.p_dem_control_without_osborn, need = 51 - R.not_up_dem;
+  const lad = R.ladder, nth = lad[need - 1], nthR = raceOf(M, nth.race);
+  const indTxt = R.fav_ind ? ` and the independent in ${R.fav_ind}` : "";
+  $("#pathIntro").innerHTML = `Model: <b>${MODEL_LONG[model]}</b>. Each simulation draws one national polling miss, regional and state-lean shocks, and race-level noise, then counts seats. The race chances above are how often each race goes each way across those simulations; the numbers below show how they combine.`;
+  $("#pathStats").innerHTML =
+    stat(R.seats_if_favorites_win, `Democratic seats if every favorite wins (favored in ${R.fav_dem} races${indTxt})`) +
+    stat(fmtP(R.p_favorites_map), "Simulations where every favorite wins") +
+    stat(R.upsets_mean.toFixed(1), `Upsets in a typical simulation (${R.upsets_to_dem_mean.toFixed(1)} to Democrats, ${R.upsets_to_rep_mean.toFixed(1)} to Republicans)`) +
+    stat(med, "Median Democratic seats") +
+    stat(fmtP(pc), "Chance of Democratic control (51+, Vance breaks ties)");
+  // upsets histogram
+  const P = R.p_upsets, Wc = 420, Hc = 170, m = { l: 34, r: 8, t: 10, b: 26 }, bw = (Wc - m.l - m.r) / P.length;
+  const mx = Math.max(...P) * 1.15, yy = v => Hc - m.b - v / mx * (Hc - m.t - m.b);
+  const t3 = css("--text-3"), bd = css("--border"), tint = css("--tint"), och = css("--ochre");
+  let sv = `<svg viewBox="0 0 ${Wc} ${Hc}" role="img" aria-label="Number of upsets per simulation">`;
+  [0, 0.1, 0.2, 0.3].filter(v => v <= mx).forEach(v => { sv += `<line x1="${m.l}" x2="${Wc - m.r}" y1="${yy(v)}" y2="${yy(v)}" stroke="${bd}"/><text x="${m.l - 6}" y="${yy(v) + 4}" font-size="11" fill="${t3}" text-anchor="end">${v * 100}%</text>`; });
+  P.forEach((v, i) => {
+    const x0 = m.l + i * bw + 3, w = bw - 6;
+    sv += `<rect x="${x0}" y="${yy(v)}" width="${w}" height="${Math.max(1, yy(0) - yy(v))}" rx="3" fill="${i === 0 ? och : tint}"/>`;
+    sv += `<text x="${x0 + w / 2}" y="${Hc - 9}" font-size="11" fill="${t3}" text-anchor="middle">${i === P.length - 1 ? i + "+" : i}</text>`;
+    sv += `<rect x="${m.l + i * bw}" y="${m.t}" width="${bw}" height="${Hc - m.t - m.b}" fill="transparent" data-i="${i}"/>`;
+  });
+  const uc = $("#upsetChart"); uc.innerHTML = sv + `</svg><div class="legend"><span><i class="sq" style="background:var(--ochre)"></i>every favorite wins</span><span class="tiny">upsets = races won by the side with under 50%</span></div>`;
+  uc.querySelectorAll("rect[data-i]").forEach(r => { const i = +r.dataset.i; r.addEventListener("mousemove", e => showTip(e, `<b>${i === P.length - 1 ? i + " or more" : i} upset${i === 1 ? "" : "s"}</b><br>${fmtP(P[i])} of simulations`)); r.addEventListener("mouseleave", hideTip); });
+  const p02 = P.slice(0, 3).reduce((a, b) => a + b, 0);
+  const close2 = [...M.senate_races].sort((a, b) => Math.abs(a.p_dside - 0.5) - Math.abs(b.p_dside - 0.5)).slice(0, 2);
+  $("#upsetText").innerHTML = `Of the ${R.n_comp} races where neither side is above 95%, a typical simulation sees ${R.upsets_mean.toFixed(1)} won by the underdog. Every favorite wins in only ${fmtP(R.p_favorites_map)}, and two or fewer upsets happen in ${fmtP(p02)}. ` +
+    `That is what the probabilities say should happen: ${close2.map(r => `${STATE[r.state]} at ${fmtP(r.p_dside)}`).join(" or ")} should go to the underdog close to half the time, and a 75% favorite loses one time in four. ` +
+    `Upsets run both ways (on average ${R.upsets_to_dem_mean.toFixed(1)} to Democrats and ${R.upsets_to_rep_mean.toFixed(1)} to Republicans), so they largely cancel: the median outcome, ${med} seats, sits ${med === R.seats_if_favorites_win ? "exactly at" : (med < R.seats_if_favorites_win ? "just below" : "just above")} the all-favorites count of ${R.seats_if_favorites_win}. ` +
+    `Because the polling miss is shared, upsets also cluster: a year where polls overstate Democrats flips several Republican-leaning toss-ups at once.`;
+  // mini cartograms
+  const lab = (u) => `${STATE[u.race.split("-")[0]]}${u.race.endsWith("-sp") ? " (sp.)" : ""} → ${u.winner}`;
+  $("#mapsIntro").textContent = `With ${R.n_comp} uncertain races there are tens of thousands of possible maps, so even the most common one is rare. These are the most frequent exact outcomes in the simulations; outlined tiles are upsets relative to the favorites.`;
+  $("#miniMaps").innerHTML = R.maps.map((mp, i) => `<div class="minimap"><div class="hd"><b>${mp.dem_seats} D seats</b><span class="muted small">${fmtP(mp.p)} of simulations</span></div>` +
+    `<div class="sub">${mp.is_favorites ? "Every favorite wins" : "Favorites win except: " + mp.upsets.map(lab).join(", ")}</div>${miniMap(M, mp)}</div>`).join("");
+  $("#miniLegend").innerHTML = `<span><i class="sq" style="background:var(--dem)"></i>Democrat wins</span><span><i class="sq" style="background:var(--rep)"></i>Republican wins</span><span><i class="sq" style="background:var(--teal)"></i>Independent wins</span><span><i class="sq" style="background:transparent;box-shadow:inset 0 0 0 2px var(--ochre)"></i>Upset</span><span><i class="sq" style="background:var(--off)"></i>Not up</span>`;
+  // ladder
+  $("#ladderIntro").innerHTML = `Democrats hold ${R.not_up_dem} seats not up this year. Ranking their races from most to least likely, the ${need}th brings them to 51: <b>${STATE[nth.race.split("-")[0]]}${nth.race.endsWith("-sp") ? " (special)" : ""}</b> at ${fmtP(nth.p)}. Control (${fmtP(pc)}) differs from that race's chance because the 51st seat can come from any state on the list: when Democrats lose a race above the line, they often win one below it.`;
+  const shown = lad.map((r, i) => ({ ...r, seat: R.not_up_dem + i + 1 })).filter(r => r.p < 0.98 && r.p > 0.02);
+  const above = lad.filter(r => r.p >= 0.98).length;
+  const cp = (v) => v == null ? "—" : fmtP(v);
+  $("#ladderTable").innerHTML = `<thead><tr><th class="num">Seat</th><th>Race</th><th>Candidates</th><th class="num">Chance D wins</th><th class="num" title="Share of simulations in which this race delivers the 51st Democratic seat">Tipping point</th><th class="num">Control if D wins</th><th class="num">Control if D loses</th></tr></thead><tbody>` +
+    shown.map(r => { const rr = raceOf(M, r.race); return `<tr class="${r.seat === 51 ? "pivot" : ""}"><td class="num">${r.seat === 51 ? "<b>51</b>" : r.seat}</td><td>${STATE[r.race.split("-")[0]]}${r.race.endsWith("-sp") ? " (special)" : ""}</td><td>${rr ? esc(rr.dem) + " vs " + esc(rr.rep) : ""}</td><td class="num">${pbar(r.p)}</td><td class="num">${r.tp >= 0.005 ? fmtP(r.tp) : "—"}</td><td class="num">${cp(r.p_ctrl_given_win)}</td><td class="num">${cp(r.p_ctrl_given_loss)}</td></tr>`; }).join("") + "</tbody>";
+  const tp = R.tipping_point.slice(0, 3).map(t => `${STATE[t.race.split("-")[0]]}${t.race.endsWith("-sp") ? " (special)" : ""} (${fmtP(t.p)})`).join(", ");
+  const ind = M.senate.p_dem_control_if_independents_caucus_D;
+  $("#ladderNote").innerHTML = `Seat numbers count every Democratic race up, including ${above} races above 98% not shown (and races below 2% are left off the bottom). "Tipping point" is how often a race is the one that supplies the 51st seat, its tipping-point probability; the most frequent are ${tp}. Independents aren't counted as Democratic seats here; if every winning independent caucused with Democrats, control would be ${fmtP(ind)}.`;
+}
 const pbarMini = (p) => `<b style="color:${p >= 0.5 ? "var(--dem)" : "var(--rep)"}">${fmtP(p)}</b>`;
 
 // ---------- tables ----------
@@ -554,7 +650,7 @@ function renderSenate() {
     if (!all.find(r => r.race_key === openRace)) openRace = null;
   }
   $("#senIntro").innerHTML = `${rows.length} of 35 races shown. Chance = the Democrat (or the independent, where no Democrat is the main challenger) wins. Margins are two-party, D−R. Click a race for its polls. Model: <b>${MODEL_LONG[model]}</b>. Forecast blends the poll average (about ${Math.round(M.race_w * 100)}% weight) with the prior (2×PVI + environment + incumbency).`;
-  $("#senRead").innerHTML = senateReading(true);
+  renderPath();
   $$("#senFilter button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.f === senFilter)));
   const cols = [
     { key: "state", label: "Race", sort: r => r.state, render: r => `${STATE[r.state]}${r.special ? ' <span class="tag">special</span>' : ""}<span class="show-sm">${esc(r.dem)}${r.dside === "I" ? " (I)" : ""} vs ${esc(r.rep)}</span>` },

@@ -430,25 +430,43 @@ def senate_reading(s, swin, sm, is_ind, d_total, keys):
     fav_map = (swin[:, comp] == fav[comp][None, :]).all(1)
     rows, inv, cnt = np.unique(swin[:, comp], axis=0, return_inverse=True, return_counts=True)
     inv = np.asarray(inv).ravel()
-    top = np.argsort(-cnt)[:5]
+    top = list(np.argsort(-cnt)[:4])
+    fav_row = np.where((rows == fav[comp][None, :]).all(1))[0]
+    if len(fav_row) and fav_row[0] not in top:
+        top.append(fav_row[0])
     maps = []
+    win_lab = lambda j, w: ("I" if is_ind[comp][j] else "D") if w else "R"
     for t in top:
         sel = inv == t
-        diff = [{"race": k, "winner": ("I" if is_ind[comp][j] else "D") if rows[t][j] else "R"}
-                for j, k in enumerate(ck) if rows[t][j] != fav[comp][j]]
+        diff = [{"race": k, "winner": win_lab(j, rows[t][j])} for j, k in enumerate(ck) if rows[t][j] != fav[comp][j]]
         maps.append({"p": float(cnt[t] / len(inv)), "upsets": diff, "dem_seats": int(np.median(d_total[sel])),
-                     "ind_wins": int(rows[t][is_ind[comp]].sum())})
+                     "ind_wins": int(rows[t][is_ind[comp]].sum()), "is_favorites": not diff,
+                     "winners": {k: win_lab(j, rows[t][j]) for j, k in enumerate(ck)}})
     need = 51 - SENATE_NOT_UP["D"]
     dm = sm[:, ~is_ind]
     dkeys = [k for k, i in zip(keys, is_ind) if not i]
     tp_idx = np.argsort(-dm, axis=1)[:, need - 1]
     tp = np.bincount(tp_idx, minlength=len(dkeys)) / len(tp_idx)
     order = np.argsort(-tp)[:5]
+    ctrl = d_total >= 51
+    dw = swin[:, ~is_ind]
+    ladder = []
+    for j, k in enumerate(dkeys):
+        col = dw[:, j]
+        ladder.append({"race": k, "p": float(col.mean()), "tp": float(tp[j]),
+                       "p_win_given_ctrl": float(col[ctrl].mean()) if ctrl.any() else None,
+                       "p_ctrl_given_win": float(ctrl[col].mean()) if col.any() else None,
+                       "p_ctrl_given_loss": float(ctrl[~col].mean()) if (~col).any() else None})
+    ladder.sort(key=lambda r: -r["p"])
+    up_d = (swin[:, comp] & ~fav[comp][None, :]).sum(1)
+    up_r = (~swin[:, comp] & fav[comp][None, :]).sum(1)
     return {"n_comp": int(comp.sum()), "comp_races": ck,
             "fav_dem": int((fav & ~is_ind).sum()), "fav_ind": int((fav & is_ind).sum()),
             "seats_if_favorites_win": int(SENATE_NOT_UP["D"] + (fav & ~is_ind).sum()),
             "p_favorites_map": float(fav_map.mean()), "upsets_mean": float(upsets.mean()),
-            "p_upsets": [float((upsets == k).mean()) for k in range(6)],
+            "p_upsets": [float((upsets == k).mean()) for k in range(9)] + [float((upsets >= 9).mean())],
+            "upsets_to_dem_mean": float(up_d.mean()), "upsets_to_rep_mean": float(up_r.mean()),
+            "p_upsets_cancel": float((up_d == up_r).mean()), "ladder": ladder, "not_up_dem": int(SENATE_NOT_UP["D"]),
             "expected_comp_dem_wins": float(p[comp & ~is_ind].sum()),
             "maps": maps,
             "tipping_point": [{"race": dkeys[i], "p": float(tp[i])} for i in order]}
