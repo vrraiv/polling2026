@@ -210,7 +210,21 @@ def senate_poll_list(polls, races, since="2026-06-15", limit=12):
                              "n": x.get("sample_size"), "pop": (x.get("population") or "").upper(),
                              "d": a[dl], "r": a[rl], "other": round(sum(y["pct"] for y in others), 1) if others else None,
                              "partisan": x.get("partisan"), "sponsors": x.get("sponsors") or [], "url": x.get("url"),
-                             "margin2": round(two_party(a[dl], a[rl]), 1)})
+                             "margin2": round(two_party(a[dl], a[rl]), 2),
+                             # adjustments applied in the average (same functions as weighted_avg)
+                             "sp_adj": round(sponsor_adj(x, PARTISAN_SHIFT, "statewide"), 2),
+                             "pop_adj": round(-POP_DEM_LEAN.get((x.get("population") or "lv").lower(), 0.0), 2),
+                             "w_raw": float(weight(x, None))})
+        # weight share exactly as in weighted_avg: recency x sample x population, divided by sqrt(polls by that pollster)
+        k = pd.Series([z["pollster"] for z in rows]).value_counts().to_dict()
+        for z in rows:
+            z["w"] = z["w_raw"] / np.sqrt(k[z["pollster"]])
+        tw = sum(z["w"] for z in rows) or 1.0
+        for z in rows:
+            z["share"] = round(z["w"] / tw, 4)
+            z["adj"] = round(z["margin2"] + z["sp_adj"] + z["pop_adj"], 2)
+            del z["w_raw"], z["w"]
+        avg_adj = round(sum(z["share"] * z["adj"] for z in rows), 2) if rows else None
         rows.sort(key=lambda z: z["end"], reverse=True)
-        out[r["race_key"]] = {"n_total": len(rows), "polls": rows[:limit]}
+        out[r["race_key"]] = {"n_total": len(rows), "avg_adj": avg_adj, "half_life": HALF_LIFE, "polls": rows[:limit]}
     return out

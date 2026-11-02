@@ -103,7 +103,9 @@ tr.race.open td:first-child::before { transform: rotate(90deg); color: var(--och
 tr.race.open td { background: var(--surface-2); }
 tr.detail td { white-space: normal; background: #1f2127; padding: 10px 14px 14px; }
 .detail-grid { display: grid; grid-template-columns: minmax(0, 220px) minmax(0, 1fr); gap: 16px; }
-.mini td, .mini th { padding: 4px 8px; font-size: .8rem; white-space: nowrap; } .mini th { background: var(--surface-2); color: var(--text-2); position: static; }
+.mini td, .mini th { padding: 4px 8px; font-size: .8rem; white-space: nowrap; }
+tr.detail .mini td, tr.detail .mini th { white-space: nowrap; }
+tr.detail .mini td:nth-child(2) { white-space: normal; min-width: 140px; } .mini th { background: var(--surface-2); color: var(--text-2); position: static; }
 .kvs { font-size: .84rem; display: grid; grid-template-columns: auto auto; gap: 3px 12px; align-content: start; }
 .kvs span:nth-child(odd) { color: var(--text-2); }
 .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-top: 10px; }
@@ -552,10 +554,34 @@ function raceDetail(r) {
     <span>Cook / Silver</span><span>${esc(r.rating_cook)} / ${esc(r.rating_silver)}</span></div>`;
   let right;
   if (!P || !P.polls.length) right = `<p class="muted small">No polls since mid-June with both nominees. The forecast rests on the prior.</p>`;
-  else right = `<table class="mini"><thead><tr><th>Ended</th><th>Pollster</th><th class="num">n</th><th class="num">${esc(r.dem.split(" ").slice(-1)[0])}</th><th class="num">${esc(r.rep.split(" ").slice(-1)[0])}</th><th class="num">Margin (2-party)</th></tr></thead><tbody>` +
-    P.polls.map(p => `<tr><td>${esc(p.end)}</td><td>${p.url ? `<a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.pollster)}</a>` : esc(p.pollster)}${p.partisan ? ` <span class="tag">${esc(p.partisan)}-sponsored</span>` : ""}</td><td class="num">${p.n ? p.n.toLocaleString() + " " + esc(p.pop) : esc(p.pop)}</td><td class="num">${p.d}</td><td class="num">${p.r}</td><td class="num">${fmtM(p.margin2)}</td></tr>`).join("") +
-    `</tbody></table><p class="tiny">${P.polls.length < P.n_total ? `Latest ${P.polls.length} of ${P.n_total} polls since mid-June. ` : ""}Source: VoteHub. In the average, party-sponsored polls are shifted against the sponsor (${DATA.pollster_fx.beta.toFixed(1)} pts for established pollsters, ${DATA.pollster_fx.thin.statewide.toFixed(1)} for firms without a track record) and registered-voter polls ${DATA.poll_settings.chosen.pop_dem_lean.rv} pts toward Republicans.</p>`;
+  else if (r.state === "MT") right = `<p class="muted small">Montana is a three-way race: its average uses the best non-Republican's raw margin over the Republican, so the two-party breakdown below doesn't apply.</p>` + pollRows(r, P, false);
+  else right = pollRows(r, P, true);
   return `<div class="detail-grid"><div>${left}</div><div style="overflow-x:auto">${right}</div></div>`;
+}
+function pollRows(r, P, full) {
+  const M = DATA.models[model];
+  const lean = M.lean ? DATA.bias_confidence.lean_based.slope * 2 * r.pvi : 0;
+  const bias = (model === "polls_fundamentals_biasadj" || model === "scenario_polls_overstate_dems") ? M.senate_shift : 0;
+  const sg = (v) => Math.abs(v) < 0.05 ? `<span class="muted">0</span>` : `${v > 0 ? "+" : "−"}${Math.abs(v).toFixed(1)}`;
+  const dl = esc(r.dem.split(" ").slice(-1)[0]), rl = esc(r.rep.split(" ").slice(-1)[0]);
+  const extra = (lean ? `<th class="num" title="State-lean term (Bias-adjusted model)">Lean</th>` : "") + (bias ? `<th class="num" title="Polling-bias shift (Bias-adjusted model)">Bias</th>` : "");
+  const head = `<thead><tr><th>Ended</th><th>Pollster</th><th class="num">n</th><th class="num">${dl}</th><th class="num">${rl}</th>` +
+    (full ? `<th class="num" title="Two-party margin, D−R">Raw</th><th class="num" title="Party-sponsor adjustment">Sponsor</th><th class="num" title="Registered-voter / adult adjustment">Voters</th>${extra}<th class="num" title="Margin as it enters the average">Adjusted</th>` : `<th class="num">Margin</th>`) +
+    `<th class="num" title="Share of the average: recency (${P.half_life}-day half-life) × sample size × voter type ÷ √(polls by that pollster)">Weight</th></tr></thead>`;
+  const body = P.polls.map(p => {
+    const adj = p.adj + lean + bias;
+    return `<tr><td>${esc(p.end)}</td><td>${p.url ? `<a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.pollster)}</a>` : esc(p.pollster)}${p.partisan ? ` <span class="tag">${esc(p.partisan)}${p.sponsors.length ? "-sponsored" : " (flag)"}</span>` : ""}</td>` +
+      `<td class="num">${p.n ? p.n.toLocaleString() + " " + esc(p.pop) : esc(p.pop)}</td><td class="num">${p.d}</td><td class="num">${p.r}</td>` +
+      (full ? `<td class="num">${fmtM(p.margin2)}</td><td class="num">${sg(p.sp_adj)}</td><td class="num">${sg(p.pop_adj)}</td>${lean ? `<td class="num">${sg(lean)}</td>` : ""}${bias ? `<td class="num">${sg(bias)}</td>` : ""}<td class="num"><b>${fmtM(adj)}</b></td>` : `<td class="num">${fmtM(p.margin2)}</td>`) +
+      `<td class="num">${(p.share * 100).toFixed(0)}%</td></tr>`;
+  }).join("");
+  const shownShare = P.polls.reduce((a, p) => a + p.share, 0);
+  const foot = full ? `<tr><td colspan="5"><b>Weighted average</b>${P.n_total > P.polls.length ? ` (all ${P.n_total} polls; ${P.n_total - P.polls.length} older ones not shown carry ${((1 - shownShare) * 100).toFixed(0)}% of the weight)` : ""}</td>` +
+    `<td colspan="${3 + (lean ? 1 : 0) + (bias ? 1 : 0)}"></td><td class="num"><b>${fmtM(P.avg_adj + lean + bias)}</b></td><td class="num">100%</td></tr>` : "";
+  const note = `<p class="tiny">Source: VoteHub. Sponsor: polls paid for by a party or allied group are shifted ${DATA.pollster_fx.beta.toFixed(1)} pts against the sponsor if the pollster has a track record, ${DATA.pollster_fx.thin.statewide.toFixed(1)} if not; a "flag" with no listed sponsor from an established nonpartisan pollster gets no shift. Voters: registered-voter and adult polls shifted toward likely-voter levels.` +
+    (lean || bias ? ` ${MODELS[model]} model: lean ${sg(lean).replace(/<[^>]+>/g, "")}, bias ${sg(bias).replace(/<[^>]+>/g, "")} applied to every poll.` : "") +
+    ` The forecast then blends this average with the prior (${r.n_polls ? Math.round(r.poll_weight * 100) + "% polls" : "—"}).</p>`;
+  return `<table class="mini">${head}<tbody>${body}${foot}</tbody></table>${note}`;
 }
 $$("#senFilter button").forEach(b => b.addEventListener("click", () => { senFilter = b.dataset.f; renderSenate(); }));
 
