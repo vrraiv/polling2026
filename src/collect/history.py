@@ -38,7 +38,7 @@ def approval():
     print("approval polls", len(a), a.end.min().date(), a.end.max().date())
 
 
-def house_vote(years=range(1946, 2023, 2)):
+def house_vote(years=range(1946, 2025, 2)):
     rows = []
     for y in years:
         t = f"{y}_United_States_House_of_Representatives_elections"
@@ -70,7 +70,7 @@ def house_vote(years=range(1946, 2023, 2)):
         shares = {}
         for name, v in zip(party[1:], pct[1:]):
             if name in ("Democratic", "Republican"):
-                shares[name] = float(v.replace("%", ""))
+                shares[name] = float(re.match(r"[\d.]+", v).group())
         rows.append({"year": y, "dem_pct": shares.get("Democratic"), "rep_pct": shares.get("Republican")})
     df = pd.DataFrame(rows)
     df["two_party_margin_D"] = 100 * (df.dem_pct - df.rep_pct) / (df.dem_pct + df.rep_pct)

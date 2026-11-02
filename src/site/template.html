@@ -118,7 +118,7 @@ footer { border-top: 1px solid var(--border); margin-top: 40px; padding: 18px 0 
     </div>
     <nav class="toc" aria-label="Sections">
       <a href="#forecast">Forecast</a><a href="#senate">Senate</a><a href="#house">House</a>
-      <a href="#inputs">Inputs</a><a href="#method">Method</a><a href="#bias">Bias</a><a href="#backtest">Backtest</a><a href="#data">Data</a>
+      <a href="#inputs">Inputs</a><a href="#method">Method</a><a href="#appendix">Appendix</a><a href="#bias">Bias</a><a href="#backtest">Backtest</a><a href="#data">Data</a>
       <button class="theme-btn" id="theme" type="button" aria-label="Toggle color theme">Theme</button>
     </nav>
   </div>
@@ -185,20 +185,50 @@ footer { border-top: 1px solid var(--border); margin-top: 40px; padding: 18px 0 
 <section id="method">
   <h2>How the model works</h2>
   <ol class="steps">
-    <li><b>National environment.</b> Polls-only: the mean of the generic-ballot aggregators, converted to a two-party margin. Polls + fundamentals: that number blended, by inverse variance, with a fundamentals estimate from presidential approval and real disposable income growth. The polls get about 70% of the weight.</li>
+    <li><b>National environment.</b> Polls-only: the mean of the generic-ballot aggregators, converted to a two-party margin. Polls + fundamentals: that number blended, by inverse variance, with an <a href="#appendix">estimated fundamentals model</a> (Gallup approval, the previous House result, real gas-price change; inflation, income and unemployment tested). The polls get about 55% of the weight.</li>
     <li><b>Race priors.</b> Each race starts at 2×PVI + national environment + incumbency (+2.5 points for House incumbents, +2 for Senate). PVI is Cook-style, on the 2026 district lines, so it already reflects mid-decade redistricting in TX, CA, MO, NC, UT, OH, VA, FL, TN, LA and AL.</li>
     <li><b>Poll averages.</b> Recency-weighted (21-day half-life), scaled by √sample size, likely voters preferred over registered voters and adults. Pollsters with many polls are down-weighted, and partisan-sponsored polls are shifted against their sponsor (2 pts for Senate, 4 pts for House district polls).</li>
-    <li><b>Blend.</b> Poll average and prior are combined by precision. The poll-average error is set from history (race-level SD about 6 pts); the Senate prior's error is assumed at 10 pts and the House district error at 6 pts.</li>
-    <li><b>Simulation.</b> 40,000 draws. Each draw shares one national polling error across every race (generic-ballot RMSE 3.6 pts; Senate 3.1 pts), plus independent race errors. All errors are fat-tailed (t-distribution, 5 df).</li>
+    <li><b>Blend.</b> Poll average and prior are combined by precision (normal–normal). The poll-average error is set from history (race-level SD 7.4 pts in midterms, two-party); the Senate prior's error is assumed at 10 pts and the House district error at 6 pts.</li>
+    <li><b>Simulation.</b> 40,000 draws. Each draw shares a national polling error across every race and both chambers, plus a Census-region shock and a random slope on state lean (a polarisation miss), plus race-specific errors. Each race's total variance is held fixed. All national and race errors are fat-tailed (t-distribution, 5 df). Details in the <a href="#appendix">technical appendix</a>.</li>
     <li><b>Control.</b> House: 218 seats; same-party and uncontested seats are fixed; CA-6 (Kevin Kiley, independent) is counted for neither party. Senate: Democrats need 51 seats (VP Vance breaks ties); 34 Dem-caucus and 31 Republican seats are not up. Independents (Osborn, NE; Achilles, ID) are reported separately.</li>
   </ol>
   <h3>Judgment calls &amp; caveats</h3>
   <ul class="list">
-    <li><b>Fundamentals coefficients are assumed, not estimated.</b> Two midterms can't identify them. President's-party House margin = −4 + 0.6×(approval − 45) + 0.5×(real disposable income growth − 1.5). <span id="sensText"></span></li>
+    <li><b>Fundamentals are estimated on 1962–2022, and 2026 is outside that range on two inputs.</b> Approval (Gallup-equivalent about 35.6%) is below every past midterm, and the 29% real rise in gas prices is above the largest in the data. Both push toward Democrats, so the fundamentals estimate leans on extrapolation. <span id="sensText"></span></li>
     <li><b>Polling bias.</b> See the <a href="#bias">Polling bias</a> section: the bias-adjusted model shifts every race by the expected miss; the unadjusted model takes the polls at face value.</li>
     <li><b>Michigan.</b> Haley Stevens endorsed Mike Rogers on Nov 1, after most polls were taken. This isn't in the model.</li>
     <li><b>Alaska</b> uses ranked-choice voting and has several "Dan Sullivan" candidates on the ballot. It's modeled as a head-to-head. <b>Montana</b> is a genuine three-way race, modeled from polls only (best non-Republican vs. Republican).</li>
     <li>District polls are sparse, and many are sponsored by parties or PACs (48 of 132 since July are Democratic-sponsored). They are shrunk toward the prior.</li>
+  </ul>
+</section>
+
+<section id="appendix">
+  <h2>Technical appendix</h2>
+
+  <h3>A. Fundamentals model (estimated)</h3>
+  <p>Outcome: the two-party House vote margin of the president's party (1962–2022, Wikipedia infoboxes). Predictors are measured before the election: Gallup approval (polls ending July 15–October 31; American Presidency Project), the president's party's House margin two years earlier, CPI inflation (September over September, unrevised CPI-U), the real change in gasoline prices (gasoline CPI ÷ CPI-U, September over September), real disposable income per capita growth, and the 12-month change in unemployment. Every subset of up to four predictors is fit by OLS and scored by leave-one-election-out RMSE. The 2026 estimate averages the top five specifications, weighted by 1/RMSE².</p>
+  <div class="tbl-wrap"><table id="fundTop"></table></div>
+  <p class="muted small" id="fundTopNote"></p>
+  <h3>Inflation and gas prices specifically</h3>
+  <div class="tbl-wrap"><table id="fundReq"></table></div>
+  <p class="muted small" id="fundReqNote"></p>
+  <h3>2026 inputs vs. the historical range</h3>
+  <div class="tbl-wrap"><table id="fundRange"></table></div>
+
+  <h3>B. Error model</h3>
+  <p>For race <i>r</i> in simulation <i>s</i>: margin = μ<sub>r</sub> + σ<sub>nat</sub>·z<sub>s</sub> + u<sub>region(r),s</sub> + b<sub>s</sub>·lean<sub>r</sub> + ε<sub>r,s</sub>. The national shock z is t(5), shared by every House and Senate race. Region shocks u (four Census regions) and the lean slope b are normal. The race term ε is t(5) with variance sd<sub>race</sub>² − σ<sub>region</sub>² − σ<sub>b</sub>²·lean² (floored at a quarter of the total), so each race's marginal probability matches its calibrated error and only the joint distribution changes.</p>
+  <div class="stats" id="errStats"></div>
+  <h3>Implied error correlations (Senate, polls + fundamentals)</h3>
+  <div class="tbl-wrap"><table id="corrTable"></table></div>
+  <p class="muted small" id="corrNote"></p>
+
+  <h3>C. Estimators at a glance</h3>
+  <ul class="list small">
+    <li><b>Poll weight</b> = ½<sup>age/half-life</sup> × √(min(n, 3000)/600) × population weight (LV 1.0, RV 0.8, adults 0.5) ÷ √(polls by that pollster). Half-life: 21 days for races, 14 for the generic ballot. Two-party margins throughout.</li>
+    <li><b>Poll-average SD</b> (Senate) = √(7.4² + max(spread, 4)²/n<sub>eff</sub>), with n<sub>eff</sub> = (Σw)²/Σw². <b>Blend</b>: μ = (μ<sub>poll</sub>/σ<sub>poll</sub>² + μ<sub>prior</sub>/σ<sub>prior</sub>²) / (1/σ<sub>poll</sub>² + 1/σ<sub>prior</sub>²).</li>
+    <li><b>National SDs</b>: RMSE of the final generic-ballot miss, two-party, 1998–2022 (unadjusted models); the predictive SD of the decay-weighted bias estimate (bias-adjusted models). Senate national SD is the Senate per-cycle miss RMSE, scaled the same way.</li>
+    <li><b>Calibration data</b>: 538's <code>raw_polls.csv</code> (final 21 days, 1998–2022), averaged within race before comparing to results.</li>
+    <li><b>Monte Carlo error</b>: with 40,000 draws, a probability near 50% has a standard error of about 0.25 points.</li>
   </ul>
 </section>
 
@@ -427,7 +457,7 @@ function renderInputs() {
     N.approval_aggregators.map(r => `<tr><td>${esc(r.Aggregator)}</td><td class="num">${esc(r.Approve)}</td></tr>`).join("") + "</tbody>";
   $("#vhN").textContent = DATA.inputs.votehub_polls.toLocaleString();
   const sv = DATA.sensitivity;
-  if (sv) $("#sensText").textContent = `Varying the baseline (−6 to −2) and approval slope (0.4 to 0.8) moves the fundamentals-only environment from ${fmtM(sv.F_min)} to ${fmtM(sv.F_max)}, but after blending with polls only from ${fmtM(sv.G_min)} to ${fmtM(sv.G_max)}: P(Dem House) ${fmtP(sv.pH_min)}–${fmtP(sv.pH_max)}, P(Dem Senate) ${fmtP(sv.pS_min)}–${fmtP(sv.pS_max)}.`;
+  if (sv) $("#sensText").textContent = `Across the ten top fundamentals specifications (both samples), the fundamentals-only environment ranges from ${fmtM(sv.F_min)} to ${fmtM(sv.F_max)}; after blending with polls, ${fmtM(sv.G_min)} to ${fmtM(sv.G_max)}: P(Dem House) ${fmtP(sv.pH_min)}–${fmtP(sv.pH_max)}, P(Dem Senate) ${fmtP(sv.pS_min)}–${fmtP(sv.pS_max)}.`;
 }
 
 function renderBacktest() {
@@ -493,6 +523,10 @@ function renderDownloads() {
     ["summary_polls_fundamentals_biasadj.json", "Topline summary, bias-adjusted"],
     ["summary_scenario_polls_overstate_dems.json", "Topline summary, full-historical-bias stress test"],
     ["bias_decay.json", "Generic-ballot bias history and decay-weighted re-estimate"],
+    ["fundamentals.json", "Fundamentals model: specifications, coefficients, 2026 inputs"],
+    ["fundamentals_dataset.csv", "Fundamentals dataset 1946–2026 (vote, approval, inflation, gas, income, unemployment)"],
+    ["error_structure.json", "Regional and lean-slope error components"],
+    ["error_sensitivity.json", "Error-structure sensitivity and implied correlations"],
     ["bias_analysis.json", "National and state-level polling-bias analysis, 1998–2022"],
     ["senate_polls_fundamentals.csv", "Senate race-level forecast"],
     ["house_polls_fundamentals.csv", "House district-level forecast (all 435)"],
@@ -539,7 +573,39 @@ function renderBias() {
   $("#leanText").textContent = `Across 584 Senate and governor races, results since 2010 have landed further toward the state's partisan lean than the final poll averages: ${st.post2010.slope.toFixed(3)} pts per point of lean (clustered SE ${st.post2010.se_cluster.toFixed(3)}), about equal in Republican-leaning (${st.post2010_asym.leanR.slope.toFixed(3)}) and Democratic-leaning (${st.post2010_asym.leanD.slope.toFixed(3)}) states. In a real-time backtest (fit on 2010 through the prior election, tested 2014–2022) a symmetric correction cut race-level RMSE from ${st.realtime_rmse.none.toFixed(2)} to ${st.realtime_rmse.sym.toFixed(2)} and raised winners called from ${fmtP(st.realtime_winner.none)} to ${fmtP(st.realtime_winner.sym)}. This is a pattern in outcomes, not evidence about differential non-response by party: none of the sources used here records response rates. It is not applied in the published models.`;
 }
 
-function renderAll() { renderHero(); renderSenate(); renderHouse(); renderInputs(); renderBias(); renderBacktest(); renderDownloads(); }
+function renderAppendix() {
+  const F = DATA.fund, E = DATA.errors;
+  const VN = { approval: "Approval", prev: "Previous House margin", infl: "Inflation", gas: "Real gas change", rdi: "Real income growth", unemp: "Unemployment change", midterm: "Midterm", const: "Constant" };
+  const coefs = t => Object.keys(t.coef).filter(k => k !== "const").map(k => `${VN[k] || k} ${t.coef[k] >= 0 ? "+" : ""}${t.coef[k].toFixed(2)} <span class="muted">(±${t.se[k].toFixed(2)})</span>`).join("; ");
+  const rows = [];
+  [["all_1962_2022", "All elections + midterm dummy"], ["midterms_1962_2022", "Midterms only"]].forEach(([k, lab]) => {
+    F[k].top.forEach((t, i) => rows.push(`<tr><td>${i === 0 ? `<b>${lab}</b> (n=${F[k].n})` : ""}</td><td>${t.vars.filter(v => v !== "midterm").map(v => VN[v]).join(" + ")}</td><td class="num">${(t.weight * 100).toFixed(0)}%</td><td class="num">${t.loo_rmse.toFixed(2)}</td><td>${coefs(t)}</td><td class="num">${fmtM(-t.pred_2026)}</td></tr>`));
+  });
+  $("#fundTop").innerHTML = `<thead><tr><th>Sample</th><th>Predictors</th><th class="num">Weight</th><th class="num">LOO RMSE</th><th>Coefficients (SE), pts of margin</th><th class="num">2026 (D−R)</th></tr></thead><tbody>${rows.join("")}</tbody>`;
+  const a = F.all_1962_2022, mm = F.midterms_1962_2022;
+  $("#fundTopNote").textContent = `Averaged 2026 estimate: ${fmtM(-a.pred_2026_pres_party)} (all elections; LOO RMSE ${a.loo_rmse_avg.toFixed(1)}) and ${fmtM(-mm.pred_2026_pres_party)} (midterms only; ${mm.loo_rmse_avg.toFixed(1)}). A no-predictor model has LOO RMSE ${a.null_loo_rmse.toFixed(1)} and ${mm.null_loo_rmse.toFixed(1)}. The forecast uses the all-elections average with SD 4.5 (LOO RMSE inflated about 15% for specification search and for 2026 inputs outside the historical range). Approval uses Gallup; the 2026 aggregator mean is adjusted by Gallup's average house effect (${F.gallup_offset.toFixed(1)} pts, 2017–2024). Coefficients are stable when 1974, 1980 or 2022 is dropped.`;
+  const req = a.requested_specs;
+  $("#fundReq").innerHTML = `<thead><tr><th>Specification (all elections + midterm dummy)</th><th class="num">LOO RMSE</th><th>Inflation coef.</th><th>Real gas coef.</th><th class="num">2026 (D−R)</th></tr></thead><tbody>` +
+    Object.keys(req).map(k => { const r = req[k]; const c = (v) => r.coef[v] == null ? "—" : `${r.coef[v] >= 0 ? "+" : ""}${r.coef[v].toFixed(2)} <span class="muted">(±${r.se[v].toFixed(2)})</span>`;
+      return `<tr><td>${k.split(" + ").map(v => VN[v]).join(" + ")}</td><td class="num">${r.loo_rmse.toFixed(2)}</td><td>${c("infl")}</td><td>${c("gas")}</td><td class="num">${fmtM(-r.pred_2026)}</td></tr>`; }).join("") + "</tbody>";
+  $("#fundReqNote").textContent = `Inflation adds nothing once approval and the previous result are in the model: its coefficient is near zero with a large standard error, and it raises the out-of-sample error. Inflation's effect appears to run through approval. Real gas prices have the expected sign (higher prices hurt the president's party, about −0.08 pts per 1% rise) and enter the best all-elections specification, but the coefficient is only about 1.5 standard errors from zero. This year's 29% real rise contributes roughly 2 pts toward Democrats in specifications that include it. Inflation and real gas changes are correlated (r ≈ 0.5).`;
+  const rc = a.range_check;
+  $("#fundRange").innerHTML = `<thead><tr><th>Input</th><th class="num">Historical min</th><th class="num">Historical max</th><th class="num">2026</th><th></th></tr></thead><tbody>` +
+    ["approval", "prev", "infl", "gas", "rdi", "unemp"].map(v => { const r = rc[v]; const out = r["2026"] < r.min || r["2026"] > r.max; return `<tr><td>${VN[v]}</td><td class="num">${r.min.toFixed(1)}</td><td class="num">${r.max.toFixed(1)}</td><td class="num">${r["2026"].toFixed(1)}</td><td>${out ? '<span class="tag">outside range</span>' : ""}</td></tr>`; }).join("") + "</tbody>";
+  const stat = (v, l) => `<div class="stat"><div class="v">${v}</div><div class="l">${l}</div></div>`;
+  const M = DATA.models.polls_fundamentals;
+  $("#errStats").innerHTML = stat(M.sd_nat_house.toFixed(1), "National SD, House (pts, after fundamentals blend)") + stat(M.sd_nat_senate.toFixed(1), "National SD, Senate") +
+    stat(E.structure.sigma_region.toFixed(1), "Census-region shock SD") + stat(E.structure.lean_slope.all.sd_true.toFixed(3), "Lean-slope SD (pts per pt of lean)");
+  const s = E.sensitivity, pairs = Object.keys(s.estimated.corr_pairs);
+  const nm = k => k.replace(/-sp/g, " (sp.)").replace("~", " – ");
+  $("#corrTable").innerHTML = `<thead><tr><th>Pair</th><th class="num">National factor only</th><th class="num">Estimated structure</th><th class="num">Strong regional factor (2 pts)</th></tr></thead><tbody>` +
+    pairs.map(p => `<tr><td>${nm(p)}</td><td class="num">${s.national_only.corr_pairs[p].toFixed(2)}</td><td class="num">${s.estimated.corr_pairs[p].toFixed(2)}</td><td class="num">${s.strong_region_2pt.corr_pairs[p].toFixed(2)}</td></tr>`).join("") +
+    `<tr><td><b>P(Dem Senate)</b></td><td class="num">${fmtP(s.national_only.p_dem_senate)}</td><td class="num">${fmtP(s.estimated.p_dem_senate)}</td><td class="num">${fmtP(s.strong_region_2pt.p_dem_senate)}</td></tr>` +
+    `<tr><td><b>Dem Senate seats, 80% range</b></td><td class="num">${s.national_only.senate_p10}–${s.national_only.senate_p90}</td><td class="num">${s.estimated.senate_p10}–${s.estimated.senate_p90}</td><td class="num">${s.strong_region_2pt.senate_p10}–${s.strong_region_2pt.senate_p90}</td></tr></tbody>`;
+  $("#corrNote").textContent = `The regional component estimated from 1998–2022 statewide races is small: Census-region cells vary barely more than sampling noise would produce (cell-mean variance ${E.structure.var_cell_means.toFixed(2)} vs. noise ${E.structure.cell_noise_var.toFixed(2)}). Past correlated misses (2016, 2020) ran along education and partisanship rather than geography, which the lean slope partly captures. Same-region pairs (Michigan, Ohio, Iowa) gain correlation under a strong regional factor; pairs in different regions don't. Control probabilities move by only 1–2 points across structures, because the national factor dominates. The 2018/2022 backtest scores races one at a time, so it can't validate the joint structure.`;
+}
+
+function renderAll() { renderHero(); renderSenate(); renderHouse(); renderInputs(); renderAppendix(); renderBias(); renderBacktest(); renderDownloads(); }
 
 document.querySelectorAll("#modelSeg button").forEach(b => {
   b.setAttribute("aria-pressed", String(b.dataset.m === model));

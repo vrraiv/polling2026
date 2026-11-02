@@ -48,6 +48,7 @@ def main():
             "house": {k: v for k, v in s["house"].items()},
             "senate": {k: v for k, v in s["senate"].items()},
             "G": s["national"]["G_used"], "shift": s["national"].get("bias_shift", 0.0),
+            "sd_nat_house": s["national"].get("sd_nat_house_used", 0.0), "sd_nat_senate": s["national"].get("sd_nat_senate_used", 0.0),
             "senate_races": records(sen.sort_values("p_dside", ascending=False),
                                     ["race_key", "state", "special", "dem", "rep", "dside", "inc_party", "pvi", "prior",
                                      "poll_avg", "n_polls", "poll_weight", "mu", "sd_race", "p_dside", "rating_cook", "rating_silver"]),
@@ -86,6 +87,9 @@ def main():
         "calibration_bins": [{"bin": str(r.bin), "n": int(r.n), "p": float(r.p), "won": float(r.won)} for _, r in calib.iterrows()],
         "sensitivity": sens,
         "bias": bias,
+        "fund": json.loads((PROC / "fundamentals.json").read_text()),
+        "errors": {"structure": json.loads((PROC / "error_structure.json").read_text()),
+                   "sensitivity": json.loads((PROC / "error_sensitivity.json").read_text())},
         "error_model": {"sen_cycles": cal["Sen-G"]["cycles"], "gen_cycles": cal["House-G-US"]["cycles"]},
         "inputs": {
             "house_districts": int(len(h_int)), "house_open": int((~h_int.status.fillna("").str.contains("renominated|advanced|re-elected|running", case=False)).sum()),
@@ -99,6 +103,7 @@ def main():
             shutil.copy(f, SITE / "data" / f.name)
     shutil.copy(ROOT / "data/interim/house_2026_races.csv", SITE / "data" / "house_2026_races.csv")
     shutil.copy(ROOT / "data/interim/senate_2026_races.csv", SITE / "data" / "senate_2026_races.csv")
+    shutil.copy(ROOT / "data/interim/fundamentals_dataset.csv", SITE / "data" / "fundamentals_dataset.csv")
     html = TEMPLATE.read_text(encoding="utf-8").replace("/*__DATA__*/null", json.dumps(data, default=clean).replace("</", "<\\/"))
     (SITE / "index.html").write_text(html, encoding="utf-8")
     (SITE / "404.html").write_text('<!doctype html><meta charset="utf-8"><title>Not found</title>'

@@ -75,7 +75,28 @@ REGIONS = ["Northeast", "Midwest", "South", "West"]  # so scaled t has the state
 # Fundamentals (ASSUMED coefficients, not estimated here: two midterms can't identify them and keyless
 # historical approval data wasn't available). President's-party House margin in a midterm:
 #   F = A + B*(approval - 45) + C*(real disposable income per capita growth yoy - 1.5)
-FUND = {"A": -4.0, "B": 0.6, "C": 0.5, "SD": 5.5}
+# Estimated fundamentals (src/model/fundamentals.py): president's-party House margin regressed on Gallup approval,
+# previous House margin, real gas-price change, inflation, income and unemployment; top specifications by
+# leave-one-out RMSE, averaged. SD = LOO RMSE of the averaged model (3.9) inflated ~15% for specification
+# search and for 2026 inputs outside the historical range (approval, gas) -> 4.5.
+_FJ = OUT / "fundamentals.json"
+FUND_EST = json.loads(_FJ.read_text()) if _FJ.exists() else None
+FUND = {"SD": 4.5, "set": "all_1962_2022", "spec": None}  # spec=None -> weighted average of top specs
+
+
+def fundamentals_margin_pres(approval_agg, set_=None, spec=None):
+    """Predicted president's-party House margin for 2026, using today's approval (aggregator mean + Gallup house effect)."""
+    est = FUND_EST[set_ or FUND["set"]]
+    x = dict(FUND_EST["inputs_2026"])
+    x["approval"] = approval_agg + FUND_EST["gallup_offset"]
+    x["midterm"] = 1.0
+    tops = est["top"] if spec is None else [t for t in est["top"] if t["vars"] == spec] or [est["top"][0]]
+    preds, ws = [], []
+    for t in tops:
+        c = t["coef"]
+        preds.append(c.get("const", 0.0) + sum(c[v] * float(x[v]) for v in t["vars"]))
+        ws.append(t["weight"])
+    return float(np.average(preds, weights=ws))
 # State-lean poll correction (src/model/bias_analysis.py): since 2010, final poll averages have understated
 # state partisanship -- results land further toward the state's lean. Slope per point of lean margin (2*PVI),
 # pooled over 2010-2022 Senate+Gov races; improved held-out accuracy in a real-time backtest.
@@ -124,7 +145,9 @@ def national_inputs():
     econ = {"rdi_pc_growth_yoy": rdi_g, "unemployment": float(u.iloc[-1]), "unemp_chg_12m": float(u.iloc[-1] - u.iloc[-13]),
             "cpi_yoy": float(100 * (cpi.iloc[-1] / cpi.iloc[-13] - 1)), "econ_asof": str(u.index[-1].date())}
     # President is a Republican -> president's-party margin F is R-D; convert to D-R
-    F_pres = FUND["A"] + FUND["B"] * (approval - 45) + FUND["C"] * (rdi_g - 1.5)
+    F_pres = fundamentals_margin_pres(approval, FUND["set"], FUND["spec"])
+    econ["real_gas_change_yoy"] = FUND_EST["inputs_2026"]["gas"]
+    econ["cpi_infl_sept_yoy"] = FUND_EST["inputs_2026"]["infl"]
     F = -F_pres
     w = (1 / SD_NAT_GENERIC ** 2) / (1 / SD_NAT_GENERIC ** 2 + 1 / FUND["SD"] ** 2)
     G_fund = w * g_agg + (1 - w) * F
@@ -389,23 +412,23 @@ def run(model, shift=0.0, tag=None, bias_removed=False, sigma_region=None):
 
 
 def sensitivity():
-    """Vary the assumed fundamentals coefficients; record the range of outcomes."""
-    global FUND
+    """Spread of outcomes across the estimated fundamentals specifications (each top spec, both samples)."""
     base = dict(FUND)
     res = []
-    for A in (-6.0, -2.0):
-        for B in (0.4, 0.8):
-            FUND = dict(base, A=A, B=B)
+    for set_ in ("all_1962_2022", "midterms_1962_2022"):
+        for t in FUND_EST[set_]["top"]:
+            FUND.update(set=set_, spec=t["vars"])
             _, _, r = run("polls_fundamentals", tag="_sens")
-            res.append((r["national"]["fundamentals_margin_D"], r["national"]["G_used"], r["house"]["p_dem_majority"],
-                        r["senate"]["p_dem_control_without_osborn"]))
-    FUND = base
+            res.append({"set": set_, "vars": t["vars"], "F": r["national"]["fundamentals_margin_D"], "G": r["national"]["G_used"],
+                        "pH": r["house"]["p_dem_majority"], "pS": r["senate"]["p_dem_control_without_osborn"]})
+    FUND.clear(); FUND.update(base)
     for f in OUT.glob("*_sens*"):
         f.unlink()
-    F, G, pH, pS = zip(*res)
-    out = dict(F_min=min(F), F_max=max(F), G_min=min(G), G_max=max(G), pH_min=min(pH), pH_max=max(pH), pS_min=min(pS), pS_max=max(pS))
+    F = [x["F"] for x in res]; G = [x["G"] for x in res]; pH = [x["pH"] for x in res]; pS = [x["pS"] for x in res]
+    out = dict(F_min=min(F), F_max=max(F), G_min=min(G), G_max=max(G), pH_min=min(pH), pH_max=max(pH), pS_min=min(pS), pS_max=max(pS),
+               specs=res)
     (OUT / "sensitivity.json").write_text(json.dumps(out, indent=1))
-    print("sensitivity", {k: round(v, 3) for k, v in out.items()})
+    print("sensitivity", {k: round(v, 3) for k, v in out.items() if k != "specs"})
 
 
 if __name__ == "__main__":

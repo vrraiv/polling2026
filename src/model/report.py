@@ -56,7 +56,7 @@ def main():
       "Independent candidates (Osborn in NE, Achilles in ID) are counted separately; neither has committed to a caucus.\n")
     if (OUT / "sensitivity.json").exists():
         sv = json.loads((OUT / "sensitivity.json").read_text())
-        a(f"**Fundamentals sensitivity** (assumed coefficients varied: baseline A ∈ [−6, −2], approval slope B ∈ [0.4, 0.8]): "
+        a(f"**Fundamentals sensitivity** (each of the ten top estimated specifications, both samples): "
           f"fundamentals-only environment ranges {m(sv['F_min'])} to {m(sv['F_max'])}; after blending with polls, "
           f"{m(sv['G_min'])} to {m(sv['G_max'])}, P(D House) {pct(sv['pH_min'])}–{pct(sv['pH_max'])}, "
           f"P(D Senate) {pct(sv['pS_min'])}–{pct(sv['pS_max'])}.\n")
@@ -71,7 +71,11 @@ def main():
     a(f"- **Trump approval**: {nat['approval']:.1f}% (mean of 8 aggregators).")
     a(f"- **Economy** (FRED, as of {e['econ_asof']}): unemployment {e['unemployment']:.1f}% ({e['unemp_chg_12m']:+.1f} over 12 months), "
       f"CPI inflation {e['cpi_yoy']:.1f}% y/y, real disposable income per capita {e['rdi_pc_growth_yoy']:+.1f}% y/y.")
-    a(f"- **Fundamentals estimate** of the House environment: {m(nat['fundamentals_margin_D'])}. Blended with polls by inverse variance "
+    fj = json.loads((OUT / "fundamentals.json").read_text())
+    fa = fj["all_1962_2022"]
+    a(f"- **Real gas prices** {fj['inputs_2026']['gas']:+.1f}% y/y (Sept; gasoline CPI ÷ CPI-U); **CPI inflation** {fj['inputs_2026']['infl']:.1f}% (Sept/Sept, unrevised CPI-U).")
+    a(f"- **Fundamentals estimate** (estimated on 1962–2022; top specifications averaged, LOO RMSE {fa['loo_rmse_avg']:.1f}, SD used 4.5): "
+      f"{m(nat['fundamentals_margin_D'])}. Blended with polls by inverse variance "
       f"({nat['fund_weight_on_polls']:.0%} weight on polls) → {m(nat['G_fund'])}.")
     a(f"- **Uncertainty** (from 538 poll-vs-result archive, 1998–2022): national generic-ballot miss RMSE {nat['sd_nat_polls']:.1f} pts "
       f"(historical mean {nat['generic_hist_bias']:+.1f}: polls have tended to overstate Democrats); Senate shared miss {nat['sd_nat_senate']:.1f}; "
@@ -114,10 +118,17 @@ def main():
       "Caveat: error scales were estimated on data that include these cycles (in-sample).\n")
 
     a("## Caveats and judgment calls\n")
-    a("- **Fundamentals coefficients are assumed, not estimated.** Two midterms can't identify them and keyless historical approval data "
-      "wasn't available (UCSB tables are JavaScript-rendered; MEDSL now requires a guestbook form). Formula: president's-party House margin = "
-      "−4 + 0.6×(approval − 45) + 0.5×(real disposable income growth − 1.5). It happens to land within 0.3 pts of the polls this year, so the "
-      "two models nearly agree. State economics enter the Senate prior only as a small adjustment (0.5 pts per point of state-vs-national change in unemployment).")
+    best = fa["top"][0]
+    a("- **Fundamentals are estimated** (`src/model/fundamentals.py`): president's-party House margin on Gallup approval, the previous House margin, "
+      "real gas-price change, inflation, real income growth and unemployment change; every subset of up to 4 predictors scored by leave-one-out RMSE, "
+      "top five averaged. Best specification: " + ", ".join(f"{k} {v:+.2f} (±{best['se'][k]:.2f})" for k, v in best["coef"].items()) + ". "
+      "Inflation adds nothing once approval is in; real gas has the expected sign but is only ~1.5 SE from zero. "
+      "2026 approval and the gas-price rise are both outside the 1962–2022 range, so the estimate extrapolates. "
+      "State economics enter the Senate prior only as a small assumed adjustment (0.5 pts per point of state-vs-national change in unemployment).")
+    es = json.loads((OUT / "error_structure.json").read_text())
+    a(f"- **Correlated errors.** Beyond the shared national miss, each simulation draws a Census-region shock (SD {es['sigma_region']:.1f}) and a random "
+      f"slope on state lean (SD {es['lean_slope']['all']['sd_true']:.3f} per point), with each race's total variance held fixed. The regional component is "
+      "small in 1998–2022 data; a 2-pt regional sensitivity moves Senate control by about 1 point (see `data/processed/error_sensitivity.json`).")
     a(f"- **Polling bias.** On a two-party basis, final generic-ballot averages overstated Democrats by 3.1 pts on average over 1998–2022 "
       f"(9 of 13 elections; 2018 was the main exception at +0.5). A decay-weighted re-estimate that up-weights recent midterms gives "
       f"{nat['generic_hist_bias']:+.1f}; adding party in the White House, House incumbency, a second-term flag or a president-specific effect "

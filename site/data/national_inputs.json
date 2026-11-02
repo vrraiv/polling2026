@@ -2,15 +2,15 @@
  "generic_aggregators": [
   {
    "Source of poll aggregation": "Decision Desk HQ[81]",
-   "D": 51.5,
-   "R": 42.6,
-   "two_party": 9.46
+   "D": 51.2,
+   "R": 42.3,
+   "two_party": 9.52
   },
   {
    "Source of poll aggregation": "FiftyPlusOne[82]",
-   "D": 52.2,
-   "R": 43.4,
-   "two_party": 9.21
+   "D": 52.3,
+   "R": 43.7,
+   "two_party": 8.96
   },
   {
    "Source of poll aggregation": "NBC News[83]",
@@ -20,27 +20,27 @@
   },
   {
    "Source of poll aggregation": "RealClearPolitics[84]",
-   "D": 51.4,
-   "R": 43.2,
-   "two_party": 8.67
+   "D": 52.0,
+   "R": 43.1,
+   "two_party": 9.36
   },
   {
    "Source of poll aggregation": "Silver Bulletin[85]",
-   "D": 51.3,
-   "R": 42.4,
-   "two_party": 9.5
+   "D": 51.4,
+   "R": 42.6,
+   "two_party": 9.36
   }
  ],
- "G_polls": 9.03257057787339,
+ "G_polls": 9.106131059651924,
  "G_votehub_own_avg": {
-  "avg": 8.205894339018835,
+  "avg": 8.205894339018837,
   "n_polls": 11,
   "n_pollsters": 8,
-  "neff": 4.8641802377280765,
+  "neff": 4.864180237728077,
   "latest": "2026-10-04",
   "spread_sd": 2.9206059417836694
  },
- "approval": 36.78888888888889,
+ "approval": 36.800000000000004,
  "approval_aggregators": [
   {
    "Aggregator": "Ballotpedia",
@@ -52,11 +52,11 @@
   },
   {
    "Aggregator": "Decision Desk HQ",
-   "Approve": "39.1%"
+   "Approve": "38.5%"
   },
   {
    "Aggregator": "FiftyPlusOne",
-   "Approve": "35.3%"
+   "Approve": "35.4%"
   },
   {
    "Aggregator": "NBC News",
@@ -64,7 +64,7 @@
   },
   {
    "Aggregator": "Real Clear Politics",
-   "Approve": "38.4%"
+   "Approve": "39.0%"
   },
   {
    "Aggregator": "Silver Bulletin",
@@ -84,14 +84,16 @@
   "unemployment": 4.2,
   "unemp_chg_12m": -0.09999999999999964,
   "cpi_yoy": 4.023310268457836,
-  "econ_asof": "2026-09-01"
+  "econ_asof": "2026-09-01",
+  "real_gas_change_yoy": 29.33556036727307,
+  "cpi_infl_sept_yoy": 3.737684729064039
  },
- "fundamentals_margin_D": 9.322023379490261,
- "fund_weight_on_polls": 0.7005558128763315,
- "G_fund": 9.119245536764222,
- "sd_nat_polls": 3.595830919273041,
- "sd_nat_fund": 3.009682152734898,
+ "fundamentals_margin_D": 10.114640153345277,
+ "fund_weight_on_polls": 0.562255154699727,
+ "G_fund": 9.547600716854639,
+ "sd_nat_polls": 3.9706015820120912,
+ "sd_nat_fund": 2.977302993873907,
  "generic_hist_bias": -3.051339708578957,
- "sd_nat_senate": 3.1269830631014104,
- "sd_race_pollavg": 6.180364892099825
+ "sd_nat_senate": 3.2922356210659323,
+ "sd_race_pollavg": 7.368864399918581
 }
