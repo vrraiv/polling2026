@@ -193,7 +193,7 @@ footer a { color: var(--text-2); }
   <h2>How it works</h2>
   <ol class="steps">
     <li><b>National environment.</b> The mean of five generic-ballot polling averages (two-party), blended with an <a href="#appendix">estimated fundamentals model</a>: Gallup approval, the previous House result and the real change in gas prices, with inflation, income and unemployment tested and found weak. <span id="wText"></span></li>
-    <li><b>Race priors.</b> Each race starts at 2×PVI + national environment + incumbency (+2.5 House, +2 Senate). PVI is on the 2026 district lines, so it reflects the mid-decade redistricting in 11 states.</li>
+    <li><b>Race priors.</b> Senate races start at 2×PVI + national environment + incumbency (+2). House districts use a model <a href="#appendix">estimated on 2006–2024 district results</a>: <span id="houseEq"></span>. PVI is on the 2026 district lines, so it reflects the mid-decade redistricting in 11 states.</li>
     <li><b>Poll averages.</b> Recency-weighted (21-day half-life), scaled by √sample size, likely voters preferred, prolific pollsters down-weighted, and party-sponsored polls shifted 2 pts (Senate) or 4 pts (House) against the sponsor.</li>
     <li><b>Blend.</b> Poll average and prior are combined by precision. <span id="raceW"></span></li>
     <li><b>Simulation.</b> 40,000 draws with a shared national polling error, Census-region shocks, a random slope on state lean, and race-specific errors, all fat-tailed. Control: 218 House seats; 51 Senate seats (VP Vance breaks ties).</li>
@@ -205,7 +205,7 @@ footer a { color: var(--text-2); }
     <summary>Judgment calls and caveats</summary>
     <ul class="list small">
       <li><b>Fundamentals extrapolate.</b> 2026 approval (Gallup-equivalent ~35.6%) is below every past midterm, and the 29% real rise in gas prices is above anything in the 1962–2022 data. <span id="sensText"></span></li>
-      <li><b>House model.</b> The district error (SD 6) and incumbency (+2.5) are assumptions and weren't backtested; the seat total matches Silver Bulletin's. The Senate test (appendix C) suggests district polls may deserve more weight than they get, but most are party-sponsored, so they're left shrunk.</li>
+      <li><b>House model.</b> Estimated on 2006–2024 district results (appendix E). In recent cycles it has undercounted Democratic wins in contested seats by about 6 on average (10 in 2018), so the House seat estimate may be slightly conservative for Democrats.</li>
       <li><b>Idaho</b> has a single poll, from August; with few late polls its forecast leans on that poll more than its age warrants.</li>
       <li><b>Michigan.</b> Haley Stevens endorsed Mike Rogers on Nov 1, after most polls were taken. Not in the model.</li>
       <li><b>Alaska</b> uses ranked-choice voting and has several "Dan Sullivan" candidates on the ballot; modeled as a head-to-head. <b>Montana</b> is a three-way race, modeled from polls only.</li>
@@ -270,10 +270,13 @@ footer a { color: var(--text-2); }
   <h3>C. How much to trust late polls vs. partisanship (Senate)</h3>
   <p class="small" id="pwText"></p>
   <div class="tbl-wrap"><table id="pwTable"></table></div>
-  <h3>D. Estimators at a glance</h3>
+  <h3>D. House district model (estimated)</h3>
+  <p class="small" id="hsText"></p>
+  <div class="tbl-wrap"><table id="hsTable"></table></div>
+  <h3>E. Estimators at a glance</h3>
   <ul class="list small">
     <li><b>Poll weight</b> = ½<sup>age/half-life</sup> × √(min(n, 3000)/600) × population weight (LV 1.0, RV 0.8, adults 0.5) ÷ √(polls by that pollster). Half-life 21 days for races, 14 for the generic ballot. Two-party margins throughout.</li>
-    <li><b>Poll-average SD</b> (Senate) = √(7.4² + max(spread, 4)²/n<sub>eff</sub>), n<sub>eff</sub> = (Σw)²/Σw². <b>Blend</b>: μ = (μ<sub>poll</sub>/σ<sub>poll</sub>² + μ<sub>prior</sub>/σ<sub>prior</sub>²)/(1/σ<sub>poll</sub>² + 1/σ<sub>prior</sub>²), σ<sub>prior</sub> = <span class="pwSd"></span> in polled Senate races (set so polls get the historically optimal weight; see D), <span class="pwRob"></span> for unpolled Senate races (robust error of the prior alone), 6 for House districts (assumed).</li>
+    <li><b>Poll-average SD</b> (Senate) = √(7.4² + max(spread, 4)²/n<sub>eff</sub>), n<sub>eff</sub> = (Σw)²/Σw². <b>Blend</b>: μ = (μ<sub>poll</sub>/σ<sub>poll</sub>² + μ<sub>prior</sub>/σ<sub>prior</sub>²)/(1/σ<sub>poll</sub>² + 1/σ<sub>prior</sub>²), σ<sub>prior</sub> = <span class="pwSd"></span> in polled Senate races (set so polls get the historically optimal weight; see C), <span class="pwRob"></span> for unpolled Senate races (robust error of the prior alone), <span class="hsSd"></span> for House districts (estimated; see D).</li>
     <li><b>National SDs</b>: RMSE of the final generic-ballot miss (face value); predictive SD of the decay-weighted bias estimate (adjusted). The Senate national SD is the Senate per-cycle miss RMSE, scaled the same way.</li>
     <li><b>Calibration data</b>: 538's <code>raw_polls.csv</code> (final 21 days, 1998–2022), averaged within race before comparison with results.</li>
     <li><b>Monte Carlo error</b>: 40,000 draws, so a probability near 50% has a standard error of about 0.25 points.</li>
@@ -672,9 +675,20 @@ function renderPriorWeight() {
     `<tr><td>Winners called</td>${keys.map(k => `<td class="num">${Math.round(PW.winner_acc[k] * 100)}%</td>`).join("")}</tr></tbody>`;
 }
 
+function renderHouseStructure() {
+  const H = DATA.house_structure, c = H.chosen;
+  const sgn = (x) => (x >= 0 ? "+ " : "− ") + Math.abs(x).toFixed(2);
+  $("#houseEq").textContent = `margin = ${c.const.toFixed(2)} ${sgn(c.b_lean2)}×(2×PVI) ${sgn(c.g_nat)}×national ± ${c.inc.toFixed(1)} incumbency`;
+  $$(".hsSd").forEach(e => e.textContent = c.sd_district.toFixed(1));
+  const iy = c.inc_by_year;
+  $("#hsText").textContent = `${H.n} contested Democrat-vs-Republican House races, 2006–2024 (Wikipedia district tables: Cook PVI at the time, incumbent, result; ranked-choice and multi-candidate races excluded). Regression of the two-party margin on 2×PVI, the national House margin and incumbency. Districts move ${c.g_nat.toFixed(2)} pts per point of national margin (SE ${c.se.g_nat.toFixed(2)}; stable at 0.75–0.78 in every era, estimated on all ten cycles because it needs wave years), and ${c.b_lean2.toFixed(2)} per point of 2×PVI (2018–2024). Incumbency has collapsed: ${Object.entries(iy).map(([y, v]) => `${y} ${v.toFixed(0)}`).join(", ")} pts; the forecast uses the 2018–2024 estimate, ${c.inc.toFixed(1)} (SE ${c.se.inc.toFixed(1)}). District error SD in the competitive band is ${c.sd_district.toFixed(1)} (2016–2024). District polls: on ${H.district_polls.n_races} races (2018, 2022) the optimal weight on final polls vs. this prior is ${H.district_polls.w.toFixed(2)} (SE ${H.district_polls.w_se.toFixed(2)}), implying a district-poll error of ${H.district_polls.implied_poll_sd.toFixed(1)}. Previously all four were assumed (slope 1, national 1, incumbency 2.5, SD 6). The national slope also scales national polling errors as they reach districts.`;
+  $("#hsTable").innerHTML = `<thead><tr><th>Year</th><th class="num">National margin</th><th class="num">Districts held out: bias, estimated model</th><th class="num">Bias, slope-1 model</th><th class="num">RMSE estimated</th><th class="num">RMSE slope-1</th></tr></thead><tbody>` +
+    H.loyo.map(r => `<tr><td>${r.year}</td><td class="num">${fmtM(r.nat)}</td><td class="num">${r.bias_free >= 0 ? "+" : ""}${r.bias_free.toFixed(1)}</td><td class="num">${r.bias_constrained >= 0 ? "+" : ""}${r.bias_constrained.toFixed(1)}</td><td class="num">${r.rmse_free.toFixed(1)}</td><td class="num">${r.rmse_constrained.toFixed(1)}</td></tr>`).join("") + "</tbody>";
+}
+
 // ---------- init ----------
 $("#gen").textContent = "Updated " + DATA.generated;
-renderModelSegs(); renderPriorWeight(); renderOverview(); renderMap(); renderWatch(); renderHouse(); renderMethod(); renderData(); renderBias(); renderBacktest(); renderAppendix();
+renderModelSegs(); renderPriorWeight(); renderHouseStructure(); renderOverview(); renderMap(); renderWatch(); renderHouse(); renderMethod(); renderData(); renderBias(); renderBacktest(); renderAppendix();
 route();
 </script>
 </body>

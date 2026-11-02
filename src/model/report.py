@@ -141,6 +141,12 @@ def main():
       f"prior is {pw['w']:.2f} (SE {pw['w_se']:.2f}); the prior's errors are fat-tailed (robust SD {pw['prior_sd_robust']:.1f}, SD {pw['sd_prior_resid']:.1f}). "
       f"Polled races use prior SD {pw['implied_prior_sd']:.1f} (≈{pw['w']:.2f} weight on polls); unpolled races use {pw['prior_sd_robust']:.1f}. "
       f"Previously an assumed 10 for both (0.64 weight). See `src/model/prior_weight.py`.")
+    hs = json.loads((OUT / "house_structure.json").read_text())
+    c = hs["chosen"]
+    a(f"- **House district model (estimated)** on {hs['n']} contested races 2006–2024: margin = {c['const']:.2f} + {c['b_lean2']:.2f}×(2×PVI) + "
+      f"{c['g_nat']:.2f}×national ± {c['inc']:.1f} incumbency; district SD {c['sd_district']:.1f}; district polls get ~{hs['district_polls']['w']:.2f} weight "
+      f"(poll SD {hs['district_polls']['implied_poll_sd']:.1f}). Incumbency fell from ~20 pts (2006) to ~4 (2018–2024). Expected-seat RMSE over 2006–2024: 6.7 vs 11.9 "
+      "for the old assumed model; recent cycles undercount Democratic contested-seat wins by ~6.")
     es = json.loads((OUT / "error_structure.json").read_text())
     a(f"- **Correlated errors.** Beyond the shared national miss, each simulation draws a Census-region shock (SD {es['sigma_region']:.1f}) and a random "
       f"slope on state lean (SD {es['lean_slope']['all']['sd_true']:.3f} per point), with each race's total variance held fixed. The regional component is "

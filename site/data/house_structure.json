@@ -1,0 +1,222 @@
+{
+ "n": 3752,
+ "by_year": {
+  "2006": 364,
+  "2008": 365,
+  "2010": 395,
+  "2012": 377,
+  "2014": 346,
+  "2016": 359,
+  "2018": 381,
+  "2020": 395,
+  "2022": 386,
+  "2024": 384
+ },
+ "free": {
+  "Intercept": {
+   "coef": 1.0265864770189848,
+   "se": 0.28972524237505487
+  },
+  "lean2": {
+   "coef": 0.835395583339097,
+   "se": 0.011879151122968095
+  },
+  "nat": {
+   "coef": 0.7827937700162915,
+   "se": 0.04850825475963492
+  },
+  "inc": {
+   "coef": 10.40157582163408,
+   "se": 0.45037470588799944
+  }
+ },
+ "cycle_fe": {
+  "lean2": {
+   "coef": 0.8301739243160446,
+   "se": 0.01202588881575602
+  },
+  "inc": {
+   "coef": 10.662877741077478,
+   "se": 0.45912689156621966
+  }
+ },
+ "constrained": {
+  "Intercept": {
+   "coef": 0.6475882472391332,
+   "se": 0.34106944317234145
+  },
+  "inc": {
+   "coef": 6.738713083653732,
+   "se": 0.3744607335634052
+  }
+ },
+ "sd_all": 10.361050517263244,
+ "sd_all_robust": 9.109463043191269,
+ "sd_competitive": 11.832743853027807,
+ "sd_competitive_robust": 9.546257643536675,
+ "n_competitive": 968,
+ "sd_competitive_open": 8.691338411706168,
+ "sd_competitive_inc": 12.458763711376095,
+ "winner_acc_competitive": 0.7913223140495868,
+ "mean_resid_by_year": {
+  "2006": -1.22,
+  "2008": -3.23,
+  "2010": 1.04,
+  "2012": 2.03,
+  "2014": 1.6,
+  "2016": 0.74,
+  "2018": -0.87,
+  "2020": -1.99,
+  "2022": 1.13,
+  "2024": 0.82
+ },
+ "loyo": [
+  {
+   "year": 2006,
+   "nat": 8.282,
+   "n": 364,
+   "bias_free": 0.733,
+   "bias_constrained": -1.456,
+   "rmse_free": 14.011,
+   "rmse_constrained": 15.478,
+   "seat_err_free": 35,
+   "seat_err_constrained": 48
+  },
+  {
+   "year": 2008,
+   "nat": 11.018,
+   "n": 365,
+   "bias_free": -1.851,
+   "bias_constrained": -3.519,
+   "rmse_free": 14.053,
+   "rmse_constrained": 15.628,
+   "seat_err_free": 38,
+   "seat_err_constrained": 46
+  },
+  {
+   "year": 2010,
+   "nat": -7.039,
+   "n": 395,
+   "bias_free": -1.71,
+   "bias_constrained": 1.262,
+   "rmse_free": 9.838,
+   "rmse_constrained": 10.21,
+   "seat_err_free": 34,
+   "seat_err_constrained": 25
+  },
+  {
+   "year": 2012,
+   "nat": 1.14,
+   "n": 377,
+   "bias_free": 2.625,
+   "bias_constrained": 2.24,
+   "rmse_free": 10.139,
+   "rmse_constrained": 9.605,
+   "seat_err_free": 20,
+   "seat_err_constrained": 17
+  },
+  {
+   "year": 2014,
+   "nat": -5.895,
+   "n": 346,
+   "bias_free": 0.111,
+   "bias_constrained": 1.76,
+   "rmse_free": 9.269,
+   "rmse_constrained": 9.731,
+   "seat_err_free": 12,
+   "seat_err_constrained": 11
+  },
+  {
+   "year": 2016,
+   "nat": -1.046,
+   "n": 359,
+   "bias_free": 0.803,
+   "bias_constrained": 0.793,
+   "rmse_free": 9.328,
+   "rmse_constrained": 9.35,
+   "seat_err_free": 8,
+   "seat_err_constrained": 10
+  },
+  {
+   "year": 2018,
+   "nat": 8.758,
+   "n": 381,
+   "bias_free": 0.964,
+   "bias_constrained": -0.908,
+   "rmse_free": 7.988,
+   "rmse_constrained": 8.245,
+   "seat_err_free": 26,
+   "seat_err_constrained": 23
+  },
+  {
+   "year": 2020,
+   "nat": 3.179,
+   "n": 395,
+   "bias_free": -2.515,
+   "bias_constrained": -2.302,
+   "rmse_free": 7.919,
+   "rmse_constrained": 8.494,
+   "seat_err_free": 12,
+   "seat_err_constrained": 15
+  },
+  {
+   "year": 2022,
+   "nat": -2.775,
+   "n": 386,
+   "bias_free": 0.276,
+   "bias_constrained": 1.226,
+   "rmse_free": 7.295,
+   "rmse_constrained": 7.641,
+   "seat_err_free": 16,
+   "seat_err_constrained": 18
+  },
+  {
+   "year": 2024,
+   "nat": -2.68,
+   "n": 384,
+   "bias_free": 0.08,
+   "bias_constrained": 0.903,
+   "rmse_free": 7.319,
+   "rmse_constrained": 8.062,
+   "seat_err_free": 12,
+   "seat_err_constrained": 14
+  }
+ ],
+ "loyo_summary": {
+  "rmse_free": 9.952988965008283,
+  "rmse_constrained": 10.559254147998026,
+  "seat_err_free": 213,
+  "seat_err_constrained": 227
+ },
+ "chosen": {
+  "const": 0.7505502419562372,
+  "b_lean2": 0.9072772366754991,
+  "g_nat": 0.7827937700162915,
+  "inc": 4.507113903238158,
+  "sd_district": 7.441072580549007,
+  "se": {
+   "b_lean2": 0.014710137306330393,
+   "g_nat": 0.05395502817258406,
+   "inc": 0.5137324316944242
+  },
+  "inc_by_year": {
+   "2006": 20.076264240013735,
+   "2008": 18.493175030696673,
+   "2010": 12.168575023705301,
+   "2012": 9.079241674147745,
+   "2014": 9.909173739666686,
+   "2016": 11.013619014060746,
+   "2018": 3.832417634776831,
+   "2020": 6.143632805355375,
+   "2022": 3.7397209247273855,
+   "2024": 4.503128104846658
+  }
+ },
+ "district_polls": {
+  "n_races": 202,
+  "w": 0.46022729453023575,
+  "w_se": 0.062158369300482845,
+  "sd_poll_resid": 8.201545994756655,
+  "implied_poll_sd": 8.058511218297756
+ }
+}

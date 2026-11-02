@@ -21,6 +21,7 @@ STEPS = [
     ["src/model/error_structure.py"],
     ["src/model/state_econ.py"],
     ["src/model/prior_weight.py"],
+    ["src/model/house_structure.py"],
     ["src/model/fundamentals.py"],
     ["src/model/forecast.py"],
     ["src/model/backtest.py"],

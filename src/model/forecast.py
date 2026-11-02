@@ -59,9 +59,17 @@ _pw = json.loads(_PW.read_text()) if _PW.exists() else {}
 SD_SENATE_PRIOR = float(_pw.get("implied_prior_sd", 10.0))          # sets the weight on polls in polled races (~0.86)
 SD_SENATE_PRIOR_UNPOLLED = float(_pw.get("prior_sd_robust", 10.0))   # error of the prior alone (robust; tails come from t5)
 MULTI_CANDIDATE = {"MT"}   # genuine 3-way races: use raw (best non-R minus R) poll margin, no PVI prior
-SD_HOUSE_DISTRICT = 6.0   # district error around 2*PVI + G + incumbency (assumed, typical of district models)
-SD_HOUSE_POLL = 7.5       # district polls: mostly sparse/internal, so noisy (assumed)
-INC_HOUSE = 2.5           # incumbency bonus, margin points (assumed)
+# House district model, estimated in src/model/house_structure.py from 2006-2024 Wikipedia district results:
+#   margin = const + B_LEAN*(2*PVI) + G_NAT*national + INC_HOUSE*(+1 D inc / -1 R inc)
+_HS = OUT / "house_structure.json"
+_hs = json.loads(_HS.read_text())["chosen"] if _HS.exists() else {}
+_hsp = json.loads(_HS.read_text())["district_polls"] if _HS.exists() else {}
+H_CONST = float(_hs.get("const", 0.0))
+H_B_LEAN = float(_hs.get("b_lean2", 1.0))
+H_G_NAT = float(_hs.get("g_nat", 1.0))          # districts move ~0.78 pts per pt of national margin (and national error)
+INC_HOUSE = float(_hs.get("inc", 2.5))
+SD_HOUSE_DISTRICT = float(_hs.get("sd_district", 6.0))
+SD_HOUSE_POLL = float(_hsp.get("implied_poll_sd", 7.5))
 INC_SENATE = 2.0
 T_SCALE = np.sqrt((DF_T - 2) / DF_T)
 
@@ -290,7 +298,7 @@ def house_model(h, polls, G):
         inc = 0.0
         if r.inc_running:
             inc = INC_HOUSE if r.inc_party == "D" else -INC_HOUSE if r.inc_party in ("R", "I") else 0.0
-        prior = 2 * r.pvi + G + inc
+        prior = H_CONST + H_B_LEAN * 2 * r.pvi + H_G_NAT * G + inc
         pa = pav.get(r.race_key)
         if pa and APPLY_LEAN_CORRECTION:
             pa = dict(pa, avg=pa["avg"] + LEAN_SLOPE * 2 * r.pvi)
@@ -332,7 +340,7 @@ def simulate(h, s, sd_nat_house, sd_nat_senate=None, sigma_region=None):
     # House
     fixed = h.fixed.notna().values
     hcorr, h_idio = correlated_part(h, region_shock, slope, sigma_region)
-    mu = h.mu.values[None, :] + (sd_nat_house * z)[:, None] + hcorr
+    mu = h.mu.values[None, :] + (H_G_NAT * sd_nat_house * z)[:, None] + hcorr
     margins = mu + tdraw((NSIM, len(h))) * h_idio[None, :]
     dwin = margins > 0
     dwin[:, fixed] = (h.fixed.values[fixed] == "D")[None, :]

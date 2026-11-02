@@ -97,6 +97,7 @@ def main():
         "fund": json.loads((PROC / "fundamentals.json").read_text()),
         "state_econ": json.loads((PROC / "state_econ.json").read_text()),
         "prior_weight": json.loads((PROC / "prior_weight.json").read_text()),
+        "house_structure": json.loads((PROC / "house_structure.json").read_text()),
         "errors": {"structure": json.loads((PROC / "error_structure.json").read_text()),
                    "sensitivity": json.loads((PROC / "error_sensitivity.json").read_text())},
         "error_model": {"sen_cycles": cal["Sen-G"]["cycles"], "gen_cycles": cal["House-G-US"]["cycles"]},
