@@ -2,15 +2,15 @@
  "generic_aggregators": [
   {
    "Source of poll aggregation": "Decision Desk HQ[82]",
-   "D": 51.2,
-   "R": 42.3,
-   "two_party": 9.52
+   "D": 51.4,
+   "R": 42.8,
+   "two_party": 9.13
   },
   {
    "Source of poll aggregation": "FiftyPlusOne[83]",
-   "D": 52.3,
-   "R": 43.7,
-   "two_party": 8.96
+   "D": 52.8,
+   "R": 44.1,
+   "two_party": 8.98
   },
   {
    "Source of poll aggregation": "NBC News[84]",
@@ -20,18 +20,18 @@
   },
   {
    "Source of poll aggregation": "RealClearPolitics[85]",
-   "D": 52.0,
-   "R": 43.1,
-   "two_party": 9.36
+   "D": 52.1,
+   "R": 43.3,
+   "two_party": 9.22
   },
   {
    "Source of poll aggregation": "Silver Bulletin[86]",
-   "D": 51.4,
-   "R": 42.6,
-   "two_party": 9.36
+   "D": 51.8,
+   "R": 43.0,
+   "two_party": 9.28
   }
  ],
- "G_polls": 9.106131059651924,
+ "G_polls": 8.989638452842437,
  "G_votehub_own_avg": {
   "avg": 8.35217471882331,
   "n_polls": 12,
@@ -91,7 +91,7 @@
  },
  "fundamentals_margin_D": 10.432312259621854,
  "fund_weight_on_polls": 0.562255154699727,
- "G_fund": 9.686660043872891,
+ "G_fund": 9.621161475209849,
  "sd_nat_polls": 3.9706015820120912,
  "sd_nat_fund": 2.977302993873907,
  "generic_hist_bias": -2.932309892200151,

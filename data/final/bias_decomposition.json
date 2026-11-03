@@ -1,0 +1,79 @@
+{
+ "unadjusted": {
+  "shift": 0.0,
+  "senate_shift": 0.0,
+  "lean": false,
+  "sd_nat_house": 2.977302993873907,
+  "sd_nat_senate": 3.2922356210659323,
+  "p_sen": 0.77685,
+  "sen_seats": 52.3048,
+  "p_house": 0.96895,
+  "house_seats": 237.28315
+ },
+ "lean_only": {
+  "shift": 0.0,
+  "senate_shift": 0.0,
+  "lean": true,
+  "sd_nat_house": 2.977302993873907,
+  "sd_nat_senate": 3.2922356210659323,
+  "p_sen": 0.733325,
+  "sen_seats": 51.92275,
+  "p_house": 0.968475,
+  "house_seats": 237.344775
+ },
+ "adjusted": {
+  "shift": -2.5540952480150283,
+  "senate_shift": 0.0,
+  "lean": true,
+  "sd_nat_house": 2.2635933578150804,
+  "sd_nat_senate": 3.2922356210659323,
+  "p_sen": 0.70805,
+  "sen_seats": 51.71905,
+  "p_house": 0.91725,
+  "house_seats": 228.40625
+ },
+ "flat_minus1": {
+  "shift": -1.0,
+  "senate_shift": -1.0,
+  "lean": false,
+  "sd_nat_house": 2.2635933578150804,
+  "sd_nat_senate": 2.1716077941542395,
+  "p_sen": 0.72175,
+  "sen_seats": 51.6947,
+  "p_house": 0.96855,
+  "house_seats": 233.11905
+ },
+ "flat_minus2": {
+  "shift": -2.0,
+  "senate_shift": -2.0,
+  "lean": false,
+  "sd_nat_house": 2.2635933578150804,
+  "sd_nat_senate": 2.1716077941542395,
+  "p_sen": 0.585675,
+  "sen_seats": 50.902075,
+  "p_house": 0.93975,
+  "house_seats": 230.04335
+ },
+ "flat_minus3": {
+  "shift": -3.0,
+  "senate_shift": -3.0,
+  "lean": false,
+  "sd_nat_house": 2.2635933578150804,
+  "sd_nat_senate": 2.1716077941542395,
+  "p_sen": 0.43975,
+  "sen_seats": 50.103975,
+  "p_house": 0.896825,
+  "house_seats": 227.1576
+ },
+ "flat_minus4": {
+  "shift": -4.0,
+  "senate_shift": -4.0,
+  "lean": false,
+  "sd_nat_house": 2.2635933578150804,
+  "sd_nat_senate": 2.1716077941542395,
+  "p_sen": 0.295475,
+  "sen_seats": 49.2271,
+  "p_house": 0.818125,
+  "house_seats": 224.268075
+ }
+}

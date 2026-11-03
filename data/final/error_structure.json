@@ -1,0 +1,82 @@
+{
+ "sigma_region": 0.47638341360970904,
+ "region_cells": 44,
+ "cell_noise_var": 3.5780706155360975,
+ "var_cell_means": 3.8050117722985366,
+ "lean_slope": {
+  "all": {
+   "mean": 0.031479766494320584,
+   "sd_raw": 0.09090287900485877,
+   "sd_true": 0.07836006383184495,
+   "n_cycles": 11
+  },
+  "post2010": {
+   "mean": 0.08561686732991802,
+   "sd_raw": 0.0590568505120755,
+   "sd_true": 0.04530587697807635,
+   "n_cycles": 7
+  }
+ },
+ "resid_sd_total": 6.352631267568014,
+ "regions": {
+  "Northeast": [
+   "CT",
+   "ME",
+   "MA",
+   "NH",
+   "RI",
+   "VT",
+   "NJ",
+   "NY",
+   "PA"
+  ],
+  "Midwest": [
+   "IL",
+   "IN",
+   "MI",
+   "OH",
+   "WI",
+   "IA",
+   "KS",
+   "MN",
+   "MO",
+   "NE",
+   "ND",
+   "SD"
+  ],
+  "South": [
+   "DE",
+   "FL",
+   "GA",
+   "MD",
+   "NC",
+   "SC",
+   "VA",
+   "DC",
+   "WV",
+   "AL",
+   "KY",
+   "MS",
+   "TN",
+   "AR",
+   "LA",
+   "OK",
+   "TX"
+  ],
+  "West": [
+   "AZ",
+   "CO",
+   "ID",
+   "MT",
+   "NV",
+   "NM",
+   "UT",
+   "WY",
+   "AK",
+   "CA",
+   "HI",
+   "OR",
+   "WA"
+  ]
+ }
+}

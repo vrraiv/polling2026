@@ -1,0 +1,381 @@
+{
+ "Sen-G": {
+  "kind": "Sen-G",
+  "n_races": 400,
+  "cycles": [
+   {
+    "cycle": 1998,
+    "mean": 4.08,
+    "std": 11.55,
+    "size": 29
+   },
+   {
+    "cycle": 2000,
+    "mean": 2.56,
+    "std": 9.0,
+    "size": 31
+   },
+   {
+    "cycle": 2002,
+    "mean": -1.4,
+    "std": 9.19,
+    "size": 27
+   },
+   {
+    "cycle": 2004,
+    "mean": -2.44,
+    "std": 8.09,
+    "size": 27
+   },
+   {
+    "cycle": 2006,
+    "mean": 2.45,
+    "std": 5.8,
+    "size": 28
+   },
+   {
+    "cycle": 2008,
+    "mean": 0.87,
+    "std": 4.88,
+    "size": 34
+   },
+   {
+    "cycle": 2010,
+    "mean": 2.03,
+    "std": 7.1,
+    "size": 36
+   },
+   {
+    "cycle": 2012,
+    "mean": 3.48,
+    "std": 3.63,
+    "size": 28
+   },
+   {
+    "cycle": 2014,
+    "mean": -3.29,
+    "std": 4.68,
+    "size": 34
+   },
+   {
+    "cycle": 2016,
+    "mean": -4.95,
+    "std": 5.92,
+    "size": 33
+   },
+   {
+    "cycle": 2018,
+    "mean": -1.58,
+    "std": 5.94,
+    "size": 32
+   },
+   {
+    "cycle": 2020,
+    "mean": -6.62,
+    "std": 5.51,
+    "size": 32
+   },
+   {
+    "cycle": 2022,
+    "mean": -2.27,
+    "std": 6.55,
+    "size": 29
+   }
+  ],
+  "national_sd": 3.3797061380981246,
+  "race_resid_sd": 6.892718542127005,
+  "race_resid_sd_midterms": 7.368864399918581,
+  "national_sd_midterms": 2.8045161594914085
+ },
+ "House-G-US": {
+  "kind": "House-G-US",
+  "n_races": 13,
+  "cycles": [
+   {
+    "cycle": 1998,
+    "mean": -2.56,
+    "std": NaN,
+    "size": 1
+   },
+   {
+    "cycle": 2000,
+    "mean": -2.94,
+    "std": NaN,
+    "size": 1
+   },
+   {
+    "cycle": 2002,
+    "mean": -6.06,
+    "std": NaN,
+    "size": 1
+   },
+   {
+    "cycle": 2004,
+    "mean": -5.52,
+    "std": NaN,
+    "size": 1
+   },
+   {
+    "cycle": 2006,
+    "mean": -5.65,
+    "std": NaN,
+    "size": 1
+   },
+   {
+    "cycle": 2008,
+    "mean": 1.07,
+    "std": NaN,
+    "size": 1
+   },
+   {
+    "cycle": 2010,
+    "mean": -0.93,
+    "std": NaN,
+    "size": 1
+   },
+   {
+    "cycle": 2012,
+    "mean": 0.13,
+    "std": NaN,
+    "size": 1
+   },
+   {
+    "cycle": 2014,
+    "mean": -4.66,
+    "std": NaN,
+    "size": 1
+   },
+   {
+    "cycle": 2016,
+    "mean": -5.58,
+    "std": NaN,
+    "size": 1
+   },
+   {
+    "cycle": 2018,
+    "mean": 0.46,
+    "std": NaN,
+    "size": 1
+   },
+   {
+    "cycle": 2020,
+    "mean": -4.73,
+    "std": NaN,
+    "size": 1
+   },
+   {
+    "cycle": 2022,
+    "mean": -3.63,
+    "std": NaN,
+    "size": 1
+   }
+  ],
+  "national_sd": 2.5525516283908303,
+  "race_resid_sd": 0.0,
+  "race_resid_sd_midterms": 0.0,
+  "national_sd_midterms": 2.42923450286753
+ },
+ "House-G": {
+  "kind": "House-G",
+  "n_races": 1060,
+  "cycles": [
+   {
+    "cycle": 1998,
+    "mean": 2.22,
+    "std": 11.5,
+    "size": 30
+   },
+   {
+    "cycle": 2000,
+    "mean": -0.91,
+    "std": 7.03,
+    "size": 29
+   },
+   {
+    "cycle": 2002,
+    "mean": -0.37,
+    "std": 7.18,
+    "size": 56
+   },
+   {
+    "cycle": 2004,
+    "mean": -0.39,
+    "std": 9.61,
+    "size": 52
+   },
+   {
+    "cycle": 2006,
+    "mean": 0.28,
+    "std": 7.88,
+    "size": 103
+   },
+   {
+    "cycle": 2008,
+    "mean": -0.64,
+    "std": 8.05,
+    "size": 91
+   },
+   {
+    "cycle": 2010,
+    "mean": -0.53,
+    "std": 9.14,
+    "size": 159
+   },
+   {
+    "cycle": 2012,
+    "mean": 4.72,
+    "std": 8.29,
+    "size": 102
+   },
+   {
+    "cycle": 2014,
+    "mean": -4.13,
+    "std": 9.05,
+    "size": 74
+   },
+   {
+    "cycle": 2016,
+    "mean": -3.78,
+    "std": 7.83,
+    "size": 62
+   },
+   {
+    "cycle": 2018,
+    "mean": 1.4,
+    "std": 8.1,
+    "size": 143
+   },
+   {
+    "cycle": 2020,
+    "mean": -6.89,
+    "std": 4.91,
+    "size": 86
+   },
+   {
+    "cycle": 2022,
+    "mean": -0.4,
+    "std": 7.89,
+    "size": 73
+   }
+  ],
+  "national_sd": 2.9325620478291174,
+  "race_resid_sd": 8.166580444320978,
+  "race_resid_sd_midterms": 8.49517693144142,
+  "national_sd_midterms": 2.009774400325296
+ },
+ "Gov-G": {
+  "kind": "Gov-G",
+  "n_races": 305,
+  "cycles": [
+   {
+    "cycle": 1998,
+    "mean": 4.62,
+    "std": 12.22,
+    "size": 30
+   },
+   {
+    "cycle": 2000,
+    "mean": -0.67,
+    "std": 4.86,
+    "size": 11
+   },
+   {
+    "cycle": 2002,
+    "mean": -3.61,
+    "std": 7.47,
+    "size": 36
+   },
+   {
+    "cycle": 2004,
+    "mean": -3.28,
+    "std": 5.37,
+    "size": 10
+   },
+   {
+    "cycle": 2006,
+    "mean": 0.59,
+    "std": 4.73,
+    "size": 35
+   },
+   {
+    "cycle": 2008,
+    "mean": -1.58,
+    "std": 9.76,
+    "size": 11
+   },
+   {
+    "cycle": 2010,
+    "mean": -0.4,
+    "std": 9.24,
+    "size": 37
+   },
+   {
+    "cycle": 2012,
+    "mean": 2.95,
+    "std": 4.51,
+    "size": 9
+   },
+   {
+    "cycle": 2014,
+    "mean": -4.04,
+    "std": 5.39,
+    "size": 35
+   },
+   {
+    "cycle": 2016,
+    "mean": -5.95,
+    "std": 5.02,
+    "size": 12
+   },
+   {
+    "cycle": 2018,
+    "mean": 1.11,
+    "std": 5.42,
+    "size": 35
+   },
+   {
+    "cycle": 2020,
+    "mean": -6.61,
+    "std": 6.21,
+    "size": 11
+   },
+   {
+    "cycle": 2022,
+    "mean": -2.85,
+    "std": 6.34,
+    "size": 33
+   }
+  ],
+  "national_sd": 3.3192886374209203,
+  "race_resid_sd": 7.176774421967441,
+  "race_resid_sd_midterms": 7.468010844775993,
+  "national_sd_midterms": 3.097547609169721
+ },
+ "pollavg_sd_by_n": {
+  "a": 4.239707882295149,
+  "b": 11.811214378275697,
+  "bins": {
+   "1-2": {
+    "sd": 10.62643889117094,
+    "n_races": 115,
+    "fit": 10.471375076181102
+   },
+   "3-5": {
+    "sd": 7.199986705256111,
+    "n_races": 140,
+    "fit": 7.287127492122258
+   },
+   "6-9": {
+    "sd": 6.455800117423881,
+    "n_races": 158,
+    "fit": 6.08084178040865
+   },
+   "10-999": {
+    "sd": 5.205180585610565,
+    "n_races": 292,
+    "fit": 4.96906369764581
+   }
+  },
+  "n_races": 705
+ }
+}

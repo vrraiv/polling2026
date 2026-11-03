@@ -1,0 +1,39 @@
+{
+ "n_races": 396,
+ "n_races_with_sponsored": 194,
+ "flat": {
+  "rmse": 7.0080649754145306,
+  "rmse_within": 6.031601821952192,
+  "winners": 0.9065656565656566
+ },
+ "tier": {
+  "rmse": 7.026169533695895,
+  "rmse_within": 6.06135300895516,
+  "winners": 0.9141414141414141
+ },
+ "house": {
+  "rmse": 7.02854947090648,
+  "rmse_within": 6.017249559935899,
+  "winners": 0.9217171717171717
+ },
+ "paired_tier_vs_flat_all": {
+  "mean_sq_err_gain": -0.2540836166045435,
+  "se": 0.21610576380906585,
+  "n": 396
+ },
+ "paired_tier_vs_flat_races_with_sponsored": {
+  "mean_sq_err_gain": -0.5186449081206146,
+  "se": 0.4409001547400027,
+  "n": 194
+ },
+ "paired_house_vs_flat_all": {
+  "mean_sq_err_gain": -0.2875329653479046,
+  "se": 0.5476461271431602,
+  "n": 396
+ },
+ "paired_house_vs_flat_races_with_sponsored": {
+  "mean_sq_err_gain": -0.6048686916014819,
+  "se": 0.45888421113257677,
+  "n": 194
+ }
+}

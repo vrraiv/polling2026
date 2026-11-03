@@ -608,26 +608,26 @@
    {
     "state": "NH",
     "pvi": 2,
-    "poll_avg": 8.01,
-    "mu": 8.55,
-    "p_dside": 0.92,
+    "poll_avg": 8.07,
+    "mu": 8.58,
+    "p_dside": 0.93,
     "lean_adj": 0.33
-   },
-   {
-    "state": "MI",
-    "pvi": 0,
-    "poll_avg": 3.98,
-    "mu": 4.35,
-    "p_dside": 0.81,
-    "lean_adj": 0.0
    },
    {
     "state": "ME",
     "pvi": 4,
-    "poll_avg": 3.32,
-    "mu": 4.23,
-    "p_dside": 0.8,
+    "poll_avg": 3.77,
+    "mu": 4.63,
+    "p_dside": 0.82,
     "lean_adj": 0.66
+   },
+   {
+    "state": "MI",
+    "pvi": 0,
+    "poll_avg": 4.17,
+    "mu": 4.53,
+    "p_dside": 0.82,
+    "lean_adj": 0.0
    },
    {
     "state": "MN",
@@ -640,41 +640,41 @@
    {
     "state": "OH",
     "pvi": -5,
-    "poll_avg": 3.92,
-    "mu": 3.48,
-    "p_dside": 0.76,
+    "poll_avg": 4.31,
+    "mu": 3.85,
+    "p_dside": 0.78,
     "lean_adj": -0.82
    },
    {
     "state": "KS",
     "pvi": -8,
-    "poll_avg": 4.53,
-    "mu": 3.27,
-    "p_dside": 0.72,
+    "poll_avg": 5.04,
+    "mu": 3.81,
+    "p_dside": 0.76,
     "lean_adj": -1.31
    },
    {
     "state": "TX",
     "pvi": -6,
-    "poll_avg": 2.94,
-    "mu": 2.61,
-    "p_dside": 0.71,
+    "poll_avg": 3.17,
+    "mu": 2.83,
+    "p_dside": 0.73,
     "lean_adj": -0.98
    },
    {
     "state": "AK",
     "pvi": -6,
-    "poll_avg": 1.16,
-    "mu": 0.58,
-    "p_dside": 0.54,
+    "poll_avg": 1.86,
+    "mu": 1.25,
+    "p_dside": 0.59,
     "lean_adj": -0.98
    },
    {
     "state": "IA",
     "pvi": -6,
-    "poll_avg": -0.31,
-    "mu": -0.46,
-    "p_dside": 0.46,
+    "poll_avg": 0.12,
+    "mu": -0.06,
+    "p_dside": 0.49,
     "lean_adj": -0.98
    },
    {

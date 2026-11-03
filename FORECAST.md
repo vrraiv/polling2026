@@ -1,15 +1,15 @@
 # 2026 Midterm Forecast
 
-_Generated 2026-11-03 11:22 from the latest data snapshot. Refresh data + rerun everything: `python src/run_all.py`._
+_Generated 2026-11-03 16:08 from the latest data snapshot. Refresh data + rerun everything: `python src/run_all.py`._
 
 ## Topline
 
 | | Polls-only | Polls + fundamentals (unadjusted) | Polls + fundamentals, bias-adjusted (-2.6 national, state-lean term) |
 |---|---|---|---|
-| National House environment (two-party) | D+9.1 | D+9.7 | D+7.5 |
+| National House environment (two-party) | D+9.0 | D+9.6 | D+7.4 |
 | **P(Democratic House majority)** | 93% | 97% | 92% |
 | P(Republican House majority) | 7% | 3% | 8% |
-| Dem House seats, mean (80% range) | 236 (220–254) | 238 (224–252) | 229 (218–239) |
+| Dem House seats, mean (80% range) | 236 (219–253) | 237 (224–252) | 228 (218–239) |
 | **P(Democratic Senate control)** | 77% | 78% | 71% |
 | P(Dem control if independents caucus D) | 79% | 80% | 73% |
 | P(Republican Senate control) | 21% | 20% | 27% |
@@ -17,15 +17,15 @@ _Generated 2026-11-03 11:22 from the latest data snapshot. Refresh data + rerun 
 
 Democrats need 51 Senate seats for control (VP Vance breaks 50–50 ties); 34 Dem-caucus and 31 Republican seats are not up. Independent candidates (Osborn in NE, Achilles in ID) are counted separately; neither has committed to a caucus.
 
-**Fundamentals sensitivity** (each of the ten top estimated specifications, both samples): fundamentals-only environment ranges D+8.0 to D+11.8; after blending with polls, D+8.6 to D+10.3, P(D House) 95%–97%, P(D Senate) 77%–79%.
+**Fundamentals sensitivity** (each of the ten top estimated specifications, both samples): fundamentals-only environment ranges D+8.0 to D+11.8; after blending with polls, D+8.5 to D+10.2, P(D House) 95%–97%, P(D Senate) 77%–78%.
 
 ## National inputs
 
-- **Generic ballot**: mean of 5 aggregators on Wikipedia (DDHQ, FiftyPlusOne, NBC, RCP, Silver Bulletin; updated Oct 30), converted to two-party: **D+9.1**. Own average of VoteHub polls (through early Oct, VoteHub stopped tracking): D+8.4.
+- **Generic ballot**: mean of 5 aggregators on Wikipedia (DDHQ, FiftyPlusOne, NBC, RCP, Silver Bulletin; updated Oct 30), converted to two-party: **D+9.0**. Own average of VoteHub polls (through early Oct, VoteHub stopped tracking): D+8.4.
 - **Trump approval**: 36.8% (mean of 8 aggregators).
 - **Economy** (FRED, as of 2026-09-01): unemployment 4.2% (-0.1 over 12 months), CPI inflation 4.0% y/y, real disposable income per capita +0.7% y/y.
 - **Real gas prices** +29.3% y/y (Sept; gasoline CPI ÷ CPI-U); **CPI inflation** 3.7% (Sept/Sept, unrevised CPI-U).
-- **Fundamentals estimate** (estimated on 1962–2022; top specifications averaged, LOO RMSE 3.9, SD used 4.5): D+10.4. Blended with polls by inverse variance (56% weight on polls) → D+9.7.
+- **Fundamentals estimate** (estimated on 1962–2022; top specifications averaged, LOO RMSE 3.9, SD used 4.5): D+10.4. Blended with polls by inverse variance (56% weight on polls) → D+9.6.
 - **Uncertainty** (from 538 poll-vs-result archive, 1998–2022): national generic-ballot miss RMSE 4.0 pts (historical mean -2.9: polls have tended to overstate Democrats); Senate shared miss 3.3; race-level poll-average error 7.4. All errors are fat-tailed (t, estimated df), 40,000 simulations.
 
 ## Senate races
@@ -34,41 +34,41 @@ Margins are two-party D−R (Montana: best non-R minus R). The forecast blends t
 
 | Race | Democrat / Ind. | Republican | PVI | Poll avg (n) | Prior | Forecast margin | P(D/I win) polls-only | P(D/I win) +fund | Cook | Silver |
 |---|---|---|---|---|---|---|---|---|---|---|
-| MA | Ed Markey | John Deaton | D+28.0 | D+30.5 (9) | D+39.7 | D+31.4 | >99% | >99% | Solid D | Solid D |
-| RI | Jack Reed | Raymond McKay | D+16.0 | D+27.0 (5) | D+27.7 | D+27.1 | >99% | >99% | Solid D | Solid D |
-| OR | Jeff Merkley | David Brock Smith | D+16.0 | — (0) | D+27.7 | D+27.7 | 99% | 99% | Solid D | Solid D |
-| DE | Chris Coons | Michael Katz | D+16.0 | — (0) | D+27.7 | D+27.7 | 99% | 99% | Solid D | Solid D |
-| NJ | Cory Booker | Justin Murphy | D+8.0 | — (0) | D+19.7 | D+19.7 | 97% | 97% | Solid D | Solid D |
-| NC | Roy Cooper | Michael Whatley | R+2.0 | D+11.3 (26) | D+7.7 | D+11.0 | 97% | 97% | Likely D (flip) | Solid D (flip) |
-| VA | Mark Warner | Bert Mizusawa | D+6.0 | D+20.5 (2) | D+17.7 | D+19.6 | 97% | 97% | Solid D | Solid D |
-| IL | Juliana Stratton | Don Tracy | D+12.0 | D+13.9 (3) | D+21.7 | D+15.3 | 97% | 97% | Solid D | Solid D |
-| NM | Ben Ray Luján | Larry Marker | D+8.0 | D+18.6 (2) | D+19.7 | D+19.0 | 96% | 97% | Solid D | Solid D |
-| CO | John Hickenlooper | Mark Baisley | D+12.0 | D+16.0 (1) | D+23.7 | D+18.4 | 96% | 96% | Solid D | Solid D |
-| GA | Jon Ossoff | Mike Collins | R+2.0 | D+9.3 (12) | D+9.7 | D+9.3 | 94% | 94% | Likely D | Solid D |
-| NH | Chris Pappas | John E. Sununu | D+4.0 | D+8.1 (12) | D+13.7 | D+8.6 | 93% | 93% | Lean D | Solid D |
-| MI | Abdul El-Sayed | Mike Rogers | D+0.0 | D+4.2 (37) | D+9.7 | D+4.5 | 82% | 82% | Lean D | Likely D |
-| ME | Troy Jackson | Susan Collins | D+8.0 | D+3.8 (22) | D+15.7 | D+4.6 | 82% | 82% | Tossup | Likely D (flip) |
-| MN | Peggy Flanagan | Michele Tafoya | D+6.0 | D+3.4 (8) | D+15.7 | D+4.8 | 78% | 79% | Lean D | Likely D |
-| OH (sp.) | Sherrod Brown | Jon Husted | R+10.0 | D+4.3 (25) | R+2.3 | D+3.9 | 78% | 78% | Tossup | Lean D (flip) |
-| KS | Adam Hamilton | Roger Marshall | R+16.0 | D+5.0 (9) | R+8.3 | D+3.8 | 75% | 76% | Tossup | Lean D (flip) |
-| TX | James Talarico | Ken Paxton | R+12.0 | D+3.2 (40) | R+2.3 | D+2.8 | 72% | 73% | Tossup | Likely D (flip) |
-| AK | Mary Peltola | Dan S. Sullivan | R+12.0 | D+1.9 (10) | R+4.3 | D+1.2 | 59% | 59% | Tossup | Tossup |
-| IA | Josh Turek | Ashley Hinson | R+12.0 | D+0.1 (24) | R+2.3 | R+0.1 | 49% | 49% | Tossup | Tossup |
-| SC | Annie Andrews | Darline Graham | R+16.0 | R+1.4 (5) | R+8.3 | R+2.3 | 35% | 36% | Lean R | Lean R |
-| NE | Dan Osborn (I) | Pete Ricketts | R+20.0 | R+1.8 (4) | R+12.3 | R+3.5 | 30% | 30% | Lean R | Lean R |
-| MS | Scott Colom | Cindy Hyde-Smith | R+22.0 | R+5.7 (2) | R+14.3 | R+7.8 | 16% | 17% | Likely R | Solid R |
-| FL (sp.) | Angie Nixon | Ashley Moody | R+10.0 | R+6.6 (16) | R+2.3 | R+6.2 | 13% | 13% | Likely R | Likely R |
-| ID | Todd Achilles (I) | Jim Risch | R+36.0 | R+6.2 (1) | R+28.3 | R+13.1 | 8% | 9% | Solid R | Solid R |
-| LA | Jamie Davis | Julia Letlow | R+22.0 | — (0) | R+12.3 | R+12.3 | 8% | 9% | Solid R | Likely R |
-| MT | Alani Bankhead | Kurt Alme | R+20.0 | R+12.4 (6) | R+10.3 | R+12.4 | 5% | 5% | Solid R | Likely R |
-| AR | Hallie Shoffner | Tom Cotton | R+30.0 | R+12.8 (4) | R+22.3 | R+14.3 | 3% | 3% | Solid R | Solid R |
-| SD | Brian Bengs (I) | Mike Rounds | R+30.0 | R+13.2 (4) | R+22.3 | R+14.4 | 3% | 3% | Solid R | Solid R |
-| KY | Charles Booker | Andy Barr | R+30.0 | — (0) | R+20.3 | R+20.3 | 2% | 2% | Solid R | Solid R |
-| TN | Marquita Bradshaw | Bill Hagerty | R+28.0 | R+23.9 (1) | R+20.3 | R+22.8 | 2% | 2% | Solid R | Solid R |
-| OK | N'Kiyla Jasmine Thomas | Kevin Hern | R+34.0 | — (0) | R+24.3 | R+24.3 | 1% | 1% | Solid R | Solid R |
-| AL | Everett Wess | Barry Moore | R+30.0 | R+17.3 (5) | R+20.3 | R+17.7 | 1% | 1% | Solid R | Solid R |
-| WV | Rachel Fetty Anderson | Shelley Moore Capito | R+42.0 | — (0) | R+34.3 | R+34.3 | <1% | <1% | Solid R | Solid R |
-| WY | James W. Byrd | Harriet Hageman | R+46.0 | — (0) | R+36.3 | R+36.3 | <1% | <1% | Solid R | Solid R |
+| MA | Ed Markey | John Deaton | D+28.0 | D+30.5 (9) | D+39.6 | D+31.4 | >99% | >99% | Solid D | Solid D |
+| RI | Jack Reed | Raymond McKay | D+16.0 | D+27.0 (5) | D+27.6 | D+27.1 | >99% | >99% | Solid D | Solid D |
+| OR | Jeff Merkley | David Brock Smith | D+16.0 | — (0) | D+27.6 | D+27.6 | 99% | 99% | Solid D | Solid D |
+| DE | Chris Coons | Michael Katz | D+16.0 | — (0) | D+27.6 | D+27.6 | 99% | 99% | Solid D | Solid D |
+| NJ | Cory Booker | Justin Murphy | D+8.0 | — (0) | D+19.6 | D+19.6 | 97% | 97% | Solid D | Solid D |
+| NC | Roy Cooper | Michael Whatley | R+2.0 | D+11.3 (26) | D+7.6 | D+11.0 | 97% | 97% | Likely D | Solid D |
+| VA | Mark Warner | Bert Mizusawa | D+6.0 | D+20.5 (2) | D+17.6 | D+19.6 | 97% | 97% | Solid D | Solid D |
+| IL | Juliana Stratton | Don Tracy | D+12.0 | D+13.9 (3) | D+21.6 | D+15.3 | 97% | 97% | Solid D | Solid D |
+| NM | Ben Ray Luján | Larry Marker | D+8.0 | D+18.6 (2) | D+19.6 | D+18.9 | 96% | 97% | Solid D | Solid D |
+| CO | John Hickenlooper | Mark Baisley | D+12.0 | D+16.0 (1) | D+23.6 | D+18.4 | 96% | 96% | Solid D | Solid D |
+| GA | Jon Ossoff | Mike Collins | R+2.0 | D+9.3 (12) | D+9.6 | D+9.3 | 94% | 94% | Likely D | Solid D |
+| NH | Chris Pappas | John E. Sununu | D+4.0 | D+8.1 (12) | D+13.6 | D+8.6 | 93% | 93% | Lean D | Solid D |
+| MI | Abdul El-Sayed | Mike Rogers | D+0.0 | D+4.2 (37) | D+9.6 | D+4.5 | 82% | 82% | Lean D | Likely D |
+| ME | Troy Jackson | Susan Collins | D+8.0 | D+3.8 (22) | D+15.6 | D+4.6 | 82% | 82% | Tossup | Likely D |
+| MN | Peggy Flanagan | Michele Tafoya | D+6.0 | D+3.4 (8) | D+15.6 | D+4.8 | 78% | 79% | Lean D | Likely D |
+| OH (sp.) | Sherrod Brown | Jon Husted | R+10.0 | D+4.3 (25) | R+2.4 | D+3.8 | 78% | 78% | Tossup | Lean D |
+| KS | Adam Hamilton | Roger Marshall | R+16.0 | D+5.0 (9) | R+8.4 | D+3.8 | 75% | 76% | Tossup | Lean D |
+| TX | James Talarico | Ken Paxton | R+12.0 | D+3.2 (40) | R+2.4 | D+2.8 | 72% | 73% | Tossup | Likely D |
+| AK | Mary Peltola | Dan S. Sullivan | R+12.0 | D+1.9 (10) | R+4.4 | D+1.2 | 58% | 59% | Tossup | Tossup |
+| IA | Josh Turek | Ashley Hinson | R+12.0 | D+0.1 (24) | R+2.4 | R+0.1 | 49% | 49% | Tossup | Tossup |
+| SC | Annie Andrews | Darline Graham | R+16.0 | R+1.4 (5) | R+8.4 | R+2.3 | 35% | 36% | Lean R | Lean R |
+| NE | Dan Osborn (I) | Pete Ricketts | R+20.0 | R+1.8 (4) | R+12.4 | R+3.5 | 30% | 30% | Lean R | Lean R |
+| MS | Scott Colom | Cindy Hyde-Smith | R+22.0 | R+5.7 (2) | R+14.4 | R+7.8 | 16% | 17% | Likely R | Solid R |
+| FL (sp.) | Angie Nixon | Ashley Moody | R+10.0 | R+6.6 (16) | R+2.4 | R+6.2 | 13% | 13% | Likely R | Likely R |
+| ID | Todd Achilles (I) | Jim Risch | R+36.0 | R+6.2 (1) | R+28.4 | R+13.1 | 8% | 9% | Solid R | Solid R |
+| LA | Jamie Davis | Julia Letlow | R+22.0 | — (0) | R+12.4 | R+12.4 | 7% | 8% | Solid R | Likely R |
+| MT | Alani Bankhead | Kurt Alme | R+20.0 | R+12.4 (6) | R+10.4 | R+12.4 | 5% | 5% | Solid R | Likely R |
+| AR | Hallie Shoffner | Tom Cotton | R+30.0 | R+12.8 (4) | R+22.4 | R+14.3 | 3% | 3% | Solid R | Solid R |
+| SD | Brian Bengs (I) | Mike Rounds | R+30.0 | R+13.2 (4) | R+22.4 | R+14.4 | 3% | 3% | Solid R | Solid R |
+| KY | Charles Booker | Andy Barr | R+30.0 | — (0) | R+20.4 | R+20.4 | 2% | 2% | Solid R | Solid R |
+| TN | Marquita Bradshaw | Bill Hagerty | R+28.0 | R+23.9 (1) | R+20.4 | R+22.8 | 2% | 2% | Solid R | Solid R |
+| OK | N'Kiyla Jasmine Thomas | Kevin Hern | R+34.0 | — (0) | R+24.4 | R+24.4 | 1% | 1% | Solid R | Solid R |
+| AL | Everett Wess | Barry Moore | R+30.0 | R+17.3 (5) | R+20.4 | R+17.7 | 1% | 1% | Solid R | Solid R |
+| WV | Rachel Fetty Anderson | Shelley Moore Capito | R+42.0 | — (0) | R+34.4 | R+34.4 | <1% | <1% | Solid R | Solid R |
+| WY | James W. Byrd | Harriet Hageman | R+46.0 | — (0) | R+36.4 | R+36.4 | <1% | <1% | Solid R | Solid R |
 
 ## Competitive House seats
 
@@ -76,68 +76,68 @@ Margins are two-party D−R (Montana: best non-R minus R). The forecast blends t
 
 | District | Incumbent (party) | PVI | Open? | District poll avg | Forecast margin | P(D win) polls-only | P(D win) +fund |
 |---|---|---|---|---|---|---|---|
-| NC-1 | Don Davis (D) | R+5 |  | D+10.9 | D+6.7 | 87% | 89% |
-| FL-25 | Jared Moskowitz (D) | R+3 |  | D+4.4 | D+6.2 | 85% | 88% |
+| NC-1 | Don Davis (D) | R+5 |  | D+10.9 | D+6.6 | 87% | 89% |
+| FL-25 | Jared Moskowitz (D) | R+3 |  | D+4.4 | D+6.1 | 85% | 88% |
 | FL-14 | Kathy Castor (D) | R+4 |  | D+5.5 | D+5.5 | 83% | 86% |
-| AZ-1 | David Schweikert (R) | R+1 | open | D+3.9 | D+5.4 | 82% | 85% |
-| WA-3 | Marie Gluesenkamp Perez (D) | R+2 |  | R+0.6 | D+5.1 | 81% | 84% |
-| MI-7 | Tom Barrett (R) | EVEN |  | D+5.4 | D+4.5 | 79% | 81% |
+| AZ-1 | David Schweikert (R) | R+1 | open | D+3.9 | D+5.3 | 82% | 85% |
+| WA-3 | Marie Gluesenkamp Perez (D) | R+2 |  | R+0.6 | D+5.0 | 81% | 84% |
+| MI-7 | Tom Barrett (R) | EVEN |  | D+5.4 | D+4.5 | 78% | 81% |
 | PA-7 | Ryan Mackenzie (R) | R+1 |  | D+5.9 | D+3.7 | 74% | 77% |
 | NY-17 | Mike Lawler (R) | D+1 |  | R+0.1 | D+3.1 | 71% | 74% |
 | CO-8 | Gabe Evans (R) | EVEN |  | — | D+3.8 | 69% | 73% |
-| NJ-7 | Thomas Kean Jr. (R) | EVEN |  | — | D+3.8 | 70% | 73% |
-| AZ-6 | Juan Ciscomani (R) | EVEN |  | — | D+3.8 | 70% | 73% |
+| NJ-7 | Thomas Kean Jr. (R) | EVEN |  | — | D+3.8 | 69% | 73% |
+| AZ-6 | Juan Ciscomani (R) | EVEN |  | — | D+3.8 | 69% | 73% |
 | PA-1 | Brian Fitzpatrick (R) | D+1 |  | R+2.3 | D+2.4 | 65% | 69% |
 | NC-11 | Chuck Edwards (R) | R+5 |  | D+13.1 | D+2.2 | 64% | 67% |
-| VA-2 | Jen Kiggans (R) | EVEN |  | R+1.2 | D+1.8 | 61% | 64% |
-| OH-9 | Marcy Kaptur (D) | R+5 |  | R+1.2 | D+1.7 | 61% | 63% |
-| MT-1 | Ryan Zinke (R) | R+5 | open | D+4.8 | D+1.6 | 60% | 63% |
+| VA-2 | Jen Kiggans (R) | EVEN |  | R+1.2 | D+1.7 | 60% | 64% |
+| OH-9 | Marcy Kaptur (D) | R+5 |  | R+1.2 | D+1.7 | 60% | 63% |
+| MT-1 | Ryan Zinke (R) | R+5 | open | D+4.8 | D+1.5 | 59% | 62% |
 | IA-2 | Ashley Hinson (R) | R+4 | open | D+2.0 | D+1.5 | 59% | 62% |
-| MI-10 | John James (R) | R+3 | open | R+1.2 | D+1.2 | 57% | 60% |
-| TX-35 | None (new seat) (O) | R+4 | open | D+0.7 | D+0.9 | 55% | 58% |
-| IA-1 | Mariannette Miller-Meeks (R) | R+4 |  | D+6.7 | D+0.7 | 53% | 56% |
-| OH-7 | Max Miller (R) | R+5 |  | D+7.9 | D+0.5 | 52% | 55% |
-| FL-22 | None (new seat) (O) | R+4 | open | D+0.0 | D+0.6 | 52% | 55% |
-| IA-3 | Zach Nunn (R) | R+2 |  | — | D+0.2 | 48% | 51% |
-| WI-1 | Bryan Steil (R) | R+2 |  | R+0.7 | R+0.2 | 46% | 49% |
+| MI-10 | John James (R) | R+3 | open | R+1.2 | D+1.2 | 57% | 59% |
+| TX-35 | None (new seat) (O) | R+4 | open | D+0.7 | D+0.9 | 54% | 57% |
+| IA-1 | Mariannette Miller-Meeks (R) | R+4 |  | D+6.7 | D+0.6 | 53% | 55% |
+| OH-7 | Max Miller (R) | R+5 |  | D+7.9 | D+0.5 | 52% | 54% |
+| FL-22 | None (new seat) (O) | R+4 | open | D+0.0 | D+0.6 | 52% | 54% |
+| IA-3 | Zach Nunn (R) | R+2 |  | — | D+0.1 | 48% | 51% |
+| WI-1 | Bryan Steil (R) | R+2 |  | R+0.7 | R+0.2 | 46% | 48% |
 | VA-1 | Rob Wittman (R) | R+3 |  | D+1.7 | R+0.2 | 46% | 48% |
-| PA-8 | Rob Bresnahan (R) | R+4 |  | D+4.0 | R+0.4 | 45% | 47% |
-| FL-7 | Cory Mills (R) | R+5 | open | — | R+0.7 | 42% | 45% |
-| KY-6 | Andy Barr (R) | R+7 | open | D+4.1 | R+0.7 | 43% | 44% |
+| PA-8 | Rob Bresnahan (R) | R+4 |  | D+4.0 | R+0.4 | 44% | 46% |
+| FL-7 | Cory Mills (R) | R+5 | open | — | R+0.8 | 41% | 44% |
+| KY-6 | Andy Barr (R) | R+7 | open | D+4.1 | R+0.7 | 42% | 44% |
 | AL-2 | Shomari Figures (D) | R+7 |  | R+2.1 | R+0.8 | 42% | 44% |
-| TX-15 | Monica De La Cruz (R) | R+7 |  | D+9.0 | R+1.0 | 40% | 41% |
+| TX-15 | Monica De La Cruz (R) | R+7 |  | D+9.0 | R+1.1 | 40% | 41% |
 | OH-10 | Mike Turner (R) | R+4 |  | D+2.1 | R+1.2 | 39% | 40% |
-| PA-10 | Scott Perry (R) | R+3 |  | — | R+1.6 | 37% | 40% |
-| MI-4 | Bill Huizenga (R) | R+3 |  | — | R+1.6 | 38% | 40% |
-| WI-3 | Derrick Van Orden (R) | R+3 |  | — | R+1.6 | 37% | 39% |
-| FL-9 | Darren Soto (D) | R+8 |  | — | R+1.7 | 37% | 39% |
+| PA-10 | Scott Perry (R) | R+3 |  | — | R+1.7 | 36% | 40% |
+| MI-4 | Bill Huizenga (R) | R+3 |  | — | R+1.7 | 37% | 39% |
+| WI-3 | Derrick Van Orden (R) | R+3 |  | — | R+1.7 | 36% | 39% |
+| FL-9 | Darren Soto (D) | R+8 |  | — | R+1.7 | 36% | 39% |
 | ME-2 | Jared Golden (D) | R+4 | open | R+5.1 | R+1.4 | 37% | 39% |
 | MO-2 | Ann Wagner (R) | R+4 |  | D+1.3 | R+1.4 | 37% | 39% |
-| SC-1 | Nancy Mace (R) | R+6 | open | D+0.1 | R+1.4 | 38% | 38% |
-| NY-1 | Nick LaLota (R) | R+4 |  | — | R+3.4 | 28% | 29% |
-| TX-23 | Vacant (O) | R+7 | open | R+1.2 | R+3.1 | 27% | 27% |
+| SC-1 | Nancy Mace (R) | R+6 | open | D+0.1 | R+1.5 | 37% | 38% |
+| NY-1 | Nick LaLota (R) | R+4 |  | — | R+3.5 | 28% | 28% |
+| TX-23 | Vacant (O) | R+7 | open | R+1.2 | R+3.1 | 26% | 27% |
 | CO-3 | Jeff Hurd (R) | R+5 |  | R+0.1 | R+3.2 | 26% | 27% |
 | FL-16 | Vern Buchanan (R) | R+6 | open | R+4.4 | R+3.3 | 25% | 26% |
 | FL-11 | Daniel Webster (R) | R+7 | open | — | R+4.4 | 23% | 24% |
-| OH-15 | Mike Carey (R) | R+5 |  | R+2.0 | R+3.8 | 22% | 22% |
-| MN-1 | Brad Finstad (R) | R+6 |  | D+0.3 | R+3.8 | 22% | 22% |
-| NV-2 | Mark Amodei (R) | R+7 | open | R+3.4 | R+4.0 | 22% | 22% |
-| NE-1 | Mike Flood (R) | R+6 |  | R+0.3 | R+4.1 | 21% | 21% |
-| FL-4 | Aaron Bean (R) | R+5 |  | — | R+5.2 | 19% | 20% |
-| WA-5 | Michael Baumgartner (R) | R+5 |  | — | R+5.2 | 20% | 20% |
-| CO-5 | Jeff Crank (R) | R+5 |  | — | R+5.2 | 20% | 20% |
-| AZ-2 | Eli Crane (R) | R+7 |  | D+2.0 | R+4.4 | 19% | 20% |
+| OH-15 | Mike Carey (R) | R+5 |  | R+2.0 | R+3.9 | 22% | 22% |
+| MN-1 | Brad Finstad (R) | R+6 |  | D+0.3 | R+3.9 | 22% | 22% |
+| NV-2 | Mark Amodei (R) | R+7 | open | R+3.4 | R+4.0 | 21% | 22% |
+| NE-1 | Mike Flood (R) | R+6 |  | R+0.3 | R+4.2 | 20% | 20% |
+| FL-4 | Aaron Bean (R) | R+5 |  | — | R+5.3 | 19% | 20% |
+| WA-5 | Michael Baumgartner (R) | R+5 |  | — | R+5.3 | 19% | 20% |
+| CO-5 | Jeff Crank (R) | R+5 |  | — | R+5.3 | 19% | 20% |
+| AZ-2 | Eli Crane (R) | R+7 |  | D+2.0 | R+4.5 | 19% | 20% |
 | FL-2 | Neal Dunn (R) | R+8 | open | — | R+6.2 | 16% | 17% |
-| GA-1 | Buddy Carter (R) | R+8 | open | — | R+6.2 | 17% | 17% |
-| TX-32 | None (new seat) (O) | R+8 | open | — | R+6.2 | 16% | 17% |
-| FL-27 | María Elvira Salazar (R) | R+6 |  | R+2.3 | R+5.1 | 16% | 17% |
-| FL-13 | Anna Paulina Luna (R) | R+6 |  | R+2.4 | R+5.0 | 16% | 16% |
-| NY-2 | Andrew Garbarino (R) | R+6 |  | — | R+7.1 | 14% | 14% |
-| NC-3 | Greg Murphy (R) | R+6 |  | — | R+7.1 | 14% | 14% |
+| GA-1 | Buddy Carter (R) | R+8 | open | — | R+6.2 | 16% | 17% |
+| TX-32 | None (new seat) (O) | R+8 | open | — | R+6.2 | 16% | 16% |
+| FL-27 | María Elvira Salazar (R) | R+6 |  | R+2.3 | R+5.2 | 16% | 16% |
+| FL-13 | Anna Paulina Luna (R) | R+6 |  | R+2.4 | R+5.1 | 16% | 16% |
+| NY-2 | Andrew Garbarino (R) | R+6 |  | — | R+7.1 | 13% | 14% |
+| NC-3 | Greg Murphy (R) | R+6 |  | — | R+7.1 | 13% | 14% |
 | AR-2 | French Hill (R) | R+8 |  | R+0.2 | R+6.2 | 12% | 12% |
 | VA-5 | John McGuire (R) | R+6 |  | R+5.2 | R+6.3 | 12% | 12% |
-| TX-9 | None (new seat) (O) | R+9 | open | — | R+8.0 | 11% | 12% |
-| NY-21 | Elise Stefanik (R) | R+10 | open | R+1.9 | R+6.5 | 12% | 11% |
+| TX-9 | None (new seat) (O) | R+9 | open | — | R+8.0 | 11% | 11% |
+| NY-21 | Elise Stefanik (R) | R+10 | open | R+1.9 | R+6.6 | 12% | 11% |
 
 _PVI column in the House table is Cook-style share PVI (district vs. nation); in the Senate table it is shown as the implied margin (2×PVI)._
 
