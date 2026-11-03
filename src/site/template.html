@@ -212,7 +212,7 @@ td .none { color: var(--text-3); font-size: .8rem; }
       <h2>What if…? Explore the simulations</h2>
       <div class="seg modelSeg" role="group" aria-label="Model for the explorer"></div>
     </div>
-    <p class="small muted" style="margin:4px 0 0;max-width:none">Click a state to give it to the Democrat (or independent), click again for the Republican, a third time to clear. Click bars in the national-vote chart to pick how the national environment turns out. Everything else updates to match: the same simulations that produce the forecast, filtered to the scenario you set.</p>
+    <p class="small muted" style="margin:4px 0 0;max-width:none">Click a state to give it to the Democrat (or independent), click again for the Republican, a third time to clear. Pick a bar in the national-vote chart to choose how the national environment turns out (the buttons pick wider ranges). Everything else updates to match: the same simulations that produce the forecast, filtered to the scenario you set.</p>
     <div class="exgrid">
       <div>
         <div class="simbar"><span id="mapMode" class="lab">Senate map · chance the Democrat or independent wins</span><span id="mapBack"></span></div>
@@ -917,7 +917,7 @@ function renderNatHist(S, C) {
   const bw = (W - m.l - m.r) / nb, y = (v) => H - m.b - v / mx * (H - m.t - m.b);
   const t3 = css("--text-3"), t2 = css("--text-2"), bd = css("--border"), tint = css("--tint"), och = css("--ochre");
   let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Distribution of the national House vote across simulations">`;
-  s += `<text x="${m.l}" y="12" font-size="11.5" font-weight="600" fill="${t2}">NATIONAL HOUSE VOTE (D−R) · click bars to choose</text>`;
+  s += `<text x="${m.l}" y="12" font-size="11.5" font-weight="600" fill="${t2}">NATIONAL HOUSE VOTE (D−R) · pick a bar</text>`;
   for (let j = 0; j < nb; j++) {
     const b = S.lo + j, x0 = m.l + j * bw, sel = exBins.has(b);
     if (sel) s += `<rect x="${x0}" y="${m.t - 4}" width="${bw}" height="${H - m.t - m.b + 4}" fill="${och}" opacity=".16" rx="3"/>`;
@@ -935,8 +935,10 @@ function renderNatHist(S, C) {
     const b = +r.dataset.b, j = b - S.lo;
     exTip(r, `#natHist rect.b[data-b="${b}"]`,
       () => `<b>National vote ${j === 0 ? "below " + fmtI(b + 1) : j === nb - 1 ? fmtI(b) + " or more" : fmtI(b) + " to " + fmtI(b + 1)}</b><br>${fmtP(shA[j])} of all simulations` + (stateOn ? `<br>${fmtP(shS[j])} of those with your states` : "") +
-        (exBins.has(b) ? `<br><b style="color:var(--ochre)">Selected</b>` : "") + `<br><span style="color:var(--text-3)">${tapWord()} to ${exBins.has(b) ? "remove" : "add"} this range</span>`,
-      () => { if (exBins.has(b)) exBins.delete(b); else exBins.add(b); exPreset = null; exSim = null; renderExplorer(); });
+        (exBins.has(b) ? `<br><b style="color:var(--ochre)">Selected</b>` : "") +
+        `<br><span style="color:var(--text-3)">${exBins.has(b) && exBins.size === 1 ? `${tapWord()} again to clear it` : `${tapWord()} to pick ${exBins.size ? "only " : ""}this one`}</span>`,
+      // one bar at a time: picking a bar replaces any earlier pick (the buttons above select ranges)
+      () => { exBins = exBins.has(b) && exBins.size === 1 ? new Set() : new Set([b]); exPreset = null; exSim = null; renderExplorer(); });
   });
 }
 
