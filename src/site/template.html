@@ -436,7 +436,7 @@ td .none { color: var(--text-3); font-size: .8rem; }
     <div class="tbl-wrap" style="margin-top:8px"><table>
       <thead><tr><th>Input</th><th>Source</th><th>Use</th></tr></thead>
       <tbody>
-        <tr><td>2026 Senate &amp; House polls</td><td>VoteHub API (<span id="vhN"></span> polls)</td><td>Race poll averages</td></tr>
+        <tr><td>2026 Senate &amp; House polls</td><td>VoteHub API (<span id="vhN"></span> polls)<span id="supN"></span></td><td>Race poll averages</td></tr>
         <tr><td>Generic ballot, approval</td><td>Wikipedia aggregator tables (DDHQ, FiftyPlusOne, NBC, RCP, Silver Bulletin…)</td><td>National environment</td></tr>
         <tr><td>District lean, candidates, ratings</td><td>Wikipedia 2026 House &amp; Senate pages</td><td>Priors; ratings for comparison</td></tr>
         <tr><td>Historical polls</td><td>538 archive (Internet Archive; GitHub <code>raw_polls.csv</code>)</td><td>Calibration, backtest, bias</td></tr>
@@ -1347,6 +1347,13 @@ function renderData() {
   $("#appTable").innerHTML = `<thead><tr><th>Average</th><th class="num">Approve</th></tr></thead><tbody>` +
     N.approval_aggregators.filter(r => !/average/i.test(r.Aggregator)).map(r => `<tr><td>${esc(r.Aggregator)}</td><td class="num">${esc(r.Approve)}</td></tr>`).join("") + "</tbody>";
   $("#vhN").textContent = DATA.inputs.votehub_polls.toLocaleString();
+  const sup = DATA.inputs.supplement_polls || [];
+  if (sup.length) {
+    const by = {};
+    sup.forEach(x => (by[x.pollster] = by[x.pollster] || []).push(`<a href="${esc(x.url)}">${esc(x.state)}</a>`));
+    $("#supN").innerHTML = `, plus ${sup.length} Senate poll${sup.length > 1 ? "s" : ""} VoteHub hadn't entered by the final run, taken from the pollster's own reports: ` +
+      Object.entries(by).map(([p, l]) => `${esc(p)} (${l.join(", ")})`).join("; ");
+  }
   const files = [["summary_polls_fundamentals.json", "Topline, polls + fundamentals (incl. seat histograms)"], ["summary_polls_fundamentals_biasadj.json", "Topline, adjusted"], ["summary_polls_only.json", "Topline, polls only"],
     ["senate_polls_fundamentals.csv", "Senate race forecasts"], ["house_polls_fundamentals.csv", "House district forecasts (all 435)"], ["national_inputs.json", "National inputs"], ["house_2026_races.csv", "House race structure (Wikipedia)"], ["senate_2026_races.csv", "Senate race structure and ratings (Wikipedia)"],
     ["fundamentals.json", "Fundamentals model"], ["fundamentals_dataset.csv", "Fundamentals dataset 1946–2026"], ["bias_decay.json", "Polling-bias re-estimate"], ["bias_analysis.json", "Polling-bias analysis"], ["state_econ.json", "State unemployment test"],

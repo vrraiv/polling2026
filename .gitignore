@@ -3,3 +3,5 @@
 *.log
 *_log.txt
 __pycache__/
+# pollster PDFs (~4 MB each); links in the manifest, checksums in data/supplement/polls_supplement.json
+data/raw/atlasintel/**/*.pdf

@@ -140,6 +140,8 @@ def main():
         "inputs": {
             "house_districts": int(len(h_int)), "house_open": int((~h_int.status.fillna("").str.contains("renominated|advanced|re-elected|running", case=False)).sum()),
             "votehub_polls": len(json.loads(sorted((ROOT / "data/raw/votehub").glob("*/polls.json"))[-1].read_text(encoding="utf-8"))),
+            "supplement_polls": [{"pollster": x["pollster"], "state": x["subject"].replace("2026 ", ""), "url": x["url"]}
+                                 for x in P.SUPPLEMENT_USED],
         },
     }
     SITE.mkdir(exist_ok=True)

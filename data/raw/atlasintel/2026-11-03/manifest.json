@@ -1,0 +1,42 @@
+{
+  "AK.pdf": {
+    "url": "https://cdn1.atlasintel.org/2026_midterms__alaska___atlas_pollstergraph_poll_103afadb492016f2.pdf",
+    "retrieved": "2026-11-03T11:03:19",
+    "bytes": 3665805
+  },
+  "IA.pdf": {
+    "url": "https://cdn1.atlasintel.org/2026_midterms__iowa___atlas_pollstergraph_poll_115a969a5a5d4770.pdf",
+    "retrieved": "2026-11-03T11:03:19",
+    "bytes": 3929345
+  },
+  "KS.pdf": {
+    "url": "https://cdn1.atlasintel.org/2026_midterms__kansas___atlas_pollstergraph_poll_1bc9b9829579665d.pdf",
+    "retrieved": "2026-11-03T11:03:20",
+    "bytes": 4097056
+  },
+  "ME.pdf": {
+    "url": "https://cdn1.atlasintel.org/2026_midterms__maine___atlas_pollstergraph_poll_06367ed11aab069d.pdf",
+    "retrieved": "2026-11-03T11:03:20",
+    "bytes": 4385202
+  },
+  "MI.pdf": {
+    "url": "https://cdn1.atlasintel.org/2026_midterms__michigan___atlas_pollstergraph_poll_a513687e165fc30f.pdf",
+    "retrieved": "2026-11-03T11:03:20",
+    "bytes": 2920465
+  },
+  "NH.pdf": {
+    "url": "https://cdn1.atlasintel.org/2026_midterms__new_hampshire___atlas_pollstergraph_poll_8a777e8b3b81438d.pdf",
+    "retrieved": "2026-11-03T11:03:20",
+    "bytes": 3525706
+  },
+  "OH.pdf": {
+    "url": "https://cdn1.atlasintel.org/2026_midterms__ohio___atlas_pollstergraph_poll_a53ea713086dbbe0.pdf",
+    "retrieved": "2026-11-03T11:03:21",
+    "bytes": 4071665
+  },
+  "TX.pdf": {
+    "url": "https://cdn1.atlasintel.org/2026_midterms__texas_110126_1_e8958087c4dc49a8.pdf",
+    "retrieved": "2026-11-03T11:03:21",
+    "bytes": 3507461
+  }
+}

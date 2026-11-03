@@ -1,0 +1,269 @@
+{
+ "about": "Polls added because VoteHub had not entered them before the final forecast. VoteHub's schema; pollavg.load_votehub() appends each one unless VoteHub already has a poll with the same pollster, type, subject, seat and end date. Toplines transcribed from the pollster's own PDF (chart pages are images).",
+ "polls": [
+  {
+   "id": "supp-atlasintel-ak-20261101-senate",
+   "poll_type": "us-senator",
+   "sample_size": 522,
+   "population": "lv",
+   "url": "https://cdn1.atlasintel.org/2026_midterms__alaska___atlas_pollstergraph_poll_103afadb492016f2.pdf",
+   "created_at": "2026-11-02",
+   "start_date": "2026-10-28",
+   "end_date": "2026-11-01",
+   "pollster": "AtlasIntel",
+   "answers": [
+    {
+     "choice": "Mary Peltola",
+     "pct": 50.1
+    },
+    {
+     "choice": "Dan S. Sullivan",
+     "pct": 44.6
+    }
+   ],
+   "seat_name": null,
+   "sponsors": [],
+   "internal": false,
+   "partisan": null,
+   "subject": "2026 Alaska",
+   "supplement": {
+    "source_file": "data/raw/atlasintel/2026-11-03/AK.pdf",
+    "sha256": "1c572c4c74b54a593e7ab557c1ae987d235847167e1ee953aaaad2b29683c3d1",
+    "page": 14,
+    "question": "US Senate vote intention [Valid votes]",
+    "transcribed": "2026-11-03"
+   }
+  },
+  {
+   "id": "supp-atlasintel-ia-20261101-senate",
+   "poll_type": "us-senator",
+   "sample_size": 1219,
+   "population": "lv",
+   "url": "https://cdn1.atlasintel.org/2026_midterms__iowa___atlas_pollstergraph_poll_115a969a5a5d4770.pdf",
+   "created_at": "2026-11-02",
+   "start_date": "2026-10-28",
+   "end_date": "2026-11-01",
+   "pollster": "AtlasIntel",
+   "answers": [
+    {
+     "choice": "Josh Turek",
+     "pct": 50.7
+    },
+    {
+     "choice": "Ashley Hinson",
+     "pct": 46.6
+    }
+   ],
+   "seat_name": null,
+   "sponsors": [],
+   "internal": false,
+   "partisan": null,
+   "subject": "2026 Iowa",
+   "supplement": {
+    "source_file": "data/raw/atlasintel/2026-11-03/IA.pdf",
+    "sha256": "54fb1e7e7be6e0fa401299326c3f84a82435bf21890bb540f9caf31c4922ed14",
+    "page": 15,
+    "question": "US Senate vote intention [Valid votes]",
+    "transcribed": "2026-11-03"
+   }
+  },
+  {
+   "id": "supp-atlasintel-ks-20261101-senate",
+   "poll_type": "us-senator",
+   "sample_size": 2038,
+   "population": "lv",
+   "url": "https://cdn1.atlasintel.org/2026_midterms__kansas___atlas_pollstergraph_poll_1bc9b9829579665d.pdf",
+   "created_at": "2026-11-02",
+   "start_date": "2026-10-28",
+   "end_date": "2026-11-01",
+   "pollster": "AtlasIntel",
+   "answers": [
+    {
+     "choice": "Adam Hamilton",
+     "pct": 52.7
+    },
+    {
+     "choice": "Roger Marshall",
+     "pct": 45.6
+    }
+   ],
+   "seat_name": null,
+   "sponsors": [],
+   "internal": false,
+   "partisan": null,
+   "subject": "2026 Kansas",
+   "supplement": {
+    "source_file": "data/raw/atlasintel/2026-11-03/KS.pdf",
+    "sha256": "f2ec3b8a393e706c4014d7e4b1aa4c76257f114d7ed4d5ab15afe394abc416bc",
+    "page": 15,
+    "question": "US Senate vote intention [Valid votes]",
+    "transcribed": "2026-11-03"
+   }
+  },
+  {
+   "id": "supp-atlasintel-me-20261101-senate",
+   "poll_type": "us-senator",
+   "sample_size": 967,
+   "population": "lv",
+   "url": "https://cdn1.atlasintel.org/2026_midterms__maine___atlas_pollstergraph_poll_06367ed11aab069d.pdf",
+   "created_at": "2026-11-02",
+   "start_date": "2026-10-28",
+   "end_date": "2026-11-01",
+   "pollster": "AtlasIntel",
+   "answers": [
+    {
+     "choice": "Troy Jackson",
+     "pct": 54.7
+    },
+    {
+     "choice": "Susan Collins",
+     "pct": 45.3
+    }
+   ],
+   "seat_name": null,
+   "sponsors": [],
+   "internal": false,
+   "partisan": null,
+   "subject": "2026 Maine",
+   "supplement": {
+    "source_file": "data/raw/atlasintel/2026-11-03/ME.pdf",
+    "sha256": "bcf38cbc3f15a6b99f9d120c6ca21ed2300b190eaf6abe6db80820b661da3ada",
+    "page": 15,
+    "question": "US Senate vote intention [Valid votes]",
+    "transcribed": "2026-11-03"
+   }
+  },
+  {
+   "id": "supp-atlasintel-mi-20261101-senate",
+   "poll_type": "us-senator",
+   "sample_size": 1316,
+   "population": "lv",
+   "url": "https://cdn1.atlasintel.org/2026_midterms__michigan___atlas_pollstergraph_poll_a513687e165fc30f.pdf",
+   "created_at": "2026-11-02",
+   "start_date": "2026-10-28",
+   "end_date": "2026-11-01",
+   "pollster": "AtlasIntel",
+   "answers": [
+    {
+     "choice": "Abdul El-Sayed",
+     "pct": 53.5
+    },
+    {
+     "choice": "Mike Rogers",
+     "pct": 46.4
+    }
+   ],
+   "seat_name": null,
+   "sponsors": [],
+   "internal": false,
+   "partisan": null,
+   "subject": "2026 Michigan",
+   "supplement": {
+    "source_file": "data/raw/atlasintel/2026-11-03/MI.pdf",
+    "sha256": "bc24388432302a7163fe91d92ab37a4bbba9bb5f9bec8f45787e82ad52aa78a0",
+    "page": 11,
+    "question": "US Senate vote intention [Valid votes]",
+    "transcribed": "2026-11-03"
+   }
+  },
+  {
+   "id": "supp-atlasintel-nh-20261101-senate",
+   "poll_type": "us-senator",
+   "sample_size": 1057,
+   "population": "lv",
+   "url": "https://cdn1.atlasintel.org/2026_midterms__new_hampshire___atlas_pollstergraph_poll_8a777e8b3b81438d.pdf",
+   "created_at": "2026-11-02",
+   "start_date": "2026-10-28",
+   "end_date": "2026-11-01",
+   "pollster": "AtlasIntel",
+   "answers": [
+    {
+     "choice": "Chris Pappas",
+     "pct": 54.2
+    },
+    {
+     "choice": "John Sununu",
+     "pct": 45.8
+    }
+   ],
+   "seat_name": null,
+   "sponsors": [],
+   "internal": false,
+   "partisan": null,
+   "subject": "2026 New Hampshire",
+   "supplement": {
+    "source_file": "data/raw/atlasintel/2026-11-03/NH.pdf",
+    "sha256": "1a655a79ae60f383513eb6b49c3948ea6721b23a49e94f902bcda3e36a9fed0a",
+    "page": 12,
+    "question": "US Senate vote intention [Valid votes]",
+    "transcribed": "2026-11-03"
+   }
+  },
+  {
+   "id": "supp-atlasintel-oh-20261101-senate",
+   "poll_type": "us-senator",
+   "sample_size": 1801,
+   "population": "lv",
+   "url": "https://cdn1.atlasintel.org/2026_midterms__ohio___atlas_pollstergraph_poll_a53ea713086dbbe0.pdf",
+   "created_at": "2026-11-02",
+   "start_date": "2026-10-28",
+   "end_date": "2026-11-01",
+   "pollster": "AtlasIntel",
+   "answers": [
+    {
+     "choice": "Sherrod Brown",
+     "pct": 52.4
+    },
+    {
+     "choice": "Jon Husted",
+     "pct": 44.7
+    }
+   ],
+   "seat_name": null,
+   "sponsors": [],
+   "internal": false,
+   "partisan": null,
+   "subject": "2026 Ohio",
+   "supplement": {
+    "source_file": "data/raw/atlasintel/2026-11-03/OH.pdf",
+    "sha256": "2d23817ee435ea188c63b0b5fdc1f92f7ec9114cea9f23277dffe9cd19a6f84e",
+    "page": 15,
+    "question": "US Senate vote intention [Valid votes]",
+    "transcribed": "2026-11-03"
+   }
+  },
+  {
+   "id": "supp-atlasintel-tx-20261101-senate",
+   "poll_type": "us-senator",
+   "sample_size": 1678,
+   "population": "lv",
+   "url": "https://cdn1.atlasintel.org/2026_midterms__texas_110126_1_e8958087c4dc49a8.pdf",
+   "created_at": "2026-11-01",
+   "start_date": "2026-10-28",
+   "end_date": "2026-11-01",
+   "pollster": "AtlasIntel",
+   "answers": [
+    {
+     "choice": "James Talarico",
+     "pct": 52.2
+    },
+    {
+     "choice": "Ken Paxton",
+     "pct": 46.2
+    }
+   ],
+   "seat_name": null,
+   "sponsors": [],
+   "internal": false,
+   "partisan": null,
+   "subject": "2026 Texas",
+   "supplement": {
+    "source_file": "data/raw/atlasintel/2026-11-03/TX.pdf",
+    "sha256": "ec9cdabb60b97f3156824817ae7d883255f880a107c43a2855571d0b1f6dc700",
+    "page": 15,
+    "question": "US Senate vote intention [Valid votes]",
+    "transcribed": "2026-11-03"
+   }
+  }
+ ]
+}

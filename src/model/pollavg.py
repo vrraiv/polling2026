@@ -28,8 +28,25 @@ if _PS.exists():  # estimated in src/model/poll_settings.py
     HALF_LIFE = int(_ch["half_life_races"])
 
 
-def load_votehub():
+SUPPLEMENT = ROOT / "data/supplement/polls_supplement.json"
+SUPPLEMENT_USED = []  # supplement polls appended on the last load (for the site's sources table)
+
+
+def _poll_key(x):
+    return ((x.get("pollster") or "").lower(), x["poll_type"], x.get("subject"), x.get("seat_name"), x["end_date"])
+
+
+def load_votehub(supplement=True):
+    """VoteHub snapshot, plus any poll in data/supplement/polls_supplement.json that VoteHub doesn't have yet
+    (same pollster, type, subject, seat and end date). Once VoteHub enters a poll, its own row is used instead."""
     d = json.loads(latest("votehub", "polls.json").read_text(encoding="utf-8"))
+    SUPPLEMENT_USED.clear()
+    if supplement and SUPPLEMENT.exists():
+        have = {_poll_key(x) for x in d}
+        for x in json.loads(SUPPLEMENT.read_text(encoding="utf-8"))["polls"]:
+            if _poll_key(x) not in have:
+                d.append(x)
+                SUPPLEMENT_USED.append(x)
     for x in d:
         x["end"] = pd.Timestamp(x["end_date"])
     return d
