@@ -455,7 +455,7 @@ td .none { color: var(--text-3); font-size: .8rem; }
   An independent statistical forecast from public data. Probabilities, not predictions: a 70% favorite loses 3 times in 10.<br>
   Data: <a href="https://votehub.com">VoteHub</a> polls; <a href="https://en.wikipedia.org/wiki/2026_United_States_elections">Wikipedia</a> (CC BY-SA 4.0) for race tables, district PVI, aggregator averages and expert ratings;
   538 archives via the <a href="https://web.archive.org">Internet Archive</a> and <a href="https://github.com/fivethirtyeight/data">GitHub</a> (CC BY 4.0); <a href="https://fred.stlouisfed.org">FRED</a>;
-  <a href="https://www.presidency.ucsb.edu">American Presidency Project</a> (Gallup approval); <a href="https://www.fec.gov">FEC</a>. Benchmark figures from Silver Bulletin's free summary.
+  <a href="https://www.presidency.ucsb.edu">American Presidency Project</a> (Gallup approval); <a href="https://www.fec.gov">FEC</a>.
 </div></footer>
 <div class="tip" id="tip" role="status"></div>
 
@@ -472,8 +472,6 @@ const STATE = {AL:"Alabama",AK:"Alaska",AZ:"Arizona",AR:"Arkansas",CA:"Californi
 const MODELS = { polls_only: "Polls only", polls_fundamentals: "Polls + fundamentals", polls_fundamentals_biasadj: "Bias-adjusted" };
 const MODEL_LONG = { polls_only: "Polls only (no fundamentals, no bias adjustment)", polls_fundamentals: "Polls + fundamentals", polls_fundamentals_biasadj: "Bias-adjusted (generic ballot shifted for its typical miss; Senate polls corrected by state lean)" };
 const FV = "polls_fundamentals", AD = "polls_fundamentals_biasadj";
-// Outside benchmark, typed in by hand: re-check it (and the date) before the final run.
-const BENCH = { asof: "as of Nov 2", text: "Silver Bulletin's free summary gives Democrats about 95% for the House and a ~25-seat gain (≈238)" };
 let model = FV;
 try { const m = localStorage.getItem("pf-model2"); if (m && DATA.models[m]) model = m; } catch (e) {}
 
@@ -633,7 +631,7 @@ function renderOverview() {
     <div class="chart" id="senDist"></div>`;
   distChart($("#senDist"), V.map(v => ({ name: v.name, hist: v.m.senate.hist, color: v.color })), 51, "Distribution of Democratic Senate seats by model version");
   const A = DATA.models[AD];
-  $("#benchNote").innerHTML = `<b>Polls only</b> uses this year's polls and district/state partisanship. <b>Polls + fundamentals</b> blends the national polling picture with an estimated model of approval, the economy and the previous House result. <b>Bias-adjusted</b> also shifts the generic-ballot polls ${Math.abs(A.shift).toFixed(1)} pts toward Republicans (the generic ballot's typical miss) and corrects each Senate race for state lean, polls in red states having overstated Democrats and polls in blue states Republicans. <a href="#bias">Why these corrections?</a> Benchmark (${BENCH.asof}): ${BENCH.text}. <a href="#method">How it works</a>.`;
+  $("#benchNote").innerHTML = `<b>Polls only</b> uses this year's polls and district/state partisanship. <b>Polls + fundamentals</b> blends the national polling picture with an estimated model of approval, the economy and the previous House result. <b>Bias-adjusted</b> also shifts the generic-ballot polls ${Math.abs(A.shift).toFixed(1)} pts toward Republicans (the generic ballot's typical miss) and corrects each Senate race for state lean, polls in red states having overstated Democrats and polls in blue states Republicans. <a href="#bias">Why these corrections?</a> <a href="#method">How it works</a>.`;
 }
 
 // tile map

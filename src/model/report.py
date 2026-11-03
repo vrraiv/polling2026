@@ -60,9 +60,6 @@ def main():
           f"fundamentals-only environment ranges {m(sv['F_min'])} to {m(sv['F_max'])}; after blending with polls, "
           f"{m(sv['G_min'])} to {m(sv['G_max'])}, P(D House) {pct(sv['pH_min'])}–{pct(sv['pH_max'])}, "
           f"P(D Senate) {pct(sv['pS_min'])}–{pct(sv['pS_max'])}.\n")
-    a("**Benchmark:** Silver Bulletin's FLIPR (Nov 1 free summary) gives Democrats ~95% to win the House with a ~25-seat net gain "
-      "(≈238 seats); Senate numbers are paywalled (described as a meaningful Democratic edge).\n")
-
     a("## National inputs\n")
     e = nat["econ"]
     a(f"- **Generic ballot**: mean of 5 aggregators on Wikipedia (DDHQ, FiftyPlusOne, NBC, RCP, Silver Bulletin; updated Oct 30), "

@@ -1,6 +1,6 @@
 # 2026 Midterm Forecast
 
-_Generated 2026-11-02 22:31 from the latest data snapshot. Refresh data + rerun everything: `python src/run_all.py`._
+_Generated 2026-11-03 06:04 from the latest data snapshot. Refresh data + rerun everything: `python src/run_all.py`._
 
 ## Topline
 
@@ -18,8 +18,6 @@ _Generated 2026-11-02 22:31 from the latest data snapshot. Refresh data + rerun 
 Democrats need 51 Senate seats for control (VP Vance breaks 50–50 ties); 34 Dem-caucus and 31 Republican seats are not up. Independent candidates (Osborn in NE, Achilles in ID) are counted separately; neither has committed to a caucus.
 
 **Fundamentals sensitivity** (each of the ten top estimated specifications, both samples): fundamentals-only environment ranges D+8.0 to D+11.8; after blending with polls, D+8.6 to D+10.3, P(D House) 95%–97%, P(D Senate) 73%–76%.
-
-**Benchmark:** Silver Bulletin's FLIPR (Nov 1 free summary) gives Democrats ~95% to win the House with a ~25-seat net gain (≈238 seats); Senate numbers are paywalled (described as a meaningful Democratic edge).
 
 ## National inputs
 
