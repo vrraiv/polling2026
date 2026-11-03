@@ -111,6 +111,9 @@ tr.race.open td:first-child::before { transform: rotate(90deg); color: var(--och
 tr.race.open td { background: var(--surface-2); }
 tr.detail td { white-space: normal; background: #1f2127; padding: 10px 14px 14px; }
 .detail-grid { display: grid; grid-template-columns: minmax(0, 220px) minmax(0, 1fr); gap: 16px; }
+.detail-top { display: grid; grid-template-columns: minmax(0, 620px) minmax(240px, 1fr); gap: 8px 28px; align-items: start; margin-bottom: 10px; }
+.detail-top .anat { margin: 0; }
+.detail-box { max-width: calc(100vw - 76px); }  /* keeps the fold-down on screen; only the poll table scrolls sideways */
 .mini td, .mini th { padding: 4px 8px; font-size: .8rem; white-space: nowrap; }
 tr.detail .mini td, tr.detail .mini th { white-space: nowrap; }
 tr.detail .mini td:nth-child(2) { white-space: normal; min-width: 140px; } .mini th { background: var(--surface-2); color: var(--text-2); position: static; }
@@ -131,8 +134,43 @@ ol.steps li, ul.list li { margin: 5px 0; max-width: 80ch; }
 .tip { position: absolute; pointer-events: none; background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px; padding: 6px 9px; font-size: .8rem; box-shadow: 0 6px 18px rgba(0,0,0,.4); white-space: nowrap; opacity: 0; transition: opacity .08s; z-index: 20; }
 footer { border-top: 1px solid var(--border); margin-top: 30px; padding: 14px 0 28px; color: var(--text-3); font-size: .78rem; }
 footer a { color: var(--text-2); }
+
+/* scenario explorer (overview) */
+.explorer { margin-top: 14px; }
+.exhead { display: flex; justify-content: space-between; align-items: center; gap: 8px 12px; flex-wrap: wrap; }
+.exhead h2 { margin: 0; font-size: 1.15rem; }
+.exgrid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 20px; margin-top: 10px; }
+.exnums { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.exnum { background: var(--surface-2); border-radius: 10px; padding: 9px 12px; }
+.exnum .l { font-size: .74rem; text-transform: uppercase; letter-spacing: .05em; color: var(--text-2); font-weight: 600; }
+.exnum .v { font-size: 2rem; font-weight: 700; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.exnum .d { font-size: .78rem; color: var(--text-3); font-variant-numeric: tabular-nums; min-height: 1.2em; }
+.exnum .d .up { color: var(--dem); } .exnum .d .dn { color: var(--rep); }
+.exmatch { font-size: .8rem; color: var(--text-2); margin: 10px 0 2px; font-variant-numeric: tabular-nums; }
+.exmatch.warn { color: var(--ochre); }
+.waffle { margin-top: 6px; }
+.waffle svg { display: block; width: 100%; max-width: 340px; }
+.waffle rect.w { cursor: pointer; }
+.waffle rect.w:hover, .waffle rect.w.sel { stroke: var(--text); stroke-width: 1.5; }
+.chips { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; align-items: center; }
+.chip { font: inherit; font-size: .8rem; padding: 4px 10px; border-radius: 999px; border: 1px solid var(--border); background: transparent; color: var(--text-2); cursor: pointer; }
+.chip:hover { color: var(--text); border-color: var(--text-3); }
+.chip[aria-pressed="true"] { background: var(--primary); color: var(--text); border-color: var(--tint); }
+.chip.reset { border-style: dashed; }
+.nathist rect.b { cursor: pointer; }
+.simbar { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: .82rem; color: var(--text-2); min-height: 26px; margin-top: 4px; }
+.extext { font-size: .86rem; margin-top: 10px; max-width: none; }
+.exnote { font-size: .76rem; color: var(--text-3); margin-top: 8px; max-width: none; }
+
+/* forecast anatomy (race fold-downs) */
+.anat { margin: 2px 0 12px; }
+.anat svg { display: block; width: 100%; max-width: 640px; }
+.anat .cap { font-size: .8rem; color: var(--text-2); max-width: 640px; margin: 4px 0 0; }
+.ladder-more { margin-top: 8px; }
+td .none { color: var(--text-3); font-size: .8rem; }
 @media (max-width: 760px) {
-  .cards, .ovgrid, .grid2, .detail-grid { grid-template-columns: 1fr; }
+  .cards, .ovgrid, .grid2, .detail-grid, .exgrid, .detail-top { grid-template-columns: 1fr; }
+  .tbl-wrap.scroll { max-height: none; }
   .pbar { width: 70px; }
   th, td { padding: 6px 8px; }
   .hide-sm { display: none; }
@@ -162,20 +200,39 @@ footer a { color: var(--text-2); }
     <div class="card" id="houseCard"></div>
     <div class="card" id="senateCard"></div>
   </div>
+  <div class="card explorer" id="explorer">
+    <div class="exhead">
+      <h2>What if…? Explore the simulations</h2>
+      <div class="seg modelSeg" role="group" aria-label="Model for the explorer"></div>
+    </div>
+    <p class="small muted" style="margin:4px 0 0;max-width:none">Click a state to give it to the Democrat (or independent), click again for the Republican, a third time to clear. Click bars in the national-vote chart to pick how the national environment turns out. Everything else updates to match: the same simulations that produce the forecast, filtered to the scenario you set.</p>
+    <div class="exgrid">
+      <div>
+        <div class="simbar"><span id="mapMode" class="lab">Senate map · chance the Democrat or independent wins</span><span id="mapBack"></span></div>
+        <div class="chart tilemap" id="tilemap"></div>
+        <div class="legend" id="mapLegend"></div>
+        <div class="chart nathist" id="natHist" style="margin-top:14px"></div>
+      </div>
+      <div>
+        <div class="exnums" id="exNums"></div>
+        <div class="exmatch" id="exMatch"></div>
+        <div class="chips" id="exChips"></div>
+        <div class="waffle" id="waffle"></div>
+        <div class="legend" id="waffleLegend"></div>
+        <p class="extext" id="exText"></p>
+      </div>
+    </div>
+    <p class="exnote" id="exNote"></p>
+  </div>
   <div class="ovgrid">
     <div class="card">
-      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap">
-        <span class="lab">Senate map</span>
-        <div class="seg modelSeg" role="group" aria-label="Model for map"></div>
-      </div>
-      <div class="chart tilemap" id="tilemap"></div>
-      <div class="legend" id="mapLegend"></div>
+      <span class="lab">Senate races between 15% and 85%</span>
+      <div class="watch" id="watch" style="margin-top:8px"></div>
+      <p class="tiny" style="margin-top:8px">Click a race to see its polls and how its forecast is built.</p>
     </div>
     <div class="card">
-      <span class="lab">Closest Senate races</span>
-      <div class="watch" id="watch" style="margin-top:8px"></div>
-      <p class="tiny" style="margin-top:8px">Click a race or a state to see its polls.</p>
-      <p class="small muted" id="watchRead" style="margin-top:10px"></p>
+      <span class="lab">Reading the race chances as a map</span>
+      <p class="small muted" id="watchRead" style="margin-top:8px"></p>
     </div>
   </div>
   <p class="note" id="benchNote"></p>
@@ -219,7 +276,27 @@ footer a { color: var(--text-2); }
     <input class="search" id="houseSearch" type="search" placeholder="Filter: state, district, name…" aria-label="Filter districts">
   </div>
   <p class="muted small" id="houseIntro"></p>
+  <p class="small muted" style="margin:0 0 12px">Chances don't add up to a seat count: the districts are simulated together, and most simulations have many upsets. <a href="#house" onclick="document.getElementById('house-path').scrollIntoView({behavior:'smooth'});return false;">How House control gets decided ↓</a></p>
   <div class="tbl-wrap scroll"><table id="houseTable"></table></div>
+
+  <h2 id="house-path" style="margin-top:34px">How House control gets decided</h2>
+  <p class="muted small" id="hPathIntro"></p>
+  <div class="stats" id="hPathStats"></div>
+  <div class="grid2" style="margin-top:14px">
+    <div class="card"><span class="lab">Upsets per simulation</span><div class="chart" id="hUpsetChart"></div></div>
+    <div><p class="small" id="hUpsetText"></p></div>
+  </div>
+  <h3>The seats most likely to change hands</h3>
+  <p class="muted small" id="flipIntro"></p>
+  <div class="grid2">
+    <div class="tbl-wrap"><table id="flipD"></table></div>
+    <div class="tbl-wrap"><table id="flipR"></table></div>
+  </div>
+  <h3>The path to 218</h3>
+  <p class="muted small" id="hLadderIntro"></p>
+  <div class="tbl-wrap"><table id="hLadderTable"></table></div>
+  <div class="ladder-more"><button type="button" class="chip" id="hLadderMore"></button></div>
+  <p class="muted small" id="hLadderNote"></p>
 </section>
 
 <!-- ================= METHOD ================= -->
@@ -227,7 +304,7 @@ footer a { color: var(--text-2); }
   <h2>How it works</h2>
   <ol class="steps">
     <li><b>National environment.</b> The mean of five generic-ballot polling averages (two-party), blended with an <a href="#appendix">estimated fundamentals model</a>: Gallup approval, the previous House result and the real change in gas prices, with inflation, income and unemployment tested and found weak. <span id="wText"></span></li>
-    <li><b>Race priors.</b> Senate races start at 2×PVI + national environment + incumbency (+2). House districts use a model <a href="#appendix">estimated on 2006–2024 district results</a>: <span id="houseEq"></span>. PVI is on the 2026 district lines, so it reflects the mid-decade redistricting in 11 states.</li>
+    <li><b>Race priors.</b> Senate races start at 2×PVI + national environment + incumbency (+2 pts, assumed rather than estimated). House districts use a model <a href="#appendix">estimated on 2006–2024 district results</a>: <span id="houseEq"></span>. PVI is on the 2026 district lines, so it reflects the mid-decade redistricting in 11 states.</li>
     <li><b>Poll averages.</b> <span id="psText"></span> Prolific pollsters are down-weighted and larger samples count more. All of these settings were <a href="#appendix">estimated from 538's poll archive</a>.</li>
     <li><b>Blend.</b> Poll average and prior are combined by precision. <span id="raceW"></span></li>
     <li><b>Simulation.</b> 40,000 draws with a shared national polling error, Census-region shocks, a random slope on state lean, and race-specific errors, all fat-tailed. Control: 218 House seats; 51 Senate seats (VP Vance breaks ties).</li>
@@ -239,7 +316,8 @@ footer a { color: var(--text-2); }
     <summary>Judgment calls and caveats</summary>
     <ul class="list small">
       <li><b>Fundamentals extrapolate.</b> 2026 approval (Gallup-equivalent ~35.6%) is below every past midterm, and the 29% real rise in gas prices is above anything in the 1962–2022 data. <span id="sensText"></span></li>
-      <li><b>House model.</b> Estimated on 2006–2024 district results (appendix E). In recent cycles it has undercounted Democratic wins in contested seats by about 6 on average (10 in 2018), so the House seat estimate may be slightly conservative for Democrats.</li>
+      <li><b>Senate incumbency</b> (+2 pts for a sitting senator running) is assumed, not estimated; it only enters the prior, which gets about <span id="incW"></span> of the weight in polled races.</li>
+      <li><b>House model.</b> Estimated on 2006–2024 district results (appendix D). In recent cycles it has undercounted Democratic wins in contested seats by about 6 on average (10 in 2018), so the House seat estimate may be slightly conservative for Democrats.</li>
       <li><b>Idaho</b> has a single poll, from August; with few late polls its forecast leans on that poll more than its age warrants.</li>
       <li><b>Michigan.</b> Haley Stevens endorsed Mike Rogers on Nov 1, after most polls were taken. Not in the model.</li>
       <li><b>Alaska</b> uses ranked-choice voting and has several "Dan Sullivan" candidates on the ballot; modeled as a head-to-head. <b>Montana</b> is a three-way race, modeled from polls only.</li>
@@ -285,7 +363,7 @@ footer a { color: var(--text-2); }
 <!-- ================= BACKTEST ================= -->
 <section class="page" id="p-backtest">
   <h2>Backtest: 2018 &amp; 2022</h2>
-  <p class="muted small">The poll-averaging and uncertainty method, run on archived 538 polls up to five days before each election, scored against results. Polls only, no PVI prior. Error scales were fitted on data that include these cycles (in-sample).</p>
+  <p class="muted small">The poll-averaging and uncertainty method, run on archived 538 polls up to five days before each election, scored against results. Polls only, no PVI prior. Error scales were fitted on data that include these cycles (in-sample). The Brier score is the average squared gap between the forecast probability and the result (1 if the Democrat won, 0 if not): 0 is perfect, and a forecast of 50% in every race scores 0.25.</p>
   <div class="stats" id="btStats"></div>
   <div class="grid2" style="margin-top:12px">
     <div class="card"><span class="lab">Calibration, 58 Senate races</span><div class="chart" id="calChart"></div></div>
@@ -386,6 +464,8 @@ const STATE = {AL:"Alabama",AK:"Alaska",AZ:"Arizona",AR:"Arkansas",CA:"Californi
 const MODELS = { polls_only: "Polls only", polls_fundamentals: "Polls + fundamentals", polls_fundamentals_biasadj: "Bias-adjusted" };
 const MODEL_LONG = { polls_only: "Polls only (no fundamentals, no bias adjustment)", polls_fundamentals: "Polls + fundamentals", polls_fundamentals_biasadj: "Bias-adjusted (generic ballot shifted for its typical miss; Senate polls corrected by state lean)" };
 const FV = "polls_fundamentals", AD = "polls_fundamentals_biasadj";
+// Outside benchmark, typed in by hand: re-check it (and the date) before the final run.
+const BENCH = { asof: "as of Nov 2", text: "Silver Bulletin's free summary gives Democrats about 95% for the House and a ~25-seat gain (≈238)" };
 let model = FV;
 try { const m = localStorage.getItem("pf-model2"); if (m && DATA.models[m]) model = m; } catch (e) {}
 
@@ -403,15 +483,17 @@ const hideTip = () => { tip.style.opacity = 0; };
 
 // ---------- routing ----------
 const PAGES = ["overview", "senate", "house", "method", "bias", "backtest", "appendix", "data"];
-let openRace = null;
+let openRace = null, openHouse = null;
 function route() {
   let h = location.hash.slice(1) || "overview";
   if (h.startsWith("senate/")) { openRace = decodeURIComponent(h.slice(7)); h = "senate"; }
+  if (h.startsWith("house/")) { openHouse = decodeURIComponent(h.slice(6)); h = "house"; }
   if (!PAGES.includes(h)) h = "overview";
   $$("section.page").forEach(s => s.classList.toggle("on", s.id === "p-" + h));
   $$("nav.tabs a").forEach(a => a.classList.toggle("on", a.dataset.p === h));
-  if (h === "senate") renderSenate();
   window.scrollTo(0, 0);
+  if (h === "senate") renderSenate();
+  if (h === "house") renderHouse();
 }
 window.addEventListener("hashchange", route);
 const goRace = (key) => { location.hash = "senate/" + encodeURIComponent(key); };
@@ -422,7 +504,7 @@ function renderModelSegs() {
     seg.innerHTML = Object.keys(MODELS).map(k => `<button type="button" data-m="${k}" aria-pressed="${k === model}" title="${MODEL_LONG[k]}">${MODELS[k]}</button>`).join("");
     seg.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
       model = b.dataset.m; try { localStorage.setItem("pf-model2", model); } catch (e) {}
-      renderModelSegs(); renderMap(); renderWatch(); renderSenate(); renderHouse();
+      exSim = null; renderModelSegs(); renderExplorer(); renderWatch(); renderSenate(); renderHouse();
     }));
   });
 }
@@ -483,58 +565,290 @@ function renderOverview() {
   const wLo = word(Math.min(...sp)), wHi = word(Math.max(...sp));
   const senTxt = wLo === wHi ? `The Senate is ${wLo} in all three versions (${rng(sp, pct)}%).`
     : `The Senate is ${wLo} to ${wHi} (${rng(sp, pct)}%), depending on whether this year's polls are as accurate as they look.`;
-  $("#headline").textContent = `Democrats are strong favorites to win the House (${rng(hp, pct)}%, about ${rng(hMed)} seats). ${senTxt}`;
+  // medians are one per version, not a range: list them (ascending in prose, version order in the cards)
+  const andList = (a) => a.length < 2 ? `${a[0]}` : `${a.slice(0, -1).join(", ")} and ${a[a.length - 1]}`;
+  const uniq = (a) => [...new Set(a)];
+  const medProse = (a) => uniq(a).length === 1 ? `a median of ${a[0]} seats in all three` : `median outcomes of ${andList([...a].sort((x, y) => x - y))} seats`;
+  const medCard = (a) => uniq(a).length === 1 ? `<b>${a[0]}</b> in all three versions` : `<b>${a.join(" / ")}</b> <span class="muted small">(one per version, in the order below)</span>`;
+  $("#headline").textContent = `Democrats are strong favorites to win the House (${rng(hp, pct)}% across the three versions, with ${medProse(hMed)}). ${senTxt}`;
   const row = (v, p, hist) => { const [lo, hi] = seat95(hist); return `<span class="k"><i style="display:inline-block;width:10px;height:3px;background:${v.color};vertical-align:3px;margin-right:6px;border-radius:2px"></i>${v.name}</span><span class="bar" aria-hidden="true"><span style="width:${(p * 100).toFixed(1)}%"></span></span><b>${fmtP(p)}</b><span class="seatcell"><span>${seatMed(hist)} seats</span><span class="rng">95%: ${lo}–${hi}</span></span>`; };
   $("#houseCard").innerHTML = `<span class="lab">House · 218 for control</span>
     <div class="big">${rng(hp, pct)}% <small>chance Democrats win</small></div>
-    <div class="seats">Democratic seats: <b>${rng(hMed)}</b> <span class="muted small">(median outcome; Republicans now hold 218)</span></div>
+    <div class="seats">Median Democratic seats: ${medCard(hMed)} <span class="muted small">Republicans now hold 218.</span></div>
     <div class="rng-line">Realistic range (95%, all three versions): ${all95(V.map(v => v.m.house.hist)).join("–")} seats</div>
     <div class="pair">${V.map(v => row(v, v.m.house.p_dem_majority, v.m.house.hist)).join("")}</div>
     <div class="chart" id="houseDist"></div>`;
   distChart($("#houseDist"), V.map(v => ({ name: v.name, hist: v.m.house.hist, color: v.color })), 218, "Distribution of Democratic House seats by model version");
   $("#senateCard").innerHTML = `<span class="lab">Senate · 51 for control (VP breaks ties)</span>
     <div class="big">${rng(sp, pct)}% <small>chance Democrats win</small></div>
-    <div class="seats">Democratic-caucus seats: <b>${rng(sMed)}</b> <span class="muted small">(median; now 47)</span></div>
+    <div class="seats">Median Democratic-caucus seats: ${medCard(sMed)} <span class="muted small">Now 47.</span></div>
     <div class="rng-line">Realistic range (95%, all three versions): ${all95(V.map(v => v.m.senate.hist)).join("–")} seats</div>
     <div class="rng-line">Counting independents (Osborn, NE) as Democrats, as Silver Bulletin does: ${rng(V.map(v => v.m.senate.p_dem_control_if_independents_caucus_D), pct)}%</div>
     <div class="pair">${V.map(v => row(v, v.m.senate.p_dem_control_without_osborn, v.m.senate.hist)).join("")}</div>
     <div class="chart" id="senDist"></div>`;
   distChart($("#senDist"), V.map(v => ({ name: v.name, hist: v.m.senate.hist, color: v.color })), 51, "Distribution of Democratic Senate seats by model version");
   const A = DATA.models[AD];
-  $("#benchNote").innerHTML = `<b>Polls only</b> uses this year's polls and district/state partisanship. <b>Polls + fundamentals</b> blends the national polling picture with an estimated model of approval, the economy and the previous House result. <b>Bias-adjusted</b> also shifts the generic-ballot polls ${Math.abs(A.shift).toFixed(1)} pts toward Republicans (the generic ballot's typical miss) and corrects each Senate race for state lean, polls in red states having overstated Democrats and polls in blue states Republicans. <a href="#bias">Why these corrections?</a> Benchmark: Silver Bulletin's free summary gives Democrats about 95% for the House and a ~25-seat gain (≈238). <a href="#method">How it works</a>.`;
+  $("#benchNote").innerHTML = `<b>Polls only</b> uses this year's polls and district/state partisanship. <b>Polls + fundamentals</b> blends the national polling picture with an estimated model of approval, the economy and the previous House result. <b>Bias-adjusted</b> also shifts the generic-ballot polls ${Math.abs(A.shift).toFixed(1)} pts toward Republicans (the generic ballot's typical miss) and corrects each Senate race for state lean, polls in red states having overstated Democrats and polls in blue states Republicans. <a href="#bias">Why these corrections?</a> Benchmark (${BENCH.asof}): ${BENCH.text}. <a href="#method">How it works</a>.`;
 }
 
 // tile map
 const TILES = {AK:[0,0],ME:[11,0],WI:[6,1],VT:[10,1],NH:[11,1],WA:[1,2],ID:[2,2],MT:[3,2],ND:[4,2],MN:[5,2],IL:[6,2],MI:[7,2],NY:[9,2],MA:[10,2],OR:[1,3],NV:[2,3],WY:[3,3],SD:[4,3],IA:[5,3],IN:[6,3],OH:[7,3],PA:[8,3],NJ:[9,3],CT:[10,3],RI:[11,3],CA:[1,4],UT:[2,4],CO:[3,4],NE:[4,4],MO:[5,4],KY:[6,4],WV:[7,4],VA:[8,4],MD:[9,4],DE:[10,4],AZ:[2,5],NM:[3,5],KS:[4,5],AR:[5,5],TN:[6,5],NC:[7,5],SC:[8,5],OK:[4,6],LA:[5,6],MS:[6,6],AL:[7,6],GA:[8,6],HI:[0,7],TX:[4,7],FL:[9,7]};
 const BINS = [[0.95, "--dem", "Safe D"], [0.80, "--d-likely", "Likely D"], [0.60, "--d-lean", "Lean D"], [0.40, "--toss", "Toss-up"], [0.20, "--r-lean", "Lean R"], [0.05, "--r-likely", "Likely R"], [-1, "--rep", "Safe R"]];
 const binOf = (p) => BINS.find(b => p >= b[0]);
-function renderMap() {
-  const races = Object.fromEntries(DATA.models[model].senate_races.map(r => [r.state, r]));
-  const S = 44, G = 4, W = 12 * (S + G), H = 8 * (S + G);
-  const off = css("--off"), t3 = css("--text-3"), txt = "#f2f0ec";
-  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Senate map: chance the Democrat or independent wins each race">`;
+
+// ---------- scenario explorer (overview): the forecast's own simulations, filtered to a scenario ----------
+// sims_<model>.bin (written by forecast.py): uint32 race bits | int16 national-environment error (0.1 pts) | uint16 Dem
+// House seats | uint8 Dem Senate seats (independents excluded, as in the headline). One record per simulation.
+const SIMS = {};
+let exForce = {};          // race_key -> 1 (Democrat / independent wins) or 0 (Republican wins)
+let exBins = new Set();    // selected national-vote bins (floor of the two-party House margin, in points)
+let exSim = null;          // a simulation shown on the map (index), or null for probabilities
+let exPreset = null;
+async function loadSims(k) {
+  if (SIMS[k]) return SIMS[k];
+  const meta = DATA.models[k].sims;
+  if (!meta) throw new Error("no simulation file");
+  // versioned by build time: the race-to-bit map lives in this page, so a cached .bin from an older build must not be used
+  const buf = await fetch("data/" + meta.file + "?v=" + encodeURIComponent(DATA.generated)).then(r => { if (!r.ok) throw new Error("HTTP " + r.status); return r.arrayBuffer(); });
+  const n = meta.n;
+  if (buf.byteLength < 9 * n) throw new Error("truncated simulation file");
+  const S = { meta, n, bits: new Uint32Array(buf, 0, n), nat: new Int16Array(buf, 4 * n, n), house: new Uint16Array(buf, 6 * n, n), sen: new Uint8Array(buf, 8 * n, n) };
+  S.G = DATA.models[k].G;
+  S.idx = Object.fromEntries(meta.races.map((r, b) => [r, b]));
+  S.env = new Float32Array(n);
+  for (let i = 0; i < n; i++) S.env[i] = S.G + S.nat[i] * meta.nat_scale;
+  // national-vote bins: 1 pt wide, tails folded into the end bins (1st / 99th percentile)
+  const sorted = Float32Array.from(S.env).sort();
+  S.lo = Math.floor(sorted[Math.floor(n * 0.01)]); S.hi = Math.floor(sorted[Math.floor(n * 0.99)]);
+  S.bin = new Int16Array(n);
+  for (let i = 0; i < n; i++) S.bin[i] = Math.max(S.lo, Math.min(S.hi, Math.floor(S.env[i])));
+  S.base = exCompute(S, {}, new Set());
+  SIMS[k] = S; return S;
+}
+function exCompute(S, force, bins) {
+  let fm = 0, fv = 0;
+  for (const [k, v] of Object.entries(force)) { const b = S.idx[k]; if (b == null) continue; fm |= (1 << b); if (v) fv |= (1 << b); }
+  fm >>>= 0; fv >>>= 0;
+  const R = S.meta.races.length, nb = S.hi - S.lo + 1;
+  const cnt = new Float64Array(R), histState = new Float64Array(nb), histAll = new Float64Array(nb);
+  const cat = [[], [], [], []];   // 0 both D, 1 House D / Senate not, 2 House not / Senate D, 3 neither
+  let m = 0, sD = 0, hD = 0, envSum = 0, mState = 0, envState = 0;
+  for (let i = 0; i < S.n; i++) {
+    const bi = S.bits[i], bn = S.bin[i] - S.lo;
+    histAll[bn]++;
+    if (((bi & fm) >>> 0) !== fv) continue;
+    histState[bn]++; mState++; envState += S.env[i];
+    if (bins.size && !bins.has(S.bin[i])) continue;
+    m++; envSum += S.env[i];
+    const s = S.sen[i] >= 51, h = S.house[i] >= 218;
+    if (s) sD++; if (h) hD++;
+    cat[h ? (s ? 0 : 1) : (s ? 2 : 3)].push(i);
+    for (let b = 0; b < R; b++) if (bi & (1 << b)) cnt[b]++;
+  }
+  return { m, mState, pSen: m ? sD / m : null, pHouse: m ? hD / m : null, env: m ? envSum / m : null, envState: mState ? envState / mState : null,
+    pRace: Array.from(cnt, c => m ? c / m : null), histState, histAll, cat };
+}
+const raceByKey = (M, k) => M.senate_races.find(r => r.race_key === k);
+const shortRace = (r) => STATE[r.state] + (r.special ? " (special)" : "");
+const exActive = () => Object.keys(exForce).length > 0 || exBins.size > 0;
+
+async function renderExplorer() {
+  const k = model;
+  let S;
+  try { S = await loadSims(k); }
+  catch (e) {
+    $("#exNums").innerHTML = ""; $("#waffle").innerHTML = ""; $("#natHist").innerHTML = "";
+    $("#exMatch").textContent = `Simulations couldn't be loaded (${e.message}); showing the forecast's race chances only.`;
+    renderMapTiles(null, null); return;
+  }
+  if (k !== model) return;   // the model changed while loading
+  const M = DATA.models[k], C = exCompute(S, exForce, exBins), B = S.base;
+  if (exSim != null && !(C.cat.some(c => c.includes(exSim)))) exSim = null;
+  renderMapTiles(S, C);
+  renderNatHist(S, C);
+  // headline numbers
+  const delta = (v, b) => { if (v == null || !exActive()) return ""; const d = Math.round(v * 100) - Math.round(b * 100); return d === 0 ? "no change" : `<span class="${d > 0 ? "up" : "dn"}">${d > 0 ? "▲" : "▼"} ${Math.abs(d)} pts</span> vs ${fmtP(b)} overall`; };
+  $("#exNums").innerHTML = `<div class="exnum"><div class="l">Senate · D control</div><div class="v">${C.m ? fmtP(C.pSen) : "—"}</div><div class="d">${delta(C.pSen, B.pSen)}</div></div>` +
+    `<div class="exnum"><div class="l">House · D control</div><div class="v">${C.m ? fmtP(C.pHouse) : "—"}</div><div class="d">${delta(C.pHouse, B.pHouse)}</div></div>`;
+  const mt = $("#exMatch");
+  mt.className = "exmatch" + (C.m < 400 ? " warn" : "");
+  mt.innerHTML = !exActive() ? `All ${S.n.toLocaleString()} simulations · ${MODELS[k]} model`
+    : C.m === 0 ? "No simulation matches this scenario. Clear something to widen it."
+    : `${C.m.toLocaleString()} of ${S.n.toLocaleString()} simulations match (${fmtP(C.m / S.n)})` + (C.m < 400 ? ": few enough that these numbers are rough" : "");
+  // presets
+  // presets on whole-point bins, labelled with the actual boundaries they select
+  const G = S.G, binsWhere = (f) => { const s = new Set(); for (let b = S.lo; b <= S.hi; b++) if (f(b)) s.add(b); return s; };
+  const favForce = () => Object.fromEntries(S.meta.races.map(rk => [rk, raceByKey(M, rk).p_dside > 0.5 ? 1 : 0]));
+  const cutR = Math.round(G - 3), cutD = Math.round(G + 3), nLo = Math.round(G - 1.5), nHi = Math.round(G + 1.5);
+  const PRESETS = [
+    { id: "rbeat", lab: `Republicans beat it: below ${fmtPVI(cutR)}`, bins: () => binsWhere(b => b + 1 <= cutR) },
+    { id: "on", lab: `Near the estimate: ${fmtPVI(nLo)} to ${fmtPVI(nHi)}`, bins: () => binsWhere(b => b >= nLo && b + 1 <= nHi) },
+    { id: "dbeat", lab: `Democrats beat it: ${fmtPVI(cutD)} or more`, bins: () => binsWhere(b => b >= cutD) },
+    { id: "fav", lab: "Every Senate favorite wins", force: favForce },
+  ];
+  $("#exChips").innerHTML = PRESETS.map(p => `<button type="button" class="chip" data-p="${p.id}" aria-pressed="${exPreset === p.id}">${p.lab}</button>`).join("") +
+    (exActive() ? `<button type="button" class="chip reset" data-p="reset">Clear all</button>` : "");
+  $$("#exChips .chip").forEach(b => b.addEventListener("click", () => {
+    const id = b.dataset.p; exSim = null;
+    if (id === "reset" || exPreset === id) { exForce = {}; exBins = new Set(); exPreset = null; }
+    else { const p = PRESETS.find(x => x.id === id); exPreset = id; if (p.bins) { exBins = p.bins(); } if (p.force) { exForce = p.force(); } }
+    renderExplorer();
+  }));
+  renderWaffle(S, C);
+  // the one-paragraph reading
+  const forced = Object.entries(exForce).map(([rk, v]) => { const r = raceByKey(M, rk); return r ? `${shortRace(r)} goes ${v ? (r.dside === "I" ? "to the independent" : "Democratic") : "Republican"}` : ""; }).filter(Boolean);
+  let cond = "";
+  if (exPreset === "fav") cond = "every Senate favorite wins";
+  else if (forced.length) cond = forced.length > 3 ? `${forced.length} Senate races go the way you set` : andJoin(forced);
+  if (exBins.size) {
+    const bs = [...exBins].sort((a, b) => a - b), contiguous = bs[bs.length - 1] - bs[0] === bs.length - 1;
+    const lo = bs[0] === S.lo ? null : bs[0], hi = bs[bs.length - 1] === S.hi ? null : bs[bs.length - 1] + 1;
+    const rngT = lo == null && hi == null ? "anywhere" : lo == null ? `below ${fmtPVI(hi)}` : hi == null ? `above ${fmtPVI(lo)}` : `between ${fmtPVI(lo)} and ${fmtPVI(hi)}`;
+    cond += (cond ? ", and " : "") + `the national House vote lands ${contiguous ? rngT : "in the bars you picked"}`;
+  }
+  let t;
+  if (!exActive()) {
+    t = `With nothing set, these are the forecast's own numbers: Democrats control the Senate in ${fmtP(B.pSen)} of simulations and the House in ${fmtP(B.pHouse)}. Each square below is one simulated election. Try giving Texas or Maine to the underdog, or picking a bar on the left of the national-vote chart, and watch the other races move with it.`;
+  } else if (!C.m) {
+    t = "No simulation has that combination.";
+  } else {
+    t = `In the ${C.m.toLocaleString()} simulations where ${cond}, Democrats win the Senate ${fmtP(C.pSen)} of the time (${fmtP(B.pSen)} overall) and the House ${fmtP(C.pHouse)} (${fmtP(B.pHouse)}).`;
+    if (forced.length && !exBins.size && C.envState != null) {
+      const d = C.envState - B.envState;
+      t += ` The national House vote in those simulations averages ${fmtM(C.envState)}, versus ${fmtM(B.envState)} overall: ` +
+        (Math.abs(d) < 0.3 ? "about the same, so these results don't say much about the national environment." : `results like these usually come with a ${d > 0 ? "more Democratic" : "more Republican"} national environment, because polling errors are shared across races.`);
+    }
+    const movers = S.meta.races.map((rk, b) => ({ rk, b, d: C.pRace[b] - B.pRace[b] })).filter(x => !(x.rk in exForce) && x.d != null && Math.abs(x.d) >= 0.04)
+      .sort((a, b) => Math.abs(b.d) - Math.abs(a.d)).slice(0, 3);
+    if (movers.length) t += ` Biggest knock-on moves: ${movers.map(x => { const r = raceByKey(M, x.rk); return `${shortRace(r)} ${fmtP(B.pRace[x.b])} → ${fmtP(C.pRace[x.b])}`; }).join(", ")}.`;
+  }
+  $("#exText").innerHTML = t;
+  $("#exNote").textContent = `${MODELS[k]} model, ${S.n.toLocaleString()} simulations (the same ones behind the headline). Senate control counts Democrats only (Vance breaks a 50–50 tie); independents are not counted for either party, as in the headline. National House vote = two-party margin; the model's estimate is ${fmtM(S.G)}. ` +
+    (() => { const ex = M.senate_races.filter(r => S.idx[r.race_key] == null); return ex.length ? `The ${ex.length === 1 ? "most lopsided race" : ex.length + " most lopsided races"} (${ex.map(r => `${shortRace(r)} ${fmtP(r.p_dside)}`).join(", ")}) can't be set: the file keeps the 32 closest.` : ""; })();
+}
+function andJoin(a) { return a.length < 2 ? a.join("") : a.slice(0, -1).join(", ") + " and " + a[a.length - 1]; }
+
+function renderMapTiles(S, C) {
+  const M = DATA.models[model];
+  const races = Object.fromEntries(M.senate_races.map(r => [r.state, r]));
+  const T = 44, Gp = 4, W = 12 * (T + Gp), H = 8 * (T + Gp);
+  const off = css("--off"), t3 = css("--text-3"), txt = "#f2f0ec", och = css("--ochre");
+  const col = { D: css("--dem"), R: css("--rep"), I: css("--teal") };
+  const showSim = S && exSim != null;
+  const pOf = (race) => { if (!S || !C || !C.m) return race.p_dside; const b = S.idx[race.race_key]; return b == null ? race.p_dside : C.pRace[b]; };
+  const winSim = (race) => { const b = S.idx[race.race_key]; const w = b == null ? race.p_dside > 0.5 : !!(S.bits[exSim] & (1 << b)); return w ? (race.dside === "I" ? "I" : "D") : "R"; };
+  let s = `<svg viewBox="-2 -2 ${W + 4} ${H + 4}" role="img" aria-label="Senate map: chance the Democrat or independent wins each race">`;
   Object.entries(TILES).forEach(([st, [c, r]]) => {
-    const race = races[st], x = c * (S + G), y = r * (S + G);
-    const fill = race ? css(binOf(race.p_dside)[1]) : off;
-    s += `<rect class="${race ? "t" : ""}" x="${x}" y="${y}" width="${S}" height="${S}" rx="5" fill="${fill}" data-st="${st}"/>`;
-    s += `<text x="${x + S / 2}" y="${y + (race ? 19 : 27)}" font-size="${race ? 13 : 11}" font-weight="${race ? 700 : 500}" fill="${race ? txt : t3}" text-anchor="middle">${st}</text>`;
-    if (race) s += `<text x="${x + S / 2}" y="${y + 35}" font-size="10.5" fill="${txt}" text-anchor="middle" opacity=".9">${race.dside === "I" ? "I " : ""}${fmtP(race.p_dside)}</text>`;
+    const race = races[st], x = c * (T + Gp), y = r * (T + Gp);
+    if (!race) {
+      s += `<rect x="${x}" y="${y}" width="${T}" height="${T}" rx="5" fill="${off}"/><text x="${x + T / 2}" y="${y + 27}" font-size="11" fill="${t3}" text-anchor="middle">${st}</text>`;
+      return;
+    }
+    const settable = S && S.idx[race.race_key] != null, f = exForce[race.race_key];
+    let fill, sub;
+    if (showSim) { const w = winSim(race); fill = col[w]; sub = w === "R" ? "Rep." : w === "I" ? "Ind." : "Dem."; }
+    else { const p = pOf(race); fill = css(binOf(p ?? race.p_dside)[1]); sub = (race.dside === "I" ? "I " : "") + fmtP(p); }
+    if (f != null) sub = (f ? (race.dside === "I" ? "I" : "D") : "R") + " ✓";
+    s += `<rect class="t${settable ? " set" : ""}" x="${x}" y="${y}" width="${T}" height="${T}" rx="5" fill="${fill}" data-st="${st}"${f != null ? ` stroke="${och}" stroke-width="3"` : ""} style="cursor:${settable ? "pointer" : "default"}"/>`;
+    s += `<text x="${x + T / 2}" y="${y + 19}" font-size="13" font-weight="700" fill="${txt}" text-anchor="middle">${st}</text>`;
+    s += `<text x="${x + T / 2}" y="${y + 35}" font-size="10.5" fill="${txt}" text-anchor="middle" opacity=".92" font-weight="${f != null ? 700 : 400}">${sub}</text>`;
   });
-  s += `</svg>`;
-  const el = $("#tilemap"); el.innerHTML = s;
+  const el = $("#tilemap"); el.innerHTML = s + `</svg>`;
   el.querySelectorAll("rect.t").forEach(r => {
-    const race = races[r.dataset.st];
-    r.addEventListener("mousemove", e => showTip(e, `<b>${STATE[race.state]}${race.special ? " (special)" : ""}</b><br>${esc(race.dem)}${race.dside === "I" ? " (I)" : ""} vs ${esc(race.rep)}<br>Chance ${race.dside === "I" ? "independent" : "Democrat"} wins: <b>${fmtP(race.p_dside)}</b> (${MODELS[model]}) · margin ${fmtM(race.mu)}<br>` +
-      VERSIONS.map(v => { const rr = DATA.models[v.key].senate_races.find(z => z.state === race.state); return `<span style="color:${css(v.color.replace(/var\((.*)\)/, "$1"))}">${v.name}</span> ${fmtP(rr.p_dside)}`; }).join(" · ")));
+    const race = races[r.dataset.st], settable = S && S.idx[race.race_key] != null;
+    r.addEventListener("mousemove", e => {
+      const p0 = race.p_dside, p1 = pOf(race), who = race.dside === "I" ? "independent" : "Democrat";
+      let h = `<b>${shortRace(race)}</b><br>${esc(race.dem)}${race.dside === "I" ? " (I)" : ""} vs ${esc(race.rep)}<br>Chance the ${who} wins: <b>${fmtP(p0)}</b>`;
+      if (exActive() && C && C.m && Math.round(p1 * 100) !== Math.round(p0 * 100) && !(race.race_key in exForce)) h += ` → <b>${fmtP(p1)}</b> in this scenario`;
+      h += `<br><span style="color:var(--text-3)">${settable ? "Click: Democrat → Republican → clear" : "Too lopsided to set (see the note below)"}</span>`;
+      showTip(e, h);
+    });
     r.addEventListener("mouseleave", hideTip);
-    r.addEventListener("click", () => { hideTip(); goRace(race.race_key); });
+    if (settable) r.addEventListener("click", () => {
+      const k = race.race_key, f = exForce[k];
+      if (f == null) exForce[k] = 1; else if (f === 1) exForce[k] = 0; else delete exForce[k];
+      exPreset = null; exSim = null; hideTip(); renderExplorer();
+    });
   });
-  $("#mapLegend").innerHTML = BINS.map(b => `<span><i class="sq" style="background:var(${b[1]})"></i>${b[2]}</span>`).join("") + `<span><i class="sq" style="background:var(--off)"></i>Not up</span>` + `<span class="tiny">${MODELS[model]} model · % = chance Democrat (or independent, "I") wins. Colors group probabilities for readability; they aren't calls. Seat totals count every race by its probability (a 51% race adds about half a seat), simulated jointly.</span>`;
+  if (showSim) {
+    const i = exSim;
+    $("#mapMode").textContent = `One simulated election: Senate ${S.sen[i]} D · House ${S.house[i]} D · national vote ${fmtM(S.env[i])}`;
+    $("#mapBack").innerHTML = `<button type="button" class="chip" id="simBack">Back to probabilities</button>`;
+    $("#simBack").addEventListener("click", () => { exSim = null; renderExplorer(); });
+    $("#mapLegend").innerHTML = `<span><i class="sq" style="background:var(--dem)"></i>Democrat wins</span><span><i class="sq" style="background:var(--rep)"></i>Republican wins</span><span><i class="sq" style="background:var(--teal)"></i>Independent wins</span><span><i class="sq" style="background:transparent;box-shadow:inset 0 0 0 2px var(--ochre)"></i>Set by you</span>`;
+  } else {
+    $("#mapMode").textContent = exActive() ? "Senate map · chances in this scenario" : "Senate map · chance the Democrat or independent wins";
+    $("#mapBack").innerHTML = "";
+    $("#mapLegend").innerHTML = BINS.map(b => `<span><i class="sq" style="background:var(${b[1]})"></i>${b[2]}</span>`).join("") + `<span><i class="sq" style="background:var(--off)"></i>Not up</span><span><i class="sq" style="background:transparent;box-shadow:inset 0 0 0 2px var(--ochre)"></i>Set by you</span>` +
+      `<span class="tiny">Colors group probabilities for readability; they aren't calls.</span>`;
+  }
+}
+
+function renderNatHist(S, C) {
+  const nb = S.hi - S.lo + 1, W = 520, H = 142, m = { l: 8, r: 8, t: 36, b: 22 };
+  const fmtI = (v) => v === 0 ? "EVEN" : (v > 0 ? "D+" : "R+") + Math.abs(v);
+  const totA = C.histAll.reduce((a, b) => a + b, 0), totS = C.histState.reduce((a, b) => a + b, 0) || 1;
+  const shA = Array.from(C.histAll, v => v / totA), shS = Array.from(C.histState, v => v / totS);
+  const stateOn = Object.keys(exForce).length > 0;
+  const mx = Math.max(...shA, ...(stateOn ? shS : [])) * 1.08;
+  const bw = (W - m.l - m.r) / nb, y = (v) => H - m.b - v / mx * (H - m.t - m.b);
+  const t3 = css("--text-3"), t2 = css("--text-2"), bd = css("--border"), tint = css("--tint"), och = css("--ochre");
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Distribution of the national House vote across simulations">`;
+  s += `<text x="${m.l}" y="12" font-size="11.5" font-weight="600" fill="${t2}">NATIONAL HOUSE VOTE (D−R) · click bars to choose</text>`;
+  for (let j = 0; j < nb; j++) {
+    const b = S.lo + j, x0 = m.l + j * bw, sel = exBins.has(b);
+    if (sel) s += `<rect x="${x0}" y="${m.t - 4}" width="${bw}" height="${H - m.t - m.b + 4}" fill="${och}" opacity=".16" rx="3"/>`;
+    s += `<rect x="${x0 + 1.5}" y="${y(shA[j])}" width="${bw - 3}" height="${Math.max(0.5, y(0) - y(shA[j]))}" fill="${stateOn ? bd : (sel ? och : tint)}" rx="2"/>`;
+    if (stateOn) s += `<rect x="${x0 + bw * 0.22}" y="${y(shS[j])}" width="${bw * 0.56}" height="${Math.max(0.5, y(0) - y(shS[j]))}" fill="${sel ? och : tint}" rx="2"/>`;
+    const lab = j === 0 ? `&lt;${fmtI(b + 1)}` : j === nb - 1 ? `≥${fmtI(b)}` : fmtI(b);
+    if (j === 0 || j === nb - 1 || (b % 2 === 0 && j > 1 && j < nb - 2)) s += `<text x="${x0 + bw / 2}" y="${H - 6}" font-size="10" fill="${t3}" text-anchor="middle">${lab}</text>`;
+    s += `<rect class="b" x="${x0}" y="${m.t - 4}" width="${bw}" height="${H - m.t - m.b + 4}" fill="transparent" data-b="${b}"/>`;
+  }
+  const gx = m.l + (S.G - S.lo) / nb * (W - m.l - m.r);
+  s += `<line x1="${gx}" x2="${gx}" y1="${m.t - 12}" y2="${H - m.b}" stroke="${t3}" stroke-dasharray="3 3"/><text x="${gx + 4}" y="${m.t - 5}" font-size="10.5" fill="${t3}">model's estimate ${fmtM(S.G)}</text>`;
+  const el = $("#natHist"); el.innerHTML = s + `</svg>` +
+    `<div class="legend">${stateOn ? `<span><i class="sq" style="background:var(--border)"></i>all simulations</span><span><i class="sq" style="background:var(--tint)"></i>with the states you set</span>` : `<span class="tiny">Share of simulations by national vote, 1-pt bins. The spread is the model's uncertainty about the national environment.</span>`}</div>`;
+  el.querySelectorAll("rect.b").forEach(r => {
+    const b = +r.dataset.b, j = b - S.lo;
+    r.addEventListener("mousemove", e => showTip(e, `<b>National vote ${j === 0 ? "below " + fmtI(b + 1) : j === nb - 1 ? fmtI(b) + " or more" : fmtI(b) + " to " + fmtI(b + 1)}</b><br>${fmtP(shA[j])} of all simulations` + (stateOn ? `<br>${fmtP(shS[j])} of those with your states` : "") + `<br><span style="color:var(--text-3)">Click to ${exBins.has(b) ? "remove" : "add"}</span>`));
+    r.addEventListener("mouseleave", hideTip);
+    r.addEventListener("click", () => { if (exBins.has(b)) exBins.delete(b); else exBins.add(b); exPreset = null; exSim = null; hideTip(); renderExplorer(); });
+  });
+}
+
+function renderWaffle(S, C) {
+  const el = $("#waffle");
+  if (!C.m) { el.innerHTML = ""; $("#waffleLegend").innerHTML = ""; return; }
+  // 100 real simulations, chosen so each outcome's share matches the scenario's (largest remainder), evenly spaced within it
+  const N = Math.min(100, C.m), q = C.cat.map(c => c.length / C.m * N), k = q.map(Math.floor);
+  let left = N - k.reduce((a, b) => a + b, 0);
+  q.map((v, i) => [v - Math.floor(v), i]).sort((a, b) => b[0] - a[0]).forEach(([, i]) => { if (left > 0 && C.cat[i].length > k[i]) { k[i]++; left--; } });
+  const pick = [];
+  C.cat.forEach((c, ci) => { const sel = []; for (let j = 0; j < k[ci]; j++) sel.push(c[Math.floor((j + 0.5) * c.length / k[ci])]); sel.sort((a, b) => S.sen[b] - S.sen[a] || S.house[b] - S.house[a]); sel.forEach(i => pick.push({ i, ci })); });
+  const cell = 26, gap = 4, cols = 10, rows = Math.ceil(pick.length / cols), W = cols * (cell + gap) - gap, H = rows * (cell + gap) - gap;
+  const dem = css("--dem"), rep = css("--rep"), surf = css("--surface");
+  let s = `<svg viewBox="-1 -1 ${W + 2} ${H + 2}" role="img" aria-label="One hundred simulated elections">`;
+  pick.forEach((p, n) => {
+    const x = (n % cols) * (cell + gap), y = Math.floor(n / cols) * (cell + gap), hD = p.ci <= 1, sD = p.ci === 0 || p.ci === 2;
+    s += `<polygon points="${x},${y} ${x + cell},${y} ${x},${y + cell}" fill="${hD ? dem : rep}"/><polygon points="${x + cell},${y} ${x + cell},${y + cell} ${x},${y + cell}" fill="${sD ? dem : rep}"/>`;
+    s += `<rect class="w${exSim === p.i ? " sel" : ""}" x="${x}" y="${y}" width="${cell}" height="${cell}" rx="3" fill="transparent" stroke="${surf}" stroke-width="1" data-i="${p.i}"/>`;
+  });
+  el.innerHTML = s + `</svg>`;
+  el.querySelectorAll("rect.w").forEach(r => {
+    const i = +r.dataset.i;
+    r.addEventListener("mousemove", e => showTip(e, `<b>One simulated election</b><br>Senate: ${S.sen[i]} D seats (${S.sen[i] >= 51 ? "Democratic" : "Republican"} control)<br>House: ${S.house[i]} D seats (${S.house[i] >= 218 ? "Democratic" : "Republican"} majority)<br>National vote ${fmtM(S.env[i])}<br><span style="color:var(--text-3)">Click to see its Senate map</span>`));
+    r.addEventListener("mouseleave", hideTip);
+    r.addEventListener("click", () => { exSim = exSim === i ? null : i; hideTip(); renderExplorer(); });
+  });
+  const pc = C.cat.map(c => c.length / C.m);
+  const sw = (h, s2) => `<svg width="12" height="12" viewBox="0 0 12 12" style="vertical-align:-1px;margin-right:5px"><polygon points="0,0 12,0 0,12" fill="${h}"/><polygon points="12,0 12,12 0,12" fill="${s2}"/></svg>`;
+  $("#waffleLegend").innerHTML = `<span>${sw(dem, dem)}Democrats win both ${fmtP(pc[0])}</span><span>${sw(dem, rep)}House D, Senate R ${fmtP(pc[1])}</span>` +
+    (pc[2] >= 0.005 ? `<span>${sw(rep, dem)}House R, Senate D ${fmtP(pc[2])}</span>` : "") + `<span>${sw(rep, rep)}Republicans win both ${fmtP(pc[3])}</span>` +
+    `<span class="tiny">Each square is one simulated election (${N === 100 ? "1 in 100 of those matching" : "all that match"}): upper-left half = House, lower-right half = Senate. Click one to see its map.</span>`;
 }
 
 function renderWatch() {
-  const rs = [...DATA.models[model].senate_races].sort((a, b) => Math.abs(a.p_dside - 0.5) - Math.abs(b.p_dside - 0.5)).slice(0, 9)
-    .sort((a, b) => b.p_dside - a.p_dside);
+  const rs = DATA.models[model].senate_races.filter(r => r.p_dside >= 0.15 && r.p_dside <= 0.85).sort((a, b) => b.p_dside - a.p_dside);
   $("#watch").innerHTML = rs.map(r => `<button type="button" data-k="${r.race_key}"><span class="st">${r.state}</span><span class="nm">${esc(r.dem)}${r.dside === "I" ? " (I)" : ""} vs ${esc(r.rep)}</span><span class="pv">${pbarMini(r.p_dside)}</span></button>`).join("");
   $$("#watch button").forEach(b => b.addEventListener("click", () => goRace(b.dataset.k)));
   $("#watchRead").innerHTML = senateReading(false);
@@ -600,19 +914,8 @@ function renderPath() {
     stat(med, "Median Democratic seats") +
     stat(fmtP(pc), "Chance of Democratic control (51+, Vance breaks ties)");
   // upsets histogram
-  const P = R.p_upsets, Wc = 420, Hc = 170, m = { l: 34, r: 8, t: 10, b: 26 }, bw = (Wc - m.l - m.r) / P.length;
-  const mx = Math.max(...P) * 1.15, yy = v => Hc - m.b - v / mx * (Hc - m.t - m.b);
-  const t3 = css("--text-3"), bd = css("--border"), tint = css("--tint"), och = css("--ochre");
-  let sv = `<svg viewBox="0 0 ${Wc} ${Hc}" role="img" aria-label="Number of upsets per simulation">`;
-  [0, 0.1, 0.2, 0.3].filter(v => v <= mx).forEach(v => { sv += `<line x1="${m.l}" x2="${Wc - m.r}" y1="${yy(v)}" y2="${yy(v)}" stroke="${bd}"/><text x="${m.l - 6}" y="${yy(v) + 4}" font-size="11" fill="${t3}" text-anchor="end">${v * 100}%</text>`; });
-  P.forEach((v, i) => {
-    const x0 = m.l + i * bw + 3, w = bw - 6;
-    sv += `<rect x="${x0}" y="${yy(v)}" width="${w}" height="${Math.max(1, yy(0) - yy(v))}" rx="3" fill="${i === 0 ? och : tint}"/>`;
-    sv += `<text x="${x0 + w / 2}" y="${Hc - 9}" font-size="11" fill="${t3}" text-anchor="middle">${i === P.length - 1 ? i + "+" : i}</text>`;
-    sv += `<rect x="${m.l + i * bw}" y="${m.t}" width="${bw}" height="${Hc - m.t - m.b}" fill="transparent" data-i="${i}"/>`;
-  });
-  const uc = $("#upsetChart"); uc.innerHTML = sv + `</svg><div class="legend"><span><i class="sq" style="background:var(--ochre)"></i>every favorite wins</span><span class="tiny">upsets = races won by the side with under 50%</span></div>`;
-  uc.querySelectorAll("rect[data-i]").forEach(r => { const i = +r.dataset.i; r.addEventListener("mousemove", e => showTip(e, `<b>${i === P.length - 1 ? i + " or more" : i} upset${i === 1 ? "" : "s"}</b><br>${fmtP(P[i])} of simulations`)); r.addEventListener("mouseleave", hideTip); });
+  const P = R.p_upsets;
+  upsetBars($("#upsetChart"), P, "races");
   const p02 = P.slice(0, 3).reduce((a, b) => a + b, 0);
   const close2 = [...M.senate_races].sort((a, b) => Math.abs(a.p_dside - 0.5) - Math.abs(b.p_dside - 0.5)).slice(0, 2);
   $("#upsetText").innerHTML = `Of the ${R.n_comp} races where neither side is above 95%, a typical simulation sees ${R.upsets_mean.toFixed(1)} won by the underdog. Every favorite wins in only ${fmtP(R.p_favorites_map)}, and two or fewer upsets happen in ${fmtP(p02)}. ` +
@@ -637,6 +940,65 @@ function renderPath() {
   $("#ladderNote").innerHTML = `Seat numbers count every Democratic race up, including ${above} races above 98% not shown (and races below 2% are left off the bottom). "Tipping point" is how often a race is the one that supplies the 51st seat, its tipping-point probability; the most frequent are ${tp}. Independents aren't counted as Democratic seats here; if every winning independent caucused with Democrats, control would be ${fmtP(ind)}.`;
 }
 const pbarMini = (p) => `<b style="color:${p >= 0.5 ? "var(--dem)" : "var(--rep)"}">${fmtP(p)}</b>`;
+// histogram of upsets per simulation (shared by the Senate and House sections); P[k] = share with k upsets, last = "k or more"
+function upsetBars(el, P, unit) {
+  const Wc = 420, Hc = 170, m = { l: 34, r: 8, t: 10, b: 26 }, bw = (Wc - m.l - m.r) / P.length;
+  const mx = Math.max(...P) * 1.15, yy = v => Hc - m.b - v / mx * (Hc - m.t - m.b);
+  const t3 = css("--text-3"), bd = css("--border"), tint = css("--tint"), och = css("--ochre");
+  const gstep = mx > 0.25 ? 0.1 : mx > 0.1 ? 0.05 : 0.02;
+  let sv = `<svg viewBox="0 0 ${Wc} ${Hc}" role="img" aria-label="Number of upsets per simulation">`;
+  for (let v = 0; v <= mx; v += gstep) sv += `<line x1="${m.l}" x2="${Wc - m.r}" y1="${yy(v)}" y2="${yy(v)}" stroke="${bd}"/><text x="${m.l - 6}" y="${yy(v) + 4}" font-size="11" fill="${t3}" text-anchor="end">${Math.round(v * 100)}%</text>`;
+  const lstep = P.length > 30 ? 10 : P.length > 14 ? 5 : 1;
+  P.forEach((v, i) => {
+    const pad = bw > 12 ? 3 : 0.6, x0 = m.l + i * bw + pad, w = bw - 2 * pad;
+    sv += `<rect x="${x0}" y="${yy(v)}" width="${w}" height="${Math.max(v > 0 ? 1 : 0, yy(0) - yy(v))}" rx="${bw > 12 ? 3 : 1}" fill="${i === 0 ? och : tint}"/>`;
+    if (i % lstep === 0 || i === P.length - 1) sv += `<text x="${x0 + w / 2}" y="${Hc - 9}" font-size="11" fill="${t3}" text-anchor="middle">${i === P.length - 1 ? i + "+" : i}</text>`;
+    sv += `<rect x="${m.l + i * bw}" y="${m.t}" width="${bw}" height="${Hc - m.t - m.b}" fill="transparent" data-i="${i}"/>`;
+  });
+  el.innerHTML = sv + `</svg><div class="legend"><span><i class="sq" style="background:var(--ochre)"></i>every favorite wins</span><span class="tiny">upsets = ${unit} won by the side with under 50%</span></div>`;
+  el.querySelectorAll("rect[data-i]").forEach(r => { const i = +r.dataset.i; r.addEventListener("mousemove", e => showTip(e, `<b>${i === P.length - 1 ? i + " or more" : i} upset${i === 1 ? "" : "s"}</b><br>${fmtP(P[i])} of simulations`)); r.addEventListener("mouseleave", hideTip); });
+}
+
+// ---------- forecast anatomy: where a race's forecast comes from (race fold-downs) ----------
+// o: {prior, poll, w, mu, q10, q25, q75, q90, p, who, nPolls, threeWay}
+function anatomy(o) {
+  const vals = [o.mu, o.q10, o.q90, o.prior, o.poll].filter(v => v != null && isFinite(v));
+  const ext = Math.ceil((Math.max(10, ...vals.map(Math.abs)) + 1.5) / 5) * 5;
+  const narrow = window.innerWidth < 640;   // phones: a narrower drawing so the labels stay legible
+  const W = narrow ? 430 : 600, H = 124, m = { l: narrow ? 70 : 112, r: narrow ? 52 : 64, t: 10, b: 22 };
+  const x = (v) => m.l + (Math.max(-ext, Math.min(ext, v)) + ext) / (2 * ext) * (W - m.l - m.r);
+  const t2 = css("--text-2"), t3 = css("--text-3"), bd = css("--border"), tint = css("--tint"), och = css("--ochre"), dem = css("--dem"), rep = css("--rep"), txt = css("--text");
+  const y1 = 40, y2 = 86;
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="How this race's forecast is built">`;
+  s += `<rect x="${x(-ext)}" y="${m.t}" width="${x(0) - x(-ext)}" height="${H - m.t - m.b}" fill="${rep}" opacity=".07"/><rect x="${x(0)}" y="${m.t}" width="${x(ext) - x(0)}" height="${H - m.t - m.b}" fill="${dem}" opacity=".07"/>`;
+  const step = ext > 30 ? 10 : 5;
+  for (let v = -ext; v <= ext; v += step) s += `<line x1="${x(v)}" x2="${x(v)}" y1="${m.t}" y2="${H - m.b}" stroke="${v === 0 ? t3 : bd}"${v === 0 ? "" : ' stroke-dasharray="2 3"'}/><text x="${x(v)}" y="${H - 7}" font-size="10" fill="${t3}" text-anchor="middle">${v === 0 ? "tie" : (v > 0 ? "D+" : "R+") + Math.abs(v)}</text>`;
+  s += `<text x="4" y="${y1 + 4}" font-size="11" font-weight="600" fill="${t2}">Inputs</text><text x="4" y="${y2 + 4}" font-size="11" font-weight="600" fill="${t2}">${narrow ? "Result" : "Simulated result"}</text>`;
+  // inputs: prior (hollow diamond), poll average (dot), forecast on the line between them
+  const hasPoll = o.poll != null && isFinite(o.poll), hasPrior = o.prior != null && isFinite(o.prior) && !o.threeWay;
+  if (hasPoll && hasPrior) s += `<line x1="${x(o.prior)}" x2="${x(o.poll)}" y1="${y1}" y2="${y1}" stroke="${t3}" stroke-width="2"/>`;
+  if (hasPrior) { const px = x(o.prior); s += `<path d="M${px},${y1 - 6}L${px + 6},${y1}L${px},${y1 + 6}L${px - 6},${y1}Z" fill="${css("--surface")}" stroke="${t2}" stroke-width="1.8"/><text x="${px}" y="${y1 + 19}" font-size="10.5" fill="${t2}" text-anchor="middle">prior ${fmtM(o.prior)}</text>`; }
+  if (hasPoll) { const qx = x(o.poll); s += `<circle cx="${qx}" cy="${y1}" r="6" fill="${tint}"/><text x="${qx}" y="${y1 - 11}" font-size="10.5" fill="${txt}" text-anchor="middle">polls ${fmtM(o.poll)}${o.nPolls ? ` (${o.nPolls})` : ""}</text>`; }
+  const fx = x(o.mu);
+  s += `<line x1="${fx}" x2="${fx}" y1="${y1 - 8}" y2="${y2 + 9}" stroke="${och}" stroke-width="1.5" stroke-dasharray="3 2"/>`;
+  // simulated result: 80% and middle-50% bands, forecast tick
+  if (o.q10 != null) {
+    s += `<rect x="${x(o.q10)}" y="${y2 - 7}" width="${Math.max(1, x(o.q90) - x(o.q10))}" height="14" rx="3" fill="${tint}" opacity=".35"/>`;
+    s += `<rect x="${x(o.q25)}" y="${y2 - 7}" width="${Math.max(1, x(o.q75) - x(o.q25))}" height="14" rx="3" fill="${tint}" opacity=".75"/>`;
+  }
+  s += `<rect x="${fx - 2}" y="${y2 - 10}" width="4" height="20" rx="1" fill="${och}"/><text x="${fx}" y="${y2 + 22}" font-size="10.5" font-weight="700" fill="${och}" text-anchor="middle" style="paint-order:stroke" stroke="${css("--surface-2")}" stroke-width="3">${fmtM(o.mu)}</text>`;
+  s += `<text x="${W - 6}" y="${y2 - 3}" font-size="15" font-weight="700" fill="${o.p >= 0.5 ? dem : rep}" text-anchor="end">${fmtP(o.p)}</text><text x="${W - 6}" y="${y2 + 11}" font-size="9.5" fill="${t3}" text-anchor="end">${o.who} wins</text>`;
+  return s + `</svg>`;
+}
+function anatomyCaption(o) {
+  const pct = (v) => Math.round(v * 100) + "%";
+  let t;
+  if (o.threeWay) t = `Three-way race: the forecast is the poll average of the best non-Republican's margin over the Republican (${fmtM(o.mu)}).`;
+  else if (o.poll != null && isFinite(o.poll) && o.w > 0) t = `Forecast ${fmtM(o.mu)} = ${pct(o.w)} × poll average ${fmtM(o.poll)} + ${pct(1 - o.w)} × prior ${fmtM(o.prior)}${o.shiftNote || ""}. The poll average gets more weight when there are more recent polls.`;
+  else t = `No polls${o.unit === "district" ? " of this district" : ""} with both nominees: the forecast is the prior, ${fmtM(o.mu)}.`;
+  if (o.q10 != null) t += ` In the simulations, the result lands between ${fmtM(o.q25)} and ${fmtM(o.q75)} half the time and between ${fmtM(o.q10)} and ${fmtM(o.q90)} 80% of the time; the ${o.who} is ahead in ${fmtP(o.p)}. That spread includes the national polling miss shared by every race.`;
+  return `<p class="cap">${t}</p>`;
+}
 
 // ---------- tables ----------
 const pbar = (p) => `<span class="pbar" role="img" aria-label="${fmtP(p)}"><span style="width:${(p * 100).toFixed(1)}%"></span></span><span class="pval">${fmtP(p)}</span>`;
@@ -649,7 +1011,7 @@ function renderSenate() {
     if (senFilter !== "all" && all.find(r => r.race_key === openRace)) { senFilter = "all"; return renderSenate(); }
     if (!all.find(r => r.race_key === openRace)) openRace = null;
   }
-  $("#senIntro").innerHTML = `${rows.length} of 35 races shown. Chance = the Democrat (or the independent, where no Democrat is the main challenger) wins. Margins are two-party, D−R. Click a race for its polls. Model: <b>${MODEL_LONG[model]}</b>. Forecast blends the poll average (about ${Math.round(M.race_w * 100)}% weight) with the prior (2×PVI + environment + incumbency).`;
+  $("#senIntro").innerHTML = `${rows.length} of 35 races shown. Chance = the Democrat (or the independent, where no Democrat is the main challenger) wins. Margins are two-party, D−R. Click a race for its polls and how its forecast is built. Model: <b>${MODEL_LONG[model]}</b>. Forecast blends the poll average (about ${Math.round(M.race_w * 100)}% weight) with the prior (2×PVI + environment + incumbency).`;
   renderPath();
   $$("#senFilter button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.f === senFilter)));
   const cols = [
@@ -674,27 +1036,38 @@ function renderSenate() {
   });
   const o = T.querySelector("tr.open"); if (o) o.scrollIntoView({ block: "nearest" });
 }
+const sgn1 = (v) => `${v >= 0 ? "+" : "−"}${Math.abs(v).toFixed(1)}`;
 function raceDetail(r) {
-  const P = (DATA.senate_polls || {})[r.race_key];
+  const P = (DATA.senate_polls || {})[r.race_key], M = DATA.models[model];
+  const threeWay = r.state === "MT";
+  const o = { prior: r.prior, poll: r.poll_avg == null ? null : r.poll_avg + (M.senate_shift || 0), w: r.poll_weight, mu: r.mu,
+    q10: r.q10, q25: r.q25, q75: r.q75, q90: r.q90, p: r.p_dside, who: r.dside === "I" ? "independent" : "Democrat", nPolls: r.n_polls, threeWay, unit: "state" };
+  if (M.lean && r.poll_avg_raw != null && r.poll_avg != null && Math.abs(r.poll_avg - r.poll_avg_raw) >= 0.05) o.shiftNote = ` (the poll average includes the Bias-adjusted state-lean term, ${sgn1(r.poll_avg - r.poll_avg_raw)})`;
+  const parts = r.prior_env != null && !threeWay ? `
+    <span>&nbsp;· 2 × state lean</span><span class="muted">${sgn1(2 * r.pvi)}</span>
+    <span>&nbsp;· national environment</span><span class="muted">${sgn1(r.prior_env)}</span>
+    <span>&nbsp;· incumbency (assumed)</span><span class="muted">${sgn1(r.prior_inc)}</span>` +
+    (Math.abs(r.prior_econ || 0) >= 0.05 ? `<span>&nbsp;· state job trend</span><span class="muted">${sgn1(r.prior_econ)}</span>` : "") : "";
   const left = `<div class="kvs">
     <span>Forecast margin</span><b>${fmtM(r.mu)}</b>
     <span>Poll average</span><span>${fmtM(r.poll_avg)}${r.n_polls ? ` (${r.n_polls} polls)` : ""}</span>
-    <span>Prior</span><span>${r.state === "MT" ? "— (3-way race)" : fmtM(r.prior)}</span>
     <span>Weight on polls</span><span>${r.n_polls ? Math.round(r.poll_weight * 100) + "%" : "—"}</span>
+    <span>Prior</span><span>${threeWay ? "— (3-way race)" : fmtM(r.prior)}</span>${parts}
     <span>State lean (PVI)</span><span>${fmtPVI(r.pvi)}</span>
     <span>Cook / Silver</span><span>${esc(r.rating_cook)} / ${esc(r.rating_silver)}</span></div>`;
   let right;
   if (!P || !P.polls.length) right = `<p class="muted small">No polls since mid-June with both nominees. The forecast rests on the prior.</p>`;
-  else if (r.state === "MT") right = `<p class="muted small">Montana is a three-way race: its average uses the best non-Republican's raw margin over the Republican, so the two-party breakdown below doesn't apply.</p>` + pollRows(r, P, false);
+  else if (threeWay) right = `<p class="muted small">Montana is a three-way race: its average uses the best non-Republican's raw margin over the Republican, so the two-party breakdown below doesn't apply.</p>` + pollRows(r, P, false);
   else right = pollRows(r, P, true);
-  return `<div class="detail-grid"><div>${left}</div><div style="overflow-x:auto">${right}</div></div>`;
+  return `<div class="detail-box"><div class="detail-top"><div class="anat">${anatomy(o)}${anatomyCaption(o)}</div>${left}</div><div style="overflow-x:auto">${right}</div></div>`;
 }
-function pollRows(r, P, full) {
+function pollRows(r, P, full, house) {
   const M = DATA.models[model];
-  const lean = M.lean ? DATA.bias_confidence.lean_based.slope * 2 * r.pvi : 0;
-  const bias = model === AD ? M.senate_shift : 0;
+  const lean = !house && M.lean ? DATA.bias_confidence.lean_based.slope * 2 * r.pvi : 0;
+  const bias = model === AD ? (house ? M.shift : M.senate_shift) : 0;
   const sg = (v) => Math.abs(v) < 0.05 ? `<span class="muted">0</span>` : `${v > 0 ? "+" : "−"}${Math.abs(v).toFixed(1)}`;
-  const dl = esc(r.dem.split(" ").slice(-1)[0]), rl = esc(r.rep.split(" ").slice(-1)[0]);
+  const last = (s) => esc(String(s || "").split("; ")[0].trim().split(" ").slice(-1)[0]);
+  const dl = last(house ? P.dem : r.dem), rl = last(house ? P.rep : r.rep);
   const extra = (lean ? `<th class="num" title="State-lean term (Bias-adjusted model)">Lean</th>` : "") + (bias ? `<th class="num" title="Polling-bias shift (Bias-adjusted model)">Bias</th>` : "");
   const head = `<thead><tr><th>Ended</th><th>Pollster</th><th class="num">n</th><th class="num">${dl}</th><th class="num">${rl}</th>` +
     (full ? `<th class="num" title="Two-party margin, D−R">Raw</th><th class="num" title="Party-sponsor adjustment">Sponsor</th><th class="num" title="Registered-voter / adult adjustment">Voters</th>${extra}<th class="num" title="Margin as it enters the average">Adjusted</th>` : `<th class="num">Margin</th>`) +
@@ -709,44 +1082,130 @@ function pollRows(r, P, full) {
   const shownShare = P.polls.reduce((a, p) => a + p.share, 0);
   const foot = full ? `<tr><td colspan="5"><b>Weighted average</b>${P.n_total > P.polls.length ? ` (all ${P.n_total} polls; ${P.n_total - P.polls.length} older ones not shown carry ${((1 - shownShare) * 100).toFixed(0)}% of the weight)` : ""}</td>` +
     `<td colspan="${3 + (lean ? 1 : 0) + (bias ? 1 : 0)}"></td><td class="num"><b>${fmtM(P.avg_adj + lean + bias)}</b></td><td class="num">100%</td></tr>` : "";
-  const note = `<p class="tiny">Source: VoteHub. Sponsor: polls paid for by a party or allied group are shifted ${DATA.pollster_fx.beta.toFixed(1)} pts against the sponsor if the pollster has a track record, ${DATA.pollster_fx.thin.statewide.toFixed(1)} if not; a "flag" with no listed sponsor from an established nonpartisan pollster gets no shift. Voters: registered-voter and adult polls shifted toward likely-voter levels.` +
+  const note = `<p class="tiny">Source: VoteHub. Sponsor: polls paid for by a party or allied group are shifted ${DATA.pollster_fx.beta.toFixed(1)} pts against the sponsor if the pollster has a track record, ${(house ? DATA.pollster_fx.thin.house : DATA.pollster_fx.thin.statewide).toFixed(1)} if not; a "flag" with no listed sponsor from an established nonpartisan pollster gets no shift. Voters: registered-voter and adult polls shifted toward likely-voter levels.` +
     (lean || bias ? ` ${MODELS[model]} model: lean ${sg(lean).replace(/<[^>]+>/g, "")}, bias ${sg(bias).replace(/<[^>]+>/g, "")} applied to every poll.` : "") +
     ` The forecast then blends this average with the prior (${r.n_polls ? Math.round(r.poll_weight * 100) + "% polls" : "—"}).</p>`;
   return `<table class="mini">${head}<tbody>${body}${foot}</tbody></table>${note}`;
 }
 $$("#senFilter button").forEach(b => b.addEventListener("click", () => { senFilter = b.dataset.f; renderSenate(); }));
 
-let houseSort = { key: "p", dir: -1 }, houseQ = "";
+let houseSort = { key: "p", dir: -1 }, houseQ = "", ladderAll = false;
 function renderHouse() {
   const M = DATA.models[model], c = M.house_counts;
-  $("#houseIntro").innerHTML = `${c.competitive} seats have a 5–95% Democratic win probability (${MODELS[model]} model). ${c.safe_d + c.fixed_d} more are safe or certain for Democrats and ${c.safe_r + c.fixed_r} for Republicans. All 435: <a href="data/house_${model}.csv">CSV</a>.`;
+  if (openHouse && !M.house_comp.find(r => r.race_key === openHouse)) openHouse = null;
+  const nPolled = M.house_comp.filter(r => r.n_polls > 0).length;
+  $("#houseIntro").innerHTML = `${c.competitive} seats have a 5–95% Democratic win probability (${MODELS[model]} model). ${c.safe_d + c.fixed_d} more are safe or certain for Democrats and ${c.safe_r + c.fixed_r} for Republicans. All 435: <a href="data/house_${model}.csv">CSV</a>. ` +
+    `Click any district to see how its forecast is built. ${nPolled} of these ${c.competitive} have district polls; the others rely on the district model alone (marked “none”).`;
   const cols = [
     { key: "label", label: "District", sort: r => r.label, render: r => `${r.label}<span class="show-sm">${esc(r.inc)} (${esc(r.inc_party)})${r.inc_running ? "" : " · open"}</span>` },
     { key: "inc", label: "Incumbent", cls: "hide-sm", sort: r => r.inc, render: r => `${esc(r.inc)} <span class="muted">(${esc(r.inc_party)})</span>${r.inc_running ? "" : ' <span class="tag">open</span>'}` },
     { key: "p", label: "Chance D wins", sort: r => r.p_dem, render: r => pbar(r.p_dem) },
     { key: "mu", label: "Margin", num: true, sort: r => r.mu, render: r => fmtM(r.mu) },
     { key: "pvi", label: "PVI", num: true, cls: "hide-sm", sort: r => r.pvi, render: r => fmtPVI(r.pvi) },
-    { key: "poll", label: "Polls", num: true, cls: "hide-sm", sort: r => r.poll_avg ?? -999, render: r => fmtM(r.poll_avg) },
+    { key: "poll", label: "Polls (n)", num: true, cls: "hide-sm", sort: r => r.n_polls ? r.poll_avg : -999, render: r => r.n_polls ? `${fmtM(r.poll_avg)} <span class="muted">(${r.n_polls})</span>` : `<span class="none">none</span>` },
     { key: "c", label: "Candidates (D / R)", cls: "hide-sm", sort: r => r.dem_cand || "", render: r => `<span class="muted">${esc(r.dem_cand)} / ${esc(r.rep_cand)}</span>` },
   ];
   const q = houseQ.toLowerCase();
   const rows = M.house_comp.filter(r => !q || [r.label, r.inc, r.dem_cand, r.rep_cand, STATE[r.label.split("-")[0]]].join(" ").toLowerCase().includes(q));
   const sorted = [...rows].sort((a, b) => { const cc = cols.find(x => x.key === houseSort.key); const va = cc.sort(a), vb = cc.sort(b); return (va > vb ? 1 : va < vb ? -1 : 0) * houseSort.dir; });
   const T = $("#houseTable");
-  T.innerHTML = `<thead><tr>${cols.map(cc => `<th class="sortable ${cc.num ? "num " : ""}${cc.cls || ""}" data-k="${cc.key}">${cc.label}${cc.key === houseSort.key ? (houseSort.dir > 0 ? " ▲" : " ▼") : ""}</th>`).join("")}</tr></thead><tbody>` +
-    sorted.map(r => `<tr>${cols.map(cc => `<td class="${cc.num ? "num " : ""}${cc.cls || ""}">${cc.render(r)}</td>`).join("")}</tr>`).join("") + "</tbody>";
+  T.innerHTML = `<thead><tr>${cols.map(cc => `<th class="sortable ${cc.num ? "num " : ""}${cc.cls || ""}" data-k="${cc.key}" scope="col">${cc.label}${cc.key === houseSort.key ? (houseSort.dir > 0 ? " ▲" : " ▼") : ""}</th>`).join("")}</tr></thead><tbody>` +
+    sorted.map(r => `<tr class="race${r.race_key === openHouse ? " open" : ""}" data-k="${esc(r.race_key)}" tabindex="0" aria-expanded="${r.race_key === openHouse}">${cols.map(cc => `<td class="${cc.num ? "num " : ""}${cc.cls || ""}">${cc.render(r)}</td>`).join("")}</tr>` +
+      (r.race_key === openHouse ? `<tr class="detail"><td colspan="${cols.length}">${houseDetail(r)}</td></tr>` : "")).join("") + "</tbody>";
   T.querySelectorAll("th.sortable").forEach(th => th.addEventListener("click", () => { const k = th.dataset.k; houseSort = k === houseSort.key ? { key: k, dir: -houseSort.dir } : { key: k, dir: ["label", "inc", "c"].includes(k) ? 1 : -1 }; renderHouse(); }));
+  T.querySelectorAll("tr.race").forEach(tr => {
+    const toggle = () => { openHouse = openHouse === tr.dataset.k ? null : tr.dataset.k; history.replaceState(null, "", openHouse ? "#house/" + encodeURIComponent(openHouse) : "#house"); renderHouse(); };
+    tr.addEventListener("click", toggle);
+    tr.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); } });
+  });
+  const o = T.querySelector("tr.open"); if (o) o.scrollIntoView({ block: "nearest" });
+  renderHousePath();
+}
+function houseDetail(r) {
+  const M = DATA.models[model], P = (DATA.house_polls || {})[r.race_key], hs = DATA.house_structure.chosen;
+  const shift = model === AD ? M.shift : 0, polled = r.n_polls > 0 && r.poll_avg != null;
+  const o = { prior: r.prior, poll: polled ? r.poll_avg + shift : null, w: r.poll_weight, mu: r.mu, q10: r.q10, q25: r.q25, q75: r.q75, q90: r.q90,
+    p: r.p_dem, who: "Democrat", nPolls: r.n_polls, unit: "district" };
+  if (shift && polled) o.shiftNote = ` (district polls shifted ${Math.abs(shift).toFixed(1)} toward Republicans, as in the Bias-adjusted generic ballot)`;
+  const parts = r.prior != null ? `
+    <span>&nbsp;· district lean (${hs.b_lean2.toFixed(2)} × 2 × PVI)</span><span class="muted">${sgn1(hs.b_lean2 * 2 * r.pvi)}</span>
+    <span>&nbsp;· national (${hs.g_nat.toFixed(2)} × ${fmtM(r.prior_G)})</span><span class="muted">${sgn1(hs.g_nat * r.prior_G)}</span>
+    <span>&nbsp;· incumbency</span><span class="muted">${sgn1(r.prior_inc || 0)}</span>
+    <span>&nbsp;· constant</span><span class="muted">${sgn1(hs.const)}</span>` : "";
+  const left = `<div class="kvs">
+    <span>Forecast margin</span><b>${fmtM(r.mu)}</b>
+    <span>Poll average</span><span>${polled ? `${fmtM(r.poll_avg)} (${r.n_polls} poll${r.n_polls > 1 ? "s" : ""})` : "none"}</span>
+    <span>Weight on polls</span><span>${polled ? Math.round(r.poll_weight * 100) + "%" : "—"}</span>
+    <span>Prior (district model)</span><span>${fmtM(r.prior)}</span>${parts}
+    <span>District lean (PVI)</span><span>${fmtPVI(r.pvi)}</span>
+    <span>Incumbent</span><span>${esc(r.inc)} (${esc(r.inc_party)})${r.inc_running ? "" : ", not running"}</span></div>`;
+  const right = P && P.polls.length ? pollRows(r, P, true, true)
+    : `<p class="muted small">No district polls since July with both nominees. The forecast is the district model alone (estimated on 2006–2024 results; its typical error is about ${DATA.house_model.sd_district.toFixed(1)} pts, which is why seats near a tie stay uncertain).</p>`;
+  return `<div class="detail-box"><div class="detail-top"><div class="anat">${anatomy(o)}${anatomyCaption(o)}</div>${left}</div><div style="overflow-x:auto">${right}</div></div>`;
 }
 $("#houseSearch").addEventListener("input", e => { houseQ = e.target.value; renderHouse(); });
+$("#hLadderMore").addEventListener("click", () => { ladderAll = !ladderAll; renderHousePath(); });
+
+// ---------- how House control gets decided (House page section) ----------
+function renderHousePath() {
+  const M = DATA.models[model], R = M.house.reading;
+  if (!R) return;
+  const stat = (v, l) => `<div class="stat"><div class="v">${v}</div><div class="l">${l}</div></div>`;
+  const med = seatMed(M.house.hist), pc = M.house.p_dem_majority;
+  const byLabel = Object.fromEntries(M.house_comp.map(r => [r.label, r]));
+  $("#hPathIntro").innerHTML = `Model: <b>${MODEL_LONG[model]}</b>. Each simulation draws one national polling miss, regional and partisan-lean shocks, and district-level noise, then counts seats. The district chances above are how often each seat goes each way; the numbers below show how they combine.`;
+  $("#hPathStats").innerHTML =
+    stat(R.seats_if_favorites_win, "Democratic seats if every favorite wins") +
+    stat(fmtP(R.p_favorites_map), `Simulations where every favorite wins (all ${R.n_comp} competitive seats)`) +
+    stat(R.upsets_mean.toFixed(1), `Upsets in a typical simulation (${R.upsets_to_dem_mean.toFixed(1)} to Democrats, ${R.upsets_to_rep_mean.toFixed(1)} to Republicans)`) +
+    stat(med, "Median Democratic seats") +
+    stat(fmtP(pc), "Chance of a Democratic majority (218+)");
+  upsetBars($("#hUpsetChart"), R.p_upsets, "districts");
+  const close2 = [...M.house_comp].sort((a, b) => Math.abs(a.p_dem - 0.5) - Math.abs(b.p_dem - 0.5)).slice(0, 2);
+  const d = med - R.seats_if_favorites_win;
+  $("#hUpsetText").innerHTML = `Of the ${R.n_comp} districts where neither side is above 95%, a typical simulation sees ${R.upsets_mean.toFixed(1)} won by the underdog, and every favorite wins in ${fmtP(R.p_favorites_map)}. ` +
+    `With this many close seats, a run of upsets is the normal outcome, not a surprise: ${close2.map(r => `${r.label} at ${fmtP(r.p_dem)}`).join(" and ")} are close to coin flips on their own. ` +
+    `Upsets run both ways (on average ${R.upsets_to_dem_mean.toFixed(1)} to Democrats and ${R.upsets_to_rep_mean.toFixed(1)} to Republicans), so the median outcome, ${med} seats, sits ${d === 0 ? "exactly at" : `${Math.abs(d)} seat${Math.abs(d) === 1 ? "" : "s"} ${d < 0 ? "below" : "above"}`} the all-favorites count of ${R.seats_if_favorites_win}. ` +
+    `Because the national polling miss is shared, upsets cluster: in a year when polls overstate Democrats, many Republican-leaning seats hold at once.`;
+  // seats most likely to change hands
+  $("#flipIntro").innerHTML = `On average Democrats win about ${R.exp_gain_from_R.toFixed(0)} of the ${R.held_R} districts whose incumbent is a Republican and lose about ${R.exp_loss_from_D.toFixed(0)} of their own ${R.held_D}; the ${R.n_open} new or vacant seats with no incumbent add about ${R.exp_open_D.toFixed(0)} more. ` +
+    `Because of mid-decade redistricting in 11 states, “held” means the party of the incumbent assigned to the district on the new lines, so some of these are new seats rather than true flips. Each list shows the 12 likeliest to flip, out of ${R.n_flip_to_d} Republican-held and ${R.n_flip_to_r} Democratic-held seats with at least a 5% chance of changing hands.`;
+  const flipTbl = (rows, title, toD) => `<thead><tr><th>${title}</th><th>Incumbent</th><th class="num">Chance D wins</th></tr></thead><tbody>` +
+    rows.map(x => `<tr class="${byLabel[x.label] ? "race" : ""}" data-l="${x.label}"><td>${x.label}</td><td>${esc(x.inc)}${x.inc_running ? "" : ' <span class="tag">open</span>'}</td><td class="num">${pbar(toD ? x.p_flip : 1 - x.p_flip)}</td></tr>`).join("") + "</tbody>";
+  $("#flipD").innerHTML = flipTbl(R.flip_to_d, "Republican-held → D", true);
+  $("#flipR").innerHTML = flipTbl(R.flip_to_r, "Democratic-held → R", false);
+  // path to 218
+  const piv = R.ladder.find(r => r.seat === 218);
+  $("#hLadderIntro").innerHTML = `Ranking all 435 districts from most to least likely Democratic, the 218th is <b>${R.pivot}</b>${piv ? ` at ${fmtP(piv.p)}` : ""}. A majority (${fmtP(pc)}) is far likelier than that seat alone because the 218th seat can come from any district on the list: when Democrats lose a seat above the line, they often win one below it.`;
+  const pi = R.ladder.findIndex(r => r.seat === 218);
+  const shown = ladderAll || pi < 0 ? R.ladder : R.ladder.slice(Math.max(0, pi - 12), pi + 13);
+  const cp = (v) => v == null ? "—" : fmtP(v);
+  $("#hLadderTable").innerHTML = `<thead><tr><th class="num">Seat</th><th>District</th><th>Incumbent</th><th class="num">Chance D wins</th><th class="num" title="Share of simulations in which this district delivers the 218th Democratic seat">Tipping point</th><th class="num">Majority if D wins</th><th class="num">Majority if D loses</th></tr></thead><tbody>` +
+    shown.map(r => { const rr = byLabel[r.label]; return `<tr class="${r.seat === 218 ? "pivot" : ""}${rr ? " race" : ""}" data-l="${r.label}"><td class="num">${r.seat === 218 ? "<b>218</b>" : r.seat}</td><td>${r.label}</td><td>${rr ? `${esc(rr.inc)} <span class="muted">(${esc(rr.inc_party)})</span>` : ""}</td><td class="num">${pbar(r.p)}</td><td class="num">${r.tp >= 0.005 ? fmtP(r.tp) : "—"}</td><td class="num">${cp(r.p_ctrl_given_win)}</td><td class="num">${cp(r.p_ctrl_given_loss)}</td></tr>`; }).join("") + "</tbody>";
+  $("#hLadderMore").textContent = ladderAll ? "Show the 25 districts around seat 218" : `Show all ${R.ladder.length} districts between 2% and 98%`;
+  const tp = R.tipping_point.slice(0, 3).map(t => `${t.label} (${fmtP(t.p)})`).join(", ");
+  $("#hLadderNote").innerHTML = `Seat numbers count all 435 districts, including ${R.n_above_ladder} above 98% not listed. “Tipping point” is how often a district is the one that supplies the 218th seat; with so many close seats no single district is decisive often (the most frequent: ${tp}). Click a district to open it in the table above.`;
+  // clicking a district in the flip lists or the ladder opens it in the table
+  $$("#flipD tr.race, #flipR tr.race, #hLadderTable tr.race").forEach(tr => tr.addEventListener("click", () => {
+    const rr = byLabel[tr.dataset.l]; if (!rr) return;
+    houseQ = ""; $("#houseSearch").value = ""; openHouse = rr.race_key;
+    history.replaceState(null, "", "#house/" + encodeURIComponent(openHouse)); renderHouse();
+    $("#houseTable tr.open")?.scrollIntoView({ block: "center", behavior: "smooth" });
+  }));
+}
 
 // ---------- method ----------
 function renderMethod() {
   const F = DATA.models[FV], A = DATA.models[AD];
   $("#wText").textContent = `Polls get ${Math.round(F.w_polls * 100)}% of the weight (${Math.round(A.w_polls * 100)}% in the adjusted model, whose polling uncertainty is smaller once the bias is taken out).`;
   const PW = DATA.prior_weight;
-  $("#raceW").textContent = `In polled Senate races the poll average gets about ${Math.round(F.race_w * 100)}% of the weight, matching the weight that predicted 1998–2022 Senate results best (${PW.w.toFixed(2)}). The poll average's own error shrinks with the number of recent polls (about 5 pts with 10+ polls, 10 with one or two). Unpolled races rest on the prior, whose typical error is about ${PW.prior_sd_robust.toFixed(0)} pts. House districts use an assumed 6-pt prior error.`;
-  $("#cmpTable").innerHTML = `<thead><tr><th>Version</th><th class="num">Environment</th><th class="num">Dem House</th><th class="num">Dem seats (80%)</th><th class="num">Dem Senate</th><th class="num">Dem seats (80%)</th></tr></thead><tbody>` +
-    Object.keys(MODELS).map(k => { const X = DATA.models[k]; return `<tr><td>${MODEL_LONG[k]}</td><td class="num">${fmtM(X.G)}</td><td class="num">${fmtP(X.house.p_dem_majority)}</td><td class="num">${Math.round(X.house.dem_seats_mean)} (${X.house.dem_seats_p10}–${X.house.dem_seats_p90})</td><td class="num">${fmtP(X.senate.p_dem_control_without_osborn)}</td><td class="num">${X.senate.dem_seats_mean.toFixed(1)} (${X.senate.dem_seats_p10}–${X.senate.dem_seats_p90})</td></tr>`; }).join("") + "</tbody>";
+  $("#raceW").textContent = `In polled Senate races the poll average gets about ${Math.round(F.race_w * 100)}% of the weight, matching the weight that predicted 1998–2022 Senate results best (${PW.w.toFixed(2)}). The poll average's own error shrinks with the number of recent polls (about 5 pts with 10+ polls, 10 with one or two). Unpolled races rest on the prior, whose typical error is about ${PW.prior_sd_robust.toFixed(0)} pts. House districts use an estimated prior error of ${DATA.house_model.sd_district.toFixed(1)} pts (appendix D).`;
+  $("#incW").textContent = Math.round((1 - F.race_w) * 100) + "%";
+  const DESC = { polls_only: "no fundamentals, no bias adjustment", polls_fundamentals: "polls blended with the fundamentals model", polls_fundamentals_biasadj: "generic ballot shifted for its typical miss; Senate polls corrected for state lean" };
+  const seatTxt = (h) => { const [lo, hi] = seat95(h); return `${seatMed(h)} <span class="muted">(${lo}–${hi})</span>`; };
+  $("#cmpTable").innerHTML = `<thead><tr><th>Version</th><th class="num">National environment</th><th class="num">House: D chance</th><th class="num">House seats</th><th class="num">Senate: D chance</th><th class="num">Senate seats</th></tr></thead><tbody>` +
+    Object.keys(MODELS).map(k => { const X = DATA.models[k]; return `<tr><td style="white-space:normal;min-width:190px"><b>${MODELS[k]}</b><br><span class="tiny">${DESC[k]}</span></td><td class="num">${fmtM(X.G)}</td><td class="num">${fmtP(X.house.p_dem_majority)}</td><td class="num">${seatTxt(X.house.hist)}</td><td class="num">${fmtP(X.senate.p_dem_control_without_osborn)}</td><td class="num">${seatTxt(X.senate.hist)}</td></tr>`; }).join("") +
+    `</tbody><tfoot><tr><td colspan="6" class="tiny" style="white-space:normal">Seats: median Democratic seats, with the 95% range in brackets (the same figures as the overview). Senate seats count the Democratic caucus (including King and Sanders) but not this year's independent candidates, as on the overview.</td></tr></tfoot>`;
   const sv = DATA.sensitivity;
   if (sv) $("#sensText").textContent = `Across the ten top fundamentals specifications, the blended environment ranges ${fmtM(sv.G_min)} to ${fmtM(sv.G_max)}: Dem House ${fmtP(sv.pH_min)}–${fmtP(sv.pH_max)}, Dem Senate ${fmtP(sv.pS_min)}–${fmtP(sv.pS_max)} (polls + fundamentals).`;
 }
@@ -842,18 +1301,19 @@ function renderBias() {
 function renderBacktest() {
   const B = DATA.backtest;
   const stat = (v, l) => `<div class="stat"><div class="v">${v}</div><div class="l">${l}</div></div>`;
-  $("#btStats").innerHTML = ["2018", "2022"].map(c => stat(Math.round(B[c].winner_accuracy * B[c].races) + "/" + B[c].races, `${c} Senate winners called`) + stat(B[c].brier.toFixed(3), `${c} Brier score`)).join("");
+  $("#btStats").innerHTML = ["2018", "2022"].map(c => stat(Math.round(B[c].winner_accuracy * B[c].races) + "/" + B[c].races, `${c} Senate winners called`) + stat(B[c].brier.toFixed(3), `${c} Brier score (0 = perfect; 50% everywhere = 0.25)`)).join("");
   const bins = DATA.calibration_bins;
   $("#calTable").innerHTML = `<thead><tr><th>Forecast bin</th><th class="num">Races</th><th class="num">Avg forecast</th><th class="num">Dem win rate</th></tr></thead><tbody>` +
     bins.map(b => `<tr><td>${b.bin}</td><td class="num">${b.n}</td><td class="num">${fmtP(b.p)}</td><td class="num">${Math.round(b.won * 100)}%</td></tr>`).join("") + "</tbody>";
-  const W = 320, H = 210, m = { l: 36, r: 10, t: 10, b: 30 };
+  const W = 340, H = 230, m = { l: 52, r: 14, t: 12, b: 34 };
   const x = v => m.l + v * (W - m.l - m.r), y = v => H - m.b - v * (H - m.t - m.b);
-  const t3 = css("--text-3"), bd = css("--border"), teal = css("--teal"), surf = css("--surface");
+  const t3 = css("--text-3"), t2 = css("--text-2"), bd = css("--border"), teal = css("--teal"), surf = css("--surface");
   let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Calibration">`;
-  [0, .5, 1].forEach(v => { s += `<line x1="${x(0)}" x2="${x(1)}" y1="${y(v)}" y2="${y(v)}" stroke="${bd}"/><text x="${m.l - 6}" y="${y(v) + 4}" font-size="11" fill="${t3}" text-anchor="end">${v * 100}%</text><text x="${x(v)}" y="${H - 14}" font-size="11" fill="${t3}" text-anchor="middle">${v * 100}%</text>`; });
-  s += `<line x1="${x(0)}" y1="${y(0)}" x2="${x(1)}" y2="${y(1)}" stroke="${t3}" stroke-dasharray="3 3"/><text x="${x(0.5)}" y="${H - 1}" font-size="11" fill="${t3}" text-anchor="middle">forecast → actual Dem win rate ↑</text>`;
-  bins.forEach((b, i) => { s += `<circle cx="${x(b.p)}" cy="${y(b.won)}" r="${4 + Math.sqrt(b.n) * 1.6}" fill="${teal}" stroke="${surf}" stroke-width="2" data-i="${i}"/>`; });
-  const el = $("#calChart"); el.innerHTML = s + `</svg>`;
+  [0, .5, 1].forEach(v => { s += `<line x1="${x(0)}" x2="${x(1)}" y1="${y(v)}" y2="${y(v)}" stroke="${bd}"/><text x="${m.l - 6}" y="${y(v) + 4}" font-size="11" fill="${t3}" text-anchor="end">${v * 100}%</text><text x="${x(v)}" y="${H - 18}" font-size="11" fill="${t3}" text-anchor="middle">${v * 100}%</text>`; });
+  s += `<line x1="${x(0)}" y1="${y(0)}" x2="${x(1)}" y2="${y(1)}" stroke="${t3}" stroke-dasharray="3 3"/><text x="${x(0.3)}" y="${y(0.3) - 6}" font-size="10" fill="${t3}" text-anchor="middle" transform="rotate(${(-Math.atan((H - m.t - m.b) / (W - m.l - m.r)) * 180 / Math.PI).toFixed(1)} ${x(0.3)} ${y(0.3) - 6})">perfect calibration</text>`;
+  s += `<text x="${x(0.5)}" y="${H - 3}" font-size="11" fill="${t2}" text-anchor="middle">Forecast chance the Democrat wins</text><text x="12" y="${y(0.5)}" font-size="11" fill="${t2}" text-anchor="middle" transform="rotate(-90 12 ${y(0.5)})">Share Democrats won</text>`;
+  bins.forEach((b, i) => { const r = 4 + Math.sqrt(b.n) * 1.6; s += `<circle cx="${x(b.p)}" cy="${y(b.won)}" r="${r}" fill="${teal}" stroke="${surf}" stroke-width="2" data-i="${i}"/><text x="${x(b.p) + (b.p > 0.8 ? -r - 3 : r + 3)}" y="${y(b.won) + (b.won > 0.9 ? 14 : -4)}" font-size="10" fill="${t2}" text-anchor="${b.p > 0.8 ? "end" : "start"}">${b.n}</text>`; });
+  const el = $("#calChart"); el.innerHTML = s + `</svg><div class="legend"><span class="tiny">Each dot is a forecast bin; its size and label give the number of races in it.</span></div>`;
   el.querySelectorAll("circle").forEach(c => { c.addEventListener("mousemove", e => { const b = bins[+c.dataset.i]; showTip(e, `<b>${b.bin}</b>: ${b.n} races<br>forecast ${fmtP(b.p)} · Dems won ${Math.round(b.won * 100)}%`); }); c.addEventListener("mouseleave", hideTip); });
   $("#btGen").innerHTML = `<thead><tr><th>Generic ballot</th><th class="num">Poll avg</th><th class="num">Actual</th><th class="num">Miss</th></tr></thead><tbody>` +
     B.generic.map(g => `<tr><td>${g.cycle}</td><td class="num">${fmtM(g.generic_avg_two_party)}</td><td class="num">${fmtM(g.actual_house_margin)}</td><td class="num">${g.error >= 0 ? "+" : ""}${g.error.toFixed(1)}</td></tr>`).join("") + "</tbody>";
@@ -949,7 +1409,7 @@ function renderSdN() {
 // ---------- init ----------
 $("#gen").textContent = (DATA.final ? "Final forecast · " : "Updated ") + DATA.generated;
 if (DATA.final) { const fb = $("#finalBanner"); fb.hidden = false; fb.innerHTML = `<b>Final pre-election forecast</b>, made ${DATA.generated}. It won't be updated as results come in; a scorecard comparing it with the results will follow.`; }
-renderModelSegs(); renderSdN(); renderPollsterFx(); renderPollSettings(); renderPriorWeight(); renderHouseStructure(); renderOverview(); renderMap(); renderWatch(); renderHouse(); renderMethod(); renderData(); renderBias(); renderBacktest(); renderAppendix();
+renderModelSegs(); renderSdN(); renderPollsterFx(); renderPollSettings(); renderPriorWeight(); renderHouseStructure(); renderOverview(); renderExplorer(); renderWatch(); renderHouse(); renderMethod(); renderData(); renderBias(); renderBacktest(); renderAppendix();
 route();
 </script>
 </body>

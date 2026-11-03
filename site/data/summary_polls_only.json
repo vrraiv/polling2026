@@ -445,7 +445,1543 @@
    0,
    0,
    0
-  ]
+  ],
+  "reading": {
+   "n_comp": 102,
+   "fav_dem": 230,
+   "seats_if_favorites_win": 230,
+   "p_favorites_map": 0.0,
+   "upsets_mean": 21.05045,
+   "p_upsets": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    7.5e-05,
+    0.00045,
+    0.000925,
+    0.00225,
+    0.00485,
+    0.008975,
+    0.0164,
+    0.02635,
+    0.04005,
+    0.054725,
+    0.065475,
+    0.075825,
+    0.08285,
+    0.085025,
+    0.08185,
+    0.07685,
+    0.065475,
+    0.055875,
+    0.04775,
+    0.0382,
+    0.029675,
+    0.023675,
+    0.018325,
+    0.016,
+    0.013025,
+    0.010425,
+    0.006775,
+    0.0068,
+    0.006425,
+    0.00425,
+    0.0041,
+    0.0034,
+    0.003075,
+    0.002775,
+    0.002425,
+    0.00185,
+    0.001975,
+    0.001975,
+    0.00105,
+    0.0013,
+    0.00095,
+    0.000825,
+    0.000675,
+    0.0007,
+    0.000875,
+    0.000925,
+    0.000325,
+    0.0004,
+    0.0048
+   ],
+   "upsets_to_dem_mean": 13.39485,
+   "upsets_to_rep_mean": 7.6556,
+   "ladder": [
+    {
+     "label": "NJ-9",
+     "seat": 184,
+     "p": 0.978675,
+     "tp": 0.002625,
+     "p_ctrl_given_win": 0.9319998978210335,
+     "p_ctrl_given_loss": 0.7327080890973037
+    },
+    {
+     "label": "NY-18",
+     "seat": 185,
+     "p": 0.977575,
+     "tp": 0.00305,
+     "p_ctrl_given_win": 0.93187223486689,
+     "p_ctrl_given_loss": 0.7480490523968785
+    },
+    {
+     "label": "KS-3",
+     "seat": 186,
+     "p": 0.9774,
+     "tp": 0.002925,
+     "p_ctrl_given_win": 0.9319111929609167,
+     "p_ctrl_given_loss": 0.7477876106194691
+    },
+    {
+     "label": "OH-13",
+     "seat": 187,
+     "p": 0.97725,
+     "tp": 0.0027,
+     "p_ctrl_given_win": 0.9326170376055257,
+     "p_ctrl_given_loss": 0.7186813186813187
+    },
+    {
+     "label": "NJ-5",
+     "seat": 188,
+     "p": 0.97615,
+     "tp": 0.00275,
+     "p_ctrl_given_win": 0.9320544998207243,
+     "p_ctrl_given_loss": 0.7515723270440252
+    },
+    {
+     "label": "NY-4",
+     "seat": 189,
+     "p": 0.976,
+     "tp": 0.00275,
+     "p_ctrl_given_win": 0.9322745901639344,
+     "p_ctrl_given_loss": 0.74375
+    },
+    {
+     "label": "CA-13",
+     "seat": 190,
+     "p": 0.975675,
+     "tp": 0.0028,
+     "p_ctrl_given_win": 0.9323545237912214,
+     "p_ctrl_given_loss": 0.7430626927029804
+    },
+    {
+     "label": "NV-1",
+     "seat": 191,
+     "p": 0.97505,
+     "tp": 0.00255,
+     "p_ctrl_given_win": 0.9324137223732116,
+     "p_ctrl_given_loss": 0.7454909819639278
+    },
+    {
+     "label": "NV-4",
+     "seat": 192,
+     "p": 0.974975,
+     "tp": 0.00265,
+     "p_ctrl_given_win": 0.9334598323033924,
+     "p_ctrl_given_loss": 0.7052947052947053
+    },
+    {
+     "label": "VA-7",
+     "seat": 193,
+     "p": 0.97475,
+     "tp": 0.00255,
+     "p_ctrl_given_win": 0.9325468068735573,
+     "p_ctrl_given_loss": 0.7425742574257426
+    },
+    {
+     "label": "TX-28",
+     "seat": 194,
+     "p": 0.97245,
+     "tp": 0.004675,
+     "p_ctrl_given_win": 0.9353180112088025,
+     "p_ctrl_given_loss": 0.6606170598911071
+    },
+    {
+     "label": "NE-2",
+     "seat": 195,
+     "p": 0.970925,
+     "tp": 0.00485,
+     "p_ctrl_given_win": 0.9357056415274094,
+     "p_ctrl_given_loss": 0.6620808254514188
+    },
+    {
+     "label": "NV-3",
+     "seat": 196,
+     "p": 0.9665,
+     "tp": 0.003975,
+     "p_ctrl_given_win": 0.9340403517847905,
+     "p_ctrl_given_loss": 0.746268656716418
+    },
+    {
+     "label": "IN-1",
+     "seat": 197,
+     "p": 0.9663,
+     "tp": 0.00475,
+     "p_ctrl_given_win": 0.9344923936665632,
+     "p_ctrl_given_loss": 0.7344213649851632
+    },
+    {
+     "label": "NY-19",
+     "seat": 198,
+     "p": 0.965975,
+     "tp": 0.003425,
+     "p_ctrl_given_win": 0.9342115479179067,
+     "p_ctrl_given_loss": 0.7443056576047025
+    },
+    {
+     "label": "MN-2",
+     "seat": 199,
+     "p": 0.96045,
+     "tp": 0.005275,
+     "p_ctrl_given_win": 0.9356811911083346,
+     "p_ctrl_given_loss": 0.7351453855878635
+    },
+    {
+     "label": "NH-1",
+     "seat": 200,
+     "p": 0.9511,
+     "tp": 0.010475,
+     "p_ctrl_given_win": 0.9412259489012722,
+     "p_ctrl_given_loss": 0.6656441717791411
+    },
+    {
+     "label": "CA-6",
+     "seat": 201,
+     "p": 0.9501,
+     "tp": 0.00685,
+     "p_ctrl_given_win": 0.9365066835069993,
+     "p_ctrl_given_loss": 0.7610220440881763
+    },
+    {
+     "label": "NY-3",
+     "seat": 202,
+     "p": 0.94945,
+     "tp": 0.006875,
+     "p_ctrl_given_win": 0.9384117120438148,
+     "p_ctrl_given_loss": 0.7274975272007913
+    },
+    {
+     "label": "CA-48",
+     "seat": 203,
+     "p": 0.94195,
+     "tp": 0.011175,
+     "p_ctrl_given_win": 0.9424597908593875,
+     "p_ctrl_given_loss": 0.6890611541774333
+    },
+    {
+     "label": "NM-2",
+     "seat": 204,
+     "p": 0.930875,
+     "tp": 0.014525,
+     "p_ctrl_given_win": 0.9455888277158587,
+     "p_ctrl_given_loss": 0.6875226039783002
+    },
+    {
+     "label": "MI-8",
+     "seat": 205,
+     "p": 0.9275,
+     "tp": 0.009525,
+     "p_ctrl_given_win": 0.9414016172506738,
+     "p_ctrl_given_loss": 0.7531034482758621
+    },
+    {
+     "label": "OH-1",
+     "seat": 206,
+     "p": 0.909125,
+     "tp": 0.01825,
+     "p_ctrl_given_win": 0.9504743572116046,
+     "p_ctrl_given_loss": 0.7004126547455296
+    },
+    {
+     "label": "CA-22",
+     "seat": 207,
+     "p": 0.897925,
+     "tp": 0.01905,
+     "p_ctrl_given_win": 0.9510538185260462,
+     "p_ctrl_given_loss": 0.7227528777859417
+    },
+    {
+     "label": "TX-34",
+     "seat": 208,
+     "p": 0.88355,
+     "tp": 0.02175,
+     "p_ctrl_given_win": 0.9561145379435233,
+     "p_ctrl_given_loss": 0.7125375697724345
+    },
+    {
+     "label": "NC-1",
+     "seat": 209,
+     "p": 0.867975,
+     "tp": 0.022425,
+     "p_ctrl_given_win": 0.9586105590598808,
+     "p_ctrl_given_loss": 0.7248627153948116
+    },
+    {
+     "label": "FL-25",
+     "seat": 210,
+     "p": 0.8543,
+     "tp": 0.023625,
+     "p_ctrl_given_win": 0.9605817628467751,
+     "p_ctrl_given_loss": 0.7352436513383666
+    },
+    {
+     "label": "FL-14",
+     "seat": 211,
+     "p": 0.828075,
+     "tp": 0.0264,
+     "p_ctrl_given_win": 0.9637110165142047,
+     "p_ctrl_given_loss": 0.7545441326159663
+    },
+    {
+     "label": "AZ-1",
+     "seat": 212,
+     "p": 0.822625,
+     "tp": 0.025375,
+     "p_ctrl_given_win": 0.9642607506457985,
+     "p_ctrl_given_loss": 0.7584214235377026
+    },
+    {
+     "label": "WA-3",
+     "seat": 213,
+     "p": 0.8086,
+     "tp": 0.02625,
+     "p_ctrl_given_win": 0.9666707890180559,
+     "p_ctrl_given_loss": 0.7633228840125392
+    },
+    {
+     "label": "MI-7",
+     "seat": 214,
+     "p": 0.786525,
+     "tp": 0.02685,
+     "p_ctrl_given_win": 0.9678649756841804,
+     "p_ctrl_given_loss": 0.7799508139126361
+    },
+    {
+     "label": "PA-7",
+     "seat": 215,
+     "p": 0.7437,
+     "tp": 0.026525,
+     "p_ctrl_given_win": 0.9724687373941105,
+     "p_ctrl_given_loss": 0.7979906359734686
+    },
+    {
+     "label": "NY-17",
+     "seat": 216,
+     "p": 0.70985,
+     "tp": 0.026125,
+     "p_ctrl_given_win": 0.9740085933647954,
+     "p_ctrl_given_loss": 0.8145786662071343
+    },
+    {
+     "label": "NJ-7",
+     "seat": 217,
+     "p": 0.69975,
+     "tp": 0.019775,
+     "p_ctrl_given_win": 0.9680600214362273,
+     "p_ctrl_given_loss": 0.833805162364696
+    },
+    {
+     "label": "AZ-6",
+     "seat": 218,
+     "p": 0.699625,
+     "tp": 0.019425,
+     "p_ctrl_given_win": 0.9685545828122208,
+     "p_ctrl_given_loss": 0.83270911360799
+    },
+    {
+     "label": "CO-8",
+     "seat": 219,
+     "p": 0.694225,
+     "tp": 0.020275,
+     "p_ctrl_given_win": 0.9681659404371782,
+     "p_ctrl_given_loss": 0.8359905159022157
+    },
+    {
+     "label": "PA-1",
+     "seat": 220,
+     "p": 0.654325,
+     "tp": 0.022175,
+     "p_ctrl_given_win": 0.9768463683949108,
+     "p_ctrl_given_loss": 0.834815939827873
+    },
+    {
+     "label": "NC-11",
+     "seat": 221,
+     "p": 0.6383,
+     "tp": 0.021175,
+     "p_ctrl_given_win": 0.9790850697164343,
+     "p_ctrl_given_loss": 0.8371578656345038
+    },
+    {
+     "label": "OH-9",
+     "seat": 222,
+     "p": 0.606775,
+     "tp": 0.019825,
+     "p_ctrl_given_win": 0.9810061390136376,
+     "p_ctrl_given_loss": 0.8455718736092568
+    },
+    {
+     "label": "VA-2",
+     "seat": 223,
+     "p": 0.606175,
+     "tp": 0.01945,
+     "p_ctrl_given_win": 0.9790077122943045,
+     "p_ctrl_given_loss": 0.8488541865041579
+    },
+    {
+     "label": "MT-1",
+     "seat": 224,
+     "p": 0.59675,
+     "tp": 0.0183,
+     "p_ctrl_given_win": 0.981524926686217,
+     "p_ctrl_given_loss": 0.848171109733416
+    },
+    {
+     "label": "IA-2",
+     "seat": 225,
+     "p": 0.59365,
+     "tp": 0.01885,
+     "p_ctrl_given_win": 0.9832392824054578,
+     "p_ctrl_given_loss": 0.8466838931955211
+    },
+    {
+     "label": "MI-10",
+     "seat": 226,
+     "p": 0.569225,
+     "tp": 0.0169,
+     "p_ctrl_given_win": 0.9826518512011946,
+     "p_ctrl_given_loss": 0.8552028321049272
+    },
+    {
+     "label": "TX-35",
+     "seat": 227,
+     "p": 0.547775,
+     "tp": 0.016925,
+     "p_ctrl_given_win": 0.9838893706357538,
+     "p_ctrl_given_loss": 0.8597490187406711
+    },
+    {
+     "label": "IA-1",
+     "seat": 228,
+     "p": 0.531025,
+     "tp": 0.01585,
+     "p_ctrl_given_win": 0.9834753542676898,
+     "p_ctrl_given_loss": 0.8646516338824031
+    },
+    {
+     "label": "FL-22",
+     "seat": 229,
+     "p": 0.523675,
+     "tp": 0.015125,
+     "p_ctrl_given_win": 0.9838162982766029,
+     "p_ctrl_given_loss": 0.866110323833517
+    },
+    {
+     "label": "OH-7",
+     "seat": 230,
+     "p": 0.5211,
+     "tp": 0.01495,
+     "p_ctrl_given_win": 0.9851276146612934,
+     "p_ctrl_given_loss": 0.8653163499686782
+    },
+    {
+     "label": "IA-3",
+     "seat": 231,
+     "p": 0.484675,
+     "tp": 0.01375,
+     "p_ctrl_given_win": 0.9782328364367875,
+     "p_ctrl_given_loss": 0.8802697326929607
+    },
+    {
+     "label": "VA-1",
+     "seat": 232,
+     "p": 0.464525,
+     "tp": 0.012775,
+     "p_ctrl_given_win": 0.9864377590011302,
+     "p_ctrl_given_loss": 0.8768383211167655
+    },
+    {
+     "label": "WI-1",
+     "seat": 233,
+     "p": 0.460525,
+     "tp": 0.012325,
+     "p_ctrl_given_win": 0.9862113891753976,
+     "p_ctrl_given_loss": 0.8778442003799991
+    },
+    {
+     "label": "PA-8",
+     "seat": 234,
+     "p": 0.4467,
+     "tp": 0.011375,
+     "p_ctrl_given_win": 0.9848891873740766,
+     "p_ctrl_given_loss": 0.8816193746611242
+    },
+    {
+     "label": "KY-6",
+     "seat": 235,
+     "p": 0.426575,
+     "tp": 0.01025,
+     "p_ctrl_given_win": 0.9878684873703335,
+     "p_ctrl_given_loss": 0.8830274229410995
+    },
+    {
+     "label": "AL-2",
+     "seat": 236,
+     "p": 0.422425,
+     "tp": 0.010225,
+     "p_ctrl_given_win": 0.9879268509202817,
+     "p_ctrl_given_loss": 0.88373804267844
+    },
+    {
+     "label": "FL-7",
+     "seat": 237,
+     "p": 0.41945,
+     "tp": 0.0113,
+     "p_ctrl_given_win": 0.9796161640243175,
+     "p_ctrl_given_loss": 0.8902764619757126
+    },
+    {
+     "label": "TX-15",
+     "seat": 238,
+     "p": 0.40115,
+     "tp": 0.009625,
+     "p_ctrl_given_win": 0.9872865511653994,
+     "p_ctrl_given_loss": 0.8878684144610504
+    },
+    {
+     "label": "OH-10",
+     "seat": 239,
+     "p": 0.3919,
+     "tp": 0.009125,
+     "p_ctrl_given_win": 0.9868588925746364,
+     "p_ctrl_given_loss": 0.8896563065285314
+    },
+    {
+     "label": "MI-4",
+     "seat": 240,
+     "p": 0.376375,
+     "tp": 0.0085,
+     "p_ctrl_given_win": 0.9806044503487213,
+     "p_ctrl_given_loss": 0.8958508719182201
+    },
+    {
+     "label": "SC-1",
+     "seat": 241,
+     "p": 0.3751,
+     "tp": 0.0089,
+     "p_ctrl_given_win": 0.9885363902959211,
+     "p_ctrl_given_loss": 0.8912626020163226
+    },
+    {
+     "label": "ME-2",
+     "seat": 242,
+     "p": 0.373725,
+     "tp": 0.00875,
+     "p_ctrl_given_win": 0.9871563315271924,
+     "p_ctrl_given_loss": 0.8922997085944673
+    },
+    {
+     "label": "MO-2",
+     "seat": 243,
+     "p": 0.370925,
+     "tp": 0.0087,
+     "p_ctrl_given_win": 0.989350946956932,
+     "p_ctrl_given_loss": 0.8914278901561817
+    },
+    {
+     "label": "FL-9",
+     "seat": 244,
+     "p": 0.37015,
+     "tp": 0.0091,
+     "p_ctrl_given_win": 0.9822369309739295,
+     "p_ctrl_given_loss": 0.8957291418591729
+    },
+    {
+     "label": "WI-3",
+     "seat": 245,
+     "p": 0.369325,
+     "tp": 0.00925,
+     "p_ctrl_given_win": 0.9809788126988425,
+     "p_ctrl_given_loss": 0.8965790621159868
+    },
+    {
+     "label": "PA-10",
+     "seat": 246,
+     "p": 0.369125,
+     "tp": 0.009125,
+     "p_ctrl_given_win": 0.9815103284795124,
+     "p_ctrl_given_loss": 0.896294828611056
+    },
+    {
+     "label": "NY-1",
+     "seat": 247,
+     "p": 0.28015,
+     "tp": 0.00535,
+     "p_ctrl_given_win": 0.9851865072282706,
+     "p_ctrl_given_loss": 0.9053969576995208
+    },
+    {
+     "label": "TX-23",
+     "seat": 248,
+     "p": 0.267225,
+     "tp": 0.0051,
+     "p_ctrl_given_win": 0.9892412760782112,
+     "p_ctrl_given_loss": 0.9053256456620381
+    },
+    {
+     "label": "CO-3",
+     "seat": 249,
+     "p": 0.2633,
+     "tp": 0.00465,
+     "p_ctrl_given_win": 0.9891758450436764,
+     "p_ctrl_given_loss": 0.905796117822723
+    },
+    {
+     "label": "FL-16",
+     "seat": 250,
+     "p": 0.253025,
+     "tp": 0.004575,
+     "p_ctrl_given_win": 0.990020748937852,
+     "p_ctrl_given_loss": 0.906656849292145
+    },
+    {
+     "label": "FL-11",
+     "seat": 251,
+     "p": 0.233725,
+     "tp": 0.00495,
+     "p_ctrl_given_win": 0.9841694298855492,
+     "p_ctrl_given_loss": 0.9105412547714593
+    },
+    {
+     "label": "MN-1",
+     "seat": 252,
+     "p": 0.223,
+     "tp": 0.0041,
+     "p_ctrl_given_win": 0.9917040358744394,
+     "p_ctrl_given_loss": 0.9093951093951094
+    },
+    {
+     "label": "OH-15",
+     "seat": 253,
+     "p": 0.220525,
+     "tp": 0.003975,
+     "p_ctrl_given_win": 0.9903639043192382,
+     "p_ctrl_given_loss": 0.9100356008852112
+    },
+    {
+     "label": "NV-2",
+     "seat": 254,
+     "p": 0.2177,
+     "tp": 0.003875,
+     "p_ctrl_given_win": 0.9894350022967386,
+     "p_ctrl_given_loss": 0.9105841748689761
+    },
+    {
+     "label": "NE-1",
+     "seat": 255,
+     "p": 0.206475,
+     "tp": 0.0036,
+     "p_ctrl_given_win": 0.9892238769826855,
+     "p_ctrl_given_loss": 0.9117545130903248
+    },
+    {
+     "label": "WA-5",
+     "seat": 256,
+     "p": 0.195825,
+     "tp": 0.00415,
+     "p_ctrl_given_win": 0.9867228392697561,
+     "p_ctrl_given_loss": 0.9133894985544191
+    },
+    {
+     "label": "CO-5",
+     "seat": 257,
+     "p": 0.195775,
+     "tp": 0.003775,
+     "p_ctrl_given_win": 0.9849316817775507,
+     "p_ctrl_given_loss": 0.9138300848643104
+    },
+    {
+     "label": "FL-4",
+     "seat": 258,
+     "p": 0.1945,
+     "tp": 0.004525,
+     "p_ctrl_given_win": 0.9852185089974294,
+     "p_ctrl_given_loss": 0.9138733705772812
+    },
+    {
+     "label": "AZ-2",
+     "seat": 259,
+     "p": 0.1925,
+     "tp": 0.0036,
+     "p_ctrl_given_win": 0.990909090909091,
+     "p_ctrl_given_loss": 0.9126934984520124
+    },
+    {
+     "label": "GA-1",
+     "seat": 260,
+     "p": 0.1659,
+     "tp": 0.003075,
+     "p_ctrl_given_win": 0.9880952380952381,
+     "p_ctrl_given_loss": 0.9157475122886944
+    },
+    {
+     "label": "FL-13",
+     "seat": 261,
+     "p": 0.164725,
+     "tp": 0.0027,
+     "p_ctrl_given_win": 0.9918045226893307,
+     "p_ctrl_given_loss": 0.9151177755828919
+    },
+    {
+     "label": "FL-27",
+     "seat": 262,
+     "p": 0.163325,
+     "tp": 0.002675,
+     "p_ctrl_given_win": 0.9908158579519363,
+     "p_ctrl_given_loss": 0.915439089252099
+    },
+    {
+     "label": "TX-32",
+     "seat": 263,
+     "p": 0.16125,
+     "tp": 0.00275,
+     "p_ctrl_given_win": 0.9872868217054264,
+     "p_ctrl_given_loss": 0.9163040238450074
+    },
+    {
+     "label": "FL-2",
+     "seat": 264,
+     "p": 0.159475,
+     "tp": 0.0033,
+     "p_ctrl_given_win": 0.9832262110048597,
+     "p_ctrl_given_loss": 0.9172243538264775
+    },
+    {
+     "label": "NY-2",
+     "seat": 265,
+     "p": 0.1372,
+     "tp": 0.002975,
+     "p_ctrl_given_win": 0.9850583090379009,
+     "p_ctrl_given_loss": 0.9186369958275382
+    },
+    {
+     "label": "NC-3",
+     "seat": 266,
+     "p": 0.135525,
+     "tp": 0.0025,
+     "p_ctrl_given_win": 0.9854270429809998,
+     "p_ctrl_given_loss": 0.9187078862893664
+    },
+    {
+     "label": "AR-2",
+     "seat": 267,
+     "p": 0.124525,
+     "tp": 0.0021,
+     "p_ctrl_given_win": 0.9917687211403333,
+     "p_ctrl_given_loss": 0.918644164596362
+    },
+    {
+     "label": "VA-5",
+     "seat": 268,
+     "p": 0.122225,
+     "tp": 0.002225,
+     "p_ctrl_given_win": 0.9885457148701166,
+     "p_ctrl_given_loss": 0.9192845546979579
+    },
+    {
+     "label": "NY-21",
+     "seat": 269,
+     "p": 0.116775,
+     "tp": 0.00175,
+     "p_ctrl_given_win": 0.9882252194390923,
+     "p_ctrl_given_loss": 0.9197543094907866
+    },
+    {
+     "label": "TX-9",
+     "seat": 270,
+     "p": 0.1121,
+     "tp": 0.00245,
+     "p_ctrl_given_win": 0.9875111507582516,
+     "p_ctrl_given_loss": 0.9202049780380673
+    },
+    {
+     "label": "MN-8",
+     "seat": 271,
+     "p": 0.094625,
+     "tp": 0.001425,
+     "p_ctrl_given_win": 0.9862615587846764,
+     "p_ctrl_given_loss": 0.9216346817617009
+    },
+    {
+     "label": "GA-12",
+     "seat": 272,
+     "p": 0.09405,
+     "tp": 0.00185,
+     "p_ctrl_given_win": 0.9869750132908027,
+     "p_ctrl_given_loss": 0.9216016336442409
+    },
+    {
+     "label": "FL-12",
+     "seat": 273,
+     "p": 0.092775,
+     "tp": 0.001775,
+     "p_ctrl_given_win": 0.985987604419294,
+     "p_ctrl_given_loss": 0.9217944831767202
+    },
+    {
+     "label": "FL-21",
+     "seat": 274,
+     "p": 0.0926,
+     "tp": 0.00165,
+     "p_ctrl_given_win": 0.9854211663066955,
+     "p_ctrl_given_loss": 0.9218646682830064
+    },
+    {
+     "label": "SC-2",
+     "seat": 275,
+     "p": 0.092325,
+     "tp": 0.00155,
+     "p_ctrl_given_win": 0.9853777416734363,
+     "p_ctrl_given_loss": 0.9218883410912496
+    },
+    {
+     "label": "FL-26",
+     "seat": 276,
+     "p": 0.089775,
+     "tp": 0.001225,
+     "p_ctrl_given_win": 0.9883040935672515,
+     "p_ctrl_given_loss": 0.9217775824658738
+    },
+    {
+     "label": "NC-7",
+     "seat": 277,
+     "p": 0.0897,
+     "tp": 0.001425,
+     "p_ctrl_given_win": 0.9855072463768116,
+     "p_ctrl_given_loss": 0.9220586619795672
+    },
+    {
+     "label": "IN-5",
+     "seat": 278,
+     "p": 0.079325,
+     "tp": 0.001175,
+     "p_ctrl_given_win": 0.99180586196029,
+     "p_ctrl_given_loss": 0.9222309718413121
+    },
+    {
+     "label": "AZ-5",
+     "seat": 279,
+     "p": 0.07905,
+     "tp": 0.0014,
+     "p_ctrl_given_win": 0.9832384566729918,
+     "p_ctrl_given_loss": 0.9229871328519463
+    },
+    {
+     "label": "TX-38",
+     "seat": 280,
+     "p": 0.078275,
+     "tp": 0.001325,
+     "p_ctrl_given_win": 0.984669434685404,
+     "p_ctrl_given_loss": 0.9229162711220809
+    },
+    {
+     "label": "TX-10",
+     "seat": 281,
+     "p": 0.077275,
+     "tp": 0.001325,
+     "p_ctrl_given_win": 0.987706243934002,
+     "p_ctrl_given_loss": 0.9227288737164377
+    },
+    {
+     "label": "WA-4",
+     "seat": 282,
+     "p": 0.07685,
+     "tp": 0.00135,
+     "p_ctrl_given_win": 0.9847104749512037,
+     "p_ctrl_given_loss": 0.9230081785192006
+    },
+    {
+     "label": "TX-21",
+     "seat": 283,
+     "p": 0.076675,
+     "tp": 0.001675,
+     "p_ctrl_given_win": 0.9895663514835344,
+     "p_ctrl_given_loss": 0.9226166301139902
+    },
+    {
+     "label": "TN-5",
+     "seat": 284,
+     "p": 0.0764,
+     "tp": 0.0013,
+     "p_ctrl_given_win": 0.9869109947643979,
+     "p_ctrl_given_loss": 0.9228562148116067
+    },
+    {
+     "label": "TN-9",
+     "seat": 285,
+     "p": 0.0754,
+     "tp": 0.000925,
+     "p_ctrl_given_win": 0.9870689655172413,
+     "p_ctrl_given_loss": 0.9229126108587498
+    },
+    {
+     "label": "NJ-2",
+     "seat": 286,
+     "p": 0.075325,
+     "tp": 0.001275,
+     "p_ctrl_given_win": 0.9913707268503154,
+     "p_ctrl_given_loss": 0.9225673885419201
+    },
+    {
+     "label": "NC-14",
+     "seat": 287,
+     "p": 0.065575,
+     "tp": 0.00105,
+     "p_ctrl_given_win": 0.9817003431185666,
+     "p_ctrl_given_loss": 0.9239639350402654
+    },
+    {
+     "label": "NC-9",
+     "seat": 288,
+     "p": 0.0649,
+     "tp": 0.001025,
+     "p_ctrl_given_win": 0.9888289676425269,
+     "p_ctrl_given_loss": 0.9235108544540691
+    },
+    {
+     "label": "NC-13",
+     "seat": 289,
+     "p": 0.0649,
+     "tp": 0.00085,
+     "p_ctrl_given_win": 0.9857473035439137,
+     "p_ctrl_given_loss": 0.9237247353224254
+    },
+    {
+     "label": "TX-24",
+     "seat": 290,
+     "p": 0.064825,
+     "tp": 0.00115,
+     "p_ctrl_given_win": 0.9834168916313151,
+     "p_ctrl_given_loss": 0.9238912503007458
+    },
+    {
+     "label": "WI-6",
+     "seat": 291,
+     "p": 0.0648,
+     "tp": 0.001125,
+     "p_ctrl_given_win": 0.9841820987654321,
+     "p_ctrl_given_loss": 0.9238398203592815
+    },
+    {
+     "label": "AZ-8",
+     "seat": 292,
+     "p": 0.0646,
+     "tp": 0.001325,
+     "p_ctrl_given_win": 0.9837461300309598,
+     "p_ctrl_given_loss": 0.9238828308744922
+    },
+    {
+     "label": "FL-8",
+     "seat": 293,
+     "p": 0.06445,
+     "tp": 0.0009,
+     "p_ctrl_given_win": 0.9903025601241272,
+     "p_ctrl_given_loss": 0.9234407567740901
+    },
+    {
+     "label": "OH-8",
+     "seat": 294,
+     "p": 0.06425,
+     "tp": 0.000725,
+     "p_ctrl_given_win": 0.9836575875486381,
+     "p_ctrl_given_loss": 0.923911301095378
+    },
+    {
+     "label": "FL-18",
+     "seat": 295,
+     "p": 0.064075,
+     "tp": 0.001225,
+     "p_ctrl_given_win": 0.9793211080764729,
+     "p_ctrl_given_loss": 0.9242193551833747
+    },
+    {
+     "label": "WI-8",
+     "seat": 296,
+     "p": 0.062875,
+     "tp": 0.001075,
+     "p_ctrl_given_win": 0.9864811133200795,
+     "p_ctrl_given_loss": 0.9238095238095239
+    },
+    {
+     "label": "MD-1",
+     "seat": 297,
+     "p": 0.062675,
+     "tp": 0.000925,
+     "p_ctrl_given_win": 0.9896290386916633,
+     "p_ctrl_given_loss": 0.9236124076494279
+    },
+    {
+     "label": "OK-1",
+     "seat": 298,
+     "p": 0.053525,
+     "tp": 0.00075,
+     "p_ctrl_given_win": 0.9859878561419897,
+     "p_ctrl_given_loss": 0.9244565360944558
+    },
+    {
+     "label": "TX-2",
+     "seat": 299,
+     "p": 0.053225,
+     "tp": 0.000725,
+     "p_ctrl_given_win": 0.9891968060122123,
+     "p_ctrl_given_loss": 0.9242956351825935
+    },
+    {
+     "label": "WI-7",
+     "seat": 300,
+     "p": 0.052925,
+     "tp": 0.00055,
+     "p_ctrl_given_win": 0.9867737364194615,
+     "p_ctrl_given_loss": 0.9244516009819708
+    },
+    {
+     "label": "GA-10",
+     "seat": 301,
+     "p": 0.052675,
+     "tp": 0.000925,
+     "p_ctrl_given_win": 0.9862363550071191,
+     "p_ctrl_given_loss": 0.9244979283772728
+    },
+    {
+     "label": "TX-22",
+     "seat": 302,
+     "p": 0.05255,
+     "tp": 0.0006,
+     "p_ctrl_given_win": 0.9876308277830638,
+     "p_ctrl_given_loss": 0.9244287297482717
+    },
+    {
+     "label": "SC-5",
+     "seat": 303,
+     "p": 0.0522,
+     "tp": 0.00125,
+     "p_ctrl_given_win": 0.9851532567049809,
+     "p_ctrl_given_loss": 0.9245885207849758
+    },
+    {
+     "label": "CO-4",
+     "seat": 304,
+     "p": 0.049775,
+     "tp": 0.000875,
+     "p_ctrl_given_win": 0.9864389753892516,
+     "p_ctrl_given_loss": 0.9246757346944144
+    },
+    {
+     "label": "FL-15",
+     "seat": 305,
+     "p": 0.045675,
+     "tp": 0.000675,
+     "p_ctrl_given_win": 0.9846743295019157,
+     "p_ctrl_given_loss": 0.9250255416131821
+    },
+    {
+     "label": "OK-5",
+     "seat": 306,
+     "p": 0.044875,
+     "tp": 0.000575,
+     "p_ctrl_given_win": 0.9838440111420613,
+     "p_ctrl_given_loss": 0.9251145138070933
+    },
+    {
+     "label": "NC-10",
+     "seat": 307,
+     "p": 0.043875,
+     "tp": 0.000725,
+     "p_ctrl_given_win": 0.9846153846153847,
+     "p_ctrl_given_loss": 0.9251405412472219
+    },
+    {
+     "label": "NC-6",
+     "seat": 308,
+     "p": 0.04335,
+     "tp": 0.00065,
+     "p_ctrl_given_win": 0.9873125720876585,
+     "p_ctrl_given_loss": 0.925050959075942
+    },
+    {
+     "label": "NC-5",
+     "seat": 309,
+     "p": 0.042875,
+     "tp": 0.000775,
+     "p_ctrl_given_win": 0.9871720116618076,
+     "p_ctrl_given_loss": 0.9250881546297506
+    },
+    {
+     "label": "CA-23",
+     "seat": 310,
+     "p": 0.042775,
+     "tp": 0.0007,
+     "p_ctrl_given_win": 0.9812974868497955,
+     "p_ctrl_given_loss": 0.9253571521847006
+    },
+    {
+     "label": "GA-11",
+     "seat": 311,
+     "p": 0.035075,
+     "tp": 0.000675,
+     "p_ctrl_given_win": 0.9871703492516037,
+     "p_ctrl_given_loss": 0.9255900717672358
+    },
+    {
+     "label": "FL-3",
+     "seat": 312,
+     "p": 0.0317,
+     "tp": 0.000575,
+     "p_ctrl_given_win": 0.9858044164037855,
+     "p_ctrl_given_loss": 0.9258494268305277
+    },
+    {
+     "label": "FL-28",
+     "seat": 313,
+     "p": 0.031,
+     "tp": 0.000725,
+     "p_ctrl_given_win": 0.9846774193548387,
+     "p_ctrl_given_loss": 0.9259287925696594
+    },
+    {
+     "label": "MN-6",
+     "seat": 314,
+     "p": 0.0307,
+     "tp": 0.000275,
+     "p_ctrl_given_win": 0.9788273615635179,
+     "p_ctrl_given_loss": 0.9261322603940988
+    },
+    {
+     "label": "OH-14",
+     "seat": 315,
+     "p": 0.030675,
+     "tp": 0.0005,
+     "p_ctrl_given_win": 0.9845150774246129,
+     "p_ctrl_given_loss": 0.9259536275243081
+    },
+    {
+     "label": "NY-11",
+     "seat": 316,
+     "p": 0.030575,
+     "tp": 0.00055,
+     "p_ctrl_given_win": 0.9844644317252658,
+     "p_ctrl_given_loss": 0.9259612656987389
+    },
+    {
+     "label": "TN-8",
+     "seat": 317,
+     "p": 0.0305,
+     "tp": 0.000475,
+     "p_ctrl_given_win": 0.9860655737704918,
+     "p_ctrl_given_loss": 0.9259154203197525
+    },
+    {
+     "label": "NY-23",
+     "seat": 318,
+     "p": 0.030425,
+     "tp": 0.00065,
+     "p_ctrl_given_win": 0.981101068200493,
+     "p_ctrl_given_loss": 0.9260758579790114
+    },
+    {
+     "label": "TX-27",
+     "seat": 319,
+     "p": 0.0304,
+     "tp": 0.000625,
+     "p_ctrl_given_win": 0.9876644736842105,
+     "p_ctrl_given_loss": 0.9258714933993399
+    },
+    {
+     "label": "FL-5",
+     "seat": 320,
+     "p": 0.03,
+     "tp": 0.000475,
+     "p_ctrl_given_win": 0.9783333333333334,
+     "p_ctrl_given_loss": 0.9261855670103093
+    },
+    {
+     "label": "NC-8",
+     "seat": 321,
+     "p": 0.029625,
+     "tp": 0.00045,
+     "p_ctrl_given_win": 0.9848101265822785,
+     "p_ctrl_given_loss": 0.9260079866031173
+    },
+    {
+     "label": "CA-5",
+     "seat": 322,
+     "p": 0.029575,
+     "tp": 0.000375,
+     "p_ctrl_given_win": 0.9856297548605241,
+     "p_ctrl_given_loss": 0.9259860370456243
+    },
+    {
+     "label": "TX-17",
+     "seat": 323,
+     "p": 0.029525,
+     "tp": 0.0004,
+     "p_ctrl_given_win": 0.9813717188823031,
+     "p_ctrl_given_loss": 0.926118653236817
+    },
+    {
+     "label": "TX-5",
+     "seat": 324,
+     "p": 0.029475,
+     "tp": 0.00035,
+     "p_ctrl_given_win": 0.9762510602205259,
+     "p_ctrl_given_loss": 0.9262770150176451
+    },
+    {
+     "label": "KS-2",
+     "seat": 325,
+     "p": 0.02945,
+     "tp": 0.000425,
+     "p_ctrl_given_win": 0.9847198641765704,
+     "p_ctrl_given_loss": 0.9260213281129257
+    },
+    {
+     "label": "FL-17",
+     "seat": 326,
+     "p": 0.029175,
+     "tp": 0.0006,
+     "p_ctrl_given_win": 0.9854327335047129,
+     "p_ctrl_given_loss": 0.9260165323307497
+    },
+    {
+     "label": "TX-8",
+     "seat": 327,
+     "p": 0.0248,
+     "tp": 0.00055,
+     "p_ctrl_given_win": 0.9858870967741935,
+     "p_ctrl_given_loss": 0.9262715340442986
+    },
+    {
+     "label": "TN-6",
+     "seat": 328,
+     "p": 0.0247,
+     "tp": 0.00035,
+     "p_ctrl_given_win": 0.9858299595141701,
+     "p_ctrl_given_loss": 0.9262790936122218
+    },
+    {
+     "label": "PA-16",
+     "seat": 329,
+     "p": 0.02215,
+     "tp": 0.00045,
+     "p_ctrl_given_win": 0.9864559819413092,
+     "p_ctrl_given_loss": 0.9264202075983023
+    },
+    {
+     "label": "TX-6",
+     "seat": 330,
+     "p": 0.0221,
+     "tp": 0.000325,
+     "p_ctrl_given_win": 0.9796380090497737,
+     "p_ctrl_given_loss": 0.9265773596482257
+    },
+    {
+     "label": "TN-7",
+     "seat": 331,
+     "p": 0.021925,
+     "tp": 0.000375,
+     "p_ctrl_given_win": 0.9851767388825542,
+     "p_ctrl_given_loss": 0.9264626945786366
+    },
+    {
+     "label": "GA-7",
+     "seat": 332,
+     "p": 0.0218,
+     "tp": 0.0002,
+     "p_ctrl_given_win": 0.9827981651376146,
+     "p_ctrl_given_loss": 0.9265232058883663
+    },
+    {
+     "label": "TX-25",
+     "seat": 333,
+     "p": 0.021675,
+     "tp": 0.0003,
+     "p_ctrl_given_win": 0.9838523644752019,
+     "p_ctrl_given_loss": 0.9265070400940383
+    },
+    {
+     "label": "SC-4",
+     "seat": 334,
+     "p": 0.021575,
+     "tp": 0.00035,
+     "p_ctrl_given_win": 0.9768250289687138,
+     "p_ctrl_given_loss": 0.9266678590592022
+    },
+    {
+     "label": "NY-24",
+     "seat": 335,
+     "p": 0.021525,
+     "tp": 0.0004,
+     "p_ctrl_given_win": 0.9883855981416957,
+     "p_ctrl_given_loss": 0.9264161066966453
+    },
+    {
+     "label": "MI-1",
+     "seat": 336,
+     "p": 0.02145,
+     "tp": 0.00055,
+     "p_ctrl_given_win": 0.9895104895104895,
+     "p_ctrl_given_loss": 0.9263961984569005
+    },
+    {
+     "label": "TX-31",
+     "seat": 337,
+     "p": 0.02135,
+     "tp": 0.0003,
+     "p_ctrl_given_win": 0.9859484777517564,
+     "p_ctrl_given_loss": 0.9264803555918868
+    },
+    {
+     "label": "IL-16",
+     "seat": 338,
+     "p": 0.021,
+     "tp": 0.000225,
+     "p_ctrl_given_win": 0.9833333333333333,
+     "p_ctrl_given_loss": 0.9265577119509704
+    },
+    {
+     "label": "PA-11",
+     "seat": 339,
+     "p": 0.021,
+     "tp": 0.0003,
+     "p_ctrl_given_win": 0.9857142857142858,
+     "p_ctrl_given_loss": 0.9265066394279877
+    },
+    {
+     "label": "TX-12",
+     "seat": 340,
+     "p": 0.020925,
+     "tp": 0.000275,
+     "p_ctrl_given_win": 0.986857825567503,
+     "p_ctrl_given_loss": 0.9264867349283763
+    },
+    {
+     "label": "TN-4",
+     "seat": 341,
+     "p": 0.0209,
+     "tp": 0.0005,
+     "p_ctrl_given_win": 0.9856459330143541,
+     "p_ctrl_given_loss": 0.9265141456439587
+    },
+    {
+     "label": "TX-3",
+     "seat": 342,
+     "p": 0.0207,
+     "tp": 0.000275,
+     "p_ctrl_given_win": 0.9867149758454107,
+     "p_ctrl_given_loss": 0.9265036250382926
+    },
+    {
+     "label": "WI-5",
+     "seat": 343,
+     "p": 0.020675,
+     "tp": 0.000275,
+     "p_ctrl_given_win": 0.9806529625151149,
+     "p_ctrl_given_loss": 0.9266331401730784
+    },
+    {
+     "label": "TX-26",
+     "seat": 344,
+     "p": 0.020625,
+     "tp": 0.000325,
+     "p_ctrl_given_win": 0.9769696969696969,
+     "p_ctrl_given_loss": 0.926713465220166
+    }
+   ],
+   "pivot": "AZ-6",
+   "n_above_ladder": 183,
+   "tipping_point": [
+    {
+     "label": "MI-7",
+     "p": 0.02685
+    },
+    {
+     "label": "PA-7",
+     "p": 0.026525
+    },
+    {
+     "label": "FL-14",
+     "p": 0.0264
+    },
+    {
+     "label": "WA-3",
+     "p": 0.02625
+    },
+    {
+     "label": "NY-17",
+     "p": 0.026125
+    }
+   ],
+   "exp_gain_from_R": 26.889250000000004,
+   "exp_loss_from_D": 6.192450000000001,
+   "exp_open_D": 5.608524999999999,
+   "n_open": 10,
+   "held_R": 215,
+   "held_D": 209,
+   "flip_to_d": [
+    {
+     "label": "CA-1",
+     "p_flip": 0.9873,
+     "inc": "James Gallagher",
+     "inc_running": true
+    },
+    {
+     "label": "NE-2",
+     "p_flip": 0.970925,
+     "inc": "Don Bacon",
+     "inc_running": false
+    },
+    {
+     "label": "CA-48",
+     "p_flip": 0.94195,
+     "inc": "Darrell Issa",
+     "inc_running": false
+    },
+    {
+     "label": "CA-22",
+     "p_flip": 0.897925,
+     "inc": "David Valadao",
+     "inc_running": true
+    },
+    {
+     "label": "AZ-1",
+     "p_flip": 0.822625,
+     "inc": "David Schweikert",
+     "inc_running": false
+    },
+    {
+     "label": "MI-7",
+     "p_flip": 0.786525,
+     "inc": "Tom Barrett",
+     "inc_running": true
+    },
+    {
+     "label": "PA-7",
+     "p_flip": 0.7437,
+     "inc": "Ryan Mackenzie",
+     "inc_running": true
+    },
+    {
+     "label": "NY-17",
+     "p_flip": 0.70985,
+     "inc": "Mike Lawler",
+     "inc_running": true
+    },
+    {
+     "label": "NJ-7",
+     "p_flip": 0.69975,
+     "inc": "Thomas Kean Jr.",
+     "inc_running": true
+    },
+    {
+     "label": "AZ-6",
+     "p_flip": 0.699625,
+     "inc": "Juan Ciscomani",
+     "inc_running": true
+    },
+    {
+     "label": "CO-8",
+     "p_flip": 0.694225,
+     "inc": "Gabe Evans",
+     "inc_running": true
+    },
+    {
+     "label": "PA-1",
+     "p_flip": 0.654325,
+     "inc": "Brian Fitzpatrick",
+     "inc_running": true
+    }
+   ],
+   "flip_to_r": [
+    {
+     "label": "LA-6",
+     "p_flip": 0.991025,
+     "inc": "Cleo Fields",
+     "inc_running": false
+    },
+    {
+     "label": "TN-9",
+     "p_flip": 0.9246,
+     "inc": "Steve Cohen",
+     "inc_running": false
+    },
+    {
+     "label": "FL-9",
+     "p_flip": 0.62985,
+     "inc": "Darren Soto",
+     "inc_running": true
+    },
+    {
+     "label": "ME-2",
+     "p_flip": 0.626275,
+     "inc": "Jared Golden",
+     "inc_running": false
+    },
+    {
+     "label": "AL-2",
+     "p_flip": 0.577575,
+     "inc": "Shomari Figures",
+     "inc_running": true
+    },
+    {
+     "label": "OH-9",
+     "p_flip": 0.39322500000000005,
+     "inc": "Marcy Kaptur",
+     "inc_running": true
+    },
+    {
+     "label": "WA-3",
+     "p_flip": 0.19140000000000001,
+     "inc": "Marie Gluesenkamp Perez",
+     "inc_running": true
+    },
+    {
+     "label": "FL-14",
+     "p_flip": 0.171925,
+     "inc": "Kathy Castor",
+     "inc_running": true
+    },
+    {
+     "label": "FL-25",
+     "p_flip": 0.14570000000000005,
+     "inc": "Jared Moskowitz",
+     "inc_running": true
+    },
+    {
+     "label": "NC-1",
+     "p_flip": 0.13202499999999995,
+     "inc": "Don Davis",
+     "inc_running": true
+    },
+    {
+     "label": "TX-34",
+     "p_flip": 0.11645000000000005,
+     "inc": "Vicente Gonzalez",
+     "inc_running": true
+    },
+    {
+     "label": "OH-1",
+     "p_flip": 0.09087500000000004,
+     "inc": "Greg Landsman",
+     "inc_running": true
+    }
+   ],
+   "n_flip_to_d": 85,
+   "n_flip_to_r": 15
+  }
  },
  "senate": {
   "dem_seats_mean": 52.009725,

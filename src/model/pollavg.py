@@ -229,3 +229,49 @@ def senate_poll_list(polls, races, since="2026-06-15", limit=12):
         rows.sort(key=lambda z: z["end"], reverse=True)
         out[r["race_key"]] = {"n_total": len(rows), "avg_adj": avg_adj, "half_life": HALF_LIFE, "polls": rows[:limit]}
     return out
+
+
+def house_poll_list(polls, races, since="2026-07-01", limit=12):
+    """Latest matched polls per House district, for display (same matching and weights as house())."""
+    out = {}
+    idx = {f"{s}-{d:02d}" if d else f"{s}-01": k for s, d, k in zip(races.state, races.district, races.race_key)}
+    rk = races.set_index("race_key")
+    for seat in {x.get("seat_name") for x in polls if x["poll_type"] == "us-representative"}:
+        if not seat or seat not in idx:
+            continue
+        key = idx[seat]
+        r = rk.loc[key]
+        dls = [lastname(n) for n in str(r.dem_cand).split("; ") if n and n != "nan"]
+        rls = [lastname(n) for n in str(r.rep_cand).split("; ") if n and n != "nan"]
+        rows = []
+        for x in polls:
+            if x["poll_type"] != "us-representative" or x.get("seat_name") != seat or x["end"] < pd.Timestamp(since):
+                continue
+            a = {lastname(y["choice"]): y["pct"] for y in x["answers"]}
+            d = [a[l] for l in dls if l in a]
+            rr = [a[l] for l in rls if l in a]
+            if len(d) != 1 or len(rr) != 1:
+                continue
+            m2 = two_party(d[0], rr[0])
+            sp = sponsor_adj(x, HOUSE_PARTISAN_SHIFT, "house")
+            pop = -POP_DEM_LEAN.get((x.get("population") or "lv").lower(), 0.0)
+            rows.append({"end": x["end_date"], "pollster": x["pollster"], "n": x.get("sample_size"),
+                         "pop": (x.get("population") or "").upper(), "d": d[0], "r": rr[0],
+                         "partisan": x.get("partisan"), "sponsors": x.get("sponsors") or [], "url": x.get("url"),
+                         "margin2": round(m2, 2), "sp_adj": round(sp, 2), "pop_adj": round(pop, 2),
+                         "w_raw": float(weight(x, None))})
+        if not rows:
+            continue
+        k = pd.Series([z["pollster"] for z in rows]).value_counts().to_dict()
+        for z in rows:
+            z["w"] = z["w_raw"] / np.sqrt(k[z["pollster"]])
+        tw = sum(z["w"] for z in rows) or 1.0
+        for z in rows:
+            z["share"] = round(z["w"] / tw, 4)
+            z["adj"] = round(z["margin2"] + z["sp_adj"] + z["pop_adj"], 2)
+            del z["w_raw"], z["w"]
+        avg_adj = round(sum(z["share"] * z["adj"] for z in rows), 2)
+        rows.sort(key=lambda z: z["end"], reverse=True)
+        out[key] = {"n_total": len(rows), "avg_adj": avg_adj, "half_life": HALF_LIFE,
+                    "dem": str(r.dem_cand), "rep": str(r.rep_cand), "polls": rows[:limit]}
+    return out

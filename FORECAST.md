@@ -1,6 +1,6 @@
 # 2026 Midterm Forecast
 
-_Generated 2026-11-02 12:39 from the latest data snapshot. Refresh data + rerun everything: `python src/run_all.py`._
+_Generated 2026-11-02 22:31 from the latest data snapshot. Refresh data + rerun everything: `python src/run_all.py`._
 
 ## Topline
 

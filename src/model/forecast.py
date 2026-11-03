@@ -289,8 +289,10 @@ def senate_model(s, polls, G, sd_nat, econ_adj=None):
             sd = 1 / np.sqrt(1 / sd_p ** 2 + 1 / SD_SENATE_PRIOR ** 2)
         else:
             wp, mu, sd = 0.0, prior, SD_SENATE_PRIOR_UNPOLLED
+        econ_term = STATE_ECON_COEF * econ_adj[r.state] if econ_adj is not None and r.state in econ_adj else 0.0
         rows.append(dict(race_key=r.race_key, state=r.state, special=r.special, dem=r.dem_nominee, rep=r.rep_nominee,
                          dside=r.dside_party, inc_party=r.inc_party, pvi=r.pvi, prior=prior,
+                         prior_env=G, prior_inc=inc, prior_econ=econ_term,
                          poll_avg=pa["avg"] if pa else np.nan, poll_avg_raw=pa.get("raw_avg", pa["avg"]) if pa else np.nan,
                          n_polls=pa["n_polls"] if pa else 0,
                          poll_weight=wp, mu=mu, sd_race=sd, rating_cook=r.get("rating_Cook"),
@@ -318,12 +320,13 @@ def house_races():
 
 def house_model(h, polls, G):
     pav = P.house(polls, h)
-    mus, sds, pw, pavg = [], [], [], []
+    mus, sds, pw, pavg, priors, incs, npolls = [], [], [], [], [], [], []
     for _, r in h.iterrows():
         inc = 0.0
         if r.inc_running:
             inc = INC_HOUSE if r.inc_party == "D" else -INC_HOUSE if r.inc_party in ("R", "I") else 0.0
         prior = H_CONST + H_B_LEAN * 2 * r.pvi + H_G_NAT * G + inc
+        priors.append(prior); incs.append(inc)
         pa = pav.get(r.race_key)
         if pa and APPLY_LEAN_CORRECTION and False:  # House: lean pattern was estimated on statewide races only
             pa = dict(pa, avg=pa["avg"] + LEAN_SLOPE * 2 * r.pvi)
@@ -335,9 +338,11 @@ def house_model(h, polls, G):
         else:
             wp, mu, sd = 0.0, prior, SD_HOUSE_DISTRICT
         mus.append(mu); sds.append(sd); pw.append(wp); pavg.append(pa["avg"] if pa else np.nan)
+        npolls.append(pa["n_polls"] if pa else 0)
     h = h.copy()
     h["prior_G"] = G
     h["mu"], h["sd_race"], h["poll_weight"], h["poll_avg"] = mus, sds, pw, pavg
+    h["prior"], h["prior_inc"], h["n_polls"] = priors, incs, npolls
     return h
 
 
@@ -375,6 +380,10 @@ def simulate(h, s, sd_nat_house, sd_nat_senate=None, sigma_region=None):
     r_seats = 435 - d_seats - kiley_win  # Kiley counted separately
     h = h.copy()
     h["p_dem"] = dwin.mean(0)
+    # where the simulated margin lands (display only; fixed seats have no contest)
+    hq = np.percentile(margins, [10, 25, 75, 90], axis=0)
+    for qi, qn in enumerate(["q10", "q25", "q75", "q90"]):
+        h[qn] = np.where(fixed, np.nan, hq[qi])
     # Senate: national Senate error shares the same z, scaled to the Senate calibration
     scorr, s_idio = correlated_part(s, region_shock, slope, sigma_region)
     smu = s.mu.values[None, :] + (sd_nat_senate * z)[:, None] + scorr
@@ -388,11 +397,18 @@ def simulate(h, s, sd_nat_house, sd_nat_senate=None, sigma_region=None):
     swin = sm > 0
     s = s.copy()
     s["p_dside"] = swin.mean(0)
+    sq = np.percentile(sm, [10, 25, 75, 90], axis=0)
+    for qi, qn in enumerate(["q10", "q25", "q75", "q90"]):
+        s[qn] = sq[qi]
     is_ind = (s.dside == "I").values
     d_up = swin[:, ~is_ind].sum(1)
     ind_win = swin[:, is_ind].sum(1)
     d_total = SENATE_NOT_UP["D"] + d_up
     r_total = 100 - d_total - ind_win
+    # kept for the site's scenario explorer (written by run() for the published models only)
+    global LAST_SIMS
+    LAST_SIMS = {"nat_house": sd_nat_house * z, "d_seats": d_seats, "d_total": d_total, "swin": swin,
+                 "race_keys": list(s.race_key), "p_dside": s.p_dside.values}
     res = {
         "house": {"dem_seats_mean": float(d_seats.mean()), "dem_seats_median": float(np.median(d_seats)),
                   "dem_seats_p10": float(np.percentile(d_seats, 10)), "dem_seats_p90": float(np.percentile(d_seats, 90)),
@@ -416,7 +432,80 @@ def simulate(h, s, sd_nat_house, sd_nat_senate=None, sigma_region=None):
                    "hist": np.bincount(d_total, minlength=101).tolist()},
     }
     res["senate"]["reading"] = senate_reading(s, swin, sm, is_ind, d_total, keys)
+    res["house"]["reading"] = house_reading(h, dwin, margins, d_seats, fixed)
     return h, s, res
+
+
+def house_reading(h, dwin, margins, d_seats, fixed):
+    """House counterpart of senate_reading: all-favorites count, upsets per simulation, the path to 218 (tipping point =
+    the district that supplies the 218th Democratic seat) and the seats most likely to change hands."""
+    p = dwin.mean(0)
+    fav = p > 0.5
+    comp = (p > 0.05) & (p < 0.95) & ~fixed
+    upsets = (dwin[:, comp] != fav[comp][None, :]).sum(1)
+    up_d = (dwin[:, comp] & ~fav[comp][None, :]).sum(1)
+    up_r = (~dwin[:, comp] & fav[comp][None, :]).sum(1)
+    kmax = int(min(60, np.percentile(upsets, 99.5) + 1))
+    p_up = [float((upsets == k).mean()) for k in range(kmax)] + [float((upsets >= kmax).mean())]
+    # tipping point: the 218th most Democratic district in each simulation (fixed seats pinned)
+    m_eff = margins.copy()
+    m_eff[:, fixed] = np.where(h.fixed.values[fixed] == "D", 1e6, -1e6)[None, :]
+    tp_idx = np.argpartition(-m_eff, 217, axis=1)[:, 217]
+    tp = np.bincount(tp_idx, minlength=len(h)) / len(tp_idx)
+    ctrl = d_seats >= 218
+    labels = (h.state + "-" + h.district.astype(int).astype(str)).tolist()
+    order = np.argsort(-p, kind="stable")
+    ladder = []
+    for rank, j in enumerate(order):
+        if not (0.02 < p[j] < 0.98):
+            continue
+        col = dwin[:, j]
+        ladder.append({"label": labels[j], "seat": rank + 1, "p": float(p[j]), "tp": float(tp[j]),
+                       "p_ctrl_given_win": float(ctrl[col].mean()) if col.any() else None,
+                       "p_ctrl_given_loss": float(ctrl[~col].mean()) if (~col).any() else None})
+    pivot = labels[order[217]]
+    inc = h.inc_party.fillna("").values
+    flips = lambda party, pf: sorted(({"label": labels[j], "p_flip": float(pf[j]), "inc": str(h.incumbent.iloc[j]).split(" Redistricted")[0],
+                                       "inc_running": bool(h.inc_running.iloc[j])}
+                                      for j in range(len(h)) if inc[j] == party and pf[j] >= 0.05 and not fixed[j]),
+                                     key=lambda z: -z["p_flip"])
+    to_d, to_r = flips("R", p), flips("D", 1 - p)
+    tpo = np.argsort(-tp)[:5]
+    return {"n_comp": int(comp.sum()), "fav_dem": int(fav.sum()), "seats_if_favorites_win": int(fav.sum()),
+            "p_favorites_map": float((upsets == 0).mean()), "upsets_mean": float(upsets.mean()), "p_upsets": p_up,
+            "upsets_to_dem_mean": float(up_d.mean()), "upsets_to_rep_mean": float(up_r.mean()),
+            "ladder": ladder, "pivot": pivot, "n_above_ladder": int((p >= 0.98).sum()),
+            "tipping_point": [{"label": labels[j], "p": float(tp[j])} for j in tpo],
+            "exp_gain_from_R": float(p[inc == "R"].sum()), "exp_loss_from_D": float((1 - p[inc == "D"]).sum()),
+            "exp_open_D": float(p[(inc == "O") & ~fixed].sum() + (h.fixed.values[(inc == "O") & fixed] == "D").sum()),
+            "n_open": int((inc == "O").sum()), "held_R": int((inc == "R").sum()), "held_D": int((inc == "D").sum()),
+            "flip_to_d": to_d[:12], "flip_to_r": to_r[:12], "n_flip_to_d": len(to_d), "n_flip_to_r": len(to_r)}
+
+
+PUBLISHED = ("polls_only", "polls_fundamentals", "polls_fundamentals_biasadj")
+LAST_SIMS = None
+
+
+def write_sims(model, od):
+    """Compact per-simulation file for the site's scenario explorer: national environment error, Democratic House seats,
+    Democratic Senate seats (independents excluded, as in the headline) and win bits for the Senate races in play.
+    Layout (little-endian, n = simulations): uint32[n] race bits | int16[n] env error in 0.1 pts | uint16[n] House
+    seats | uint8[n] Senate seats."""
+    S = LAST_SIMS
+    n = len(S["d_seats"])
+    p = S["p_dside"]
+    inplay = [j for j in np.argsort(np.abs(p - 0.5)) if 0.002 < p[j] < 0.998][:32]
+    inplay = sorted(inplay)
+    bits = np.zeros(n, dtype="<u4")
+    for b, j in enumerate(inplay):
+        bits |= (S["swin"][:, j].astype("<u4") << np.uint32(b))
+    nat = np.clip(np.round(S["nat_house"] * 10), -32000, 32000).astype("<i2")
+    hs = S["d_seats"].astype("<u2")
+    st = S["d_total"].astype("u1")
+    (od / f"sims_{model}.bin").write_bytes(bits.tobytes() + nat.tobytes() + hs.tobytes() + st.tobytes())
+    meta = {"n": n, "races": [S["race_keys"][j] for j in inplay], "nat_scale": 0.1, "layout": "u4 bits|i2 nat|u2 house|u1 senate",
+            "senate_not_up_d": SENATE_NOT_UP["D"], "file": f"sims_{model}.bin"}
+    (od / f"sims_{model}.json").write_text(json.dumps(meta))
 
 
 def senate_reading(s, swin, sm, is_ind, d_total, keys):
@@ -522,6 +611,8 @@ def run(model, shift=0.0, tag=None, bias_removed=False, sigma_region=None, senat
     hmod.to_csv(od / f"house_{model}.csv", index=False)
     smod.to_csv(od / f"senate_{model}.csv", index=False)
     (od / f"summary_{model}.json").write_text(json.dumps(res, indent=1, default=float))
+    if od == OUT and model in PUBLISHED:
+        write_sims(model, od)
     (OUT / "national_inputs.json").write_text(json.dumps(nat, indent=1, default=float))
     return hmod, smod, res
 

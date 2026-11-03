@@ -45,7 +45,10 @@ def main():
         house["label"] = house.state + "-" + house.district.astype(int).astype(str)
         house["inc"] = house.incumbent.fillna("").str.split(" Redistricted").str[0]
         comp = house[(house.p_dem > 0.05) & (house.p_dem < 0.95)].sort_values("p_dem", ascending=False)
+        opt = lambda df, cols: [c for c in cols if c in df.columns]  # columns added 2026-11-02 (older outputs lack them)
+        sims_meta = PROC / f"sims_{key}.json"
         models[key] = {
+            "sims": json.loads(sims_meta.read_text()) if sims_meta.exists() else None,
             "house": {k: v for k, v in s["house"].items()},
             "senate": {k: v for k, v in s["senate"].items()},
             "G": s["national"]["G_used"], "shift": s["national"].get("bias_shift", 0.0),
@@ -54,9 +57,11 @@ def main():
             "w_polls": s["national"].get("w_polls_national", 1.0), "race_w": s["national"].get("race_poll_weight_mean_polled", 0.0),
             "senate_races": records(sen.sort_values("p_dside", ascending=False),
                                     ["race_key", "state", "special", "dem", "rep", "dside", "inc_party", "pvi", "prior",
-                                     "poll_avg", "n_polls", "poll_weight", "mu", "sd_race", "p_dside", "rating_cook", "rating_silver"]),
+                                     "poll_avg", "n_polls", "poll_weight", "mu", "sd_race", "p_dside", "rating_cook", "rating_silver"]
+                                    + opt(sen, ["poll_avg_raw", "prior_env", "prior_inc", "prior_econ", "q10", "q25", "q75", "q90"])),
             "house_comp": records(comp, ["label", "inc", "inc_party", "pvi", "inc_running", "poll_avg", "mu", "p_dem",
-                                         "dem_cand", "rep_cand"]),
+                                         "dem_cand", "rep_cand", "race_key", "poll_weight", "sd_race", "prior_G"]
+                                  + opt(comp, ["prior", "prior_inc", "n_polls", "q10", "q25", "q75", "q90"])),
             "house_counts": {
                 "fixed_d": int((house.fixed == "D").sum()), "fixed_r": int((house.fixed == "R").sum()),
                 "safe_d": int(((house.p_dem >= 0.95) & house.fixed.isna()).sum()),
@@ -88,6 +93,9 @@ def main():
     from forecast import senate_races
     vh = P.load_votehub()
     poll_lists = P.senate_poll_list(vh, senate_races(vh))
+    from forecast import house_races
+    comp_keys = {r["race_key"] for m in models.values() for r in m["house_comp"]}
+    house_polls = {k: v for k, v in P.house_poll_list(vh, house_races()).items() if k in comp_keys}
     # sponsored-poll adjustments actually applied to 2026 polls (new tiered rule vs the old flat shift)
     pe = json.loads((PROC / "pollster_effects.json").read_text())
     rows_sp = {}
@@ -114,6 +122,8 @@ def main():
         "sensitivity": sens,
         "bias": bias,
         "senate_polls": poll_lists,
+        "house_polls": house_polls,
+        "house_model": {"sd_district": json.loads((PROC / "house_structure.json").read_text())["chosen"]["sd_district"]},
         "fund": json.loads((PROC / "fundamentals.json").read_text()),
         "state_econ": json.loads((PROC / "state_econ.json").read_text()),
         "prior_weight": json.loads((PROC / "prior_weight.json").read_text()),
@@ -134,7 +144,7 @@ def main():
     }
     SITE.mkdir(exist_ok=True)
     (SITE / "data").mkdir(exist_ok=True)
-    for f in list(PROC.glob("*.csv")) + list(PROC.glob("*.json")):
+    for f in list(PROC.glob("*.csv")) + list(PROC.glob("*.json")) + list(PROC.glob("sims_*.bin")):
         if "_sens" not in f.name:
             shutil.copy(f, SITE / "data" / f.name)
     shutil.copy(ROOT / "data/interim/house_2026_races.csv", SITE / "data" / "house_2026_races.csv")
