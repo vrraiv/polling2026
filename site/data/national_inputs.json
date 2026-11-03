@@ -1,31 +1,31 @@
 {
  "generic_aggregators": [
   {
-   "Source of poll aggregation": "Decision Desk HQ[81]",
+   "Source of poll aggregation": "Decision Desk HQ[82]",
    "D": 51.2,
    "R": 42.3,
    "two_party": 9.52
   },
   {
-   "Source of poll aggregation": "FiftyPlusOne[82]",
+   "Source of poll aggregation": "FiftyPlusOne[83]",
    "D": 52.3,
    "R": 43.7,
    "two_party": 8.96
   },
   {
-   "Source of poll aggregation": "NBC News[83]",
+   "Source of poll aggregation": "NBC News[84]",
    "D": 52.0,
    "R": 44.0,
    "two_party": 8.33
   },
   {
-   "Source of poll aggregation": "RealClearPolitics[84]",
+   "Source of poll aggregation": "RealClearPolitics[85]",
    "D": 52.0,
    "R": 43.1,
    "two_party": 9.36
   },
   {
-   "Source of poll aggregation": "Silver Bulletin[85]",
+   "Source of poll aggregation": "Silver Bulletin[86]",
    "D": 51.4,
    "R": 42.6,
    "two_party": 9.36

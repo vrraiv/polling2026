@@ -1,6 +1,6 @@
 # 2026 Midterm Forecast
 
-_Generated 2026-11-03 06:43 from the latest data snapshot. Refresh data + rerun everything: `python src/run_all.py`._
+_Generated 2026-11-03 11:22 from the latest data snapshot. Refresh data + rerun everything: `python src/run_all.py`._
 
 ## Topline
 
@@ -10,14 +10,14 @@ _Generated 2026-11-03 06:43 from the latest data snapshot. Refresh data + rerun 
 | **P(Democratic House majority)** | 93% | 97% | 92% |
 | P(Republican House majority) | 7% | 3% | 8% |
 | Dem House seats, mean (80% range) | 236 (220–254) | 238 (224–252) | 229 (218–239) |
-| **P(Democratic Senate control)** | 75% | 75% | 68% |
-| P(Dem control if independents caucus D) | 77% | 78% | 70% |
-| P(Republican Senate control) | 23% | 22% | 30% |
-| Dem-caucus Senate seats, mean (80% range) | 52.1 (49–55) | 52.1 (49–55) | 51.5 (48–55) |
+| **P(Democratic Senate control)** | 77% | 78% | 71% |
+| P(Dem control if independents caucus D) | 79% | 80% | 73% |
+| P(Republican Senate control) | 21% | 20% | 27% |
+| Dem-caucus Senate seats, mean (80% range) | 52.3 (49–55) | 52.3 (49–55) | 51.7 (48–55) |
 
 Democrats need 51 Senate seats for control (VP Vance breaks 50–50 ties); 34 Dem-caucus and 31 Republican seats are not up. Independent candidates (Osborn in NE, Achilles in ID) are counted separately; neither has committed to a caucus.
 
-**Fundamentals sensitivity** (each of the ten top estimated specifications, both samples): fundamentals-only environment ranges D+8.0 to D+11.8; after blending with polls, D+8.6 to D+10.3, P(D House) 95%–97%, P(D Senate) 74%–76%.
+**Fundamentals sensitivity** (each of the ten top estimated specifications, both samples): fundamentals-only environment ranges D+8.0 to D+11.8; after blending with polls, D+8.6 to D+10.3, P(D House) 95%–97%, P(D Senate) 77%–79%.
 
 ## National inputs
 
@@ -45,15 +45,15 @@ Margins are two-party D−R (Montana: best non-R minus R). The forecast blends t
 | NM | Ben Ray Luján | Larry Marker | D+8.0 | D+18.6 (2) | D+19.7 | D+19.0 | 96% | 97% | Solid D | Solid D |
 | CO | John Hickenlooper | Mark Baisley | D+12.0 | D+16.0 (1) | D+23.7 | D+18.4 | 96% | 96% | Solid D | Solid D |
 | GA | Jon Ossoff | Mike Collins | R+2.0 | D+9.3 (12) | D+9.7 | D+9.3 | 94% | 94% | Likely D | Solid D |
-| NH | Chris Pappas | John E. Sununu | D+4.0 | D+8.0 (11) | D+13.7 | D+8.6 | 92% | 92% | Lean D | Solid D |
-| MI | Abdul El-Sayed | Mike Rogers | D+0.0 | D+4.0 (36) | D+9.7 | D+4.3 | 81% | 81% | Lean D | Likely D |
-| ME | Troy Jackson | Susan Collins | D+8.0 | D+3.3 (21) | D+15.7 | D+4.2 | 79% | 80% | Tossup | Likely D (flip) |
+| NH | Chris Pappas | John E. Sununu | D+4.0 | D+8.1 (12) | D+13.7 | D+8.6 | 93% | 93% | Lean D | Solid D |
+| MI | Abdul El-Sayed | Mike Rogers | D+0.0 | D+4.2 (37) | D+9.7 | D+4.5 | 82% | 82% | Lean D | Likely D |
+| ME | Troy Jackson | Susan Collins | D+8.0 | D+3.8 (22) | D+15.7 | D+4.6 | 82% | 82% | Tossup | Likely D (flip) |
 | MN | Peggy Flanagan | Michele Tafoya | D+6.0 | D+3.4 (8) | D+15.7 | D+4.8 | 78% | 79% | Lean D | Likely D |
-| OH (sp.) | Sherrod Brown | Jon Husted | R+10.0 | D+3.9 (24) | R+2.3 | D+3.5 | 75% | 76% | Tossup | Lean D (flip) |
-| KS | Adam Hamilton | Roger Marshall | R+16.0 | D+4.5 (8) | R+8.3 | D+3.3 | 72% | 72% | Tossup | Lean D (flip) |
-| TX | James Talarico | Ken Paxton | R+12.0 | D+2.9 (39) | R+2.3 | D+2.6 | 71% | 71% | Tossup | Likely D (flip) |
-| AK | Mary Peltola | Dan S. Sullivan | R+12.0 | D+1.2 (9) | R+4.3 | D+0.6 | 53% | 54% | Tossup | Tossup |
-| IA | Josh Turek | Ashley Hinson | R+12.0 | R+0.3 (23) | R+2.3 | R+0.5 | 46% | 46% | Tossup | Tossup |
+| OH (sp.) | Sherrod Brown | Jon Husted | R+10.0 | D+4.3 (25) | R+2.3 | D+3.9 | 78% | 78% | Tossup | Lean D (flip) |
+| KS | Adam Hamilton | Roger Marshall | R+16.0 | D+5.0 (9) | R+8.3 | D+3.8 | 75% | 76% | Tossup | Lean D (flip) |
+| TX | James Talarico | Ken Paxton | R+12.0 | D+3.2 (40) | R+2.3 | D+2.8 | 72% | 73% | Tossup | Likely D (flip) |
+| AK | Mary Peltola | Dan S. Sullivan | R+12.0 | D+1.9 (10) | R+4.3 | D+1.2 | 59% | 59% | Tossup | Tossup |
+| IA | Josh Turek | Ashley Hinson | R+12.0 | D+0.1 (24) | R+2.3 | R+0.1 | 49% | 49% | Tossup | Tossup |
 | SC | Annie Andrews | Darline Graham | R+16.0 | R+1.4 (5) | R+8.3 | R+2.3 | 35% | 36% | Lean R | Lean R |
 | NE | Dan Osborn (I) | Pete Ricketts | R+20.0 | R+1.8 (4) | R+12.3 | R+3.5 | 30% | 30% | Lean R | Lean R |
 | MS | Scott Colom | Cindy Hyde-Smith | R+22.0 | R+5.7 (2) | R+14.3 | R+7.8 | 16% | 17% | Likely R | Solid R |
