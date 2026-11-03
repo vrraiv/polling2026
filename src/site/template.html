@@ -1540,8 +1540,8 @@ function renderSdN() {
 }
 
 // ---------- init ----------
-$("#gen").textContent = (DATA.final ? "Final forecast · " : "Updated ") + DATA.generated;
-if (DATA.final) { const fb = $("#finalBanner"); fb.hidden = false; fb.innerHTML = `<b>Final pre-election forecast</b>, made ${DATA.generated}. It won't be updated as results come in; a scorecard comparing it with the results will follow.`; }
+$("#gen").textContent = (DATA.final ? "Final forecast · " : "Updated ") + (DATA.generated_label || DATA.generated);
+if (DATA.final) { const fb = $("#finalBanner"); fb.hidden = false; fb.innerHTML = `<b>Final pre-election forecast.</b> Locked ${esc(DATA.generated_label || DATA.generated)}. It won't be updated as results come in; a scorecard comparing it with the results will follow.`; }
 renderModelSegs(); renderSdN(); renderPollsterFx(); renderPollSettings(); renderPriorWeight(); renderHouseStructure(); renderOverview(); renderExplorer(); renderWatch(); renderHouse(); renderMethod(); renderData(); renderBias(); renderBacktest(); renderAppendix();
 route();
 </script>

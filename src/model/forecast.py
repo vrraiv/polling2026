@@ -262,6 +262,11 @@ def senate_races(polls):
     return s
 
 
+def rating(v):
+    """Expert rating as the forecaster publishes it: drop Wikipedia's "(flip)" marker (rating favors the non-holding party)."""
+    return re.sub(r"\s*\(flip\)", "", v).strip() if isinstance(v, str) else v
+
+
 def senate_model(s, polls, G, sd_nat, econ_adj=None):
     pav = P.senate(polls, s)
     rows = []
@@ -295,8 +300,8 @@ def senate_model(s, polls, G, sd_nat, econ_adj=None):
                          prior_env=G, prior_inc=inc, prior_econ=econ_term,
                          poll_avg=pa["avg"] if pa else np.nan, poll_avg_raw=pa.get("raw_avg", pa["avg"]) if pa else np.nan,
                          n_polls=pa["n_polls"] if pa else 0,
-                         poll_weight=wp, mu=mu, sd_race=sd, rating_cook=r.get("rating_Cook"),
-                         rating_silver=r.get("rating_Silver")))
+                         poll_weight=wp, mu=mu, sd_race=sd, rating_cook=rating(r.get("rating_Cook")),
+                         rating_silver=rating(r.get("rating_Silver"))))
     df = pd.DataFrame(rows)
     # national error is shared with the House draw (same z) -> scaled per chamber
     return df

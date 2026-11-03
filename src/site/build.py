@@ -112,8 +112,15 @@ def main():
     sp_table = sorted(({**v, "levels": sorted(v["levels"])} for v in rows_sp.values()), key=lambda z: -z["n"])[:14]
     pollster_fx = {"beta": pe["beta"], "beta_se": pe["beta_se"], "thin": pe["thin_by_level"], "tau": pe["tau"],
                    "backtest": pe["backtest"], "big_loco": pe.get("big_loco"), "table": sp_table}
+    try:
+        from zoneinfo import ZoneInfo
+        et = dt.datetime.now(ZoneInfo("America/New_York"))
+        gen_label = f"{et:%b} {et.day}, {et.year}, {et.hour % 12 or 12}:{et:%M} {'am' if et.hour < 12 else 'pm'} ET"
+    except Exception:  # noqa: BLE001  (no tz database: fall back to local time with its offset)
+        gen_label = dt.datetime.now().astimezone().strftime("%Y-%m-%d %H:%M UTC%z")
     data = {
         "generated": dt.datetime.now().strftime("%Y-%m-%d %H:%M"),
+        "generated_label": gen_label,
         "final": os.environ.get("FORECAST_FINAL") == "1" or (ROOT / "data" / "final" / "MADE_AT.txt").exists(),
         "models": models,
         "national": nat,
@@ -158,7 +165,7 @@ def main():
     try:  # regenerate the link-preview card from today's numbers
         sys.path.insert(0, str(Path(__file__).parent))
         import og_image
-        og_image.make(models, SITE / "og.png", data["generated"], final=data["final"])
+        og_image.make(models, SITE / "og.png", data["generated_label"], final=data["final"])
     except Exception as ex:  # noqa: BLE001
         print("og image skipped:", ex)
         og = Path(__file__).with_name("og.png")
