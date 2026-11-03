@@ -160,6 +160,12 @@ footer a { color: var(--text-2); }
 .nathist rect.b { cursor: pointer; }
 .simbar { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: .82rem; color: var(--text-2); min-height: 26px; margin-top: 4px; }
 .extext { font-size: .86rem; margin-top: 10px; max-width: none; }
+.seatcount { margin: 8px 0 6px; font-size: .82rem; color: var(--text-2); max-width: 576px; }
+.seatcount .sc-top { display: flex; justify-content: space-between; align-items: baseline; gap: 4px 12px; flex-wrap: wrap; }
+.seatcount .sc-nums { font-variant-numeric: tabular-nums; font-size: .95rem; }
+.seatbar { position: relative; display: flex; height: 12px; border-radius: 3px; overflow: hidden; margin: 5px 0 4px; background: var(--off); }
+.seatbar i { display: block; height: 100%; }
+.seatbar .mid { position: absolute; left: calc(50% - 1px); top: 0; bottom: 0; width: 2px; background: var(--text); opacity: .85; }
 .exnote { font-size: .76rem; color: var(--text-3); margin-top: 8px; max-width: none; }
 
 /* forecast anatomy (race fold-downs) */
@@ -171,6 +177,7 @@ td .none { color: var(--text-3); font-size: .8rem; }
 @media (max-width: 760px) {
   .cards, .ovgrid, .grid2, .detail-grid, .exgrid, .detail-top { grid-template-columns: 1fr; }
   .tbl-wrap.scroll { max-height: none; }
+  .tip { white-space: normal; max-width: calc(100vw - 16px); }
   .pbar { width: 70px; }
   th, td { padding: 6px 8px; }
   .hide-sm { display: none; }
@@ -210,6 +217,7 @@ td .none { color: var(--text-3); font-size: .8rem; }
       <div>
         <div class="simbar"><span id="mapMode" class="lab">Senate map · chance the Democrat or independent wins</span><span id="mapBack"></span></div>
         <div class="chart tilemap" id="tilemap"></div>
+        <div class="seatcount" id="mapCount"></div>
         <div class="legend" id="mapLegend"></div>
         <div class="chart nathist" id="natHist" style="margin-top:14px"></div>
       </div>
@@ -480,12 +488,49 @@ function showTip(evt, html) {
   tip.style.left = x + "px"; tip.style.top = y + "px";
 }
 const hideTip = () => { tip.style.opacity = 0; };
+// Explorer tooltips: hover with a mouse. On a touch screen a tap does the chart's action and pins the tooltip (redrawn
+// with the updated state after the chart re-renders) until you tap somewhere else; scrolling leaves it in place.
+let lastPtr = "mouse", tipPin = null, ptrDown = null;   // tipPin: CSS selector of the element whose tooltip is pinned
+const tapWord = () => lastPtr === "mouse" ? "Click" : "Tap";
+document.addEventListener("pointermove", e => { if (e.pointerType === "mouse") lastPtr = "mouse"; }, true);
+document.addEventListener("pointerdown", e => { lastPtr = e.pointerType || "mouse"; ptrDown = [e.clientX, e.clientY]; }, true);
+document.addEventListener("pointerup", e => {   // a tap (not a scroll) outside the pinned element dismisses it
+  if (!tipPin || lastPtr === "mouse" || !ptrDown) return;
+  const moved = Math.hypot(e.clientX - ptrDown[0], e.clientY - ptrDown[1]);
+  if (moved < 10 && !(e.target.closest && e.target.closest(tipPin))) unpinTip();
+}, true);
+window.addEventListener("resize", () => refreshPin());
+function unpinTip() { tipPin = null; hideTip(); }
+function placeTip(html, rect) {   // above the element (below if there's no room), kept inside the window
+  tip.innerHTML = html; tip.style.left = "0px"; tip.style.top = "0px"; tip.style.opacity = 1;
+  const w = tip.offsetWidth, h = tip.offsetHeight, vw = document.documentElement.clientWidth;
+  const x = Math.max(window.scrollX + 8, Math.min(window.scrollX + rect.left + rect.width / 2 - w / 2, window.scrollX + vw - w - 8));
+  const y = rect.top - h - 8 >= 4 ? window.scrollY + rect.top - h - 8 : window.scrollY + rect.bottom + 8;
+  tip.style.left = x + "px"; tip.style.top = y + "px";
+}
+function refreshPin() {
+  if (!tipPin) return;
+  const el = document.querySelector(tipPin);
+  if (!el || !el._tip || !el.getClientRects().length) { unpinTip(); return; }
+  placeTip(el._tip(), el.getBoundingClientRect());
+}
+// html: () => tooltip HTML, computed when shown; act: the click/tap action (re-renders the explorer, which re-pins)
+function exTip(el, sel, html, act) {
+  el._tip = html;
+  el.addEventListener("mousemove", e => { if (lastPtr === "mouse") { tipPin = null; showTip(e, html()); } });
+  el.addEventListener("mouseleave", () => { if (!tipPin) hideTip(); });
+  el.addEventListener("click", () => {
+    if (lastPtr === "mouse") unpinTip(); else tipPin = sel;
+    if (act) act(); else refreshPin();
+  });
+}
 
 // ---------- routing ----------
 const PAGES = ["overview", "senate", "house", "method", "bias", "backtest", "appendix", "data"];
 let openRace = null, openHouse = null;
 function route() {
   let h = location.hash.slice(1) || "overview";
+  unpinTip();
   if (h.startsWith("senate/")) { openRace = decodeURIComponent(h.slice(7)); h = "senate"; }
   if (h.startsWith("house/")) { openHouse = decodeURIComponent(h.slice(6)); h = "house"; }
   if (!PAGES.includes(h)) h = "overview";
@@ -615,6 +660,11 @@ async function loadSims(k) {
   const S = { meta, n, bits: new Uint32Array(buf, 0, n), nat: new Int16Array(buf, 4 * n, n), house: new Uint16Array(buf, 6 * n, n), sen: new Uint8Array(buf, 8 * n, n) };
   S.G = DATA.models[k].G;
   S.idx = Object.fromEntries(meta.races.map((r, b) => [r, b]));
+  // independent candidates (dside I): bits in the file, plus any race outside the file counted at its favorite
+  const MK = DATA.models[k];
+  S.ibits = meta.races.map((rk, b) => [rk, b]).filter(([rk]) => (raceByKey(MK, rk) || {}).dside === "I").map(([, b]) => b);
+  S.ifix = MK.senate_races.filter(r => r.dside === "I" && S.idx[r.race_key] == null && r.p_dside > 0.5).length;
+  S.indOf = (i) => S.ifix + S.ibits.reduce((a, b) => a + ((S.bits[i] >>> b) & 1), 0);
   S.env = new Float32Array(n);
   for (let i = 0; i < n; i++) S.env[i] = S.G + S.nat[i] * meta.nat_scale;
   // national-vote bins: 1 pt wide, tails folded into the end bins (1st / 99th percentile)
@@ -632,20 +682,22 @@ function exCompute(S, force, bins) {
   const R = S.meta.races.length, nb = S.hi - S.lo + 1;
   const cnt = new Float64Array(R), histState = new Float64Array(nb), histAll = new Float64Array(nb);
   const cat = [[], [], [], []];   // 0 both D, 1 House D / Senate not, 2 House not / Senate D, 3 neither
-  let m = 0, sD = 0, hD = 0, envSum = 0, mState = 0, envState = 0;
+  let m = 0, sD = 0, hD = 0, envSum = 0, mState = 0, envState = 0, senSum = 0, indSum = 0;
   for (let i = 0; i < S.n; i++) {
     const bi = S.bits[i], bn = S.bin[i] - S.lo;
     histAll[bn]++;
     if (((bi & fm) >>> 0) !== fv) continue;
     histState[bn]++; mState++; envState += S.env[i];
     if (bins.size && !bins.has(S.bin[i])) continue;
-    m++; envSum += S.env[i];
+    m++; envSum += S.env[i]; senSum += S.sen[i];
+    for (const b of S.ibits) indSum += (bi >>> b) & 1;
     const s = S.sen[i] >= 51, h = S.house[i] >= 218;
     if (s) sD++; if (h) hD++;
     cat[h ? (s ? 0 : 1) : (s ? 2 : 3)].push(i);
     for (let b = 0; b < R; b++) if (bi & (1 << b)) cnt[b]++;
   }
   return { m, mState, pSen: m ? sD / m : null, pHouse: m ? hD / m : null, env: m ? envSum / m : null, envState: mState ? envState / mState : null,
+    avgD: m ? senSum / m : null, avgI: m ? indSum / m + S.ifix : null,
     pRace: Array.from(cnt, c => m ? c / m : null), histState, histAll, cat };
 }
 const raceByKey = (M, k) => M.senate_races.find(r => r.race_key === k);
@@ -657,7 +709,7 @@ async function renderExplorer() {
   let S;
   try { S = await loadSims(k); }
   catch (e) {
-    $("#exNums").innerHTML = ""; $("#waffle").innerHTML = ""; $("#natHist").innerHTML = "";
+    $("#exNums").innerHTML = ""; $("#waffle").innerHTML = ""; $("#natHist").innerHTML = ""; $("#mapCount").innerHTML = "";
     $("#exMatch").textContent = `Simulations couldn't be loaded (${e.message}); showing the forecast's race chances only.`;
     renderMapTiles(null, null); return;
   }
@@ -725,6 +777,7 @@ async function renderExplorer() {
   $("#exText").innerHTML = t;
   $("#exNote").textContent = `${MODELS[k]} model, ${S.n.toLocaleString()} simulations (the same ones behind the headline). Senate control counts Democrats only (Vance breaks a 50–50 tie); independents are not counted for either party, as in the headline. National House vote = two-party margin; the model's estimate is ${fmtM(S.G)}. ` +
     (() => { const ex = M.senate_races.filter(r => S.idx[r.race_key] == null); return ex.length ? `The ${ex.length === 1 ? "most lopsided race" : ex.length + " most lopsided races"} (${ex.map(r => `${shortRace(r)} ${fmtP(r.p_dside)}`).join(", ")}) can't be set: the file keeps the 32 closest.` : ""; })();
+  refreshPin();
 }
 function andJoin(a) { return a.length < 2 ? a.join("") : a.slice(0, -1).join(", ") + " and " + a[a.length - 1]; }
 
@@ -736,7 +789,8 @@ function renderMapTiles(S, C) {
   const col = { D: css("--dem"), R: css("--rep"), I: css("--teal") };
   const showSim = S && exSim != null;
   const pOf = (race) => { if (!S || !C || !C.m) return race.p_dside; const b = S.idx[race.race_key]; return b == null ? race.p_dside : C.pRace[b]; };
-  const winSim = (race) => { const b = S.idx[race.race_key]; const w = b == null ? race.p_dside > 0.5 : !!(S.bits[exSim] & (1 << b)); return w ? (race.dside === "I" ? "I" : "D") : "R"; };
+  const exW = showSim ? simExcluded(S, exSim) : null;
+  const winSim = (race) => { const b = S.idx[race.race_key]; if (b == null) return exW.win[race.race_key] || (race.p_dside > 0.5 ? (race.dside === "I" ? "I" : "D") : "R"); return (S.bits[exSim] & (1 << b)) ? (race.dside === "I" ? "I" : "D") : "R"; };
   let s = `<svg viewBox="-2 -2 ${W + 4} ${H + 4}" role="img" aria-label="Senate map: chance the Democrat or independent wins each race">`;
   Object.entries(TILES).forEach(([st, [c, r]]) => {
     const race = races[st], x = c * (T + Gp), y = r * (T + Gp);
@@ -746,7 +800,7 @@ function renderMapTiles(S, C) {
     }
     const settable = S && S.idx[race.race_key] != null, f = exForce[race.race_key];
     let fill, sub;
-    if (showSim) { const w = winSim(race); fill = col[w]; sub = w === "R" ? "Rep." : w === "I" ? "Ind." : "Dem."; }
+    if (showSim) { const w = winSim(race); fill = w === "?" ? css("--toss") : col[w]; sub = w === "R" ? "Rep." : w === "I" ? "Ind." : w === "?" ? "?" : "Dem."; }
     else { const p = pOf(race); fill = css(binOf(p ?? race.p_dside)[1]); sub = (race.dside === "I" ? "I " : "") + fmtP(p); }
     if (f != null) sub = (f ? (race.dside === "I" ? "I" : "D") : "R") + " ✓";
     s += `<rect class="t${settable ? " set" : ""}" x="${x}" y="${y}" width="${T}" height="${T}" rx="5" fill="${fill}" data-st="${st}"${f != null ? ` stroke="${och}" stroke-width="3"` : ""} style="cursor:${settable ? "pointer" : "default"}"/>`;
@@ -756,32 +810,101 @@ function renderMapTiles(S, C) {
   const el = $("#tilemap"); el.innerHTML = s + `</svg>`;
   el.querySelectorAll("rect.t").forEach(r => {
     const race = races[r.dataset.st], settable = S && S.idx[race.race_key] != null;
-    r.addEventListener("mousemove", e => {
-      const p0 = race.p_dside, p1 = pOf(race), who = race.dside === "I" ? "independent" : "Democrat";
+    const who = race.dside === "I" ? "independent" : "Democrat";
+    exTip(r, `#tilemap rect.t[data-st="${r.dataset.st}"]`, () => {
+      const p0 = race.p_dside, p1 = pOf(race), f = exForce[race.race_key];
       let h = `<b>${shortRace(race)}</b><br>${esc(race.dem)}${race.dside === "I" ? " (I)" : ""} vs ${esc(race.rep)}<br>Chance the ${who} wins: <b>${fmtP(p0)}</b>`;
-      if (exActive() && C && C.m && Math.round(p1 * 100) !== Math.round(p0 * 100) && !(race.race_key in exForce)) h += ` → <b>${fmtP(p1)}</b> in this scenario`;
-      h += `<br><span style="color:var(--text-3)">${settable ? "Click: Democrat → Republican → clear" : "Too lopsided to set (see the note below)"}</span>`;
-      showTip(e, h);
-    });
-    r.addEventListener("mouseleave", hideTip);
-    if (settable) r.addEventListener("click", () => {
+      if (f == null && exActive() && C && C.m && Math.round(p1 * 100) !== Math.round(p0 * 100)) h += ` → <b>${fmtP(p1)}</b> in this scenario`;
+      if (f != null) h += `<br><b style="color:var(--ochre)">Set by you: ${f ? "the " + who : "the Republican"} wins</b>`;
+      if (showSim) { const w = winSim(race); h += w === "?" ? `<br>In this simulation: ${exW.note}` : `<br>In this simulation: <b>${w === "R" ? "Republican" : w === "I" ? "independent" : "Democrat"} wins</b>`; }
+      const nxt = f == null ? `give it to the ${who}` : f === 1 ? "give it to the Republican" : "clear it";
+      h += `<br><span style="color:var(--text-3)">${settable ? `${tapWord()}${f == null ? "" : " again"} to ${nxt}` : "Too lopsided to set (see the note below)"}</span>`;
+      return h;
+    }, settable ? () => {
       const k = race.race_key, f = exForce[k];
       if (f == null) exForce[k] = 1; else if (f === 1) exForce[k] = 0; else delete exForce[k];
-      exPreset = null; exSim = null; hideTip(); renderExplorer();
-    });
+      exPreset = null; exSim = null; renderExplorer();
+    } : null);
   });
+  renderMapCount(S, C, showSim);
   if (showSim) {
     const i = exSim;
     $("#mapMode").textContent = `One simulated election: Senate ${S.sen[i]} D · House ${S.house[i]} D · national vote ${fmtM(S.env[i])}`;
     $("#mapBack").innerHTML = `<button type="button" class="chip" id="simBack">Back to probabilities</button>`;
     $("#simBack").addEventListener("click", () => { exSim = null; renderExplorer(); });
-    $("#mapLegend").innerHTML = `<span><i class="sq" style="background:var(--dem)"></i>Democrat wins</span><span><i class="sq" style="background:var(--rep)"></i>Republican wins</span><span><i class="sq" style="background:var(--teal)"></i>Independent wins</span><span><i class="sq" style="background:transparent;box-shadow:inset 0 0 0 2px var(--ochre)"></i>Set by you</span>`;
+    $("#mapLegend").innerHTML = `<span><i class="sq" style="background:var(--dem)"></i>Democrat wins</span><span><i class="sq" style="background:var(--rep)"></i>Republican wins</span><span><i class="sq" style="background:var(--teal)"></i>Independent wins</span><span><i class="sq" style="background:transparent;box-shadow:inset 0 0 0 2px var(--ochre)"></i>Set by you</span>` +
+      (Object.values(exW.win).includes("?") ? `<span><i class="sq" style="background:var(--toss)"></i>? Not recorded (see above)</span>` : "");
   } else {
     $("#mapMode").textContent = exActive() ? "Senate map · chances in this scenario" : "Senate map · chance the Democrat or independent wins";
     $("#mapBack").innerHTML = "";
     $("#mapLegend").innerHTML = BINS.map(b => `<span><i class="sq" style="background:var(${b[1]})"></i>${b[2]}</span>`).join("") + `<span><i class="sq" style="background:var(--off)"></i>Not up</span><span><i class="sq" style="background:transparent;box-shadow:inset 0 0 0 2px var(--ochre)"></i>Set by you</span>` +
       `<span class="tiny">Colors group probabilities for readability; they aren't calls.</span>`;
   }
+}
+
+// Senate seat count under the map: exact for one simulation, average across the matching simulations otherwise.
+// D counts the Democratic caucus (incl. King and Sanders, not up); I is only the independent candidates on the ballot.
+function senCounts(S, i) {
+  const D = S.sen[i], I = S.indOf(i);
+  return { D, I, R: 100 - D - I };
+}
+// The file has bits for the 32 closest races only. For the lopsided ones it leaves out, the simulation's Senate total
+// still tells us how many of them Democrats won: infer which, and mark them "?" when it can't be pinned down.
+function simExcluded(S, i) {
+  const M = DATA.models[model], ex = M.senate_races.filter(r => S.idx[r.race_key] == null && r.dside !== "I");
+  let fileD = 0;
+  S.meta.races.forEach((rk, b) => { if ((raceByKey(M, rk) || {}).dside !== "I" && ((S.bits[i] >>> b) & 1)) fileD++; });
+  const exD = ex.filter(r => r.p_dside > 0.5), exR = ex.filter(r => r.p_dside <= 0.5);
+  const k = S.sen[i] - S.meta.senate_not_up_d - fileD;   // Democratic wins among the excluded races
+  const win = {}; let note = "";
+  const set = (rs, w) => rs.forEach(r => { win[r.race_key] = w; });
+  set(exD, "D"); set(exR, "R");
+  if (k < exD.length) {
+    const lost = exD.length - k;
+    if (lost === exD.length) set(exD, "R"); else set(exD, "?");
+    if (lost < exD.length) note = `Republicans win ${lost} of ${andJoin(exD.map(shortRace))}; the file doesn't record which.`;
+  } else if (k > exD.length) {
+    const won = k - exD.length;
+    if (won === exR.length) set(exR, "D"); else set(exR, "?");
+    if (won < exR.length) note = `Democrats win ${won === 1 ? "one" : won} of ${andJoin(exR.map(shortRace))}; the file doesn't record which.`;
+  }
+  return { win, note };
+}
+function seatLine(c, dec) {
+  const f = (v) => dec ? v.toFixed(1) : String(v), M = DATA.models[model], hasI = M.senate_races.some(r => r.dside === "I");
+  return `<b style="color:var(--dem)">D ${f(c.D)}</b>` + (hasI ? ` · <b style="color:var(--teal)">I ${f(c.I)}</b>` : "") + ` · <b style="color:var(--rep)">R ${f(c.R)}</b>`;
+}
+function renderMapCount(S, C, showSim) {
+  const el = $("#mapCount");
+  if (!S || !C || !C.m) { el.innerHTML = ""; return; }
+  const M = DATA.models[model], nUp = M.senate_races.length, notD = S.meta.senate_not_up_d, notR = 100 - notD - nUp;
+  const inds = M.senate_races.filter(r => r.dside === "I").map(r => `${esc(r.dem)} (${r.state})`);
+  let c, head, line;
+  if (showSim) {
+    c = senCounts(S, exSim);
+    const dUp = c.D - notD, rUp = nUp - dUp - c.I;
+    head = "Senate seats · this simulation";
+    const ctrl = c.D >= 51 ? "Democratic control" : c.D + c.I >= 51 ? `Republican control unless ${c.I > 1 ? "the independents caucus" : "the independent caucuses"} with Democrats` : "Republican control";
+    line = `${ctrl}. Of the ${nUp} races up, Democrats win ${dUp}` + (inds.length ? `, independents ${c.I}` : "") + ` and Republicans ${rUp}; ${notD} D and ${notR} R seats aren't up.` +
+      (simExcluded(S, exSim).note ? " " + simExcluded(S, exSim).note : "");
+  } else {
+    c = { D: C.avgD, I: C.avgI, R: 100 - C.avgD - C.avgI };
+    head = `Senate seats · average across ${exActive() ? "the matching" : "all"} simulations`;
+    const g = { D: 0, I: 0, R: 0, T: 0 };
+    M.senate_races.forEach(r => {
+      const f = exForce[r.race_key], b = S.idx[r.race_key];
+      const p = f != null ? f : (b == null ? r.p_dside : C.pRace[b]);
+      if (p >= 0.6) g[r.dside === "I" ? "I" : "D"]++; else if (p <= 0.4) g.R++; else g.T++;
+    });
+    const nSet = Object.keys(exForce).length;
+    line = `Of the ${nUp} races up, ${g.D} lean D or better` + (g.I ? `, ${g.I} lean I` : "") + `, ${g.R} lean R or better and ${g.T} ${g.T === 1 ? "is a toss-up" : "are toss-ups"} (40–60%)` +
+      (nSet ? `, counting the ${nSet} you set` : "") + ".";
+  }
+  const seg = (v, col) => v > 0 ? `<i style="width:${v}%;background:var(${col})"></i>` : "";
+  el.innerHTML = `<div class="sc-top"><span class="lab">${head}</span><span class="sc-nums">${seatLine(c, !showSim)}</span></div>` +
+    `<div class="seatbar" role="img" aria-label="Senate seats: Democrats ${c.D.toFixed(showSim ? 0 : 1)}, independents ${c.I.toFixed(showSim ? 0 : 1)}, Republicans ${c.R.toFixed(showSim ? 0 : 1)}">${seg(c.D, "--dem")}${seg(c.I, "--teal")}${seg(c.R, "--rep")}<span class="mid"></span></div>` +
+    `<div class="tiny">${line} The line marks 50; Democrats need 51 (Vance breaks ties). D includes King and Sanders, who caucus with Democrats` +
+    (inds.length === 1 ? `; I is ${inds[0]}, an independent not counted for either party.` : inds.length ? `; I is the independents ${andJoin(inds)}, not counted for either party.` : ".") + `</div>`;
 }
 
 function renderNatHist(S, C) {
@@ -810,9 +933,10 @@ function renderNatHist(S, C) {
     `<div class="legend">${stateOn ? `<span><i class="sq" style="background:var(--border)"></i>all simulations</span><span><i class="sq" style="background:var(--tint)"></i>with the states you set</span>` : `<span class="tiny">Share of simulations by national vote, 1-pt bins. The spread is the model's uncertainty about the national environment.</span>`}</div>`;
   el.querySelectorAll("rect.b").forEach(r => {
     const b = +r.dataset.b, j = b - S.lo;
-    r.addEventListener("mousemove", e => showTip(e, `<b>National vote ${j === 0 ? "below " + fmtI(b + 1) : j === nb - 1 ? fmtI(b) + " or more" : fmtI(b) + " to " + fmtI(b + 1)}</b><br>${fmtP(shA[j])} of all simulations` + (stateOn ? `<br>${fmtP(shS[j])} of those with your states` : "") + `<br><span style="color:var(--text-3)">Click to ${exBins.has(b) ? "remove" : "add"}</span>`));
-    r.addEventListener("mouseleave", hideTip);
-    r.addEventListener("click", () => { if (exBins.has(b)) exBins.delete(b); else exBins.add(b); exPreset = null; exSim = null; hideTip(); renderExplorer(); });
+    exTip(r, `#natHist rect.b[data-b="${b}"]`,
+      () => `<b>National vote ${j === 0 ? "below " + fmtI(b + 1) : j === nb - 1 ? fmtI(b) + " or more" : fmtI(b) + " to " + fmtI(b + 1)}</b><br>${fmtP(shA[j])} of all simulations` + (stateOn ? `<br>${fmtP(shS[j])} of those with your states` : "") +
+        (exBins.has(b) ? `<br><b style="color:var(--ochre)">Selected</b>` : "") + `<br><span style="color:var(--text-3)">${tapWord()} to ${exBins.has(b) ? "remove" : "add"} this range</span>`,
+      () => { if (exBins.has(b)) exBins.delete(b); else exBins.add(b); exPreset = null; exSim = null; renderExplorer(); });
   });
 }
 
@@ -835,16 +959,18 @@ function renderWaffle(S, C) {
   });
   el.innerHTML = s + `</svg>`;
   el.querySelectorAll("rect.w").forEach(r => {
-    const i = +r.dataset.i;
-    r.addEventListener("mousemove", e => showTip(e, `<b>One simulated election</b><br>Senate: ${S.sen[i]} D seats (${S.sen[i] >= 51 ? "Democratic" : "Republican"} control)<br>House: ${S.house[i]} D seats (${S.house[i] >= 218 ? "Democratic" : "Republican"} majority)<br>National vote ${fmtM(S.env[i])}<br><span style="color:var(--text-3)">Click to see its Senate map</span>`));
-    r.addEventListener("mouseleave", hideTip);
-    r.addEventListener("click", () => { exSim = exSim === i ? null : i; hideTip(); renderExplorer(); });
+    const i = +r.dataset.i, c = senCounts(S, i);
+    exTip(r, `#waffle rect.w[data-i="${i}"]`, () => {
+      const narrow = window.matchMedia("(max-width: 760px)").matches;
+      return `<b>One simulated election</b><br>Senate: ${seatLine(c, false)} (${c.D >= 51 ? "Democratic" : "Republican"} control)<br>House: ${S.house[i]} D seats (${S.house[i] >= 218 ? "Democratic" : "Republican"} majority)<br>National vote ${fmtM(S.env[i])}<br>` +
+        `<span style="color:var(--text-3)">${exSim === i ? `Its Senate map is shown ${narrow ? "above" : "on the left"}. ${tapWord()} again to go back.` : `${tapWord()} to see its Senate map`}</span>`;
+    }, () => { exSim = exSim === i ? null : i; renderExplorer(); });
   });
   const pc = C.cat.map(c => c.length / C.m);
   const sw = (h, s2) => `<svg width="12" height="12" viewBox="0 0 12 12" style="vertical-align:-1px;margin-right:5px"><polygon points="0,0 12,0 0,12" fill="${h}"/><polygon points="12,0 12,12 0,12" fill="${s2}"/></svg>`;
   $("#waffleLegend").innerHTML = `<span>${sw(dem, dem)}Democrats win both ${fmtP(pc[0])}</span><span>${sw(dem, rep)}House D, Senate R ${fmtP(pc[1])}</span>` +
     (pc[2] >= 0.005 ? `<span>${sw(rep, dem)}House R, Senate D ${fmtP(pc[2])}</span>` : "") + `<span>${sw(rep, rep)}Republicans win both ${fmtP(pc[3])}</span>` +
-    `<span class="tiny">Each square is one simulated election (${N === 100 ? "1 in 100 of those matching" : "all that match"}): upper-left half = House, lower-right half = Senate. Click one to see its map.</span>`;
+    `<span class="tiny">Each square is one simulated election (${N === 100 ? "1 in 100 of those matching" : "all that match"}): upper-left half = House, lower-right half = Senate. Click or tap one to see its map.</span>`;
 }
 
 function renderWatch() {
