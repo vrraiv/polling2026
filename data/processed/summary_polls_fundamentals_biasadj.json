@@ -1790,13 +1790,13 @@
   }
  },
  "senate": {
-  "dem_seats_mean": 51.454025,
+  "dem_seats_mean": 51.51825,
   "dem_seats_median": 52.0,
   "dem_seats_p10": 48.0,
   "dem_seats_p90": 55.0,
-  "p_dem_control_without_osborn": 0.668025,
-  "p_dem_control_if_independents_caucus_D": 0.689625,
-  "p_rep_control": 0.310375,
+  "p_dem_control_without_osborn": 0.676525,
+  "p_dem_control_if_independents_caucus_D": 0.697375,
+  "p_rep_control": 0.302625,
   "independent_races": [
    "ID",
    "NE",
@@ -1809,17 +1809,17 @@
   },
   "p_osborn_wins": 0.222875,
   "error_corr_pairs": {
-   "MI~OH-sp": 0.33991641917081983,
+   "MI~OH-sp": 0.34212518167987094,
    "MI~IA": 0.3376523645348007,
-   "OH-sp~IA": 0.3357868731354813,
-   "TX~KS": 0.3299540133840235,
-   "ME~NC": 0.3120086650969447,
-   "TX~ME": 0.3152940462016765,
+   "OH-sp~IA": 0.338015097640355,
+   "TX~KS": 0.33923461325606075,
+   "ME~NC": 0.3167489080900316,
+   "TX~ME": 0.3178787455631027,
    "AK~IA": 0.30204509860406786
   },
-  "p_house_and_senate_D": 0.6602,
-  "p_house_D_senate_R": 0.23875,
-  "p_independents_pivotal": 0.0216,
+  "p_house_and_senate_D": 0.66875,
+  "p_house_D_senate_R": 0.23105,
+  "p_independents_pivotal": 0.02085,
   "hist": [
    0,
    0,
@@ -1858,29 +1858,29 @@
    2,
    4,
    3,
-   5,
-   6,
-   8,
-   15,
+   7,
+   4,
+   10,
+   18,
    32,
-   69,
+   68,
    116,
-   211,
-   415,
-   735,
-   1289,
-   2191,
-   3409,
-   4769,
-   6013,
-   6405,
-   5614,
-   4192,
-   2525,
-   1194,
-   457,
-   177,
-   81,
+   222,
+   420,
+   707,
+   1277,
+   2147,
+   3247,
+   4655,
+   5879,
+   6399,
+   5654,
+   4336,
+   2635,
+   1315,
+   505,
+   184,
+   91,
    34,
    14,
    6,
@@ -1947,286 +1947,343 @@
    "fav_dem": 18,
    "fav_ind": 0,
    "seats_if_favorites_win": 52,
-   "p_favorites_map": 0.0163,
-   "upsets_mean": 3.530275,
+   "p_favorites_map": 0.01795,
+   "upsets_mean": 3.494875,
    "p_upsets": [
-    0.0163,
-    0.0808,
-    0.181975,
-    0.240825,
-    0.219225,
-    0.143575,
-    0.071075,
-    0.030725,
-    0.01295,
-    0.00255
+    0.01795,
+    0.08535,
+    0.185225,
+    0.24035,
+    0.215875,
+    0.1405,
+    0.069025,
+    0.030575,
+    0.0127,
+    0.00245
    ],
-   "upsets_to_dem_mean": 1.704475,
-   "upsets_to_rep_mean": 1.8258,
-   "p_upsets_cancel": 0.156025,
+   "upsets_to_dem_mean": 1.725275,
+   "upsets_to_rep_mean": 1.7696,
+   "p_upsets_cancel": 0.1552,
    "ladder": [
     {
      "race": "MA",
      "p": 0.99915,
-     "tp": 5e-05,
-     "p_win_given_ctrl": 0.9994760675124434,
-     "p_ctrl_given_win": 0.6682430065555722,
+     "tp": 0.000125,
+     "p_win_given_ctrl": 0.9994826503085621,
+     "p_ctrl_given_win": 0.6767502377020468,
      "p_ctrl_given_loss": 0.4117647058823529
     },
     {
      "race": "RI",
      "p": 0.996075,
-     "tp": 0.000625,
-     "p_win_given_ctrl": 0.9981288125444407,
-     "p_ctrl_given_win": 0.6694024044374168,
-     "p_ctrl_given_loss": 0.3184713375796178
+     "tp": 0.000575,
+     "p_win_given_ctrl": 0.9980045083330253,
+     "p_ctrl_given_win": 0.6778355043545917,
+     "p_ctrl_given_loss": 0.34394904458598724
     },
     {
      "race": "DE",
      "p": 0.988675,
-     "tp": 0.001925,
-     "p_win_given_ctrl": 0.9937876576475432,
-     "p_ctrl_given_win": 0.6714795053986395,
-     "p_ctrl_given_loss": 0.36644591611479027
+     "tp": 0.002025,
+     "p_win_given_ctrl": 0.993643989505192,
+     "p_ctrl_given_win": 0.6799251523503679,
+     "p_ctrl_given_loss": 0.37969094922737306
     },
     {
      "race": "OR",
      "p": 0.98835,
      "tp": 0.0016,
-     "p_win_given_ctrl": 0.9928520639197634,
-     "p_ctrl_given_win": 0.6710679415186928,
-     "p_ctrl_given_loss": 0.40987124463519314
-    },
-    {
-     "race": "CO",
-     "p": 0.978875,
-     "tp": 0.00355,
-     "p_win_given_ctrl": 0.9880992477826429,
-     "p_ctrl_given_win": 0.674320010215809,
-     "p_ctrl_given_loss": 0.3763313609467456
+     "p_win_given_ctrl": 0.9929049185174236,
+     "p_ctrl_given_win": 0.6796428390752264,
+     "p_ctrl_given_loss": 0.41201716738197425
     },
     {
      "race": "IL",
      "p": 0.972,
-     "tp": 0.00655,
-     "p_win_given_ctrl": 0.985704127839527,
-     "p_ctrl_given_win": 0.67744341563786,
-     "p_ctrl_given_loss": 0.3410714285714286
+     "tp": 0.0068,
+     "p_win_given_ctrl": 0.9855511621891283,
+     "p_ctrl_given_win": 0.6859567901234568,
+     "p_ctrl_given_loss": 0.34910714285714284
+    },
+    {
+     "race": "NC",
+     "p": 0.9676,
+     "tp": 0.01105,
+     "p_win_given_ctrl": 0.9891356564798048,
+     "p_ctrl_given_win": 0.6915822653989252,
+     "p_ctrl_given_loss": 0.22685185185185186
     },
     {
      "race": "VA",
      "p": 0.967025,
-     "tp": 0.006325,
-     "p_win_given_ctrl": 0.9804648029639609,
-     "p_ctrl_given_win": 0.6773092732866265,
-     "p_ctrl_given_loss": 0.3957543593631539
+     "tp": 0.005925,
+     "p_win_given_ctrl": 0.980414618824138,
+     "p_ctrl_given_win": 0.6858922985445051,
+     "p_ctrl_given_loss": 0.40181956027293403
     },
     {
      "race": "NJ",
      "p": 0.96485,
-     "tp": 0.006925,
-     "p_win_given_ctrl": 0.9813629729426294,
-     "p_ctrl_given_win": 0.6794579468311136,
-     "p_ctrl_given_loss": 0.3541963015647226
+     "tp": 0.006875,
+     "p_win_given_ctrl": 0.9809689220649643,
+     "p_ctrl_given_win": 0.687827123387055,
+     "p_ctrl_given_loss": 0.3662873399715505
     },
     {
      "race": "NM",
      "p": 0.964375,
-     "tp": 0.006525,
-     "p_win_given_ctrl": 0.979267242992403,
-     "p_ctrl_given_win": 0.6783408943616331,
-     "p_ctrl_given_loss": 0.3887719298245614
+     "tp": 0.006575,
+     "p_win_given_ctrl": 0.9790103839473782,
+     "p_ctrl_given_win": 0.6867919637070642,
+     "p_ctrl_given_loss": 0.39859649122807017
     },
     {
-     "race": "NC",
-     "p": 0.9618,
-     "tp": 0.013425,
-     "p_win_given_ctrl": 0.9870888065566409,
-     "p_ctrl_given_win": 0.6855895196506551,
-     "p_ctrl_given_loss": 0.22578534031413613
+     "race": "CO",
+     "p": 0.9603,
+     "tp": 0.0074,
+     "p_win_given_ctrl": 0.9769409851816266,
+     "p_ctrl_given_win": 0.6882484640216598,
+     "p_ctrl_given_loss": 0.3929471032745592
     },
     {
      "race": "GA",
-     "p": 0.9371,
-     "tp": 0.0218,
-     "p_win_given_ctrl": 0.9745144268552823,
-     "p_ctrl_given_win": 0.6946964037989543,
-     "p_ctrl_given_loss": 0.2706677265500795
+     "p": 0.934925,
+     "tp": 0.0237,
+     "p_win_given_ctrl": 0.9733195373415616,
+     "p_ctrl_given_win": 0.7043078321790518,
+     "p_ctrl_given_loss": 0.2773722627737226
     },
     {
      "race": "NH",
-     "p": 0.912975,
-     "tp": 0.0298,
-     "p_win_given_ctrl": 0.9628007933834811,
-     "p_ctrl_given_win": 0.7044825980996193,
-     "p_ctrl_given_loss": 0.28555012927319734
-    },
-    {
-     "race": "MN",
-     "p": 0.813325,
-     "tp": 0.064475,
-     "p_win_given_ctrl": 0.9058418472362562,
-     "p_ctrl_given_win": 0.7440137706328959,
-     "p_ctrl_given_loss": 0.336949243337351
+     "p": 0.92385,
+     "tp": 0.02715,
+     "p_win_given_ctrl": 0.969106832711282,
+     "p_ctrl_given_win": 0.7096660713319262,
+     "p_ctrl_given_loss": 0.2744583059750492
     },
     {
      "race": "ME",
-     "p": 0.811575,
-     "tp": 0.080375,
-     "p_win_given_ctrl": 0.9122787320833801,
-     "p_ctrl_given_win": 0.7509164279333395,
-     "p_ctrl_given_loss": 0.31099907124850734
+     "p": 0.81695,
+     "tp": 0.07965,
+     "p_win_given_ctrl": 0.9140829976719264,
+     "p_ctrl_given_win": 0.7569618703715038,
+     "p_ctrl_given_loss": 0.31753619229718655
     },
     {
      "race": "MI",
      "p": 0.803,
-     "tp": 0.0921,
-     "p_win_given_ctrl": 0.9165076157329441,
-     "p_ctrl_given_win": 0.762453300124533,
-     "p_ctrl_given_loss": 0.28312182741116754
+     "tp": 0.0929,
+     "p_win_given_ctrl": 0.9143786260670337,
+     "p_ctrl_given_win": 0.7703611457036115,
+     "p_ctrl_given_loss": 0.29403553299492385
+    },
+    {
+     "race": "MN",
+     "p": 0.797375,
+     "tp": 0.0725,
+     "p_win_given_ctrl": 0.8957170836258823,
+     "p_ctrl_given_win": 0.7599623765480483,
+     "p_ctrl_given_loss": 0.34818013571869216
     },
     {
      "race": "OH-sp",
-     "p": 0.691675,
-     "tp": 0.124425,
-     "p_win_given_ctrl": 0.8411361850230156,
-     "p_ctrl_given_win": 0.8123757545089818,
-     "p_ctrl_given_loss": 0.3441984918511311
+     "p": 0.695175,
+     "tp": 0.12405,
+     "p_win_given_ctrl": 0.8416170873212372,
+     "p_ctrl_given_win": 0.819038371633042,
+     "p_ctrl_given_loss": 0.35151316329041254
+    },
+    {
+     "race": "KS",
+     "p": 0.6321,
+     "tp": 0.11385,
+     "p_win_given_ctrl": 0.7829718044418167,
+     "p_ctrl_given_win": 0.838000316405632,
+     "p_ctrl_given_loss": 0.3990894264745855
     },
     {
      "race": "TX",
      "p": 0.627025,
-     "tp": 0.14105,
-     "p_win_given_ctrl": 0.789304292504023,
-     "p_ctrl_given_win": 0.8409154339938599,
-     "p_ctrl_given_loss": 0.3773711374757021
-    },
-    {
-     "race": "KS",
-     "p": 0.577525,
-     "tp": 0.1126,
-     "p_win_given_ctrl": 0.7306612776467947,
-     "p_ctrl_given_win": 0.8451582182589499,
-     "p_ctrl_given_loss": 0.42588318835434047
+     "tp": 0.1376,
+     "p_win_given_ctrl": 0.7864823916337165,
+     "p_ctrl_given_win": 0.8485706311550576,
+     "p_ctrl_given_loss": 0.3872913734164488
     },
     {
      "race": "AK",
      "p": 0.458925,
-     "tp": 0.094975,
-     "p_win_given_ctrl": 0.5994910370120878,
-     "p_ctrl_given_win": 0.8726371411450673,
-     "p_ctrl_given_loss": 0.4944785842997736
+     "tp": 0.09175,
+     "p_win_given_ctrl": 0.5952477735486493,
+     "p_ctrl_given_win": 0.8774854279021627,
+     "p_ctrl_given_loss": 0.5060758674860232
     },
     {
      "race": "IA",
-     "p": 0.38765,
-     "tp": 0.0908,
-     "p_win_given_ctrl": 0.5274503199730549,
-     "p_ctrl_given_win": 0.9089384754288663,
-     "p_ctrl_given_loss": 0.5155140034294113
+     "p": 0.3783,
+     "tp": 0.08415,
+     "p_win_given_ctrl": 0.5115849377332693,
+     "p_ctrl_given_win": 0.9148823684906159,
+     "p_ctrl_given_loss": 0.5314862473861991
     },
     {
      "race": "SC",
-     "p": 0.244575,
-     "tp": 0.0437,
-     "p_win_given_ctrl": 0.32768234721754425,
-     "p_ctrl_given_win": 0.8950219768987018,
-     "p_ctrl_given_loss": 0.5945328788430354
+     "p": 0.2749,
+     "tp": 0.04955,
+     "p_win_given_ctrl": 0.3669487454269983,
+     "p_ctrl_given_win": 0.9030556566024008,
+     "p_ctrl_given_loss": 0.590642669976555
     },
     {
      "race": "MS",
      "p": 0.124175,
-     "tp": 0.017775,
-     "p_win_given_ctrl": 0.16810748100744732,
-     "p_ctrl_given_win": 0.9043688343064223,
-     "p_ctrl_given_loss": 0.6345160277452687
+     "tp": 0.01715,
+     "p_win_given_ctrl": 0.1664757399948265,
+     "p_ctrl_given_win": 0.9069861083148782,
+     "p_ctrl_given_loss": 0.6438500842063197
     },
     {
      "race": "FL-sp",
-     "p": 0.0961,
-     "tp": 0.01605,
-     "p_win_given_ctrl": 0.1346132255529359,
-     "p_ctrl_given_win": 0.9357440166493236,
-     "p_ctrl_given_loss": 0.6395618984400929
+     "p": 0.095925,
+     "tp": 0.0153,
+     "p_win_given_ctrl": 0.13332840619341488,
+     "p_ctrl_given_win": 0.9403179567370341,
+     "p_ctrl_given_loss": 0.6485357962558416
     },
     {
      "race": "LA",
      "p": 0.0593,
-     "tp": 0.00835,
-     "p_win_given_ctrl": 0.0799745518506044,
-     "p_ctrl_given_win": 0.9009274873524452,
-     "p_ctrl_given_loss": 0.6533432550228553
+     "tp": 0.00845,
+     "p_win_given_ctrl": 0.0790066885924393,
+     "p_ctrl_given_win": 0.9013490725126475,
+     "p_ctrl_given_loss": 0.6623525034548741
     },
     {
      "race": "MT",
      "p": 0.052625,
-     "tp": 0.006425,
-     "p_win_given_ctrl": 0.07196586954081059,
-     "p_ctrl_given_win": 0.9135391923990499,
-     "p_ctrl_given_loss": 0.6543871223116506
+     "tp": 0.00625,
+     "p_win_given_ctrl": 0.0715051180665903,
+     "p_ctrl_given_win": 0.9192399049881235,
+     "p_ctrl_given_loss": 0.6630426177595989
     },
     {
      "race": "AR",
      "p": 0.0209,
-     "tp": 0.0026,
-     "p_win_given_ctrl": 0.028816286815613188,
-     "p_ctrl_given_win": 0.9210526315789473,
-     "p_ctrl_given_loss": 0.6626238382187724
+     "tp": 0.002425,
+     "p_win_given_ctrl": 0.02852814012785928,
+     "p_ctrl_given_win": 0.9234449760765551,
+     "p_ctrl_given_loss": 0.6712542130528036
     },
     {
      "race": "KY",
      "p": 0.016125,
-     "tp": 0.0017,
-     "p_win_given_ctrl": 0.021181841996931253,
-     "p_ctrl_given_win": 0.8775193798449612,
-     "p_ctrl_given_loss": 0.6645915385592682
+     "tp": 0.001525,
+     "p_win_given_ctrl": 0.020952662503233434,
+     "p_ctrl_given_win": 0.8790697674418605,
+     "p_ctrl_given_loss": 0.6732054376826324
     },
     {
      "race": "TN",
      "p": 0.0152,
-     "tp": 0.0014,
-     "p_win_given_ctrl": 0.019834587028928558,
-     "p_ctrl_given_win": 0.8717105263157895,
-     "p_ctrl_given_loss": 0.6648811941510967
+     "tp": 0.0013,
+     "p_win_given_ctrl": 0.019807102472192455,
+     "p_ctrl_given_win": 0.881578947368421,
+     "p_ctrl_given_loss": 0.6733600731112916
     },
     {
      "race": "OK",
      "p": 0.009725,
-     "tp": 0.00085,
-     "p_win_given_ctrl": 0.012836345945136784,
-     "p_ctrl_given_win": 0.8817480719794345,
-     "p_ctrl_given_loss": 0.6659261316301027
+     "tp": 0.000675,
+     "p_win_given_ctrl": 0.012748974539004471,
+     "p_ctrl_given_win": 0.8868894601542416,
+     "p_ctrl_given_loss": 0.6744591148923279
     },
     {
      "race": "AL",
      "p": 0.008225,
-     "tp": 0.000875,
-     "p_win_given_ctrl": 0.010815463493132742,
-     "p_ctrl_given_win": 0.878419452887538,
-     "p_ctrl_given_loss": 0.6662801542688613
+     "tp": 0.000675,
+     "p_win_given_ctrl": 0.010753482872029858,
+     "p_ctrl_given_win": 0.8844984802431611,
+     "p_ctrl_given_loss": 0.6748002319074387
     },
     {
      "race": "WV",
      "p": 0.002875,
-     "tp": 0.00025,
-     "p_win_given_ctrl": 0.003854646158452154,
-     "p_ctrl_given_win": 0.8956521739130435,
-     "p_ctrl_given_loss": 0.6673686849692867
+     "tp": 0.0003,
+     "p_win_given_ctrl": 0.0037692620376187135,
+     "p_ctrl_given_win": 0.8869565217391304,
+     "p_ctrl_given_loss": 0.6759182650119092
     },
     {
      "race": "WY",
      "p": 0.00225,
-     "tp": 0.000125,
-     "p_win_given_ctrl": 0.0029190524306725047,
-     "p_ctrl_given_win": 0.8666666666666667,
-     "p_ctrl_given_loss": 0.6675770483588073
+     "tp": 0.00015,
+     "p_win_given_ctrl": 0.002919330401685082,
+     "p_ctrl_given_win": 0.8777777777777778,
+     "p_ctrl_given_loss": 0.676071160110248
     }
    ],
    "not_up_dem": 34,
-   "expected_comp_dem_wins": 7.597550000000001,
+   "expected_comp_dem_wins": 7.674549999999999,
    "maps": [
     {
-     "p": 0.016525,
+     "p": 0.01795,
+     "upsets": [],
+     "dem_seats": 52,
+     "ind_wins": 0,
+     "is_favorites": true,
+     "winners": {
+      "AK": "R",
+      "FL-sp": "R",
+      "GA": "D",
+      "ID": "R",
+      "IA": "R",
+      "KS": "D",
+      "LA": "R",
+      "ME": "D",
+      "MI": "D",
+      "MN": "D",
+      "MS": "R",
+      "MT": "R",
+      "NE": "R",
+      "NH": "D",
+      "OH-sp": "D",
+      "SC": "R",
+      "TX": "D"
+     }
+    },
+    {
+     "p": 0.0169,
+     "upsets": [
+      {
+       "race": "AK",
+       "winner": "D"
+      }
+     ],
+     "dem_seats": 53,
+     "ind_wins": 0,
+     "is_favorites": false,
+     "winners": {
+      "AK": "D",
+      "FL-sp": "R",
+      "GA": "D",
+      "ID": "R",
+      "IA": "R",
+      "KS": "D",
+      "LA": "R",
+      "ME": "D",
+      "MI": "D",
+      "MN": "D",
+      "MS": "R",
+      "MT": "R",
+      "NE": "R",
+      "NH": "D",
+      "OH-sp": "D",
+      "SC": "R",
+      "TX": "D"
+     }
+    },
+    {
+     "p": 0.01625,
      "upsets": [
       {
        "race": "AK",
@@ -2261,36 +2318,10 @@
      }
     },
     {
-     "p": 0.0163,
-     "upsets": [],
-     "dem_seats": 52,
-     "ind_wins": 0,
-     "is_favorites": true,
-     "winners": {
-      "AK": "R",
-      "FL-sp": "R",
-      "GA": "D",
-      "ID": "R",
-      "IA": "R",
-      "KS": "D",
-      "LA": "R",
-      "ME": "D",
-      "MI": "D",
-      "MN": "D",
-      "MS": "R",
-      "MT": "R",
-      "NE": "R",
-      "NH": "D",
-      "OH-sp": "D",
-      "SC": "R",
-      "TX": "D"
-     }
-    },
-    {
-     "p": 0.01605,
+     "p": 0.011775,
      "upsets": [
       {
-       "race": "AK",
+       "race": "IA",
        "winner": "D"
       }
      ],
@@ -2298,43 +2329,12 @@
      "ind_wins": 0,
      "is_favorites": false,
      "winners": {
-      "AK": "D",
-      "FL-sp": "R",
-      "GA": "D",
-      "ID": "R",
-      "IA": "R",
-      "KS": "D",
-      "LA": "R",
-      "ME": "D",
-      "MI": "D",
-      "MN": "D",
-      "MS": "R",
-      "MT": "R",
-      "NE": "R",
-      "NH": "D",
-      "OH-sp": "D",
-      "SC": "R",
-      "TX": "D"
-     }
-    },
-    {
-     "p": 0.012825,
-     "upsets": [
-      {
-       "race": "KS",
-       "winner": "R"
-      }
-     ],
-     "dem_seats": 51,
-     "ind_wins": 0,
-     "is_favorites": false,
-     "winners": {
       "AK": "R",
       "FL-sp": "R",
       "GA": "D",
       "ID": "R",
-      "IA": "R",
-      "KS": "R",
+      "IA": "D",
+      "KS": "D",
       "LA": "R",
       "ME": "D",
       "MI": "D",
@@ -2352,23 +2352,23 @@
    "tipping_point": [
     {
      "race": "TX",
-     "p": 0.14105
+     "p": 0.1376
     },
     {
      "race": "OH-sp",
-     "p": 0.124425
+     "p": 0.12405
     },
     {
      "race": "KS",
-     "p": 0.1126
-    },
-    {
-     "race": "AK",
-     "p": 0.094975
+     "p": 0.11385
     },
     {
      "race": "MI",
-     "p": 0.0921
+     "p": 0.0929
+    },
+    {
+     "race": "AK",
+     "p": 0.09175
     }
    ]
   }
@@ -2376,13 +2376,13 @@
  "national": {
   "G_polls": 9.106131059651924,
   "G_votehub_own_avg": {
-   "avg": 8.367921806447203,
-   "n_polls": 11,
-   "n_recent": 0,
+   "avg": 8.35217471882331,
+   "n_polls": 12,
+   "n_recent": 1,
    "n_pollsters": 8,
-   "neff": 4.950706063984913,
-   "latest": "2026-10-04",
-   "spread_sd": 3.0076773521527183
+   "neff": 4.3092676862420385,
+   "latest": "2026-11-02",
+   "spread_sd": 2.3399421376191802
   },
   "approval": 36.800000000000004,
   "econ": {
@@ -2407,7 +2407,7 @@
   "senate_bias_shift": 0.0,
   "senate_lean_correction": true,
   "w_polls_national": 0.7469701289113803,
-  "race_poll_weight_mean_polled": 0.858211472754912,
+  "race_poll_weight_mean_polled": 0.853959917911035,
   "sd_nat_house_used": 2.2635933578150804,
   "sd_nat_senate_used": 3.2922356210659323,
   "sigma_region": 0.47638341360970904,

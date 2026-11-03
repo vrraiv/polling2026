@@ -1,0 +1,752 @@
+{
+  "ALUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=ALUR",
+    "retrieved": "2026-11-03T06:40:23",
+    "bytes": 9224
+  },
+  "ALPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=ALPCPI",
+    "retrieved": "2026-11-03T06:40:24",
+    "bytes": 1596
+  },
+  "ALOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=ALOTOT",
+    "retrieved": "2026-11-03T06:40:24",
+    "bytes": 6015
+  },
+  "AKUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=AKUR",
+    "retrieved": "2026-11-03T06:40:24",
+    "bytes": 9214
+  },
+  "AKPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=AKPCPI",
+    "retrieved": "2026-11-03T06:40:25",
+    "bytes": 1291
+  },
+  "AKOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=AKOTOT",
+    "retrieved": "2026-11-03T06:40:25",
+    "bytes": 5644
+  },
+  "AZUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=AZUR",
+    "retrieved": "2026-11-03T06:40:25",
+    "bytes": 9189
+  },
+  "AZPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=AZPCPI",
+    "retrieved": "2026-11-03T06:40:27",
+    "bytes": 1607
+  },
+  "AZOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=AZOTOT",
+    "retrieved": "2026-11-03T06:40:27",
+    "bytes": 6003
+  },
+  "ARUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=ARUR",
+    "retrieved": "2026-11-03T06:40:28",
+    "bytes": 9160
+  },
+  "ARPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=ARPCPI",
+    "retrieved": "2026-11-03T06:40:28",
+    "bytes": 1595
+  },
+  "AROTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=AROTOT",
+    "retrieved": "2026-11-03T06:40:28",
+    "bytes": 5941
+  },
+  "CAUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=CAUR",
+    "retrieved": "2026-11-03T06:40:29",
+    "bytes": 9216
+  },
+  "CAPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=CAPCPI",
+    "retrieved": "2026-11-03T06:40:29",
+    "bytes": 1611
+  },
+  "CAOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=CAOTOT",
+    "retrieved": "2026-11-03T06:40:29",
+    "bytes": 6323
+  },
+  "COUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=COUR",
+    "retrieved": "2026-11-03T06:40:29",
+    "bytes": 9157
+  },
+  "COPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=COPCPI",
+    "retrieved": "2026-11-03T06:40:30",
+    "bytes": 1608
+  },
+  "COOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=COOTOT",
+    "retrieved": "2026-11-03T06:40:31",
+    "bytes": 6020
+  },
+  "CTUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=CTUR",
+    "retrieved": "2026-11-03T06:40:31",
+    "bytes": 9157
+  },
+  "CTPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=CTPCPI",
+    "retrieved": "2026-11-03T06:40:31",
+    "bytes": 1613
+  },
+  "CTOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=CTOTOT",
+    "retrieved": "2026-11-03T06:40:31",
+    "bytes": 6048
+  },
+  "DEUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEUR",
+    "retrieved": "2026-11-03T06:40:32",
+    "bytes": 9157
+  },
+  "DEPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEPCPI",
+    "retrieved": "2026-11-03T06:40:32",
+    "bytes": 1612
+  },
+  "DEOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEOTOT",
+    "retrieved": "2026-11-03T06:40:33",
+    "bytes": 5807
+  },
+  "FLUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=FLUR",
+    "retrieved": "2026-11-03T06:40:33",
+    "bytes": 9186
+  },
+  "FLPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=FLPCPI",
+    "retrieved": "2026-11-03T06:40:33",
+    "bytes": 1608
+  },
+  "FLOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=FLOTOT",
+    "retrieved": "2026-11-03T06:40:34",
+    "bytes": 6165
+  },
+  "GAUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=GAUR",
+    "retrieved": "2026-11-03T06:40:34",
+    "bytes": 9183
+  },
+  "GAPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=GAPCPI",
+    "retrieved": "2026-11-03T06:40:34",
+    "bytes": 1599
+  },
+  "GAOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=GAOTOT",
+    "retrieved": "2026-11-03T06:40:35",
+    "bytes": 6072
+  },
+  "HIUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=HIUR",
+    "retrieved": "2026-11-03T06:40:35",
+    "bytes": 9163
+  },
+  "HIPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=HIPCPI",
+    "retrieved": "2026-11-03T06:40:35",
+    "bytes": 1287
+  },
+  "HIOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=HIOTOT",
+    "retrieved": "2026-11-03T06:40:36",
+    "bytes": 5721
+  },
+  "IDUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=IDUR",
+    "retrieved": "2026-11-03T06:40:36",
+    "bytes": 9162
+  },
+  "IDPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=IDPCPI",
+    "retrieved": "2026-11-03T06:40:36",
+    "bytes": 1605
+  },
+  "IDOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=IDOTOT",
+    "retrieved": "2026-11-03T06:40:37",
+    "bytes": 5845
+  },
+  "ILUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=ILUR",
+    "retrieved": "2026-11-03T06:40:37",
+    "bytes": 9198
+  },
+  "ILPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=ILPCPI",
+    "retrieved": "2026-11-03T06:40:37",
+    "bytes": 1610
+  },
+  "ILOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=ILOTOT",
+    "retrieved": "2026-11-03T06:40:38",
+    "bytes": 6189
+  },
+  "INUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=INUR",
+    "retrieved": "2026-11-03T06:40:38",
+    "bytes": 9204
+  },
+  "INPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=INPCPI",
+    "retrieved": "2026-11-03T06:40:38",
+    "bytes": 1607
+  },
+  "INOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=INOTOT",
+    "retrieved": "2026-11-03T06:40:38",
+    "bytes": 6085
+  },
+  "IAUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=IAUR",
+    "retrieved": "2026-11-03T06:40:39",
+    "bytes": 9155
+  },
+  "IAPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=IAPCPI",
+    "retrieved": "2026-11-03T06:40:39",
+    "bytes": 1607
+  },
+  "IAOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=IAOTOT",
+    "retrieved": "2026-11-03T06:40:39",
+    "bytes": 5987
+  },
+  "KSUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=KSUR",
+    "retrieved": "2026-11-03T06:40:40",
+    "bytes": 9155
+  },
+  "KSPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=KSPCPI",
+    "retrieved": "2026-11-03T06:40:40",
+    "bytes": 1608
+  },
+  "KSOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=KSOTOT",
+    "retrieved": "2026-11-03T06:40:40",
+    "bytes": 5972
+  },
+  "KYUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=KYUR",
+    "retrieved": "2026-11-03T06:40:40",
+    "bytes": 9199
+  },
+  "KYPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=KYPCPI",
+    "retrieved": "2026-11-03T06:40:41",
+    "bytes": 1597
+  },
+  "KYOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=KYOTOT",
+    "retrieved": "2026-11-03T06:40:41",
+    "bytes": 6006
+  },
+  "LAUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=LAUR",
+    "retrieved": "2026-11-03T06:40:41",
+    "bytes": 9234
+  },
+  "LAPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=LAPCPI",
+    "retrieved": "2026-11-03T06:40:42",
+    "bytes": 1602
+  },
+  "LAOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=LAOTOT",
+    "retrieved": "2026-11-03T06:40:42",
+    "bytes": 6019
+  },
+  "MEUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MEUR",
+    "retrieved": "2026-11-03T06:40:42",
+    "bytes": 9154
+  },
+  "MEPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MEPCPI",
+    "retrieved": "2026-11-03T06:40:42",
+    "bytes": 1606
+  },
+  "MEOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MEOTOT",
+    "retrieved": "2026-11-03T06:40:43",
+    "bytes": 5864
+  },
+  "MDUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MDUR",
+    "retrieved": "2026-11-03T06:40:43",
+    "bytes": 9154
+  },
+  "MDPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MDPCPI",
+    "retrieved": "2026-11-03T06:40:43",
+    "bytes": 1610
+  },
+  "MDOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MDOTOT",
+    "retrieved": "2026-11-03T06:40:43",
+    "bytes": 6077
+  },
+  "MAUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MAUR",
+    "retrieved": "2026-11-03T06:40:44",
+    "bytes": 9164
+  },
+  "MAPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MAPCPI",
+    "retrieved": "2026-11-03T06:40:44",
+    "bytes": 1609
+  },
+  "MAOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MAOTOT",
+    "retrieved": "2026-11-03T06:40:44",
+    "bytes": 6124
+  },
+  "MIUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MIUR",
+    "retrieved": "2026-11-03T06:40:44",
+    "bytes": 9260
+  },
+  "MIPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MIPCPI",
+    "retrieved": "2026-11-03T06:40:45",
+    "bytes": 1609
+  },
+  "MIOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MIOTOT",
+    "retrieved": "2026-11-03T06:40:45",
+    "bytes": 6163
+  },
+  "MNUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MNUR",
+    "retrieved": "2026-11-03T06:40:45",
+    "bytes": 9155
+  },
+  "MNPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MNPCPI",
+    "retrieved": "2026-11-03T06:40:45",
+    "bytes": 1607
+  },
+  "MNOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MNOTOT",
+    "retrieved": "2026-11-03T06:40:46",
+    "bytes": 6052
+  },
+  "MSUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MSUR",
+    "retrieved": "2026-11-03T06:40:46",
+    "bytes": 9231
+  },
+  "MSPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MSPCPI",
+    "retrieved": "2026-11-03T06:40:46",
+    "bytes": 1590
+  },
+  "MSOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MSOTOT",
+    "retrieved": "2026-11-03T06:40:47",
+    "bytes": 5938
+  },
+  "MOUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MOUR",
+    "retrieved": "2026-11-03T06:40:47",
+    "bytes": 9164
+  },
+  "MOPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MOPCPI",
+    "retrieved": "2026-11-03T06:40:47",
+    "bytes": 1606
+  },
+  "MOOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MOOTOT",
+    "retrieved": "2026-11-03T06:40:47",
+    "bytes": 6073
+  },
+  "MTUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MTUR",
+    "retrieved": "2026-11-03T06:40:48",
+    "bytes": 9155
+  },
+  "MTPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MTPCPI",
+    "retrieved": "2026-11-03T06:40:48",
+    "bytes": 1607
+  },
+  "MTOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MTOTOT",
+    "retrieved": "2026-11-03T06:40:48",
+    "bytes": 5828
+  },
+  "NEUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=NEUR",
+    "retrieved": "2026-11-03T06:40:49",
+    "bytes": 9154
+  },
+  "NEPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=NEPCPI",
+    "retrieved": "2026-11-03T06:40:49",
+    "bytes": 1607
+  },
+  "NEOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=NEOTOT",
+    "retrieved": "2026-11-03T06:40:50",
+    "bytes": 5912
+  },
+  "NVUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=NVUR",
+    "retrieved": "2026-11-03T06:40:50",
+    "bytes": 9226
+  },
+  "NVPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=NVPCPI",
+    "retrieved": "2026-11-03T06:40:50",
+    "bytes": 1612
+  },
+  "NVOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=NVOTOT",
+    "retrieved": "2026-11-03T06:40:50",
+    "bytes": 5878
+  },
+  "NHUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=NHUR",
+    "retrieved": "2026-11-03T06:40:51",
+    "bytes": 9156
+  },
+  "NHPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=NHPCPI",
+    "retrieved": "2026-11-03T06:40:51",
+    "bytes": 1608
+  },
+  "NHOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=NHOTOT",
+    "retrieved": "2026-11-03T06:40:51",
+    "bytes": 5852
+  },
+  "NJUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=NJUR",
+    "retrieved": "2026-11-03T06:40:52",
+    "bytes": 9178
+  },
+  "NJPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=NJPCPI",
+    "retrieved": "2026-11-03T06:40:52",
+    "bytes": 1610
+  },
+  "NJOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=NJOTOT",
+    "retrieved": "2026-11-03T06:40:52",
+    "bytes": 6156
+  },
+  "NMUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=NMUR",
+    "retrieved": "2026-11-03T06:40:52",
+    "bytes": 9162
+  },
+  "NMPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=NMPCPI",
+    "retrieved": "2026-11-03T06:40:53",
+    "bytes": 1602
+  },
+  "NMOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=NMOTOT",
+    "retrieved": "2026-11-03T06:40:53",
+    "bytes": 5873
+  },
+  "NYUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=NYUR",
+    "retrieved": "2026-11-03T06:40:53",
+    "bytes": 9174
+  },
+  "NYPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=NYPCPI",
+    "retrieved": "2026-11-03T06:40:53",
+    "bytes": 1612
+  },
+  "NYOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=NYOTOT",
+    "retrieved": "2026-11-03T06:40:54",
+    "bytes": 6265
+  },
+  "NCUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=NCUR",
+    "retrieved": "2026-11-03T06:40:54",
+    "bytes": 9195
+  },
+  "NCPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=NCPCPI",
+    "retrieved": "2026-11-03T06:40:54",
+    "bytes": 1599
+  },
+  "NCOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=NCOTOT",
+    "retrieved": "2026-11-03T06:40:55",
+    "bytes": 2120
+  },
+  "NDUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=NDUR",
+    "retrieved": "2026-11-03T06:40:55",
+    "bytes": 9154
+  },
+  "NDPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=NDPCPI",
+    "retrieved": "2026-11-03T06:40:55",
+    "bytes": 1606
+  },
+  "NDOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=NDOTOT",
+    "retrieved": "2026-11-03T06:40:55",
+    "bytes": 5786
+  },
+  "OHUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=OHUR",
+    "retrieved": "2026-11-03T06:40:55",
+    "bytes": 9199
+  },
+  "OHPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=OHPCPI",
+    "retrieved": "2026-11-03T06:40:56",
+    "bytes": 1608
+  },
+  "OHOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=OHOTOT",
+    "retrieved": "2026-11-03T06:40:56",
+    "bytes": 6177
+  },
+  "OKUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=OKUR",
+    "retrieved": "2026-11-03T06:40:57",
+    "bytes": 9155
+  },
+  "OKPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=OKPCPI",
+    "retrieved": "2026-11-03T06:40:57",
+    "bytes": 1603
+  },
+  "OKOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=OKOTOT",
+    "retrieved": "2026-11-03T06:40:57",
+    "bytes": 5987
+  },
+  "ORUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=ORUR",
+    "retrieved": "2026-11-03T06:40:58",
+    "bytes": 9206
+  },
+  "ORPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=ORPCPI",
+    "retrieved": "2026-11-03T06:40:58",
+    "bytes": 1609
+  },
+  "OROTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=OROTOT",
+    "retrieved": "2026-11-03T06:40:58",
+    "bytes": 5993
+  },
+  "PAUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PAUR",
+    "retrieved": "2026-11-03T06:40:58",
+    "bytes": 9178
+  },
+  "PAPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PAPCPI",
+    "retrieved": "2026-11-03T06:40:59",
+    "bytes": 1608
+  },
+  "PAOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PAOTOT",
+    "retrieved": "2026-11-03T06:40:59",
+    "bytes": 6184
+  },
+  "RIUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=RIUR",
+    "retrieved": "2026-11-03T06:40:59",
+    "bytes": 9212
+  },
+  "RIPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=RIPCPI",
+    "retrieved": "2026-11-03T06:41:00",
+    "bytes": 1608
+  },
+  "RIOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=RIOTOT",
+    "retrieved": "2026-11-03T06:41:00",
+    "bytes": 5858
+  },
+  "SCUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=SCUR",
+    "retrieved": "2026-11-03T06:41:00",
+    "bytes": 9205
+  },
+  "SCPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=SCPCPI",
+    "retrieved": "2026-11-03T06:41:00",
+    "bytes": 1597
+  },
+  "SCOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=SCOTOT",
+    "retrieved": "2026-11-03T06:41:01",
+    "bytes": 5998
+  },
+  "SDUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=SDUR",
+    "retrieved": "2026-11-03T06:41:01",
+    "bytes": 9154
+  },
+  "SDPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=SDPCPI",
+    "retrieved": "2026-11-03T06:41:01",
+    "bytes": 1604
+  },
+  "SDOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=SDOTOT",
+    "retrieved": "2026-11-03T06:41:01",
+    "bytes": 5795
+  },
+  "TNUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=TNUR",
+    "retrieved": "2026-11-03T06:41:02",
+    "bytes": 9195
+  },
+  "TNPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=TNPCPI",
+    "retrieved": "2026-11-03T06:41:02",
+    "bytes": 1598
+  },
+  "TNOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=TNOTOT",
+    "retrieved": "2026-11-03T06:41:02",
+    "bytes": 6043
+  },
+  "TXUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=TXUR",
+    "retrieved": "2026-11-03T06:41:03",
+    "bytes": 9157
+  },
+  "TXPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=TXPCPI",
+    "retrieved": "2026-11-03T06:41:03",
+    "bytes": 1606
+  },
+  "TXOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=TXOTOT",
+    "retrieved": "2026-11-03T06:41:03",
+    "bytes": 6242
+  },
+  "UTUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=UTUR",
+    "retrieved": "2026-11-03T06:41:03",
+    "bytes": 9155
+  },
+  "UTPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=UTPCPI",
+    "retrieved": "2026-11-03T06:41:04",
+    "bytes": 1605
+  },
+  "UTOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=UTOTOT",
+    "retrieved": "2026-11-03T06:41:04",
+    "bytes": 5914
+  },
+  "VTUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=VTUR",
+    "retrieved": "2026-11-03T06:41:04",
+    "bytes": 9155
+  },
+  "VTPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=VTPCPI",
+    "retrieved": "2026-11-03T06:41:05",
+    "bytes": 1604
+  },
+  "VTOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=VTOTOT",
+    "retrieved": "2026-11-03T06:41:05",
+    "bytes": 5754
+  },
+  "VAUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=VAUR",
+    "retrieved": "2026-11-03T06:41:05",
+    "bytes": 9156
+  },
+  "VAPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=VAPCPI",
+    "retrieved": "2026-11-03T06:41:05",
+    "bytes": 1605
+  },
+  "VAOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=VAOTOT",
+    "retrieved": "2026-11-03T06:41:06",
+    "bytes": 6086
+  },
+  "WAUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=WAUR",
+    "retrieved": "2026-11-03T06:41:06",
+    "bytes": 9194
+  },
+  "WAPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=WAPCPI",
+    "retrieved": "2026-11-03T06:41:06",
+    "bytes": 1610
+  },
+  "WAOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=WAOTOT",
+    "retrieved": "2026-11-03T06:41:06",
+    "bytes": 6062
+  },
+  "WVUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=WVUR",
+    "retrieved": "2026-11-03T06:41:07",
+    "bytes": 9287
+  },
+  "WVPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=WVPCPI",
+    "retrieved": "2026-11-03T06:41:07",
+    "bytes": 1600
+  },
+  "WVOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=WVOTOT",
+    "retrieved": "2026-11-03T06:41:07",
+    "bytes": 5883
+  },
+  "WIUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=WIUR",
+    "retrieved": "2026-11-03T06:41:07",
+    "bytes": 9170
+  },
+  "WIPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=WIPCPI",
+    "retrieved": "2026-11-03T06:41:08",
+    "bytes": 1608
+  },
+  "WIOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=WIOTOT",
+    "retrieved": "2026-11-03T06:41:08",
+    "bytes": 6066
+  },
+  "WYUR.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=WYUR",
+    "retrieved": "2026-11-03T06:41:08",
+    "bytes": 9154
+  },
+  "WYPCPI.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=WYPCPI",
+    "retrieved": "2026-11-03T06:41:09",
+    "bytes": 1609
+  },
+  "WYOTOT.csv": {
+    "url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=WYOTOT",
+    "retrieved": "2026-11-03T06:41:09",
+    "bytes": 5728
+  }
+}

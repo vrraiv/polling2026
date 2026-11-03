@@ -150,10 +150,10 @@
  "pollster_mix": {
   "generic": {
    "label": "2026 generic-ballot pollsters (VoteHub)",
-   "n_polls_2026": 307,
-   "matched_share": 0.745928338762215,
-   "mix_house_effect": -0.06354934771944612,
-   "mix_raw_miss": 3.3186989149860198,
+   "n_polls_2026": 308,
+   "matched_share": 0.7467532467532467,
+   "mix_house_effect": -0.062380452134897325,
+   "mix_raw_miss": 3.322278466448116,
    "pollsters": [
     {
      "pollster": "YouGov",
@@ -174,7 +174,7 @@
     {
      "pollster": "Ipsos",
      "matched": "Ipsos",
-     "n_2026": 29,
+     "n_2026": 30,
      "n_hist": 362,
      "house_effect": 0.21,
      "raw_miss": 4.14
@@ -279,15 +279,15 @@
   },
   "senate_key": {
    "label": "pollsters of the 12 key Senate races since Aug 1",
-   "n_polls_2026": 186,
-   "matched_share": 0.6397849462365591,
-   "mix_house_effect": -0.49190228067271013,
-   "mix_raw_miss": 1.9360800184575728,
+   "n_polls_2026": 194,
+   "matched_share": 0.634020618556701,
+   "mix_house_effect": -0.5161985573979465,
+   "mix_raw_miss": 1.9119872618219789,
    "pollsters": [
     {
      "pollster": "InsiderAdvantage",
      "matched": "InsiderAdvantage",
-     "n_2026": 14,
+     "n_2026": 15,
      "n_hist": 85,
      "house_effect": -1.27,
      "raw_miss": 0.06
@@ -373,6 +373,14 @@
      "raw_miss": 2.92
     },
     {
+     "pollster": "National Public Affairs",
+     "matched": "National Research",
+     "n_2026": 4,
+     "n_hist": 24,
+     "house_effect": -1.48,
+     "raw_miss": 1.17
+    },
+    {
      "pollster": "Change Research",
      "matched": "Change Research",
      "n_2026": 3,
@@ -395,22 +403,14 @@
      "n_hist": 14,
      "house_effect": -1.64,
      "raw_miss": 0.68
-    },
-    {
-     "pollster": "East Carolina University",
-     "matched": "East Carolina University Center for Survey Research",
-     "n_2026": 3,
-     "n_hist": 18,
-     "house_effect": -0.37,
-     "raw_miss": 3.02
     }
    ]
   },
   "all_pollsters_raw_miss_2014_2022": 3.0506039449675373,
   "house_effect_sd": 4.707200602213207
  },
- "senate_mix_bias": -1.9360800184575728,
- "generic_mix_bias": -3.3186989149860198,
+ "senate_mix_bias": -1.9119872618219789,
+ "generic_mix_bias": -3.322278466448116,
  "methodology": [
   {
    "meth": "Live Phone",
@@ -545,209 +545,209 @@
     "state": "RI",
     "pvi": 8,
     "poll_avg": 27.05,
-    "mu": 27.14,
+    "mu": 27.15,
     "p_dside": 1.0,
     "lean_adj": 1.31
    },
    {
     "state": "MA",
     "pvi": 14,
-    "poll_avg": 30.17,
-    "mu": 31.51,
+    "poll_avg": 30.46,
+    "mu": 31.4,
     "p_dside": 1.0,
     "lean_adj": 2.3
-   },
-   {
-    "state": "VA",
-    "pvi": 3,
-    "poll_avg": 19.55,
-    "mu": 19.27,
-    "p_dside": 0.99,
-    "lean_adj": 0.49
    },
    {
     "state": "NM",
     "pvi": 4,
     "poll_avg": 18.62,
-    "mu": 18.78,
-    "p_dside": 0.98,
-    "lean_adj": 0.66
-   },
-   {
-    "state": "IL",
-    "pvi": 6,
-    "poll_avg": 12.74,
-    "mu": 14.05,
+    "mu": 18.95,
     "p_dside": 0.97,
-    "lean_adj": 0.98
+    "lean_adj": 0.66
    },
    {
     "state": "NC",
     "pvi": -1,
-    "poll_avg": 10.38,
-    "mu": 10.01,
-    "p_dside": 0.93,
+    "poll_avg": 10.71,
+    "mu": 10.49,
+    "p_dside": 0.97,
     "lean_adj": -0.16
+   },
+   {
+    "state": "IL",
+    "pvi": 6,
+    "poll_avg": 13.94,
+    "mu": 15.29,
+    "p_dside": 0.97,
+    "lean_adj": 0.98
+   },
+   {
+    "state": "VA",
+    "pvi": 3,
+    "poll_avg": 20.47,
+    "mu": 19.6,
+    "p_dside": 0.97,
+    "lean_adj": 0.49
    },
    {
     "state": "GA",
     "pvi": -1,
-    "poll_avg": 9.56,
-    "mu": 9.58,
-    "p_dside": 0.92,
+    "poll_avg": 9.62,
+    "mu": 9.62,
+    "p_dside": 0.94,
     "lean_adj": -0.16
    },
    {
     "state": "NH",
     "pvi": 2,
-    "poll_avg": 7.57,
-    "mu": 8.42,
-    "p_dside": 0.9,
+    "poll_avg": 7.63,
+    "mu": 8.24,
+    "p_dside": 0.91,
     "lean_adj": 0.33
+   },
+   {
+    "state": "MI",
+    "pvi": 0,
+    "poll_avg": 3.98,
+    "mu": 4.35,
+    "p_dside": 0.81,
+    "lean_adj": 0.0
    },
    {
     "state": "MN",
     "pvi": 3,
-    "poll_avg": 3.3,
-    "mu": 5.05,
-    "p_dside": 0.79,
+    "poll_avg": 3.86,
+    "mu": 5.31,
+    "p_dside": 0.81,
     "lean_adj": 0.49
    },
    {
     "state": "ME",
     "pvi": 4,
-    "poll_avg": 3.11,
-    "mu": 4.83,
-    "p_dside": 0.78,
+    "poll_avg": 3.23,
+    "mu": 4.17,
+    "p_dside": 0.79,
     "lean_adj": 0.66
-   },
-   {
-    "state": "MI",
-    "pvi": 0,
-    "poll_avg": 4.14,
-    "mu": 4.9,
-    "p_dside": 0.78,
-    "lean_adj": 0.0
    },
    {
     "state": "OH",
     "pvi": -5,
-    "poll_avg": 4.32,
-    "mu": 3.41,
-    "p_dside": 0.71,
+    "poll_avg": 3.89,
+    "mu": 3.45,
+    "p_dside": 0.75,
     "lean_adj": -0.82
+   },
+   {
+    "state": "TX",
+    "pvi": -6,
+    "poll_avg": 2.94,
+    "mu": 2.61,
+    "p_dside": 0.71,
+    "lean_adj": -0.98
    },
    {
     "state": "KS",
     "pvi": -8,
     "poll_avg": 3.8,
-    "mu": 2.11,
-    "p_dside": 0.63,
+    "mu": 2.52,
+    "p_dside": 0.67,
     "lean_adj": -1.31
-   },
-   {
-    "state": "TX",
-    "pvi": -6,
-    "poll_avg": 2.77,
-    "mu": 2.08,
-    "p_dside": 0.63,
-    "lean_adj": -0.98
    },
    {
     "state": "AK",
     "pvi": -6,
-    "poll_avg": 0.5,
-    "mu": -0.17,
-    "p_dside": 0.49,
+    "poll_avg": 1.16,
+    "mu": 0.58,
+    "p_dside": 0.54,
     "lean_adj": -0.98
    },
    {
     "state": "IA",
     "pvi": -6,
-    "poll_avg": 0.32,
-    "mu": -0.04,
-    "p_dside": 0.49,
+    "poll_avg": -0.17,
+    "mu": -0.33,
+    "p_dside": 0.47,
     "lean_adj": -0.98
    },
    {
     "state": "SC",
     "pvi": -8,
     "poll_avg": -2.23,
-    "mu": -3.11,
+    "mu": -3.18,
     "p_dside": 0.31,
     "lean_adj": -1.31
    },
    {
     "state": "NE",
     "pvi": -10,
-    "poll_avg": -2.55,
-    "mu": -3.95,
-    "p_dside": 0.27,
+    "poll_avg": -1.81,
+    "mu": -3.45,
+    "p_dside": 0.3,
     "lean_adj": -1.64
-   },
-   {
-    "state": "FL",
-    "pvi": -5,
-    "poll_avg": -6.32,
-    "mu": -5.77,
-    "p_dside": 0.18,
-    "lean_adj": -0.82
    },
    {
     "state": "MS",
     "pvi": -11,
-    "poll_avg": -6.95,
-    "mu": -8.07,
-    "p_dside": 0.12,
+    "poll_avg": -5.67,
+    "mu": -7.76,
+    "p_dside": 0.17,
     "lean_adj": -1.81
+   },
+   {
+    "state": "FL",
+    "pvi": -5,
+    "poll_avg": -6.71,
+    "mu": -6.33,
+    "p_dside": 0.13,
+    "lean_adj": -0.82
    },
    {
     "state": "ID",
     "pvi": -18,
     "poll_avg": -6.25,
-    "mu": -9.95,
+    "mu": -13.12,
     "p_dside": 0.09,
     "lean_adj": -2.95
    },
    {
     "state": "MT",
     "pvi": -10,
-    "poll_avg": -13.09,
-    "mu": -13.09,
-    "p_dside": 0.06,
+    "poll_avg": -12.44,
+    "mu": -12.44,
+    "p_dside": 0.05,
     "lean_adj": -1.64
    },
    {
     "state": "SD",
     "pvi": -15,
-    "poll_avg": -13.34,
-    "mu": -14.88,
+    "poll_avg": -13.24,
+    "mu": -14.44,
     "p_dside": 0.03,
     "lean_adj": -2.46
    },
    {
     "state": "AR",
     "pvi": -15,
-    "poll_avg": -12.7,
-    "mu": -14.09,
+    "poll_avg": -12.83,
+    "mu": -14.31,
     "p_dside": 0.03,
-    "lean_adj": -2.46
-   },
-   {
-    "state": "AL",
-    "pvi": -15,
-    "poll_avg": -17.17,
-    "mu": -17.64,
-    "p_dside": 0.02,
     "lean_adj": -2.46
    },
    {
     "state": "TN",
     "pvi": -14,
-    "poll_avg": -25.89,
-    "mu": -24.95,
-    "p_dside": 0.01,
+    "poll_avg": -23.94,
+    "mu": -22.81,
+    "p_dside": 0.02,
     "lean_adj": -2.3
+   },
+   {
+    "state": "AL",
+    "pvi": -15,
+    "poll_avg": -17.35,
+    "mu": -17.74,
+    "p_dside": 0.01,
+    "lean_adj": -2.46
    }
   ]
  }

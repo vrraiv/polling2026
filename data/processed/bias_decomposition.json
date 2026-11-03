@@ -5,8 +5,8 @@
   "lean": false,
   "sd_nat_house": 2.977302993873907,
   "sd_nat_senate": 3.2922356210659323,
-  "p_sen": 0.743725,
-  "sen_seats": 52.054225,
+  "p_sen": 0.7507,
+  "sen_seats": 52.116525,
   "p_house": 0.969725,
   "house_seats": 237.459075
  },
@@ -16,8 +16,8 @@
   "lean": true,
   "sd_nat_house": 2.977302993873907,
   "sd_nat_senate": 3.2922356210659323,
-  "p_sen": 0.696025,
-  "sen_seats": 51.6798,
+  "p_sen": 0.7039,
+  "sen_seats": 51.7349,
   "p_house": 0.969025,
   "house_seats": 237.5287
  },
@@ -27,8 +27,8 @@
   "lean": true,
   "sd_nat_house": 2.2635933578150804,
   "sd_nat_senate": 3.2922356210659323,
-  "p_sen": 0.6685,
-  "sen_seats": 51.466675,
+  "p_sen": 0.67675,
+  "sen_seats": 51.52955,
   "p_house": 0.920425,
   "house_seats": 228.616075
  },
@@ -38,8 +38,8 @@
   "lean": false,
   "sd_nat_house": 2.2635933578150804,
   "sd_nat_senate": 2.1716077941542395,
-  "p_sen": 0.6753,
-  "sen_seats": 51.426225,
+  "p_sen": 0.6841,
+  "sen_seats": 51.484525,
   "p_house": 0.969975,
   "house_seats": 233.350875
  },
@@ -49,8 +49,8 @@
   "lean": false,
   "sd_nat_house": 2.2635933578150804,
   "sd_nat_senate": 2.1716077941542395,
-  "p_sen": 0.53185,
-  "sen_seats": 50.639425,
+  "p_sen": 0.5412,
+  "sen_seats": 50.683725,
   "p_house": 0.94225,
   "house_seats": 230.2632
  },
@@ -60,8 +60,8 @@
   "lean": false,
   "sd_nat_house": 2.2635933578150804,
   "sd_nat_senate": 2.1716077941542395,
-  "p_sen": 0.3904,
-  "sen_seats": 49.85695,
+  "p_sen": 0.39835,
+  "sen_seats": 49.88755,
   "p_house": 0.901225,
   "house_seats": 227.365825
  },
@@ -71,8 +71,8 @@
   "lean": false,
   "sd_nat_house": 2.2635933578150804,
   "sd_nat_senate": 2.1716077941542395,
-  "p_sen": 0.255425,
-  "sen_seats": 49.00565,
+  "p_sen": 0.260925,
+  "sen_seats": 49.022475,
   "p_house": 0.824425,
   "house_seats": 224.4678
  }

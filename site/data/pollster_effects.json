@@ -566,33 +566,33 @@
   },
   "flat": {
    "n": 58,
-   "rmse": 5.933467820360099,
-   "mae": 4.553670467484605,
-   "brier": 0.043796121622820997,
-   "mean_err": -1.4589972169705898,
-   "mean_err_2018": -0.7513824315828013,
-   "mean_err_2022": -2.217155915600363,
-   "rmse_within_cycle": 5.704461691632272
+   "rmse": 5.978837714523016,
+   "mae": 4.597596785595295,
+   "brier": 0.04424419859496828,
+   "mean_err": -1.7590739372009494,
+   "mean_err_2018": -1.1723098814334676,
+   "mean_err_2022": -2.3877497112375363,
+   "rmse_within_cycle": 5.68183728675212
   },
   "house": {
    "n": 58,
-   "rmse": 6.200494879234254,
-   "mae": 4.779017003089859,
-   "brier": 0.04492871254969002,
-   "mean_err": -1.6089704332469155,
-   "mean_err_2018": -0.762857730411785,
-   "mean_err_2022": -2.5155197577131263,
-   "rmse_within_cycle": 5.923707284561752
+   "rmse": 6.231435251550744,
+   "mae": 4.828339128694771,
+   "brier": 0.04548573577987351,
+   "mean_err": -1.9090471534772746,
+   "mean_err_2018": -1.183785180262451,
+   "mean_err_2022": -2.6861135533503,
+   "rmse_within_cycle": 5.884109749960374
   },
   "tiered": {
    "n": 58,
-   "rmse": 6.089320493371538,
-   "mae": 4.640394455899598,
-   "brier": 0.044855022080142616,
-   "mean_err": -1.3941040455010458,
-   "mean_err_2018": -0.7410396591547722,
-   "mean_err_2022": -2.0938158880149107,
-   "rmse_within_cycle": 5.888916801608057
+   "rmse": 6.129717103431528,
+   "mae": 4.675853436890049,
+   "brier": 0.04517687454379949,
+   "mean_err": -1.6941807657314054,
+   "mean_err_2018": -1.1619671090054389,
+   "mean_err_2022": -2.2644096836520844,
+   "rmse_within_cycle": 5.865125717625267
   }
  },
  "partisan_work": {
@@ -1211,6 +1211,17 @@
    "adj_flat_old": 0.0
   },
   {
+   "pollster": "InsiderAdvantage",
+   "sponsor": "",
+   "polls_2026": 18,
+   "matched_538": "InsiderAdvantage",
+   "n_hist": 97,
+   "house_effect": -1.491,
+   "adj_house": -1.491,
+   "adj_tiered": 0.0,
+   "adj_flat_old": 0.0
+  },
+  {
    "pollster": "Quantus Insights",
    "sponsor": "",
    "polls_2026": 17,
@@ -1218,17 +1229,6 @@
    "n_hist": 0,
    "house_effect": NaN,
    "adj_house": 0.0,
-   "adj_tiered": 0.0,
-   "adj_flat_old": 0.0
-  },
-  {
-   "pollster": "InsiderAdvantage",
-   "sponsor": "",
-   "polls_2026": 17,
-   "matched_538": "InsiderAdvantage",
-   "n_hist": 97,
-   "house_effect": -1.491,
-   "adj_house": -1.491,
    "adj_tiered": 0.0,
    "adj_flat_old": 0.0
   },
@@ -1629,6 +1629,17 @@
    "adj_flat_old": 0.0
   },
   {
+   "pollster": "University of Southern California Democracy and Fair Elections Lab",
+   "sponsor": "",
+   "polls_2026": 4,
+   "matched_538": NaN,
+   "n_hist": 0,
+   "house_effect": NaN,
+   "adj_house": 0.0,
+   "adj_tiered": 0.0,
+   "adj_flat_old": 0.0
+  },
+  {
    "pollster": "Concord Public Opinion Partners",
    "sponsor": "DEM",
    "polls_2026": 4,
@@ -1838,17 +1849,6 @@
    "adj_flat_old": 0.0
   },
   {
-   "pollster": "University of Southern California Democracy and Fair Elections Lab",
-   "sponsor": "",
-   "polls_2026": 3,
-   "matched_538": NaN,
-   "n_hist": 0,
-   "house_effect": NaN,
-   "adj_house": 0.0,
-   "adj_tiered": 0.0,
-   "adj_flat_old": 0.0
-  },
-  {
    "pollster": "Montana State University Billings",
    "sponsor": "",
    "polls_2026": 3,
@@ -1867,6 +1867,17 @@
    "n_hist": 22,
    "house_effect": -0.828,
    "adj_house": -0.828,
+   "adj_tiered": 0.0,
+   "adj_flat_old": 0.0
+  },
+  {
+   "pollster": "Survey 160",
+   "sponsor": "",
+   "polls_2026": 3,
+   "matched_538": NaN,
+   "n_hist": 0,
+   "house_effect": NaN,
+   "adj_house": 0.0,
    "adj_tiered": 0.0,
    "adj_flat_old": 0.0
   },
@@ -2054,6 +2065,17 @@
    "n_hist": 0,
    "house_effect": NaN,
    "adj_house": 0.0,
+   "adj_tiered": 0.0,
+   "adj_flat_old": 0.0
+  },
+  {
+   "pollster": "AtlasIntel",
+   "sponsor": "",
+   "polls_2026": 2,
+   "matched_538": "AtlasIntel",
+   "n_hist": 16,
+   "house_effect": -1.504,
+   "adj_house": -1.504,
    "adj_tiered": 0.0,
    "adj_flat_old": 0.0
   },
@@ -2483,6 +2505,61 @@
    "n_hist": 10,
    "house_effect": 1.236,
    "adj_house": 1.236,
+   "adj_tiered": 0.0,
+   "adj_flat_old": 0.0
+  },
+  {
+   "pollster": "GrayHouse",
+   "sponsor": "",
+   "polls_2026": 1,
+   "matched_538": NaN,
+   "n_hist": 0,
+   "house_effect": NaN,
+   "adj_house": 0.0,
+   "adj_tiered": 0.0,
+   "adj_flat_old": 0.0
+  },
+  {
+   "pollster": "RedBox Research",
+   "sponsor": "DEM",
+   "polls_2026": 1,
+   "matched_538": NaN,
+   "n_hist": 0,
+   "house_effect": NaN,
+   "adj_house": 4.07,
+   "adj_tiered": 4.07,
+   "adj_flat_old": 4.3
+  },
+  {
+   "pollster": "Lake Research Partners",
+   "sponsor": "",
+   "polls_2026": 1,
+   "matched_538": "Lake Research Partners",
+   "n_hist": 24,
+   "house_effect": 1.604,
+   "adj_house": 1.604,
+   "adj_tiered": 0.0,
+   "adj_flat_old": 0.0
+  },
+  {
+   "pollster": "National Public Affairs",
+   "sponsor": "REP",
+   "polls_2026": 1,
+   "matched_538": NaN,
+   "n_hist": 0,
+   "house_effect": NaN,
+   "adj_house": -4.07,
+   "adj_tiered": -4.07,
+   "adj_flat_old": -4.3
+  },
+  {
+   "pollster": "Resonance Media Services",
+   "sponsor": "",
+   "polls_2026": 1,
+   "matched_538": NaN,
+   "n_hist": 0,
+   "house_effect": NaN,
+   "adj_house": 0.0,
    "adj_tiered": 0.0,
    "adj_flat_old": 0.0
   }
