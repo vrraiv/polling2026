@@ -1663,7 +1663,8 @@ function renderScorecard() {
   const rows = S.races.map(r => ({ ...r, nm: nameOf[r.race_key], p: r[model], mu: marg[r.race_key] ? marg[r.race_key][`mu_${model}`] : nameOf[r.race_key]?.mu,
       actual: marg[r.race_key]?.actual ?? null, counted: marg[r.race_key]?.counted ?? null }))
     .sort((a, b) => b.p - a.p);
-  const actCell = (r) => r.actual != null ? fmtM(r.actual) : r.counted != null ? `<span class="none" title="Count still moving; not scored yet">${fmtM(r.counted)}*</span>` : "—";
+  const offTag = (k) => (marg[k]?.source || "").startsWith("official") ? ` <span class="tag" title="${esc(marg[k].source)}">official</span>` : "";
+  const actCell = (r) => (r.actual != null ? fmtM(r.actual) : r.counted != null ? `<span class="none" title="Count still moving; not scored yet">${fmtM(r.counted)}*</span>` : "—") + offTag(r.race_key || r.race);
   $("#scSenTable").innerHTML = `<thead><tr><th>Race</th><th class="num">P(D side)</th><th class="num">Expected</th><th class="num">Actual</th><th class="num">Error</th><th>Result</th></tr></thead><tbody>` +
     rows.map(r => { const fav = r.p > 0.5 ? 1 : 0, res = !r.called ? `<span class="none">pending</span>` : `${esc(r.winner)} (${r.winner_party}) ${r.y === fav ? "✓" : "<b style='color:var(--ochre)'>upset</b>"}`;
       return `<tr${r.contested ? "" : ' class="muted"'}><td>${raceLab(r.race_key)}</td><td class="num">${fmtP(r.p)}</td><td class="num">${fmtM(r.mu)}</td><td class="num">${actCell(r)}</td>` +
@@ -1781,6 +1782,11 @@ function renderScorecard() {
     `Margins: two-party, the Democratic side's nominee vs. the leading Republican, as the forecast defined them (an independent is the Democratic side in Nebraska, Idaho and South Dakota). Montana: best non-Republican minus Republican, as % of all votes. Ranked-choice races: the final round. Georgia: the November 3 count.`,
     `Close races are fixed from the frozen forecast (any published version between 2% and 98%) before any result is read, so the set can't be chosen after the fact.`,
     `Each Wikipedia page is pinned by its revision id; the parsed results, with those ids, are in the repository under <code>data/scorecard/</code>.`,
+    ...(SC.official_senate ? [(() => { const O = SC.official_senate, ok = O.filter(o => o.status === "ok"), no = O.filter(o => o.status !== "ok");
+      return `Official counts: for the ${O.length} close Senate races (any published version between 5% and 95%), the state's own results replace Wikipedia's where a script can fetch them: ` +
+        ok.map(o => `${STATE[o.race_key.split("|")[1]]} (<a href="${esc(o.url)}">${esc(o.source)}</a>)`).join(", ") + `. ` +
+        (no.length ? `Not yet checked against official results, until certification: ` + no.map(o => `${STATE[o.race_key.split("|")[1]]} (${esc(o.status.replace(/^no scripted source: /, "").replace(/; checked at certification$/, ""))})`).join("; ") + `. Their margins come from Wikipedia.` : ""); })()] : []),
+    `California House margins come from the California Secretary of State's results API.`,
   ].map(x => `<li>${x}</li>`).join("");
 }
 

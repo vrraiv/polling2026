@@ -177,6 +177,10 @@ def main():
            "contested_rule": f"any published model gave the D side between {LO:.0%} and {HI:.0%} (fixed from data/final/)",
            "senate": {"scores": chamber_scores(sen), "seats": senate_seats(sen), "races": races_table(sen, "senate")},
            "house": {"scores": chamber_scores(hou), "seats": house_seats(hou), "races": races_table(hou, "house")}}
+    if (SC / "official_senate.csv").exists():
+        o = pd.read_csv(SC / "official_senate.csv")
+        cols = [c for c in ["race_key", "status", "source", "url", "as_of", "reporting", "complete", "margin", "wiki_margin"] if c in o]
+        out["official_senate"] = json.loads(o[cols].to_json(orient="records"))
     if (SC / "poll_audit.json").exists():
         out["poll_audit"] = poll_audit_summary(json.loads((SC / "poll_audit.json").read_text()))
     if (SC / "margins_senate.csv").exists() and (SC / "margins_house.csv").exists():

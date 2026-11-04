@@ -7312,6 +7312,195 @@
    }
   ]
  },
+ "official_senate": [
+  {
+   "race_key": "2026|AK|S|regular",
+   "status": "no scripted source: the Division of Elections site requires a human-verification check (and ranked-choice tabulation comes ~15 days after the election); checked at certification",
+   "source": null,
+   "url": null,
+   "as_of": null,
+   "reporting": null,
+   "complete": null,
+   "margin": null,
+   "wiki_margin": null
+  },
+  {
+   "race_key": "2026|FL|S|special",
+   "status": "no scripted source: the live results site requires a browser check, and the results archive doesn't have the 2026 general yet; checked at certification",
+   "source": null,
+   "url": null,
+   "as_of": null,
+   "reporting": null,
+   "complete": null,
+   "margin": null,
+   "wiki_margin": null
+  },
+  {
+   "race_key": "2026|GA|S|regular",
+   "status": "ok",
+   "source": "Georgia Secretary of State",
+   "url": "https://results.sos.ga.gov/results/public/api/elections/Georgia",
+   "as_of": "2026-11-04T09:19:07.4133015Z",
+   "reporting": "counties fully reporting 1/159; official: False",
+   "complete": false,
+   "margin": 18.0097804407,
+   "wiki_margin": null
+  },
+  {
+   "race_key": "2026|ID|S|regular",
+   "status": "no scripted source: the results site requires a browser check; checked at certification",
+   "source": null,
+   "url": null,
+   "as_of": null,
+   "reporting": null,
+   "complete": null,
+   "margin": null,
+   "wiki_margin": null
+  },
+  {
+   "race_key": "2026|IA|S|regular",
+   "status": "ok",
+   "source": "Iowa Secretary of State (Clarity)",
+   "url": "https://electionresults.iowa.gov/IA/127077",
+   "as_of": "11/4/2026 6:42:20 AM CST",
+   "reporting": "counties reporting 95/99 for this contest; precincts 1659/1659",
+   "complete": false,
+   "margin": 4.2419677762,
+   "wiki_margin": null
+  },
+  {
+   "race_key": "2026|KS|S|regular",
+   "status": "no scripted source: the election-night results site refuses requests from this network's location; checked at certification",
+   "source": null,
+   "url": null,
+   "as_of": null,
+   "reporting": null,
+   "complete": null,
+   "margin": null,
+   "wiki_margin": null
+  },
+  {
+   "race_key": "2026|LA|S|regular",
+   "status": "ok",
+   "source": "Louisiana Secretary of State",
+   "url": "https://voterportal.sos.la.gov/graphical",
+   "as_of": "2026-11-04T05:00:19.380 (Louisiana time)",
+   "reporting": "precincts 3722/3722, absentee 64/64",
+   "complete": true,
+   "margin": -1.7636959788,
+   "wiki_margin": -1.7636959788
+  },
+  {
+   "race_key": "2026|ME|S|regular",
+   "status": "no scripted source: the Secretary of State site blocks scripted requests; checked at certification",
+   "source": null,
+   "url": null,
+   "as_of": null,
+   "reporting": null,
+   "complete": null,
+   "margin": null,
+   "wiki_margin": null
+  },
+  {
+   "race_key": "2026|MI|S|regular",
+   "status": "no scripted source: the results site didn't respond; checked at certification",
+   "source": null,
+   "url": null,
+   "as_of": null,
+   "reporting": null,
+   "complete": null,
+   "margin": null,
+   "wiki_margin": null
+  },
+  {
+   "race_key": "2026|MN|S|regular",
+   "status": "ok",
+   "source": "Minnesota Secretary of State (media text files)",
+   "url": "https://electionresultsfiles.sos.mn.gov/20261103/ussenate.txt",
+   "as_of": "Wed, 04 Nov 2026 13:48:10 GMT",
+   "reporting": "precincts 4105/4105",
+   "complete": true,
+   "margin": 10.4475454164,
+   "wiki_margin": null
+  },
+  {
+   "race_key": "2026|MS|S|regular",
+   "status": "no scripted source: the state posts no election-night results, only certified PDFs after the canvass; checked at certification",
+   "source": null,
+   "url": null,
+   "as_of": null,
+   "reporting": null,
+   "complete": null,
+   "margin": null,
+   "wiki_margin": null
+  },
+  {
+   "race_key": "2026|MT|S|regular",
+   "status": "ok",
+   "source": "Montana Secretary of State",
+   "url": "https://electionresults.mt.gov/resultsSW.aspx?type=FED&map=CTY",
+   "as_of": "11/4/2026 6:50:23 AM MT (Montana time)",
+   "reporting": "precincts fully reporting 454/728, partially 274",
+   "complete": false,
+   "margin": -11.5901468303,
+   "wiki_margin": -9.0740684349
+  },
+  {
+   "race_key": "2026|NE|S|regular",
+   "status": "ok",
+   "source": "Nebraska Secretary of State",
+   "url": "https://electionresults.nebraska.gov/",
+   "as_of": "11/4/2026 5:58 AM CT",
+   "reporting": "precincts 1309/1322",
+   "complete": false,
+   "margin": -7.1126283022,
+   "wiki_margin": null
+  },
+  {
+   "race_key": "2026|NH|S|regular",
+   "status": "no scripted source: the Secretary of State site blocks scripted requests; checked at certification",
+   "source": null,
+   "url": null,
+   "as_of": null,
+   "reporting": null,
+   "complete": null,
+   "margin": null,
+   "wiki_margin": null
+  },
+  {
+   "race_key": "2026|OH|S|special",
+   "status": "no scripted source: the Secretary of State results site requires a browser check; checked at certification",
+   "source": null,
+   "url": null,
+   "as_of": null,
+   "reporting": null,
+   "complete": null,
+   "margin": null,
+   "wiki_margin": null
+  },
+  {
+   "race_key": "2026|SC|S|regular",
+   "status": "ok",
+   "source": "South Carolina Election Commission (Clarity)",
+   "url": "https://www.enr-scvotes.org/SC/127300",
+   "as_of": "11/4/2026 2:12:11 AM EST",
+   "reporting": "counties reporting 0/46 for this contest; precincts 2312/2312",
+   "complete": false,
+   "margin": 4.5746558737,
+   "wiki_margin": null
+  },
+  {
+   "race_key": "2026|TX|S|regular",
+   "status": "ok",
+   "source": "Texas Secretary of State (Civix election-night returns)",
+   "url": "https://goelect.txelections.civixapps.com/ivis-enr-ui/races",
+   "as_of": "Nov 04, 2026 13:52:57",
+   "reporting": "counties reporting 253/254",
+   "complete": false,
+   "margin": 12.5314278708,
+   "wiki_margin": null
+  }
+ ],
  "poll_audit": {
   "blocklist": [
    {
@@ -19591,24 +19780,24 @@
   "sources": {
    "senate_pages": [
     {
-     "revision": "1383723870",
+     "revision": "1383723870.0",
      "page_modified": "2026-11-04T11:57:55Z"
     },
     {
-     "revision": "1383720699",
+     "revision": "1383720699.0",
      "page_modified": "2026-11-04T11:10:55Z"
     },
     {
-     "revision": "1383715980",
+     "revision": "1383715980.0",
      "page_modified": "2026-11-04T10:04:27Z"
     }
    ],
-   "n_pages_senate": 35,
+   "n_pages_senate": 27,
    "n_pages_house": 38
   },
   "completeness": {
    "senate": {
-    "counted": 6,
+    "counted": 12,
     "settled": 0,
     "of": 35
    },
@@ -19626,6 +19815,7 @@
   },
   "sign_mismatches": [],
   "box_issues": {
+   "2026|MT|S|regular": "official margin differs from Wikipedia by -2.52",
    "2026|AK|H|0": "candidate votes 204,306 vs total 199,316; Nick Begich III: 50.0% listed vs 51.25% from votes; Bill Hill: 40.1% listed vs 41.11% from votes",
    "2026|FL|H|12": "caption says district 8, section says 12"
   },
@@ -19988,9 +20178,9 @@
    {
     "race": "2026|GA|S|regular",
     "actual": null,
-    "counted": null,
+    "counted": 18.01,
     "settled": false,
-    "source": "wikipedia",
+    "source": "official (Georgia Secretary of State)",
     "mu_polls_only": 9.23,
     "mu_polls_fundamentals": 9.29,
     "mu_polls_fundamentals_biasadj": 8.94
@@ -20018,9 +20208,9 @@
    {
     "race": "2026|IA|S|regular",
     "actual": null,
-    "counted": null,
+    "counted": 4.24,
     "settled": false,
-    "source": "wikipedia",
+    "source": "official (Iowa Secretary of State (Clarity))",
     "mu_polls_only": -0.1,
     "mu_polls_fundamentals": -0.06,
     "mu_polls_fundamentals_biasadj": -1.13
@@ -20050,7 +20240,7 @@
     "actual": null,
     "counted": -1.76,
     "settled": false,
-    "source": "wikipedia",
+    "source": "official (Louisiana Secretary of State)",
     "mu_polls_only": -13.01,
     "mu_polls_fundamentals": -12.38,
     "mu_polls_fundamentals_biasadj": -14.55
@@ -20088,9 +20278,9 @@
    {
     "race": "2026|MN|S|regular",
     "actual": null,
-    "counted": null,
+    "counted": 10.45,
     "settled": false,
-    "source": "wikipedia",
+    "source": "official (Minnesota Secretary of State (media text files))",
     "mu_polls_only": 4.71,
     "mu_polls_fundamentals": 4.78,
     "mu_polls_fundamentals_biasadj": 4.96
@@ -20108,9 +20298,9 @@
    {
     "race": "2026|MT|S|regular",
     "actual": null,
-    "counted": -9.07,
+    "counted": -11.59,
     "settled": false,
-    "source": "wikipedia",
+    "source": "official (Montana Secretary of State)",
     "mu_polls_only": -12.44,
     "mu_polls_fundamentals": -12.44,
     "mu_polls_fundamentals_biasadj": -12.44
@@ -20118,9 +20308,9 @@
    {
     "race": "2026|NE|S|regular",
     "actual": null,
-    "counted": null,
+    "counted": -7.11,
     "settled": false,
-    "source": "wikipedia",
+    "source": "official (Nebraska Secretary of State)",
     "mu_polls_only": -3.56,
     "mu_polls_fundamentals": -3.46,
     "mu_polls_fundamentals_biasadj": -5.18
@@ -20208,9 +20398,9 @@
    {
     "race": "2026|SC|S|regular",
     "actual": null,
-    "counted": null,
+    "counted": 4.57,
     "settled": false,
-    "source": "wikipedia",
+    "source": "official (South Carolina Election Commission (Clarity))",
     "mu_polls_only": -2.37,
     "mu_polls_fundamentals": -2.29,
     "mu_polls_fundamentals_biasadj": -3.71
@@ -20238,9 +20428,9 @@
    {
     "race": "2026|TX|S|regular",
     "actual": null,
-    "counted": null,
+    "counted": 12.53,
     "settled": false,
-    "source": "wikipedia",
+    "source": "official (Texas Secretary of State (Civix election-night returns))",
     "mu_polls_only": 2.79,
     "mu_polls_fundamentals": 2.83,
     "mu_polls_fundamentals_biasadj": 1.77

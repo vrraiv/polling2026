@@ -1,0 +1,12 @@
+{
+  "RacesCandidates_Multiparish.json": {
+    "url": "https://voterportal.sos.la.gov/ElectionResults/ElectionResults/Data?blob=20261103/RacesCandidates_Multiparish.htm",
+    "retrieved": "2026-11-04T08:55:36",
+    "bytes": 51488
+  },
+  "Votes_Multiparish.json": {
+    "url": "https://voterportal.sos.la.gov/ElectionResults/ElectionResults/Data?blob=20261103/Votes_Multiparish.htm",
+    "retrieved": "2026-11-04T08:55:37",
+    "bytes": 27627
+  }
+}

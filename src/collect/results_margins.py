@@ -359,15 +359,20 @@ def settledness(df, chamber):
     count_stable doesn't need a margin, so uncontested and same-party races still count toward the national House vote."""
     hist_path = OUT / f"margins_history_{chamber}.csv"
     day = df.snapshot.astype(str).str.extract(r"(\d{4}-\d{2}-\d{2})")[0]
-    evidence = np.where(df.source.eq("wikipedia"), df.revision.astype(str), df.page_modified.astype(str))
-    now = pd.DataFrame({"race_key": df.race_key, "day": day, "cand_sum": df.cand_sum, "margin": df.margin, "evidence": evidence})
+    evidence = np.where(df.source.eq("wikipedia"), df.revision.astype(str), df.page_modified.astype(str))   # official/CA: report time
+    src = df.source.astype(str).str.replace(r"\s*\(.*\)$", "", regex=True) if "source" in df else "wikipedia"
+    now = pd.DataFrame({"race_key": df.race_key, "source": src, "day": day, "cand_sum": df.cand_sum, "margin": df.margin, "evidence": evidence})
     hist = pd.read_csv(hist_path, dtype={"evidence": str}) if hist_path.exists() else now.iloc[0:0]
     if "cand_sum" not in hist:   # history written before the switch to candidate sums: start over
         hist = now.iloc[0:0]
-    hist = pd.concat([hist[~hist.set_index(["race_key", "day"]).index.isin(now.set_index(["race_key", "day"]).index)], now])
-    hist = hist[hist.cand_sum.fillna(0) > 0].sort_values(["race_key", "day"])
+    if "source" not in hist:
+        hist["source"] = np.where(hist.race_key.str.contains(r"\|CA\|H\|"), "ca_sos", "wikipedia")
+    idx = ["race_key", "source", "day"]
+    hist = pd.concat([hist[~hist.set_index(idx).index.isin(now.set_index(idx).index)], now])
+    hist = hist[hist.cand_sum.fillna(0) > 0].sort_values(idx)
     hist.to_csv(hist_path, index=False)
-    prev = hist.merge(now[["race_key", "day"]], on="race_key", suffixes=("", "_now"))
+    # compare with the previous day's count from the SAME source (official vs official, Wikipedia vs Wikipedia)
+    prev = hist.merge(now[["race_key", "source", "day"]], on=["race_key", "source"], suffixes=("", "_now"))
     prev = prev[prev.day < prev.day_now].groupby("race_key").last()
     df = df.copy()
     df["prev_day"] = df.race_key.map(prev.day)
@@ -378,8 +383,11 @@ def settledness(df, chamber):
     df["count_flag"] = np.where(df.growth_since_prev < -0.001, "votes fell since the previous snapshot",
                                 np.where(swing.gt(SWING_FLAG) & df.growth_since_prev.abs().lt(SETTLED_GROWTH),
                                          "margin swung with almost no new votes", ""))
+    # an official source whose own report says the count is complete needs no newer timestamp: a finished count stops
+    # updating (Wikipedia pages get no such pass: an unedited page proves nothing)
+    complete = df["complete"].fillna(False).astype(bool) if "complete" in df else pd.Series(False, index=df.index)
     df["count_stable"] = df.cand_sum.gt(0) & df.prev_cand_sum.notna() & df.growth_since_prev.abs().lt(SETTLED_GROWTH) \
-        & new_evidence & df.count_flag.eq("")
+        & (new_evidence | (complete & ~df.source.eq("wikipedia"))) & df.count_flag.eq("")
     df["settled"] = df.count_stable & df.margin.notna()
     for _, r in df[df.count_flag != ""].iterrows():
         print(f"  [count] {r.race_key}: {r.count_flag} ({r.prev_cand_sum:,.0f} -> {r.cand_sum:,.0f})")
@@ -401,6 +409,8 @@ def main(parse_only=False, resume=False):
         missing = sorted(set(frozen.race_key) - set(df.race_key))
         df = settledness(df, chamber)
         df.to_csv(OUT / f"margins_{chamber}.csv", index=False)
+        if chamber == "senate":   # official_senate.py starts from these Wikipedia rows when it swaps in official numbers
+            df.to_csv(OUT / "margins_senate_wiki.csv", index=False)
         cands.to_csv(OUT / f"candidates_{chamber}.csv", index=False)
         have = df.margin.notna().sum() if len(df) else 0
         print(f"{chamber}: {len(df)} result boxes, {have} with counts; {len(missing)} frozen races without a box"

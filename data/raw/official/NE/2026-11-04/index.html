@@ -1,0 +1,506 @@
+
+
+<!DOCTYPE html>
+
+<html>
+<head><title>
+	Nebraska Secretary of State
+</title><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta content="text/html; charset=windows-1252" http-equiv="Content-Type" /><meta name="viewport" content="width=device-width, initial-scale=1.0 minimum-scale=0.25, maximum-scale=10.0, user-scalable=yes" /><link href="https://neresultswebservice.azurewebsites.us/Styles/styles.bundle.css" rel="stylesheet" />
+    <script src="https://neresultswebservice.azurewebsites.us/Scripts/script.bundle.js"></script>
+      <script src="Scripts/jquery/jquery-3.6.0.min.js"></script>
+      <script src="Scripts/Chart.min.js"></script>
+      <script src="Scripts/utils.js"></script>
+      <script src="Scripts/sticky.js"></script>
+      <script src="Scripts/jquery/jquery-ui.js"></script>
+      <script src="Scripts/HeaderTurnoutChart.js"></script>
+      <script src="Scripts/imageMapResizer.min.js"></script>
+    <script>
+        var ServiceRoot = 'https://neresultswebservice.azurewebsites.us/';
+        var Maps = {};
+        var Bound = {};
+        var mapBuilt = [];
+
+        window.onload = function () {
+            var WatchList = getCookie("NETracked");
+            //var temp = document.cookie;
+            if (WatchList) {
+                var checked = WatchList.split("_");
+                for (var i = 0; i < checked.length; i++) {
+                    var checkbox = document.getElementById("chk-" + checked[i]);
+                    if (checkbox !== null)
+                        checkbox.checked = true;
+                };
+            }
+            ClearSearch();
+            ClearSearchSide();
+        };
+
+        $(document).click(function (event) {
+            if (!$(event.target).closest('#menudiv').length && !$(event.target).closest('#menuToggle').length) {
+                if ($('#menudiv').css("visibility") == 'visible') {
+                    $('#menudiv').css('visibility', 'hidden');
+                }
+            }
+        });
+
+        $(document).click(function (event) {
+            if (!$(event.target).closest('.search-icon-wrapper').length) {
+                if (document.getElementById('header-search-box').style.visibility == 'visible') {
+                    document.getElementById('header-search-box').style.visibility = 'hidden';
+                }
+                $('.search-icon-wrapper').removeClass('search-icon-wrapper-hover');
+                $('.search-icon').removeClass('search-icon-hover');
+            }
+        });
+
+        $(document).click(function (event) {
+            if (!$(event.target).closest('.mtc-icon-position').length) {
+                if (document.getElementById('header-share-box').style.visibility == 'visible') {
+                    document.getElementById('header-share-box').style.visibility = 'hidden';
+                }
+                $('.mtc-icon-position').removeClass('mtc-icon-position-hover');
+                $('.share-icon').removeClass('share-icon-hover');
+            }
+        });
+    </script>
+    <script>
+        //try using on mouse out to auto close the header menu?
+        (function ($) {
+            $(document).ready(function () {
+                $('#menuToggle').click(function (e) {
+                    //$('#menudiv').visibilityToggle();
+                    if ($('#menudiv').css("visibility") == 'hidden') {
+                        $('#menudiv').css('visibility', 'visible');
+                    }
+                    e.preventDefault();
+                });
+                $('#menuclose').click(function (e) {
+                    $('#menudiv').visibilityToggle();
+                    if ($('#menudiv').css("visibility") == 'visible') {
+                        $('#menudiv').css('visibility', 'hidden');
+                    }
+                    e.preventDefault();
+                });
+            });
+        }(jQuery));
+        //@ sourceURL=pen.js
+        jQuery.fn.visibilityToggle = function () {
+            return this.css('visibility', function (i, visibility) {
+                return (visibility == 'visible') ? 'hidden' : 'visible';
+            });
+        };
+    </script>
+    <script type="text/javascript">
+        $('body').on({
+            'touchmove': function (e) {
+                stick();
+            }
+        });
+        $('txtQuickSearch').on({
+            'focus': function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                window.scrollTo(0, 0); //the second 0 marks the Y scroll pos. Setting this to i.e. 100 will push the screen up by 100px. 
+            }
+        });
+        $('txtQuickSearchSide').on({
+            'focus': function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                window.scrollTo(0, 0); //the second 0 marks the Y scroll pos. Setting this to i.e. 100 will push the screen up by 100px. 
+            }
+        });
+    </script>
+
+    
+    <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y1QB8H6MWK"></script> <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-Y1QB8H6MWK'); </script>
+    
+    <script src="Scripts/imageMapResizer.min.js"></script>
+</head>
+<body onclick="">
+    <form method="post" action="./" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="79WPvvmNvGllUbmqDly0UNNlVwZOr9aWiCSgrxKHDXEvrDsg8KcCxLFaUHZZGby3PPqAx75EI8h8GN5Cei2SAI78rSeCqwyZ0qtcpy2lEKXRdyIzYhv5EIgoBsqq1HB4okZbpq9V6Y/t4am+msn5+uuiiCf5I9WJPWJ6Qpiv20ntae6a8PgIlCnMDAFwsxUXWYbMP61adeNNcyOdRqlebXFhDTjNkvxoy2hB42+oD08BSzdZWt2vS+TK5PGJ6Jk/OV1QPIaqhGcIYbJ7+lbgSqLPzNDWscB/nXF6V60Pxcj0/SKo7pT/p1+asSeNP8jj" />
+        <input type="hidden" name="ctl00$hidElectionType" id="hidElectionType" value="General" />
+        <input type="hidden" name="ctl00$hidElectionDate" id="hidElectionDate" value="11/3/2026" />
+        <input type="hidden" name="ctl00$hidPrecinctsReported" id="hidPrecinctsReported" value="1309" />
+        <input type="hidden" name="ctl00$hidPrecinctsPartial" id="hidPrecinctsPartial" value="12" />
+        <input type="hidden" name="ctl00$hidPrecinctsNotReported" id="hidPrecinctsNotReported" value="1" />
+        <input type="hidden" name="ctl00$hidVoterTurnout" id="hidVoterTurnout" value="747555" />
+        <input type="hidden" name="ctl00$hidVoterTotal" id="hidVoterTotal" value="517607" />
+        <div id="fader">
+            <h1>Preparing Export...</h1>
+        </div>
+        <div class="outside-wrapper">
+            <div id="sticky-anchor"></div>
+            <div id="sticky" class="top-bluebar">
+                <!--Menu button here-->
+                <a href="#" id="menuToggle" title="show menu"><span><em>Menu</em></span></a>
+                <div>
+                    
+                </div>
+                <div>
+                    
+                </div>
+                <div class=" search-icon-wrapper" onclick="MagClick()">
+                    <div class="search-icon" title="Search"></div>
+                    <div id="header-search-box" class=" search-container">
+                        <div class="search-box-wrapper">
+                            <!--Search box here -->
+                            <input name="ctl00$txtQuickSearch" type="text" id="txtQuickSearch" class="textboxSmallTransparent" title="Search for Contest or Candidate" placeholder="Search..." />
+                            <input type="submit" name="ctl00$btnSearch" value="Search" id="btnSearch" class="search-button" />
+                        </div>
+                    </div>
+                </div>
+                <div class=" mtc-icon-position" onclick="ShareClick()">
+                    <div class="share-icon " title="Share"></div>
+                    <div id="header-share-box" class=" share-container">
+                        <div class="share-header">SHARE ON</div>
+                        <div class="share-icon-wrapper">
+                            <div class="share-buttons">
+                                <!-- Facebook --><a href="http://www.facebook.com/sharer.php?u=http://electionresults.nebraska.gov/default.aspx" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><img title="Share on Facebook" alt="Facebook" src="/Images/facebook.png" /></a><!-- Twitter --><a href="https://twitter.com/share?url=http://electionresults.nebraska.gov/default.aspx&text=Nebraska  Contests&hashtags=sdpol" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><img title="Share on Twitter" src="/Images/twitter.png" alt="Twitter"/></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="top-header-box2">
+                    
+    <h2>
+        <a id="NavLinks_lnkTracked" href="MyTrackedContests.aspx">My Tracked Contests</a>
+    </h2>
+    <h5>
+        <a id="NavLinks_lnkHome" href="https://sos.nebraska.gov/elections" target="_blank">SOS Home</a>
+    </h5>
+
+                </div>
+            </div>
+            <!--End Top Blue Bar-->
+            <div class="top-header">
+                <div id="pnlHeader" class="section group">
+	
+                    <div class="col desktop" style="padding: 3px 0 0 8px;">
+                        <img src="/Images/StateSeal.jpg" style="width: 78px; height: 78px;" title="Nebraska State Seal" alt="Nebraska State Seal" />
+                    </div>
+                    <div class="col mobile" style="padding: 6px 0 0 8px;">
+                        <img src="/Images/StateSeal.jpg" style="width: 59px; height: 59px;" title="Nebraska State Seal" alt="Nebraska State Seal" />
+                    </div>
+                    <div class="col top-header-box1">
+                        <h2>
+                            <a id="lnkSOSName" href="Default.aspx" target="_blank"></a>
+                        </h2>
+                        <h1>
+                            <a id="lnkStateSOS" href="Default.aspx" target="_blank">Nebraska Secretary of State</a>
+                        </h1>
+                    </div>
+                    <!--End top-header-box1-->
+                    <!--End top-header-box2-->
+                
+</div>
+                <!--End Section Group-->
+            </div>
+            <!--End Top Header-->
+            <div class="header-box-wrapper">
+                <div class="section group">
+                    <a id="lnkDateHeader" class="aspNetDisabled col header-box1"><h1>Unofficial Results</h1><h2>General Election November 3, 2026</h2>
+                        <div class="last-updated">
+                            <span>Results last updated:</span><span>11/4/2026 5:58 AM CT</span></div>
+                    </a>
+                    <!--End Header Box 1-->
+                    <div class="col header-box2">
+                        <div class="header-box-content-top">
+                            <h1>
+                                <a id="lnkVoterTurnout" class="button" href="VoterTurnoutDetails.aspx?map=TURN">Statewide Voter Turnout</a>
+                            </h1>
+                        </div>
+                        <!--End header-box2-content-top-->
+                        <div class="header-box-content-bottom">
+                            
+                            <div class="animate-position desktop">
+                                <div style="height: 150px"><canvas id="voter-turnout-canvas"></canvas><div class="dough-percent"><span class="int">59</span><span class="dec">.09%</span></div></div>
+                            </div>
+                            <!--End Animate Position-->
+                            <div class="animate-position mobile" style="margin-top: -6px;">
+                                <div><canvas id="voter-turnout-mobile-canvas"></canvas><div class="dough-percent"><span class="int">59</span><span class="dec">.09%</span></div></div>
+                            </div>
+                            <!--End Animate Position-->
+                        </div>
+                        <!--End header-box-content-bottom-->
+                        <div class="header-box-content-reg">
+                            <h2><span class="header-ballot-text">Ballots Cast</span><span class="header-ballot-number">747,555</span><br /><span class="header-voter-text">Registered Voters</span><span class="header-voter-number">1,265,162</span></h2>
+                        </div>
+                    </div>
+                    <!--End Header Box 2-->
+                    <div class="col header-box3">
+                        <div class="header-box-content-top">
+                            <h1>
+                                <a id="lnkPrecinctsReporting" class="button" href="VoterTurnoutDetails.aspx?map=PREC">Precincts Reporting</a>
+                            </h1>
+                        </div>
+                        <!--End header-box2-content-top-->
+                        <div class="header-box-content-bottom">
+                            
+                            <div class="animate-position desktop">
+                                <div style="height: 150px"><canvas id="precinct-reported-canvas"></canvas><div class="dough-percent"><span class="int">99</span><span class="dec">.02%</span></div></div>
+                            </div>
+                            <!--End Animate Position-->
+                            <div class="animate-position mobile">
+                                <div><canvas id="precinct-reported-mobile-canvas"></canvas><div class="dough-percent"><span class="int">99</span><span class="dec">.02%</span></div></div>
+                            </div>
+                            <!--End Animate Position-->
+                        </div>
+                        <!--End header-box-content-bottom-->
+                        <div class="header-box-content-reg header-box-content-prec">
+                            <h2><div class='colordisc-yellow'></div><span class="header-partial-text">Partially</span><span class="header-partial-number">12</span><br/><div class='colordisc-orange'></div><span class="header-total-text">Fully</span><span class="header-total-number">1309</span> </br><div></div><span class="header-partial-text">Total</span><span class="header-totalprecincts-text">1322</span></h2>
+                        </div>
+                    </div>
+                    <div id="chartjs-tooltip"></div>
+                    <!--End Header Box 3-->
+                </div>
+                <!--End Section Group-->
+                
+            </div>
+            <!--End Header Box Wrapper-->
+            <!--Main Content-->
+            
+    <div class="outside-wrapper-body">
+        <div class="section group grid-box-wrapper">
+            <div class="col-elec-search-box election-results-box">
+                <div class="elec-results-header">
+                    <h1>Election Results</h1>
+                </div>
+                <!--End Elec Results Header-->
+                
+                <div id="MainContent_pnlLinkGridWrapper" class="elec-results-grid-wrapper">
+	<span class="results-gridbox-links"><a class="col-elec-results-grid elec-results-grid" href="/resultsSW.aspx?type=SW&amp;map=CTY"><div><h1>Statewide</h1></div></a><a class="col-elec-results-grid elec-results-grid" href="/resultsSW.aspx?type=CG&amp;map=DIST"><div><h1>U.S. Congressional District</h1></div></a><a class="col-elec-results-grid elec-results-grid" href="/resultsSW.aspx?type=LD&amp;map=DIST"><div><h1>Legislature</h1></div></a><a class="col-elec-results-grid elec-results-grid" href="/resultsSW.aspx?type=PS&amp;map=DIST"><div><h1>Public Service Commission</h1></div></a><a class="col-elec-results-grid elec-results-grid" href="/resultsSW.aspx?type=SE&amp;map=DIST"><div><h1>State Board of Education</h1></div></a><a class="col-elec-results-grid elec-results-grid" href="/resultsSW.aspx?type=RG&amp;map=DIST"><div><h1>Board of Regents</h1></div></a><a class="col-elec-results-grid elec-results-grid" href="/resultsSW.aspx?type=JD&amp;map=CTY"><div><h1>Judicial Retention</h1></div></a><a class="col-elec-results-grid elec-results-grid" href="/resultsSW.aspx?type=CC&amp;map=CTY"><div><h1>Community College</h1></div></a><a class="col-elec-results-grid elec-results-grid" href="/resultsSW.aspx?type=LC&amp;map=CTY"><div><h1>Learning Community</h1></div></a><a class="col-elec-results-grid elec-results-grid" href="/resultsSW.aspx?type=NR&amp;map=CTY"><div><h1>Natural Resources District</h1></div></a><a class="col-elec-results-grid elec-results-grid" href="/resultsSW.aspx?type=UT&amp;map=CTY"><div><h1>Metropolitan Utilities District</h1></div></a><a class="col-elec-results-grid elec-results-grid" href="/resultsSW.aspx?type=PP&amp;map=CTY"><div><h1>Public Power District</h1></div></a><a class="col-elec-results-grid elec-results-grid" href="/resultsSW.aspx?type=RD&amp;map=CTY"><div><h1>Reclamation District</h1></div></a><a class="col-elec-results-grid elec-results-grid" href="/resultsSW.aspx?type=ED&amp;map=CTY"><div><h1>Educational Service Unit</h1></div></a><a class="col-elec-results-grid elec-results-grid" href="/resultsSW.aspx?type=PA&amp;map=CTY"><div><h1>Statewide Ballot Measures</h1></div></a></span>
+</div>
+            </div>
+            <!--End Election Results Box-->
+            <div class="col-elec-search-box search-results-box">
+                <!--End Search Box Wrapper-->
+                <div class="results-county-header">
+                    <h1>Results By County and Local Results</h1>
+                </div>
+                <div class="mt-map">
+                    <img src="/Images/Nebraska-County-Map.png" usemap="#image-map">
+                    <map id="ImgMap0" name="image-map">
+                        <area alt="Sioux" title="Sioux" href="#" onclick="javascript:setCountyURL('80','Sioux'); return false;" onkeypress="javascript:setCountyURL('80','Sioux'); return false;"  coords="59,37,36,330,183,337,174,46" shape="poly">
+                        <area alt="Dawes" title="Dawes" href="#" onclick="javascript:setCountyURL('69','Dawes'); return false;" onkeypress="javascript:setCountyURL('69','Dawes'); return false;"  coords="176,44,328,215" shape="rect">
+                        <area alt="Scotts Bluff" title="Scotts Bluff" href="#" onclick="javascript:setCountyURL('21','Scotts Bluff'); return false;" onkeypress="javascript:setCountyURL('21','Scotts Bluff'); return false;"  coords="38,335,193,341,188,431,31,422" shape="poly">
+                        <area alt="Banner" title="Banner" href="#" onclick="javascript:setCountyURL('85','Banner'); return false;" onkeypress="javascript:setCountyURL('85','Banner'); return false;"  coords="33,426,183,433,179,524,27,514" shape="poly">
+                        <area alt="Kimball" title="Kimball" href="#" onclick="javascript:setCountyURL('71','Kimball'); return false;" onkeypress="javascript:setCountyURL('71','Kimball'); return false;"  coords="27,514,179,524,169,636,20,629" shape="poly">
+                        <area alt="Box Butte" title="Box Butte" href="#" onclick="javascript:setCountyURL('65','Box Butte'); return false;" onkeypress="javascript:setCountyURL('65','Box Butte'); return false;"  coords="183,215,326,219,337,344,183,335" shape="poly">
+                        <area alt="Morrill" title="Morrill" href="#" onclick="javascript:setCountyURL('64','Morrill'); return false;" onkeypress="javascript:setCountyURL('64','Morrill'); return false;"  coords="190,343,342,350,344,519,179,509" shape="poly">
+                        <area alt="Cheyenne" title="Cheyenne" href="#" onclick="javascript:setCountyURL('39','Cheyenne'); return false;" onkeypress="javascript:setCountyURL('39','Cheyenne'); return false;"  coords="183,512,347,521,337,644,170,636" shape="poly">
+                        <area alt="Sheridan" title="Sheridan" href="#" onclick="javascript:setCountyURL('61','Sheridan'); return false;" onkeypress="javascript:setCountyURL('61','Sheridan'); return false;"  coords="328,53,481,62,485,353,337,344" shape="poly">
+                        <area alt="Garden" title="Garden" href="#" onclick="javascript:setCountyURL('77','Garden'); return false;" onkeypress="javascript:setCountyURL('77','Garden'); return false;"  coords="342,346,476,357,469,433,487,433,485,531,469,539,466,584,344,581" shape="poly">
+                        <area alt="Deuel" title="Deuel" href="#" onclick="javascript:setCountyURL('78','Deuel'); return false;" onkeypress="javascript:setCountyURL('78','Deuel'); return false;"  coords="342,583,466,586,466,653,340,644" shape="poly">
+                        <area alt="Cherry" title="Cherry" href="#" onclick="javascript:setCountyURL('66','Cherry'); return false;" onkeypress="javascript:setCountyURL('66','Cherry'); return false;"  coords="483,62,890,78,890,344,480,327" shape="poly">
+                        <area alt="Grant" title="Grant" href="#" onclick="javascript:setCountyURL('92','Grant'); return false;" onkeypress="javascript:setCountyURL('92','Grant'); return false;"  coords="489,328,614,334,612,436,471,431,474,357,487,357" shape="poly">
+                        <area alt="Hooker" title="Hooker" href="#" onclick="javascript:setCountyURL('93','Hooker'); return false;" onkeypress="javascript:setCountyURL('93','Hooker'); return false;"  coords="614,335,741,337,741,443,612,436" shape="poly">
+                        <area alt="Thomas" title="Thomas" href="#" onclick="javascript:setCountyURL('89','Thomas'); return false;" onkeypress="javascript:setCountyURL('89','Thomas'); return false;"  coords="741,339,870,343,870,445,738,443" shape="poly">
+                        <area alt="Arthur" title="Arthur" href="#" onclick="javascript:setCountyURL('91','Arthur'); return false;" onkeypress="javascript:setCountyURL('91','Arthur'); return false;"  coords="487,433,614,440,614,540,487,537" shape="poly">
+                        <area alt="McPherson" title="McPherson" href="#" onclick="javascript:setCountyURL('90','McPherson'); return false;" onkeypress="javascript:setCountyURL('90','McPherson'); return false;"  coords="617,440,771,441,766,547,614,540" shape="poly">
+                        <area alt="Logan" title="Logan" href="#" onclick="javascript:setCountyURL('87','Logan'); return false;" onkeypress="javascript:setCountyURL('87','Logan'); return false;"  coords="771,445,870,448,868,547,768,546" shape="poly">
+                        <area alt="Keith" title="Keith" href="#" onclick="javascript:setCountyURL('68','Keith'); return false;" onkeypress="javascript:setCountyURL('68','Keith'); return false;"  coords="467,539,644,542,639,657,464,652" shape="poly">
+                        <area alt="Perkins" title="Perkins" href="#" onclick="javascript:setCountyURL('74','Perkins'); return false;" onkeypress="javascript:setCountyURL('74','Perkins'); return false;"  coords="467,652,642,659,640,750,460,743" shape="poly">
+                        <area alt="Lincoln" title="Lincoln" href="#" onclick="javascript:setCountyURL('15','Lincoln'); return false;" onkeypress="javascript:setCountyURL('15','Lincoln'); return false;"  coords="642,544,874,551,872,754,642,750" shape="poly">
+                        <area alt="Chase" title="Chase" href="#" onclick="javascript:setCountyURL('72','Chase'); return false;" onkeypress="javascript:setCountyURL('72','Chase'); return false;"  coords="462,743,621,752,616,851,458,846" shape="poly">
+                        <area alt="Dundy" title="Dundy" href="#" onclick="javascript:setCountyURL('76','Dundy'); return false;" onkeypress="javascript:setCountyURL('76','Dundy'); return false;"  coords="460,846,619,853,619,955,451,950" shape="poly">
+                        <area alt="Hayes" title="Hayes" href="#" onclick="javascript:setCountyURL('79','Hayes'); return false;" onkeypress="javascript:setCountyURL('79','Hayes'); return false;"  coords="621,752,746,756,743,855,619,853" shape="poly">
+                        <area alt="Hitchcock" title="Hitchcock" href="#" onclick="javascript:setCountyURL('67','Hitchcock'); return false;" onkeypress="javascript:setCountyURL('67','Hitchcock'); return false;"  coords="619,855,746,858,745,961,617,955" shape="poly">
+                        <area alt="Frontier" title="Frontier" href="#" onclick="javascript:setCountyURL('60','Frontier'); return false;" onkeypress="javascript:setCountyURL('60','Frontier'); return false;"  coords="746,752,925,759,921,833,897,833,895,860,745,855" shape="poly">
+                        <area alt="Red Willow" title="Red Willow" href="#" onclick="javascript:setCountyURL('48','Red Willow'); return false;" onkeypress="javascript:setCountyURL('48','Red Willow'); return false;"  coords="746,856,875,858,872,962,746,959" shape="poly">
+                        <area alt="Furnas" title="Furnas" href="#" onclick="javascript:setCountyURL('38','Furnas'); return false;" onkeypress="javascript:setCountyURL('38','Furnas'); return false;"  coords="875,860,999,863,1001,964,872,962" shape="poly">
+                        <area alt="Gosper" title="Gosper" href="#" onclick="javascript:setCountyURL('73','Gosper'); return false;" onkeypress="javascript:setCountyURL('73','Gosper'); return false;"  coords="927,759,996,761,997,863,898,858,898,835,921,835" shape="poly">
+                        <area alt="Dawson" title="Dawson" href="#" onclick="javascript:setCountyURL('18','Dawson'); return false;" onkeypress="javascript:setCountyURL('18','Dawson'); return false;"  coords="874,653,1050,655,1047,766,874,754" shape="poly">
+                        <area alt="Custer" title="Custer" href="#" onclick="javascript:setCountyURL('04','Custer'); return false;" onkeypress="javascript:setCountyURL('04','Custer'); return false;"  coords="870,448,1098,452,1098,655,870,652" shape="poly">
+                        <area alt="Blaine" title="Blaine" href="#" onclick="javascript:setCountyURL('86','Blaine'); return false;" onkeypress="javascript:setCountyURL('86','Blaine'); return false;"  coords="870,341,999,346,994,450,867,447" shape="poly">
+                        <area alt="Loup" title="Loup" href="#" onclick="javascript:setCountyURL('88','Loup'); return false;" onkeypress="javascript:setCountyURL('88','Loup'); return false;"  coords="999,346,1100,350,1098,450,997,448" shape="poly">
+                        <area alt="Brown" title="Brown" href="#" onclick="javascript:setCountyURL('75','Brown'); return false;" onkeypress="javascript:setCountyURL('75','Brown'); return false;"  coords="891,120,999,157,1003,344,893,343" shape="poly">
+                        <area alt="Rock" title="Rock" href="#" onclick="javascript:setCountyURL('81','Rock'); return false;" onkeypress="javascript:setCountyURL('81','Rock'); return false;"  coords="1001,152,1034,159,1093,134,1096,348,1003,344" shape="poly">
+                        <area alt="Keya Paha" title="Keya Paha" href="#" onclick="javascript:setCountyURL('82','Keya Paha'); return false;" onkeypress="javascript:setCountyURL('82','Keya Paha'); return false;"  coords="893,76,1093,78,1093,129,1034,155,981,148,890,118" shape="poly">
+                        <area alt="Boyd" title="Boyd" href="#" onclick="javascript:setCountyURL('63','Boyd'); return false;" onkeypress="javascript:setCountyURL('63','Boyd'); return false;"  coords="1093,79,1255,81,1298,115,1298,143,1252,141,1183,125,1156,108,1098,131" shape="poly">
+                        <area alt="Holt" title="Holt" href="#" onclick="javascript:setCountyURL('36','Holt'); return false;" onkeypress="javascript:setCountyURL('36','Holt'); return false;"  coords="1096,132,1156,109,1220,138,1303,147,1303,350,1096,344" shape="poly">
+                        <area alt="Garfield" title="Garfield" href="#" onclick="javascript:setCountyURL('83','Garfield'); return false;" onkeypress="javascript:setCountyURL('83','Garfield'); return false;"  coords="1102,346,1201,350,1201,450,1096,450" shape="poly">
+                        <area alt="Wheeler" title="Wheeler" href="#" onclick="javascript:setCountyURL('84','Wheeler'); return false;" onkeypress="javascript:setCountyURL('84','Wheeler'); return false;"  coords="1202,350,1301,351,1301,450,1202,454" shape="poly">
+                        <area alt="Valley" title="Valley" href="#" onclick="javascript:setCountyURL('47','Valley'); return false;" onkeypress="javascript:setCountyURL('47','Valley'); return false;"  coords="1098,452,1197,454,1199,558,1098,554" shape="poly">
+                        <area alt="Greeley" title="Greeley" href="#" onclick="javascript:setCountyURL('62','Greeley'); return false;" onkeypress="javascript:setCountyURL('62','Greeley'); return false;"  coords="1201,456,1303,452,1301,554,1202,554" shape="poly">
+                        <area alt="Sherman" title="Sherman" href="#" onclick="javascript:setCountyURL('56','Sherman'); return false;" onkeypress="javascript:setCountyURL('56','Sherman'); return false;"  coords="1098,556,1199,560,1202,659,1100,655" shape="poly">
+                        <area alt="Howard" title="Howard" href="#" onclick="javascript:setCountyURL('49','Howard'); return false;" onkeypress="javascript:setCountyURL('49','Howard'); return false;"  coords="1204,553,1303,554,1305,659,1202,655" shape="poly">
+                        <area alt="Buffalo" title="Buffalo" href="#" onclick="javascript:setCountyURL('09','Buffalo'); return false;" onkeypress="javascript:setCountyURL('09','Buffalo'); return false;"  coords="1050,657,1204,660,1208,761,1144,775,1050,765" shape="poly">
+                        <area alt="Hall" title="Hall" href="#" onclick="javascript:setCountyURL('08','Hall'); return false;" onkeypress="javascript:setCountyURL('08','Hall'); return false;"  coords="1204,655,1305,659,1310,761,1209,759" shape="poly">
+                        <area alt="Phelps" title="Phelps" href="#" onclick="javascript:setCountyURL('37','Phelps'); return false;" onkeypress="javascript:setCountyURL('37','Phelps'); return false;"  coords="999,763,1100,770,1105,863,999,863" shape="poly">
+                        <area alt="Harlan" title="Harlan" href="#" onclick="javascript:setCountyURL('51','Harlan'); return false;" onkeypress="javascript:setCountyURL('51','Harlan'); return false;"  coords="1001,860,1100,863,1105,968,999,966" shape="poly">
+                        <area alt="Kearney" title="Kearney" href="#" onclick="javascript:setCountyURL('52','Kearney'); return false;" onkeypress="javascript:setCountyURL('52','Kearney'); return false;"  coords="1102,770,1144,779,1204,763,1206,867,1102,863" shape="poly">
+                        <area alt="Franklin" title="Franklin" href="#" onclick="javascript:setCountyURL('50','Franklin'); return false;" onkeypress="javascript:setCountyURL('50','Franklin'); return false;"  coords="1103,865,1201,869,1202,971,1100,968" shape="poly">
+                        <area alt="Adams" title="Adams" href="#" onclick="javascript:setCountyURL('14','Adams'); return false;" onkeypress="javascript:setCountyURL('14','Adams'); return false;"  coords="1204,761,1303,763,1310,867,1206,863" shape="poly">
+                        <area alt="Webster" title="Webster" href="#" onclick="javascript:setCountyURL('45','Webster'); return false;" onkeypress="javascript:setCountyURL('45','Webster'); return false;"  coords="1204,865,1303,869,1307,969,1202,968" shape="poly">
+                        <area alt="Nuckolls" title="Nuckolls" href="#" onclick="javascript:setCountyURL('42','Nuckolls'); return false;" onkeypress="javascript:setCountyURL('42','Nuckolls'); return false;"  coords="1308,867,1405,867,1407,966,1307,969" shape="poly">
+                        <area alt="Clay" title="Clay" href="#" onclick="javascript:setCountyURL('30','Clay'); return false;" onkeypress="javascript:setCountyURL('30','Clay'); return false;"  coords="1308,765,1405,765,1407,863,1308,865" shape="poly">
+                        <area alt="Hamilton" title="Hamilton" href="#" onclick="javascript:setCountyURL('28','Hamilton'); return false;" onkeypress="javascript:setCountyURL('28','Hamilton'); return false;"  coords="1305,710,1404,623,1405,763,1307,763" shape="poly">
+                        <area alt="Merrick" title="Merrick" href="#" onclick="javascript:setCountyURL('46','Merrick'); return false;" onkeypress="javascript:setCountyURL('46','Merrick'); return false;"  coords="1305,593,1358,584,1393,583,1427,579,1436,556,1455,556,1455,577,1308,704" shape="poly">
+                        <area alt="Nance" title="Nance" href="#" onclick="javascript:setCountyURL('58','Nance'); return false;" onkeypress="javascript:setCountyURL('58','Nance'); return false;"  coords="1305,528,1345,526,1358,521,1391,517,1432,516,1428,577,1308,590" shape="poly">
+                        <area alt="Boone" title="Boone" href="#" onclick="javascript:setCountyURL('23','Boone'); return false;" onkeypress="javascript:setCountyURL('23','Boone'); return false;"  coords="1305,399,1404,401,1404,512,1305,530" shape="poly">
+                        <area alt="Antelope" title="Antelope" href="#" onclick="javascript:setCountyURL('26','Antelope'); return false;" onkeypress="javascript:setCountyURL('26','Antelope'); return false;"  coords="1303,244,1404,245,1404,399,1303,399" shape="poly">
+                        <area alt="Knox" title="Knox" href="#" onclick="javascript:setCountyURL('12','Knox'); return false;" onkeypress="javascript:setCountyURL('12','Knox'); return false;"  coords="1301,115,1337,127,1360,145,1383,139,1393,115,1414,120,1437,125,1450,120,1478,120,1478,240,1301,242" shape="poly">
+                        <area alt="Pierce" title="Pierce" href="#" onclick="javascript:setCountyURL('40','Pierce'); return false;" onkeypress="javascript:setCountyURL('40','Pierce'); return false;"  coords="1404,244,1504,244,1506,346,1405,344" shape="poly">
+                        <area alt="Madison" title="Madison" href="#" onclick="javascript:setCountyURL('07','Madison'); return false;" onkeypress="javascript:setCountyURL('07','Madison'); return false;"  coords="1409,344,1501,348,1506,448,1407,448" shape="poly">
+                        <area alt="Platte" title="Platte" href="#" onclick="javascript:setCountyURL('10','Platte'); return false;" onkeypress="javascript:setCountyURL('10','Platte'); return false;"  coords="1405,452,1531,450,1531,553,1458,569,1457,556,1434,551,1434,517,1405,512" shape="poly">
+                        <area alt="Polk" title="Polk" href="#" onclick="javascript:setCountyURL('41','Polk'); return false;" onkeypress="javascript:setCountyURL('41','Polk'); return false;"  coords="1405,660,1510,659,1510,554,1458,570,1407,620" shape="poly">
+                        <area alt="York" title="York" href="#" onclick="javascript:setCountyURL('17','York'); return false;" onkeypress="javascript:setCountyURL('17','York'); return false;"  coords="1405,662,1511,660,1510,759,1407,761" shape="poly">
+                        <area alt="Fillmore" title="Fillmore" href="#" onclick="javascript:setCountyURL('34','Fillmore'); return false;" onkeypress="javascript:setCountyURL('34','Fillmore'); return false;"  coords="1405,765,1506,757,1508,863,1409,862" shape="poly">
+                        <area alt="Thayer" title="Thayer" href="#" onclick="javascript:setCountyURL('32','Thayer'); return false;" onkeypress="javascript:setCountyURL('32','Thayer'); return false;"  coords="1409,863,1508,863,1511,966,1409,968" shape="poly">
+                        <area alt="Jefferson" title="Jefferson" href="#" onclick="javascript:setCountyURL('33','Jefferson'); return false;" onkeypress="javascript:setCountyURL('33','Jefferson'); return false;"  coords="1511,863,1609,862,1610,966,1510,968" shape="poly">
+                        <area alt="Saline" title="Saline" href="#" onclick="javascript:setCountyURL('22','Saline'); return false;" onkeypress="javascript:setCountyURL('22','Saline'); return false;"  coords="1508,763,1610,759,1609,862,1510,862" shape="poly">
+                        <area alt="Seward" title="Seward" href="#" onclick="javascript:setCountyURL('16','Seward'); return false;" onkeypress="javascript:setCountyURL('16','Seward'); return false;"  coords="1510,660,1609,659,1610,761,1511,759" shape="poly">
+                        <area alt="Butler" title="Butler" href="#" onclick="javascript:setCountyURL('25','Butler'); return false;" onkeypress="javascript:setCountyURL('25','Butler'); return false;"  coords="1511,657,1607,655,1609,537,1564,554,1511,556" shape="poly">
+                        <area alt="Colfax" title="Colfax" href="#" onclick="javascript:setCountyURL('43','Colfax'); return false;" onkeypress="javascript:setCountyURL('43','Colfax'); return false;"  coords="1534,448,1609,447,1607,531,1563,553,1533,551" shape="poly">
+                        <area alt="Stanton" title="Stanton" href="#" onclick="javascript:setCountyURL('53','Stanton'); return false;" onkeypress="javascript:setCountyURL('53','Stanton'); return false;"  coords="1506,348,1582,346,1582,445,1508,448" shape="poly">
+                        <area alt="Wayne" title="Wayne" href="#" onclick="javascript:setCountyURL('37','Wayne'); return false;" onkeypress="javascript:setCountyURL('27','Wayne'); return false;"  coords="1508,270,1579,268,1580,291,1628,293,1623,344,1504,346" shape="poly">
+                        <area alt="Cedar" title="Cedar" href="#" onclick="javascript:setCountyURL('13','Cedar'); return false;" onkeypress="javascript:setCountyURL('13','Cedar'); return false;"  coords="1480,122,1504,117,1533,120,1550,136,1577,147,1580,270,1506,272,1508,245,1480,244" shape="poly">
+                        <area alt="Dixon" title="Dixon" href="#" onclick="javascript:setCountyURL('35','Dixon'); return false;" onkeypress="javascript:setCountyURL('35','Dixon'); return false;"  coords="1580,150,1625,164,1651,177,1665,215,1644,215,1644,291,1582,290" shape="poly">
+                        <area alt="Dakota" title="Dakota" href="#" onclick="javascript:setCountyURL('70','Dakota'); return false;" onkeypress="javascript:setCountyURL('70','Dakota'); return false;"  coords="1646,217,1669,221,1681,217,1693,224,1718,230,1711,268,1731,288,1646,290" shape="poly">
+                        <area alt="Thurston" title="Thurston" href="#" onclick="javascript:setCountyURL('55','Thurston'); return false;" onkeypress="javascript:setCountyURL('55','Thurston'); return false;"  coords="1626,293,1732,290,1731,313,1750,344,1739,364,1685,367,1685,346,1626,341" shape="poly">
+                        <area alt="Cuming" title="Cuming" href="#" onclick="javascript:setCountyURL('24','Cuming'); return false;" onkeypress="javascript:setCountyURL('24','Cuming'); return false;"  coords="1582,346,1683,346,1683,445,1584,445" shape="poly">
+                        <area alt="Burt" title="Burt" href="#" onclick="javascript:setCountyURL('31','Burt'); return false;" onkeypress="javascript:setCountyURL('31','Burt'); return false;"  coords="1685,371,1739,364,1771,374,1773,397,1785,422,1792,454,1782,464,1715,468,1713,450,1688,448" shape="poly">
+                        <area alt="Dodge" title="Dodge" href="#" onclick="javascript:setCountyURL('05','Dodge'); return false;" onkeypress="javascript:setCountyURL('05','Dodge'); return false;"  coords="1609,448,1708,450,1715,510,1734,539,1736,551,1702,549,1653,539,1612,533" shape="poly">
+                        <area alt="Washington" title="Washington" href="#" onclick="javascript:setCountyURL('29','Washington'); return false;" onkeypress="javascript:setCountyURL('29','Washington'); return false;"  coords="1709,470,1785,466,1789,501,1805,505,1826,530,1826,547,1734,549,1736,535,1718,517" shape="poly">
+                        <area alt="Saunders" title="Saunders" href="#" onclick="javascript:setCountyURL('06','Saunders'); return false;" onkeypress="javascript:setCountyURL('06','Saunders'); return false;"  coords="1610,537,1699,544,1727,583,1739,620,1737,652,1730,666,1709,659,1608,653" shape="poly">
+                        <area alt="Douglas" title="Douglas" href="#" onclick="javascript:setCountyURL('01','Douglas'); return false;" onkeypress="javascript:setCountyURL('01','Douglas'); return false;"  coords="1711,553,1819,551,1840,581,1828,607,1739,611" shape="poly">
+                        <area alt="Sarpy" title="Sarpy" href="#" onclick="javascript:setCountyURL('59','Sarpy'); return false;" onkeypress="javascript:setCountyURL('59','Sarpy'); return false;"  coords="1739,613,1842,611,1838,646,1803,648,1766,669,1739,660" shape="poly">
+                        <area alt="Lancaster" title="Lancaster" href="#" onclick="javascript:setCountyURL('02','Lancaster'); return false;" onkeypress="javascript:setCountyURL('02','Lancaster'); return false;"  coords="1609,655,1706,657,1711,812,1612,812" shape="poly">
+                        <area alt="Gage" title="Gage" href="#" onclick="javascript:setCountyURL('03','Gage'); return false;" onkeypress="javascript:setCountyURL('03','Gage'); return false;"  coords="1612,814,1711,812,1715,968,1612,966" shape="poly">
+                        <area alt="Cass" title="Cass" href="#" onclick="javascript:setCountyURL('20','Cass'); return false;" onkeypress="javascript:setCountyURL('20','Cass'); return false;"  coords="1708,664,1729,662,1768,671,1805,650,1838,653,1858,703,1849,729,1711,731" shape="poly">
+                        <area alt="Otoe" title="Otoe" href="#" onclick="javascript:setCountyURL('11','Otoe'); return false;" onkeypress="javascript:setCountyURL('11','Otoe'); return false;"  coords="1711,733,1849,731,1837,745,1897,805,1713,810" shape="poly">
+                        <area alt="Johnson" title="Johnson" href="#" onclick="javascript:setCountyURL('57','Johnson'); return false;" onkeypress="javascript:setCountyURL('57','Johnson'); return false;"  coords="1713,812,1799,809,1803,888,1716,888" shape="poly">
+                        <area alt="Nemaha" title="Nemaha" href="#" onclick="javascript:setCountyURL('44','Nemaha'); return false;" onkeypress="javascript:setCountyURL('44','Nemaha'); return false;"  coords="1803,809,1888,809,1921,883,1803,885" shape="poly">
+                        <area alt="Pawnee" title="Pawnee" href="#" onclick="javascript:setCountyURL('54','Pawnee'); return false;" onkeypress="javascript:setCountyURL('54','Pawnee'); return false;"  coords="1715,890,1812,886,1817,966,1713,962" shape="poly">
+                        <area alt="Richardson" title="Richardson" href="#" onclick="javascript:setCountyURL('19','Richardson'); return false;" onkeypress="javascript:setCountyURL('19','Richardson'); return false;"  coords="1814,888,1930,881,1973,959,1819,964" shape="poly">
+                    </map>
+                </div>
+            </div>
+            <!--End Search Results Box-->
+        </div>
+        <!--End Section Group-->
+    </div>
+    <script>
+        $(window).on('load', function () {
+            var countymap = $('#ImgMap0')
+            countymap.imageMapResize();
+        });
+    </script>
+
+            <div class="bottom-graybar"></div>
+        </div>
+        <!--End Bottom Bluebar-->
+        <!--End Outside Wrapper-->
+        <div id="menudiv" style="visibility: hidden;" class="side-menu">
+            <a href="#" id="menuclose" title="close menu"><span>close</span></a>
+            <div class="nav-header-links">
+                <span>
+                    <a id="lnkSideMenuHome" class="nav-home-link" href="Default.aspx">Home</a></span>
+                <span>|</span>
+                <span>
+                    <a id="lnkSideMenuTracked" class="nav-tracked-link" href="MyTrackedContests.aspx">My Tracked Contests</a></span>
+            </div>
+            <!--put the search box here with full functionality-->
+            <div class="quick-search-side">
+                <input name="ctl00$txtQuickSearchSide" type="text" id="txtQuickSearchSide" class="textboxSmallGray" title="Search for Contest or Candidate" placeholder="Search" />
+                <button class="close-icon-side" type="reset" onclick="ClearSearchSide()"></button>
+            </div>
+            <h1>Election Results</h1>
+            <a href="/resultsSW.aspx?type=SW&map=CTY">Statewide</a><a href="/resultsSW.aspx?type=CG&map=DIST">U.S. Congressional District</a><a href="/resultsSW.aspx?type=LD&map=DIST">Legislature</a><a href="/resultsSW.aspx?type=PS&map=DIST">Public Service Commission</a><a href="/resultsSW.aspx?type=SE&map=DIST">State Board of Education</a><a href="/resultsSW.aspx?type=RG&map=DIST">Board of Regents</a><a href="/resultsSW.aspx?type=JD&map=CTY">Judicial Retention</a><a href="/resultsSW.aspx?type=CC&map=CTY">Community College</a><a href="/resultsSW.aspx?type=LC&map=CTY">Learning Community</a><a href="/resultsSW.aspx?type=NR&map=CTY">Natural Resources District</a><a href="/resultsSW.aspx?type=UT&map=CTY">Metropolitan Utilities District</a><a href="/resultsSW.aspx?type=PP&map=CTY">Public Power District</a><a href="/resultsSW.aspx?type=RD&map=CTY">Reclamation District</a><a href="/resultsSW.aspx?type=ED&map=CTY">Educational Service Unit</a><a href="/resultsSW.aspx?type=PA&map=CTY">Statewide Ballot Measures</a>
+            <h1>Election Resources</h1>
+            <a id="lnkSideElectionTerm" href="ElectionTerminology.aspx">FAQs</a>
+            <a id="lnkSideMedia" href="ResultsMedia.aspx">Media</a>
+        </div>
+    </form>
+    <script>
+        (function ($) {
+            $(document).ready(function () {
+                $('#menuToggle').click(function (e) {
+                    var $parent = $(this).parent('nav');
+                    $parent.toggleClass('open');
+                    var navState = $parent.hasClass('open') ? 'hide' : 'show';
+                    $(this).attr('title', navState + ' navigation');
+                    setTimeout(function () {
+                        console.log('timeout set');
+                        $('#menuToggle > span').toggleClass('navClosed').toggleClass('navOpen');
+                    }, 200);
+                    e.preventDefault();
+                });
+            });
+        }(jQuery));
+        //@ sourceURL=pen.js
+    </script>
+    <!--Quick search auto complete code-->
+    <script>
+        function ClearSearch() {
+            document.getElementById("txtQuickSearch").value = "";
+        }
+        function ClearSearchSide() {
+            document.getElementById("txtQuickSearchSide").value = "";
+        }
+        $(document).ready(function () {
+            var results;
+            var electionType = document.getElementById("hidElectionType").value;
+            var eid = getUrlVars()["eid"];
+            var mode = getUrlVars()["mode"];
+
+            if (eid !== undefined && !isNaN(eid) && eid != "") {
+                results = getValues(ServiceRoot + "ResultsAjax.svc/GetCandidates?ElectionType=" + electionType + "&ElectionID=" + eid);
+                eid = "&eid=" + eid;
+                mode = "";
+            } else {
+                results = getValues(ServiceRoot + "ResultsAjax.svc/GetCandidates?ElectionType=" + electionType + "&ElectionID=0");
+                eid = "";
+                if (mode !== undefined && mode !== "") {
+                    mode = "&mode=" + mode;
+                } else {
+                    mode = "";
+                }
+            }
+
+            var objListTest = results["d"];
+
+            $("#txtQuickSearch").autocomplete({
+                appendTo: '#header-search-box',
+                source: objListTest,
+                focus: function (event, ui) {
+                    $("#txtQuickSearch").val(ui.item.desc + ' - ' + ui.item.name);
+                    return false;
+                },
+                select: function (event, ui) {
+                    $("#txtQuickSearch").val(ui.item.desc + ' - ' + ui.item.name);
+                    window.location.assign("SearchResults.aspx?ID=" + ui.item.ID + eid + mode);
+                    return false;
+                }
+            })
+                .data("ui-autocomplete")._renderItem = function (ul, item) {
+                    return $("<li>")
+                        .append("<a href='SearchResults.aspx?ID=" + item.ID + eid + mode + "'><span class='" + item.Party + "'>" + item.name + "</span><br><span class='search-description'>" + item.desc + "</span></a>")
+                        .appendTo(ul);
+                };
+            $("#txtQuickSearchSide").autocomplete({
+                source: objListTest,
+                focus: function (event, ui) {
+                    $("#txtQuickSearchSide").val(ui.item.desc + ' - ' + ui.item.name);
+                    return false;
+                },
+                select: function (event, ui) {
+                    $("#txtQuickSearchSide").val(ui.item.desc + ' - ' + ui.item.name);
+                    window.location.assign("SearchResults.aspx?ID=" + ui.item.ID + eid + mode);
+                    return false;
+                }
+            })
+                .data("ui-autocomplete")._renderItem = function (ul, item) {
+                    return $("<li>")
+                        .append("<a href='SearchResults.aspx?ID=" + item.ID + eid + mode + "'><span class='" + item.Party + "'>" + item.name + "</span><br><span class='search-description'>" + item.desc + "</span></a>")
+                        .appendTo(ul);
+                };
+        });
+    </script>
+</body>
+</html>
