@@ -7494,7 +7494,7 @@
    "status": "ok",
    "source": "Texas Secretary of State (Civix election-night returns)",
    "url": "https://goelect.txelections.civixapps.com/ivis-enr-ui/races",
-   "as_of": "Nov 04, 2026 13:52:57",
+   "as_of": "Senate numbers c5abe6c6b14a",
    "reporting": "counties reporting 253/254",
    "complete": false,
    "margin": 12.5314278708,

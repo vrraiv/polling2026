@@ -330,7 +330,13 @@ class Texas(Adapter):
         if "T" in r and sum(c["votes"] for c in cands) != int(r["T"]):
             raise ValueError("candidate votes don't add up to the race total")
         cr = home.get("CountiesReporting", {})
-        return {"candidates": cands, "as_of": home.get("LastUpdatedTime"), "url": "https://goelect.txelections.civixapps.com/ivis-enr-ui/races",
+        # LastUpdatedTime tracks the server clock (it sat within a minute of each response), so it can't show whether the
+        # count moved: the "as of" evidence is a fingerprint of the Senate numbers themselves, which only changes when
+        # they do. A stalled feed therefore never looks freshly updated; Texas settles through its own "complete" flag.
+        import hashlib
+        fp = hashlib.sha1(json.dumps(cands, sort_keys=True).encode()).hexdigest()[:12]
+        return {"candidates": cands, "as_of": f"Senate numbers {fp} (server time {home.get('LastUpdatedTime')})".split(" (server")[0],
+                "server_time": home.get("LastUpdatedTime"), "url": "https://goelect.txelections.civixapps.com/ivis-enr-ui/races",
                 "reporting": f"counties reporting {cr.get('CR')}/{cr.get('CT')}", "complete": bool(cr.get("CT")) and cr.get("CR") == cr.get("CT")}
 
 
