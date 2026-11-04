@@ -1,5 +1,6 @@
 {
- "stage": "winners only (provisional: races are still being called and counted)",
+ "stage": "winners and vote counts (provisional: counting continues)",
+ "provisional": true,
  "sources": {
   "senate": {
    "revision": 1383718608.0,
@@ -7308,6 +7309,2316 @@
     "polls_fundamentals_biasadj": 0.0011,
     "pocket_senate_wide_shift": 0.0008,
     "pocket_full_historical_bias": 0.001125
+   }
+  ]
+ },
+ "margins": {
+  "sources": {
+   "senate_pages": [
+    {
+     "revision": "1383723870",
+     "page_modified": "2026-11-04T11:57:55Z"
+    },
+    {
+     "revision": "1383720699",
+     "page_modified": "2026-11-04T11:10:55Z"
+    },
+    {
+     "revision": "1383715980",
+     "page_modified": "2026-11-04T10:04:27Z"
+    }
+   ],
+   "n_pages_senate": 35,
+   "n_pages_house": 38
+  },
+  "completeness": {
+   "senate": {
+    "counted": 6,
+    "settled": 0,
+    "of": 35
+   },
+   "house_contested": {
+    "counted": 10,
+    "settled": 0,
+    "of": 162
+   },
+   "house_all": {
+    "counted": 55,
+    "settled": 0,
+    "of": 435
+   },
+   "rule": "scores use settled counts: vote total moved less than 1% since the previous day's snapshot"
+  },
+  "sign_mismatches": [],
+  "box_issues": {
+   "2026|AK|H|0": "candidate votes 204,306 vs total 199,316; Nick Begich III: 50.0% listed vs 51.25% from votes; Bill Hill: 40.1% listed vs 41.11% from votes",
+   "2026|FL|H|12": "caption says district 8, section says 12"
+  },
+  "errors": {
+   "senate": {
+    "polls_only": {
+     "contested": {
+      "n": 0,
+      "mean": null,
+      "rmse": null,
+      "mae": null
+     },
+     "all": {
+      "n": 0,
+      "mean": null,
+      "rmse": null,
+      "mae": null
+     }
+    },
+    "polls_fundamentals": {
+     "contested": {
+      "n": 0,
+      "mean": null,
+      "rmse": null,
+      "mae": null
+     },
+     "all": {
+      "n": 0,
+      "mean": null,
+      "rmse": null,
+      "mae": null
+     }
+    },
+    "polls_fundamentals_biasadj": {
+     "contested": {
+      "n": 0,
+      "mean": null,
+      "rmse": null,
+      "mae": null
+     },
+     "all": {
+      "n": 0,
+      "mean": null,
+      "rmse": null,
+      "mae": null
+     }
+    },
+    "pocket_senate_wide_shift": {
+     "contested": {
+      "n": 0,
+      "mean": null,
+      "rmse": null,
+      "mae": null
+     },
+     "all": {
+      "n": 0,
+      "mean": null,
+      "rmse": null,
+      "mae": null
+     }
+    },
+    "pocket_full_historical_bias": {
+     "contested": {
+      "n": 0,
+      "mean": null,
+      "rmse": null,
+      "mae": null
+     },
+     "all": {
+      "n": 0,
+      "mean": null,
+      "rmse": null,
+      "mae": null
+     }
+    }
+   },
+   "house": {
+    "polls_only": {
+     "contested": {
+      "n": 0,
+      "mean": null,
+      "rmse": null,
+      "mae": null
+     },
+     "all": {
+      "n": 0,
+      "mean": null,
+      "rmse": null,
+      "mae": null
+     }
+    },
+    "polls_fundamentals": {
+     "contested": {
+      "n": 0,
+      "mean": null,
+      "rmse": null,
+      "mae": null
+     },
+     "all": {
+      "n": 0,
+      "mean": null,
+      "rmse": null,
+      "mae": null
+     }
+    },
+    "polls_fundamentals_biasadj": {
+     "contested": {
+      "n": 0,
+      "mean": null,
+      "rmse": null,
+      "mae": null
+     },
+     "all": {
+      "n": 0,
+      "mean": null,
+      "rmse": null,
+      "mae": null
+     }
+    },
+    "pocket_senate_wide_shift": {
+     "contested": {
+      "n": 0,
+      "mean": null,
+      "rmse": null,
+      "mae": null
+     },
+     "all": {
+      "n": 0,
+      "mean": null,
+      "rmse": null,
+      "mae": null
+     }
+    },
+    "pocket_full_historical_bias": {
+     "contested": {
+      "n": 0,
+      "mean": null,
+      "rmse": null,
+      "mae": null
+     },
+     "all": {
+      "n": 0,
+      "mean": null,
+      "rmse": null,
+      "mae": null
+     }
+    }
+   }
+  },
+  "national": {
+   "districts_with_counts": 64,
+   "districts_settled": 0,
+   "of": 435,
+   "dem_votes": 6269428.0,
+   "rep_votes": 3839320.0,
+   "house_vote_margin": 24.039653575299337,
+   "note": "sum of reported district votes; uncontested races not on the ballot add nothing (as in the calibration's national House vote)",
+   "versions": {
+    "polls_only": {
+     "G_polls": 8.989638452842437,
+     "G_used": 8.989638452842437,
+     "bias_shift_assumed": 0.0,
+     "polling_miss": 15.0500151224569,
+     "G_error": 15.0500151224569
+    },
+    "polls_fundamentals": {
+     "G_polls": 8.989638452842437,
+     "G_used": 9.621161475209849,
+     "bias_shift_assumed": 0.0,
+     "polling_miss": 15.0500151224569,
+     "G_error": 14.418492100089487
+    },
+    "polls_fundamentals_biasadj": {
+     "G_polls": 8.989638452842437,
+     "G_used": 7.446845163533031,
+     "bias_shift_assumed": -2.5540952480150283,
+     "polling_miss": 15.0500151224569,
+     "G_error": 16.592808411766306
+    },
+    "pocket_senate_wide_shift": {
+     "G_polls": 8.989638452842437,
+     "G_used": 7.446845163533031,
+     "bias_shift_assumed": -2.5540952480150283,
+     "polling_miss": 15.0500151224569,
+     "G_error": 16.592808411766306
+    },
+    "pocket_full_historical_bias": {
+     "G_polls": 8.989638452842437,
+     "G_used": 7.164330122009899,
+     "bias_shift_assumed": -2.932309892200151,
+     "polling_miss": 15.0500151224569,
+     "G_error": 16.87532345328944
+    }
+   }
+  },
+  "ordering": {
+   "n_with_margins": 0,
+   "of": 35,
+   "pending": [
+    "2026|AL|S|regular",
+    "2026|AK|S|regular",
+    "2026|AR|S|regular",
+    "2026|CO|S|regular",
+    "2026|DE|S|regular",
+    "2026|FL|S|special",
+    "2026|GA|S|regular",
+    "2026|ID|S|regular",
+    "2026|IL|S|regular",
+    "2026|IA|S|regular",
+    "2026|KS|S|regular",
+    "2026|KY|S|regular",
+    "2026|LA|S|regular",
+    "2026|ME|S|regular",
+    "2026|MA|S|regular",
+    "2026|MI|S|regular",
+    "2026|MN|S|regular",
+    "2026|MS|S|regular",
+    "2026|MT|S|regular",
+    "2026|NE|S|regular",
+    "2026|NH|S|regular",
+    "2026|NJ|S|regular",
+    "2026|NM|S|regular",
+    "2026|NC|S|regular",
+    "2026|OH|S|special",
+    "2026|OK|S|regular",
+    "2026|OR|S|regular",
+    "2026|RI|S|regular",
+    "2026|SC|S|regular",
+    "2026|SD|S|regular",
+    "2026|TN|S|regular",
+    "2026|TX|S|regular",
+    "2026|VA|S|regular",
+    "2026|WV|S|regular",
+    "2026|WY|S|regular"
+   ],
+   "all": {
+    "n": 0
+   },
+   "contested": {
+    "n": 0
+   },
+   "ranks": [],
+   "mean_abs_displacement": null,
+   "tipping_point": null,
+   "tipping_point_pending": [
+    "2026|AL|S|regular",
+    "2026|AK|S|regular",
+    "2026|AR|S|regular",
+    "2026|CO|S|regular",
+    "2026|DE|S|regular",
+    "2026|FL|S|special",
+    "2026|GA|S|regular",
+    "2026|IL|S|regular",
+    "2026|IA|S|regular",
+    "2026|KS|S|regular",
+    "2026|KY|S|regular",
+    "2026|LA|S|regular",
+    "2026|ME|S|regular",
+    "2026|MA|S|regular",
+    "2026|MI|S|regular",
+    "2026|MN|S|regular",
+    "2026|MS|S|regular",
+    "2026|MT|S|regular",
+    "2026|NH|S|regular",
+    "2026|NJ|S|regular",
+    "2026|NM|S|regular",
+    "2026|NC|S|regular",
+    "2026|OH|S|special",
+    "2026|OK|S|regular",
+    "2026|OR|S|regular",
+    "2026|RI|S|regular",
+    "2026|SC|S|regular",
+    "2026|TN|S|regular",
+    "2026|TX|S|regular",
+    "2026|VA|S|regular",
+    "2026|WV|S|regular",
+    "2026|WY|S|regular"
+   ]
+  },
+  "layers": {
+   "reference_version": "polls_fundamentals",
+   "df_t_used": 3.9,
+   "national_senate": {
+    "n": 0,
+    "miss": null,
+    "sd_assumed": 3.2922356210659323,
+    "z": null
+   },
+   "national_house": {
+    "n": 0,
+    "miss": null,
+    "sd_assumed": 2.3306142350553474,
+    "z": null
+   },
+   "n_races": 0
+  },
+  "senate_margins": [
+   {
+    "race": "2026|AL|S|regular",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -17.83,
+    "mu_polls_fundamentals": -17.75,
+    "mu_polls_fundamentals_biasadj": -20.17
+   },
+   {
+    "race": "2026|AK|S|regular",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 1.18,
+    "mu_polls_fundamentals": 1.24,
+    "mu_polls_fundamentals_biasadj": 0.14
+   },
+   {
+    "race": "2026|AR|S|regular",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -14.42,
+    "mu_polls_fundamentals": -14.32,
+    "mu_polls_fundamentals_biasadj": -16.74
+   },
+   {
+    "race": "2026|CO|S|regular",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 18.18,
+    "mu_polls_fundamentals": 18.38,
+    "mu_polls_fundamentals_biasadj": 18.38
+   },
+   {
+    "race": "2026|DE|S|regular",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 26.99,
+    "mu_polls_fundamentals": 27.62,
+    "mu_polls_fundamentals_biasadj": 25.45
+   },
+   {
+    "race": "2026|FL|S|special",
+    "actual": null,
+    "counted": -2.93,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -6.3,
+    "mu_polls_fundamentals": -6.25,
+    "mu_polls_fundamentals_biasadj": -7.18
+   },
+   {
+    "race": "2026|GA|S|regular",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 9.23,
+    "mu_polls_fundamentals": 9.29,
+    "mu_polls_fundamentals_biasadj": 8.94
+   },
+   {
+    "race": "2026|ID|S|regular",
+    "actual": null,
+    "counted": -23.24,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -13.33,
+    "mu_polls_fundamentals": -13.14,
+    "mu_polls_fundamentals_biasadj": -15.85
+   },
+   {
+    "race": "2026|IL|S|regular",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 15.17,
+    "mu_polls_fundamentals": 15.28,
+    "mu_polls_fundamentals_biasadj": 15.71
+   },
+   {
+    "race": "2026|IA|S|regular",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -0.1,
+    "mu_polls_fundamentals": -0.06,
+    "mu_polls_fundamentals_biasadj": -1.13
+   },
+   {
+    "race": "2026|KS|S|regular",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 3.75,
+    "mu_polls_fundamentals": 3.8,
+    "mu_polls_fundamentals_biasadj": 2.41
+   },
+   {
+    "race": "2026|KY|S|regular",
+    "actual": null,
+    "counted": -12.32,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -21.01,
+    "mu_polls_fundamentals": -20.38,
+    "mu_polls_fundamentals_biasadj": -22.55
+   },
+   {
+    "race": "2026|LA|S|regular",
+    "actual": null,
+    "counted": -1.76,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -13.01,
+    "mu_polls_fundamentals": -12.38,
+    "mu_polls_fundamentals_biasadj": -14.55
+   },
+   {
+    "race": "2026|ME|S|regular",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 4.58,
+    "mu_polls_fundamentals": 4.62,
+    "mu_polls_fundamentals_biasadj": 5.08
+   },
+   {
+    "race": "2026|MA|S|regular",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 31.36,
+    "mu_polls_fundamentals": 31.43,
+    "mu_polls_fundamentals_biasadj": 33.26
+   },
+   {
+    "race": "2026|MI|S|regular",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 4.48,
+    "mu_polls_fundamentals": 4.52,
+    "mu_polls_fundamentals_biasadj": 4.38
+   },
+   {
+    "race": "2026|MN|S|regular",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 4.71,
+    "mu_polls_fundamentals": 4.78,
+    "mu_polls_fundamentals_biasadj": 4.96
+   },
+   {
+    "race": "2026|MS|S|regular",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -7.93,
+    "mu_polls_fundamentals": -7.77,
+    "mu_polls_fundamentals_biasadj": -9.67
+   },
+   {
+    "race": "2026|MT|S|regular",
+    "actual": null,
+    "counted": -9.07,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -12.44,
+    "mu_polls_fundamentals": -12.44,
+    "mu_polls_fundamentals_biasadj": -12.44
+   },
+   {
+    "race": "2026|NE|S|regular",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -3.56,
+    "mu_polls_fundamentals": -3.46,
+    "mu_polls_fundamentals_biasadj": -5.18
+   },
+   {
+    "race": "2026|NH|S|regular",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 8.51,
+    "mu_polls_fundamentals": 8.57,
+    "mu_polls_fundamentals_biasadj": 8.67
+   },
+   {
+    "race": "2026|NJ|S|regular",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 18.99,
+    "mu_polls_fundamentals": 19.62,
+    "mu_polls_fundamentals_biasadj": 17.45
+   },
+   {
+    "race": "2026|NM|S|regular",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 18.73,
+    "mu_polls_fundamentals": 18.93,
+    "mu_polls_fundamentals_biasadj": 18.71
+   },
+   {
+    "race": "2026|NC|S|regular",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 10.99,
+    "mu_polls_fundamentals": 11.03,
+    "mu_polls_fundamentals_biasadj": 10.72
+   },
+   {
+    "race": "2026|OH|S|special",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 3.8,
+    "mu_polls_fundamentals": 3.85,
+    "mu_polls_fundamentals_biasadj": 2.93
+   },
+   {
+    "race": "2026|OK|S|regular",
+    "actual": null,
+    "counted": -18.74,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -25.01,
+    "mu_polls_fundamentals": -24.38,
+    "mu_polls_fundamentals_biasadj": -26.55
+   },
+   {
+    "race": "2026|OR|S|regular",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 26.99,
+    "mu_polls_fundamentals": 27.62,
+    "mu_polls_fundamentals_biasadj": 25.45
+   },
+   {
+    "race": "2026|RI|S|regular",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 27.04,
+    "mu_polls_fundamentals": 27.14,
+    "mu_polls_fundamentals_biasadj": 27.9
+   },
+   {
+    "race": "2026|SC|S|regular",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -2.37,
+    "mu_polls_fundamentals": -2.29,
+    "mu_polls_fundamentals_biasadj": -3.71
+   },
+   {
+    "race": "2026|SD|S|regular",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -14.53,
+    "mu_polls_fundamentals": -14.45,
+    "mu_polls_fundamentals_biasadj": -16.87
+   },
+   {
+    "race": "2026|TN|S|regular",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -23.03,
+    "mu_polls_fundamentals": -22.83,
+    "mu_polls_fundamentals_biasadj": -25.09
+   },
+   {
+    "race": "2026|TX|S|regular",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 2.79,
+    "mu_polls_fundamentals": 2.83,
+    "mu_polls_fundamentals_biasadj": 1.77
+   },
+   {
+    "race": "2026|VA|S|regular",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 19.38,
+    "mu_polls_fundamentals": 19.58,
+    "mu_polls_fundamentals_biasadj": 19.24
+   },
+   {
+    "race": "2026|WV|S|regular",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -35.01,
+    "mu_polls_fundamentals": -34.38,
+    "mu_polls_fundamentals_biasadj": -36.55
+   },
+   {
+    "race": "2026|WY|S|regular",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -37.01,
+    "mu_polls_fundamentals": -36.38,
+    "mu_polls_fundamentals_biasadj": -38.55
+   }
+  ],
+  "house_margins": [
+   {
+    "race": "2026|AL|H|2",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -1.11,
+    "mu_polls_fundamentals": -0.81,
+    "mu_polls_fundamentals_biasadj": -2.86
+   },
+   {
+    "race": "2026|AZ|H|1",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 5.06,
+    "mu_polls_fundamentals": 5.35,
+    "mu_polls_fundamentals_biasadj": 3.28
+   },
+   {
+    "race": "2026|AZ|H|2",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -4.77,
+    "mu_polls_fundamentals": -4.47,
+    "mu_polls_fundamentals_biasadj": -6.52
+   },
+   {
+    "race": "2026|AZ|H|5",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -10.36,
+    "mu_polls_fundamentals": -9.86,
+    "mu_polls_fundamentals_biasadj": -11.57
+   },
+   {
+    "race": "2026|AZ|H|6",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 3.28,
+    "mu_polls_fundamentals": 3.77,
+    "mu_polls_fundamentals_biasadj": 2.07
+   },
+   {
+    "race": "2026|AZ|H|8",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -11.24,
+    "mu_polls_fundamentals": -10.74,
+    "mu_polls_fundamentals_biasadj": -12.44
+   },
+   {
+    "race": "2026|AR|H|2",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -6.5,
+    "mu_polls_fundamentals": -6.22,
+    "mu_polls_fundamentals_biasadj": -8.29
+   },
+   {
+    "race": "2026|CA|H|5",
+    "actual": null,
+    "counted": -12.43,
+    "settled": false,
+    "source": "ca_sos",
+    "mu_polls_only": -14.87,
+    "mu_polls_fundamentals": -14.37,
+    "mu_polls_fundamentals_biasadj": -16.07
+   },
+   {
+    "race": "2026|CA|H|6",
+    "actual": null,
+    "counted": 14.97,
+    "settled": false,
+    "source": "ca_sos",
+    "mu_polls_only": 12.35,
+    "mu_polls_fundamentals": 12.85,
+    "mu_polls_fundamentals_biasadj": 11.15
+   },
+   {
+    "race": "2026|CA|H|13",
+    "actual": null,
+    "counted": 22.64,
+    "settled": false,
+    "source": "ca_sos",
+    "mu_polls_only": 15.92,
+    "mu_polls_fundamentals": 16.42,
+    "mu_polls_fundamentals_biasadj": 14.72
+   },
+   {
+    "race": "2026|CA|H|22",
+    "actual": null,
+    "counted": 32.83,
+    "settled": false,
+    "source": "ca_sos",
+    "mu_polls_only": 7.17,
+    "mu_polls_fundamentals": 7.46,
+    "mu_polls_fundamentals_biasadj": 5.42
+   },
+   {
+    "race": "2026|CA|H|23",
+    "actual": null,
+    "counted": -2.65,
+    "settled": false,
+    "source": "ca_sos",
+    "mu_polls_only": -13.05,
+    "mu_polls_fundamentals": -12.56,
+    "mu_polls_fundamentals_biasadj": -14.26
+   },
+   {
+    "race": "2026|CA|H|48",
+    "actual": null,
+    "counted": 19.3,
+    "settled": false,
+    "source": "ca_sos",
+    "mu_polls_only": 9.36,
+    "mu_polls_fundamentals": 9.64,
+    "mu_polls_fundamentals_biasadj": 7.57
+   },
+   {
+    "race": "2026|CO|H|3",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -3.5,
+    "mu_polls_fundamentals": -3.2,
+    "mu_polls_fundamentals_biasadj": -5.25
+   },
+   {
+    "race": "2026|CO|H|4",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -10.14,
+    "mu_polls_fundamentals": -9.85,
+    "mu_polls_fundamentals_biasadj": -11.89
+   },
+   {
+    "race": "2026|CO|H|5",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -5.79,
+    "mu_polls_fundamentals": -5.3,
+    "mu_polls_fundamentals_biasadj": -7.0
+   },
+   {
+    "race": "2026|CO|H|8",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 3.28,
+    "mu_polls_fundamentals": 3.77,
+    "mu_polls_fundamentals_biasadj": 2.07
+   },
+   {
+    "race": "2026|FL|H|2",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -6.73,
+    "mu_polls_fundamentals": -6.23,
+    "mu_polls_fundamentals_biasadj": -7.94
+   },
+   {
+    "race": "2026|FL|H|3",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -14.87,
+    "mu_polls_fundamentals": -14.37,
+    "mu_polls_fundamentals_biasadj": -16.07
+   },
+   {
+    "race": "2026|FL|H|4",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -5.79,
+    "mu_polls_fundamentals": -5.3,
+    "mu_polls_fundamentals_biasadj": -7.0
+   },
+   {
+    "race": "2026|FL|H|5",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -14.87,
+    "mu_polls_fundamentals": -14.37,
+    "mu_polls_fundamentals_biasadj": -16.07
+   },
+   {
+    "race": "2026|FL|H|7",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -1.29,
+    "mu_polls_fundamentals": -0.79,
+    "mu_polls_fundamentals_biasadj": -2.49
+   },
+   {
+    "race": "2026|FL|H|8",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -11.24,
+    "mu_polls_fundamentals": -10.74,
+    "mu_polls_fundamentals_biasadj": -12.44
+   },
+   {
+    "race": "2026|FL|H|9",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -2.22,
+    "mu_polls_fundamentals": -1.73,
+    "mu_polls_fundamentals_biasadj": -3.43
+   },
+   {
+    "race": "2026|FL|H|11",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -4.91,
+    "mu_polls_fundamentals": -4.42,
+    "mu_polls_fundamentals_biasadj": -6.12
+   },
+   {
+    "race": "2026|FL|H|12",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -9.42,
+    "mu_polls_fundamentals": -8.93,
+    "mu_polls_fundamentals_biasadj": -10.63
+   },
+   {
+    "race": "2026|FL|H|13",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -5.36,
+    "mu_polls_fundamentals": -5.08,
+    "mu_polls_fundamentals_biasadj": -7.15
+   },
+   {
+    "race": "2026|FL|H|14",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 5.22,
+    "mu_polls_fundamentals": 5.52,
+    "mu_polls_fundamentals_biasadj": 3.47
+   },
+   {
+    "race": "2026|FL|H|15",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -13.05,
+    "mu_polls_fundamentals": -12.56,
+    "mu_polls_fundamentals_biasadj": -14.26
+   },
+   {
+    "race": "2026|FL|H|16",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -3.64,
+    "mu_polls_fundamentals": -3.35,
+    "mu_polls_fundamentals_biasadj": -5.39
+   },
+   {
+    "race": "2026|FL|H|17",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -14.87,
+    "mu_polls_fundamentals": -14.37,
+    "mu_polls_fundamentals_biasadj": -16.07
+   },
+   {
+    "race": "2026|FL|H|18",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -11.24,
+    "mu_polls_fundamentals": -10.74,
+    "mu_polls_fundamentals_biasadj": -12.44
+   },
+   {
+    "race": "2026|FL|H|21",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -9.42,
+    "mu_polls_fundamentals": -8.93,
+    "mu_polls_fundamentals_biasadj": -10.63
+   },
+   {
+    "race": "2026|FL|H|22",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 0.31,
+    "mu_polls_fundamentals": 0.61,
+    "mu_polls_fundamentals_biasadj": -1.44
+   },
+   {
+    "race": "2026|FL|H|25",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 5.85,
+    "mu_polls_fundamentals": 6.15,
+    "mu_polls_fundamentals_biasadj": 4.1
+   },
+   {
+    "race": "2026|FL|H|26",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -9.42,
+    "mu_polls_fundamentals": -8.93,
+    "mu_polls_fundamentals_biasadj": -10.63
+   },
+   {
+    "race": "2026|FL|H|27",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -5.45,
+    "mu_polls_fundamentals": -5.16,
+    "mu_polls_fundamentals_biasadj": -7.2
+   },
+   {
+    "race": "2026|FL|H|28",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -14.87,
+    "mu_polls_fundamentals": -14.37,
+    "mu_polls_fundamentals_biasadj": -16.07
+   },
+   {
+    "race": "2026|GA|H|1",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -6.73,
+    "mu_polls_fundamentals": -6.23,
+    "mu_polls_fundamentals_biasadj": -7.94
+   },
+   {
+    "race": "2026|GA|H|7",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -16.68,
+    "mu_polls_fundamentals": -16.19,
+    "mu_polls_fundamentals_biasadj": -17.89
+   },
+   {
+    "race": "2026|GA|H|10",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -12.17,
+    "mu_polls_fundamentals": -11.68,
+    "mu_polls_fundamentals_biasadj": -13.38
+   },
+   {
+    "race": "2026|GA|H|11",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -13.99,
+    "mu_polls_fundamentals": -13.49,
+    "mu_polls_fundamentals_biasadj": -15.19
+   },
+   {
+    "race": "2026|GA|H|12",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -9.42,
+    "mu_polls_fundamentals": -8.93,
+    "mu_polls_fundamentals_biasadj": -10.63
+   },
+   {
+    "race": "2026|IL|H|8",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 16.86,
+    "mu_polls_fundamentals": 17.35,
+    "mu_polls_fundamentals_biasadj": 15.65
+   },
+   {
+    "race": "2026|IL|H|16",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -16.68,
+    "mu_polls_fundamentals": -16.19,
+    "mu_polls_fundamentals_biasadj": -17.89
+   },
+   {
+    "race": "2026|IN|H|1",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 14.11,
+    "mu_polls_fundamentals": 14.6,
+    "mu_polls_fundamentals_biasadj": 12.9
+   },
+   {
+    "race": "2026|IN|H|5",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -8.14,
+    "mu_polls_fundamentals": -7.86,
+    "mu_polls_fundamentals_biasadj": -9.93
+   },
+   {
+    "race": "2026|IA|H|1",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 0.35,
+    "mu_polls_fundamentals": 0.64,
+    "mu_polls_fundamentals_biasadj": -1.41
+   },
+   {
+    "race": "2026|IA|H|2",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 1.18,
+    "mu_polls_fundamentals": 1.46,
+    "mu_polls_fundamentals_biasadj": -0.61
+   },
+   {
+    "race": "2026|IA|H|3",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -0.35,
+    "mu_polls_fundamentals": 0.15,
+    "mu_polls_fundamentals_biasadj": -1.56
+   },
+   {
+    "race": "2026|KS|H|2",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -14.87,
+    "mu_polls_fundamentals": -14.37,
+    "mu_polls_fundamentals_biasadj": -16.07
+   },
+   {
+    "race": "2026|KS|H|3",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 15.92,
+    "mu_polls_fundamentals": 16.42,
+    "mu_polls_fundamentals_biasadj": 14.72
+   },
+   {
+    "race": "2026|KY|H|6",
+    "actual": null,
+    "counted": 9.79,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -1.02,
+    "mu_polls_fundamentals": -0.74,
+    "mu_polls_fundamentals_biasadj": -2.81
+   },
+   {
+    "race": "2026|ME|H|2",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -1.74,
+    "mu_polls_fundamentals": -1.44,
+    "mu_polls_fundamentals_biasadj": -3.49
+   },
+   {
+    "race": "2026|MD|H|1",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -11.24,
+    "mu_polls_fundamentals": -10.74,
+    "mu_polls_fundamentals_biasadj": -12.44
+   },
+   {
+    "race": "2026|MI|H|1",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -16.68,
+    "mu_polls_fundamentals": -16.19,
+    "mu_polls_fundamentals_biasadj": -17.89
+   },
+   {
+    "race": "2026|MI|H|4",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -2.16,
+    "mu_polls_fundamentals": -1.67,
+    "mu_polls_fundamentals_biasadj": -3.37
+   },
+   {
+    "race": "2026|MI|H|7",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 4.18,
+    "mu_polls_fundamentals": 4.46,
+    "mu_polls_fundamentals_biasadj": 2.4
+   },
+   {
+    "race": "2026|MI|H|8",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 10.48,
+    "mu_polls_fundamentals": 10.97,
+    "mu_polls_fundamentals_biasadj": 9.27
+   },
+   {
+    "race": "2026|MI|H|10",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 0.9,
+    "mu_polls_fundamentals": 1.19,
+    "mu_polls_fundamentals_biasadj": -0.86
+   },
+   {
+    "race": "2026|MN|H|1",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": null,
+    "mu_polls_only": -4.13,
+    "mu_polls_fundamentals": -3.86,
+    "mu_polls_fundamentals_biasadj": -5.94
+   },
+   {
+    "race": "2026|MN|H|2",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": null,
+    "mu_polls_only": 13.23,
+    "mu_polls_fundamentals": 13.73,
+    "mu_polls_fundamentals_biasadj": 12.02
+   },
+   {
+    "race": "2026|MN|H|6",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": null,
+    "mu_polls_only": -14.87,
+    "mu_polls_fundamentals": -14.37,
+    "mu_polls_fundamentals_biasadj": -16.07
+   },
+   {
+    "race": "2026|MN|H|8",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": null,
+    "mu_polls_only": -9.42,
+    "mu_polls_fundamentals": -8.93,
+    "mu_polls_fundamentals_biasadj": -10.63
+   },
+   {
+    "race": "2026|MO|H|2",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": null,
+    "mu_polls_only": -1.68,
+    "mu_polls_fundamentals": -1.4,
+    "mu_polls_fundamentals_biasadj": -3.48
+   },
+   {
+    "race": "2026|MT|H|1",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 1.24,
+    "mu_polls_fundamentals": 1.53,
+    "mu_polls_fundamentals_biasadj": -0.52
+   },
+   {
+    "race": "2026|NE|H|1",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -4.46,
+    "mu_polls_fundamentals": -4.18,
+    "mu_polls_fundamentals_biasadj": -6.24
+   },
+   {
+    "race": "2026|NE|H|2",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 12.05,
+    "mu_polls_fundamentals": 12.34,
+    "mu_polls_fundamentals_biasadj": 10.27
+   },
+   {
+    "race": "2026|NV|H|1",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 15.92,
+    "mu_polls_fundamentals": 16.42,
+    "mu_polls_fundamentals_biasadj": 14.72
+   },
+   {
+    "race": "2026|NV|H|2",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -4.32,
+    "mu_polls_fundamentals": -4.02,
+    "mu_polls_fundamentals_biasadj": -6.07
+   },
+   {
+    "race": "2026|NV|H|3",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 14.11,
+    "mu_polls_fundamentals": 14.6,
+    "mu_polls_fundamentals_biasadj": 12.9
+   },
+   {
+    "race": "2026|NV|H|4",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 15.92,
+    "mu_polls_fundamentals": 16.42,
+    "mu_polls_fundamentals_biasadj": 14.72
+   },
+   {
+    "race": "2026|NH|H|1",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": null,
+    "mu_polls_only": 9.82,
+    "mu_polls_fundamentals": 10.1,
+    "mu_polls_fundamentals_biasadj": 8.03
+   },
+   {
+    "race": "2026|NJ|H|2",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -8.45,
+    "mu_polls_fundamentals": -8.16,
+    "mu_polls_fundamentals_biasadj": -10.2
+   },
+   {
+    "race": "2026|NJ|H|5",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 15.92,
+    "mu_polls_fundamentals": 16.42,
+    "mu_polls_fundamentals_biasadj": 14.72
+   },
+   {
+    "race": "2026|NJ|H|7",
+    "actual": null,
+    "counted": 22.26,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 3.28,
+    "mu_polls_fundamentals": 3.77,
+    "mu_polls_fundamentals_biasadj": 2.07
+   },
+   {
+    "race": "2026|NJ|H|9",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 15.92,
+    "mu_polls_fundamentals": 16.42,
+    "mu_polls_fundamentals_biasadj": 14.72
+   },
+   {
+    "race": "2026|NM|H|2",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 8.67,
+    "mu_polls_fundamentals": 8.96,
+    "mu_polls_fundamentals_biasadj": 6.92
+   },
+   {
+    "race": "2026|NY|H|1",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -3.98,
+    "mu_polls_fundamentals": -3.48,
+    "mu_polls_fundamentals_biasadj": -5.19
+   },
+   {
+    "race": "2026|NY|H|2",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -7.61,
+    "mu_polls_fundamentals": -7.11,
+    "mu_polls_fundamentals_biasadj": -8.81
+   },
+   {
+    "race": "2026|NY|H|3",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 12.29,
+    "mu_polls_fundamentals": 12.79,
+    "mu_polls_fundamentals_biasadj": 11.09
+   },
+   {
+    "race": "2026|NY|H|4",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 15.92,
+    "mu_polls_fundamentals": 16.42,
+    "mu_polls_fundamentals_biasadj": 14.72
+   },
+   {
+    "race": "2026|NY|H|11",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -14.87,
+    "mu_polls_fundamentals": -14.37,
+    "mu_polls_fundamentals_biasadj": -16.07
+   },
+   {
+    "race": "2026|NY|H|17",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 2.84,
+    "mu_polls_fundamentals": 3.12,
+    "mu_polls_fundamentals_biasadj": 1.04
+   },
+   {
+    "race": "2026|NY|H|18",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 15.92,
+    "mu_polls_fundamentals": 16.42,
+    "mu_polls_fundamentals_biasadj": 14.72
+   },
+   {
+    "race": "2026|NY|H|19",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 14.11,
+    "mu_polls_fundamentals": 14.6,
+    "mu_polls_fundamentals_biasadj": 12.9
+   },
+   {
+    "race": "2026|NY|H|21",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -6.86,
+    "mu_polls_fundamentals": -6.57,
+    "mu_polls_fundamentals_biasadj": -8.62
+   },
+   {
+    "race": "2026|NY|H|23",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -14.87,
+    "mu_polls_fundamentals": -14.37,
+    "mu_polls_fundamentals_biasadj": -16.07
+   },
+   {
+    "race": "2026|NY|H|24",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -16.68,
+    "mu_polls_fundamentals": -16.19,
+    "mu_polls_fundamentals_biasadj": -17.89
+   },
+   {
+    "race": "2026|NC|H|1",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 6.33,
+    "mu_polls_fundamentals": 6.62,
+    "mu_polls_fundamentals_biasadj": 4.57
+   },
+   {
+    "race": "2026|NC|H|3",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -7.61,
+    "mu_polls_fundamentals": -7.11,
+    "mu_polls_fundamentals_biasadj": -8.81
+   },
+   {
+    "race": "2026|NC|H|5",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -13.05,
+    "mu_polls_fundamentals": -12.56,
+    "mu_polls_fundamentals_biasadj": -14.26
+   },
+   {
+    "race": "2026|NC|H|6",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -13.05,
+    "mu_polls_fundamentals": -12.56,
+    "mu_polls_fundamentals_biasadj": -14.26
+   },
+   {
+    "race": "2026|NC|H|7",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -9.42,
+    "mu_polls_fundamentals": -8.93,
+    "mu_polls_fundamentals_biasadj": -10.63
+   },
+   {
+    "race": "2026|NC|H|8",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -14.87,
+    "mu_polls_fundamentals": -14.37,
+    "mu_polls_fundamentals_biasadj": -16.07
+   },
+   {
+    "race": "2026|NC|H|9",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -9.01,
+    "mu_polls_fundamentals": -8.72,
+    "mu_polls_fundamentals_biasadj": -10.77
+   },
+   {
+    "race": "2026|NC|H|10",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -13.05,
+    "mu_polls_fundamentals": -12.56,
+    "mu_polls_fundamentals_biasadj": -14.26
+   },
+   {
+    "race": "2026|NC|H|11",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 1.89,
+    "mu_polls_fundamentals": 2.19,
+    "mu_polls_fundamentals_biasadj": 0.14
+   },
+   {
+    "race": "2026|NC|H|13",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -11.24,
+    "mu_polls_fundamentals": -10.74,
+    "mu_polls_fundamentals_biasadj": -12.44
+   },
+   {
+    "race": "2026|NC|H|14",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -11.24,
+    "mu_polls_fundamentals": -10.74,
+    "mu_polls_fundamentals_biasadj": -12.44
+   },
+   {
+    "race": "2026|OH|H|1",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 7.67,
+    "mu_polls_fundamentals": 7.97,
+    "mu_polls_fundamentals_biasadj": 5.92
+   },
+   {
+    "race": "2026|OH|H|7",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 0.22,
+    "mu_polls_fundamentals": 0.5,
+    "mu_polls_fundamentals_biasadj": -1.58
+   },
+   {
+    "race": "2026|OH|H|8",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -11.24,
+    "mu_polls_fundamentals": -10.74,
+    "mu_polls_fundamentals_biasadj": -12.44
+   },
+   {
+    "race": "2026|OH|H|9",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 1.42,
+    "mu_polls_fundamentals": 1.71,
+    "mu_polls_fundamentals_biasadj": -0.34
+   },
+   {
+    "race": "2026|OH|H|10",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -1.52,
+    "mu_polls_fundamentals": -1.23,
+    "mu_polls_fundamentals_biasadj": -3.27
+   },
+   {
+    "race": "2026|OH|H|13",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 15.92,
+    "mu_polls_fundamentals": 16.42,
+    "mu_polls_fundamentals_biasadj": 14.72
+   },
+   {
+    "race": "2026|OH|H|14",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -14.87,
+    "mu_polls_fundamentals": -14.37,
+    "mu_polls_fundamentals_biasadj": -16.07
+   },
+   {
+    "race": "2026|OH|H|15",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -4.15,
+    "mu_polls_fundamentals": -3.87,
+    "mu_polls_fundamentals_biasadj": -5.94
+   },
+   {
+    "race": "2026|OK|H|1",
+    "actual": null,
+    "counted": -4.63,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -12.17,
+    "mu_polls_fundamentals": -11.68,
+    "mu_polls_fundamentals_biasadj": -13.38
+   },
+   {
+    "race": "2026|OK|H|5",
+    "actual": null,
+    "counted": -1.3,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -13.05,
+    "mu_polls_fundamentals": -12.56,
+    "mu_polls_fundamentals_biasadj": -14.26
+   },
+   {
+    "race": "2026|PA|H|1",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 2.11,
+    "mu_polls_fundamentals": 2.4,
+    "mu_polls_fundamentals_biasadj": 0.36
+   },
+   {
+    "race": "2026|PA|H|7",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 3.4,
+    "mu_polls_fundamentals": 3.67,
+    "mu_polls_fundamentals_biasadj": 1.6
+   },
+   {
+    "race": "2026|PA|H|8",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -0.74,
+    "mu_polls_fundamentals": -0.44,
+    "mu_polls_fundamentals_biasadj": -2.49
+   },
+   {
+    "race": "2026|PA|H|10",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -2.16,
+    "mu_polls_fundamentals": -1.67,
+    "mu_polls_fundamentals_biasadj": -3.37
+   },
+   {
+    "race": "2026|PA|H|11",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -16.68,
+    "mu_polls_fundamentals": -16.19,
+    "mu_polls_fundamentals_biasadj": -17.89
+   },
+   {
+    "race": "2026|PA|H|16",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -16.68,
+    "mu_polls_fundamentals": -16.19,
+    "mu_polls_fundamentals_biasadj": -17.89
+   },
+   {
+    "race": "2026|SC|H|1",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -1.74,
+    "mu_polls_fundamentals": -1.46,
+    "mu_polls_fundamentals_biasadj": -3.52
+   },
+   {
+    "race": "2026|SC|H|2",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -9.42,
+    "mu_polls_fundamentals": -8.93,
+    "mu_polls_fundamentals_biasadj": -10.63
+   },
+   {
+    "race": "2026|SC|H|4",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": null,
+    "mu_polls_only": -16.68,
+    "mu_polls_fundamentals": -16.19,
+    "mu_polls_fundamentals_biasadj": -17.89
+   },
+   {
+    "race": "2026|SC|H|5",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -12.17,
+    "mu_polls_fundamentals": -11.68,
+    "mu_polls_fundamentals_biasadj": -13.38
+   },
+   {
+    "race": "2026|TN|H|4",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": null,
+    "mu_polls_only": -16.68,
+    "mu_polls_fundamentals": -16.19,
+    "mu_polls_fundamentals_biasadj": -17.89
+   },
+   {
+    "race": "2026|TN|H|5",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": null,
+    "mu_polls_only": -10.36,
+    "mu_polls_fundamentals": -9.86,
+    "mu_polls_fundamentals_biasadj": -11.57
+   },
+   {
+    "race": "2026|TN|H|6",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": null,
+    "mu_polls_only": -15.8,
+    "mu_polls_fundamentals": -15.31,
+    "mu_polls_fundamentals_biasadj": -17.01
+   },
+   {
+    "race": "2026|TN|H|7",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": null,
+    "mu_polls_only": -16.68,
+    "mu_polls_fundamentals": -16.19,
+    "mu_polls_fundamentals_biasadj": -17.89
+   },
+   {
+    "race": "2026|TN|H|8",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": null,
+    "mu_polls_only": -14.87,
+    "mu_polls_fundamentals": -14.37,
+    "mu_polls_fundamentals_biasadj": -16.07
+   },
+   {
+    "race": "2026|TN|H|9",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": null,
+    "mu_polls_only": -8.57,
+    "mu_polls_fundamentals": -8.27,
+    "mu_polls_fundamentals_biasadj": -10.32
+   },
+   {
+    "race": "2026|TX|H|2",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -12.17,
+    "mu_polls_fundamentals": -11.68,
+    "mu_polls_fundamentals_biasadj": -13.38
+   },
+   {
+    "race": "2026|TX|H|3",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -16.68,
+    "mu_polls_fundamentals": -16.19,
+    "mu_polls_fundamentals_biasadj": -17.89
+   },
+   {
+    "race": "2026|TX|H|5",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -14.87,
+    "mu_polls_fundamentals": -14.37,
+    "mu_polls_fundamentals_biasadj": -16.07
+   },
+   {
+    "race": "2026|TX|H|6",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -16.68,
+    "mu_polls_fundamentals": -16.19,
+    "mu_polls_fundamentals_biasadj": -17.89
+   },
+   {
+    "race": "2026|TX|H|8",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -15.8,
+    "mu_polls_fundamentals": -15.31,
+    "mu_polls_fundamentals_biasadj": -17.01
+   },
+   {
+    "race": "2026|TX|H|9",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -8.54,
+    "mu_polls_fundamentals": -8.05,
+    "mu_polls_fundamentals_biasadj": -9.75
+   },
+   {
+    "race": "2026|TX|H|10",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -10.36,
+    "mu_polls_fundamentals": -9.86,
+    "mu_polls_fundamentals_biasadj": -11.57
+   },
+   {
+    "race": "2026|TX|H|12",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -16.68,
+    "mu_polls_fundamentals": -16.19,
+    "mu_polls_fundamentals_biasadj": -17.89
+   },
+   {
+    "race": "2026|TX|H|15",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -1.34,
+    "mu_polls_fundamentals": -1.06,
+    "mu_polls_fundamentals_biasadj": -3.14
+   },
+   {
+    "race": "2026|TX|H|17",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -14.87,
+    "mu_polls_fundamentals": -14.37,
+    "mu_polls_fundamentals_biasadj": -16.07
+   },
+   {
+    "race": "2026|TX|H|21",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -10.36,
+    "mu_polls_fundamentals": -9.86,
+    "mu_polls_fundamentals_biasadj": -11.57
+   },
+   {
+    "race": "2026|TX|H|22",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -12.17,
+    "mu_polls_fundamentals": -11.68,
+    "mu_polls_fundamentals_biasadj": -13.38
+   },
+   {
+    "race": "2026|TX|H|23",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -3.41,
+    "mu_polls_fundamentals": -3.12,
+    "mu_polls_fundamentals_biasadj": -5.17
+   },
+   {
+    "race": "2026|TX|H|24",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -11.24,
+    "mu_polls_fundamentals": -10.74,
+    "mu_polls_fundamentals_biasadj": -12.44
+   },
+   {
+    "race": "2026|TX|H|25",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -16.68,
+    "mu_polls_fundamentals": -16.19,
+    "mu_polls_fundamentals_biasadj": -17.89
+   },
+   {
+    "race": "2026|TX|H|26",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -16.68,
+    "mu_polls_fundamentals": -16.19,
+    "mu_polls_fundamentals_biasadj": -17.89
+   },
+   {
+    "race": "2026|TX|H|27",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -14.87,
+    "mu_polls_fundamentals": -14.37,
+    "mu_polls_fundamentals_biasadj": -16.07
+   },
+   {
+    "race": "2026|TX|H|28",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 12.13,
+    "mu_polls_fundamentals": 12.42,
+    "mu_polls_fundamentals_biasadj": 10.35
+   },
+   {
+    "race": "2026|TX|H|31",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -16.68,
+    "mu_polls_fundamentals": -16.19,
+    "mu_polls_fundamentals_biasadj": -17.89
+   },
+   {
+    "race": "2026|TX|H|32",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -6.73,
+    "mu_polls_fundamentals": -6.23,
+    "mu_polls_fundamentals_biasadj": -7.94
+   },
+   {
+    "race": "2026|TX|H|34",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 6.63,
+    "mu_polls_fundamentals": 6.91,
+    "mu_polls_fundamentals_biasadj": 4.85
+   },
+   {
+    "race": "2026|TX|H|35",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 0.62,
+    "mu_polls_fundamentals": 0.89,
+    "mu_polls_fundamentals_biasadj": -1.18
+   },
+   {
+    "race": "2026|TX|H|38",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -10.36,
+    "mu_polls_fundamentals": -9.86,
+    "mu_polls_fundamentals_biasadj": -11.57
+   },
+   {
+    "race": "2026|VA|H|1",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -0.48,
+    "mu_polls_fundamentals": -0.2,
+    "mu_polls_fundamentals_biasadj": -2.26
+   },
+   {
+    "race": "2026|VA|H|2",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 1.45,
+    "mu_polls_fundamentals": 1.75,
+    "mu_polls_fundamentals_biasadj": -0.3
+   },
+   {
+    "race": "2026|VA|H|5",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -6.61,
+    "mu_polls_fundamentals": -6.32,
+    "mu_polls_fundamentals_biasadj": -8.37
+   },
+   {
+    "race": "2026|VA|H|7",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 15.92,
+    "mu_polls_fundamentals": 16.42,
+    "mu_polls_fundamentals_biasadj": 14.72
+   },
+   {
+    "race": "2026|WA|H|3",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": 4.74,
+    "mu_polls_fundamentals": 5.03,
+    "mu_polls_fundamentals_biasadj": 2.96
+   },
+   {
+    "race": "2026|WA|H|4",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -10.36,
+    "mu_polls_fundamentals": -9.86,
+    "mu_polls_fundamentals_biasadj": -11.57
+   },
+   {
+    "race": "2026|WA|H|5",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": "wikipedia",
+    "mu_polls_only": -5.79,
+    "mu_polls_fundamentals": -5.3,
+    "mu_polls_fundamentals_biasadj": -7.0
+   },
+   {
+    "race": "2026|WI|H|1",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": null,
+    "mu_polls_only": -0.49,
+    "mu_polls_fundamentals": -0.21,
+    "mu_polls_fundamentals_biasadj": -2.28
+   },
+   {
+    "race": "2026|WI|H|3",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": null,
+    "mu_polls_only": -2.16,
+    "mu_polls_fundamentals": -1.67,
+    "mu_polls_fundamentals_biasadj": -3.37
+   },
+   {
+    "race": "2026|WI|H|5",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": null,
+    "mu_polls_only": -16.68,
+    "mu_polls_fundamentals": -16.19,
+    "mu_polls_fundamentals_biasadj": -17.89
+   },
+   {
+    "race": "2026|WI|H|6",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": null,
+    "mu_polls_only": -11.24,
+    "mu_polls_fundamentals": -10.74,
+    "mu_polls_fundamentals_biasadj": -12.44
+   },
+   {
+    "race": "2026|WI|H|7",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": null,
+    "mu_polls_only": -12.17,
+    "mu_polls_fundamentals": -11.68,
+    "mu_polls_fundamentals_biasadj": -13.38
+   },
+   {
+    "race": "2026|WI|H|8",
+    "actual": null,
+    "counted": null,
+    "settled": false,
+    "source": null,
+    "mu_polls_only": -11.24,
+    "mu_polls_fundamentals": -10.74,
+    "mu_polls_fundamentals_biasadj": -12.44
    }
   ]
  }

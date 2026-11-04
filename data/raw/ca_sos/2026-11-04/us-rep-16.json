@@ -1,0 +1,21 @@
+{
+  "raceTitle": "U.S. House of Representatives District 16 - Districtwide Results",
+  "Reporting": "100% (337 of 337) precincts reporting",
+  "ReportingTime": "November 4, 2026, 3:57 a.m.",
+  "candidates": [
+    {
+      "Name": "Sam Liccardo",
+      "Party": "Dem",
+      "Votes": "109,418",
+      "Percent": "75.9",
+      "incumbent": false
+    },
+    {
+      "Name": "Peter Sundin Soulé",
+      "Party": "Rep",
+      "Votes": "34,765",
+      "Percent": "24.1",
+      "incumbent": false
+    }
+  ]
+}

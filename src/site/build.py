@@ -17,7 +17,10 @@ import numpy as np
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[2]
-PROC = ROOT / "data" / "processed"
+MADE_AT = ROOT / "data" / "final" / "MADE_AT.txt"
+# Once the final forecast is frozen, the page is built from the frozen copy and keeps its lock time, so a later rebuild
+# (e.g. to link the scorecard) can't change what the final forecast shows.
+PROC = MADE_AT.parent if MADE_AT.exists() else ROOT / "data" / "processed"
 SITE = ROOT / "site"
 TEMPLATE = Path(__file__).with_name("template.html")
 
@@ -34,6 +37,18 @@ def clean(v):
 
 def records(df, cols):
     return [{c: clean(r[c]) for c in cols} for _, r in df[cols].iterrows()]
+
+
+SCORECARD = ROOT / "data" / "scorecard" / "scorecard.json"
+
+
+def site_scorecard():
+    """The scorecard (src/model/scorecard.py) trimmed for the page: House race rows only for contested districts."""
+    if not SCORECARD.exists():
+        return None
+    sc = json.loads(SCORECARD.read_text())
+    sc["house"]["races"] = [r for r in sc["house"]["races"] if r.get("contested")]
+    return sc
 
 
 def main():
@@ -95,7 +110,7 @@ def main():
     poll_lists = P.senate_poll_list(vh, senate_races(vh))
     from forecast import house_races
     comp_keys = {r["race_key"] for m in models.values() for r in m["house_comp"]}
-    house_polls = {k: v for k, v in P.house_poll_list(vh, house_races()).items() if k in comp_keys}
+    house_polls = {k: v for k, v in sorted(P.house_poll_list(vh, house_races()).items()) if k in comp_keys}  # sorted: stable rebuilds
     # sponsored-poll adjustments actually applied to 2026 polls (new tiered rule vs the old flat shift)
     pe = json.loads((PROC / "pollster_effects.json").read_text())
     rows_sp = {}
@@ -115,13 +130,18 @@ def main():
     try:
         from zoneinfo import ZoneInfo
         et = dt.datetime.now(ZoneInfo("America/New_York"))
+        if MADE_AT.exists():  # the lock time, written by run_all.py --final ("2026-11-03 16:08 <local zone>", local = ET)
+            et = dt.datetime.strptime(MADE_AT.read_text().strip()[:16], "%Y-%m-%d %H:%M").replace(tzinfo=ZoneInfo("America/New_York"))
         gen_label = f"{et:%b} {et.day}, {et.year}, {et.hour % 12 or 12}:{et:%M} {'am' if et.hour < 12 else 'pm'} ET"
+        generated = et.strftime("%Y-%m-%d %H:%M")
     except Exception:  # noqa: BLE001  (no tz database: fall back to local time with its offset)
         gen_label = dt.datetime.now().astimezone().strftime("%Y-%m-%d %H:%M UTC%z")
+        generated = dt.datetime.now().strftime("%Y-%m-%d %H:%M")
     data = {
-        "generated": dt.datetime.now().strftime("%Y-%m-%d %H:%M"),
+        "generated": generated,
         "generated_label": gen_label,
         "final": os.environ.get("FORECAST_FINAL") == "1" or (ROOT / "data" / "final" / "MADE_AT.txt").exists(),
+        "scorecard": site_scorecard(),
         "models": models,
         "national": nat,
         "backtest": bt,

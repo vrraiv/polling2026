@@ -1,0 +1,21 @@
+{
+  "raceTitle": "U.S. House of Representatives District 34 - Districtwide Results",
+  "Reporting": "100% (116 of 116) precincts reporting",
+  "ReportingTime": "November 4, 2026, 3:57 a.m.",
+  "candidates": [
+    {
+      "Name": "Jimmy Gomez",
+      "Party": "Dem",
+      "Votes": "46,641",
+      "Percent": "41.3",
+      "incumbent": false
+    },
+    {
+      "Name": "Angela Gonzales-Torres",
+      "Party": "Dem",
+      "Votes": "66,187",
+      "Percent": "58.7",
+      "incumbent": false
+    }
+  ]
+}

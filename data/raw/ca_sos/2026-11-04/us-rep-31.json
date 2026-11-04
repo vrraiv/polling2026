@@ -1,0 +1,21 @@
+{
+  "raceTitle": "U.S. House of Representatives District 31 - Districtwide Results",
+  "Reporting": "100% (360 of 360) precincts reporting",
+  "ReportingTime": "November 4, 2026, 3:57 a.m.",
+  "candidates": [
+    {
+      "Name": "Gil Cisneros",
+      "Party": "Dem",
+      "Votes": "104,133",
+      "Percent": "63.8",
+      "incumbent": false
+    },
+    {
+      "Name": "Eric Ching",
+      "Party": "Rep",
+      "Votes": "58,969",
+      "Percent": "36.2",
+      "incumbent": false
+    }
+  ]
+}

@@ -5,3 +5,5 @@
 __pycache__/
 # pollster PDFs (~4 MB each); links in the manifest, checksums in data/supplement/polls_supplement.json
 data/raw/atlasintel/**/*.pdf
+# per-state Wikipedia result pages (~150 MB per snapshot); the parsed data/scorecard/margins_*.csv keep each page's revision id
+data/raw/wikipedia_results_pages/

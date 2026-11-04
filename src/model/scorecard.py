@@ -46,13 +46,14 @@ def outcomes(chamber):
     """Frozen race list with each version's P(D side) and, where called, y = 1 if the D side won."""
     pcol = "p_dside" if chamber == "senate" else "p_dem"
     base = frozen(chamber, "polls_fundamentals")
-    keep = ["race_key", "state"] + (["special", "dem", "rep", "dside"] if chamber == "senate"
-                                    else ["district", "inc_party", "fixed", "dem_cand", "rep_cand"])
+    keep = ["race_key", "state", "pvi"] + (["special", "dem", "rep", "dside", "rating_cook"] if chamber == "senate"
+                                           else ["district", "inc_party", "fixed", "dem_cand", "rep_cand"])
     df = base[keep].copy()
     for v in VERSIONS:
         f = frozen(chamber, v).set_index("race_key")
         df[v] = df.race_key.map(f[pcol])
         df[f"mu_{v}"] = df.race_key.map(f["mu"])
+        df[f"sd_{v}"] = df.race_key.map(f["sd_race"])
     res = pd.read_csv(SC / f"results_{chamber}.csv").set_index("race_key")
     df["called"] = df.race_key.map(res.called).astype(bool)
     df["winner"] = df.race_key.map(res.winner_name).fillna("")
@@ -150,12 +151,19 @@ def main():
     sen, prov_s = outcomes("senate")
     hou, prov_h = outcomes("house")
     out = {"stage": "winners only (provisional: races are still being called and counted)",
+           "provisional": True,   # until the scores are re-run on certified results
            "sources": {"senate": prov_s, "house": prov_h},
            "contested_rule": f"any published model gave the D side between {LO:.0%} and {HI:.0%} (fixed from data/final/)",
            "senate": {"scores": chamber_scores(sen), "seats": senate_seats(sen), "races": races_table(sen, "senate")},
            "house": {"scores": chamber_scores(hou), "seats": house_seats(hou), "races": races_table(hou, "house")}}
+    if (SC / "margins_senate.csv").exists() and (SC / "margins_house.csv").exists():
+        import scorecard_margins as SM
+        out["margins"] = SM.stage2(sen, hou)
+        out["stage"] = "winners and vote counts (provisional: counting continues)"
     (SC / "scorecard.json").write_text(json.dumps(out, indent=1, default=float))
     report(out, sen, hou)
+    if "margins" in out:
+        SM.report(out["margins"])
 
 
 def report(out, sen, hou):

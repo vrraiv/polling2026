@@ -191,7 +191,7 @@ td .none { color: var(--text-3); font-size: .8rem; }
   <div class="wrap">
     <div class="topbar"><h1>2026 Midterm Forecast</h1><span class="stamp" id="gen"></span></div>
     <nav class="tabs" aria-label="Pages">
-      <a href="#overview" data-p="overview">Overview</a><a href="#senate" data-p="senate">Senate</a><a href="#house" data-p="house">House</a>
+      <a href="#overview" data-p="overview">Overview</a><a href="#scorecard" data-p="scorecard" id="scTab" hidden>Scorecard</a><a href="#senate" data-p="senate">Senate</a><a href="#house" data-p="house">House</a>
       <a href="#method" data-p="method">How it works</a><a href="#bias" data-p="bias">Polling bias</a><a href="#backtest" data-p="backtest">Backtest</a>
       <a href="#appendix" data-p="appendix">Technical appendix</a><a href="#data" data-p="data">Data</a>
     </nav>
@@ -244,6 +244,30 @@ td .none { color: var(--text-3); font-size: .8rem; }
     </div>
   </div>
   <p class="note" id="benchNote"></p>
+</section>
+
+<!-- ================= SCORECARD ================= -->
+<section class="page" id="p-scorecard">
+  <h2>Scorecard: the final forecast vs. the results</h2>
+  <div class="final-banner" id="scBanner"></div>
+  <p class="headline" id="scHeadline"></p>
+  <div class="cards">
+    <div class="card" id="scSenateCard"></div>
+    <div class="card" id="scHouseCard"></div>
+  </div>
+  <h3>How each version scored</h3>
+  <p class="muted small">Brier score: the average squared gap between the forecast probability and the result (1 if the Democratic side won, 0 if not); 0 is perfect and 50% everywhere scores 0.25. Log loss punishes confident misses harder. "Close races" are fixed from the frozen forecast before any result: every race any published version gave the Democratic side between 2% and 98%. Margin error is the actual two-party margin minus the forecast's expected margin (positive = Democrats did better).</p>
+  <div class="tbl-wrap"><table id="scScores"></table></div>
+  <div id="scNational"></div>
+  <h3>Senate races</h3>
+  <div class="controls"><div class="seg modelSeg" role="group" aria-label="Model"></div></div>
+  <div class="tbl-wrap scroll"><table id="scSenTable"></table></div>
+  <div class="card" id="scScatterCard" style="margin-top:14px;max-width:560px" hidden><span class="lab">Senate: expected vs. actual margin</span><div class="chart" id="scScatter"></div><p class="tiny" id="scScatterNote"></p></div>
+  <div id="scOrdering"></div>
+  <div id="scLayers"></div>
+  <details><summary>House close races</summary><div class="tbl-wrap scroll" style="margin-top:8px"><table id="scHouseTable"></table></div></details>
+  <details><summary>Off-site scenarios (not published before the election)</summary><p class="small" id="scPocketText"></p><div class="tbl-wrap"><table id="scPocket"></table></div></details>
+  <details><summary>Sources and method</summary><ul class="list small" id="scMethod"></ul></details>
 </section>
 
 <!-- ================= SENATE ================= -->
@@ -524,7 +548,7 @@ function exTip(el, sel, html, act) {
 }
 
 // ---------- routing ----------
-const PAGES = ["overview", "senate", "house", "method", "bias", "backtest", "appendix", "data"];
+const PAGES = ["overview", "scorecard", "senate", "house", "method", "bias", "backtest", "appendix", "data"];
 let openRace = null, openHouse = null;
 function route() {
   let h = location.hash.slice(1) || "overview";
@@ -547,7 +571,7 @@ function renderModelSegs() {
     seg.innerHTML = Object.keys(MODELS).map(k => `<button type="button" data-m="${k}" aria-pressed="${k === model}" title="${MODEL_LONG[k]}">${MODELS[k]}</button>`).join("");
     seg.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
       model = b.dataset.m; try { localStorage.setItem("pf-model2", model); } catch (e) {}
-      exSim = null; renderModelSegs(); renderExplorer(); renderWatch(); renderSenate(); renderHouse();
+      exSim = null; renderModelSegs(); renderExplorer(); renderWatch(); renderSenate(); renderHouse(); renderScorecard();
     }));
   });
 }
@@ -1539,10 +1563,178 @@ function renderSdN() {
   $("#sdnBins").textContent = Object.entries(S.bins).map(([k, v]) => `${k.replace("-999", "+")} polls: observed ${v.sd.toFixed(1)}, fitted ${v.fit.toFixed(1)}`).join("; ") + ". This replaced a flat 7.4 that was too wide for well-polled races and too narrow for thinly polled ones";
 }
 
+// ---------- scorecard ----------
+const VNAME = { ...MODELS, pocket_senate_wide_shift: "Bias-adjusted + Senate-wide shift", pocket_full_historical_bias: "Full historical bias shift" };
+const PUB = Object.keys(MODELS);
+const f2 = (x, d = 3) => x == null ? "—" : x.toFixed(d);
+const fSgn = (x, d = 1) => x == null ? "—" : (x >= 0 ? "+" : "−") + Math.abs(x).toFixed(d);
+const raceLab = (k) => { const [, st, ch, d] = k.split("|"); return ch === "S" ? STATE[st] + (d === "special" ? " (special)" : "") : `${st}-${d === "0" ? "AL" : d}`; };
+const asOf = (iso) => { if (!iso) return "—"; const t = new Date(iso); return t.toLocaleString("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZone: "America/New_York" }) + " ET"; };
+
+function scHist(hist, lo, hi, line, w = 560, h = 110) {
+  const tot = hist.reduce((a, b) => a + b, 0); let c = 0, a = 0, b = hist.length - 1;
+  for (let i = 0; i < hist.length; i++) { c += hist[i]; if (c / tot < 0.003) a = i + 1; if (c / tot > 0.997) { b = i; break; } }
+  a = Math.max(0, Math.min(a, line - 2, lo >= 0 ? lo - 2 : a)); b = Math.min(hist.length - 1, Math.max(b, hi + 2, line + 2));
+  const n = b - a + 1, bw = w / n, mx = Math.max(...hist.slice(a, b + 1)) || 1;
+  let s = `<svg viewBox="0 0 ${w} ${h + 18}" role="img" aria-label="Forecast seat distribution with the result range highlighted">`;
+  for (let i = a; i <= b; i++) {
+    const bh = (hist[i] / mx) * h, inR = i >= lo && i <= hi;
+    s += `<rect x="${(i - a) * bw + 0.5}" y="${h - bh}" width="${Math.max(bw - 1, 1)}" height="${bh}" fill="${inR ? css("--ochre") : css("--toss")}" opacity="${inR ? 1 : 0.8}"><title>${i} seats: ${(100 * hist[i] / tot).toFixed(1)}% of simulations</title></rect>`;
+  }
+  const lx = (line - a) * bw;
+  s += `<line x1="${lx}" x2="${lx}" y1="0" y2="${h}" stroke="${css("--text")}" stroke-dasharray="3 3" opacity=".7"/>`;
+  for (let i = a; i <= b; i++) if (i % (n > 60 ? 10 : 2) === 0) s += `<text x="${(i - a + 0.5) * bw}" y="${h + 14}" font-size="11" text-anchor="middle" fill="${css("--text-3")}">${i}</text>`;
+  return s + "</svg>";
+}
+
+function scScatter(rows) {
+  const w = 420, h = 320, pad = 34, xs = rows.map(r => r.mu), ys = rows.map(r => r.actual);
+  const lo = Math.floor(Math.min(...xs, ...ys) / 10) * 10, hi = Math.ceil(Math.max(...xs, ...ys) / 10) * 10;
+  const X = v => pad + (v - lo) / (hi - lo) * (w - pad - 8), Y = v => h - pad - (v - lo) / (hi - lo) * (h - pad - 8);
+  let s = `<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="Expected vs actual margin">`;
+  for (let v = lo; v <= hi; v += 10) s += `<line x1="${X(v)}" x2="${X(v)}" y1="${Y(lo)}" y2="${Y(hi)}" stroke="${css("--border")}"/><line x1="${X(lo)}" x2="${X(hi)}" y1="${Y(v)}" y2="${Y(v)}" stroke="${css("--border")}"/>` +
+    `<text x="${X(v)}" y="${h - pad + 14}" font-size="10" text-anchor="middle" fill="${css("--text-3")}">${fmtM(v)}</text><text x="${pad - 4}" y="${Y(v) + 3}" font-size="10" text-anchor="end" fill="${css("--text-3")}">${fmtM(v)}</text>`;
+  s += `<line x1="${X(lo)}" y1="${Y(lo)}" x2="${X(hi)}" y2="${Y(hi)}" stroke="${css("--text-2")}" stroke-dasharray="4 3"/>`;
+  rows.forEach(r => {
+    const col = r.actual > 0 ? css("--dem") : css("--rep");
+    s += `<circle cx="${X(r.mu)}" cy="${Y(r.actual)}" r="4" fill="${col}"><title>${esc(r.lab)}: expected ${fmtM(r.mu)}, actual ${fmtM(r.actual)}</title></circle>` +
+      `<text x="${X(r.mu) + 6}" y="${Y(r.actual) + 3}" font-size="9.5" fill="${css("--text-2")}">${r.st}</text>`;
+  });
+  s += `<text x="${w / 2}" y="${h - 4}" font-size="11" text-anchor="middle" fill="${css("--text-2")}">Forecast expected margin</text>` +
+    `<text x="10" y="${h / 2}" font-size="11" text-anchor="middle" fill="${css("--text-2")}" transform="rotate(-90 10 ${h / 2})">Actual margin</text>`;
+  return s + "</svg>";
+}
+
+function renderScorecard() {
+  const SC = DATA.scorecard; if (!SC) return;
+  const M = SC.margins || null, S = SC.senate, H = SC.house, sen = DATA.models[model].senate_races;
+  const nameOf = Object.fromEntries(sen.map(r => [r.race_key, r]));
+  const src = SC.sources;
+  $("#scBanner").innerHTML = `<b>${SC.provisional ? "Provisional." : "Final."}</b> Results as of ${asOf(src.senate.page_modified)} from Wikipedia ` +
+    `(<a href="https://en.wikipedia.org/w/index.php?oldid=${src.senate.revision}">Senate</a>, <a href="https://en.wikipedia.org/w/index.php?oldid=${src.house.revision}">House</a> revisions)` +
+    (M ? ` and each state's results page on Wikipedia` : "") + `. ` +
+    (SC.provisional ? `Races still being called or counted are left out and listed below; the scores will be re-run on certified results.` : "");
+  // headline
+  const ss = S.seats, hs = H.seats, vS = ss.versions, vH = hs.versions;
+  const ctrlTxt = (c, p, ch) => c ? `${c === "D" ? "Democrats" : "Republicans"} won the ${ch}, which the forecast gave ${fmtP(p[FV])} (polls only ${fmtP(p.polls_only)}, bias-adjusted ${fmtP(p[AD])})` : `${ch} control isn't settled yet`;
+  const pS = Object.fromEntries(PUB.map(v => [v, vS[v].p_control_outcome])), pH = Object.fromEntries(PUB.map(v => [v, vH[v].p_control_outcome]));
+  const up = (ch) => ch.scores[model].contested;
+  const upD = up(S).upsets_to_d + up(H).upsets_to_d, upR = up(S).upsets_to_r + up(H).upsets_to_r;
+  $("#scHeadline").textContent = `${ctrlTxt(ss.control_decided, pS, "Senate")}. ${ctrlTxt(hs.control_decided, pH, "House")}. ` +
+    (upD + upR ? `Of the ${upD + upR} called races where the ${MODELS[model].toLowerCase()} favorite lost, ${upR === 0 ? "all" : upD} went to the Democrat${upR ? `, ${upR} to the Republican` : ""}.` : "No favorite has lost so far.");
+  // seat cards
+  const seatCard = (el, lab, ver, line, lo, hi, repCalled, pend) => {
+    const v = ver[model], wide = hi - lo > 25;   // too many races uncalled for the range to say anything yet
+    $(el).innerHTML = `<span class="lab">${lab}</span>` +
+      (wide ? `<div class="big">${lo} <small>D</small> · ${repCalled} <small>R called so far</small></div>`
+            : `<div class="big">${lo === hi ? lo : `${lo}–${hi}`} <small>Democratic seats${lo === hi ? "" : " so far"}</small></div>`) +
+      `<div class="small muted">Forecast (${MODELS[model]}): mean ${v.mean.toFixed(1)}, 80% range ${v.p10}–${v.p90}. ${pend}</div>` +
+      `<div class="chart">${scHist(DATA.models[model][lab.toLowerCase()].hist, wide ? -1 : lo, wide ? -1 : hi, line)}</div>` +
+      `<div class="legend">${wide ? `<span><i class="sq" style="background:var(--toss)"></i>forecast distribution (the result is marked once the range narrows)</span>` : `<span><i class="sq" style="background:var(--ochre)"></i>where the result can still land</span>`}<span><i style="background:var(--text-2)"></i>${line} = majority</span></div>`;
+  };
+  seatCard("#scSenateCard", "Senate", vS, 51, ss.dem_seats_called, ss.dem_seats_max, ss.rep_seats_called,
+    ss.pending.length ? `Still uncalled: ${ss.pending.map(raceLab).join(", ")}.` : "All races called.");
+  seatCard("#scHouseCard", "House", vH, 218, hs.dem_seats_called, hs.dem_seats_called + hs.n_pending, hs.rep_seats_called,
+    hs.n_pending ? `${hs.n_pending} districts uncalled (${hs.n_pending_contested} of them close).` : "All districts called.");
+  // scores table
+  const E = M && M.errors.senate[FV].contested.n > 0 ? M.errors : null;   // margin columns once some counts have settled
+  $("#scScores").innerHTML = `<thead><tr><th>Version</th><th class="num">Senate Brier</th><th class="num">Log loss</th><th class="num">Misses</th>` +
+    `<th class="num">House Brier</th><th class="num">Log loss</th><th class="num">Misses</th>` +
+    (E ? `<th class="num">Senate margin error</th><th class="num">RMSE</th><th class="num">House margin error</th><th class="num">RMSE</th>` : "") + `</tr></thead><tbody>` +
+    PUB.map(v => { const a = S.scores[v].contested, b = H.scores[v].contested;
+      const e = E ? [E.senate[v].contested, E.house[v].contested] : null;
+      return `<tr${v === model ? ' class="pivot"' : ""}><td>${MODELS[v]}</td><td class="num">${f2(a.brier)}</td><td class="num">${f2(a.log_loss)}</td><td class="num">${a.upsets} of ${a.n}</td>` +
+        `<td class="num">${f2(b.brier)}</td><td class="num">${f2(b.log_loss)}</td><td class="num">${b.upsets} of ${b.n}</td>` +
+        (e ? `<td class="num">${fSgn(e[0].mean)}</td><td class="num">${f2(e[0].rmse, 1)}</td><td class="num">${fSgn(e[1].mean)}</td><td class="num">${f2(e[1].rmse, 1)}</td>` : "") + `</tr>`; }).join("") +
+    `</tbody>`;
+  // national miss
+  const N = M ? M.national : null;
+  const C = M ? M.completeness : null;
+  $("#scNational").innerHTML = !N || N.house_vote_margin == null || N.districts_settled < 400 ?
+    `<p class="note">Vote margins are still coming in${C ? ` (settled counts so far: ${C.senate.settled} of ${C.senate.of} Senate races, ${C.house_all.settled} of ${C.house_all.of} House districts)` : ""}. ` +
+    `The scores above that need margins use settled counts only; the national House vote appears once nearly every district has settled.</p>` :
+    `<h3>The national polling miss</h3><p class="small">House popular vote, summed over the ${N.districts_with_counts} of 435 districts with counts (${N.districts_settled} settled): <b>${fmtM(N.house_vote_margin)}</b>. ` +
+    `The generic-ballot average the forecast used was ${fmtM(N.versions[FV].G_polls)}, so the polls missed by <b>${fSgn(N.versions[FV].polling_miss)}</b> points ` +
+    `(positive = Democrats did better than the polls). The bias-adjusted version assumed a miss of ${fSgn(N.versions[AD].bias_shift_assumed)}. National environment used by each version: ` +
+    PUB.map(v => `${MODELS[v]} ${fmtM(N.versions[v].G_used)} (off by ${fSgn(N.versions[v].G_error)})`).join("; ") + `.</p>`;
+  // senate table + scatter
+  const marg = M ? Object.fromEntries(M.senate_margins.map(r => [r.race, r])) : {};
+  const rows = S.races.map(r => ({ ...r, nm: nameOf[r.race_key], p: r[model], mu: marg[r.race_key] ? marg[r.race_key][`mu_${model}`] : nameOf[r.race_key]?.mu,
+      actual: marg[r.race_key]?.actual ?? null, counted: marg[r.race_key]?.counted ?? null }))
+    .sort((a, b) => b.p - a.p);
+  const actCell = (r) => r.actual != null ? fmtM(r.actual) : r.counted != null ? `<span class="none" title="Count still moving; not scored yet">${fmtM(r.counted)}*</span>` : "—";
+  $("#scSenTable").innerHTML = `<thead><tr><th>Race</th><th class="num">P(D side)</th><th class="num">Expected</th><th class="num">Actual</th><th class="num">Error</th><th>Result</th></tr></thead><tbody>` +
+    rows.map(r => { const fav = r.p > 0.5 ? 1 : 0, res = !r.called ? `<span class="none">pending</span>` : `${esc(r.winner)} (${r.winner_party}) ${r.y === fav ? "✓" : "<b style='color:var(--ochre)'>upset</b>"}`;
+      return `<tr${r.contested ? "" : ' class="muted"'}><td>${raceLab(r.race_key)}</td><td class="num">${fmtP(r.p)}</td><td class="num">${fmtM(r.mu)}</td><td class="num">${actCell(r)}</td>` +
+        `<td class="num">${r.actual == null || r.mu == null ? "—" : fSgn(r.actual - r.mu)}</td><td>${res}</td></tr>`; }).join("") +
+    `</tbody><caption class="tiny" style="caption-side:bottom;text-align:left;padding:6px 10px">* still counting (total moved 1% or more since the previous day): shown, not scored. Grey rows: not close races.</caption>`;
+  const pts = rows.filter(r => r.actual != null && r.mu != null).map(r => ({ mu: r.mu, actual: r.actual, st: r.race_key.split("|")[1] + (r.race_key.endsWith("special") ? "*" : ""), lab: raceLab(r.race_key) }));
+  $("#scScatterCard").hidden = pts.length < 3;
+  $("#scScatter").innerHTML = pts.length >= 3 ? scScatter(pts) : "";
+  $("#scScatterNote").textContent = pts.length >= 3 ? `Each dot is a Senate race (* special). On the dashed line the forecast's expected margin was exactly right; dots above it went more Democratic than expected. A shared polling miss lifts or lowers all the dots together; the ordering grade below ignores that shift.` : "";
+  // ordering
+  const O = M ? M.ordering : null;
+  if (O && O.all && O.all.baseline_pvi) {
+    const cell = (b) => b ? `${Math.round(100 * b.pairs_right)}% <span class="tiny">(τ ${b.tau_b.toFixed(2)})</span>` : "—";
+    const tp = O.tipping_point;
+    $("#scOrdering").innerHTML = `<h3>Path to 51: did the forecast put the races in the right order?</h3>` +
+      `<p class="small">Share of pairs of races the forecast ordered the same way as the results (Kendall's τ-b in brackets; 1 = perfect order). Ranking ignores a shared shift, so this grades relative accuracy separately from the national miss. Baselines: ordering by state partisan lean (PVI) alone, and by Cook's final ratings (ties count half).</p>` +
+      `<div class="tbl-wrap"><table><thead><tr><th>Ordering by</th><th class="num">All races (${O.all.n})</th><th class="num">Close races (${O.contested.n})</th></tr></thead><tbody>` +
+      PUB.map(v => `<tr><td>${MODELS[v]}</td><td class="num">${cell(O.all[v])}</td><td class="num">${cell(O.contested[v])}</td></tr>`).join("") +
+      `<tr><td>PVI alone</td><td class="num">${cell(O.all.baseline_pvi)}</td><td class="num">${cell(O.contested.baseline_pvi)}</td></tr>` +
+      `<tr><td>Cook rating</td><td class="num">${cell(O.all.baseline_cook)}</td><td class="num">${cell(O.contested.baseline_cook)}</td></tr></tbody></table></div>` +
+      (tp ? `<p class="small">The race that actually delivered the 51st Democratic seat: <b>${raceLab(tp.race)}</b> (${fmtM(tp.actual)}). The forecast had it as the ${tp.versions[model].forecast_position}th most Democratic race (the 51st seat needs the ${tp.versions[model].needed_position}th) and gave it a ${fmtP(tp.versions[model].p_tipping_point)} chance of being the tipping point.</p>`
+          : `<p class="small muted">The actual tipping-point race is pending: ${(O.tipping_point_pending || []).map(raceLab).join(", ")} not counted yet.</p>`) +
+      (O.ranks.length ? `<details><summary>Rank by rank (close races)</summary><div class="tbl-wrap" style="margin-top:8px"><table><thead><tr><th>Race</th><th class="num">Forecast rank</th><th class="num">Actual rank</th><th class="num">Moved</th><th class="num">Expected</th><th class="num">Actual</th></tr></thead><tbody>` +
+        O.ranks.map(r => `<tr><td>${raceLab(r.race)}</td><td class="num">${r.rank_forecast}</td><td class="num">${r.rank_actual}</td><td class="num">${r.displacement > 0 ? "+" : ""}${r.displacement}</td><td class="num">${fmtM(r.mu)}</td><td class="num">${fmtM(r.actual)}</td></tr>`).join("") +
+        `</tbody></table></div><p class="tiny">Ranks by the polls + fundamentals expected margin; 1 = most Democratic. "Moved" is actual minus forecast rank.</p></details>` : "");
+  } else $("#scOrdering").innerHTML = "";
+  // error layers
+  const L = M ? M.layers : null;
+  if (L && L.coverage) {
+    const c = L.coverage, ns = L.national_senate, nh = L.national_house, sl = L.slope;
+    $("#scLayers").innerHTML = `<h3>The simulation's error layers, checked one at a time</h3>` +
+      `<p class="small">The simulations stack four layers of error (see the technical appendix). 2026 is one draw of the national, regional and slope layers, so those are reported as where this year landed against the assumed spread (a z-score); only the race-level layer has hundreds of races behind it. Residuals are from the polls + fundamentals version.</p>` +
+      `<div class="tbl-wrap"><table><thead><tr><th>Layer</th><th class="num">Assumed spread</th><th class="num">2026</th><th class="num">z</th></tr></thead><tbody>` +
+      `<tr><td>National miss, Senate (${ns.n} close races)</td><td class="num">SD ${ns.sd_assumed.toFixed(1)}</td><td class="num">${fSgn(ns.miss)}</td><td class="num">${f2(ns.z, 2)}</td></tr>` +
+      `<tr><td>National miss, House (${nh.n} close districts)</td><td class="num">SD ${nh.sd_assumed.toFixed(1)}</td><td class="num">${fSgn(nh.miss)}</td><td class="num">${f2(nh.z, 2)}</td></tr>` +
+      Object.entries(L.region.by_region).map(([g, x]) => `<tr><td>Region shock: ${g} (${x.n})</td><td class="num">SD ${L.region.sigma_assumed.toFixed(2)}</td><td class="num">${fSgn(x.mean, 2)}</td><td class="num">${f2(x.z, 2)}</td></tr>`).join("") +
+      (sl.pooled ? `<tr><td>Polarization slope (per point of lean)</td><td class="num">SD ${sl.sd_assumed.toFixed(3)}</td><td class="num">${fSgn(sl.pooled.slope, 3)} ± ${sl.pooled.se.toFixed(3)}</td><td class="num">${f2(sl.pooled.z_vs_assumed_sd, 2)}</td></tr>` : "") +
+      `</tbody></table></div>` +
+      (sl.pooled ? `<p class="tiny">The bias-adjusted version corrected Senate polls by ${fSgn(sl.bias_adjusted_lean_correction, 3)} per point of lean; a 2026 slope near that value supports the correction, one near zero doesn't. Senate alone: ${sl.senate ? fSgn(sl.senate.slope, 3) + " ± " + sl.senate.se.toFixed(3) : "—"}; House alone: ${sl.house ? fSgn(sl.house.slope, 3) + " ± " + sl.house.se.toFixed(3) : "—"}.</p>` : "") +
+      `<h3>Race-level error: does the spread fit?</h3><p class="small">With each chamber's realized national miss removed, the share of ${c.n} close races whose error fell inside the forecast's central intervals. If the race-level spread is right, the shares match the interval sizes. The forecast used fat tails (Student-t, ${L.df_t_used} degrees of freedom); a t with 6 and a normal are shown for comparison: too few inside the 50% interval with the right number inside the 95% means the tails were fatter than needed.</p>` +
+      `<div class="tbl-wrap"><table><thead><tr><th>Interval</th><th class="num">Expected</th><th class="num">t(${L.df_t_used}) used</th><th class="num">t(6)</th><th class="num">Normal</th></tr></thead><tbody>` +
+      ["50", "80", "95"].map(k => `<tr><td>Central ${k}%</td><td class="num">${k}%</td><td class="num">${fmtP(c.t_used[k])}</td><td class="num">${fmtP(c.t6[k])}</td><td class="num">${fmtP(c.normal[k])}</td></tr>`).join("") + `</tbody></table></div>`;
+  } else $("#scLayers").innerHTML = "";
+  // house close races
+  const hm = M && M.house_margins ? Object.fromEntries(M.house_margins.map(r => [r.race, r])) : {};
+  $("#scHouseTable").innerHTML = `<thead><tr><th>District</th><th class="num">P(D)</th><th class="num">Expected</th><th class="num">Actual</th><th>Result</th></tr></thead><tbody>` +
+    H.races.slice().sort((a, b) => b[model] - a[model]).map(r => { const fav = r[model] > 0.5 ? 1 : 0, m_ = hm[r.race_key];
+      return `<tr><td>${raceLab(r.race_key)}</td><td class="num">${fmtP(r[model])}</td><td class="num">${m_ ? fmtM(m_[`mu_${model}`]) : "—"}</td><td class="num">${m_ ? actCell(m_) : "—"}</td>` +
+        `<td>${!r.called ? '<span class="none">pending</span>' : `${esc(r.winner)} (${r.winner_party}) ${r.y === fav ? "✓" : "<b style='color:var(--ochre)'>upset</b>"}`}</td></tr>`; }).join("") + `</tbody>`;
+  // pocket scenarios
+  const PK = ["polls_fundamentals_biasadj", "pocket_senate_wide_shift", "pocket_full_historical_bias"];
+  $("#scPocketText").textContent = `Two alternatives were run before the election and kept off the site for this comparison: the bias-adjusted version plus the Senate-wide shift that was dropped (a real-time test found no gain from it), and the full historical bias shift applied to all polls.`;
+  $("#scPocket").innerHTML = `<thead><tr><th>Version</th><th class="num">Senate Brier</th><th class="num">Log loss</th><th class="num">House Brier</th><th class="num">Log loss</th>${E ? '<th class="num">Senate margin error</th><th class="num">House margin error</th>' : ""}</tr></thead><tbody>` +
+    PK.map(v => { const a = S.scores[v].contested, b = H.scores[v].contested;
+      return `<tr><td>${VNAME[v]}</td><td class="num">${f2(a.brier)}</td><td class="num">${f2(a.log_loss)}</td><td class="num">${f2(b.brier)}</td><td class="num">${f2(b.log_loss)}</td>` +
+        (E ? `<td class="num">${fSgn(E.senate[v].contested.mean)}</td><td class="num">${fSgn(E.house[v].contested.mean)}</td>` : "") + `</tr>`; }).join("") + `</tbody>`;
+  // method
+  $("#scMethod").innerHTML = [
+    `Forecast: the frozen copy made at the lock time (<code>data/final/</code>, git tag <code>final-forecast-2026</code>); nothing in it is re-run.`,
+    `Winners: a race counts as called only when Wikipedia's winner tick and its result text ("Democratic gain", "re-elected") agree; everything else is pending.`,
+    `Margins: two-party, the Democratic side's nominee vs. the leading Republican, as the forecast defined them (an independent is the Democratic side in Nebraska, Idaho and South Dakota). Montana: best non-Republican minus Republican, as % of all votes. Ranked-choice races: the final round. Georgia: the November 3 count.`,
+    `Close races are fixed from the frozen forecast (any published version between 2% and 98%) before any result is read, so the set can't be chosen after the fact.`,
+    `Each Wikipedia page is pinned by its revision id; the parsed results, with those ids, are in the repository under <code>data/scorecard/</code>.`,
+  ].map(x => `<li>${x}</li>`).join("");
+}
+
 // ---------- init ----------
 $("#gen").textContent = (DATA.final ? "Final forecast · " : "Updated ") + (DATA.generated_label || DATA.generated);
-if (DATA.final) { const fb = $("#finalBanner"); fb.hidden = false; fb.innerHTML = `<b>Final pre-election forecast.</b> Locked ${esc(DATA.generated_label || DATA.generated)}. It won't be updated as results come in; a scorecard comparing it with the results will follow.`; }
-renderModelSegs(); renderSdN(); renderPollsterFx(); renderPollSettings(); renderPriorWeight(); renderHouseStructure(); renderOverview(); renderExplorer(); renderWatch(); renderHouse(); renderMethod(); renderData(); renderBias(); renderBacktest(); renderAppendix();
+if (DATA.final) { const fb = $("#finalBanner"); fb.hidden = false; fb.innerHTML = `<b>Final pre-election forecast.</b> Locked ${esc(DATA.generated_label || DATA.generated)}. It won't be updated as results come in; ` +
+  (DATA.scorecard ? `the <a href="#scorecard">scorecard</a> compares it with the results${DATA.scorecard.provisional ? " (provisional while counting continues)" : ""}.` : "a scorecard comparing it with the results will follow."); }
+if (DATA.scorecard) $("#scTab").hidden = false;
+renderModelSegs(); renderSdN(); renderPollsterFx(); renderPollSettings(); renderPriorWeight(); renderHouseStructure(); renderOverview(); renderExplorer(); renderWatch(); renderHouse(); renderMethod(); renderData(); renderBias(); renderBacktest(); renderAppendix(); renderScorecard();
 route();
 </script>
 </body>
