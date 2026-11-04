@@ -1,0 +1,541 @@
+chamber,race_key,status,pollster,wiki_pollster,end,n,votehub_margin,closest_wiki_margin_diff,supplement,blocklisted,marker,wiki_margin,cause,detail,pollster_known_to_votehub,verifiable,extra_version,pollster_carried,kind
+senate,2026|AL|S|regular,matched,yes. every kid.,yes. every kid.,2026-07-11,601.0,-18.99,0.0,False,,,,,,,,False,,
+senate,2026|AL|S|regular,matched,RMG Research,RMG Research,2026-09-25,800.0,-24.14,0.0,False,,,,,,,,False,,
+senate,2026|AL|S|regular,matched,The Alabama Poll,The Alabama Poll,2026-10-16,600.0,-23.08,0.0,False,,,,,,,,False,,
+senate,2026|AL|S|regular,matched,Cygnal,Cygnal,2026-10-17,500.0,-17.65,0.0,False,,,,,,,,False,,
+senate,2026|AL|S|regular,matched,Blueprint Polling,Blueprint Polling,2026-10-24,695.0,-9.09,0.0,False,,,,,,,,False,,
+senate,2026|AK|S|regular,matched,Public Policy Polling,Public Policy Polling,2026-10-15,578.0,1.05,0.0,False,,,,,,,,False,,
+senate,2026|AK|S|regular,matched,The New York Times/Siena University,New York Times / Siena University,2026-06-29,593.0,-2.17,0.0,False,,,,,,,,False,,
+senate,2026|AK|S|regular,matched,Alaska Survey Research,Alaska Survey Research,2026-08-05,1371.0,1.6,0.4,False,,,,,,,,False,,
+senate,2026|AK|S|regular,matched,Alaska Survey Research,Alaska Survey Research,2026-08-23,1495.0,1.2,0.8,False,,,,,,,,False,,
+senate,2026|AK|S|regular,matched,"Fabrizio, Lee & Associates/Impact Research",Fabrizio Ward (R)/ Impact Research,2026-09-11,800.0,6.0,0.0,False,,,,,,,,False,,
+senate,2026|AK|S|regular,matched,co/efficient,co/efficient,2026-09-17,799.0,-3.16,0.0,False,,,,,,,,False,,
+senate,2026|AK|S|regular,matched,Quantus Insights,Quantus Insights,2026-09-30,758.0,-0.63,0.63,False,,,,,,,,False,,
+senate,2026|AK|S|regular,matched,Data for Progress,Data for Progress,2026-10-16,671.0,2.0,0.0,False,,,,,,,,False,,
+senate,2026|AK|S|regular,matched,The New York Times/Siena University,New York Times / Siena University,2026-10-30,610.0,2.13,0.0,False,,,,,,,,False,,
+senate,2026|AK|S|regular,matched,AtlasIntel,AtlasIntel,2026-11-01,522.0,5.81,0.54,True,,,,,,,,False,,
+senate,2026|AK|S|regular,missing,Alaska Survey Research,,2026-10-29,1326.0,,,,,,2.0,not in VoteHub,,,,,2 of 5,probably VoteHub's choice
+senate,2026|AK|S|regular,missing,InsiderAdvantage,,2026-10-10,1200.0,,,,,R,2.04,not in VoteHub,,,,,18 of 28,probably a gap
+senate,2026|AK|S|regular,missing,Alaska Survey Research,,2026-10-03,1512.0,,,,,,2.0,not in VoteHub,,,,,2 of 5,probably VoteHub's choice
+senate,2026|AK|S|regular,missing,Alaska Survey Research,,2026-09-12,1352.0,,,,,,4.0,not in VoteHub,,,,,2 of 5,probably VoteHub's choice
+senate,2026|AK|S|regular,missing,Data for Progress,,2026-08-04,567.0,,,,,D,6.0,not in VoteHub,,,,,2 of 7,probably VoteHub's choice
+senate,2026|AK|S|regular,missing,InsiderAdvantage,,2026-11-01,1200.0,,,,,R,0.0,not in VoteHub,,,,,18 of 28,probably a gap
+senate,2026|AK|S|regular,missing,Rasmussen Reports,,2026-10-15,775.0,,,,,R,2.33,not in VoteHub,,,,,0 of 24,probably VoteHub's choice
+senate,2026|AK|S|regular,missing,New York Times / Siena University,,2026-10-01,504.0,,,,,,7.53,not in VoteHub,,,,,30 of 39,probably a gap
+senate,2026|AK|S|regular,missing,Trafalgar Group,,2026-09-24,1079.0,,,,,R,-1.08,not in VoteHub,,,,,3 of 23,probably VoteHub's choice
+senate,2026|AK|S|regular,missing,Rasmussen Reports,,2026-09-14,1188.0,,,,,R,0.0,not in VoteHub,,,,,0 of 24,probably VoteHub's choice
+senate,2026|AR|S|regular,matched,Hendrix College,Hendrix College,2026-10-13,709.0,-9.89,0.0,False,,,,,,,,False,,
+senate,2026|AR|S|regular,matched,Grayhouse,GrayHouse,2026-10-04,550.0,-12.09,0.0,False,,,,,,,,False,,
+senate,2026|AR|S|regular,matched,GrayHouse,GrayHouse,2026-10-28,509.0,-17.02,0.0,False,,,,,,,,False,,
+senate,2026|AR|S|regular,matched,J.L. Partners,J.L. Partners,2026-08-18,803.0,-18.6,0.0,False,,,,,,,,False,,
+senate,2026|AR|S|regular,missing,Hendrix College,,2026-08-12,1217.0,,,,,,3.3,not in VoteHub,,,,,1 of 2,probably a gap
+senate,2026|AR|S|regular,missing,2040 Strategy Group,,2026-07-25,586.0,,,,,D,-3.37,not in VoteHub,,,,,0 of 1,probably VoteHub's choice
+senate,2026|CO|S|regular,matched,Lake Research Partners,Lake Research Partners,2026-09-30,600.0,15.56,0.0,False,,,,,,,,False,,
+senate,2026|CO|S|regular,missing,Keating Research,,2026-11-02,400.0,,,,,D,22.11,not in VoteHub,,,,,0 of 1,probably VoteHub's choice
+senate,2026|CO|S|regular,missing,Research Co.,,2026-11-02,450.0,,,,,,23.91,not in VoteHub,,,,,2 of 13,probably VoteHub's choice
+senate,2026|CO|S|regular,missing,CU Boulder / YouGov,,2026-10-20,710.0,,,,,,18.75,not in VoteHub,,,,,0 of 1,probably VoteHub's choice
+senate,2026|FL|S|special,matched,University of North Florida,University of North Florida,2026-07-17,848.0,-8.7,0.0,False,,,,,,,,False,,
+senate,2026|FL|S|special,matched,Change Research,Change Research,2026-09-09,1107.0,0.0,0.0,False,,,,,,,,False,,
+senate,2026|FL|S|special,matched,Quantus Insights,Quantus Insights,2026-09-10,733.0,-7.97,0.45,False,,,,,,,,False,,
+senate,2026|FL|S|special,matched,St. Pete Polls,St. Pete Polls,2026-09-17,913.0,-0.44,0.44,False,,,,,,,,False,,
+senate,2026|FL|S|special,matched,InsiderAdvantage,InsiderAdvantage,2026-09-21,600.0,-8.23,0.54,False,,,,,,,,False,,
+senate,2026|FL|S|special,matched,Stetson University Center for Public Opinion Research,Stetson University,2026-09-21,830.0,-12.09,0.0,False,,,,,,,,False,,
+senate,2026|FL|S|special,matched,Change Research,Change Research,2026-09-27,1063.0,-1.05,0.0,False,,,,,,,,False,,
+senate,2026|FL|S|special,matched,St. Pete Polls,St. Pete Polls,2026-10-07,836.0,-2.17,0.0,False,,,,,,,,False,,
+senate,2026|FL|S|special,matched,co/efficient,co/efficient,2026-10-20,1014.0,-9.09,0.0,False,,,,,,,,False,,
+senate,2026|FL|S|special,matched,Echelon Insights,Echelon Insights,2026-10-23,515.0,-8.51,0.0,False,,,,,,,,False,,
+senate,2026|FL|S|special,matched,ActiVote,ActiVote,2026-10-27,400.0,-6.0,0.0,False,,,,,,,,False,,
+senate,2026|FL|S|special,matched,RedBox Research,RedBox Research,2026-10-31,2898.0,-2.17,0.0,False,,,,,,,,False,,
+senate,2026|FL|S|special,matched,MDW,MDW Communications,2026-10-10,800.0,-6.67,0.0,False,,,,,,,,False,,
+senate,2026|FL|S|special,matched,Targoz Market Research,Targoz Market Research,2026-10-04,857.0,-10.64,0.0,False,,,,,,,,False,,
+senate,2026|FL|S|special,matched,University of North Florida,University of North Florida,2026-10-19,1414.0,-4.26,0.0,False,,,,,,,,False,,
+senate,2026|FL|S|special,matched,Targoz Market Research,Targoz Market Research,2026-10-04,1200.0,-13.64,0.0,False,,,,,,,,True,,
+senate,2026|FL|S|special,missing,Research Co.,,2026-11-02,450.0,,,,,,-7.37,not in VoteHub,,,,,2 of 13,probably VoteHub's choice
+senate,2026|FL|S|special,missing,Big Data Poll,,2026-10-30,1067.0,,,,,,-7.22,not in VoteHub,,,,,4 of 7,probably a gap
+senate,2026|FL|S|special,missing,Stetson University,,2026-10-30,852.0,,,,,,-4.26,not in VoteHub,,,,,1 of 3,probably VoteHub's choice
+senate,2026|FL|S|special,missing,InsiderAdvantage,,2026-10-29,1200.0,,,,,R,-6.52,not in VoteHub,,,,,18 of 28,probably a gap
+senate,2026|FL|S|special,missing,Targoz Market Research,,2026-10-29,1013.0,,,,,,-9.47,not in VoteHub,,,,,3 of 5,probably a gap
+senate,2026|FL|S|special,missing,Political Matrix/The Listener Group,,2026-10-28,500.0,,,,,,-7.69,not in VoteHub,,,,,0 of 1,probably VoteHub's choice
+senate,2026|FL|S|special,missing,St. Pete Polls,,2026-10-27,916.0,,,,,,-4.26,not in VoteHub,,,,,2 of 3,probably a gap
+senate,2026|FL|S|special,missing,New York Times / Siena University,,2026-10-25,813.0,,,,,,-6.38,not in VoteHub,,,,,30 of 39,probably a gap
+senate,2026|FL|S|special,missing,RedBox Research,,2026-10-23,4832.0,,,,,D,-7.53,not in VoteHub,,,,,1 of 6,probably VoteHub's choice
+senate,2026|FL|S|special,missing,Workbench Strategy,,2026-10-22,800.0,,,,,D,-2.08,not in VoteHub,,,,,0 of 1,probably VoteHub's choice
+senate,2026|FL|S|special,missing,Univision / YouGov,,2026-10-15,825.0,,,,,,-9.68,not in VoteHub,,,,,2 of 3,probably a gap
+senate,2026|FL|S|special,missing,ActiVote,,2026-10-15,400.0,,,,,,-6.0,not in VoteHub,,,,,8 of 11,probably a gap
+senate,2026|FL|S|special,missing,Stetson University,,2026-10-09,716.0,,,,,,-11.83,not in VoteHub,,,,,1 of 3,probably VoteHub's choice
+senate,2026|FL|S|special,missing,YouGov,,2026-10-05,3813.0,,,,,,-5.38,not in VoteHub,,,,,5 of 22,probably VoteHub's choice
+senate,2026|FL|S|special,missing,Mason-Dixon,,2026-10-01,625.0,,,,,,-11.11,not in VoteHub,,,,,1 of 4,probably VoteHub's choice
+senate,2026|GA|S|regular,matched,Beacon Research/Shaw & Co. Research,Beacon Research (D)/ Shaw & Co. Research,2026-06-27,1002.0,13.13,0.0,False,,,,,,,,False,,
+senate,2026|GA|S|regular,matched,Wick,Wick,2026-06-30,1175.0,4.24,0.2,False,,,,,,,,False,,
+senate,2026|GA|S|regular,matched,"Fabrizio, Lee & Associates/Impact Research",Fabrizio Ward (R)/Impact Research,2026-07-16,1060.0,9.47,0.0,False,,,,,,,,False,,
+senate,2026|GA|S|regular,matched,InsiderAdvantage,InsiderAdvantage,2026-08-17,800.0,8.09,0.56,False,,,,,,,,False,,
+senate,2026|GA|S|regular,matched,Big Data Poll,Big Data Poll,2026-09-23,678.0,10.8,0.8,False,,,,,,,,False,,
+senate,2026|GA|S|regular,matched,InsiderAdvantage,InsiderAdvantage,2026-09-23,1200.0,8.7,0.0,False,,,,,,,,False,,
+senate,2026|GA|S|regular,matched,Quantus Insights,Quantus Insights,2026-10-17,755.0,7.14,0.08,False,,,,,,,,False,,
+senate,2026|GA|S|regular,matched,ActiVote,ActiVote,2026-10-20,400.0,8.0,0.0,False,,,,,,,,False,,
+senate,2026|GA|S|regular,matched,University of Georgia School of Public and International Affairs,University of Georgia,2026-10-15,1000.0,9.09,0.0,False,,,,,,,,False,,
+senate,2026|GA|S|regular,matched,Echelon Insights,Echelon Insights,2026-10-23,508.0,15.79,0.0,False,,,,,,,,False,,
+senate,2026|GA|S|regular,matched,InsiderAdvantage,InsiderAdvantage,2026-11-02,2500.0,7.07,0.0,False,,,,,,,,False,,
+senate,2026|GA|S|regular,missing,Research Co.,,2026-11-02,450.0,,,,,,10.64,not in VoteHub,,,,,2 of 13,probably VoteHub's choice
+senate,2026|GA|S|regular,missing,Trafalgar Group,,2026-10-09,1101.0,,,,,R,8.51,not in VoteHub,,,,,3 of 23,probably VoteHub's choice
+senate,2026|GA|S|regular,missing,YouGov,,2026-09-18,3301.0,,,,,,10.64,not in VoteHub,,,,,5 of 22,probably VoteHub's choice
+senate,2026|GA|S|regular,missing,Quantus Insights,,2026-09-16,645.0,,,,,R,4.35,not in VoteHub,,,,,13 of 17,probably a gap
+senate,2026|GA|S|regular,missing,Rasmussen Reports,,2026-09-14,1019.0,,,,,R,9.68,not in VoteHub,,,,,0 of 24,probably VoteHub's choice
+senate,2026|GA|S|regular,missing,Trafalgar Group,,2026-09-12,1091.0,,,,,R,6.52,not in VoteHub,,,,,3 of 23,probably VoteHub's choice
+senate,2026|GA|S|regular,votehub only,Wedgewood Polls,,2026-10-03,600.0,10.0,,False,Wedgewood Polls,,,,,,True,,,
+senate,2026|ID|S|regular,matched,The Bullfinch Group,The Bullfinch Group,2026-08-07,608.0,-6.25,0.0,False,,,,,,,,False,,
+senate,2026|ID|S|regular,missing,VoteNexus Research,,2026-10-22,700.0,,,,,,-6.52,not in VoteHub,,,,,0 of 1,probably VoteHub's choice
+senate,2026|ID|S|regular,missing,Peak Insights,,2026-10-15,500.0,,,,,R,-33.33,not in VoteHub,,,,,0 of 6,probably VoteHub's choice
+senate,2026|ID|S|regular,missing,Peak Insights,,2026-09-30,500.0,,,,,R,-34.25,not in VoteHub,,,,,0 of 6,probably VoteHub's choice
+senate,2026|ID|S|regular,missing,Advanced Targeting Research,,2026-09-16,700.0,,,,,,12.36,not in VoteHub,,,,,0 of 1,probably VoteHub's choice
+senate,2026|ID|S|regular,missing,Peak Insights,,2026-08-13,500.0,,,,,R,-48.57,not in VoteHub,,,,,0 of 6,probably VoteHub's choice
+senate,2026|ID|S|regular,missing,Change Research,,2026-07-30,1213.0,,,,,D,-36.36,not in VoteHub,,,,,5 of 8,probably a gap
+senate,2026|ID|S|regular,missing,Change Research (I),,2026-07-30,1213.0,,,,,,-38.71,not in VoteHub,,,,,5 of 8,probably a gap
+senate,2026|IL|S|regular,matched,Public Policy Polling,Public Policy Polling,2026-10-01,569.0,15.29,0.0,False,,,,,,,,False,,
+senate,2026|IL|S|regular,matched,ActiVote,ActiVote,2026-10-20,400.0,16.83,0.0,False,,,,,,,,False,,
+senate,2026|IL|S|regular,matched,ActiVote,ActiVote,2026-10-30,400.0,11.2,0.8,False,,,,,,,,False,,
+senate,2026|IL|S|regular,missing,Research Co.,,2026-11-02,450.0,,,,,,12.77,not in VoteHub,,,,,2 of 13,probably VoteHub's choice
+senate,2026|IA|S|regular,matched,YouGov,YouGov,2026-10-12,2245.0,1.08,0.0,False,,,,,,,,False,,
+senate,2026|IA|S|regular,matched,Cygnal,Cygnal,2026-06-19,600.0,-2.0,0.23,False,,,,,,,,False,,
+senate,2026|IA|S|regular,matched,The New York Times/Siena University,New York Times / Siena University,2026-06-27,600.0,-2.13,0.0,False,,,,,,,,False,,
+senate,2026|IA|S|regular,matched,Beacon Research/Shaw & Co. Research,Beacon Research (D)/ Shaw & Co. Research,2026-06-27,1003.0,4.17,0.0,False,,,,,,,,False,,
+senate,2026|IA|S|regular,matched,Emerson College,Emerson College,2026-08-04,712.0,-3.23,0.0,False,,,,,,,,False,,
+senate,2026|IA|S|regular,matched,Marist University,Marist University,2026-10-11,1100.0,3.23,0.0,False,,,,,,,,False,,
+senate,2026|IA|S|regular,matched,Suffolk University,Suffolk University,2026-08-23,500.0,-5.34,0.69,False,,,,,,,,False,,
+senate,2026|IA|S|regular,matched,Emerson College,Emerson College,2026-09-01,750.0,-5.26,0.0,False,,,,,,,,False,,
+senate,2026|IA|S|regular,matched,YouGov,YouGov,2026-09-08,2041.0,4.44,0.0,False,,,,,,,,False,,
+senate,2026|IA|S|regular,matched,co/efficient,co/efficient,2026-09-16,831.0,-4.55,0.0,False,,,,,,,,False,,
+senate,2026|IA|S|regular,matched,Marist University,Marist University,2026-09-20,1050.0,8.7,0.0,False,,,,,,,,False,,
+senate,2026|IA|S|regular,matched,Beacon Research/Shaw & Co. Research,Beacon Research (D)/ Shaw & Co. Research,2026-09-28,1008.0,2.08,0.0,False,,,,,,,,False,,
+senate,2026|IA|S|regular,matched,CNN/SSRS,SSRS,2026-10-05,801.0,-2.27,0.0,False,,,,,,,,False,,
+senate,2026|IA|S|regular,matched,Emerson College,Emerson College,2026-10-06,650.0,-1.75,0.43,False,,,,,,,,False,,
+senate,2026|IA|S|regular,matched,co/efficient,co/efficient,2026-10-19,863.0,-3.23,0.0,False,,,,,,,,False,,
+senate,2026|IA|S|regular,matched,New River Strategies/GS Strategy Group,GS Strategy Group (R)/ New River Strategies,2026-10-13,602.0,2.22,0.0,False,,,,,,,,False,,
+senate,2026|IA|S|regular,matched,InsiderAdvantage,InsiderAdvantage,2026-10-22,1200.0,-2.17,0.0,False,,,,,,,,False,,
+senate,2026|IA|S|regular,matched,Echelon Insights,Echelon Insights,2026-10-23,403.0,2.27,0.0,False,,,,,,,,False,,
+senate,2026|IA|S|regular,matched,co/efficient,co/efficient,2026-10-28,1020.0,-2.13,0.0,False,,,,,,,,False,,
+senate,2026|IA|S|regular,matched,The New York Times/Siena University,New York Times / Siena University,2026-11-01,705.0,1.05,0.0,False,,,,,,,,False,,
+senate,2026|IA|S|regular,matched,GrayHouse,GrayHouse,2026-10-31,601.0,-2.13,0.0,False,,,,,,,,False,,
+senate,2026|IA|S|regular,matched,AtlasIntel,AtlasIntel,2026-11-01,1219.0,4.21,0.94,True,,,,,,,,False,,
+senate,2026|IA|S|regular,matched,National Public Affairs,NPA Polling,2026-10-12,678.0,-3.3,0.0,False,,,,,,,,False,,
+senate,2026|IA|S|regular,matched,YouGov,YouGov,2026-09-08,2166.0,1.15,0.0,False,,,,,,,,True,,
+senate,2026|IA|S|regular,missing,Rasmussen Reports,,2026-10-31,901.0,,,,,R,-1.08,not in VoteHub,,,,,0 of 24,probably VoteHub's choice
+senate,2026|IA|S|regular,missing,YouGov,,2026-10-29,2020.0,,,,,,1.01,not in VoteHub,,,,,5 of 22,probably VoteHub's choice
+senate,2026|IA|S|regular,missing,Trafalgar Group,,2026-10-15,1094.0,,,,,R,-2.22,not in VoteHub,,,,,3 of 23,probably VoteHub's choice
+senate,2026|IA|S|regular,missing,Suffolk University,,2026-10-04,500.0,,,,,,4.35,not in VoteHub,,,,,3 of 7,probably VoteHub's choice
+senate,2026|IA|S|regular,missing,New York Times / Siena University,,2026-10-01,606.0,,,,,,-1.05,not in VoteHub,,,,,30 of 39,probably a gap
+senate,2026|IA|S|regular,missing,Rasmussen Reports,,2026-09-30,1048.0,,,,,R,4.44,not in VoteHub,,,,,0 of 24,probably VoteHub's choice
+senate,2026|IA|S|regular,missing,Quantus Insights,,2026-09-29,738.0,,,,,R,-1.08,not in VoteHub,,,,,13 of 17,probably a gap
+senate,2026|IA|S|regular,missing,InsiderAdvantage,,2026-09-23,1200.0,,,,,R,1.08,not in VoteHub,,,,,18 of 28,probably a gap
+senate,2026|IA|S|regular,missing,Trafalgar Group,,2026-09-18,1089.0,,,,,R,-2.33,not in VoteHub,,,,,3 of 23,probably VoteHub's choice
+senate,2026|IA|S|regular,missing,Cygnal,,2026-09-11,500.0,,,,,R,0.0,not in VoteHub,,,,,3 of 4,probably a gap
+senate,2026|IA|S|regular,missing,Rasmussen Reports,,2026-09-10,1031.0,,,,,R,5.88,not in VoteHub,,,,,0 of 24,probably VoteHub's choice
+senate,2026|IA|S|regular,missing,Global Strategy Group,,2026-08-31,800.0,,,,,D,4.55,not in VoteHub,,,,,0 of 4,probably VoteHub's choice
+senate,2026|IA|S|regular,missing,Abacus Data,,2026-08-28,323.0,,,,,,9.09,not in VoteHub,,,,,0 of 5,probably VoteHub's choice
+senate,2026|KS|S|regular,matched,Emerson College,Emerson College,2026-09-16,750.0,2.27,0.0,False,,,,,,,,False,,
+senate,2026|KS|S|regular,matched,InsiderAdvantage,InsiderAdvantage,2026-10-14,1200.0,-1.05,0.0,False,,,,,,,,False,,
+senate,2026|KS|S|regular,matched,CNN/SSRS,SSRS,2026-10-26,838.0,4.26,0.0,False,,,,,,,,False,,
+senate,2026|KS|S|regular,matched,The Washington Post/George Mason University Schar School of Policy and Government,The Washington Post / SSPG,2026-10-26,801.0,9.47,0.0,False,,,,,,,,False,,
+senate,2026|KS|S|regular,matched,Emerson College,Emerson College,2026-10-28,800.0,2.48,0.61,False,,,,,,,,False,,
+senate,2026|KS|S|regular,matched,The New York Times/Siena University,New York Times / Siena University,2026-11-01,736.0,5.38,0.0,False,,,,,,,,False,,
+senate,2026|KS|S|regular,matched,AtlasIntel,AtlasIntel,2026-11-01,2038.0,7.22,0.01,True,,,,,,,,False,,
+senate,2026|KS|S|regular,matched,Survey 160,Survey 160,2026-11-01,1365.0,7.53,0.0,False,,,,,,,,False,,
+senate,2026|KS|S|regular,missing,YouGov,,2026-10-29,2092.0,,,,,,1.01,not in VoteHub,,,,,5 of 22,probably VoteHub's choice
+senate,2026|KS|S|regular,missing,RedBox Research,,2026-10-23,1301.0,,,,,D,-1.1,not in VoteHub,,,,,1 of 6,probably VoteHub's choice
+senate,2026|KS|S|regular,missing,InsiderAdvantage,,2026-10-10,1200.0,,,,,R,1.05,not in VoteHub,,,,,18 of 28,probably a gap
+senate,2026|KS|S|regular,missing,GBAO,,2026-10-04,600.0,,,,,D,5.75,not in VoteHub,,,,,2 of 7,probably VoteHub's choice
+senate,2026|KS|S|regular,missing,YouGov,,2026-10-04,2255.0,,,,,,3.23,not in VoteHub,,,,,5 of 22,probably VoteHub's choice
+senate,2026|KS|S|regular,missing,New York Times / Siena University,,2026-09-30,605.0,,,,,,0.0,not in VoteHub,,,,,30 of 39,probably a gap
+senate,2026|KS|S|regular,missing,Trafalgar Group,,2026-10-01,1095.0,,,,,R,0.0,not in VoteHub,,,,,3 of 23,probably VoteHub's choice
+senate,2026|KS|S|regular,missing,Global Strategy Group,,2026-09-16,800.0,,,,,D,2.08,not in VoteHub,,,,,0 of 4,probably VoteHub's choice
+senate,2026|KS|S|regular,missing,co/efficient,,2026-09-10,915.0,,,,,R,-5.38,not in VoteHub,,,,,8 of 12,probably a gap
+senate,2026|KS|S|regular,missing,Global Strategy Group,,2026-08-16,800.0,,,,,D,1.15,not in VoteHub,,,,,0 of 4,probably VoteHub's choice
+senate,2026|KS|S|regular,missing,Public Policy Polling,,2026-08-08,569.0,,,,,D,-1.1,not in VoteHub,,,,,3 of 7,probably VoteHub's choice
+senate,2026|KS|S|regular,missing,GBAO,,2026-07-13,600.0,,,,,D,-4.44,not in VoteHub,,,,,2 of 7,probably VoteHub's choice
+senate,2026|KS|S|regular,votehub only,Wedgewood Polls,,2026-09-24,500.0,2.04,,False,Wedgewood Polls,,,,,,True,,,
+senate,2026|KY|S|regular,missing,Global Strategy Group,,2026-08-27,600.0,,,,,D,-10.11,not in VoteHub,,,,,0 of 4,probably VoteHub's choice
+senate,2026|LA|S|regular,missing,Lincoln Park Strategies,,2026-10-31,,,,,,D,0.0,not in VoteHub,,,,,0 of 1,probably VoteHub's choice
+senate,2026|LA|S|regular,missing,Hart Research Associates,,2026-10-29,502.0,,,,,D,0.0,not in VoteHub,,,,,3 of 5,probably a gap
+senate,2026|LA|S|regular,missing,Hart Research Associates,,2026-09-19,500.0,,,,,D,-4.35,not in VoteHub,,,,,3 of 5,probably a gap
+senate,2026|LA|S|regular,missing,Public Policy Polling,,2026-07-22,518.0,,,,,D,-5.13,not in VoteHub,,,,,3 of 7,probably VoteHub's choice
+senate,2026|ME|S|regular,matched,University of New Hampshire,University of New Hampshire,2026-07-20,1178.0,3.16,0.0,False,,,,,,,,False,,
+senate,2026|ME|S|regular,matched,Hart Research Associates,Hart Research,2026-08-01,802.0,4.26,0.0,False,,,,,,,,False,,
+senate,2026|ME|S|regular,matched,Beacon Research/Shaw & Co. Research,Beacon Research (D)/ Shaw & Co. Research,2026-08-10,1000.0,2.13,0.0,False,,,,,,,,False,,
+senate,2026|ME|S|regular,matched,InsiderAdvantage,InsiderAdvantage,2026-10-14,1200.0,2.08,0.0,False,,,,,,,,False,,
+senate,2026|ME|S|regular,matched,YouGov,YouGov,2026-09-08,1335.0,4.35,0.0,False,,,,,,,,False,,
+senate,2026|ME|S|regular,matched,Quantus Insights,Quantus Insights,2026-09-15,621.0,-0.75,0.3,False,,,,,,,,False,,
+senate,2026|ME|S|regular,matched,The New York Times/Siena University,New York Times / Siena University,2026-09-22,619.0,-3.16,0.0,False,,,,,,,,False,,
+senate,2026|ME|S|regular,matched,University of Massachusetts Lowell Center for Public Opinion/YouGov,University of Massachusetts / YouGov,2026-09-14,650.0,5.49,0.0,False,,,,,,,,False,,
+senate,2026|ME|S|regular,matched,University of New Hampshire,University of New Hampshire,2026-09-21,1312.0,4.08,0.0,False,,,,,,,,False,,
+senate,2026|ME|S|regular,matched,co/efficient,co/efficient,2026-09-30,1240.0,-2.13,0.0,False,,,,,,,,False,,
+senate,2026|ME|S|regular,matched,"Fabrizio, Lee & Associates/Impact Research",Fabrizio Ward (R)/ Impact Research,2026-09-22,982.0,3.09,0.0,False,,,,,,,,False,,
+senate,2026|ME|S|regular,matched,Marist University,Marist University,2026-10-04,1505.0,4.08,0.0,False,,,,,,,,False,,
+senate,2026|ME|S|regular,matched,The Washington Post/George Mason University School of Policy and Government,The Washington Post / SSPG,2026-10-05,800.0,5.26,1.1,False,,,,,,,,False,,
+senate,2026|ME|S|regular,matched,Beacon Research/Shaw & Co. Research,Beacon Research (D)/ Shaw & Co. Research,2026-10-20,1514.0,0.0,0.0,False,,,,,,,,False,,
+senate,2026|ME|S|regular,matched,Marist University,Marist University,2026-10-25,1449.0,2.08,0.0,False,,,,,,,,False,,
+senate,2026|ME|S|regular,matched,Echelon Insights,Echelon Insights,2026-10-23,413.0,7.37,0.0,False,,,,,,,,False,,
+senate,2026|ME|S|regular,matched,CNN/SSRS,SSRS,2026-10-26,783.0,4.26,0.0,False,,,,,,,,False,,
+senate,2026|ME|S|regular,matched,The New York Times/Siena University,New York Times / Siena University,2026-11-01,714.0,6.25,0.0,False,,,,,,,,False,,
+senate,2026|ME|S|regular,matched,University of New Hampshire,University of New Hampshire,2026-10-31,1654.0,9.09,0.0,False,,,,,,,,False,,
+senate,2026|ME|S|regular,matched,AtlasIntel,AtlasIntel,2026-11-01,967.0,9.4,0.12,True,,,,,,,,False,,
+senate,2026|ME|S|regular,matched,Survey 160,Survey 160,2026-11-01,1322.0,4.17,0.0,False,,,,,,,,False,,
+senate,2026|ME|S|regular,missing,Rasmussen Reports,,2026-11-02,896.0,,,,,R,3.16,not in VoteHub,,,,,0 of 24,probably VoteHub's choice
+senate,2026|ME|S|regular,missing,Emerson College,,2026-11-01,600.0,,,,,,-2.0,not in VoteHub,,,,,10 of 15,probably a gap
+senate,2026|ME|S|regular,missing,YouGov,,2026-10-29,1503.0,,,,,,5.05,not in VoteHub,,,,,5 of 22,probably VoteHub's choice
+senate,2026|ME|S|regular,missing,Data for Progress,,2026-10-27,652.0,,,,,D,5.26,not in VoteHub,,,,,2 of 7,probably VoteHub's choice
+senate,2026|ME|S|regular,missing,Trafalgar Group,,2026-10-23,1077.0,,,,,R,0.0,not in VoteHub,,,,,3 of 23,probably VoteHub's choice
+senate,2026|ME|S|regular,missing,Suffolk University,,2026-10-11,500.0,,,,,,2.08,not in VoteHub,,,,,3 of 7,probably VoteHub's choice
+senate,2026|ME|S|regular,missing,Rasmussen Reports,,2026-10-08,804.0,,,,,R,2.08,not in VoteHub,,,,,0 of 24,probably VoteHub's choice
+senate,2026|ME|S|regular,missing,Trafalgar Group,,2026-10-01,1091.0,,,,,R,0.0,not in VoteHub,,,,,3 of 23,probably VoteHub's choice
+senate,2026|ME|S|regular,missing,CBS News / YouGov,,2026-10-01,1136.0,,,,,,0.0,not in VoteHub,,,,,0 of 2,probably VoteHub's choice
+senate,2026|ME|S|regular,missing,Maine People's Resource Center,,2026-09-29,684.0,,,,,,2.08,not in VoteHub,,,,,0 of 1,probably VoteHub's choice
+senate,2026|ME|S|regular,missing,InsiderAdvantage,,2026-09-23,1200.0,,,,,R,0.0,not in VoteHub,,,,,18 of 28,probably a gap
+senate,2026|ME|S|regular,missing,Rasmussen Reports,,2026-09-10,1033.0,,,,,R,1.1,not in VoteHub,,,,,0 of 24,probably VoteHub's choice
+senate,2026|ME|S|regular,missing,SSRS,,2026-09-06,880.0,,,,,,3.23,not in VoteHub,,,,,6 of 8,probably a gap
+senate,2026|ME|S|regular,missing,Abacus Data,,2026-08-28,327.0,,,,,,9.47,not in VoteHub,,,,,0 of 5,probably VoteHub's choice
+senate,2026|ME|S|regular,missing,Z to A Research,,2026-07-08,988.0,,,,,D,-1.05,not in VoteHub,,,,,1 of 2,probably a gap
+senate,2026|ME|S|regular,missing,Public Policy Polling,,2026-07-07,785.0,,,,,D,5.38,not in VoteHub,,,,,3 of 7,probably VoteHub's choice
+senate,2026|ME|S|regular,votehub only,Wedgewood Polls,,2026-10-01,400.0,4.0,,False,Wedgewood Polls,,,,,,True,,,
+senate,2026|MA|S|regular,matched,University of New Hampshire,University of New Hampshire,2026-06-23,623.0,19.05,0.0,False,,,,,,,,False,,
+senate,2026|MA|S|regular,matched,University of Massachusetts Department of Political Science/YouGov,UMass Amherst / YouGov,2026-08-12,800.0,25.93,0.0,False,,,,,,,,False,,
+senate,2026|MA|S|regular,matched,University of New Hampshire,University of New Hampshire,2026-08-24,881.0,24.05,0.0,False,,,,,,,,False,,
+senate,2026|MA|S|regular,matched,MassINC Polling Group,MassINC Polling Group,2026-09-22,800.0,33.33,0.0,False,,,,,,,,False,,
+senate,2026|MA|S|regular,matched,University of New Hampshire,University of New Hampshire,2026-09-21,564.0,27.71,0.0,False,,,,,,,,False,,
+senate,2026|MA|S|regular,matched,University of Massachusetts Department of Political Science/YouGov,UMass Amherst / YouGov,2026-10-12,800.0,31.76,0.0,False,,,,,,,,False,,
+senate,2026|MA|S|regular,matched,University of Massachusetts Lowell Center for Public Opinion/YouGov,UMass Lowell,2026-10-18,850.0,35.8,0.0,False,,,,,,,,False,,
+senate,2026|MA|S|regular,matched,University of New Hampshire,University of New Hampshire,2026-10-31,905.0,24.71,0.0,False,,,,,,,,False,,
+senate,2026|MA|S|regular,matched,Suffolk University,Suffolk University,2026-10-17,500.0,30.43,0.0,False,,,,,,,,False,,
+senate,2026|MI|S|regular,matched,The Tyson Group,The Tyson Group,2026-09-27,600.0,1.15,0.0,False,,,,,,,,False,,
+senate,2026|MI|S|regular,matched,The Tyson Group,The Tyson Group,2026-10-08,600.0,-2.22,0.0,False,,,,,,,,False,,
+senate,2026|MI|S|regular,matched,Quantus Insights,Quantus Insights,2026-06-30,947.0,1.23,0.11,False,,,,,,,,False,,
+senate,2026|MI|S|regular,matched,"Glengariff Group, Inc.",Glengariff Group,2026-07-24,600.0,-11.74,0.38,False,,,,,,,,False,,
+senate,2026|MI|S|regular,matched,EPIC-MRA,EPIC-MRA,2026-07-31,600.0,-3.37,0.0,False,,,,,,,,False,,
+senate,2026|MI|S|regular,matched,Mitchell Research & Communications,Mitchell Research & Communications,2026-07-29,672.0,0.0,0.0,False,,,,,,,,False,,
+senate,2026|MI|S|regular,matched,Beacon Research/Shaw & Co. Research,Beacon Research (D)/ Shaw & Co. Research,2026-08-10,1006.0,-4.08,0.0,False,,,,,,,,False,,
+senate,2026|MI|S|regular,matched,GBAO Strategies,GBAO,2026-08-10,800.0,6.38,0.0,False,,,,,,,,False,,
+senate,2026|MI|S|regular,matched,Susquehanna Polling & Research,Susquehanna Polling & Research,2026-08-17,800.0,8.24,0.0,False,,,,,,,,False,,
+senate,2026|MI|S|regular,matched,TIPP Insights,TIPP Insights,2026-08-10,1528.0,3.45,0.0,False,,,,,,,,False,,
+senate,2026|MI|S|regular,matched,"Fabrizio, Lee & Associates/Impact Research",Fabrizio Ward (R)/ Impact Research,2026-08-11,877.0,1.05,0.0,False,,,,,,,,False,,
+senate,2026|MI|S|regular,matched,EPIC-MRA,EPIC-MRA,2026-08-28,600.0,4.44,0.0,False,,,,,,,,False,,
+senate,2026|MI|S|regular,matched,Michigan State University Institute for Public Policy and Social Research/YouGov,Michigan State University / YouGov,2026-08-20,779.0,5.26,0.0,False,,,,,,,,False,,
+senate,2026|MI|S|regular,matched,Trafalgar Group,Trafalgar Group,2026-09-09,1079.0,1.65,0.55,False,,,,,,,,False,,
+senate,2026|MI|S|regular,matched,The Washington Post/George Mason University School of Policy and Government,The Washington Post / SSPG,2026-09-14,803.0,3.23,0.0,False,,,,,,,,False,,
+senate,2026|MI|S|regular,matched,Emerson College,Emerson College,2026-09-14,1000.0,2.66,0.53,False,,,,,,,,False,,
+senate,2026|MI|S|regular,matched,Suffolk University,Suffolk University,2026-09-20,500.0,8.05,0.0,False,,,,,,,,False,,
+senate,2026|MI|S|regular,matched,co/efficient,co/efficient,2026-09-23,843.0,0.0,0.0,False,,,,,,,,False,,
+senate,2026|MI|S|regular,matched,The New York Times/Siena University,New York Times / Siena University,2026-09-22,605.0,5.38,0.0,False,,,,,,,,False,,
+senate,2026|MI|S|regular,matched,Cygnal/Beacon Research,Cygnal (R)/Beacon Research,2026-09-21,600.0,5.88,0.0,False,,,,,,,,False,,
+senate,2026|MI|S|regular,matched,Beacon Research/Shaw & Co. Research,Beacon Research (D)/ Shaw & Co. Research,2026-09-28,1028.0,1.01,0.0,False,,,,,,,,False,,
+senate,2026|MI|S|regular,matched,Trafalgar Group,Trafalgar Group,2026-09-30,1085.0,2.17,0.0,False,,,,,,,,False,,
+senate,2026|MI|S|regular,matched,Mitchell Research & Communications,Mitchell Research & Communications,2026-10-01,682.0,5.75,0.0,False,,,,,,,,False,,
+senate,2026|MI|S|regular,matched,Guidant Polling and Strategy,Guidant Polling & Strategy,2026-09-27,800.0,5.49,0.0,False,,,,,,,,False,,
+senate,2026|MI|S|regular,matched,Z to A Research,Z to A Research,2026-10-01,483.0,7.69,0.0,False,,,,,,,,False,,
+senate,2026|MI|S|regular,matched,InsiderAdvantage,InsiderAdvantage,2026-10-22,1200.0,1.08,0.0,False,,,,,,,,False,,
+senate,2026|MI|S|regular,matched,Michigan State University Institute for Public Policy and Social Research/YouGov,Michigan State University / YouGov,2026-10-19,836.0,2.67,0.55,False,,,,,,,,False,,
+senate,2026|MI|S|regular,matched,"Glengariff Group, Inc.",Glengariff Group,2026-10-22,600.0,6.53,0.28,False,,,,,,,,False,,
+senate,2026|MI|S|regular,matched,Mitchell Research & Communications,Mitchell Research & Communications,2026-10-27,636.0,7.37,0.0,False,,,,,,,,False,,
+senate,2026|MI|S|regular,matched,CNN/SSRS,SSRS,2026-10-27,768.0,7.69,0.0,False,,,,,,,,False,,
+senate,2026|MI|S|regular,matched,Michigan State University Department of Political Science/Verasight,Michigan State University /Verasight,2026-10-23,1383.0,7.91,0.6,False,,,,,,,,False,,
+senate,2026|MI|S|regular,matched,Upswing Research,Upswing Research,2026-10-28,505.0,5.26,0.0,False,,,,,,,,False,,
+senate,2026|MI|S|regular,matched,YouGov,YouGov,2026-10-29,2093.0,4.08,0.0,False,,,,,,,,False,,
+senate,2026|MI|S|regular,matched,The New York Times/Siena University,New York Times / Siena University,2026-11-01,1011.0,11.58,0.0,False,,,,,,,,False,,
+senate,2026|MI|S|regular,matched,AtlasIntel,AtlasIntel,2026-11-01,1316.0,7.11,0.89,True,,,,,,,,False,,
+senate,2026|MI|S|regular,matched,Marist University,Marist University,2026-10-18,,2.04,0.0,False,,,,,,,,False,,
+senate,2026|MI|S|regular,matched,Michigan State University Institute for Public Policy and Social Research/YouGov,Michigan State University / YouGov,2026-08-20,913.0,4.35,0.0,False,,,,,,,,True,,
+senate,2026|MI|S|regular,missing,John Zogby Strategies,,2026-11-02,1001.0,,,,,,2.0,not in VoteHub,,,,,0 of 1,probably VoteHub's choice
+senate,2026|MI|S|regular,missing,Emerson College,,2026-11-01,500.0,,,,,,6.25,not in VoteHub,,,,,10 of 15,probably a gap
+senate,2026|MI|S|regular,missing,Trafalgar Group,,2026-11-01,1087.0,,,,,R,1.08,not in VoteHub,,,,,3 of 23,probably VoteHub's choice
+senate,2026|MI|S|regular,missing,Concord Public Opinion Partners,,2026-11-01,510.0,,,,,D,10.87,not in VoteHub,,,,,4 of 8,probably a gap
+senate,2026|MI|S|regular,missing,Research Co.,,2026-11-01,450.0,,,,,,2.13,not in VoteHub,,,,,2 of 13,probably VoteHub's choice
+senate,2026|MI|S|regular,missing,Rasmussen Reports,,2026-10-29,745.0,,,,,R,5.38,not in VoteHub,,,,,0 of 24,probably VoteHub's choice
+senate,2026|MI|S|regular,missing,Data for Progress,,2026-10-25,622.0,,,,,D,4.17,not in VoteHub,,,,,2 of 7,probably VoteHub's choice
+senate,2026|MI|S|regular,missing,RedBox Research,,2026-10-23,2696.0,,,,,D,5.38,not in VoteHub,,,,,1 of 6,probably VoteHub's choice
+senate,2026|MI|S|regular,missing,Rasmussen Reports,,2026-10-14,798.0,,,,,R,2.22,not in VoteHub,,,,,0 of 24,probably VoteHub's choice
+senate,2026|MI|S|regular,missing,InsiderAdvantage,,2026-10-10,1200.0,,,,,R,2.13,not in VoteHub,,,,,18 of 28,probably a gap
+senate,2026|MI|S|regular,missing,Quantus Insights,,2026-10-06,762.0,,,,,R,1.05,not in VoteHub,,,,,13 of 17,probably a gap
+senate,2026|MI|S|regular,missing,YouGov,,2026-10-04,3949.0,,,,,,1.03,not in VoteHub,,,,,5 of 22,probably VoteHub's choice
+senate,2026|MI|S|regular,missing,Marist University,,2026-09-27,1235.0,,,,,,7.37,not in VoteHub,,,,,7 of 10,probably a gap
+senate,2026|MI|S|regular,missing,Big Data Poll,,2026-09-24,678.0,,,,,R,5.62,not in VoteHub,,,,,4 of 7,probably a gap
+senate,2026|MI|S|regular,missing,GBAO,,2026-09-22,800.0,,,,,D,4.35,not in VoteHub,,,,,2 of 7,probably VoteHub's choice
+senate,2026|MI|S|regular,missing,Torchlight Strategies,,2026-09-19,643.0,,,,,R,-1.15,not in VoteHub,,,,,0 of 1,probably VoteHub's choice
+senate,2026|MI|S|regular,missing,InsiderAdvantage,,2026-09-17,1200.0,,,,,R,2.17,not in VoteHub,,,,,18 of 28,probably a gap
+senate,2026|MI|S|regular,missing,SSRS,,2026-09-06,843.0,,,,,,3.3,not in VoteHub,,,,,6 of 8,probably a gap
+senate,2026|MI|S|regular,missing,Glengariff Group,,2026-09-03,600.0,,,,,,-2.22,not in VoteHub,,,,,2 of 3,probably a gap
+senate,2026|MI|S|regular,missing,Abacus Data,,2026-08-28,332.0,,,,,,4.26,not in VoteHub,,,,,0 of 5,probably VoteHub's choice
+senate,2026|MI|S|regular,missing,SoCal Strategies,,2026-07-30,640.0,,,,,R,-1.2,not in VoteHub,,,,,0 of 3,probably VoteHub's choice
+senate,2026|MI|S|regular,missing,Data for Progress,,2026-06-22,709.0,,,,,D,1.08,not in VoteHub,,,,,2 of 7,probably VoteHub's choice
+senate,2026|MN|S|regular,matched,SurveyUSA,KSTP / SurveyUSA,2026-10-12,718.0,3.45,0.0,False,,,,,,,,False,,
+senate,2026|MN|S|regular,matched,SurveyUSA,KTSP / SurveyUSA,2026-08-17,661.0,5.75,0.0,False,,,,,,,,False,,
+senate,2026|MN|S|regular,matched,Quantus Insights,Quantus Insights,2026-09-10,720.0,4.1,0.24,False,,,,,,,,False,,
+senate,2026|MN|S|regular,matched,SurveyUSA,KSTP / SurveyUSA,2026-09-14,654.0,0.0,0.0,False,,,,,,,,False,,
+senate,2026|MN|S|regular,matched,Big Data Poll,Big Data Poll,2026-09-30,622.0,2.22,0.0,False,,,,,,,,False,,
+senate,2026|MN|S|regular,matched,GQR,GQR,2026-10-04,800.0,8.7,0.0,False,,,,,,,,False,,
+senate,2026|MN|S|regular,matched,InsiderAdvantage,InsiderAdvantage,2026-10-30,1200.0,3.16,0.0,False,,,,,,,,False,,
+senate,2026|MN|S|regular,matched,AtlasIntel,AtlasIntel,2026-11-01,2133.0,2.13,0.0,False,,,,,,,,False,,
+senate,2026|MN|S|regular,missing,Research Co.,,2026-11-01,450.0,,,,,,5.49,not in VoteHub,,,,,2 of 13,probably VoteHub's choice
+senate,2026|MN|S|regular,missing,Survey 160,,2026-11-01,1365.0,,,,,,9.47,not in VoteHub,,,,,3 of 4,probably a gap
+senate,2026|MN|S|regular,missing,KSTP / SurveyUSA,,2026-10-28,714.0,,,,,,7.87,not in VoteHub,,,,,2 of 3,probably a gap
+senate,2026|MN|S|regular,missing,New York Times / Siena University,,2026-10-26,752.0,,,,,,14.89,not in VoteHub,,,,,30 of 39,probably a gap
+senate,2026|MN|S|regular,missing,Victory Insights,,2026-10-22,1194.0,,,,,R,4.35,not in VoteHub,,,,,0 of 1,probably VoteHub's choice
+senate,2026|MN|S|regular,missing,Rasmussen Reports,,2026-10-21,1182.0,,,,,R,3.23,not in VoteHub,,,,,0 of 24,probably VoteHub's choice
+senate,2026|MN|S|regular,missing,Trafalgar Group,,2026-10-15,1079.0,,,,,R,3.23,not in VoteHub,,,,,3 of 23,probably VoteHub's choice
+senate,2026|MN|S|regular,duplicate on Wikipedia,Mason-Dixon Polling & Strategy,,2026-10-07,,,,,,,,,VoteHub's entry (end 2026-10-04) is already matched to another row,,,,,
+senate,2026|MN|S|regular,missing,Rasmussen Reports,,2026-10-07,856.0,,,,,R,3.23,not in VoteHub,,,,,0 of 24,probably VoteHub's choice
+senate,2026|MN|S|regular,missing,Morning Consult,,2026-10-07,1000.0,,,,,,4.65,not in VoteHub,,,,,0 of 1,probably VoteHub's choice
+senate,2026|MN|S|regular,missing,InsiderAdvantage,,2026-09-29,1200.0,,,,,R,1.1,not in VoteHub,,,,,18 of 28,probably a gap
+senate,2026|MN|S|regular,missing,co/efficient,,2026-09-15,833.0,,,,,R,1.18,not in VoteHub,,,,,8 of 12,probably a gap
+senate,2026|MN|S|regular,missing,TIPP Insights,,2026-09-02,1201.0,,,,,R,2.33,not in VoteHub,,,,,1 of 2,probably a gap
+senate,2026|MN|S|regular,missing,Deep Root Analytics,,2026-08-18,597.0,,,,,R,5.26,not in VoteHub,,,,,0 of 1,probably VoteHub's choice
+senate,2026|MS|S|regular,matched,Data for Progress,Data for Progress,2026-08-15,1018.0,-6.82,0.0,False,,,,,,,,False,,
+senate,2026|MS|S|regular,missing,Change Research,,2026-10-22,842.0,,,,,D,-3.61,not in VoteHub,,,,,5 of 8,probably a gap
+senate,2026|MS|S|regular,votehub only,Wedgewood Polls,,2026-10-14,511.0,-4.0,,False,Wedgewood Polls,,,,,,True,,,
+senate,2026|MT|S|regular,matched,GrayHouse,GrayHouse,2026-06-24,500.0,-24.24,0.0,False,,,,,,,,False,,
+senate,2026|MT|S|regular,matched,Tavern Research,Tavern Research,2026-06-19,400.0,-28.95,1.72,False,,,,,,,,False,,
+senate,2026|MT|S|regular,matched,Hart Research Associates,Hart Research,2026-06-24,800.0,-6.52,0.0,False,,,,,,,,False,,
+senate,2026|MT|S|regular,matched,Tavern Research,Tavern Research,2026-07-27,517.0,-18.0,0.0,False,,,,,,,,False,,
+senate,2026|MT|S|regular,matched,GQR,GQR,2026-07-26,500.0,-30.16,0.0,False,,,,,,,,False,,
+senate,2026|MT|S|regular,matched,The Bullfinch Group,Bullfinch Group,2026-07-16,793.0,-24.14,0.0,False,,,,,,,,False,,
+senate,2026|MT|S|regular,matched,Hart Research Associates,Hart Research,2026-08-04,800.0,-50.0,0.0,False,,,,,,,,False,,
+senate,2026|MT|S|regular,matched,Quantus Insights,Quantus Insights,2026-09-15,625.0,-31.34,0.0,False,,,,,,,,False,,
+senate,2026|MT|S|regular,matched,American Pulse Research & Polling,American Pulse Research,2026-09-24,604.0,-40.62,0.0,False,,,,,,,,False,,
+senate,2026|MT|S|regular,matched,Concord Public Opinion Partners,Concord Public Opinion Partners,2026-10-23,410.0,-58.33,0.0,False,,,,,,,,False,,
+senate,2026|MT|S|regular,matched,Montana State University Billings,Montana State University Billings,2026-10-21,720.0,-7.14,10.5,False,,,,,,,,False,,
+senate,2026|MT|S|regular,matched,Quantus Insights,Quantus Insights,2026-10-18,686.0,-22.67,12.72,False,,,,,,,,False,,
+senate,2026|MT|S|regular,matched,Tavern Research,Tavern Research,2026-06-19,400.0,-12.0,0.0,False,,,,,,,,True,,
+senate,2026|MT|S|regular,matched,Tavern Research,Tavern Research,2026-07-27,517.0,-38.03,3.78,False,,,,,,,,True,,
+senate,2026|MT|S|regular,matched,Tavern Research,Tavern Research,2026-07-27,517.0,-34.25,0.0,False,,,,,,,,True,,
+senate,2026|MT|S|regular,matched,Tavern Research,Tavern Research,2026-07-27,517.0,-21.74,0.0,False,,,,,,,,True,,
+senate,2026|MT|S|regular,matched,GQR,GQR,2026-07-26,500.0,-4.76,0.0,False,,,,,,,,True,,
+senate,2026|MT|S|regular,matched,GQR,GQR,2026-07-26,500.0,-8.33,0.0,False,,,,,,,,True,,
+senate,2026|MT|S|regular,missing,Peak Insights,,2026-10-12,500.0,,,,,R,-57.14,not in VoteHub,,,,,0 of 6,probably VoteHub's choice
+senate,2026|MT|S|regular,missing,Concord Public Opinion Partners,,2026-10-08,405.0,,,,,D,-45.83,not in VoteHub,,,,,4 of 8,probably a gap
+senate,2026|MT|S|regular,missing,Aspect Strategic,,2026-09-15,715.0,,,,,,-51.72,not in VoteHub,,,,,0 of 1,probably VoteHub's choice
+senate,2026|MT|S|regular,missing,Rutgers-Eagleton,,2026-09-07,845.0,,,,,,-40.74,not in VoteHub,,,,,0 of 1,probably VoteHub's choice
+senate,2026|MT|S|regular,missing,Peak Insights,,2026-08-25,600.0,,,,,R,-39.68,not in VoteHub,,,,,0 of 6,probably VoteHub's choice
+senate,2026|NE|S|regular,matched,GBAO Strategies,GBAO,2026-09-08,800.0,1.08,0.0,False,,,,,,,,False,,
+senate,2026|NE|S|regular,matched,National Public Affairs,National Public Affairs,2026-10-05,800.0,-3.16,0.0,False,,,,,,,,False,,
+senate,2026|NE|S|regular,matched,National Public Affairs,National Public Affairs,2026-10-18,598.0,-3.09,0.0,False,,,,,,,,False,,
+senate,2026|NE|S|regular,matched,Echelon Insights,Echelon Insights,2026-10-23,407.0,-1.08,0.0,False,,,,,,,,False,,
+senate,2026|NE|S|regular,missing,GrayHouse,,2026-11-01,534.0,,,,,R,-6.38,not in VoteHub,,,,,4 of 5,probably a gap
+senate,2026|NE|S|regular,missing,YouGov,,2026-10-29,1979.0,,,,,,0.0,not in VoteHub,,,,,5 of 22,probably VoteHub's choice
+senate,2026|NE|S|regular,missing,National Public Affairs,,2026-10-29,800.0,,,,,R,-3.23,not in VoteHub,,,,,3 of 5,probably a gap
+senate,2026|NE|S|regular,missing,New York Times / Siena University,,2026-10-29,809.0,,,,,,-6.52,not in VoteHub,,,,,30 of 39,probably a gap
+senate,2026|NE|S|regular,missing,GBAO,,2026-10-22,800.0,,,,,D,1.1,not in VoteHub,,,,,2 of 7,probably VoteHub's choice
+senate,2026|NE|S|regular,missing,Concord Public Opinion Partners,,2026-10-18,500.0,,,,,D,7.87,not in VoteHub,,,,,4 of 8,probably a gap
+senate,2026|NE|S|regular,missing,Impact Research,,2026-10-20,600.0,,,,,D,-2.08,not in VoteHub,,,,,0 of 6,probably VoteHub's choice
+senate,2026|NE|S|regular,missing,YouGov,,2026-10-03,1809.0,,,,,,1.05,not in VoteHub,,,,,5 of 22,probably VoteHub's choice
+senate,2026|NE|S|regular,missing,co/efficient,,2026-09-30,1113.0,,,,,R,-5.88,not in VoteHub,,,,,8 of 12,probably a gap
+senate,2026|NE|S|regular,missing,SurveyUSA,,2026-09-13,503.0,,,,,,4.55,not in VoteHub,,,,,2 of 3,probably a gap
+senate,2026|NE|S|regular,missing,Impact Research,,2026-08-13,600.0,,,,,D,0.0,not in VoteHub,,,,,0 of 6,probably VoteHub's choice
+senate,2026|NE|S|regular,missing,GBAO,,2026-07-20,,,,,,D,0.0,not in VoteHub,,,,,2 of 7,probably VoteHub's choice
+senate,2026|NH|S|regular,matched,University of New Hampshire,University of New Hampshire,2026-06-23,2232.0,3.3,0.0,False,,,,,,,,False,,
+senate,2026|NH|S|regular,matched,Saint Anselm,Saint Anselm College,2026-06-25,1614.0,6.82,0.0,False,,,,,,,,False,,
+senate,2026|NH|S|regular,matched,Saint Anselm College Survey Center,Saint Anselm College,2026-08-18,1411.0,7.87,0.0,False,,,,,,,,False,,
+senate,2026|NH|S|regular,matched,University of New Hampshire,University of New Hampshire,2026-08-24,1878.0,-2.27,0.0,False,,,,,,,,False,,
+senate,2026|NH|S|regular,matched,InsiderAdvantage,InsiderAdvantage,2026-09-17,1200.0,9.09,0.0,False,,,,,,,,False,,
+senate,2026|NH|S|regular,matched,The New York Times/Siena University,New York Times / Siena University,2026-09-22,613.0,5.26,0.0,False,,,,,,,,False,,
+senate,2026|NH|S|regular,matched,University of New Hampshire,University of New Hampshire,2026-09-21,1418.0,8.7,0.0,False,,,,,,,,False,,
+senate,2026|NH|S|regular,matched,Saint Anselm,Saint Anselm College,2026-10-20,1672.0,7.53,0.0,False,,,,,,,,False,,
+senate,2026|NH|S|regular,matched,University of Massachusetts Lowell Center for Public Opinion/YouGov,UMass Lowell / YouGov,2026-10-19,600.0,7.87,0.0,False,,,,,,,,False,,
+senate,2026|NH|S|regular,matched,University of New Hampshire,University of New Hampshire,2026-10-31,2040.0,12.5,0.0,False,,,,,,,,False,,
+senate,2026|NH|S|regular,matched,National Public Affairs,National Public Affairs,2026-10-29,800.0,6.25,0.0,False,,,,,,,,False,,
+senate,2026|NH|S|regular,matched,AtlasIntel,AtlasIntel,2026-11-01,1057.0,8.4,0.07,True,,,,,,,,False,,
+senate,2026|NH|S|regular,missing,Rasmussen Reports,,2026-10-23,970.0,,,,,R,6.38,not in VoteHub,,,,,0 of 24,probably VoteHub's choice
+senate,2026|NH|S|regular,missing,National Public Affairs,,2026-10-12,600.0,,,,,R,5.26,not in VoteHub,,,,,3 of 5,probably a gap
+senate,2026|NH|S|regular,missing,YouGov,,2026-10-05,1520.0,,,,,,8.51,not in VoteHub,,,,,5 of 22,probably VoteHub's choice
+senate,2026|NH|S|regular,missing,Rasmussen Reports,,2026-10-04,979.0,,,,,R,5.38,not in VoteHub,,,,,0 of 24,probably VoteHub's choice
+senate,2026|NH|S|regular,missing,Saint Anselm College,,2026-09-29,1042.0,,,,,,7.37,not in VoteHub,,,,,3 of 4,probably a gap
+senate,2026|NH|S|regular,missing,Trafalgar Group,,2026-09-27,1082.0,,,,,R,6.82,not in VoteHub,,,,,3 of 23,probably VoteHub's choice
+senate,2026|NH|S|regular,missing,co/efficient,,2026-09-11,958.0,,,,,R,0.0,not in VoteHub,,,,,8 of 12,probably a gap
+senate,2026|NH|S|regular,missing,Rasmussen Reports,,2026-09-10,1000.0,,,,,R,13.92,not in VoteHub,,,,,0 of 24,probably VoteHub's choice
+senate,2026|NH|S|regular,missing,"Fabrizio, Lee, & Associates",,2026-08-30,600.0,,,,,R,-1.37,not in VoteHub,,,,,6 of 8,probably a gap
+senate,2026|NH|S|regular,missing,Peak Insights,,2026-06-27,500.0,,,,,R,1.18,not in VoteHub,,,,,0 of 6,probably VoteHub's choice
+senate,2026|NM|S|regular,matched,Research & Polling Inc.,Research & Polling Inc.,2026-08-28,516.0,16.48,0.0,False,,,,,,,,False,,
+senate,2026|NM|S|regular,matched,SurveyUSA,SurveyUSA,2026-09-30,576.0,20.0,0.0,False,,,,,,,,False,,
+senate,2026|NM|S|regular,missing,Research Co.,,2026-11-02,450.0,,,,,,20.43,not in VoteHub,,,,,2 of 13,probably VoteHub's choice
+senate,2026|NM|S|regular,missing,Research & Polling Inc.,,2026-10-09,1125.0,,,,,,17.78,not in VoteHub,,,,,2 of 13,probably VoteHub's choice
+senate,2026|NC|S|regular,matched,The New York Times/Siena University,New York Times / Siena University,2026-06-27,601.0,7.53,0.0,False,,,,,,,,False,,
+senate,2026|NC|S|regular,matched,Public Policy Polling,Public Policy Polling,2026-07-11,759.0,4.35,0.0,False,,,,,,,,False,,
+senate,2026|NC|S|regular,matched,Beacon Research/Shaw & Co. Research,Beacon Research (D)/ Shaw & Co. Research,2026-07-27,1005.0,9.28,0.0,False,,,,,,,,False,,
+senate,2026|NC|S|regular,matched,Change Research,Change Research,2026-08-01,967.0,9.89,0.0,False,,,,,,,,False,,
+senate,2026|NC|S|regular,matched,Change Research,Change Research,2026-08-06,915.0,7.53,0.0,False,,,,,,,,False,,
+senate,2026|NC|S|regular,matched,Harper Polling,Harper Polling,2026-08-10,600.0,13.81,0.47,False,,,,,,,,False,,
+senate,2026|NC|S|regular,matched,High Point University Survey Research Center,High Point University / YouGov,2026-08-12,660.0,5.26,0.0,False,,,,,,,,False,,
+senate,2026|NC|S|regular,matched,Elon University/YouGov,Elon University / YouGov,2026-08-31,565.0,12.64,0.0,False,,,,,,,,False,,
+senate,2026|NC|S|regular,matched,East Carolina University,East Carolina University,2026-09-03,675.0,8.33,0.0,False,,,,,,,,False,,
+senate,2026|NC|S|regular,matched,Harper Polling,Harper Polling,2026-09-15,608.0,18.07,0.0,False,,,,,,,,False,,
+senate,2026|NC|S|regular,matched,InsiderAdvantage,InsiderAdvantage,2026-09-17,1200.0,6.49,1.0,False,,,,,,,,False,,
+senate,2026|NC|S|regular,matched,High Point University Survey Research Center,High Point University,2026-09-16,706.0,8.7,0.0,False,,,,,,,,False,,
+senate,2026|NC|S|regular,matched,Big Data Poll,Big Data Poll,2026-09-29,642.0,13.33,0.0,False,,,,,,,,False,,
+senate,2026|NC|S|regular,matched,East Carolina University,East Carolina University,2026-10-03,810.0,7.07,0.0,False,,,,,,,,False,,
+senate,2026|NC|S|regular,matched,SurveyUSA,SurveyUSA,2026-10-11,643.0,14.89,0.0,False,,,,,,,,False,,
+senate,2026|NC|S|regular,matched,Change Research,Change Research,2026-10-07,829.0,11.11,0.0,False,,,,,,,,False,,
+senate,2026|NC|S|regular,matched,Elon University/YouGov,Elon University / YouGov,2026-10-08,561.0,14.29,0.0,False,,,,,,,,False,,
+senate,2026|NC|S|regular,matched,ActiVote,ActiVote,2026-10-20,400.0,13.8,0.2,False,,,,,,,,False,,
+senate,2026|NC|S|regular,matched,Harper Polling,Harper Polling,2026-10-20,600.0,11.36,0.0,False,,,,,,,,False,,
+senate,2026|NC|S|regular,matched,Quantus Insights,Quantus Insights,2026-10-25,722.0,9.13,0.04,False,,,,,,,,False,,
+senate,2026|NC|S|regular,matched,High Point University Survey Research Center,High Point University / YouGov,2026-10-20,620.0,14.89,0.0,False,,,,,,,,False,,
+senate,2026|NC|S|regular,matched,East Carolina University,East Carolina University,2026-10-29,1041.0,9.09,0.0,False,,,,,,,,False,,
+senate,2026|NC|S|regular,matched,AtlasIntel,AtlasIntel,2026-11-01,1459.0,15.22,0.93,False,,,,,,,,False,,
+senate,2026|NC|S|regular,matched,High Point University Survey Research Center,High Point University / YouGov,2026-08-12,800.0,7.87,0.0,False,,,,,,,,True,,
+senate,2026|NC|S|regular,missing,YouGov,,2026-10-29,2130.0,,,,,,11.11,not in VoteHub,,,,,5 of 22,probably VoteHub's choice
+senate,2026|NC|S|regular,missing,RedBox Research,,2026-10-23,3292.0,,,,,D,7.53,not in VoteHub,,,,,1 of 6,probably VoteHub's choice
+senate,2026|NC|S|regular,missing,Trafalgar Group,,2026-10-10,1091.0,,,,,R,8.89,not in VoteHub,,,,,3 of 23,probably VoteHub's choice
+senate,2026|NC|S|regular,missing,Quantus Insights,,2026-09-22,686.0,,,,,R,5.49,not in VoteHub,,,,,13 of 17,probably a gap
+senate,2026|NC|S|regular,missing,Fabrizio Ward (R)/ Impact Research,,2026-09-20,1806.0,,,,,D,11.58,not in VoteHub,,,,,6 of 8,probably a gap
+senate,2026|NC|S|regular,missing,Opinion Diagnostics,,2026-09-20,857.0,,,,,,10.87,not in VoteHub,,,,,0 of 1,probably VoteHub's choice
+senate,2026|NC|S|regular,missing,YouGov,,2026-09-18,3742.0,,,,,,12.77,not in VoteHub,,,,,5 of 22,probably VoteHub's choice
+senate,2026|NC|S|regular,missing,Catawba College / YouGov,,2026-09-15,885.0,,,,,,14.63,not in VoteHub,,,,,0 of 1,probably VoteHub's choice
+senate,2026|NC|S|regular,missing,The Trafalgar Group,,2026-09-10,1084.0,,,,,R,6.67,not in VoteHub,,,,,3 of 23,probably VoteHub's choice
+senate,2026|NC|S|regular,missing,Elon University / YouGov,,2026-07-31,466.0,,,,,,11.58,not in VoteHub,,,,,2 of 3,probably a gap
+senate,2026|NC|S|regular,votehub only,Elon University/YouGov,,2026-07-23,717.0,18.6,,False,,,,,,,True,,,
+senate,2026|NC|S|regular,votehub only,Elon University/YouGov,,2026-07-23,466.0,11.58,,False,,,,,,,True,,,
+senate,2026|OH|S|special,matched,Bowling Green State University/YouGov,Bowling Green State University / YouGov,2026-10-09,1000.0,6.67,0.0,False,,,,,,,,False,,
+senate,2026|OH|S|special,matched,Fabrizio Ward/Impact Research,Fabrizio Ward (R)/ Impact Research,2026-06-16,800.0,3.23,0.0,False,,,,,,,,False,,
+senate,2026|OH|S|special,matched,The New York Times/Siena University,New York Times / Siena University,2026-06-28,601.0,-3.09,0.0,False,,,,,,,,False,,
+senate,2026|OH|S|special,matched,Beacon Research/Shaw & Co. Research,Beacon Research (D)/ Shaw & Co. Research,2026-08-10,1008.0,8.16,0.0,False,,,,,,,,False,,
+senate,2026|OH|S|special,matched,InsiderAdvantage,InsiderAdvantage,2026-09-09,1200.0,6.05,0.44,False,,,,,,,,False,,
+senate,2026|OH|S|special,matched,Trafalgar Group,Trafalgar Group,2026-09-16,1085.0,3.45,0.0,False,,,,,,,,False,,
+senate,2026|OH|S|special,matched,Quantus Insights,Quantus Insights,2026-09-23,695.0,0.53,0.53,False,,,,,,,,False,,
+senate,2026|OH|S|special,matched,Marist University,Marist University,2026-09-27,1298.0,8.51,0.0,False,,,,,,,,False,,
+senate,2026|OH|S|special,matched,Big Data Poll,Big Data Poll,2026-09-27,680.0,4.16,0.49,False,,,,,,,,False,,
+senate,2026|OH|S|special,matched,InsiderAdvantage,InsiderAdvantage,2026-09-29,1200.0,1.15,0.0,False,,,,,,,,False,,
+senate,2026|OH|S|special,matched,CNN/SSRS,SSRS,2026-10-05,760.0,6.52,0.0,False,,,,,,,,False,,
+senate,2026|OH|S|special,matched,co/efficient,co/efficient,2026-10-06,925.0,-1.1,0.0,False,,,,,,,,False,,
+senate,2026|OH|S|special,matched,Marist University,Marist University,2026-10-18,1176.0,4.35,0.0,False,,,,,,,,False,,
+senate,2026|OH|S|special,matched,VoteHub/Verasight,Verasight/VoteHub,2026-10-20,531.0,4.28,0.07,False,,,,,,,,False,,
+senate,2026|OH|S|special,matched,New River Strategies/GS Strategy Group,GS Strategy Group (R)/ New River Strategies,2026-10-13,959.0,6.52,0.0,False,,,,,,,,False,,
+senate,2026|OH|S|special,matched,Beacon Research/Shaw & Co. Research,Beacon Research (D)/ Shaw & Co. Research,2026-10-19,1592.0,5.05,0.0,False,,,,,,,,False,,
+senate,2026|OH|S|special,matched,InsiderAdvantage,InsiderAdvantage,2026-10-22,1200.0,3.3,0.0,False,,,,,,,,False,,
+senate,2026|OH|S|special,matched,Echelon Insights,Echelon Insights,2026-10-23,508.0,0.0,0.0,False,,,,,,,,False,,
+senate,2026|OH|S|special,matched,Concord Public Opinion Partners,Concord Public Opinion Partners,2026-08-31,504.0,11.11,0.0,False,,,,,,,,False,,
+senate,2026|OH|S|special,matched,The New York Times/Siena University,New York Times / Siena University,2026-11-01,717.0,5.38,0.0,False,,,,,,,,False,,
+senate,2026|OH|S|special,matched,Survey 160,Survey 160,2026-11-01,1122.0,4.26,0.0,False,,,,,,,,False,,
+senate,2026|OH|S|special,matched,AtlasIntel,AtlasIntel,2026-11-01,1801.0,7.93,0.56,True,,,,,,,,False,,
+senate,2026|OH|S|special,matched,Concord Public Opinion Partners,Concord Public Opinion Partners,2026-10-24,469.0,4.55,0.0,False,,,,,,,,False,,
+senate,2026|OH|S|special,matched,co/efficient,co/efficient,2026-10-06,925.0,-1.15,0.0,False,,,,,,,,True,,
+senate,2026|OH|S|special,missing,Emerson College,,2026-11-01,930.0,,,,,,-2.13,not in VoteHub,,,,,10 of 15,probably a gap
+senate,2026|OH|S|special,missing,Trafalgar Group,,2026-11-01,1092.0,,,,,R,2.17,not in VoteHub,,,,,3 of 23,probably VoteHub's choice
+senate,2026|OH|S|special,missing,Research Co.,,2026-11-01,450.0,,,,,,1.12,not in VoteHub,,,,,2 of 13,probably VoteHub's choice
+senate,2026|OH|S|special,missing,Rasmussen Reports,,2026-10-31,1119.0,,,,,R,0.0,not in VoteHub,,,,,0 of 24,probably VoteHub's choice
+senate,2026|OH|S|special,missing,ActiVote,,2026-10-31,400.0,,,,,,0.0,not in VoteHub,,,,,8 of 11,probably a gap
+senate,2026|OH|S|special,missing,InsiderAdvantage,,2026-10-30,1200.0,,,,,R,2.08,not in VoteHub,,,,,18 of 28,probably a gap
+senate,2026|OH|S|special,missing,YouGov,,2026-10-29,2090.0,,,,,,2.04,not in VoteHub,,,,,5 of 22,probably VoteHub's choice
+senate,2026|OH|S|special,missing,Suffolk University,,2026-10-26,500.0,,,,,,3.3,not in VoteHub,,,,,3 of 7,probably VoteHub's choice
+senate,2026|OH|S|special,missing,RedBox Research,,2026-10-23,2998.0,,,,,D,3.3,not in VoteHub,,,,,1 of 6,probably VoteHub's choice
+senate,2026|OH|S|special,missing,ActiVote,,2026-10-18,400.0,,,,,,0.0,not in VoteHub,,,,,8 of 11,probably a gap
+senate,2026|OH|S|special,missing,Rasmussen Reports,,2026-10-14,901.0,,,,,R,-2.08,not in VoteHub,,,,,0 of 24,probably VoteHub's choice
+senate,2026|OH|S|special,missing,New York Times / Siena University,,2026-10-01,616.0,,,,,,3.16,not in VoteHub,,,,,30 of 39,probably a gap
+senate,2026|OH|S|special,missing,YouGov,,2026-09-30,3780.0,,,,,,4.26,not in VoteHub,,,,,5 of 22,probably VoteHub's choice
+senate,2026|OH|S|special,missing,Suffolk University,,2026-09-27,500.0,,,,,,3.3,not in VoteHub,,,,,3 of 7,probably VoteHub's choice
+senate,2026|OH|S|special,missing,Rasmussen Reports,,2026-09-23,1115.0,,,,,R,3.37,not in VoteHub,,,,,0 of 24,probably VoteHub's choice
+senate,2026|OH|S|special,missing,Bowling Green State University / YouGov,,2026-09-10,1000.0,,,,,,3.23,not in VoteHub,,,,,1 of 2,probably a gap
+senate,2026|OH|S|special,missing,Abacus Data,,2026-08-28,306.0,,,,,,6.12,not in VoteHub,,,,,0 of 5,probably VoteHub's choice
+senate,2026|OH|S|special,missing,Tulchin Research,,2026-08-04,600.0,,,,,D,4.44,not in VoteHub,,,,,0 of 1,probably VoteHub's choice
+senate,2026|OH|S|special,votehub only,Wedgewood Polls,,2026-08-13,800.0,4.35,,False,Wedgewood Polls,,,,,,True,,,
+senate,2026|OK|S|regular,missing,CHS & Associates,,2026-08-06,500.0,,,,,,-32.43,not in VoteHub,,,,,0 of 1,probably VoteHub's choice
+senate,2026|RI|S|regular,matched,University of New Hampshire,University of New Hampshire,2026-06-23,664.0,20.93,1.39,False,,,,,,,,False,,
+senate,2026|RI|S|regular,matched,University of New Hampshire,University of New Hampshire,2026-08-24,750.0,24.39,0.0,False,,,,,,,,False,,
+senate,2026|RI|S|regular,matched,Embold Research,Embold Research,2026-10-08,815.0,26.44,0.0,False,,,,,,,,False,,
+senate,2026|RI|S|regular,matched,University of New Hampshire,University of New Hampshire,2026-10-31,753.0,32.63,0.0,False,,,,,,,,False,,
+senate,2026|RI|S|regular,matched,University of New Hampshire,University of New Hampshire,2026-09-21,598.0,23.26,0.0,False,,,,,,,,False,,
+senate,2026|RI|S|regular,missing,Emerson College / WPRI-TV,,2026-10-11,800.0,,,,,,40.48,not in VoteHub,,,,,10 of 15,probably a gap
+senate,2026|SC|S|regular,matched,InsiderAdvantage,InsiderAdvantage,2026-09-09,1200.0,-2.15,0.12,False,,,,,,,,False,,
+senate,2026|SC|S|regular,matched,InsiderAdvantage,InsiderAdvantage,2026-09-29,1200.0,-1.1,0.0,False,,,,,,,,False,,
+senate,2026|SC|S|regular,matched,Targoz Market Research,Targoz Media Research,2026-10-25,895.0,-1.08,0.0,False,,,,,,,,False,,
+senate,2026|SC|S|regular,matched,East Carolina University,East Carolina University,2026-10-24,955.0,-4.08,0.0,False,,,,,,,,False,,
+senate,2026|SC|S|regular,matched,Resonance Media Services,Resonance Media Services,2026-10-30,600.0,1.76,0.66,False,,,,,,,,False,,
+senate,2026|SC|S|regular,missing,Trafalgar Group,,2026-11-01,1091.0,,,,,R,-2.13,not in VoteHub,,,,,3 of 23,probably VoteHub's choice
+senate,2026|SC|S|regular,missing,Rasmussen Reports,,2026-10-31,1028.0,,,,,R,-3.09,not in VoteHub,,,,,0 of 24,probably VoteHub's choice
+senate,2026|SC|S|regular,missing,Patinkin Research Strategies,,2026-10-29,500.0,,,,,D,5.49,not in VoteHub,,,,,0 of 1,probably VoteHub's choice
+senate,2026|SC|S|regular,missing,New York Times / Siena University,,2026-10-26,707.0,,,,,,0.0,not in VoteHub,,,,,30 of 39,probably a gap
+senate,2026|SC|S|regular,missing,The Citadel,,2026-10-25,890.0,,,,,,-4.88,not in VoteHub,,,,,0 of 1,probably VoteHub's choice
+senate,2026|SC|S|regular,missing,Impact Research,,2026-10-21,800.0,,,,,D,1.12,not in VoteHub,,,,,0 of 6,probably VoteHub's choice
+senate,2026|SC|S|regular,missing,Trafalgar Group,,2026-10-18,1095.0,,,,,R,-3.16,not in VoteHub,,,,,3 of 23,probably VoteHub's choice
+senate,2026|SC|S|regular,missing,Rasmussen Reports,,2026-10-08,837.0,,,,,R,-4.26,not in VoteHub,,,,,0 of 24,probably VoteHub's choice
+senate,2026|SC|S|regular,missing,Trafalgar Group,,2026-09-25,1087.0,,,,,R,-1.18,not in VoteHub,,,,,3 of 23,probably VoteHub's choice
+senate,2026|SC|S|regular,missing,Rasmussen Reports,,2026-09-14,1006.0,,,,,R,-5.49,not in VoteHub,,,,,0 of 24,probably VoteHub's choice
+senate,2026|SC|S|regular,missing,Abacus Data,,2026-08-28,306.0,,,,,,-13.4,not in VoteHub,,,,,0 of 5,probably VoteHub's choice
+senate,2026|SC|S|regular,missing,Impact Research,,2026-08-24,700.0,,,,,D,0.0,not in VoteHub,,,,,0 of 6,probably VoteHub's choice
+senate,2026|SC|S|regular,missing,Impact Research,,2026-08-22,900.0,,,,,D,3.7,not in VoteHub,,,,,0 of 6,probably VoteHub's choice
+senate,2026|SD|S|regular,matched,Mason-Dixon,Mason-Dixon Polling & Strategy,2026-10-14,500.0,-20.43,0.0,False,,,,,,,,False,,
+senate,2026|SD|S|regular,matched,Emerson College,Emerson College,2026-10-20,803.0,-8.7,0.0,False,,,,,,,,False,,
+senate,2026|SD|S|regular,matched,Concord Public Opinion Partners,Concord Public Opinion Partners,2026-10-26,448.0,2.38,0.0,False,,,,,,,,False,,
+senate,2026|SD|S|regular,matched,Quantus Insights,Quantus Insights,2026-10-19,657.0,-22.92,0.0,False,,,,,,,,False,,
+senate,2026|SD|S|regular,duplicate on Wikipedia,Public Opinon Strategies,,2026-10-16,,,,,,,,,VoteHub's entry (end 2026-10-14) is already matched to another row,,,,,
+senate,2026|SD|S|regular,missing,Concord Public Opinion Partners,,2026-10-08,400.0,,,,,D,1.18,not in VoteHub,,,,,4 of 8,probably a gap
+senate,2026|SD|S|regular,missing,Zenith Research,,2026-09-27,500.0,,,,,,-6.0,not in VoteHub,,,,,0 of 1,probably VoteHub's choice
+senate,2026|SD|S|regular,missing,Public Policy Polling,,2026-09-09,629.0,,,,,D,-3.45,not in VoteHub,,,,,3 of 7,probably VoteHub's choice
+senate,2026|SD|S|regular,missing,Lake Research Partners,,2026-08-30,500.0,,,,,D,7.37,not in VoteHub,,,,,1 of 2,probably a gap
+senate,2026|SD|S|regular,missing,Impact Research,,2026-08-17,500.0,,,,,D,0.0,not in VoteHub,,,,,0 of 6,probably VoteHub's choice
+senate,2026|SD|S|regular,missing,Public Opinion Strategies,,2026-07-09,500.0,,,,,R,-25.84,not in VoteHub,,,,,2 of 13,probably VoteHub's choice
+senate,2026|TN|S|regular,matched,Targoz Market Research,Targoz Market Research,2026-08-26,1157.0,-24.39,0.0,False,,,,,,,,False,,
+senate,2026|TN|S|regular,missing,Targoz Market Research,,2026-11-02,718.0,,,,,,-21.28,not in VoteHub,,,,,3 of 5,probably a gap
+senate,2026|TX|S|regular,matched,The New York Times/Siena University,New York Times / Siena University,2026-06-27,656.0,0.0,0.0,False,,,,,,,,False,,
+senate,2026|TX|S|regular,matched,A2 Insights,A2 Insights,2026-06-28,618.0,2.43,0.31,False,,,,,,,,False,,
+senate,2026|TX|S|regular,matched,InsiderAdvantage,InsiderAdvantage,2026-10-14,1200.0,-1.03,0.0,False,,,,,,,,False,,
+senate,2026|TX|S|regular,matched,ActiVote,ActiVote,2026-10-14,400.0,3.8,0.2,False,,,,,,,,False,,
+senate,2026|TX|S|regular,matched,Texas Southern University Barbara Jordan Public Policy Research and Survey Center,Texas Southern University,2026-07-30,1200.0,2.17,0.0,False,,,,,,,,False,,
+senate,2026|TX|S|regular,matched,YouGov Blue,YouGov Blue,2026-07-31,1001.0,3.23,0.0,False,,,,,,,,False,,
+senate,2026|TX|S|regular,matched,ReconMR/Siena University,Texas A&M University /ReconMR/ Siena University,2026-07-30,619.0,4.44,0.0,False,,,,,,,,False,,
+senate,2026|TX|S|regular,matched,Emerson College,Emerson College,2026-08-10,1000.0,-1.08,0.0,False,,,,,,,,False,,
+senate,2026|TX|S|regular,matched,YouGov,Univision / YouGov,2026-09-04,1000.0,5.49,0.0,False,,,,,,,,False,,
+senate,2026|TX|S|regular,matched,Fabrizio Ward/Impact Research,Fabrizio Ward (R)/ Impact Research,2026-09-01,895.0,4.35,0.0,False,,,,,,,,False,,
+senate,2026|TX|S|regular,matched,InsiderAdvantage,InsiderAdvantage,2026-09-09,1200.0,1.62,0.54,False,,,,,,,,False,,
+senate,2026|TX|S|regular,matched,Emerson College,Emerson College,2026-09-14,1000.0,1.08,0.0,False,,,,,,,,False,,
+senate,2026|TX|S|regular,matched,ReconMR/Siena University,ReconMR/ Siena University,2026-09-11,614.0,6.52,0.0,False,,,,,,,,False,,
+senate,2026|TX|S|regular,matched,Texas Southern University Barbara Jordan Public Policy Research and Survey Center,Texas Southern University,2026-09-19,1800.0,1.08,0.0,False,,,,,,,,False,,
+senate,2026|TX|S|regular,matched,Beacon Research/Shaw & Co. Research,Beacon Research (D)/ Shaw & Co. Research,2026-09-28,881.0,2.0,0.0,False,,,,,,,,False,,
+senate,2026|TX|S|regular,matched,Guidant Polling and Strategy,Guidant Polling & Strategy,2026-09-28,800.0,2.64,0.65,False,,,,,,,,False,,
+senate,2026|TX|S|regular,matched,University of Massachusetts Lowell Center for Public Opinion/YouGov,UMass Lowell / YouGov,2026-09-28,850.0,0.0,0.0,False,,,,,,,,False,,
+senate,2026|TX|S|regular,matched,ReconMR/Siena University,ReconMR/ Siena University,2026-10-08,617.0,4.35,0.0,False,,,,,,,,False,,
+senate,2026|TX|S|regular,matched,Quantus Insights,Quantus Insights,2026-10-11,854.0,-0.53,0.53,False,,,,,,,,False,,
+senate,2026|TX|S|regular,matched,New River Strategies/GS Strategy Group,GS Strategy Group (R)/ New River Strategies,2026-10-13,934.0,5.38,0.0,False,,,,,,,,False,,
+senate,2026|TX|S|regular,matched,ActiVote,ActiVote,2026-10-21,400.0,2.0,0.0,False,,,,,,,,False,,
+senate,2026|TX|S|regular,matched,Beacon Research/Shaw & Co. Research,Beacon Research (D)/ Shaw & Co. Research,2026-10-19,1398.0,0.0,0.0,False,,,,,,,,False,,
+senate,2026|TX|S|regular,matched,Emerson College,Emerson College,2026-10-19,1000.0,2.13,0.0,False,,,,,,,,False,,
+senate,2026|TX|S|regular,matched,Pollfinity,Pollfinity Research,2026-10-18,278.0,5.49,0.0,False,,,,,,,,False,,
+senate,2026|TX|S|regular,matched,YouGov,Univision / YouGov,2026-10-21,1000.0,5.26,0.0,False,,,,,,,,False,,
+senate,2026|TX|S|regular,matched,CNN/SSRS,SSRS,2026-10-27,923.0,6.52,0.0,False,,,,,,,,False,,
+senate,2026|TX|S|regular,matched,Texas Southern University Barbara Jordan Public Policy Research and Survey Center,Texas Southern University,2026-10-25,2000.0,2.08,0.0,False,,,,,,,,False,,
+senate,2026|TX|S|regular,matched,A2 Insights,A2 Insights,2026-10-27,631.0,3.08,0.01,False,,,,,,,,False,,
+senate,2026|TX|S|regular,matched,ActiVote,ActiVote,2026-10-28,400.0,4.2,0.2,False,,,,,,,,False,,
+senate,2026|TX|S|regular,matched,Quantus Insights,Quantus Insights,2026-10-28,1221.0,-1.02,0.01,False,,,,,,,,False,,
+senate,2026|TX|S|regular,matched,The New York Times/Siena University,New York Times / Siena University,2026-11-01,1215.0,7.53,0.0,False,,,,,,,,False,,
+senate,2026|TX|S|regular,matched,AtlasIntel,AtlasIntel,2026-11-01,1678.0,6.1,0.15,True,,,,,,,,False,,
+senate,2026|TX|S|regular,matched,Slingshot Strategies,Texas Public Opinion Research,2026-07-17,1048.0,5.88,0.0,False,,,,,,,,False,,
+senate,2026|TX|S|regular,matched,Slingshot Strategies,Texas Public Opinion Research,2026-08-24,1000.0,6.67,0.0,False,,,,,,,,False,,
+senate,2026|TX|S|regular,matched,Slingshot Strategies,Texas Public Opinion Research,2026-09-22,1007.0,4.26,1.12,False,,,,,,,,False,,
+senate,2026|TX|S|regular,matched,Slingshot Strategies,Texas Public Opinion Research,2026-10-18,969.0,4.08,0.0,False,,,,,,,,False,,
+senate,2026|TX|S|regular,matched,Beacon Research/Shaw & Co. Research,Beacon Research (D)/ Shaw & Co. Research,2026-07-27,1006.0,3.03,0.0,False,,,,,,,,False,,
+senate,2026|TX|S|regular,matched,The Texas Politics Project at the University of Texas at Austin/YouGov,University of Texas /Texas Politics Project,2026-08-13,1218.0,3.7,0.0,False,,,,,,,,False,,
+senate,2026|TX|S|regular,matched,VoteHub/Verasight,Verasight /VoteHub,2026-10-20,601.0,2.59,0.21,False,,,,,,,,False,,
+senate,2026|TX|S|regular,missing,Research Co.,,2026-11-02,450.0,,,,,,3.16,not in VoteHub,,,,,2 of 13,probably VoteHub's choice
+senate,2026|TX|S|regular,missing,Trafalgar Group,,2026-11-01,1089.0,,,,,R,0.0,not in VoteHub,,,,,3 of 23,probably VoteHub's choice
+senate,2026|TX|S|regular,missing,Emerson College,,2026-11-01,500.0,,,,,,2.04,not in VoteHub,,,,,10 of 15,probably a gap
+senate,2026|TX|S|regular,missing,Kreate Strategies,,2026-10-30,900.0,,,,,,3.23,not in VoteHub,,,,,0 of 1,probably VoteHub's choice
+senate,2026|TX|S|regular,missing,YouGov,,2026-10-29,2141.0,,,,,,4.08,not in VoteHub,,,,,5 of 22,probably VoteHub's choice
+senate,2026|TX|S|regular,missing,Data for Progress,,2026-10-26,712.0,,,,,D,4.26,not in VoteHub,,,,,2 of 7,probably VoteHub's choice
+senate,2026|TX|S|regular,missing,YouGov Blue,,2026-10-26,1000.0,,,,,D,8.51,not in VoteHub,,,,,5 of 22,probably VoteHub's choice
+senate,2026|TX|S|regular,missing,Rasmussen Reports,,2026-10-21,965.0,,,,,,0.0,not in VoteHub,,,,,0 of 24,probably VoteHub's choice
+senate,2026|TX|S|regular,missing,CBS News / YouGov,,2026-10-16,1492.0,,,,,,2.0,not in VoteHub,,,,,0 of 2,probably VoteHub's choice
+senate,2026|TX|S|regular,missing,Cor Strategies,,2026-10-15,1409.0,,,,,R,4.76,not in VoteHub,,,,,0 of 1,probably VoteHub's choice
+senate,2026|TX|S|regular,missing,University of Houston,,2026-10-14,2000.0,,,,,,2.13,not in VoteHub,,,,,0 of 1,probably VoteHub's choice
+senate,2026|TX|S|regular,missing,Marist University,,2026-10-11,,,,,,,2.17,not in VoteHub,,,,,7 of 10,probably a gap
+senate,2026|TX|S|regular,missing,Trafalgar Group,,2026-10-08,1086.0,,,,,R,3.3,not in VoteHub,,,,,3 of 23,probably VoteHub's choice
+senate,2026|TX|S|regular,missing,YouGov,,2026-10-05,3625.0,,,,,,6.38,not in VoteHub,,,,,5 of 22,probably VoteHub's choice
+senate,2026|TX|S|regular,missing,University of Texas /Texas Politics Project,,2026-10-05,861.0,,,,,,3.09,not in VoteHub,,,,,9 of 10,probably a gap
+senate,2026|TX|S|regular,missing,New York Times / Siena University,,2026-09-30,615.0,,,,,,6.25,not in VoteHub,,,,,30 of 39,probably a gap
+senate,2026|TX|S|regular,missing,Rasmussen Reports,,2026-09-29,1128.0,,,,,,1.1,not in VoteHub,,,,,0 of 24,probably VoteHub's choice
+senate,2026|TX|S|regular,duplicate on Wikipedia,Pulse Decision Science,,2026-09-27,,,,,,,,,VoteHub's entry (end 2026-09-28) is already matched to another row,,,,,
+senate,2026|TX|S|regular,missing,Big Data Poll,,2026-09-26,698.0,,,,,,2.17,not in VoteHub,,,,,4 of 7,probably a gap
+senate,2026|TX|S|regular,missing,Stratus Intelligence,,2026-09-24,856.0,,,,,R,0.0,not in VoteHub,,,,,0 of 1,probably VoteHub's choice
+senate,2026|TX|S|regular,missing,Marist University,,2026-09-20,1139.0,,,,,,6.38,not in VoteHub,,,,,7 of 10,probably a gap
+senate,2026|TX|S|regular,missing,Trafalgar Group,,2026-09-17,1079.0,,,,,R,1.1,not in VoteHub,,,,,3 of 23,probably VoteHub's choice
+senate,2026|TX|S|regular,missing,SoCal Strategies,,2026-09-13,649.0,,,,,,5.26,not in VoteHub,,,,,0 of 3,probably VoteHub's choice
+senate,2026|TX|S|regular,missing,Mason-Dixon,,2026-09-10,625.0,,,,,,3.37,not in VoteHub,,,,,1 of 4,probably VoteHub's choice
+senate,2026|TX|S|regular,missing,Overton Insights,,2026-08-26,1167.0,,,,,R,0.0,not in VoteHub,,,,,0 of 1,probably VoteHub's choice
+senate,2026|TX|S|regular,missing,SoCal Strategies,,2026-06-21,800.0,,,,,R,-2.08,not in VoteHub,,,,,0 of 3,probably VoteHub's choice
+senate,2026|TX|S|regular,votehub only,Wedgewood Polls,,2026-07-31,800.0,2.13,,False,Wedgewood Polls,,,,,,True,,,
+senate,2026|VA|S|regular,matched,The Public Sentiment Institute,The Public Sentiment Institute,2026-06-16,996.0,20.0,1.43,False,,,,,,,,False,,
+senate,2026|VA|S|regular,matched,The Public Sentiment Institute,The Public Sentiment Institute,2026-06-16,,20.48,0.95,False,,,,,,,,True,,

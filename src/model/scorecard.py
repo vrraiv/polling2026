@@ -147,6 +147,27 @@ def races_table(df, chamber):
     return json.loads(df[cols].to_json(orient="records"))
 
 
+def poll_audit_summary(a):
+    """The poll audit (src/model/poll_audit.py) trimmed for the page: totals, and only the races where something differs."""
+    out = {"blocklist": a.get("blocklist", [])}
+    for ch in ("senate", "house"):
+        if ch not in a:
+            continue
+        c = a[ch]
+        races = []
+        for r in c["races"]:
+            if not (r["missing"] or r["votehub_only"] or r["number_mismatch"]):
+                continue
+            wi = r["what_if"]
+            races.append({"race": r["race_key"], "wikipedia_table": r["wikipedia_table"], "n_votehub": r["n_votehub"],
+                          "n_wikipedia": r["n_wikipedia"], "missing": r["missing"], "votehub_only": r["votehub_only"],
+                          "number_mismatch": r["number_mismatch"],
+                          "what_if": {k: {v: {"mu": round(x["mu"], 2), "p": None if x["p"] is None else round(x["p"], 3)}
+                                          for v, x in wi[k].items()} for k in wi}})
+        out[ch] = {"asof_utc": c["asof_utc"], "window_start": c["window_start"], "totals": c["totals"], "races": races}
+    return out
+
+
 def main():
     sen, prov_s = outcomes("senate")
     hou, prov_h = outcomes("house")
@@ -156,6 +177,8 @@ def main():
            "contested_rule": f"any published model gave the D side between {LO:.0%} and {HI:.0%} (fixed from data/final/)",
            "senate": {"scores": chamber_scores(sen), "seats": senate_seats(sen), "races": races_table(sen, "senate")},
            "house": {"scores": chamber_scores(hou), "seats": house_seats(hou), "races": races_table(hou, "house")}}
+    if (SC / "poll_audit.json").exists():
+        out["poll_audit"] = poll_audit_summary(json.loads((SC / "poll_audit.json").read_text()))
     if (SC / "margins_senate.csv").exists() and (SC / "margins_house.csv").exists():
         import scorecard_margins as SM
         out["margins"] = SM.stage2(sen, hou)

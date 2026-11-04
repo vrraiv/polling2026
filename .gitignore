@@ -7,3 +7,5 @@ __pycache__/
 data/raw/atlasintel/**/*.pdf
 # per-state Wikipedia result pages (~150 MB per snapshot); the parsed data/scorecard/margins_*.csv keep each page's revision id
 data/raw/wikipedia_results_pages/
+# per-race Wikipedia pages as of the final forecast's VoteHub snapshot (poll audit); revision ids are kept in data/scorecard/wiki_polls_*.csv
+data/raw/wikipedia_polls_asof/

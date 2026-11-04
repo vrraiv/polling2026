@@ -1,0 +1,16 @@
+{
+  "about": "Pollsters whose 2026 polls are known to be fabricated or otherwise unusable. Used by the poll audit only (src/model/poll_audit.py); the frozen forecast did not use this list. public_since = the date the problem was publicly reported, so the audit can tell what was knowable before the final run.",
+  "pollsters": [
+    {
+      "name": "Wedgewood Polls",
+      "match": "wedgewood",
+      "reason": "Admitted fabricating its 2026 surveys (an 'experimental project') after FiftyPlusOne analysts compared its respondent IDs with genuine Pollfish records.",
+      "public_since": "2026-10-21",
+      "sources": [
+        "https://www.bostonglobe.com/2026/10/21/nation/fake-poll-trust-surveys/",
+        "https://www.newsweek.com/fake-polling-firm-duped-media-in-social-experiment-12599153",
+        "https://www.westernjournal.com/legal-pollster-boosting-dem-mississippi-admits-fabricated-election-surveys/"
+      ]
+    }
+  ]
+}
