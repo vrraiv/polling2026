@@ -89,13 +89,42 @@ def snapshot(chamber, pause=2.0):
                 fetch(SOURCE, f"{t}.html", f"https://en.wikipedia.org/api/rest_v1/page/html/{t}/{rev}", skip_existing=True)
                 break
             except RuntimeError as e:
-                # 429: rate limit; 5xx: rendering an old revision of a large page can time out (FL House, 504)
+                if re.search(r"\b50[0234]\b", str(e)) and attempt >= 1:
+                    # rendering an old revision of a very large page times out (FL House, 504, twice): take the same
+                    # revision from the action API's parser instead (legacy HTML: no <section> tags, so the parser
+                    # rebuilds headings from the preceding <h2>-<h6>)
+                    legacy(t, rev, d)
+                    break
                 if not re.search(r"\b(429|50[0234])\b", str(e)) or attempt == 3:
                     raise
                 print(f"  {'rate-limited' if '429' in str(e) else 'server error'} on {t}; waiting {60 * (attempt + 1)} s")
                 time.sleep(60 * (attempt + 1))
         time.sleep(pause)
     return idx_path
+
+
+def legacy(title, rev, d):
+    r = SESSION.get("https://en.wikipedia.org/w/api.php", timeout=300, params={
+        "action": "parse", "oldid": rev, "prop": "text|revid", "format": "json", "formatversion": 2})
+    r.raise_for_status()
+    j = r.json()["parse"]
+    if int(j["revid"]) != int(rev):
+        raise RuntimeError(f"{title}: asked for revision {rev}, got {j['revid']}")
+    (d / f"{title}.html").write_text(f"<!-- legacy parser output of revision {rev} -->\n" + j["text"], encoding="utf-8")
+    print(f"  {title}: revision {rev} taken from the action API parser")
+
+
+def headings_before(tb):
+    """Heading path for a table in legacy parser HTML (innermost first): the nearest preceding heading of each higher level."""
+    out, level = [], 7
+    for h in tb.find_all_previous(re.compile(r"^h[2-6]$")):
+        lv = int(h.name[1])
+        if lv < level:
+            out.append(re.sub(r"\[\s*edit\s*\]", "", h.get_text(" ", strip=True)).strip())
+            level = lv
+            if lv == 2:
+                break
+    return out
 
 
 # ---------------- parsing ----------------
@@ -168,7 +197,7 @@ def parse_page(html, chamber, state, noms):
         labels, nh = header_labels(g)
         if not any("Poll source" in l for l in labels):
             continue
-        secs = section_headings(tb)
+        secs = section_headings(tb) or headings_before(tb)
         if not any(re.match(r"general election", s, re.I) for s in secs):
             continue
         if any(re.search(r"primary|runoff|first round", s, re.I) for s in secs):

@@ -7336,7 +7336,7 @@
     "wikipedia_polls": 520,
     "matched_wikipedia_polls": 287,
     "missing": 230,
-    "missing_probable_gaps": 74,
+    "missing_probable_gaps": 72,
     "missing_by_cause": {
      "not in VoteHub": 230
     },
@@ -8038,7 +8038,7 @@
        "wiki_margin": 7.53,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "30 of 39",
+       "pollster_carried": "31 of 45",
        "kind": "probably a gap"
       },
       {
@@ -8139,7 +8139,7 @@
        "wiki_margin": 3.3,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "1 of 2",
+       "pollster_carried": "2 of 3",
        "kind": "probably a gap"
       },
       {
@@ -8229,7 +8229,7 @@
        "wiki_margin": 22.11,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "0 of 1",
+       "pollster_carried": "0 of 2",
        "kind": "probably VoteHub's choice"
       },
       {
@@ -8240,7 +8240,7 @@
        "wiki_margin": 23.91,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "2 of 13",
+       "pollster_carried": "3 of 16",
        "kind": "probably VoteHub's choice"
       },
       {
@@ -8330,7 +8330,7 @@
        "wiki_margin": -7.37,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "2 of 13",
+       "pollster_carried": "3 of 16",
        "kind": "probably VoteHub's choice"
       },
       {
@@ -8396,7 +8396,7 @@
        "wiki_margin": -4.26,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "2 of 3",
+       "pollster_carried": "2 of 4",
        "kind": "probably a gap"
       },
       {
@@ -8407,7 +8407,7 @@
        "wiki_margin": -6.38,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "30 of 39",
+       "pollster_carried": "31 of 45",
        "kind": "probably a gap"
       },
       {
@@ -8418,7 +8418,7 @@
        "wiki_margin": -7.53,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "1 of 6",
+       "pollster_carried": "1 of 21",
        "kind": "probably VoteHub's choice"
       },
       {
@@ -8563,7 +8563,7 @@
        "wiki_margin": 10.64,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "2 of 13",
+       "pollster_carried": "3 of 16",
        "kind": "probably VoteHub's choice"
       },
       {
@@ -8596,7 +8596,7 @@
        "wiki_margin": 4.35,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "13 of 17",
+       "pollster_carried": "15 of 20",
        "kind": "probably a gap"
       },
       {
@@ -8718,7 +8718,7 @@
        "wiki_margin": -33.33,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "0 of 6",
+       "pollster_carried": "0 of 7",
        "kind": "probably VoteHub's choice"
       },
       {
@@ -8729,7 +8729,7 @@
        "wiki_margin": -34.25,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "0 of 6",
+       "pollster_carried": "0 of 7",
        "kind": "probably VoteHub's choice"
       },
       {
@@ -8751,7 +8751,7 @@
        "wiki_margin": -48.57,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "0 of 6",
+       "pollster_carried": "0 of 7",
        "kind": "probably VoteHub's choice"
       },
       {
@@ -8762,7 +8762,7 @@
        "wiki_margin": -36.36,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "5 of 8",
+       "pollster_carried": "6 of 11",
        "kind": "probably a gap"
       },
       {
@@ -8773,7 +8773,7 @@
        "wiki_margin": -38.71,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "5 of 8",
+       "pollster_carried": "6 of 11",
        "kind": "probably a gap"
       }
      ],
@@ -8852,7 +8852,7 @@
        "wiki_margin": 12.77,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "2 of 13",
+       "pollster_carried": "3 of 16",
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -8975,7 +8975,7 @@
        "wiki_margin": -1.05,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "30 of 39",
+       "pollster_carried": "31 of 45",
        "kind": "probably a gap"
       },
       {
@@ -8997,7 +8997,7 @@
        "wiki_margin": -1.08,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "13 of 17",
+       "pollster_carried": "15 of 20",
        "kind": "probably a gap"
       },
       {
@@ -9030,7 +9030,7 @@
        "wiki_margin": 0.0,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "3 of 4",
+       "pollster_carried": "3 of 5",
        "kind": "probably a gap"
       },
       {
@@ -9052,7 +9052,7 @@
        "wiki_margin": 4.55,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "0 of 4",
+       "pollster_carried": "4 of 14",
        "kind": "probably VoteHub's choice"
       },
       {
@@ -9153,7 +9153,7 @@
        "wiki_margin": -1.1,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "1 of 6",
+       "pollster_carried": "1 of 21",
        "kind": "probably VoteHub's choice"
       },
       {
@@ -9175,7 +9175,7 @@
        "wiki_margin": 5.75,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "2 of 7",
+       "pollster_carried": "4 of 14",
        "kind": "probably VoteHub's choice"
       },
       {
@@ -9197,7 +9197,7 @@
        "wiki_margin": 0.0,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "30 of 39",
+       "pollster_carried": "31 of 45",
        "kind": "probably a gap"
       },
       {
@@ -9219,7 +9219,7 @@
        "wiki_margin": 2.08,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "0 of 4",
+       "pollster_carried": "4 of 14",
        "kind": "probably VoteHub's choice"
       },
       {
@@ -9230,7 +9230,7 @@
        "wiki_margin": -5.38,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "8 of 12",
+       "pollster_carried": "9 of 17",
        "kind": "probably a gap"
       },
       {
@@ -9241,7 +9241,7 @@
        "wiki_margin": 1.15,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "0 of 4",
+       "pollster_carried": "4 of 14",
        "kind": "probably VoteHub's choice"
       },
       {
@@ -9252,7 +9252,7 @@
        "wiki_margin": -1.1,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "3 of 7",
+       "pollster_carried": "15 of 34",
        "kind": "probably VoteHub's choice"
       },
       {
@@ -9263,7 +9263,7 @@
        "wiki_margin": -4.44,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "2 of 7",
+       "pollster_carried": "4 of 14",
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -9352,7 +9352,7 @@
        "wiki_margin": -10.11,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "0 of 4",
+       "pollster_carried": "4 of 14",
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -9442,7 +9442,7 @@
        "wiki_margin": 0.0,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "3 of 5",
+       "pollster_carried": "7 of 10",
        "kind": "probably a gap"
       },
       {
@@ -9453,7 +9453,7 @@
        "wiki_margin": -4.35,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "3 of 5",
+       "pollster_carried": "7 of 10",
        "kind": "probably a gap"
       },
       {
@@ -9464,7 +9464,7 @@
        "wiki_margin": -5.13,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "3 of 7",
+       "pollster_carried": "15 of 34",
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -9554,7 +9554,7 @@
        "wiki_margin": -2.0,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "10 of 15",
+       "pollster_carried": "22 of 29",
        "kind": "probably a gap"
       },
       {
@@ -9697,8 +9697,8 @@
        "wiki_margin": -1.05,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "1 of 2",
-       "kind": "probably a gap"
+       "pollster_carried": "1 of 3",
+       "kind": "probably VoteHub's choice"
       },
       {
        "pollster": "Public Policy Polling",
@@ -9708,7 +9708,7 @@
        "wiki_margin": 5.38,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "3 of 7",
+       "pollster_carried": "15 of 34",
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -9767,16 +9767,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": 4.04,
-        "p": 0.808
+        "mu": 4.19,
+        "p": 0.815
        },
        "polls_fundamentals": {
-        "mu": 4.09,
-        "p": 0.81
+        "mu": 4.23,
+        "p": 0.817
        },
        "polls_fundamentals_biasadj": {
-        "mu": 4.55,
-        "p": 0.833
+        "mu": 4.69,
+        "p": 0.839
        }
       },
       "plus_all_missing": {
@@ -9820,7 +9820,7 @@
        "wiki_margin": 6.25,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "10 of 15",
+       "pollster_carried": "22 of 29",
        "kind": "probably a gap"
       },
       {
@@ -9853,7 +9853,7 @@
        "wiki_margin": 2.13,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "2 of 13",
+       "pollster_carried": "3 of 16",
        "kind": "probably VoteHub's choice"
       },
       {
@@ -9886,7 +9886,7 @@
        "wiki_margin": 5.38,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "1 of 6",
+       "pollster_carried": "1 of 21",
        "kind": "probably VoteHub's choice"
       },
       {
@@ -9919,7 +9919,7 @@
        "wiki_margin": 1.05,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "13 of 17",
+       "pollster_carried": "15 of 20",
        "kind": "probably a gap"
       },
       {
@@ -9963,7 +9963,7 @@
        "wiki_margin": 4.35,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "2 of 7",
+       "pollster_carried": "4 of 14",
        "kind": "probably VoteHub's choice"
       },
       {
@@ -9974,7 +9974,7 @@
        "wiki_margin": -1.15,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "0 of 1",
+       "pollster_carried": "0 of 2",
        "kind": "probably VoteHub's choice"
       },
       {
@@ -10119,7 +10119,7 @@
        "wiki_margin": 5.49,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "2 of 13",
+       "pollster_carried": "3 of 16",
        "kind": "probably VoteHub's choice"
       },
       {
@@ -10152,7 +10152,7 @@
        "wiki_margin": 14.89,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "30 of 39",
+       "pollster_carried": "31 of 45",
        "kind": "probably a gap"
       },
       {
@@ -10229,7 +10229,7 @@
        "wiki_margin": 1.18,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "8 of 12",
+       "pollster_carried": "9 of 17",
        "kind": "probably a gap"
       },
       {
@@ -10330,7 +10330,7 @@
        "wiki_margin": -3.61,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "5 of 8",
+       "pollster_carried": "6 of 11",
        "kind": "probably a gap"
       }
      ],
@@ -10419,7 +10419,7 @@
        "wiki_margin": -57.14,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "0 of 6",
+       "pollster_carried": "0 of 7",
        "kind": "probably VoteHub's choice"
       },
       {
@@ -10452,7 +10452,7 @@
        "wiki_margin": -40.74,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "0 of 1",
+       "pollster_carried": "0 of 2",
        "kind": "probably VoteHub's choice"
       },
       {
@@ -10463,7 +10463,7 @@
        "wiki_margin": -39.68,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "0 of 6",
+       "pollster_carried": "0 of 7",
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -10609,7 +10609,7 @@
        "wiki_margin": -3.23,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "3 of 5",
+       "pollster_carried": "4 of 7",
        "kind": "probably a gap"
       },
       {
@@ -10620,7 +10620,7 @@
        "wiki_margin": -6.52,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "30 of 39",
+       "pollster_carried": "31 of 45",
        "kind": "probably a gap"
       },
       {
@@ -10631,7 +10631,7 @@
        "wiki_margin": 1.1,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "2 of 7",
+       "pollster_carried": "4 of 14",
        "kind": "probably VoteHub's choice"
       },
       {
@@ -10653,7 +10653,7 @@
        "wiki_margin": -2.08,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "0 of 6",
+       "pollster_carried": "3 of 19",
        "kind": "probably VoteHub's choice"
       },
       {
@@ -10675,7 +10675,7 @@
        "wiki_margin": -5.88,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "8 of 12",
+       "pollster_carried": "9 of 17",
        "kind": "probably a gap"
       },
       {
@@ -10686,7 +10686,7 @@
        "wiki_margin": 4.55,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "2 of 3",
+       "pollster_carried": "6 of 7",
        "kind": "probably a gap"
       },
       {
@@ -10697,7 +10697,7 @@
        "wiki_margin": 0.0,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "0 of 6",
+       "pollster_carried": "3 of 19",
        "kind": "probably VoteHub's choice"
       },
       {
@@ -10708,7 +10708,7 @@
        "wiki_margin": 0.0,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "2 of 7",
+       "pollster_carried": "4 of 14",
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -10798,7 +10798,7 @@
        "wiki_margin": 5.26,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "3 of 5",
+       "pollster_carried": "4 of 7",
        "kind": "probably a gap"
       },
       {
@@ -10831,7 +10831,7 @@
        "wiki_margin": 7.37,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "3 of 4",
+       "pollster_carried": "4 of 5",
        "kind": "probably a gap"
       },
       {
@@ -10853,7 +10853,7 @@
        "wiki_margin": 0.0,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "8 of 12",
+       "pollster_carried": "9 of 17",
        "kind": "probably a gap"
       },
       {
@@ -10875,7 +10875,7 @@
        "wiki_margin": -1.37,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "6 of 8",
+       "pollster_carried": "6 of 9",
        "kind": "probably a gap"
       },
       {
@@ -10886,7 +10886,7 @@
        "wiki_margin": 1.18,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "0 of 6",
+       "pollster_carried": "0 of 7",
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -10965,7 +10965,7 @@
        "wiki_margin": 20.43,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "2 of 13",
+       "pollster_carried": "3 of 16",
        "kind": "probably VoteHub's choice"
       },
       {
@@ -10976,7 +10976,7 @@
        "wiki_margin": 17.78,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "2 of 13",
+       "pollster_carried": "3 of 16",
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -11066,7 +11066,7 @@
        "wiki_margin": 7.53,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "1 of 6",
+       "pollster_carried": "1 of 21",
        "kind": "probably VoteHub's choice"
       },
       {
@@ -11088,7 +11088,7 @@
        "wiki_margin": 5.49,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "13 of 17",
+       "pollster_carried": "15 of 20",
        "kind": "probably a gap"
       },
       {
@@ -11099,7 +11099,7 @@
        "wiki_margin": 11.58,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "6 of 8",
+       "pollster_carried": "6 of 9",
        "kind": "probably a gap"
       },
       {
@@ -11252,7 +11252,7 @@
        "wiki_margin": -2.13,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "10 of 15",
+       "pollster_carried": "22 of 29",
        "kind": "probably a gap"
       },
       {
@@ -11274,7 +11274,7 @@
        "wiki_margin": 1.12,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "2 of 13",
+       "pollster_carried": "3 of 16",
        "kind": "probably VoteHub's choice"
       },
       {
@@ -11340,7 +11340,7 @@
        "wiki_margin": 3.3,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "1 of 6",
+       "pollster_carried": "1 of 21",
        "kind": "probably VoteHub's choice"
       },
       {
@@ -11373,7 +11373,7 @@
        "wiki_margin": 3.16,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "30 of 39",
+       "pollster_carried": "31 of 45",
        "kind": "probably a gap"
       },
       {
@@ -11439,7 +11439,7 @@
        "wiki_margin": 4.44,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "0 of 1",
+       "pollster_carried": "2 of 9",
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -11607,7 +11607,7 @@
        "wiki_margin": 40.48,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "10 of 15",
+       "pollster_carried": "22 of 29",
        "kind": "probably a gap"
       }
      ],
@@ -11731,7 +11731,7 @@
        "wiki_margin": 0.0,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "30 of 39",
+       "pollster_carried": "31 of 45",
        "kind": "probably a gap"
       },
       {
@@ -11753,7 +11753,7 @@
        "wiki_margin": 1.12,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "0 of 6",
+       "pollster_carried": "3 of 19",
        "kind": "probably VoteHub's choice"
       },
       {
@@ -11819,7 +11819,7 @@
        "wiki_margin": 0.0,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "0 of 6",
+       "pollster_carried": "3 of 19",
        "kind": "probably VoteHub's choice"
       },
       {
@@ -11830,7 +11830,7 @@
        "wiki_margin": 3.7,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "0 of 6",
+       "pollster_carried": "3 of 19",
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -11931,7 +11931,7 @@
        "wiki_margin": -3.45,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "3 of 7",
+       "pollster_carried": "15 of 34",
        "kind": "probably VoteHub's choice"
       },
       {
@@ -11942,8 +11942,8 @@
        "wiki_margin": 7.37,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "1 of 2",
-       "kind": "probably a gap"
+       "pollster_carried": "2 of 5",
+       "kind": "probably VoteHub's choice"
       },
       {
        "pollster": "Impact Research",
@@ -11953,7 +11953,7 @@
        "wiki_margin": 0.0,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "0 of 6",
+       "pollster_carried": "3 of 19",
        "kind": "probably VoteHub's choice"
       },
       {
@@ -11964,7 +11964,7 @@
        "wiki_margin": -25.84,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "2 of 13",
+       "pollster_carried": "3 of 16",
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -12001,16 +12001,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": -12.14,
-        "p": 0.037
+        "mu": -14.01,
+        "p": 0.027
        },
        "polls_fundamentals": {
-        "mu": -12.07,
-        "p": 0.038
+        "mu": -13.93,
+        "p": 0.027
        },
        "polls_fundamentals_biasadj": {
-        "mu": -14.5,
-        "p": 0.023
+        "mu": -16.36,
+        "p": 0.017
        }
       },
       "plus_all_missing": {
@@ -12122,7 +12122,7 @@
        "wiki_margin": 3.16,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "2 of 13",
+       "pollster_carried": "3 of 16",
        "kind": "probably VoteHub's choice"
       },
       {
@@ -12144,7 +12144,7 @@
        "wiki_margin": 2.04,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "10 of 15",
+       "pollster_carried": "22 of 29",
        "kind": "probably a gap"
       },
       {
@@ -12232,7 +12232,7 @@
        "wiki_margin": 2.13,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "0 of 1",
+       "pollster_carried": "0 of 2",
        "kind": "probably VoteHub's choice"
       },
       {
@@ -12276,7 +12276,7 @@
        "wiki_margin": 3.09,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "9 of 10",
+       "pollster_carried": "10 of 11",
        "kind": "probably a gap"
       },
       {
@@ -12287,7 +12287,7 @@
        "wiki_margin": 6.25,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "30 of 39",
+       "pollster_carried": "31 of 45",
        "kind": "probably a gap"
       },
       {
@@ -12548,6 +12548,6653 @@
        "polls_fundamentals_biasadj": {
         "mu": 19.24,
         "p": 0.967
+       }
+      }
+     }
+    }
+   ]
+  },
+  "house": {
+   "asof_utc": "2026-11-03T21:06:39+00:00",
+   "window_start": "2026-07-01",
+   "totals": {
+    "races": 162,
+    "races_with_wikipedia_table": 87,
+    "votehub_polls_used": 95,
+    "wikipedia_polls": 205,
+    "matched_wikipedia_polls": 82,
+    "missing": 122,
+    "missing_probable_gaps": 30,
+    "missing_by_cause": {
+     "not in VoteHub": 122
+    },
+    "duplicates_on_wikipedia": 1,
+    "votehub_only": 13,
+    "votehub_only_unverifiable": 3,
+    "blocklisted_used": 0,
+    "number_mismatches": 2,
+    "supplement_polls": 0,
+    "supplement_polls_matched": 0,
+    "supplement_mismatches": [],
+    "pollster_coverage": [
+     {
+      "pollster": "Public Policy Polling",
+      "carried": 12,
+      "on_wikipedia": 27
+     },
+     {
+      "pollster": "RedBox Research",
+      "carried": 0,
+      "on_wikipedia": 15
+     },
+     {
+      "pollster": "Emerson College",
+      "carried": 12,
+      "on_wikipedia": 14
+     },
+     {
+      "pollster": "DCCC",
+      "carried": 4,
+      "on_wikipedia": 13
+     },
+     {
+      "pollster": "Impact Research",
+      "carried": 3,
+      "on_wikipedia": 13
+     },
+     {
+      "pollster": "Global Strategy Group",
+      "carried": 4,
+      "on_wikipedia": 10
+     },
+     {
+      "pollster": "Tulchin Research",
+      "carried": 2,
+      "on_wikipedia": 8
+     },
+     {
+      "pollster": "GBAO",
+      "carried": 2,
+      "on_wikipedia": 7
+     },
+     {
+      "pollster": "GQR",
+      "carried": 2,
+      "on_wikipedia": 6
+     },
+     {
+      "pollster": "New York Times / The Philadelphia Inquirer / Siena University",
+      "carried": 1,
+      "on_wikipedia": 6
+     },
+     {
+      "pollster": "co/efficient",
+      "carried": 1,
+      "on_wikipedia": 5
+     },
+     {
+      "pollster": "Hart Research",
+      "carried": 4,
+      "on_wikipedia": 5
+     },
+     {
+      "pollster": "Normington Petts",
+      "carried": 4,
+      "on_wikipedia": 5
+     },
+     {
+      "pollster": "SurveyUSA",
+      "carried": 4,
+      "on_wikipedia": 4
+     },
+     {
+      "pollster": "Washington Post / Schar School",
+      "carried": 3,
+      "on_wikipedia": 4
+     },
+     {
+      "pollster": "Research & Polling",
+      "carried": 1,
+      "on_wikipedia": 3
+     },
+     {
+      "pollster": "Change Research",
+      "carried": 1,
+      "on_wikipedia": 3
+     },
+     {
+      "pollster": "Expedition Strategies",
+      "carried": 1,
+      "on_wikipedia": 3
+     },
+     {
+      "pollster": "Lake Research Partners",
+      "carried": 1,
+      "on_wikipedia": 3
+     },
+     {
+      "pollster": "Quantus Insights",
+      "carried": 2,
+      "on_wikipedia": 3
+     },
+     {
+      "pollster": "SEA Polling",
+      "carried": 0,
+      "on_wikipedia": 3
+     },
+     {
+      "pollster": "20/20 Insight",
+      "carried": 0,
+      "on_wikipedia": 2
+     },
+     {
+      "pollster": "FM3 Research",
+      "carried": 1,
+      "on_wikipedia": 2
+     },
+     {
+      "pollster": "Franklin & Marshall College",
+      "carried": 1,
+      "on_wikipedia": 2
+     },
+     {
+      "pollster": "McLaughlin and Associates",
+      "carried": 0,
+      "on_wikipedia": 2
+     },
+     {
+      "pollster": "National Research Inc.",
+      "carried": 1,
+      "on_wikipedia": 2
+     },
+     {
+      "pollster": "Tavern Research",
+      "carried": 2,
+      "on_wikipedia": 2
+     },
+     {
+      "pollster": "Strategies 360",
+      "carried": 0,
+      "on_wikipedia": 1
+     },
+     {
+      "pollster": "American Pulse",
+      "carried": 1,
+      "on_wikipedia": 1
+     },
+     {
+      "pollster": "Bedrock Polling",
+      "carried": 1,
+      "on_wikipedia": 1
+     },
+     {
+      "pollster": "Bendixen & Amandi International",
+      "carried": 0,
+      "on_wikipedia": 1
+     },
+     {
+      "pollster": "The Bullfinch Group/Independent Center",
+      "carried": 1,
+      "on_wikipedia": 1
+     },
+     {
+      "pollster": "Christopher Newport University",
+      "carried": 0,
+      "on_wikipedia": 1
+     },
+     {
+      "pollster": "Cygnal",
+      "carried": 0,
+      "on_wikipedia": 1
+     },
+     {
+      "pollster": "Democratic Congressional Campaign Committee",
+      "carried": 1,
+      "on_wikipedia": 1
+     },
+     {
+      "pollster": "DHM Research",
+      "carried": 0,
+      "on_wikipedia": 1
+     },
+     {
+      "pollster": "Fabrizio, Lee & Associates",
+      "carried": 0,
+      "on_wikipedia": 1
+     },
+     {
+      "pollster": "FirstStrategic Communications and Public Affairs",
+      "carried": 1,
+      "on_wikipedia": 1
+     },
+     {
+      "pollster": "Hendrix College",
+      "carried": 1,
+      "on_wikipedia": 1
+     },
+     {
+      "pollster": "University of Houston",
+      "carried": 0,
+      "on_wikipedia": 1
+     },
+     {
+      "pollster": "Inquire LLC",
+      "carried": 0,
+      "on_wikipedia": 1
+     },
+     {
+      "pollster": "Keating Research",
+      "carried": 0,
+      "on_wikipedia": 1
+     },
+     {
+      "pollster": "MDW Communications",
+      "carried": 0,
+      "on_wikipedia": 1
+     },
+     {
+      "pollster": "Miller Consulting Services",
+      "carried": 0,
+      "on_wikipedia": 1
+     },
+     {
+      "pollster": "Montana State University Billings",
+      "carried": 1,
+      "on_wikipedia": 1
+     },
+     {
+      "pollster": "Muhlenberg College Institute of Public Opinion",
+      "carried": 1,
+      "on_wikipedia": 1
+     },
+     {
+      "pollster": "Neighborhood Research",
+      "carried": 1,
+      "on_wikipedia": 1
+     },
+     {
+      "pollster": "Peak Insights",
+      "carried": 0,
+      "on_wikipedia": 1
+     },
+     {
+      "pollster": "Remington Research Group",
+      "carried": 1,
+      "on_wikipedia": 1
+     },
+     {
+      "pollster": "Rutgers University Eagleton Institute of Politics",
+      "carried": 0,
+      "on_wikipedia": 1
+     },
+     {
+      "pollster": "Saint Anselm College",
+      "carried": 1,
+      "on_wikipedia": 1
+     },
+     {
+      "pollster": "Siena University",
+      "carried": 1,
+      "on_wikipedia": 1
+     },
+     {
+      "pollster": "St. Pete Polls",
+      "carried": 0,
+      "on_wikipedia": 1
+     },
+     {
+      "pollster": "StimSight Research",
+      "carried": 0,
+      "on_wikipedia": 1
+     },
+     {
+      "pollster": "Susquehanna Polling & Research",
+      "carried": 0,
+      "on_wikipedia": 1
+     },
+     {
+      "pollster": "Texas Southern University",
+      "carried": 1,
+      "on_wikipedia": 1
+     },
+     {
+      "pollster": "Z to A Research",
+      "carried": 0,
+      "on_wikipedia": 1
+     },
+     {
+      "pollster": "Torchlight Strategies",
+      "carried": 0,
+      "on_wikipedia": 1
+     },
+     {
+      "pollster": "Upswing Research & Strategy",
+      "carried": 0,
+      "on_wikipedia": 1
+     },
+     {
+      "pollster": "Wavefield Research",
+      "carried": 0,
+      "on_wikipedia": 1
+     }
+    ]
+   },
+   "races": [
+    {
+     "race": "2026|AL|H|2",
+     "wikipedia_table": true,
+     "n_votehub": 1,
+     "n_wikipedia": 2,
+     "missing": [
+      {
+       "pollster": "Tulchin Research",
+       "marker": "D",
+       "end": "2026-08-31",
+       "n": null,
+       "wiki_margin": 0.0,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "2 of 9",
+       "kind": "probably VoteHub's choice"
+      },
+      {
+       "pollster": "DCCC",
+       "marker": "D",
+       "end": "2026-07-30",
+       "n": 421,
+       "wiki_margin": 0.0,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "4 of 13",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [
+      {
+       "pollster": "Remington Research Group",
+       "end": "2026-10-25",
+       "n": 642,
+       "votehub_margin": -2.13,
+       "blocklisted": "",
+       "supplement": false,
+       "verifiable": true
+      }
+     ],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": -1.11,
+        "p": 0.41
+       },
+       "polls_fundamentals": {
+        "mu": -0.81,
+        "p": 0.43
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -2.86,
+        "p": 0.267
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": -1.11,
+        "p": 0.41
+       },
+       "polls_fundamentals": {
+        "mu": -0.81,
+        "p": 0.43
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -2.86,
+        "p": 0.267
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": -1.11,
+        "p": 0.41
+       },
+       "polls_fundamentals": {
+        "mu": -0.81,
+        "p": 0.43
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -2.86,
+        "p": 0.267
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -1.2,
+        "p": 0.401
+       },
+       "polls_fundamentals": {
+        "mu": -0.92,
+        "p": 0.419
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -2.99,
+        "p": 0.253
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|AZ|H|1",
+     "wikipedia_table": true,
+     "n_votehub": 2,
+     "n_wikipedia": 1,
+     "missing": [],
+     "votehub_only": [
+      {
+       "pollster": "Keating Research",
+       "end": "2026-10-28",
+       "n": 500,
+       "votehub_margin": 4.26,
+       "blocklisted": "",
+       "supplement": false,
+       "verifiable": true
+      }
+     ],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": 5.06,
+        "p": 0.838
+       },
+       "polls_fundamentals": {
+        "mu": 5.35,
+        "p": 0.861
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 3.28,
+        "p": 0.764
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": 5.06,
+        "p": 0.838
+       },
+       "polls_fundamentals": {
+        "mu": 5.35,
+        "p": 0.861
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 3.28,
+        "p": 0.764
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": 5.06,
+        "p": 0.838
+       },
+       "polls_fundamentals": {
+        "mu": 5.35,
+        "p": 0.861
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 3.28,
+        "p": 0.764
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": 5.06,
+        "p": 0.838
+       },
+       "polls_fundamentals": {
+        "mu": 5.35,
+        "p": 0.861
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 3.28,
+        "p": 0.764
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|AZ|H|2",
+     "wikipedia_table": true,
+     "n_votehub": 1,
+     "n_wikipedia": 3,
+     "missing": [
+      {
+       "pollster": "GBAO",
+       "marker": "D",
+       "end": "2026-08-24",
+       "n": 500,
+       "wiki_margin": -2.22,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "4 of 14",
+       "kind": "probably VoteHub's choice"
+      },
+      {
+       "pollster": "Peak Insights",
+       "marker": "R",
+       "end": "2026-08-20",
+       "n": 400,
+       "wiki_margin": -11.58,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "0 of 7",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": -4.77,
+        "p": 0.178
+       },
+       "polls_fundamentals": {
+        "mu": -4.47,
+        "p": 0.18
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -6.52,
+        "p": 0.098
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": -4.77,
+        "p": 0.178
+       },
+       "polls_fundamentals": {
+        "mu": -4.47,
+        "p": 0.18
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -6.52,
+        "p": 0.098
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": -4.77,
+        "p": 0.178
+       },
+       "polls_fundamentals": {
+        "mu": -4.47,
+        "p": 0.18
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -6.52,
+        "p": 0.098
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -6.15,
+        "p": 0.12
+       },
+       "polls_fundamentals": {
+        "mu": -5.87,
+        "p": 0.119
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -7.95,
+        "p": 0.062
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|CA|H|22",
+     "wikipedia_table": false,
+     "n_votehub": 1,
+     "n_wikipedia": 0,
+     "missing": [],
+     "votehub_only": [
+      {
+       "pollster": "University of Southern California Democracy and Fair Elections Lab/University of Southern California Dornsife Center for Economic and Social Research",
+       "end": "2026-10-28",
+       "n": 356,
+       "votehub_margin": 10.2,
+       "blocklisted": "",
+       "supplement": false,
+       "verifiable": false
+      }
+     ],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": 7.17,
+        "p": 0.904
+       },
+       "polls_fundamentals": {
+        "mu": 7.46,
+        "p": 0.92
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 5.42,
+        "p": 0.866
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": 7.17,
+        "p": 0.904
+       },
+       "polls_fundamentals": {
+        "mu": 7.46,
+        "p": 0.92
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 5.42,
+        "p": 0.866
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": 7.17,
+        "p": 0.904
+       },
+       "polls_fundamentals": {
+        "mu": 7.46,
+        "p": 0.92
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 5.42,
+        "p": 0.866
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": 7.17,
+        "p": 0.904
+       },
+       "polls_fundamentals": {
+        "mu": 7.46,
+        "p": 0.92
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 5.42,
+        "p": 0.866
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|CA|H|48",
+     "wikipedia_table": false,
+     "n_votehub": 2,
+     "n_wikipedia": 0,
+     "missing": [],
+     "votehub_only": [
+      {
+       "pollster": "SurveyUSA",
+       "end": "2026-09-01",
+       "n": 522,
+       "votehub_margin": 3.45,
+       "blocklisted": "",
+       "supplement": false,
+       "verifiable": false
+      },
+      {
+       "pollster": "University of Southern California Democracy and Fair Elections Lab",
+       "end": "2026-10-28",
+       "n": 474,
+       "votehub_margin": 8.33,
+       "blocklisted": "",
+       "supplement": false,
+       "verifiable": false
+      }
+     ],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": 9.36,
+        "p": 0.946
+       },
+       "polls_fundamentals": {
+        "mu": 9.64,
+        "p": 0.956
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 7.57,
+        "p": 0.929
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": 9.36,
+        "p": 0.946
+       },
+       "polls_fundamentals": {
+        "mu": 9.64,
+        "p": 0.956
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 7.57,
+        "p": 0.929
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": 9.36,
+        "p": 0.946
+       },
+       "polls_fundamentals": {
+        "mu": 9.64,
+        "p": 0.956
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 7.57,
+        "p": 0.929
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": 9.36,
+        "p": 0.946
+       },
+       "polls_fundamentals": {
+        "mu": 9.64,
+        "p": 0.956
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 7.57,
+        "p": 0.929
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|CO|H|3",
+     "wikipedia_table": true,
+     "n_votehub": 1,
+     "n_wikipedia": 2,
+     "missing": [
+      {
+       "pollster": "Keating Research",
+       "marker": "D",
+       "end": "2026-07-23",
+       "n": 500,
+       "wiki_margin": -1.1,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "0 of 2",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": -3.5,
+        "p": 0.243
+       },
+       "polls_fundamentals": {
+        "mu": -3.2,
+        "p": 0.25
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -5.25,
+        "p": 0.14
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": -3.5,
+        "p": 0.243
+       },
+       "polls_fundamentals": {
+        "mu": -3.2,
+        "p": 0.25
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -5.25,
+        "p": 0.14
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": -3.5,
+        "p": 0.243
+       },
+       "polls_fundamentals": {
+        "mu": -3.2,
+        "p": 0.25
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -5.25,
+        "p": 0.14
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -3.5,
+        "p": 0.24
+       },
+       "polls_fundamentals": {
+        "mu": -3.22,
+        "p": 0.247
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -5.28,
+        "p": 0.136
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|CO|H|5",
+     "wikipedia_table": true,
+     "n_votehub": 0,
+     "n_wikipedia": 3,
+     "missing": [
+      {
+       "pollster": "Public Policy Polling",
+       "marker": "D",
+       "end": "2026-10-20",
+       "n": 577,
+       "wiki_margin": 0.0,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "15 of 34",
+       "kind": "probably VoteHub's choice"
+      },
+      {
+       "pollster": "Global Strategy Group",
+       "marker": "D",
+       "end": "2026-10-18",
+       "n": 500,
+       "wiki_margin": 6.17,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "4 of 14",
+       "kind": "probably VoteHub's choice"
+      },
+      {
+       "pollster": "Global Strategy Group",
+       "marker": "D",
+       "end": "2026-07-21",
+       "n": 450,
+       "wiki_margin": -1.12,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "4 of 14",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": -5.79,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -5.3,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -7.0,
+        "p": null
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": -5.79,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -5.3,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -7.0,
+        "p": null
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": -5.79,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -5.3,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -7.0,
+        "p": null
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -2.93,
+        "p": 0.274
+       },
+       "polls_fundamentals": {
+        "mu": -2.65,
+        "p": 0.283
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -4.72,
+        "p": 0.157
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|CO|H|8",
+     "wikipedia_table": true,
+     "n_votehub": 0,
+     "n_wikipedia": 1,
+     "missing": [
+      {
+       "pollster": "McLaughlin and Associates",
+       "marker": "R",
+       "end": "2026-09-17",
+       "n": 400,
+       "wiki_margin": -2.13,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "0 of 2",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": 3.28,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": 3.77,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 2.07,
+        "p": null
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": 3.28,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": 3.77,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 2.07,
+        "p": null
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": 3.28,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": 3.77,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 2.07,
+        "p": null
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": 1.58,
+        "p": 0.627
+       },
+       "polls_fundamentals": {
+        "mu": 1.87,
+        "p": 0.656
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -0.18,
+        "p": 0.484
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|FL|H|7",
+     "wikipedia_table": true,
+     "n_votehub": 0,
+     "n_wikipedia": 1,
+     "missing": [
+      {
+       "pollster": "DCCC",
+       "marker": "",
+       "end": "2026-10-19",
+       "n": 414,
+       "wiki_margin": 0.0,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "4 of 13",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": -1.29,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -0.79,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -2.49,
+        "p": null
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": -1.29,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -0.79,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -2.49,
+        "p": null
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": -1.29,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -0.79,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -2.49,
+        "p": null
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -0.76,
+        "p": 0.438
+       },
+       "polls_fundamentals": {
+        "mu": -0.47,
+        "p": 0.459
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -2.52,
+        "p": 0.29
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|FL|H|8",
+     "wikipedia_table": true,
+     "n_votehub": 0,
+     "n_wikipedia": 2,
+     "missing": [
+      {
+       "pollster": "Inquire LLC",
+       "marker": "R",
+       "end": "2026-07-29",
+       "n": null,
+       "wiki_margin": -9.68,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "0 of 1",
+       "kind": "probably VoteHub's choice"
+      },
+      {
+       "pollster": "Public Policy Polling",
+       "marker": "D",
+       "end": "2026-07-18",
+       "n": 633,
+       "wiki_margin": -11.39,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "15 of 34",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": -11.24,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -10.74,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -12.44,
+        "p": null
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": -11.24,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -10.74,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -12.44,
+        "p": null
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": -11.24,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -10.74,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -12.44,
+        "p": null
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -9.85,
+        "p": 0.047
+       },
+       "polls_fundamentals": {
+        "mu": -9.57,
+        "p": 0.044
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -11.64,
+        "p": 0.024
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|FL|H|9",
+     "wikipedia_table": true,
+     "n_votehub": 0,
+     "n_wikipedia": 2,
+     "missing": [
+      {
+       "pollster": "SEA Polling",
+       "marker": "D",
+       "end": "2026-10-15",
+       "n": null,
+       "wiki_margin": 0.0,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "0 of 3",
+       "kind": "probably VoteHub's choice"
+      },
+      {
+       "pollster": "SEA Polling",
+       "marker": "D",
+       "end": "2026-08-30",
+       "n": 400,
+       "wiki_margin": 0.0,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "0 of 3",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": -2.22,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -1.73,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -3.43,
+        "p": null
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": -2.22,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -1.73,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -3.43,
+        "p": null
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": -2.22,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -1.73,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -3.43,
+        "p": null
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -3.04,
+        "p": 0.269
+       },
+       "polls_fundamentals": {
+        "mu": -2.75,
+        "p": 0.277
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -4.82,
+        "p": 0.155
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|FL|H|11",
+     "wikipedia_table": true,
+     "n_votehub": 0,
+     "n_wikipedia": 1,
+     "missing": [
+      {
+       "pollster": "MDW Communications",
+       "marker": "D",
+       "end": "2026-07-29",
+       "n": null,
+       "wiki_margin": 0.0,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "1 of 2",
+       "kind": "probably a gap"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": -4.91,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -4.42,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -6.12,
+        "p": null
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": -4.91,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -4.42,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -6.12,
+        "p": null
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": -4.65,
+        "p": 0.183
+       },
+       "polls_fundamentals": {
+        "mu": -4.35,
+        "p": 0.186
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -6.4,
+        "p": 0.101
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -4.65,
+        "p": 0.183
+       },
+       "polls_fundamentals": {
+        "mu": -4.35,
+        "p": 0.186
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -6.4,
+        "p": 0.101
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|FL|H|13",
+     "wikipedia_table": true,
+     "n_votehub": 3,
+     "n_wikipedia": 5,
+     "missing": [
+      {
+       "pollster": "RedBox Research",
+       "marker": "D",
+       "end": "2026-10-23",
+       "n": 875,
+       "wiki_margin": -3.23,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "1 of 21",
+       "kind": "probably VoteHub's choice"
+      },
+      {
+       "pollster": "Fabrizio, Lee & Associates",
+       "marker": "R",
+       "end": "2026-08-06",
+       "n": 400,
+       "wiki_margin": -8.89,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "6 of 9",
+       "kind": "probably a gap"
+      },
+      {
+       "pollster": "GQR",
+       "marker": "D",
+       "end": "2026-08-06",
+       "n": 500,
+       "wiki_margin": -3.3,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "4 of 8",
+       "kind": "probably a gap"
+      }
+     ],
+     "votehub_only": [
+      {
+       "pollster": "Fabrizio, Lee & Associates",
+       "end": "2026-07-22",
+       "n": 400,
+       "votehub_margin": -8.89,
+       "blocklisted": "",
+       "supplement": false,
+       "verifiable": true
+      }
+     ],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": -5.36,
+        "p": 0.149
+       },
+       "polls_fundamentals": {
+        "mu": -5.08,
+        "p": 0.149
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -7.15,
+        "p": 0.079
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": -5.36,
+        "p": 0.149
+       },
+       "polls_fundamentals": {
+        "mu": -5.08,
+        "p": 0.149
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -7.15,
+        "p": 0.079
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": -5.61,
+        "p": 0.138
+       },
+       "polls_fundamentals": {
+        "mu": -5.34,
+        "p": 0.137
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -7.42,
+        "p": 0.072
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -6.3,
+        "p": 0.115
+       },
+       "polls_fundamentals": {
+        "mu": -6.02,
+        "p": 0.113
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -8.1,
+        "p": 0.059
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|FL|H|14",
+     "wikipedia_table": true,
+     "n_votehub": 1,
+     "n_wikipedia": 2,
+     "missing": [
+      {
+       "pollster": "St. Pete Polls",
+       "marker": "",
+       "end": "2026-07-15",
+       "n": 469,
+       "wiki_margin": 9.52,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "2 of 4",
+       "kind": "probably a gap"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": 5.22,
+        "p": 0.842
+       },
+       "polls_fundamentals": {
+        "mu": 5.52,
+        "p": 0.864
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 3.47,
+        "p": 0.772
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": 5.22,
+        "p": 0.842
+       },
+       "polls_fundamentals": {
+        "mu": 5.52,
+        "p": 0.864
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 3.47,
+        "p": 0.772
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": 5.75,
+        "p": 0.864
+       },
+       "polls_fundamentals": {
+        "mu": 6.03,
+        "p": 0.884
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 3.96,
+        "p": 0.804
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": 5.75,
+        "p": 0.864
+       },
+       "polls_fundamentals": {
+        "mu": 6.03,
+        "p": 0.884
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 3.96,
+        "p": 0.804
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|FL|H|16",
+     "wikipedia_table": true,
+     "n_votehub": 1,
+     "n_wikipedia": 2,
+     "missing": [
+      {
+       "pollster": "Sea Polling",
+       "marker": "",
+       "end": "2026-08-29",
+       "n": 400,
+       "wiki_margin": 1.27,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "0 of 3",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": -3.64,
+        "p": 0.235
+       },
+       "polls_fundamentals": {
+        "mu": -3.35,
+        "p": 0.241
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -5.39,
+        "p": 0.134
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": -3.64,
+        "p": 0.235
+       },
+       "polls_fundamentals": {
+        "mu": -3.35,
+        "p": 0.241
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -5.39,
+        "p": 0.134
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": -3.64,
+        "p": 0.235
+       },
+       "polls_fundamentals": {
+        "mu": -3.35,
+        "p": 0.241
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -5.39,
+        "p": 0.134
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -2.54,
+        "p": 0.3
+       },
+       "polls_fundamentals": {
+        "mu": -2.26,
+        "p": 0.311
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -4.33,
+        "p": 0.176
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|FL|H|21",
+     "wikipedia_table": true,
+     "n_votehub": 0,
+     "n_wikipedia": 1,
+     "missing": [
+      {
+       "pollster": "Upswing Research & Strategy",
+       "marker": "D",
+       "end": "2026-09-25",
+       "n": 402,
+       "wiki_margin": -12.64,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "1 of 2",
+       "kind": "probably a gap"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": -9.42,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -8.93,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -10.63,
+        "p": null
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": -9.42,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -8.93,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -10.63,
+        "p": null
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": -12.46,
+        "p": 0.027
+       },
+       "polls_fundamentals": {
+        "mu": -12.17,
+        "p": 0.025
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -14.21,
+        "p": 0.014
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -12.46,
+        "p": 0.027
+       },
+       "polls_fundamentals": {
+        "mu": -12.17,
+        "p": 0.025
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -14.21,
+        "p": 0.014
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|FL|H|22",
+     "wikipedia_table": true,
+     "n_votehub": 1,
+     "n_wikipedia": 2,
+     "missing": [
+      {
+       "pollster": "Tulchin Research",
+       "marker": "D",
+       "end": "2026-08-31",
+       "n": null,
+       "wiki_margin": 2.22,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "2 of 9",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": 0.31,
+        "p": 0.526
+       },
+       "polls_fundamentals": {
+        "mu": 0.61,
+        "p": 0.552
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -1.44,
+        "p": 0.374
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": 0.31,
+        "p": 0.526
+       },
+       "polls_fundamentals": {
+        "mu": 0.61,
+        "p": 0.552
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -1.44,
+        "p": 0.374
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": 0.31,
+        "p": 0.526
+       },
+       "polls_fundamentals": {
+        "mu": 0.61,
+        "p": 0.552
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -1.44,
+        "p": 0.374
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": 0.55,
+        "p": 0.545
+       },
+       "polls_fundamentals": {
+        "mu": 0.83,
+        "p": 0.572
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -1.24,
+        "p": 0.389
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|FL|H|25",
+     "wikipedia_table": true,
+     "n_votehub": 1,
+     "n_wikipedia": 3,
+     "missing": [
+      {
+       "pollster": "Public Policy Polling",
+       "marker": "D",
+       "end": "2026-10-27",
+       "n": 523,
+       "wiki_margin": 6.82,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "15 of 34",
+       "kind": "probably VoteHub's choice"
+      },
+      {
+       "pollster": "National Research Inc.",
+       "marker": "R",
+       "end": "2026-10-15",
+       "n": 400,
+       "wiki_margin": -7.69,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "4 of 7",
+       "kind": "probably a gap"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": 5.85,
+        "p": 0.865
+       },
+       "polls_fundamentals": {
+        "mu": 6.15,
+        "p": 0.885
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 4.1,
+        "p": 0.808
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": 5.85,
+        "p": 0.865
+       },
+       "polls_fundamentals": {
+        "mu": 6.15,
+        "p": 0.885
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 4.1,
+        "p": 0.808
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": 3.92,
+        "p": 0.781
+       },
+       "polls_fundamentals": {
+        "mu": 4.22,
+        "p": 0.808
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 2.16,
+        "p": 0.684
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": 4.36,
+        "p": 0.806
+       },
+       "polls_fundamentals": {
+        "mu": 4.65,
+        "p": 0.831
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 2.58,
+        "p": 0.717
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|FL|H|27",
+     "wikipedia_table": true,
+     "n_votehub": 1,
+     "n_wikipedia": 2,
+     "missing": [
+      {
+       "pollster": "Bendixen & Amandi International",
+       "marker": "D",
+       "end": "2026-08-30",
+       "n": 600,
+       "wiki_margin": 0.0,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "0 of 1",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": -5.45,
+        "p": 0.149
+       },
+       "polls_fundamentals": {
+        "mu": -5.16,
+        "p": 0.15
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -7.2,
+        "p": 0.081
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": -5.45,
+        "p": 0.149
+       },
+       "polls_fundamentals": {
+        "mu": -5.16,
+        "p": 0.15
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -7.2,
+        "p": 0.081
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": -5.45,
+        "p": 0.149
+       },
+       "polls_fundamentals": {
+        "mu": -5.16,
+        "p": 0.15
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -7.2,
+        "p": 0.081
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -5.7,
+        "p": 0.137
+       },
+       "polls_fundamentals": {
+        "mu": -5.42,
+        "p": 0.136
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -7.49,
+        "p": 0.072
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|GA|H|7",
+     "wikipedia_table": true,
+     "n_votehub": 0,
+     "n_wikipedia": 2,
+     "missing": [
+      {
+       "pollster": "20/20 Insight",
+       "marker": "D",
+       "end": "2026-10-09",
+       "n": 457,
+       "wiki_margin": 2.17,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "0 of 2",
+       "kind": "probably VoteHub's choice"
+      },
+      {
+       "pollster": "20/20 Insight",
+       "marker": "D",
+       "end": "2026-08-26",
+       "n": 445,
+       "wiki_margin": -3.37,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "0 of 2",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": -16.68,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -16.19,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -17.89,
+        "p": null
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": -16.68,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -16.19,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -17.89,
+        "p": null
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": -16.68,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -16.19,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -17.89,
+        "p": null
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -11.29,
+        "p": 0.033
+       },
+       "polls_fundamentals": {
+        "mu": -11.01,
+        "p": 0.031
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -13.08,
+        "p": 0.017
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|GA|H|11",
+     "wikipedia_table": true,
+     "n_votehub": 0,
+     "n_wikipedia": 1,
+     "missing": [
+      {
+       "pollster": "Miller Consulting Services",
+       "marker": "",
+       "end": "2026-09-11",
+       "n": 402,
+       "wiki_margin": 2.44,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "0 of 1",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": -13.99,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -13.49,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -15.19,
+        "p": null
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": -13.99,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -13.49,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -15.19,
+        "p": null
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": -13.99,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -13.49,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -15.19,
+        "p": null
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -7.31,
+        "p": 0.093
+       },
+       "polls_fundamentals": {
+        "mu": -7.02,
+        "p": 0.091
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -9.07,
+        "p": 0.049
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|IN|H|5",
+     "wikipedia_table": true,
+     "n_votehub": 2,
+     "n_wikipedia": 3,
+     "missing": [
+      {
+       "pollster": "Impact Research",
+       "marker": "D",
+       "end": "2026-07-20",
+       "n": 400,
+       "wiki_margin": -2.13,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "3 of 19",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": -8.14,
+        "p": 0.073
+       },
+       "polls_fundamentals": {
+        "mu": -7.86,
+        "p": 0.07
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -9.93,
+        "p": 0.037
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": -8.14,
+        "p": 0.073
+       },
+       "polls_fundamentals": {
+        "mu": -7.86,
+        "p": 0.07
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -9.93,
+        "p": 0.037
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": -8.14,
+        "p": 0.073
+       },
+       "polls_fundamentals": {
+        "mu": -7.86,
+        "p": 0.07
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -9.93,
+        "p": 0.037
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -8.06,
+        "p": 0.073
+       },
+       "polls_fundamentals": {
+        "mu": -7.78,
+        "p": 0.071
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -9.85,
+        "p": 0.038
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|IA|H|1",
+     "wikipedia_table": true,
+     "n_votehub": 1,
+     "n_wikipedia": 2,
+     "missing": [
+      {
+       "pollster": "Wavefield Research",
+       "marker": "",
+       "end": "2026-10-02",
+       "n": 297,
+       "wiki_margin": 21.62,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "0 of 1",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": 0.35,
+        "p": 0.528
+       },
+       "polls_fundamentals": {
+        "mu": 0.64,
+        "p": 0.555
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -1.41,
+        "p": 0.377
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": 0.35,
+        "p": 0.528
+       },
+       "polls_fundamentals": {
+        "mu": 0.64,
+        "p": 0.555
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -1.41,
+        "p": 0.377
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": 0.35,
+        "p": 0.528
+       },
+       "polls_fundamentals": {
+        "mu": 0.64,
+        "p": 0.555
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -1.41,
+        "p": 0.377
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": 3.44,
+        "p": 0.749
+       },
+       "polls_fundamentals": {
+        "mu": 3.75,
+        "p": 0.777
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 1.73,
+        "p": 0.646
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|KS|H|2",
+     "wikipedia_table": true,
+     "n_votehub": 0,
+     "n_wikipedia": 1,
+     "missing": [
+      {
+       "pollster": "DCCC",
+       "marker": "",
+       "end": "2026-10-20",
+       "n": 639,
+       "wiki_margin": -3.16,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "4 of 13",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": -14.87,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -14.37,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -16.07,
+        "p": null
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": -14.87,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -14.37,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -16.07,
+        "p": null
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": -14.87,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -14.37,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -16.07,
+        "p": null
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -10.11,
+        "p": 0.046
+       },
+       "polls_fundamentals": {
+        "mu": -9.82,
+        "p": 0.044
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -11.86,
+        "p": 0.024
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|KY|H|6",
+     "wikipedia_table": true,
+     "n_votehub": 2,
+     "n_wikipedia": 7,
+     "missing": [
+      {
+       "pollster": "DCCC",
+       "marker": "D",
+       "end": "2026-10-05",
+       "n": 606,
+       "wiki_margin": 6.98,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "4 of 13",
+       "kind": "probably VoteHub's choice"
+      },
+      {
+       "pollster": "Change Research",
+       "marker": "D",
+       "end": "2026-10-05",
+       "n": 524,
+       "wiki_margin": 10.59,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "6 of 11",
+       "kind": "probably a gap"
+      },
+      {
+       "pollster": "GQR",
+       "marker": "D",
+       "end": "2026-09-30",
+       "n": 401,
+       "wiki_margin": 6.33,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "4 of 8",
+       "kind": "probably a gap"
+      },
+      {
+       "pollster": "Lake Research Partners",
+       "marker": "D",
+       "end": "2026-08-23",
+       "n": 400,
+       "wiki_margin": 1.12,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "2 of 5",
+       "kind": "probably VoteHub's choice"
+      },
+      {
+       "pollster": "DCCC",
+       "marker": "D",
+       "end": "2026-07-30",
+       "n": 474,
+       "wiki_margin": 0.0,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "4 of 13",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": -1.02,
+        "p": 0.416
+       },
+       "polls_fundamentals": {
+        "mu": -0.74,
+        "p": 0.435
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -2.81,
+        "p": 0.266
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": -1.02,
+        "p": 0.416
+       },
+       "polls_fundamentals": {
+        "mu": -0.74,
+        "p": 0.435
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -2.81,
+        "p": 0.266
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": -0.21,
+        "p": 0.483
+       },
+       "polls_fundamentals": {
+        "mu": 0.07,
+        "p": 0.506
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -2.01,
+        "p": 0.323
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -0.73,
+        "p": 0.439
+       },
+       "polls_fundamentals": {
+        "mu": -0.46,
+        "p": 0.459
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -2.54,
+        "p": 0.282
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|ME|H|2",
+     "wikipedia_table": true,
+     "n_votehub": 1,
+     "n_wikipedia": 6,
+     "missing": [
+      {
+       "pollster": "Tulchin Research",
+       "marker": "D",
+       "end": "2026-10-14",
+       "n": 500,
+       "wiki_margin": 4.17,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "2 of 9",
+       "kind": "probably VoteHub's choice"
+      },
+      {
+       "pollster": "Tulchin Research",
+       "marker": "D",
+       "end": "2026-09-30",
+       "n": 500,
+       "wiki_margin": 2.04,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "2 of 9",
+       "kind": "probably VoteHub's choice"
+      },
+      {
+       "pollster": "University of New Hampshire",
+       "marker": "",
+       "end": "2026-09-21",
+       "n": 627,
+       "wiki_margin": 6.25,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "31 of 45",
+       "kind": "probably a gap"
+      },
+      {
+       "pollster": "Impact Research",
+       "marker": "D",
+       "end": "2026-09-12",
+       "n": 500,
+       "wiki_margin": 0.0,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "3 of 19",
+       "kind": "probably VoteHub's choice"
+      },
+      {
+       "pollster": "DCCC Targeting Team",
+       "marker": "D",
+       "end": "2026-08-13",
+       "n": 621,
+       "wiki_margin": -1.03,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "4 of 13",
+       "kind": "probably VoteHub's choice"
+      },
+      {
+       "pollster": "Tulchin Research",
+       "marker": "D",
+       "end": "2026-07-16",
+       "n": 600,
+       "wiki_margin": 1.03,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "2 of 9",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [
+      {
+       "pollster": "University of New Hampshire",
+       "end": "2026-10-31",
+       "n": 802,
+       "votehub_margin": -5.05,
+       "blocklisted": "",
+       "supplement": false,
+       "verifiable": true
+      }
+     ],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": -1.74,
+        "p": 0.361
+       },
+       "polls_fundamentals": {
+        "mu": -1.44,
+        "p": 0.378
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -3.49,
+        "p": 0.226
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": -1.74,
+        "p": 0.361
+       },
+       "polls_fundamentals": {
+        "mu": -1.44,
+        "p": 0.378
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -3.49,
+        "p": 0.226
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": -0.1,
+        "p": 0.492
+       },
+       "polls_fundamentals": {
+        "mu": 0.2,
+        "p": 0.517
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -1.85,
+        "p": 0.341
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -0.07,
+        "p": 0.494
+       },
+       "polls_fundamentals": {
+        "mu": 0.2,
+        "p": 0.518
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -1.88,
+        "p": 0.333
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|MD|H|1",
+     "wikipedia_table": true,
+     "n_votehub": 0,
+     "n_wikipedia": 1,
+     "missing": [
+      {
+       "pollster": "Z to A Research",
+       "marker": "D",
+       "end": "2026-07-27",
+       "n": 482,
+       "wiki_margin": -14.29,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "1 of 3",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": -11.24,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -10.74,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -12.44,
+        "p": null
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": -11.24,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -10.74,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -12.44,
+        "p": null
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": -11.24,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -10.74,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -12.44,
+        "p": null
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -14.2,
+        "p": 0.018
+       },
+       "polls_fundamentals": {
+        "mu": -13.91,
+        "p": 0.017
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -15.96,
+        "p": 0.01
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|MI|H|4",
+     "wikipedia_table": true,
+     "n_votehub": 0,
+     "n_wikipedia": 2,
+     "missing": [
+      {
+       "pollster": "RedBox Research",
+       "marker": "D",
+       "end": "2026-10-23",
+       "n": 787,
+       "wiki_margin": -3.3,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "1 of 21",
+       "kind": "probably VoteHub's choice"
+      },
+      {
+       "pollster": "GBAO",
+       "marker": "D",
+       "end": "2026-09-16",
+       "n": 500,
+       "wiki_margin": 1.08,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "4 of 14",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": -2.16,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -1.67,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -3.37,
+        "p": null
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": -2.16,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -1.67,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -3.37,
+        "p": null
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": -2.16,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -1.67,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -3.37,
+        "p": null
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -3.39,
+        "p": 0.247
+       },
+       "polls_fundamentals": {
+        "mu": -3.11,
+        "p": 0.253
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -5.17,
+        "p": 0.139
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|MI|H|10",
+     "wikipedia_table": true,
+     "n_votehub": 1,
+     "n_wikipedia": 2,
+     "missing": [
+      {
+       "pollster": "RedBox Research",
+       "marker": "D",
+       "end": "2026-10-23",
+       "n": 889,
+       "wiki_margin": -5.62,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "1 of 21",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": 0.9,
+        "p": 0.573
+       },
+       "polls_fundamentals": {
+        "mu": 1.19,
+        "p": 0.601
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -0.86,
+        "p": 0.424
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": 0.9,
+        "p": 0.573
+       },
+       "polls_fundamentals": {
+        "mu": 1.19,
+        "p": 0.601
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -0.86,
+        "p": 0.424
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": 0.9,
+        "p": 0.573
+       },
+       "polls_fundamentals": {
+        "mu": 1.19,
+        "p": 0.601
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -0.86,
+        "p": 0.424
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -1.88,
+        "p": 0.349
+       },
+       "polls_fundamentals": {
+        "mu": -1.59,
+        "p": 0.364
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -3.66,
+        "p": 0.213
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|MN|H|2",
+     "wikipedia_table": true,
+     "n_votehub": 0,
+     "n_wikipedia": 1,
+     "missing": [
+      {
+       "pollster": "Impact Research",
+       "marker": "D",
+       "end": "2026-09-13",
+       "n": 500,
+       "wiki_margin": 13.04,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "3 of 19",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": 13.23,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": 13.73,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 12.02,
+        "p": null
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": 13.23,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": 13.73,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 12.02,
+        "p": null
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": 13.23,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": 13.73,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 12.02,
+        "p": null
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": 12.66,
+        "p": 0.974
+       },
+       "polls_fundamentals": {
+        "mu": 12.95,
+        "p": 0.979
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 10.9,
+        "p": 0.969
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|MN|H|8",
+     "wikipedia_table": true,
+     "n_votehub": 0,
+     "n_wikipedia": 1,
+     "missing": [
+      {
+       "pollster": "Public Policy Polling",
+       "marker": "D",
+       "end": "2026-10-26",
+       "n": 585,
+       "wiki_margin": -6.52,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "15 of 34",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": -9.42,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -8.93,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -10.63,
+        "p": null
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": -9.42,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -8.93,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -10.63,
+        "p": null
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": -9.42,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -8.93,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -10.63,
+        "p": null
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -8.56,
+        "p": 0.068
+       },
+       "polls_fundamentals": {
+        "mu": -8.26,
+        "p": 0.065
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -10.31,
+        "p": 0.036
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|MO|H|2",
+     "wikipedia_table": true,
+     "n_votehub": 3,
+     "n_wikipedia": 4,
+     "missing": [
+      {
+       "pollster": "Emerson College",
+       "marker": "",
+       "end": "2026-11-01",
+       "n": 415,
+       "wiki_margin": 1.01,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "22 of 29",
+       "kind": "probably a gap"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": -1.68,
+        "p": 0.363
+       },
+       "polls_fundamentals": {
+        "mu": -1.4,
+        "p": 0.378
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -3.48,
+        "p": 0.222
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": -1.68,
+        "p": 0.363
+       },
+       "polls_fundamentals": {
+        "mu": -1.4,
+        "p": 0.378
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -3.48,
+        "p": 0.222
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": -1.81,
+        "p": 0.352
+       },
+       "polls_fundamentals": {
+        "mu": -1.54,
+        "p": 0.367
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -3.62,
+        "p": 0.212
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -1.81,
+        "p": 0.352
+       },
+       "polls_fundamentals": {
+        "mu": -1.54,
+        "p": 0.367
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -3.62,
+        "p": 0.212
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|MT|H|1",
+     "wikipedia_table": true,
+     "n_votehub": 4,
+     "n_wikipedia": 9,
+     "missing": [
+      {
+       "pollster": "Emerson College",
+       "marker": "",
+       "end": "2026-11-01",
+       "n": 311,
+       "wiki_margin": 0.0,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "22 of 29",
+       "kind": "probably a gap"
+      },
+      {
+       "pollster": "RedBox Research",
+       "marker": "D",
+       "end": "2026-10-23",
+       "n": 754,
+       "wiki_margin": -2.13,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "1 of 21",
+       "kind": "probably VoteHub's choice"
+      },
+      {
+       "pollster": "Impact Research",
+       "marker": "D",
+       "end": "2026-09-23",
+       "n": 500,
+       "wiki_margin": 3.3,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "3 of 19",
+       "kind": "probably VoteHub's choice"
+      },
+      {
+       "pollster": "Public Policy Polling",
+       "marker": "D",
+       "end": "2026-09-10",
+       "n": 536,
+       "wiki_margin": 2.27,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "15 of 34",
+       "kind": "probably VoteHub's choice"
+      },
+      {
+       "pollster": "Rutgers University Eagleton Institute of Politics",
+       "marker": "",
+       "end": "2026-09-07",
+       "n": 375,
+       "wiki_margin": -1.2,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "0 of 2",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": 1.24,
+        "p": 0.601
+       },
+       "polls_fundamentals": {
+        "mu": 1.53,
+        "p": 0.63
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -0.52,
+        "p": 0.453
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": 1.24,
+        "p": 0.601
+       },
+       "polls_fundamentals": {
+        "mu": 1.53,
+        "p": 0.63
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -0.52,
+        "p": 0.453
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": 0.91,
+        "p": 0.575
+       },
+       "polls_fundamentals": {
+        "mu": 1.19,
+        "p": 0.603
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -0.87,
+        "p": 0.421
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -0.31,
+        "p": 0.474
+       },
+       "polls_fundamentals": {
+        "mu": -0.04,
+        "p": 0.497
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -2.11,
+        "p": 0.316
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|NV|H|2",
+     "wikipedia_table": true,
+     "n_votehub": 1,
+     "n_wikipedia": 2,
+     "missing": [
+      {
+       "pollster": "GBAO",
+       "marker": "D",
+       "end": "2026-09-03",
+       "n": 500,
+       "wiki_margin": 1.33,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "4 of 14",
+       "kind": "probably VoteHub's choice"
+      },
+      {
+       "pollster": "Strategies 360",
+       "marker": "",
+       "end": "2026-08-26",
+       "n": 400,
+       "wiki_margin": -3.45,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "0 of 1",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [
+      {
+       "pollster": "Public Policy Polling",
+       "end": "2026-10-13",
+       "n": 560,
+       "votehub_margin": -2.22,
+       "blocklisted": "",
+       "supplement": false,
+       "verifiable": true
+      }
+     ],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": -4.32,
+        "p": 0.199
+       },
+       "polls_fundamentals": {
+        "mu": -4.02,
+        "p": 0.203
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -6.07,
+        "p": 0.111
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": -4.32,
+        "p": 0.199
+       },
+       "polls_fundamentals": {
+        "mu": -4.02,
+        "p": 0.203
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -6.07,
+        "p": 0.111
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": -4.32,
+        "p": 0.199
+       },
+       "polls_fundamentals": {
+        "mu": -4.02,
+        "p": 0.203
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -6.07,
+        "p": 0.111
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -3.82,
+        "p": 0.22
+       },
+       "polls_fundamentals": {
+        "mu": -3.55,
+        "p": 0.224
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -5.62,
+        "p": 0.121
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|NV|H|3",
+     "wikipedia_table": true,
+     "n_votehub": 0,
+     "n_wikipedia": 1,
+     "missing": [
+      {
+       "pollster": "RedBox Research",
+       "marker": "D",
+       "end": "2026-10-23",
+       "n": 687,
+       "wiki_margin": 7.69,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "1 of 21",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": 14.11,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": 14.6,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 12.9,
+        "p": null
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": 14.11,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": 14.6,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 12.9,
+        "p": null
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": 14.11,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": 14.6,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 12.9,
+        "p": null
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": 9.77,
+        "p": 0.95
+       },
+       "polls_fundamentals": {
+        "mu": 10.07,
+        "p": 0.959
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 8.02,
+        "p": 0.935
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|NH|H|1",
+     "wikipedia_table": true,
+     "n_votehub": 3,
+     "n_wikipedia": 2,
+     "missing": [],
+     "votehub_only": [
+      {
+       "pollster": "University of New Hampshire",
+       "end": "2026-10-31",
+       "n": 1032,
+       "votehub_margin": 13.13,
+       "blocklisted": "",
+       "supplement": false,
+       "verifiable": true
+      }
+     ],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": 9.82,
+        "p": 0.953
+       },
+       "polls_fundamentals": {
+        "mu": 10.1,
+        "p": 0.962
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 8.03,
+        "p": 0.939
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": 9.82,
+        "p": 0.953
+       },
+       "polls_fundamentals": {
+        "mu": 10.1,
+        "p": 0.962
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 8.03,
+        "p": 0.939
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": 9.82,
+        "p": 0.953
+       },
+       "polls_fundamentals": {
+        "mu": 10.1,
+        "p": 0.962
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 8.03,
+        "p": 0.939
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": 9.82,
+        "p": 0.953
+       },
+       "polls_fundamentals": {
+        "mu": 10.1,
+        "p": 0.962
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 8.03,
+        "p": 0.939
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|NJ|H|7",
+     "wikipedia_table": true,
+     "n_votehub": 0,
+     "n_wikipedia": 1,
+     "missing": [
+      {
+       "pollster": "StimSight Research",
+       "marker": "",
+       "end": "2026-09-12",
+       "n": 498,
+       "wiki_margin": 5.62,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "0 of 1",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": 3.28,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": 3.77,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 2.07,
+        "p": null
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": 3.28,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": 3.77,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 2.07,
+        "p": null
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": 3.28,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": 3.77,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 2.07,
+        "p": null
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": 4.23,
+        "p": 0.797
+       },
+       "polls_fundamentals": {
+        "mu": 4.52,
+        "p": 0.822
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 2.48,
+        "p": 0.706
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|NM|H|2",
+     "wikipedia_table": true,
+     "n_votehub": 1,
+     "n_wikipedia": 2,
+     "missing": [
+      {
+       "pollster": "Research & Polling",
+       "marker": "",
+       "end": "2026-10-09",
+       "n": 383,
+       "wiki_margin": 4.35,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "3 of 16",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": 8.67,
+        "p": 0.934
+       },
+       "polls_fundamentals": {
+        "mu": 8.96,
+        "p": 0.946
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 6.92,
+        "p": 0.912
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": 8.67,
+        "p": 0.934
+       },
+       "polls_fundamentals": {
+        "mu": 8.96,
+        "p": 0.946
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 6.92,
+        "p": 0.912
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": 8.67,
+        "p": 0.934
+       },
+       "polls_fundamentals": {
+        "mu": 8.96,
+        "p": 0.946
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 6.92,
+        "p": 0.912
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": 8.68,
+        "p": 0.937
+       },
+       "polls_fundamentals": {
+        "mu": 8.96,
+        "p": 0.948
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 6.9,
+        "p": 0.915
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|NY|H|17",
+     "wikipedia_table": true,
+     "n_votehub": 3,
+     "n_wikipedia": 5,
+     "missing": [
+      {
+       "pollster": "RedBox Research",
+       "marker": "D",
+       "end": "2026-10-23",
+       "n": 726,
+       "wiki_margin": 2.13,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "1 of 21",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": 2.84,
+        "p": 0.72
+       },
+       "polls_fundamentals": {
+        "mu": 3.12,
+        "p": 0.749
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 1.04,
+        "p": 0.594
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": 2.84,
+        "p": 0.72
+       },
+       "polls_fundamentals": {
+        "mu": 3.12,
+        "p": 0.749
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 1.04,
+        "p": 0.594
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": 2.84,
+        "p": 0.72
+       },
+       "polls_fundamentals": {
+        "mu": 3.12,
+        "p": 0.749
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 1.04,
+        "p": 0.594
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": 2.41,
+        "p": 0.691
+       },
+       "polls_fundamentals": {
+        "mu": 2.69,
+        "p": 0.721
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 0.61,
+        "p": 0.556
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|NY|H|18",
+     "wikipedia_table": true,
+     "n_votehub": 0,
+     "n_wikipedia": 2,
+     "missing": [
+      {
+       "pollster": "Public Policy Polling",
+       "marker": "D",
+       "end": "2026-09-30",
+       "n": 561,
+       "wiki_margin": 19.54,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "15 of 34",
+       "kind": "probably VoteHub's choice"
+      },
+      {
+       "pollster": "Global Strategy Group",
+       "marker": "D",
+       "end": "2026-07-26",
+       "n": 500,
+       "wiki_margin": 15.22,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "4 of 14",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": 15.92,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": 16.42,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 14.72,
+        "p": null
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": 15.92,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": 16.42,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 14.72,
+        "p": null
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": 15.92,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": 16.42,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 14.72,
+        "p": null
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": 16.38,
+        "p": 0.989
+       },
+       "polls_fundamentals": {
+        "mu": 16.67,
+        "p": 0.991
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 14.6,
+        "p": 0.988
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|NY|H|21",
+     "wikipedia_table": true,
+     "n_votehub": 4,
+     "n_wikipedia": 7,
+     "missing": [
+      {
+       "pollster": "Impact Research",
+       "marker": "D",
+       "end": "2026-10-04",
+       "n": 500,
+       "wiki_margin": -3.23,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "3 of 19",
+       "kind": "probably VoteHub's choice"
+      },
+      {
+       "pollster": "Public Policy Polling",
+       "marker": "D",
+       "end": "2026-09-10",
+       "n": 557,
+       "wiki_margin": -5.49,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "15 of 34",
+       "kind": "probably VoteHub's choice"
+      },
+      {
+       "pollster": "Impact Research",
+       "marker": "D",
+       "end": "2026-09-02",
+       "n": 500,
+       "wiki_margin": -3.3,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "3 of 19",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [
+      {
+       "pollster": "J.L. Partners",
+       "wiki_pollster": "J.L. Partners",
+       "end": "2026-08-17",
+       "n": 500,
+       "votehub_margin": -13.98,
+       "closest_wiki_margin_diff": 2.87,
+       "supplement": false,
+       "blocklisted": "",
+       "extra_version": false
+      }
+     ],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": -6.86,
+        "p": 0.103
+       },
+       "polls_fundamentals": {
+        "mu": -6.57,
+        "p": 0.102
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -8.62,
+        "p": 0.055
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": -6.86,
+        "p": 0.103
+       },
+       "polls_fundamentals": {
+        "mu": -6.57,
+        "p": 0.102
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -8.62,
+        "p": 0.055
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": -6.86,
+        "p": 0.103
+       },
+       "polls_fundamentals": {
+        "mu": -6.57,
+        "p": 0.102
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -8.62,
+        "p": 0.055
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -7.06,
+        "p": 0.095
+       },
+       "polls_fundamentals": {
+        "mu": -6.78,
+        "p": 0.092
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -8.86,
+        "p": 0.049
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|NY|H|23",
+     "wikipedia_table": true,
+     "n_votehub": 0,
+     "n_wikipedia": 2,
+     "missing": [
+      {
+       "pollster": "Public Policy Polling",
+       "marker": "D",
+       "end": "2026-09-23",
+       "n": 626,
+       "wiki_margin": -19.54,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "15 of 34",
+       "kind": "probably VoteHub's choice"
+      },
+      {
+       "pollster": "Cygnal",
+       "marker": "R",
+       "end": "2026-09-21",
+       "n": 400,
+       "wiki_margin": -24.14,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "3 of 5",
+       "kind": "probably a gap"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": -14.87,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -14.37,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -16.07,
+        "p": null
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": -14.87,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -14.37,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -16.07,
+        "p": null
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": -18.14,
+        "p": 0.009
+       },
+       "polls_fundamentals": {
+        "mu": -17.84,
+        "p": 0.008
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -19.89,
+        "p": 0.005
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -17.81,
+        "p": 0.009
+       },
+       "polls_fundamentals": {
+        "mu": -17.53,
+        "p": 0.008
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -19.6,
+        "p": 0.005
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|NC|H|1",
+     "wikipedia_table": true,
+     "n_votehub": 1,
+     "n_wikipedia": 5,
+     "missing": [
+      {
+       "pollster": "RedBox Research",
+       "marker": "D",
+       "end": "2026-10-23",
+       "n": 1468,
+       "wiki_margin": 1.12,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "1 of 21",
+       "kind": "probably VoteHub's choice"
+      },
+      {
+       "pollster": "co/efficient",
+       "marker": "R",
+       "end": "2026-10-08",
+       "n": 623,
+       "wiki_margin": -1.18,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "9 of 17",
+       "kind": "probably a gap"
+      },
+      {
+       "pollster": "GQR",
+       "marker": "D",
+       "end": "2026-10-04",
+       "n": 500,
+       "wiki_margin": 9.3,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "4 of 8",
+       "kind": "probably a gap"
+      },
+      {
+       "pollster": "GBAO",
+       "marker": "D",
+       "end": "2026-09-11",
+       "n": 500,
+       "wiki_margin": 7.53,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "4 of 14",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": 6.33,
+        "p": 0.881
+       },
+       "polls_fundamentals": {
+        "mu": 6.62,
+        "p": 0.899
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 4.57,
+        "p": 0.831
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": 6.33,
+        "p": 0.881
+       },
+       "polls_fundamentals": {
+        "mu": 6.62,
+        "p": 0.899
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 4.57,
+        "p": 0.831
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": 4.28,
+        "p": 0.803
+       },
+       "polls_fundamentals": {
+        "mu": 4.56,
+        "p": 0.828
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 2.49,
+        "p": 0.711
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": 2.93,
+        "p": 0.726
+       },
+       "polls_fundamentals": {
+        "mu": 3.21,
+        "p": 0.754
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 1.13,
+        "p": 0.602
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|NC|H|3",
+     "wikipedia_table": true,
+     "n_votehub": 0,
+     "n_wikipedia": 1,
+     "missing": [
+      {
+       "pollster": "Tulchin Research",
+       "marker": "D",
+       "end": "2026-08-02",
+       "n": 600,
+       "wiki_margin": -3.53,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "2 of 9",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": -7.61,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -7.11,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -8.81,
+        "p": null
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": -7.61,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -7.11,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -8.81,
+        "p": null
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": -7.61,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -7.11,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -8.81,
+        "p": null
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -6.45,
+        "p": 0.116
+       },
+       "polls_fundamentals": {
+        "mu": -6.15,
+        "p": 0.115
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -8.2,
+        "p": 0.062
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|NC|H|7",
+     "wikipedia_table": true,
+     "n_votehub": 0,
+     "n_wikipedia": 1,
+     "missing": [
+      {
+       "pollster": "Public Policy Polling",
+       "marker": "D",
+       "end": "2026-08-20",
+       "n": 517,
+       "wiki_margin": -7.14,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "15 of 34",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": -9.42,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -8.93,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -10.63,
+        "p": null
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": -9.42,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -8.93,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -10.63,
+        "p": null
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": -9.42,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -8.93,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -10.63,
+        "p": null
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -8.99,
+        "p": 0.061
+       },
+       "polls_fundamentals": {
+        "mu": -8.7,
+        "p": 0.058
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -10.75,
+        "p": 0.032
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|NC|H|9",
+     "wikipedia_table": true,
+     "n_votehub": 1,
+     "n_wikipedia": 2,
+     "missing": [
+      {
+       "pollster": "Lake Research Partners",
+       "marker": "D",
+       "end": "2026-09-03",
+       "n": 400,
+       "wiki_margin": -4.55,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "2 of 5",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": -9.01,
+        "p": 0.06
+       },
+       "polls_fundamentals": {
+        "mu": -8.72,
+        "p": 0.058
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -10.77,
+        "p": 0.032
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": -9.01,
+        "p": 0.06
+       },
+       "polls_fundamentals": {
+        "mu": -8.72,
+        "p": 0.058
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -10.77,
+        "p": 0.032
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": -9.01,
+        "p": 0.06
+       },
+       "polls_fundamentals": {
+        "mu": -8.72,
+        "p": 0.058
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -10.77,
+        "p": 0.032
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -8.89,
+        "p": 0.06
+       },
+       "polls_fundamentals": {
+        "mu": -8.61,
+        "p": 0.057
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -10.68,
+        "p": 0.031
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|NC|H|11",
+     "wikipedia_table": true,
+     "n_votehub": 1,
+     "n_wikipedia": 3,
+     "missing": [
+      {
+       "pollster": "RedBox Research",
+       "marker": "D",
+       "end": "2026-10-23",
+       "n": 873,
+       "wiki_margin": 6.38,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "1 of 21",
+       "kind": "probably VoteHub's choice"
+      },
+      {
+       "pollster": "Public Policy Polling",
+       "marker": "D",
+       "end": "2026-09-11",
+       "n": 531,
+       "wiki_margin": 3.3,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "15 of 34",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": 1.89,
+        "p": 0.65
+       },
+       "polls_fundamentals": {
+        "mu": 2.19,
+        "p": 0.68
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 0.14,
+        "p": 0.513
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": 1.89,
+        "p": 0.65
+       },
+       "polls_fundamentals": {
+        "mu": 2.19,
+        "p": 0.68
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 0.14,
+        "p": 0.513
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": 1.89,
+        "p": 0.65
+       },
+       "polls_fundamentals": {
+        "mu": 2.19,
+        "p": 0.68
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 0.14,
+        "p": 0.513
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -0.95,
+        "p": 0.422
+       },
+       "polls_fundamentals": {
+        "mu": -0.66,
+        "p": 0.442
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -2.73,
+        "p": 0.273
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|OH|H|1",
+     "wikipedia_table": true,
+     "n_votehub": 1,
+     "n_wikipedia": 4,
+     "missing": [
+      {
+       "pollster": "RedBox Research",
+       "marker": "D",
+       "end": "2026-10-23",
+       "n": 821,
+       "wiki_margin": 10.34,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "1 of 21",
+       "kind": "probably VoteHub's choice"
+      },
+      {
+       "pollster": "Quantus Insights",
+       "marker": "",
+       "end": "2026-10-21",
+       "n": 561,
+       "wiki_margin": 5.62,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "15 of 20",
+       "kind": "probably a gap"
+      },
+      {
+       "pollster": "Torchlight Strategies",
+       "marker": "R",
+       "end": "2026-10-02",
+       "n": 400,
+       "wiki_margin": 2.22,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "0 of 2",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": 7.67,
+        "p": 0.915
+       },
+       "polls_fundamentals": {
+        "mu": 7.97,
+        "p": 0.93
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 5.92,
+        "p": 0.884
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": 7.67,
+        "p": 0.915
+       },
+       "polls_fundamentals": {
+        "mu": 7.97,
+        "p": 0.93
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 5.92,
+        "p": 0.884
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": 8.11,
+        "p": 0.927
+       },
+       "polls_fundamentals": {
+        "mu": 8.39,
+        "p": 0.939
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 6.33,
+        "p": 0.899
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": 8.4,
+        "p": 0.933
+       },
+       "polls_fundamentals": {
+        "mu": 8.67,
+        "p": 0.945
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 6.59,
+        "p": 0.909
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|OH|H|7",
+     "wikipedia_table": true,
+     "n_votehub": 3,
+     "n_wikipedia": 5,
+     "missing": [
+      {
+       "pollster": "RedBox Research",
+       "marker": "D",
+       "end": "2026-10-23",
+       "n": 875,
+       "wiki_margin": 4.55,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "1 of 21",
+       "kind": "probably VoteHub's choice"
+      },
+      {
+       "pollster": "co/efficient",
+       "marker": "R",
+       "end": "2026-08-06",
+       "n": 615,
+       "wiki_margin": 17.5,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "9 of 17",
+       "kind": "probably a gap"
+      },
+      {
+       "pollster": "co/efficient",
+       "marker": "R",
+       "end": "2026-07-30",
+       "n": null,
+       "wiki_margin": 6.02,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "9 of 17",
+       "kind": "probably a gap"
+      }
+     ],
+     "votehub_only": [
+      {
+       "pollster": "Unknown (Reported by NOTUS)",
+       "end": "2026-07-30",
+       "n": null,
+       "votehub_margin": 6.02,
+       "blocklisted": "",
+       "supplement": false,
+       "verifiable": true
+      }
+     ],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": 0.22,
+        "p": 0.519
+       },
+       "polls_fundamentals": {
+        "mu": 0.5,
+        "p": 0.544
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -1.58,
+        "p": 0.359
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": 0.22,
+        "p": 0.519
+       },
+       "polls_fundamentals": {
+        "mu": 0.5,
+        "p": 0.544
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -1.58,
+        "p": 0.359
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": 1.03,
+        "p": 0.586
+       },
+       "polls_fundamentals": {
+        "mu": 1.3,
+        "p": 0.614
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -0.78,
+        "p": 0.429
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -0.75,
+        "p": 0.438
+       },
+       "polls_fundamentals": {
+        "mu": -0.47,
+        "p": 0.459
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -2.54,
+        "p": 0.285
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|OH|H|9",
+     "wikipedia_table": true,
+     "n_votehub": 1,
+     "n_wikipedia": 2,
+     "missing": [
+      {
+       "pollster": "RedBox Research",
+       "marker": "D",
+       "end": "2026-10-23",
+       "n": 858,
+       "wiki_margin": 6.52,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "1 of 21",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": 1.42,
+        "p": 0.614
+       },
+       "polls_fundamentals": {
+        "mu": 1.71,
+        "p": 0.644
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -0.34,
+        "p": 0.47
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": 1.42,
+        "p": 0.614
+       },
+       "polls_fundamentals": {
+        "mu": 1.71,
+        "p": 0.644
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -0.34,
+        "p": 0.47
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": 1.42,
+        "p": 0.614
+       },
+       "polls_fundamentals": {
+        "mu": 1.71,
+        "p": 0.644
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -0.34,
+        "p": 0.47
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": 2.29,
+        "p": 0.682
+       },
+       "polls_fundamentals": {
+        "mu": 2.58,
+        "p": 0.711
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 0.51,
+        "p": 0.546
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|OH|H|10",
+     "wikipedia_table": true,
+     "n_votehub": 1,
+     "n_wikipedia": 3,
+     "missing": [
+      {
+       "pollster": "Global Strategy Group",
+       "marker": "D",
+       "end": "2026-07-23",
+       "n": 700,
+       "wiki_margin": -7.69,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "4 of 14",
+       "kind": "probably VoteHub's choice"
+      },
+      {
+       "pollster": "FM3 Research",
+       "marker": "D",
+       "end": "2026-07-12",
+       "n": 535,
+       "wiki_margin": -7.87,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "1 of 2",
+       "kind": "probably a gap"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": -1.52,
+        "p": 0.378
+       },
+       "polls_fundamentals": {
+        "mu": -1.23,
+        "p": 0.396
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -3.27,
+        "p": 0.24
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": -1.52,
+        "p": 0.378
+       },
+       "polls_fundamentals": {
+        "mu": -1.23,
+        "p": 0.396
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -3.27,
+        "p": 0.24
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": -2.66,
+        "p": 0.295
+       },
+       "polls_fundamentals": {
+        "mu": -2.37,
+        "p": 0.306
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -4.42,
+        "p": 0.175
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -3.48,
+        "p": 0.243
+       },
+       "polls_fundamentals": {
+        "mu": -3.19,
+        "p": 0.249
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -5.25,
+        "p": 0.138
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|OH|H|15",
+     "wikipedia_table": true,
+     "n_votehub": 2,
+     "n_wikipedia": 3,
+     "missing": [
+      {
+       "pollster": "Hart Research",
+       "marker": "D",
+       "end": "2026-08-09",
+       "n": 401,
+       "wiki_margin": -5.13,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "7 of 10",
+       "kind": "probably a gap"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": -4.15,
+        "p": 0.204
+       },
+       "polls_fundamentals": {
+        "mu": -3.87,
+        "p": 0.207
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -5.94,
+        "p": 0.112
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": -4.15,
+        "p": 0.204
+       },
+       "polls_fundamentals": {
+        "mu": -3.87,
+        "p": 0.207
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -5.94,
+        "p": 0.112
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": -4.93,
+        "p": 0.166
+       },
+       "polls_fundamentals": {
+        "mu": -4.65,
+        "p": 0.166
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -6.73,
+        "p": 0.088
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -4.93,
+        "p": 0.166
+       },
+       "polls_fundamentals": {
+        "mu": -4.65,
+        "p": 0.166
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -6.73,
+        "p": 0.088
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|OK|H|5",
+     "wikipedia_table": true,
+     "n_votehub": 0,
+     "n_wikipedia": 1,
+     "missing": [
+      {
+       "pollster": "GBAO",
+       "marker": "D",
+       "end": "2026-09-20",
+       "n": 500,
+       "wiki_margin": -5.49,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "4 of 14",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": -13.05,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -12.56,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -14.26,
+        "p": null
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": -13.05,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -12.56,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -14.26,
+        "p": null
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": -13.05,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -12.56,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -14.26,
+        "p": null
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -10.48,
+        "p": 0.042
+       },
+       "polls_fundamentals": {
+        "mu": -10.18,
+        "p": 0.04
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -12.23,
+        "p": 0.022
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|PA|H|1",
+     "wikipedia_table": true,
+     "n_votehub": 1,
+     "n_wikipedia": 6,
+     "missing": [
+      {
+       "pollster": "RedBox Research",
+       "marker": "D",
+       "end": "2026-10-23",
+       "n": 733,
+       "wiki_margin": 0.0,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "1 of 21",
+       "kind": "probably VoteHub's choice"
+      },
+      {
+       "pollster": "New York Times / The Philadelphia Inquirer / Siena University",
+       "marker": "",
+       "end": "2026-10-22",
+       "n": 400,
+       "wiki_margin": 2.13,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "31 of 45",
+       "kind": "probably a gap"
+      },
+      {
+       "pollster": "Global Strategy Group",
+       "marker": "D",
+       "end": "2026-10-08",
+       "n": 1032,
+       "wiki_margin": 0.0,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "4 of 14",
+       "kind": "probably VoteHub's choice"
+      },
+      {
+       "pollster": "Public Opinion Strategies",
+       "marker": "R",
+       "end": "2026-09-14",
+       "n": 400,
+       "wiki_margin": -10.11,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "3 of 16",
+       "kind": "probably VoteHub's choice"
+      },
+      {
+       "pollster": "Global Strategy Group",
+       "marker": "D",
+       "end": "2026-08-09",
+       "n": 500,
+       "wiki_margin": -4.44,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "4 of 14",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": 2.11,
+        "p": 0.666
+       },
+       "polls_fundamentals": {
+        "mu": 2.4,
+        "p": 0.696
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 0.36,
+        "p": 0.532
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": 2.11,
+        "p": 0.666
+       },
+       "polls_fundamentals": {
+        "mu": 2.4,
+        "p": 0.696
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 0.36,
+        "p": 0.532
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": 3.2,
+        "p": 0.742
+       },
+       "polls_fundamentals": {
+        "mu": 3.48,
+        "p": 0.77
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 1.41,
+        "p": 0.625
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": 1.68,
+        "p": 0.638
+       },
+       "polls_fundamentals": {
+        "mu": 1.95,
+        "p": 0.667
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -0.13,
+        "p": 0.488
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|PA|H|7",
+     "wikipedia_table": true,
+     "n_votehub": 3,
+     "n_wikipedia": 5,
+     "missing": [
+      {
+       "pollster": "RedBox Research",
+       "marker": "D",
+       "end": "2026-10-23",
+       "n": 644,
+       "wiki_margin": 5.38,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "1 of 21",
+       "kind": "probably VoteHub's choice"
+      },
+      {
+       "pollster": "New York Times / The Philadelphia Inquirer / Siena University",
+       "marker": "",
+       "end": "2026-10-22",
+       "n": 400,
+       "wiki_margin": 5.38,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "31 of 45",
+       "kind": "probably a gap"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": 3.4,
+        "p": 0.755
+       },
+       "polls_fundamentals": {
+        "mu": 3.67,
+        "p": 0.783
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 1.6,
+        "p": 0.642
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": 3.4,
+        "p": 0.755
+       },
+       "polls_fundamentals": {
+        "mu": 3.67,
+        "p": 0.783
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 1.6,
+        "p": 0.642
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": 3.34,
+        "p": 0.753
+       },
+       "polls_fundamentals": {
+        "mu": 3.62,
+        "p": 0.78
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 1.54,
+        "p": 0.638
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": 2.72,
+        "p": 0.713
+       },
+       "polls_fundamentals": {
+        "mu": 3.0,
+        "p": 0.742
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 0.91,
+        "p": 0.583
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|PA|H|8",
+     "wikipedia_table": true,
+     "n_votehub": 1,
+     "n_wikipedia": 3,
+     "missing": [
+      {
+       "pollster": "RedBox Research",
+       "marker": "D",
+       "end": "2026-10-23",
+       "n": 696,
+       "wiki_margin": 3.16,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "1 of 21",
+       "kind": "probably VoteHub's choice"
+      },
+      {
+       "pollster": "New York Times / The Philadelphia Inquirer / Siena University",
+       "marker": "",
+       "end": "2026-10-22",
+       "n": 400,
+       "wiki_margin": 5.15,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "31 of 45",
+       "kind": "probably a gap"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": -0.74,
+        "p": 0.44
+       },
+       "polls_fundamentals": {
+        "mu": -0.44,
+        "p": 0.462
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -2.49,
+        "p": 0.292
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": -0.74,
+        "p": 0.44
+       },
+       "polls_fundamentals": {
+        "mu": -0.44,
+        "p": 0.462
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -2.49,
+        "p": 0.292
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": -0.27,
+        "p": 0.477
+       },
+       "polls_fundamentals": {
+        "mu": 0.01,
+        "p": 0.501
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -2.06,
+        "p": 0.321
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -1.23,
+        "p": 0.398
+       },
+       "polls_fundamentals": {
+        "mu": -0.96,
+        "p": 0.416
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -3.03,
+        "p": 0.25
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|PA|H|10",
+     "wikipedia_table": true,
+     "n_votehub": 0,
+     "n_wikipedia": 4,
+     "missing": [
+      {
+       "pollster": "RedBox Research",
+       "marker": "D",
+       "end": "2026-10-23",
+       "n": 1022,
+       "wiki_margin": 3.23,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "1 of 21",
+       "kind": "probably VoteHub's choice"
+      },
+      {
+       "pollster": "New York Times / The Philadelphia Inquirer / Siena University",
+       "marker": "",
+       "end": "2026-10-22",
+       "n": 400,
+       "wiki_margin": 0.0,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "31 of 45",
+       "kind": "probably a gap"
+      },
+      {
+       "pollster": "Susquehanna Polling & Research",
+       "marker": "R",
+       "end": "2026-10-11",
+       "n": 300,
+       "wiki_margin": 3.16,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "1 of 2",
+       "kind": "probably a gap"
+      },
+      {
+       "pollster": "Franklin & Marshall College",
+       "marker": "",
+       "end": "2026-09-20",
+       "n": 390,
+       "wiki_margin": 3.3,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "1 of 2",
+       "kind": "probably a gap"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": -2.16,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -1.67,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -3.37,
+        "p": null
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": -2.16,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -1.67,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -3.37,
+        "p": null
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": -0.39,
+        "p": 0.467
+       },
+       "polls_fundamentals": {
+        "mu": -0.12,
+        "p": 0.49
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -2.19,
+        "p": 0.31
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -0.92,
+        "p": 0.423
+       },
+       "polls_fundamentals": {
+        "mu": -0.64,
+        "p": 0.443
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -2.72,
+        "p": 0.271
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|SC|H|1",
+     "wikipedia_table": true,
+     "n_votehub": 2,
+     "n_wikipedia": 5,
+     "missing": [
+      {
+       "pollster": "GQR",
+       "marker": "D",
+       "end": "2026-10-04",
+       "n": 400,
+       "wiki_margin": 3.23,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "4 of 8",
+       "kind": "probably a gap"
+      },
+      {
+       "pollster": "co/efficient",
+       "marker": "R",
+       "end": "2026-10-01",
+       "n": 837,
+       "wiki_margin": -6.98,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "9 of 17",
+       "kind": "probably a gap"
+      },
+      {
+       "pollster": "Public Policy Polling",
+       "marker": "D",
+       "end": "2026-09-10",
+       "n": 536,
+       "wiki_margin": -1.23,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "15 of 34",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": -1.74,
+        "p": 0.359
+       },
+       "polls_fundamentals": {
+        "mu": -1.46,
+        "p": 0.375
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -3.52,
+        "p": 0.222
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": -1.74,
+        "p": 0.359
+       },
+       "polls_fundamentals": {
+        "mu": -1.46,
+        "p": 0.375
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -3.52,
+        "p": 0.222
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": -2.37,
+        "p": 0.311
+       },
+       "polls_fundamentals": {
+        "mu": -2.1,
+        "p": 0.323
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -4.18,
+        "p": 0.182
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -2.53,
+        "p": 0.3
+       },
+       "polls_fundamentals": {
+        "mu": -2.25,
+        "p": 0.31
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -4.33,
+        "p": 0.174
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|TN|H|5",
+     "wikipedia_table": true,
+     "n_votehub": 0,
+     "n_wikipedia": 2,
+     "missing": [
+      {
+       "pollster": "Impact Research",
+       "marker": "D",
+       "end": "2026-10-01",
+       "n": 552,
+       "wiki_margin": -5.75,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "3 of 19",
+       "kind": "probably VoteHub's choice"
+      },
+      {
+       "pollster": "Impact Research",
+       "marker": "D",
+       "end": "2026-08-24",
+       "n": 500,
+       "wiki_margin": -9.09,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "3 of 19",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": -10.36,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -9.86,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -11.57,
+        "p": null
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": -10.36,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -9.86,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -11.57,
+        "p": null
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": -10.36,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -9.86,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -11.57,
+        "p": null
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -9.45,
+        "p": 0.052
+       },
+       "polls_fundamentals": {
+        "mu": -9.17,
+        "p": 0.049
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -11.23,
+        "p": 0.027
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|TX|H|2",
+     "wikipedia_table": true,
+     "n_votehub": 0,
+     "n_wikipedia": 1,
+     "missing": [
+      {
+       "pollster": "Impact Research",
+       "marker": "D",
+       "end": "2026-10-04",
+       "n": 501,
+       "wiki_margin": -10.84,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "3 of 19",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": -12.17,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -11.68,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -13.38,
+        "p": null
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": -12.17,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -11.68,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -13.38,
+        "p": null
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": -12.17,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -11.68,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -13.38,
+        "p": null
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -12.13,
+        "p": 0.029
+       },
+       "polls_fundamentals": {
+        "mu": -11.83,
+        "p": 0.027
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -13.88,
+        "p": 0.015
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|TX|H|9",
+     "wikipedia_table": true,
+     "n_votehub": 0,
+     "n_wikipedia": 3,
+     "missing": [
+      {
+       "pollster": "DCCC",
+       "marker": "",
+       "end": "2026-10-22",
+       "n": 490,
+       "wiki_margin": -1.05,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "4 of 13",
+       "kind": "probably VoteHub's choice"
+      },
+      {
+       "pollster": "University of Houston",
+       "marker": "",
+       "end": "2026-10-07",
+       "n": 677,
+       "wiki_margin": -6.67,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "0 of 2",
+       "kind": "probably VoteHub's choice"
+      },
+      {
+       "pollster": "Public Policy Polling",
+       "marker": "D",
+       "end": "2026-09-19",
+       "n": null,
+       "wiki_margin": -7.14,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "15 of 34",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": -8.54,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -8.05,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -9.75,
+        "p": null
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": -8.54,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -8.05,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -9.75,
+        "p": null
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": -8.54,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -8.05,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -9.75,
+        "p": null
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -7.02,
+        "p": 0.096
+       },
+       "polls_fundamentals": {
+        "mu": -6.75,
+        "p": 0.093
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -8.82,
+        "p": 0.049
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|TX|H|10",
+     "wikipedia_table": true,
+     "n_votehub": 0,
+     "n_wikipedia": 1,
+     "missing": [
+      {
+       "pollster": "Change Research",
+       "marker": "",
+       "end": "2026-09-22",
+       "n": 613,
+       "wiki_margin": -7.87,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "6 of 11",
+       "kind": "probably a gap"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": -10.36,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -9.86,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -11.57,
+        "p": null
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": -10.36,
+        "p": null
+       },
+       "polls_fundamentals": {
+        "mu": -9.86,
+        "p": null
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -11.57,
+        "p": null
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": -9.35,
+        "p": 0.056
+       },
+       "polls_fundamentals": {
+        "mu": -9.05,
+        "p": 0.053
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -11.1,
+        "p": 0.029
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -9.35,
+        "p": 0.056
+       },
+       "polls_fundamentals": {
+        "mu": -9.05,
+        "p": 0.053
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -11.1,
+        "p": 0.029
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|TX|H|15",
+     "wikipedia_table": true,
+     "n_votehub": 3,
+     "n_wikipedia": 4,
+     "missing": [
+      {
+       "pollster": "Public Policy Research/ Texas Southern University",
+       "marker": "",
+       "end": "2026-08-22",
+       "n": 700,
+       "wiki_margin": 5.26,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "15 of 34",
+       "kind": "probably VoteHub's choice"
+      },
+      {
+       "pollster": "Normington Petts",
+       "marker": "D",
+       "end": "2026-07-27",
+       "n": 553,
+       "wiki_margin": 6.25,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "4 of 5",
+       "kind": "probably a gap"
+      }
+     ],
+     "votehub_only": [
+      {
+       "pollster": "Texas Southern University Barbara Jordan Public Policy Research and Survey Center",
+       "end": "2026-07-30",
+       "n": 700,
+       "votehub_margin": 5.26,
+       "blocklisted": "",
+       "supplement": false,
+       "verifiable": true
+      }
+     ],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": -1.34,
+        "p": 0.389
+       },
+       "polls_fundamentals": {
+        "mu": -1.06,
+        "p": 0.407
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -3.14,
+        "p": 0.243
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": -1.34,
+        "p": 0.389
+       },
+       "polls_fundamentals": {
+        "mu": -1.06,
+        "p": 0.407
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -3.14,
+        "p": 0.243
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": -1.57,
+        "p": 0.371
+       },
+       "polls_fundamentals": {
+        "mu": -1.3,
+        "p": 0.387
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -3.38,
+        "p": 0.227
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -1.8,
+        "p": 0.353
+       },
+       "polls_fundamentals": {
+        "mu": -1.53,
+        "p": 0.367
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -3.61,
+        "p": 0.212
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|TX|H|28",
+     "wikipedia_table": true,
+     "n_votehub": 2,
+     "n_wikipedia": 2,
+     "missing": [
+      {
+       "pollster": "Public Policy Research/ Texas Southern University",
+       "marker": "",
+       "end": "2026-08-22",
+       "n": 600,
+       "wiki_margin": 13.92,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "15 of 34",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [
+      {
+       "pollster": "Texas Southern University Barbara Jordan Public Policy Research and Survey Center",
+       "end": "2026-07-30",
+       "n": 600,
+       "votehub_margin": 13.92,
+       "blocklisted": "",
+       "supplement": false,
+       "verifiable": true
+      }
+     ],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": 12.13,
+        "p": 0.972
+       },
+       "polls_fundamentals": {
+        "mu": 12.42,
+        "p": 0.978
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 10.35,
+        "p": 0.966
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": 12.13,
+        "p": 0.972
+       },
+       "polls_fundamentals": {
+        "mu": 12.42,
+        "p": 0.978
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 10.35,
+        "p": 0.966
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": 12.13,
+        "p": 0.972
+       },
+       "polls_fundamentals": {
+        "mu": 12.42,
+        "p": 0.978
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 10.35,
+        "p": 0.966
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": 11.61,
+        "p": 0.969
+       },
+       "polls_fundamentals": {
+        "mu": 11.89,
+        "p": 0.975
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 9.81,
+        "p": 0.962
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|TX|H|34",
+     "wikipedia_table": true,
+     "n_votehub": 2,
+     "n_wikipedia": 2,
+     "missing": [
+      {
+       "pollster": "Public Policy Research/ Texas Southern University",
+       "marker": "",
+       "end": "2026-08-22",
+       "n": 700,
+       "wiki_margin": 3.45,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "15 of 34",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [
+      {
+       "pollster": "Texas Southern University Barbara Jordan Public Policy Research and Survey Center",
+       "end": "2026-07-30",
+       "n": 700,
+       "votehub_margin": 3.45,
+       "blocklisted": "",
+       "supplement": false,
+       "verifiable": true
+      }
+     ],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": 6.63,
+        "p": 0.892
+       },
+       "polls_fundamentals": {
+        "mu": 6.91,
+        "p": 0.909
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 4.85,
+        "p": 0.847
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": 6.63,
+        "p": 0.892
+       },
+       "polls_fundamentals": {
+        "mu": 6.91,
+        "p": 0.909
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 4.85,
+        "p": 0.847
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": 6.63,
+        "p": 0.892
+       },
+       "polls_fundamentals": {
+        "mu": 6.91,
+        "p": 0.909
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 4.85,
+        "p": 0.847
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": 6.27,
+        "p": 0.883
+       },
+       "polls_fundamentals": {
+        "mu": 6.55,
+        "p": 0.901
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 4.48,
+        "p": 0.832
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|TX|H|35",
+     "wikipedia_table": true,
+     "n_votehub": 3,
+     "n_wikipedia": 4,
+     "missing": [
+      {
+       "pollster": "Washington Post / Schar School",
+       "marker": "",
+       "end": "2026-10-19",
+       "n": 606,
+       "wiki_margin": -1.05,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "6 of 7",
+       "kind": "probably a gap"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": 0.62,
+        "p": 0.552
+       },
+       "polls_fundamentals": {
+        "mu": 0.89,
+        "p": 0.579
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -1.18,
+        "p": 0.393
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": 0.62,
+        "p": 0.552
+       },
+       "polls_fundamentals": {
+        "mu": 0.89,
+        "p": 0.579
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -1.18,
+        "p": 0.393
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": 0.32,
+        "p": 0.527
+       },
+       "polls_fundamentals": {
+        "mu": 0.6,
+        "p": 0.553
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -1.48,
+        "p": 0.367
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": 0.32,
+        "p": 0.527
+       },
+       "polls_fundamentals": {
+        "mu": 0.6,
+        "p": 0.553
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -1.48,
+        "p": 0.367
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|VA|H|1",
+     "wikipedia_table": true,
+     "n_votehub": 2,
+     "n_wikipedia": 4,
+     "missing": [
+      {
+       "pollster": "DCCC Targeting Team",
+       "marker": "D",
+       "end": "2026-10-25",
+       "n": 478,
+       "wiki_margin": 1.05,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "4 of 13",
+       "kind": "probably VoteHub's choice"
+      },
+      {
+       "pollster": "DCCC Targeting Team",
+       "marker": "D",
+       "end": "2026-09-17",
+       "n": 519,
+       "wiki_margin": -1.08,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "4 of 13",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": -0.48,
+        "p": 0.46
+       },
+       "polls_fundamentals": {
+        "mu": -0.2,
+        "p": 0.483
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -2.26,
+        "p": 0.306
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": -0.48,
+        "p": 0.46
+       },
+       "polls_fundamentals": {
+        "mu": -0.2,
+        "p": 0.483
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -2.26,
+        "p": 0.306
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": -0.48,
+        "p": 0.46
+       },
+       "polls_fundamentals": {
+        "mu": -0.2,
+        "p": 0.483
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -2.26,
+        "p": 0.306
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -1.42,
+        "p": 0.383
+       },
+       "polls_fundamentals": {
+        "mu": -1.15,
+        "p": 0.399
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -3.23,
+        "p": 0.236
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|VA|H|2",
+     "wikipedia_table": true,
+     "n_votehub": 1,
+     "n_wikipedia": 2,
+     "missing": [
+      {
+       "pollster": "Christopher Newport University",
+       "marker": "",
+       "end": "2026-10-10",
+       "n": 702,
+       "wiki_margin": 3.37,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "0 of 1",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": 1.45,
+        "p": 0.617
+       },
+       "polls_fundamentals": {
+        "mu": 1.75,
+        "p": 0.646
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -0.3,
+        "p": 0.473
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": 1.45,
+        "p": 0.617
+       },
+       "polls_fundamentals": {
+        "mu": 1.75,
+        "p": 0.646
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -0.3,
+        "p": 0.473
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": 1.45,
+        "p": 0.617
+       },
+       "polls_fundamentals": {
+        "mu": 1.75,
+        "p": 0.646
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -0.3,
+        "p": 0.473
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": 2.8,
+        "p": 0.716
+       },
+       "polls_fundamentals": {
+        "mu": 3.09,
+        "p": 0.745
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 1.02,
+        "p": 0.592
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|VA|H|5",
+     "wikipedia_table": true,
+     "n_votehub": 1,
+     "n_wikipedia": 3,
+     "missing": [
+      {
+       "pollster": "Expedition Strategies",
+       "marker": "D",
+       "end": "2026-09-24",
+       "n": 400,
+       "wiki_margin": -1.1,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "1 of 3",
+       "kind": "probably VoteHub's choice"
+      },
+      {
+       "pollster": "Expedition Strategies",
+       "marker": "D",
+       "end": "2026-08-01",
+       "n": 602,
+       "wiki_margin": -3.3,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "1 of 3",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [
+      {
+       "pollster": "The Washington Post/George Mason University Schar School of Policy and Government",
+       "wiki_pollster": "The Washington Post / SSPG",
+       "end": "2026-09-28",
+       "n": 600,
+       "votehub_margin": -5.15,
+       "closest_wiki_margin_diff": 1.1,
+       "supplement": false,
+       "blocklisted": "",
+       "extra_version": false
+      }
+     ],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": -6.61,
+        "p": 0.111
+       },
+       "polls_fundamentals": {
+        "mu": -6.32,
+        "p": 0.11
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -8.37,
+        "p": 0.059
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": -6.61,
+        "p": 0.111
+       },
+       "polls_fundamentals": {
+        "mu": -6.32,
+        "p": 0.11
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -8.37,
+        "p": 0.059
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": -6.61,
+        "p": 0.111
+       },
+       "polls_fundamentals": {
+        "mu": -6.32,
+        "p": 0.11
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -8.37,
+        "p": 0.059
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -6.76,
+        "p": 0.103
+       },
+       "polls_fundamentals": {
+        "mu": -6.48,
+        "p": 0.101
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -8.55,
+        "p": 0.053
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|WA|H|3",
+     "wikipedia_table": true,
+     "n_votehub": 2,
+     "n_wikipedia": 3,
+     "missing": [
+      {
+       "pollster": "DHM Research",
+       "marker": "",
+       "end": "2026-07-10",
+       "n": 543,
+       "wiki_margin": -2.22,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "0 of 1",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": 4.74,
+        "p": 0.823
+       },
+       "polls_fundamentals": {
+        "mu": 5.03,
+        "p": 0.847
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 2.96,
+        "p": 0.743
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": 4.74,
+        "p": 0.823
+       },
+       "polls_fundamentals": {
+        "mu": 5.03,
+        "p": 0.847
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 2.96,
+        "p": 0.743
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": 4.74,
+        "p": 0.823
+       },
+       "polls_fundamentals": {
+        "mu": 5.03,
+        "p": 0.847
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 2.96,
+        "p": 0.743
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": 4.51,
+        "p": 0.814
+       },
+       "polls_fundamentals": {
+        "mu": 4.79,
+        "p": 0.839
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": 2.72,
+        "p": 0.728
+       }
+      }
+     }
+    },
+    {
+     "race": "2026|WI|H|1",
+     "wikipedia_table": true,
+     "n_votehub": 2,
+     "n_wikipedia": 3,
+     "missing": [
+      {
+       "pollster": "Impact Research",
+       "marker": "D",
+       "end": "2026-08-09",
+       "n": 400,
+       "wiki_margin": -1.03,
+       "cause": "not in VoteHub",
+       "detail": "",
+       "pollster_carried": "3 of 19",
+       "kind": "probably VoteHub's choice"
+      }
+     ],
+     "votehub_only": [],
+     "number_mismatch": [],
+     "what_if": {
+      "as_frozen": {
+       "polls_only": {
+        "mu": -0.49,
+        "p": 0.459
+       },
+       "polls_fundamentals": {
+        "mu": -0.21,
+        "p": 0.482
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -2.28,
+        "p": 0.305
+       }
+      },
+      "without_blocklisted": {
+       "polls_only": {
+        "mu": -0.49,
+        "p": 0.459
+       },
+       "polls_fundamentals": {
+        "mu": -0.21,
+        "p": 0.482
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -2.28,
+        "p": 0.305
+       }
+      },
+      "plus_probable_gaps": {
+       "polls_only": {
+        "mu": -0.49,
+        "p": 0.459
+       },
+       "polls_fundamentals": {
+        "mu": -0.21,
+        "p": 0.482
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -2.28,
+        "p": 0.305
+       }
+      },
+      "plus_all_missing": {
+       "polls_only": {
+        "mu": -0.64,
+        "p": 0.446
+       },
+       "polls_fundamentals": {
+        "mu": -0.37,
+        "p": 0.468
+       },
+       "polls_fundamentals_biasadj": {
+        "mu": -2.44,
+        "p": 0.292
        }
       }
      }

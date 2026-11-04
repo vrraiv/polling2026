@@ -291,23 +291,17 @@ def to_votehub(w, ch, key, vh_pollsters):
 
 
 # ---------------- the audit ----------------
-def audit(ch, polls, later):
+def load_wiki(ch):
     wiki = pd.read_csv(SC / f"wiki_polls_{ch.name}.csv")
-    asof = wiki.asof_utc.iloc[0]
     wiki["end"] = pd.to_datetime(wiki.end)
     wiki["start"] = wiki.start.astype(str)
     if "rcv_round" not in wiki:
         wiki["rcv_round"] = np.nan
-    vh_pollsters = {}   # pollsters VoteHub carries anywhere in 2026 (by first distinctive word) -> lists sponsors for them?
-    for x in polls:
-        t = first_tok(x["pollster"])
-        if t:
-            vh_pollsters[t] = vh_pollsters.get(t, False) or bool(x.get("sponsors"))
-    asof_day = pd.Timestamp(asof[:10])
-    is_out = lambda x: bool(blocked(x["pollster"])) and pd.Timestamp(blocked(x["pollster"])["public_since"]) <= asof_day
-    polls_nob = [x for x in polls if not is_out(x)]   # pollsters publicly discredited before the final run, removed
+    return wiki
 
-    # pass 1: pair each race's polls
+
+def pass1(ch, polls, wiki):
+    """Pair each race's polls: {race_key: (VoteHub polls used, Wikipedia rows, Wikipedia polls, pairs, paired j, extra versions)}."""
     per = {}
     for key in ch.keys:
         vh = ch.model_polls(polls, key)
@@ -325,18 +319,42 @@ def audit(ch, polls, later):
             if j is not None:
                 extra[i] = j
         per[key] = (vh, w_all, wk, pairs, pj, extra)
-    # how much of each pollster's work (in these races and the window) VoteHub carried: a missing poll from a pollster
-    # VoteHub mostly carries is probably a gap; one from a pollster it mostly leaves out is probably its curation
-    cov, cov_names = {}, {}
+    return per
+
+
+def coverage_of(per):
+    """How much of each pollster's work (in these races and the window) VoteHub carried, by first distinctive name word."""
+    cov, names = {}, {}
     for key, (vh, w_all, wk, pairs, pj, extra) in per.items():
         for j, w in enumerate(wk):
             t = first_tok(w["pollster"])
             c = cov.setdefault(t, [0, 0])
             c[0] += j in pj
             c[1] += 1
-            cov_names.setdefault(t, {}).setdefault(w["pollster"], 0)
-            cov_names[t][w["pollster"]] += 1
-    carried = lambda name: (lambda c: c[1] > 0 and c[0] / c[1] >= 0.5)(cov.get(first_tok(name), [0, 0]))
+            names.setdefault(t, {}).setdefault(w["pollster"], 0)
+            names[t][w["pollster"]] += 1
+    return cov, names
+
+
+def audit(ch, polls, later, cov_pool=None):
+    """cov_pool: pollster coverage pooled over both chambers (a pollster gets one gap-or-curation verdict)."""
+    wiki = load_wiki(ch)
+    asof = wiki.asof_utc.iloc[0]
+    vh_pollsters = {}   # pollsters VoteHub carries anywhere in 2026 (by first distinctive word) -> lists sponsors for them?
+    for x in polls:
+        t = first_tok(x["pollster"])
+        if t:
+            vh_pollsters[t] = vh_pollsters.get(t, False) or bool(x.get("sponsors"))
+    asof_day = pd.Timestamp(asof[:10])
+    is_out = lambda x: bool(blocked(x["pollster"])) and pd.Timestamp(blocked(x["pollster"])["public_since"]) <= asof_day
+    polls_nob = [x for x in polls if not is_out(x)]   # pollsters publicly discredited before the final run, removed
+
+    per = pass1(ch, polls, wiki)
+    # a missing poll from a pollster VoteHub mostly carries (>= half its polls in these races, both chambers pooled)
+    # is probably a gap; one from a pollster it mostly leaves out is probably its curation
+    cov, cov_names = coverage_of(per)
+    pool = cov_pool or cov
+    carried = lambda name: (lambda c: c[1] > 0 and c[0] / c[1] >= 0.5)(pool.get(first_tok(name), [0, 0]))
 
     rows, races_out = [], []
     for key, (vh, w_all, wk, pairs, pj, extra) in per.items():
@@ -379,7 +397,7 @@ def audit(ch, polls, later):
                              "end": str(w["end"].date()), "detail": detail})
                 continue
             v0 = headline_version(w)
-            c = cov.get(first_tok(w["pollster"]), [0, 0])
+            c = pool.get(first_tok(w["pollster"]), [0, 0])
             item = {"pollster": w["pollster"], "marker": w["marker"], "end": str(w["end"].date()),
                     "n": None if pd.isna(v0["sample"]) else int(v0["sample"]), "wiki_margin": None if np.isnan(v0["margin"]) else round(v0["margin"], 2),
                     "cause": cause, "detail": detail, "pollster_carried": f"{c[0]} of {c[1]}",
@@ -436,13 +454,19 @@ def main(chambers=("senate", "house")):
     path = SC / "poll_audit.json"
     out = json.loads(path.read_text()) if path.exists() else {}
     out["blocklist"] = BLOCK
-    frames = []
-    for name in chambers:
+    frames, chs, pool = [], {}, {}
+    for name in ("senate", "house"):   # coverage is pooled over both chambers whichever is being re-run
         if not (SC / f"wiki_polls_{name}.csv").exists():
             print(f"{name}: no Wikipedia polls parsed yet (run src/collect/wiki_polls.py {name})")
             continue
-        ch = Senate(polls) if name == "senate" else House(polls)
-        out[name], pdf = audit(ch, polls, later)
+        chs[name] = Senate(polls) if name == "senate" else House(polls)
+        for t, (a_, b_) in coverage_of(pass1(chs[name], polls, load_wiki(chs[name])))[0].items():
+            pool.setdefault(t, [0, 0]); pool[t][0] += a_; pool[t][1] += b_
+    for name in chambers:
+        if name not in chs:
+            continue
+        ch = chs[name]
+        out[name], pdf = audit(ch, polls, later, cov_pool=pool)
         frames.append(pdf)
         t = out[name]["totals"]
         print(name.upper(), json.dumps({k: v for k, v in t.items() if k not in ("supplement_mismatches", "pollster_coverage")}))
