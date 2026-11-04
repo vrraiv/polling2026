@@ -1729,7 +1729,10 @@ function renderScorecard() {
         `<div class="stat"><div class="v">${t.votehub_polls_used}</div><div class="l">VoteHub polls the forecast used (${t.races} races)</div></div>` +
         `<div class="stat"><div class="v">${t.wikipedia_polls}</div><div class="l">polls on Wikipedia in the same window (${t.races_with_wikipedia_table} races have a table)</div></div>` +
         `<div class="stat"><div class="v">${t.matched_wikipedia_polls}</div><div class="l">of Wikipedia's polls also in VoteHub</div></div>` +
-        `<div class="stat"><div class="v">${t.missing}</div><div class="l">not in VoteHub: ${t.missing_probable_gaps} probably gaps, ${t.missing - t.missing_probable_gaps} probably VoteHub's choice</div></div>` +
+        `<div class="stat"><div class="v">${t.missing_probable_gaps}</div><div class="l">probably gaps: from pollsters VoteHub carries, but missing here</div></div>` +
+        `<div class="stat"><div class="v">${t.missing_possible_lag}</div><div class="l">possibly lag: ended in the last 3 days before the final run</div></div>` +
+        `<div class="stat"><div class="v">${t.missing_votehub_choice}</div><div class="l">probably VoteHub's choice: pollsters it rarely carries (under 10 polls all year)</div></div>` +
+        (t.missing_our_matching ? `<div class="stat"><div class="v">${t.missing_our_matching}</div><div class="l">in VoteHub, but the forecast's matching missed them (district filed under a different label)</div></div>` : "") +
         `<div class="stat"><div class="v">${t.blocklisted_used}</div><div class="l">used, from a pollster that admitted fabricating</div></div>` +
         `<div class="stat"><div class="v">${t.number_mismatches}</div><div class="l">in both, numbers differ by more than 1 pt</div></div>` +
         (t.supplement_polls ? `<div class="stat"><div class="v">${t.supplement_polls_matched}/${t.supplement_polls}</div><div class="l">hand-read AtlasIntel polls matching Wikipedia exactly</div></div>` : "") +
@@ -1738,10 +1741,10 @@ function renderScorecard() {
           t.pollster_coverage.filter(p => p.on_wikipedia >= 3).map(p => `<tr><td>${esc(p.pollster)}</td><td class="num">${p.carried}</td><td class="num">${p.on_wikipedia}</td></tr>`).join("") +
           `</tbody></table></div><p class="tiny">Pollsters with 3 or more polls in these races, grouped by the first distinctive word of the name.</p></details>` : "") +
         (rows.length ? `<div class="tbl-wrap" style="margin-top:10px"><table><thead><tr><th>Race</th><th class="num">Polls: used / on Wikipedia</th>` +
-          `<th class="num">Expected, as frozen</th><th class="num">Without fabricated</th><th class="num">+ probable gaps</th><th class="num">+ all missing</th><th class="num">P(D side): frozen → + all</th><th class="num">Actual</th></tr></thead><tbody>` +
+          `<th class="num">Expected, as frozen</th><th class="num">Without fabricated</th><th class="num">+ probable gaps</th><th class="num">+ all missing</th><th class="num">P(D side): frozen → + gaps</th><th class="num">Actual</th></tr></thead><tbody>` +
           rows.map(r => `<tr><td>${raceLab(r.race)}</td><td class="num">${r.n_votehub} / ${r.wikipedia_table ? r.n_wikipedia : "no table"}</td>` +
               `<td class="num">${fmtM(w(r, "as_frozen").mu)}</td><td class="num">${fmtM(w(r, "without_blocklisted").mu)}</td><td class="num">${fmtM(w(r, "plus_probable_gaps").mu)}</td><td class="num">${fmtM(w(r, "plus_all_missing").mu)}</td>` +
-              `<td class="num">${fmtP(w(r, "as_frozen").p)} → ${fmtP(w(r, "plus_all_missing").p)}</td><td class="num">${fmtM(actualOf(r.race))}</td></tr>`).join("") +
+              `<td class="num">${fmtP(w(r, "as_frozen").p)} → ${fmtP(w(r, "plus_probable_gaps").p)}</td><td class="num">${fmtM(actualOf(r.race))}</td></tr>`).join("") +
           `</tbody></table></div>` +
           `<details><summary>The polls behind each row</summary>${rows.map(r => `<p class="small" style="margin-bottom:2px"><b>${raceLab(r.race)}</b></p><ul class="list small" style="margin-top:0">${pollList(r)}</ul>`).join("")}</details>`
           : `<p class="small muted">No differences that move a race's expected margin by half a point or more.</p>`);
@@ -1751,7 +1754,12 @@ function renderScorecard() {
       `<p class="small">The forecast's polls came from VoteHub. Here they're checked against a second, separately curated record: each race's polling table on Wikipedia, as it stood at the moment the final forecast pulled its polls (${asOf(ts)}), for polls inside the forecast's window (Senate from ${A.senate ? A.senate.window_start : "—"}, House from ${A.house ? A.house.window_start : "—"}). ` +
       `Polls are paired on end date (within 3 days) plus sample size or pollster name. "Expected" columns recompute each race's expected margin (${MODELS[model]}) with the forecast's own averaging code: as frozen (this reproduces the published forecast exactly), without the fabricated polls, and with Wikipedia's missing polls added. Probabilities here are approximate (single race), and none of this changes the frozen forecast.</p>` +
       `<p class="note">${block}</p>` + chamber("Senate", A.senate) + chamber("House (close districts)", A.house) +
-      `<p class="tiny">"Probably a gap": a poll from a pollster whose other polls in these races VoteHub mostly carried. "Probably VoteHub's choice": a pollster VoteHub mostly left out in these races (Rasmussen, Trafalgar), which looks like curation rather than a miss. VoteHub-only polls that Wikipedia didn't list aren't counted as errors: Wikipedia isn't complete either.</p>`;
+      `<p class="tiny">"+ probable gaps" adds what a second source would have supplied: probable gaps, possible lag and polls our matching missed. It's the fair what-if. "+ all missing" also adds pollsters VoteHub rarely carries (Rasmussen), so it's an upper bound. Polls entered in both sources with field dates a few days apart count as the same poll. VoteHub-only polls that Wikipedia didn't list aren't counted as errors: Wikipedia isn't complete either.</p>`;
+  const AS = M && M.poll_audit_scores;
+  if (AS) $("#scAudit").innerHTML += `<h3>Would the audited polls have done better?</h3><p class="small">Error of each version's expected margin (${MODELS[FV]}) against settled results, over the audited races with a settled count.</p>` +
+    `<div class="tbl-wrap"><table><thead><tr><th>Chamber</th><th class="num">Races</th><th class="num">As frozen</th><th class="num">Without fabricated</th><th class="num">+ probable gaps</th><th class="num">+ all missing</th></tr></thead><tbody>` +
+    Object.entries(AS).map(([ch, x]) => `<tr><td>${ch === "senate" ? "Senate" : "House"}</td><td class="num">${x.n}</td>` +
+      ["as_frozen", "without_blocklisted", "plus_probable_gaps", "plus_all_missing"].map(k => `<td class="num">RMSE ${f2(x[k].rmse, 2)} <span class="tiny">(mean ${fSgn(x[k].mean, 2)})</span></td>`).join("") + `</tr>`).join("") + `</tbody></table></div>`;
   } else $("#scAudit").innerHTML = "";
   // house close races
   const hm = M && M.house_margins ? Object.fromEntries(M.house_margins.map(r => [r.race, r])) : {};

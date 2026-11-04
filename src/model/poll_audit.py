@@ -48,7 +48,7 @@ SINCE = {"senate": pd.Timestamp("2026-06-15"), "house": pd.Timestamp("2026-07-01
 VERSIONS = ["polls_only", "polls_fundamentals", "polls_fundamentals_biasadj"]
 STOP = {"polling", "poll", "polls", "research", "group", "strategies", "strategy", "insights", "associates", "college", "university",
         "the", "and", "inc", "llc", "partners", "analytics", "survey", "surveys", "consulting", "communications", "public", "opinion",
-        "institute", "center", "for", "of", "co", "company", "data", "media", "news", "&", "pac", "action", "fund", "project"}
+        "institute", "center", "for", "of", "co", "company", "data", "media", "news", "&", "pac", "action", "fund", "project", "new"}
 
 
 def tok_list(name):
@@ -61,8 +61,9 @@ def tokens(name):
 
 
 def first_tok(name):
+    """Pollster key: the first distinctive word, or the whole normalized name when every word is generic ("Research Co.")."""
     tl = tok_list(name)
-    return tl[0] if tl else ""
+    return tl[0] if tl else " ".join(re.findall(r"[a-z0-9]+", str(name).lower()))
 
 
 def blocked(pollster):
@@ -120,6 +121,13 @@ class Senate:
 
     def stamp(self, d, key):
         return dict(d, poll_type=self.poll_type, subject=f"2026 {self.rk.loc[key, 'state_name']}")
+
+    def surnames(self, key):
+        if key not in self.rk.index:
+            return set(), set()
+        r = self.rk.loc[key]
+        return {P.lastname(r.dem_nominee)} if isinstance(r.dem_nominee, str) else set(), \
+               {P.lastname(r.rep_nominee)} if isinstance(r.rep_nominee, str) else set()
 
     def mu_versions(self, polls, key):
         out, st = {}, key.split("|")[1]
@@ -187,6 +195,11 @@ class House:
 
     def stamp(self, d, key):
         return dict(d, poll_type=self.poll_type, seat_name=self.seat(key), subject=None)
+
+    def surnames(self, key):
+        r = self.rk.loc[key]
+        return ({P.lastname(n) for n in str(r.dem_cand).split("; ") if n and n != "nan"},
+                {P.lastname(n) for n in str(r.rep_cand).split("; ") if n and n != "nan"})
 
     def mu_versions(self, polls, key):
         out = {}
@@ -264,6 +277,22 @@ def find_in(polls, w, ch, key):
     """A VoteHub poll for this race (any date, any answers) that looks like Wikipedia poll w."""
     for x in polls:
         if ch.same_race(x, key) and same_poll(x, w, pd.Timestamp(x["end_date"])):
+            return x
+    return None
+
+
+def find_by_names(polls, w, ch, key):
+    """A VoteHub poll of this office, filed under any race label (subject or seat code), that names both nominees and
+    ended within 3 days of Wikipedia poll w: catches polls VoteHub had but labelled so the forecast never looked."""
+    ds, rs = ch.surnames(key)
+    if not ds or not rs or pd.isna(w["end"]):
+        return None
+    for x in polls:
+        if x["poll_type"] != ch.poll_type or abs((pd.Timestamp(x["end_date"]) - w["end"]).days) > 3:
+            continue
+        names = {P.lastname(a["choice"]) for a in x.get("answers", [])}
+        if names & ds and names & rs and (tokens(x["pollster"]) & tokens(w["pollster"]) or
+                                           any(int(x.get("sample_size") or -1) == int(n) for n in w["samples"])):
             return x
     return None
 
@@ -354,68 +383,103 @@ def audit(ch, polls, later, cov_pool=None):
     # is probably a gap; one from a pollster it mostly leaves out is probably its curation
     cov, cov_names = coverage_of(per)
     pool = cov_pool or cov
-    carried = lambda name: (lambda c: c[1] > 0 and c[0] / c[1] >= 0.5)(pool.get(first_tok(name), [0, 0]))
+    # whether VoteHub carries a pollster at all in 2026 (any poll type, any race), by any distinctive word of its name
+    # ("CBS News / YouGov" counts as YouGov). A missing poll from a pollster VoteHub rarely carries (<10 polls all year,
+    # e.g. Rasmussen) is probably VoteHub's curation; from one it carries, probably a gap.
+    vh_tok = {}
+    for x in polls:
+        for t in tokens(x["pollster"]) or {first_tok(x["pollster"])}:
+            vh_tok[t] = vh_tok.get(t, 0) + 1
+    vh_count = lambda name: max([vh_tok.get(t, 0) for t in (tokens(name) or {first_tok(name)})] or [0])
+    lag_from = asof_day - pd.Timedelta(days=3)   # VoteHub took days to add late polls (AtlasIntel, ended Nov 1)
+
+    def kind(w):
+        if vh_count(w["pollster"]) < 10:
+            return "probably VoteHub's choice"
+        if w["end"] >= lag_from:
+            return "possibly lag"
+        return "probably a gap"
 
     rows, races_out = [], []
     for key, (vh, w_all, wk, pairs, pj, extra) in per.items():
         rec = {"race_key": key, "wikipedia_table": bool(len(w_all)), "n_votehub": len(vh), "n_wikipedia": len(wk),
-               "matched": [], "missing": [], "votehub_only": [], "number_mismatch": []}
-        for i, j in list(pairs) + list(extra.items()):
+               "matched": [], "missing": [], "votehub_only": [], "number_mismatch": [], "dates_differ": []}
+        paired_i = {a for a, _ in pairs} | set(extra)
+        used_ids = {id(x) for x, _ in vh}
+        # leftovers on both sides: Wikipedia polls without a pair, VoteHub polls without a pair
+        left_w, left_v = [j for j in range(len(wk)) if j not in pj], [i for i in range(len(vh)) if i not in paired_i]
+        # same survey, field dates entered differently (NC Elon/YouGov: VoteHub Jul 23, Wikipedia Jul 31): pair leftovers
+        # by pollster name within 10 days; neither side is missing and nothing is added to the what-ifs
+        late, late_j = [], set()
+        for i in list(left_v):
+            x = vh[i][0]
+            # several VoteHub entries (LV/RV) can belong to one Wikipedia poll, so already-paired leftovers stay eligible
+            j = min((j for j in left_w + sorted(late_j) if tokens(x["pollster"]) & tokens(wk[j]["pollster"]) and not pd.isna(wk[j]["end"])
+                     and abs((x["end"] - wk[j]["end"]).days) <= 10), key=lambda j: abs((x["end"] - wk[j]["end"]).days), default=None)
+            if j is not None:
+                late.append((i, j)); left_v.remove(i); late_j.add(j)
+                if j in left_w:
+                    left_w.remove(j)
+        for i, j in list(pairs) + list(extra.items()) + late:
             x, m = vh[i]
             w = wk[j]
             diffs = [abs(m - v["margin"]) for v in w["versions"] if np.isfinite(v["margin"])]
             best = min(diffs) if diffs else np.nan
             b = blocked(x["pollster"])
-            item = {"pollster": x["pollster"], "wiki_pollster": w["pollster"], "end": x["end_date"], "n": x.get("sample_size"),
-                    "votehub_margin": round(m, 2), "closest_wiki_margin_diff": None if np.isnan(best) else round(best, 2),
+            item = {"pollster": x["pollster"], "wiki_pollster": w["pollster"], "end": x["end_date"], "wiki_end": str(w["end"].date()),
+                    "n": x.get("sample_size"), "votehub_margin": round(m, 2),
+                    "closest_wiki_margin_diff": None if np.isnan(best) else round(best, 2),
                     "supplement": bool(x.get("supplement")), "blocklisted": b["name"] if b else "",
-                    "extra_version": i in extra}
+                    "extra_version": i in extra, "dates_differ": (i, j) in late}
             rec["matched"].append(item)
+            if (i, j) in late:
+                rec["dates_differ"].append(item)
             if np.isfinite(best) and best > 1.0:
                 rec["number_mismatch"].append(item)
-            rows.append({"chamber": ch.name, "race_key": key, "status": "matched", **item})
+            rows.append({"chamber": ch.name, "race_key": key, "status": "matched (dates differ)" if (i, j) in late else "matched", **item})
         miss_w = []
-        for j, w in enumerate(wk):
-            if j in pj:
-                continue
+        for j in left_w:
+            w = wk[j]
             raw = find_in(polls, w, ch, key)
-            used_ids = {id(x) for x, _ in vh}
+            raw2 = None if raw is not None else find_by_names(polls, w, ch, key)
             if raw is not None and id(raw) in used_ids:
                 # the matching VoteHub entry was used and already paired with another Wikipedia row: Wikipedia lists
                 # this survey twice (different dates or versions), so nothing is missing
-                cause = "listed twice on Wikipedia"
-                detail = f"VoteHub's entry (end {raw['end_date']}) is already matched to another row"
-            elif raw is not None:
+                rows.append({"chamber": ch.name, "race_key": key, "status": "duplicate on Wikipedia", "pollster": w["pollster"],
+                             "end": str(w["end"].date()), "detail": f"VoteHub's entry (end {raw['end_date']}) is already matched to another row"})
+                continue
+            if raw is not None:
                 cause = "in VoteHub, not used by the forecast"
                 detail = f"VoteHub end {raw['end_date']}; answers: " + ", ".join(f"{a['choice']} {a['pct']}" for a in raw.get("answers", []))
+            elif raw2 is not None:
+                cause = "in VoteHub under another race label, not used by the forecast"
+                detail = f"VoteHub {raw2.get('seat_name') or raw2.get('subject')}, end {raw2['end_date']}"
             elif later and find_in(later, w, ch, key) is not None:
                 cause, detail = "added to VoteHub after the final run", ""
             else:
                 cause, detail = "not in VoteHub", ""
-            if cause == "listed twice on Wikipedia":
-                rows.append({"chamber": ch.name, "race_key": key, "status": "duplicate on Wikipedia", "pollster": w["pollster"],
-                             "end": str(w["end"].date()), "detail": detail})
-                continue
             v0 = headline_version(w)
             c = pool.get(first_tok(w["pollster"]), [0, 0])
             item = {"pollster": w["pollster"], "marker": w["marker"], "end": str(w["end"].date()),
                     "n": None if pd.isna(v0["sample"]) else int(v0["sample"]), "wiki_margin": None if np.isnan(v0["margin"]) else round(v0["margin"], 2),
                     "cause": cause, "detail": detail, "pollster_carried": f"{c[0]} of {c[1]}",
-                    "kind": "probably a gap" if carried(w["pollster"]) else "probably VoteHub's choice"}
+                    "votehub_polls_by_pollster_2026": vh_count(w["pollster"]),
+                    "kind": kind(w) if cause == "not in VoteHub" else "our matching"}
             rec["missing"].append(item)
             rows.append({"chamber": ch.name, "race_key": key, "status": "missing", **item})
-            miss_w.append(w)
-        for i, (x, m) in enumerate(vh):
-            if i in {a for a, _ in pairs} or i in extra:
-                continue
+            miss_w.append((w, item["kind"]))
+        for i in left_v:
+            x, m = vh[i]
             b = blocked(x["pollster"])
             item = {"pollster": x["pollster"], "end": x["end_date"], "n": x.get("sample_size"), "votehub_margin": round(m, 2),
                     "blocklisted": b["name"] if b else "", "supplement": bool(x.get("supplement")), "verifiable": bool(len(w_all))}
             rec["votehub_only"].append(item)
             rows.append({"chamber": ch.name, "race_key": key, "status": "votehub only", **item})
-        # what-if expected margins; the forecast's own functions pick each race's polls from the full list
-        add_gaps = [to_votehub(w, ch, key, vh_pollsters) for w in miss_w if carried(w["pollster"])]
-        add_all = [to_votehub(w, ch, key, vh_pollsters) for w in miss_w]
+        # what-if expected margins; the forecast's own functions pick each race's polls from the full list.
+        # "probable gaps" = what a second source would have added: gaps, possible lag, and polls VoteHub had but the
+        # forecast's matching missed; "all missing" adds VoteHub's curation choices too (the upper bound)
+        add_gaps = [to_votehub(w, ch, key, vh_pollsters) for w, k in miss_w if k != "probably VoteHub's choice"]
+        add_all = [to_votehub(w, ch, key, vh_pollsters) for w, k in miss_w]
         variants = {"as_frozen": polls, "without_blocklisted": polls_nob,
                     "plus_probable_gaps": polls_nob + add_gaps, "plus_all_missing": polls_nob + add_all}
         rec["what_if"] = {k: ch.mu_versions(ps, key) for k, ps in variants.items()}
@@ -432,8 +496,12 @@ def audit(ch, polls, later, cov_pool=None):
     miss = pdf[pdf.status == "missing"]
     tot = {"races": len(races_out), "races_with_wikipedia_table": sum(r["wikipedia_table"] for r in races_out),
            "votehub_polls_used": int(sum(r["n_votehub"] for r in races_out)), "wikipedia_polls": int(sum(r["n_wikipedia"] for r in races_out)),
-           "matched_wikipedia_polls": int(sum(len({(m["wiki_pollster"], m["end"]) for m in r["matched"] if not m["extra_version"]}) for r in races_out)),
+           "matched_wikipedia_polls": int(sum(len({(m["wiki_pollster"], m["wiki_end"]) for m in r["matched"] if not m["extra_version"]}) for r in races_out)),
            "missing": int(len(miss)), "missing_probable_gaps": int((miss.kind == "probably a gap").sum()) if len(miss) else 0,
+           "missing_possible_lag": int((miss.kind == "possibly lag").sum()) if len(miss) else 0,
+           "missing_votehub_choice": int((miss.kind == "probably VoteHub's choice").sum()) if len(miss) else 0,
+           "missing_our_matching": int((miss.kind == "our matching").sum()) if len(miss) else 0,
+           "same_poll_dates_differ": int((pdf.status == "matched (dates differ)").sum()),
            "missing_by_cause": miss.cause.value_counts().to_dict() if len(miss) else {},
            "duplicates_on_wikipedia": int((pdf.status == "duplicate on Wikipedia").sum()),
            "votehub_only": int((pdf.status == "votehub only").sum()),

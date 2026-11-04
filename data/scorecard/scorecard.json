@@ -7334,14 +7334,18 @@
     "races_with_wikipedia_table": 30,
     "votehub_polls_used": 307,
     "wikipedia_polls": 520,
-    "matched_wikipedia_polls": 287,
-    "missing": 230,
-    "missing_probable_gaps": 72,
+    "matched_wikipedia_polls": 288,
+    "missing": 229,
+    "missing_probable_gaps": 132,
+    "missing_possible_lag": 15,
+    "missing_votehub_choice": 82,
+    "missing_our_matching": 0,
+    "same_poll_dates_differ": 2,
     "missing_by_cause": {
-     "not in VoteHub": 230
+     "not in VoteHub": 229
     },
     "duplicates_on_wikipedia": 3,
-    "votehub_only": 8,
+    "votehub_only": 6,
     "votehub_only_unverifiable": 0,
     "blocklisted_used": 6,
     "number_mismatches": 8,
@@ -7350,11 +7354,6 @@
     "supplement_mismatches": [],
     "pollster_coverage": [
      {
-      "pollster": "New York Times / Siena University",
-      "carried": 30,
-      "on_wikipedia": 39
-     },
-     {
       "pollster": "InsiderAdvantage",
       "carried": 18,
       "on_wikipedia": 28
@@ -7362,6 +7361,11 @@
      {
       "pollster": "Rasmussen Reports",
       "carried": 0,
+      "on_wikipedia": 24
+     },
+     {
+      "pollster": "New York Times / Siena University",
+      "carried": 15,
       "on_wikipedia": 24
      },
      {
@@ -7385,9 +7389,9 @@
       "on_wikipedia": 15
      },
      {
-      "pollster": "Research Co.",
-      "carried": 2,
-      "on_wikipedia": 13
+      "pollster": "University of New Hampshire",
+      "carried": 15,
+      "on_wikipedia": 15
      },
      {
       "pollster": "Beacon Research (D)/ Shaw & Co. Research",
@@ -7418,6 +7422,11 @@
       "pollster": "Texas Public Opinion Research",
       "carried": 9,
       "on_wikipedia": 10
+     },
+     {
+      "pollster": "Research Co.",
+      "carried": 0,
+      "on_wikipedia": 9
      },
      {
       "pollster": "Change Research",
@@ -7675,6 +7684,11 @@
       "on_wikipedia": 2
      },
      {
+      "pollster": "Research & Polling Inc.",
+      "carried": 1,
+      "on_wikipedia": 2
+     },
+     {
       "pollster": "Tavern Research",
       "carried": 2,
       "on_wikipedia": 2
@@ -7780,6 +7794,11 @@
       "on_wikipedia": 1
      },
      {
+      "pollster": "J.L. Partners",
+      "carried": 1,
+      "on_wikipedia": 1
+     },
+     {
       "pollster": "John Zogby Strategies",
       "carried": 0,
       "on_wikipedia": 1
@@ -7862,6 +7881,11 @@
      {
       "pollster": "Pollfinity Research",
       "carried": 1,
+      "on_wikipedia": 1
+     },
+     {
+      "pollster": "Public Opinion Strategies",
+      "carried": 0,
       "on_wikipedia": 1
      },
      {
@@ -7962,7 +7986,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "2 of 5",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 21,
+       "kind": "probably a gap"
       },
       {
        "pollster": "InsiderAdvantage",
@@ -7973,6 +7998,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "18 of 28",
+       "votehub_polls_by_pollster_2026": 43,
        "kind": "probably a gap"
       },
       {
@@ -7984,7 +8010,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "2 of 5",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 21,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Alaska Survey Research",
@@ -7995,7 +8022,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "2 of 5",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 21,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Data for Progress",
@@ -8006,7 +8034,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "2 of 7",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 25,
+       "kind": "probably a gap"
       },
       {
        "pollster": "InsiderAdvantage",
@@ -8017,7 +8046,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "18 of 28",
-       "kind": "probably a gap"
+       "votehub_polls_by_pollster_2026": 43,
+       "kind": "possibly lag"
       },
       {
        "pollster": "Rasmussen Reports",
@@ -8028,6 +8058,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 24",
+       "votehub_polls_by_pollster_2026": 4,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -8038,7 +8069,8 @@
        "wiki_margin": 7.53,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "31 of 45",
+       "pollster_carried": "15 of 28",
+       "votehub_polls_by_pollster_2026": 71,
        "kind": "probably a gap"
       },
       {
@@ -8050,7 +8082,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 23",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 23,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Rasmussen Reports",
@@ -8061,6 +8094,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 24",
+       "votehub_polls_by_pollster_2026": 4,
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -8097,16 +8131,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": 1.69,
-        "p": 0.637
+        "mu": 1.7,
+        "p": 0.643
        },
        "polls_fundamentals": {
-        "mu": 1.74,
-        "p": 0.641
+        "mu": 1.75,
+        "p": 0.647
        },
        "polls_fundamentals_biasadj": {
-        "mu": 0.65,
-        "p": 0.554
+        "mu": 0.67,
+        "p": 0.558
        }
       },
       "plus_all_missing": {
@@ -8140,7 +8174,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "2 of 3",
-       "kind": "probably a gap"
+       "votehub_polls_by_pollster_2026": 2,
+       "kind": "probably VoteHub's choice"
       },
       {
        "pollster": "2040 Strategy Group",
@@ -8151,6 +8186,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 1",
+       "votehub_polls_by_pollster_2026": 0,
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -8187,16 +8223,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": -12.71,
-        "p": 0.04
+        "mu": -14.42,
+        "p": 0.032
        },
        "polls_fundamentals": {
-        "mu": -12.62,
-        "p": 0.041
+        "mu": -14.32,
+        "p": 0.033
        },
        "polls_fundamentals_biasadj": {
-        "mu": -15.04,
-        "p": 0.026
+        "mu": -16.74,
+        "p": 0.021
        }
       },
       "plus_all_missing": {
@@ -8230,6 +8266,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 2",
+       "votehub_polls_by_pollster_2026": 1,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -8240,7 +8277,8 @@
        "wiki_margin": 23.91,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "3 of 16",
+       "pollster_carried": "0 of 9",
+       "votehub_polls_by_pollster_2026": 7,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -8252,7 +8290,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 1",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 1959,
+       "kind": "probably a gap"
       }
      ],
      "votehub_only": [],
@@ -8288,16 +8327,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": 18.18,
-        "p": 0.961
+        "mu": 19.08,
+        "p": 0.975
        },
        "polls_fundamentals": {
-        "mu": 18.38,
-        "p": 0.962
+        "mu": 19.23,
+        "p": 0.976
        },
        "polls_fundamentals_biasadj": {
-        "mu": 18.38,
-        "p": 0.962
+        "mu": 19.45,
+        "p": 0.976
        }
       },
       "plus_all_missing": {
@@ -8330,7 +8369,8 @@
        "wiki_margin": -7.37,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "3 of 16",
+       "pollster_carried": "0 of 9",
+       "votehub_polls_by_pollster_2026": 7,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -8342,6 +8382,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 7",
+       "votehub_polls_by_pollster_2026": 81,
        "kind": "probably a gap"
       },
       {
@@ -8353,6 +8394,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "1 of 3",
+       "votehub_polls_by_pollster_2026": 5,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -8364,6 +8406,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "18 of 28",
+       "votehub_polls_by_pollster_2026": 43,
        "kind": "probably a gap"
       },
       {
@@ -8375,6 +8418,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 5",
+       "votehub_polls_by_pollster_2026": 23,
        "kind": "probably a gap"
       },
       {
@@ -8386,7 +8430,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 1",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 29,
+       "kind": "probably a gap"
       },
       {
        "pollster": "St. Pete Polls",
@@ -8397,7 +8442,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "2 of 4",
-       "kind": "probably a gap"
+       "votehub_polls_by_pollster_2026": 4,
+       "kind": "probably VoteHub's choice"
       },
       {
        "pollster": "New York Times / Siena University",
@@ -8407,7 +8453,8 @@
        "wiki_margin": -6.38,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "31 of 45",
+       "pollster_carried": "15 of 28",
+       "votehub_polls_by_pollster_2026": 71,
        "kind": "probably a gap"
       },
       {
@@ -8419,6 +8466,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "1 of 21",
+       "votehub_polls_by_pollster_2026": 2,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -8430,6 +8478,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 1",
+       "votehub_polls_by_pollster_2026": 0,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -8441,6 +8490,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "2 of 3",
+       "votehub_polls_by_pollster_2026": 1959,
        "kind": "probably a gap"
       },
       {
@@ -8452,6 +8502,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "8 of 11",
+       "votehub_polls_by_pollster_2026": 32,
        "kind": "probably a gap"
       },
       {
@@ -8463,6 +8514,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "1 of 3",
+       "votehub_polls_by_pollster_2026": 5,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -8474,7 +8526,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "5 of 22",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 1959,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Mason-Dixon",
@@ -8485,7 +8538,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "1 of 4",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 24,
+       "kind": "probably a gap"
       }
      ],
      "votehub_only": [],
@@ -8521,16 +8575,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": -6.41,
-        "p": 0.099
+        "mu": -6.53,
+        "p": 0.094
        },
        "polls_fundamentals": {
-        "mu": -6.36,
-        "p": 0.1
+        "mu": -6.48,
+        "p": 0.096
        },
        "polls_fundamentals_biasadj": {
-        "mu": -7.28,
-        "p": 0.077
+        "mu": -7.4,
+        "p": 0.074
        }
       },
       "plus_all_missing": {
@@ -8563,7 +8617,8 @@
        "wiki_margin": 10.64,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "3 of 16",
+       "pollster_carried": "0 of 9",
+       "votehub_polls_by_pollster_2026": 7,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -8575,7 +8630,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 23",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 23,
+       "kind": "probably a gap"
       },
       {
        "pollster": "YouGov",
@@ -8586,7 +8642,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "5 of 22",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 1959,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Quantus Insights",
@@ -8597,6 +8654,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "15 of 20",
+       "votehub_polls_by_pollster_2026": 101,
        "kind": "probably a gap"
       },
       {
@@ -8608,6 +8666,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 24",
+       "votehub_polls_by_pollster_2026": 4,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -8619,7 +8678,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 23",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 23,
+       "kind": "probably a gap"
       }
      ],
      "votehub_only": [
@@ -8665,16 +8725,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": 9.18,
-        "p": 0.943
+        "mu": 9.33,
+        "p": 0.948
        },
        "polls_fundamentals": {
-        "mu": 9.24,
-        "p": 0.944
+        "mu": 9.38,
+        "p": 0.949
        },
        "polls_fundamentals_biasadj": {
-        "mu": 8.9,
-        "p": 0.939
+        "mu": 9.05,
+        "p": 0.944
        }
       },
       "plus_all_missing": {
@@ -8708,6 +8768,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 1",
+       "votehub_polls_by_pollster_2026": 0,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -8719,6 +8780,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 7",
+       "votehub_polls_by_pollster_2026": 1,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -8730,6 +8792,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 7",
+       "votehub_polls_by_pollster_2026": 1,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -8741,6 +8804,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 1",
+       "votehub_polls_by_pollster_2026": 8,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -8752,6 +8816,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 7",
+       "votehub_polls_by_pollster_2026": 1,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -8763,6 +8828,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "6 of 11",
+       "votehub_polls_by_pollster_2026": 41,
        "kind": "probably a gap"
       },
       {
@@ -8774,6 +8840,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "6 of 11",
+       "votehub_polls_by_pollster_2026": 41,
        "kind": "probably a gap"
       }
      ],
@@ -8852,7 +8919,8 @@
        "wiki_margin": 12.77,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "3 of 16",
+       "pollster_carried": "0 of 9",
+       "votehub_polls_by_pollster_2026": 7,
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -8932,6 +9000,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 24",
+       "votehub_polls_by_pollster_2026": 4,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -8943,7 +9012,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "5 of 22",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 1959,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Trafalgar Group",
@@ -8954,7 +9024,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 23",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 23,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Suffolk University",
@@ -8965,7 +9036,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 7",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 21,
+       "kind": "probably a gap"
       },
       {
        "pollster": "New York Times / Siena University",
@@ -8975,7 +9047,8 @@
        "wiki_margin": -1.05,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "31 of 45",
+       "pollster_carried": "15 of 28",
+       "votehub_polls_by_pollster_2026": 71,
        "kind": "probably a gap"
       },
       {
@@ -8987,6 +9060,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 24",
+       "votehub_polls_by_pollster_2026": 4,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -8998,6 +9072,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "15 of 20",
+       "votehub_polls_by_pollster_2026": 101,
        "kind": "probably a gap"
       },
       {
@@ -9009,6 +9084,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "18 of 28",
+       "votehub_polls_by_pollster_2026": 43,
        "kind": "probably a gap"
       },
       {
@@ -9020,7 +9096,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 23",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 23,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Cygnal",
@@ -9031,6 +9108,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 5",
+       "votehub_polls_by_pollster_2026": 65,
        "kind": "probably a gap"
       },
       {
@@ -9042,6 +9120,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 24",
+       "votehub_polls_by_pollster_2026": 4,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -9053,7 +9132,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 14",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 78,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Abacus Data",
@@ -9064,6 +9144,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 5",
+       "votehub_polls_by_pollster_2026": 1,
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -9100,16 +9181,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": 0.12,
-        "p": 0.511
+        "mu": 0.24,
+        "p": 0.522
        },
        "polls_fundamentals": {
-        "mu": 0.16,
-        "p": 0.515
+        "mu": 0.28,
+        "p": 0.526
        },
        "polls_fundamentals_biasadj": {
-        "mu": -0.91,
-        "p": 0.418
+        "mu": -0.78,
+        "p": 0.429
        }
       },
       "plus_all_missing": {
@@ -9143,7 +9224,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "5 of 22",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 1959,
+       "kind": "probably a gap"
       },
       {
        "pollster": "RedBox Research",
@@ -9154,6 +9236,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "1 of 21",
+       "votehub_polls_by_pollster_2026": 2,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -9165,6 +9248,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "18 of 28",
+       "votehub_polls_by_pollster_2026": 43,
        "kind": "probably a gap"
       },
       {
@@ -9176,7 +9260,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 14",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 25,
+       "kind": "probably a gap"
       },
       {
        "pollster": "YouGov",
@@ -9187,7 +9272,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "5 of 22",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 1959,
+       "kind": "probably a gap"
       },
       {
        "pollster": "New York Times / Siena University",
@@ -9197,7 +9283,8 @@
        "wiki_margin": 0.0,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "31 of 45",
+       "pollster_carried": "15 of 28",
+       "votehub_polls_by_pollster_2026": 71,
        "kind": "probably a gap"
       },
       {
@@ -9209,7 +9296,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 23",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 23,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Global Strategy Group",
@@ -9220,7 +9308,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 14",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 78,
+       "kind": "probably a gap"
       },
       {
        "pollster": "co/efficient",
@@ -9231,6 +9320,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "9 of 17",
+       "votehub_polls_by_pollster_2026": 41,
        "kind": "probably a gap"
       },
       {
@@ -9242,7 +9332,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 14",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 78,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Public Policy Polling",
@@ -9253,7 +9344,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "15 of 34",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 103,
+       "kind": "probably a gap"
       },
       {
        "pollster": "GBAO",
@@ -9264,7 +9356,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 14",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 25,
+       "kind": "probably a gap"
       }
      ],
      "votehub_only": [
@@ -9310,16 +9403,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": 3.13,
-        "p": 0.738
+        "mu": 2.4,
+        "p": 0.698
        },
        "polls_fundamentals": {
-        "mu": 3.19,
-        "p": 0.741
+        "mu": 2.45,
+        "p": 0.702
        },
        "polls_fundamentals_biasadj": {
-        "mu": 1.8,
-        "p": 0.645
+        "mu": 1.07,
+        "p": 0.593
        }
       },
       "plus_all_missing": {
@@ -9353,7 +9446,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 14",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 78,
+       "kind": "probably a gap"
       }
      ],
      "votehub_only": [],
@@ -9389,16 +9483,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": -21.01,
-        "p": null
+        "mu": -14.34,
+        "p": 0.067
        },
        "polls_fundamentals": {
-        "mu": -20.38,
-        "p": null
+        "mu": -14.15,
+        "p": 0.069
        },
        "polls_fundamentals_biasadj": {
-        "mu": -22.55,
-        "p": null
+        "mu": -16.52,
+        "p": 0.049
        }
       },
       "plus_all_missing": {
@@ -9432,6 +9526,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 1",
+       "votehub_polls_by_pollster_2026": 0,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -9443,6 +9538,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "7 of 10",
+       "votehub_polls_by_pollster_2026": 43,
        "kind": "probably a gap"
       },
       {
@@ -9454,6 +9550,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "7 of 10",
+       "votehub_polls_by_pollster_2026": 43,
        "kind": "probably a gap"
       },
       {
@@ -9465,7 +9562,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "15 of 34",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 103,
+       "kind": "probably a gap"
       }
      ],
      "votehub_only": [],
@@ -9501,16 +9599,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": -7.37,
-        "p": 0.171
+        "mu": -7.11,
+        "p": 0.161
        },
        "polls_fundamentals": {
-        "mu": -7.21,
-        "p": 0.175
+        "mu": -6.98,
+        "p": 0.165
        },
        "polls_fundamentals_biasadj": {
-        "mu": -9.11,
-        "p": 0.127
+        "mu": -8.86,
+        "p": 0.116
        }
       },
       "plus_all_missing": {
@@ -9544,6 +9642,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 24",
+       "votehub_polls_by_pollster_2026": 4,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -9555,7 +9654,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "22 of 29",
-       "kind": "probably a gap"
+       "votehub_polls_by_pollster_2026": 134,
+       "kind": "possibly lag"
       },
       {
        "pollster": "YouGov",
@@ -9566,7 +9666,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "5 of 22",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 1959,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Data for Progress",
@@ -9577,7 +9678,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "2 of 7",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 25,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Trafalgar Group",
@@ -9588,7 +9690,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 23",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 23,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Suffolk University",
@@ -9599,7 +9702,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 7",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 21,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Rasmussen Reports",
@@ -9610,6 +9714,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 24",
+       "votehub_polls_by_pollster_2026": 4,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -9621,7 +9726,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 23",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 23,
+       "kind": "probably a gap"
       },
       {
        "pollster": "CBS News / YouGov",
@@ -9632,7 +9738,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 2",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 1959,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Maine People's Resource Center",
@@ -9643,6 +9750,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 1",
+       "votehub_polls_by_pollster_2026": 4,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -9654,6 +9762,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "18 of 28",
+       "votehub_polls_by_pollster_2026": 43,
        "kind": "probably a gap"
       },
       {
@@ -9665,6 +9774,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 24",
+       "votehub_polls_by_pollster_2026": 4,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -9676,6 +9786,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "6 of 8",
+       "votehub_polls_by_pollster_2026": 64,
        "kind": "probably a gap"
       },
       {
@@ -9687,6 +9798,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 5",
+       "votehub_polls_by_pollster_2026": 1,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -9698,6 +9810,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "1 of 3",
+       "votehub_polls_by_pollster_2026": 7,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -9709,7 +9822,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "15 of 34",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 103,
+       "kind": "probably a gap"
       }
      ],
      "votehub_only": [
@@ -9728,12 +9842,14 @@
        "pollster": "The Washington Post/George Mason University School of Policy and Government",
        "wiki_pollster": "The Washington Post / SSPG",
        "end": "2026-10-05",
+       "wiki_end": "2026-10-05",
        "n": 800,
        "votehub_margin": 5.26,
        "closest_wiki_margin_diff": 1.1,
        "supplement": false,
        "blocklisted": "",
-       "extra_version": false
+       "extra_version": false,
+       "dates_differ": false
       }
      ],
      "what_if": {
@@ -9767,16 +9883,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": 4.19,
-        "p": 0.815
+        "mu": 3.94,
+        "p": 0.807
        },
        "polls_fundamentals": {
-        "mu": 4.23,
-        "p": 0.817
+        "mu": 3.98,
+        "p": 0.809
        },
        "polls_fundamentals_biasadj": {
-        "mu": 4.69,
-        "p": 0.839
+        "mu": 4.45,
+        "p": 0.833
        }
       },
       "plus_all_missing": {
@@ -9810,7 +9926,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 1",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 24,
+       "kind": "possibly lag"
       },
       {
        "pollster": "Emerson College",
@@ -9821,7 +9938,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "22 of 29",
-       "kind": "probably a gap"
+       "votehub_polls_by_pollster_2026": 134,
+       "kind": "possibly lag"
       },
       {
        "pollster": "Trafalgar Group",
@@ -9832,7 +9950,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 23",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 23,
+       "kind": "possibly lag"
       },
       {
        "pollster": "Concord Public Opinion Partners",
@@ -9843,7 +9962,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 8",
-       "kind": "probably a gap"
+       "votehub_polls_by_pollster_2026": 11,
+       "kind": "possibly lag"
       },
       {
        "pollster": "Research Co.",
@@ -9853,7 +9973,8 @@
        "wiki_margin": 2.13,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "3 of 16",
+       "pollster_carried": "0 of 9",
+       "votehub_polls_by_pollster_2026": 7,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -9865,6 +9986,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 24",
+       "votehub_polls_by_pollster_2026": 4,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -9876,7 +9998,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "2 of 7",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 25,
+       "kind": "probably a gap"
       },
       {
        "pollster": "RedBox Research",
@@ -9887,6 +10010,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "1 of 21",
+       "votehub_polls_by_pollster_2026": 2,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -9898,6 +10022,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 24",
+       "votehub_polls_by_pollster_2026": 4,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -9909,6 +10034,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "18 of 28",
+       "votehub_polls_by_pollster_2026": 43,
        "kind": "probably a gap"
       },
       {
@@ -9920,6 +10046,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "15 of 20",
+       "votehub_polls_by_pollster_2026": 101,
        "kind": "probably a gap"
       },
       {
@@ -9931,7 +10058,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "5 of 22",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 1959,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Marist University",
@@ -9942,6 +10070,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "7 of 10",
+       "votehub_polls_by_pollster_2026": 46,
        "kind": "probably a gap"
       },
       {
@@ -9953,6 +10082,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 7",
+       "votehub_polls_by_pollster_2026": 81,
        "kind": "probably a gap"
       },
       {
@@ -9964,7 +10094,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 14",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 25,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Torchlight Strategies",
@@ -9975,6 +10106,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 2",
+       "votehub_polls_by_pollster_2026": 0,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -9986,6 +10118,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "18 of 28",
+       "votehub_polls_by_pollster_2026": 43,
        "kind": "probably a gap"
       },
       {
@@ -9997,6 +10130,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "6 of 8",
+       "votehub_polls_by_pollster_2026": 64,
        "kind": "probably a gap"
       },
       {
@@ -10008,6 +10142,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "2 of 3",
+       "votehub_polls_by_pollster_2026": 15,
        "kind": "probably a gap"
       },
       {
@@ -10019,6 +10154,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 5",
+       "votehub_polls_by_pollster_2026": 1,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -10030,6 +10166,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 3",
+       "votehub_polls_by_pollster_2026": 0,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -10041,7 +10178,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "2 of 7",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 25,
+       "kind": "probably a gap"
       }
      ],
      "votehub_only": [],
@@ -10077,16 +10215,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": 4.73,
-        "p": 0.85
+        "mu": 4.4,
+        "p": 0.837
        },
        "polls_fundamentals": {
-        "mu": 4.77,
-        "p": 0.852
+        "mu": 4.44,
+        "p": 0.839
        },
        "polls_fundamentals_biasadj": {
-        "mu": 4.64,
-        "p": 0.846
+        "mu": 4.31,
+        "p": 0.832
        }
       },
       "plus_all_missing": {
@@ -10119,7 +10257,8 @@
        "wiki_margin": 5.49,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "3 of 16",
+       "pollster_carried": "0 of 9",
+       "votehub_polls_by_pollster_2026": 7,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -10131,7 +10270,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 4",
-       "kind": "probably a gap"
+       "votehub_polls_by_pollster_2026": 13,
+       "kind": "possibly lag"
       },
       {
        "pollster": "KSTP / SurveyUSA",
@@ -10142,6 +10282,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "2 of 3",
+       "votehub_polls_by_pollster_2026": 28,
        "kind": "probably a gap"
       },
       {
@@ -10152,7 +10293,8 @@
        "wiki_margin": 14.89,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "31 of 45",
+       "pollster_carried": "15 of 28",
+       "votehub_polls_by_pollster_2026": 71,
        "kind": "probably a gap"
       },
       {
@@ -10164,6 +10306,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 1",
+       "votehub_polls_by_pollster_2026": 9,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -10175,6 +10318,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 24",
+       "votehub_polls_by_pollster_2026": 4,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -10186,7 +10330,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 23",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 23,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Rasmussen Reports",
@@ -10197,6 +10342,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 24",
+       "votehub_polls_by_pollster_2026": 4,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -10208,7 +10354,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 1",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 288,
+       "kind": "probably a gap"
       },
       {
        "pollster": "InsiderAdvantage",
@@ -10219,6 +10366,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "18 of 28",
+       "votehub_polls_by_pollster_2026": 43,
        "kind": "probably a gap"
       },
       {
@@ -10230,6 +10378,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "9 of 17",
+       "votehub_polls_by_pollster_2026": 41,
        "kind": "probably a gap"
       },
       {
@@ -10241,6 +10390,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "1 of 2",
+       "votehub_polls_by_pollster_2026": 83,
        "kind": "probably a gap"
       },
       {
@@ -10252,6 +10402,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 1",
+       "votehub_polls_by_pollster_2026": 0,
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -10288,15 +10439,15 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": 6.28,
-        "p": 0.884
+        "mu": 6.14,
+        "p": 0.883
        },
        "polls_fundamentals": {
-        "mu": 6.33,
+        "mu": 6.19,
         "p": 0.885
        },
        "polls_fundamentals_biasadj": {
-        "mu": 6.6,
+        "mu": 6.47,
         "p": 0.893
        }
       },
@@ -10331,6 +10482,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "6 of 11",
+       "votehub_polls_by_pollster_2026": 41,
        "kind": "probably a gap"
       }
      ],
@@ -10420,6 +10572,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 7",
+       "votehub_polls_by_pollster_2026": 1,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -10431,6 +10584,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 8",
+       "votehub_polls_by_pollster_2026": 11,
        "kind": "probably a gap"
       },
       {
@@ -10442,6 +10596,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 1",
+       "votehub_polls_by_pollster_2026": 2,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -10453,6 +10608,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 2",
+       "votehub_polls_by_pollster_2026": 2,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -10464,6 +10620,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 7",
+       "votehub_polls_by_pollster_2026": 1,
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -10473,45 +10630,53 @@
        "pollster": "Tavern Research",
        "wiki_pollster": "Tavern Research",
        "end": "2026-06-19",
+       "wiki_end": "2026-06-19",
        "n": 400,
        "votehub_margin": -28.95,
        "closest_wiki_margin_diff": 1.72,
        "supplement": false,
        "blocklisted": "",
-       "extra_version": false
+       "extra_version": false,
+       "dates_differ": false
       },
       {
        "pollster": "Montana State University Billings",
        "wiki_pollster": "Montana State University Billings",
        "end": "2026-10-21",
+       "wiki_end": "2026-10-21",
        "n": 720,
        "votehub_margin": -7.14,
        "closest_wiki_margin_diff": 10.5,
        "supplement": false,
        "blocklisted": "",
-       "extra_version": false
+       "extra_version": false,
+       "dates_differ": false
       },
       {
        "pollster": "Quantus Insights",
        "wiki_pollster": "Quantus Insights",
        "end": "2026-10-18",
+       "wiki_end": "2026-10-18",
        "n": 686,
        "votehub_margin": -22.67,
        "closest_wiki_margin_diff": 12.72,
        "supplement": false,
        "blocklisted": "",
-       "extra_version": false
+       "extra_version": false,
+       "dates_differ": false
       },
       {
        "pollster": "Tavern Research",
        "wiki_pollster": "Tavern Research",
        "end": "2026-07-27",
+       "wiki_end": "2026-07-27",
        "n": 517,
        "votehub_margin": -38.03,
        "closest_wiki_margin_diff": 3.78,
        "supplement": false,
        "blocklisted": "",
-       "extra_version": true
+       "extra_version": true,
+       "dates_differ": false
       }
      ],
      "what_if": {
@@ -10588,7 +10753,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 5",
-       "kind": "probably a gap"
+       "votehub_polls_by_pollster_2026": 15,
+       "kind": "possibly lag"
       },
       {
        "pollster": "YouGov",
@@ -10599,7 +10765,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "5 of 22",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 1959,
+       "kind": "probably a gap"
       },
       {
        "pollster": "National Public Affairs",
@@ -10610,6 +10777,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 7",
+       "votehub_polls_by_pollster_2026": 19,
        "kind": "probably a gap"
       },
       {
@@ -10620,7 +10788,8 @@
        "wiki_margin": -6.52,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "31 of 45",
+       "pollster_carried": "15 of 28",
+       "votehub_polls_by_pollster_2026": 71,
        "kind": "probably a gap"
       },
       {
@@ -10632,7 +10801,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 14",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 25,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Concord Public Opinion Partners",
@@ -10643,6 +10813,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 8",
+       "votehub_polls_by_pollster_2026": 11,
        "kind": "probably a gap"
       },
       {
@@ -10654,7 +10825,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 19",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 42,
+       "kind": "probably a gap"
       },
       {
        "pollster": "YouGov",
@@ -10665,7 +10837,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "5 of 22",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 1959,
+       "kind": "probably a gap"
       },
       {
        "pollster": "co/efficient",
@@ -10676,6 +10849,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "9 of 17",
+       "votehub_polls_by_pollster_2026": 41,
        "kind": "probably a gap"
       },
       {
@@ -10687,6 +10861,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "6 of 7",
+       "votehub_polls_by_pollster_2026": 28,
        "kind": "probably a gap"
       },
       {
@@ -10698,7 +10873,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 19",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 42,
+       "kind": "probably a gap"
       },
       {
        "pollster": "GBAO",
@@ -10709,7 +10885,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 14",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 25,
+       "kind": "probably a gap"
       }
      ],
      "votehub_only": [],
@@ -10745,16 +10922,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": -2.71,
-        "p": 0.293
+        "mu": -2.15,
+        "p": 0.322
        },
        "polls_fundamentals": {
-        "mu": -2.65,
-        "p": 0.297
+        "mu": -2.1,
+        "p": 0.325
        },
        "polls_fundamentals_biasadj": {
-        "mu": -4.34,
-        "p": 0.199
+        "mu": -3.78,
+        "p": 0.214
        }
       },
       "plus_all_missing": {
@@ -10788,6 +10965,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 24",
+       "votehub_polls_by_pollster_2026": 4,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -10799,6 +10977,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 7",
+       "votehub_polls_by_pollster_2026": 19,
        "kind": "probably a gap"
       },
       {
@@ -10810,7 +10989,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "5 of 22",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 1959,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Rasmussen Reports",
@@ -10821,6 +11001,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 24",
+       "votehub_polls_by_pollster_2026": 4,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -10832,6 +11013,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 5",
+       "votehub_polls_by_pollster_2026": 16,
        "kind": "probably a gap"
       },
       {
@@ -10843,7 +11025,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 23",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 23,
+       "kind": "probably a gap"
       },
       {
        "pollster": "co/efficient",
@@ -10854,6 +11037,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "9 of 17",
+       "votehub_polls_by_pollster_2026": 41,
        "kind": "probably a gap"
       },
       {
@@ -10865,6 +11049,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 24",
+       "votehub_polls_by_pollster_2026": 4,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -10876,6 +11061,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "6 of 9",
+       "votehub_polls_by_pollster_2026": 36,
        "kind": "probably a gap"
       },
       {
@@ -10887,6 +11073,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 7",
+       "votehub_polls_by_pollster_2026": 1,
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -10923,16 +11110,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": 7.68,
-        "p": 0.922
+        "mu": 7.83,
+        "p": 0.926
        },
        "polls_fundamentals": {
-        "mu": 7.73,
-        "p": 0.923
+        "mu": 7.88,
+        "p": 0.927
        },
        "polls_fundamentals_biasadj": {
-        "mu": 7.86,
-        "p": 0.925
+        "mu": 8.01,
+        "p": 0.93
        }
       },
       "plus_all_missing": {
@@ -10965,7 +11152,8 @@
        "wiki_margin": 20.43,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "3 of 16",
+       "pollster_carried": "0 of 9",
+       "votehub_polls_by_pollster_2026": 7,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -10976,7 +11164,8 @@
        "wiki_margin": 17.78,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "3 of 16",
+       "pollster_carried": "1 of 2",
+       "votehub_polls_by_pollster_2026": 3,
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -11056,7 +11245,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "5 of 22",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 1959,
+       "kind": "probably a gap"
       },
       {
        "pollster": "RedBox Research",
@@ -11067,6 +11257,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "1 of 21",
+       "votehub_polls_by_pollster_2026": 2,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -11078,7 +11269,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 23",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 23,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Quantus Insights",
@@ -11089,6 +11281,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "15 of 20",
+       "votehub_polls_by_pollster_2026": 101,
        "kind": "probably a gap"
       },
       {
@@ -11100,6 +11293,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "6 of 9",
+       "votehub_polls_by_pollster_2026": 42,
        "kind": "probably a gap"
       },
       {
@@ -11111,6 +11305,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 1",
+       "votehub_polls_by_pollster_2026": 1,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -11122,7 +11317,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "5 of 22",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 1959,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Catawba College / YouGov",
@@ -11133,7 +11329,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 1",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 1959,
+       "kind": "probably a gap"
       },
       {
        "pollster": "The Trafalgar Group",
@@ -11144,40 +11341,11 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 23",
-       "kind": "probably VoteHub's choice"
-      },
-      {
-       "pollster": "Elon University / YouGov",
-       "marker": "",
-       "end": "2026-07-31",
-       "n": 466,
-       "wiki_margin": 11.58,
-       "cause": "not in VoteHub",
-       "detail": "",
-       "pollster_carried": "2 of 3",
+       "votehub_polls_by_pollster_2026": 23,
        "kind": "probably a gap"
       }
      ],
-     "votehub_only": [
-      {
-       "pollster": "Elon University/YouGov",
-       "end": "2026-07-23",
-       "n": 717,
-       "votehub_margin": 18.6,
-       "blocklisted": "",
-       "supplement": false,
-       "verifiable": true
-      },
-      {
-       "pollster": "Elon University/YouGov",
-       "end": "2026-07-23",
-       "n": 466,
-       "votehub_margin": 11.58,
-       "blocklisted": "",
-       "supplement": false,
-       "verifiable": true
-      }
-     ],
+     "votehub_only": [],
      "number_mismatch": [],
      "what_if": {
       "as_frozen": {
@@ -11210,30 +11378,30 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": 10.72,
-        "p": 0.969
+        "mu": 10.78,
+        "p": 0.971
        },
        "polls_fundamentals": {
-        "mu": 10.76,
-        "p": 0.969
+        "mu": 10.82,
+        "p": 0.971
        },
        "polls_fundamentals_biasadj": {
-        "mu": 10.46,
-        "p": 0.967
+        "mu": 10.52,
+        "p": 0.969
        }
       },
       "plus_all_missing": {
        "polls_only": {
-        "mu": 10.12,
+        "mu": 10.11,
         "p": 0.966
        },
        "polls_fundamentals": {
-        "mu": 10.17,
+        "mu": 10.15,
         "p": 0.966
        },
        "polls_fundamentals_biasadj": {
-        "mu": 9.87,
-        "p": 0.964
+        "mu": 9.85,
+        "p": 0.963
        }
       }
      }
@@ -11253,7 +11421,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "22 of 29",
-       "kind": "probably a gap"
+       "votehub_polls_by_pollster_2026": 134,
+       "kind": "possibly lag"
       },
       {
        "pollster": "Trafalgar Group",
@@ -11264,7 +11433,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 23",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 23,
+       "kind": "possibly lag"
       },
       {
        "pollster": "Research Co.",
@@ -11274,7 +11444,8 @@
        "wiki_margin": 1.12,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "3 of 16",
+       "pollster_carried": "0 of 9",
+       "votehub_polls_by_pollster_2026": 7,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -11286,6 +11457,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 24",
+       "votehub_polls_by_pollster_2026": 4,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -11297,7 +11469,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "8 of 11",
-       "kind": "probably a gap"
+       "votehub_polls_by_pollster_2026": 32,
+       "kind": "possibly lag"
       },
       {
        "pollster": "InsiderAdvantage",
@@ -11308,6 +11481,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "18 of 28",
+       "votehub_polls_by_pollster_2026": 43,
        "kind": "probably a gap"
       },
       {
@@ -11319,7 +11493,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "5 of 22",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 1959,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Suffolk University",
@@ -11330,7 +11505,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 7",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 21,
+       "kind": "probably a gap"
       },
       {
        "pollster": "RedBox Research",
@@ -11341,6 +11517,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "1 of 21",
+       "votehub_polls_by_pollster_2026": 2,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -11352,6 +11529,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "8 of 11",
+       "votehub_polls_by_pollster_2026": 32,
        "kind": "probably a gap"
       },
       {
@@ -11363,6 +11541,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 24",
+       "votehub_polls_by_pollster_2026": 4,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -11373,7 +11552,8 @@
        "wiki_margin": 3.16,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "31 of 45",
+       "pollster_carried": "15 of 28",
+       "votehub_polls_by_pollster_2026": 71,
        "kind": "probably a gap"
       },
       {
@@ -11385,7 +11565,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "5 of 22",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 1959,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Suffolk University",
@@ -11396,7 +11577,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 7",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 21,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Rasmussen Reports",
@@ -11407,6 +11589,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 24",
+       "votehub_polls_by_pollster_2026": 4,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -11418,6 +11601,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "1 of 2",
+       "votehub_polls_by_pollster_2026": 1959,
        "kind": "probably a gap"
       },
       {
@@ -11429,6 +11613,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 5",
+       "votehub_polls_by_pollster_2026": 1,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -11440,6 +11625,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "2 of 9",
+       "votehub_polls_by_pollster_2026": 5,
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -11486,16 +11672,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": 3.2,
-        "p": 0.763
+        "mu": 3.14,
+        "p": 0.761
        },
        "polls_fundamentals": {
-        "mu": 3.24,
-        "p": 0.766
+        "mu": 3.18,
+        "p": 0.764
        },
        "polls_fundamentals_biasadj": {
-        "mu": 2.33,
-        "p": 0.702
+        "mu": 2.27,
+        "p": 0.7
        }
       },
       "plus_all_missing": {
@@ -11529,6 +11715,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 1",
+       "votehub_polls_by_pollster_2026": 0,
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -11608,6 +11795,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "22 of 29",
+       "votehub_polls_by_pollster_2026": 134,
        "kind": "probably a gap"
       }
      ],
@@ -11617,12 +11805,14 @@
        "pollster": "University of New Hampshire",
        "wiki_pollster": "University of New Hampshire",
        "end": "2026-06-23",
+       "wiki_end": "2026-06-23",
        "n": 664,
        "votehub_margin": 20.93,
        "closest_wiki_margin_diff": 1.39,
        "supplement": false,
        "blocklisted": "",
-       "extra_version": false
+       "extra_version": false,
+       "dates_differ": false
       }
      ],
      "what_if": {
@@ -11699,7 +11889,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 23",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 23,
+       "kind": "possibly lag"
       },
       {
        "pollster": "Rasmussen Reports",
@@ -11710,6 +11901,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 24",
+       "votehub_polls_by_pollster_2026": 4,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -11721,6 +11913,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 1",
+       "votehub_polls_by_pollster_2026": 0,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -11731,7 +11924,8 @@
        "wiki_margin": 0.0,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "31 of 45",
+       "pollster_carried": "15 of 28",
+       "votehub_polls_by_pollster_2026": 71,
        "kind": "probably a gap"
       },
       {
@@ -11743,6 +11937,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 1",
+       "votehub_polls_by_pollster_2026": 0,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -11754,7 +11949,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 19",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 42,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Trafalgar Group",
@@ -11765,7 +11961,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 23",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 23,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Rasmussen Reports",
@@ -11776,6 +11973,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 24",
+       "votehub_polls_by_pollster_2026": 4,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -11787,7 +11985,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 23",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 23,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Rasmussen Reports",
@@ -11798,6 +11997,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 24",
+       "votehub_polls_by_pollster_2026": 4,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -11809,6 +12009,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 5",
+       "votehub_polls_by_pollster_2026": 1,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -11820,7 +12021,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 19",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 42,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Impact Research",
@@ -11831,7 +12033,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 19",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 42,
+       "kind": "probably a gap"
       }
      ],
      "votehub_only": [],
@@ -11867,16 +12070,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": -2.03,
-        "p": 0.353
+        "mu": -1.59,
+        "p": 0.37
        },
        "polls_fundamentals": {
-        "mu": -1.96,
-        "p": 0.358
+        "mu": -1.53,
+        "p": 0.374
        },
        "polls_fundamentals_biasadj": {
-        "mu": -3.37,
-        "p": 0.269
+        "mu": -2.92,
+        "p": 0.274
        }
       },
       "plus_all_missing": {
@@ -11910,6 +12113,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 8",
+       "votehub_polls_by_pollster_2026": 11,
        "kind": "probably a gap"
       },
       {
@@ -11921,6 +12125,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 1",
+       "votehub_polls_by_pollster_2026": 7,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -11932,7 +12137,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "15 of 34",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 103,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Lake Research Partners",
@@ -11943,6 +12149,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "2 of 5",
+       "votehub_polls_by_pollster_2026": 9,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -11954,7 +12161,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 19",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 42,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Public Opinion Strategies",
@@ -11964,7 +12172,8 @@
        "wiki_margin": -25.84,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "3 of 16",
+       "pollster_carried": "0 of 2",
+       "votehub_polls_by_pollster_2026": 5,
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -12001,16 +12210,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": -14.01,
-        "p": 0.027
+        "mu": -12.34,
+        "p": 0.034
        },
        "polls_fundamentals": {
-        "mu": -13.93,
-        "p": 0.027
+        "mu": -12.27,
+        "p": 0.034
        },
        "polls_fundamentals_biasadj": {
-        "mu": -16.36,
-        "p": 0.017
+        "mu": -14.7,
+        "p": 0.021
        }
       },
       "plus_all_missing": {
@@ -12044,7 +12253,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 5",
-       "kind": "probably a gap"
+       "votehub_polls_by_pollster_2026": 23,
+       "kind": "possibly lag"
       }
      ],
      "votehub_only": [],
@@ -12122,7 +12332,8 @@
        "wiki_margin": 3.16,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "3 of 16",
+       "pollster_carried": "0 of 9",
+       "votehub_polls_by_pollster_2026": 7,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -12134,7 +12345,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 23",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 23,
+       "kind": "possibly lag"
       },
       {
        "pollster": "Emerson College",
@@ -12145,7 +12357,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "22 of 29",
-       "kind": "probably a gap"
+       "votehub_polls_by_pollster_2026": 134,
+       "kind": "possibly lag"
       },
       {
        "pollster": "Kreate Strategies",
@@ -12156,6 +12369,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 1",
+       "votehub_polls_by_pollster_2026": 4,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -12167,7 +12381,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "5 of 22",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 1959,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Data for Progress",
@@ -12178,7 +12393,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "2 of 7",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 25,
+       "kind": "probably a gap"
       },
       {
        "pollster": "YouGov Blue",
@@ -12189,7 +12405,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "5 of 22",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 1959,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Rasmussen Reports",
@@ -12200,6 +12417,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 24",
+       "votehub_polls_by_pollster_2026": 4,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -12211,7 +12429,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 2",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 1959,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Cor Strategies",
@@ -12222,6 +12441,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 1",
+       "votehub_polls_by_pollster_2026": 5,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -12233,7 +12453,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 2",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 13,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Marist University",
@@ -12244,6 +12465,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "7 of 10",
+       "votehub_polls_by_pollster_2026": 46,
        "kind": "probably a gap"
       },
       {
@@ -12255,7 +12477,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 23",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 23,
+       "kind": "probably a gap"
       },
       {
        "pollster": "YouGov",
@@ -12266,7 +12489,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "5 of 22",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 1959,
+       "kind": "probably a gap"
       },
       {
        "pollster": "University of Texas /Texas Politics Project",
@@ -12277,6 +12501,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "10 of 11",
+       "votehub_polls_by_pollster_2026": 41,
        "kind": "probably a gap"
       },
       {
@@ -12287,7 +12512,8 @@
        "wiki_margin": 6.25,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "31 of 45",
+       "pollster_carried": "15 of 28",
+       "votehub_polls_by_pollster_2026": 71,
        "kind": "probably a gap"
       },
       {
@@ -12299,6 +12525,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 24",
+       "votehub_polls_by_pollster_2026": 4,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -12310,6 +12537,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 7",
+       "votehub_polls_by_pollster_2026": 81,
        "kind": "probably a gap"
       },
       {
@@ -12321,6 +12549,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 1",
+       "votehub_polls_by_pollster_2026": 6,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -12332,6 +12561,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "7 of 10",
+       "votehub_polls_by_pollster_2026": 46,
        "kind": "probably a gap"
       },
       {
@@ -12343,7 +12573,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 23",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 23,
+       "kind": "probably a gap"
       },
       {
        "pollster": "SoCal Strategies",
@@ -12354,6 +12585,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 3",
+       "votehub_polls_by_pollster_2026": 0,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -12365,7 +12597,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "1 of 4",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 24,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Overton Insights",
@@ -12376,6 +12609,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 1",
+       "votehub_polls_by_pollster_2026": 7,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -12387,6 +12621,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 3",
+       "votehub_polls_by_pollster_2026": 0,
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -12406,12 +12641,14 @@
        "pollster": "Slingshot Strategies",
        "wiki_pollster": "Texas Public Opinion Research",
        "end": "2026-09-22",
+       "wiki_end": "2026-09-22",
        "n": 1007,
        "votehub_margin": 4.26,
        "closest_wiki_margin_diff": 1.12,
        "supplement": false,
        "blocklisted": "",
-       "extra_version": false
+       "extra_version": false,
+       "dates_differ": false
       }
      ],
      "what_if": {
@@ -12445,16 +12682,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": 2.89,
-        "p": 0.748
+        "mu": 2.88,
+        "p": 0.75
        },
        "polls_fundamentals": {
-        "mu": 2.93,
-        "p": 0.75
+        "mu": 2.92,
+        "p": 0.752
        },
        "polls_fundamentals_biasadj": {
         "mu": 1.87,
-        "p": 0.67
+        "p": 0.671
        }
       },
       "plus_all_missing": {
@@ -12485,12 +12722,14 @@
        "pollster": "The Public Sentiment Institute",
        "wiki_pollster": "The Public Sentiment Institute",
        "end": "2026-06-16",
+       "wiki_end": "2026-06-16",
        "n": 996,
        "votehub_margin": 20.0,
        "closest_wiki_margin_diff": 1.43,
        "supplement": false,
        "blocklisted": "",
-       "extra_version": false
+       "extra_version": false,
+       "dates_differ": false
       }
      ],
      "what_if": {
@@ -12564,9 +12803,14 @@
     "wikipedia_polls": 205,
     "matched_wikipedia_polls": 82,
     "missing": 122,
-    "missing_probable_gaps": 30,
+    "missing_probable_gaps": 59,
+    "missing_possible_lag": 2,
+    "missing_votehub_choice": 58,
+    "missing_our_matching": 3,
+    "same_poll_dates_differ": 0,
     "missing_by_cause": {
-     "not in VoteHub": 122
+     "not in VoteHub": 119,
+     "in VoteHub under another race label, not used by the forecast": 3
     },
     "duplicates_on_wikipedia": 1,
     "votehub_only": 13,
@@ -12623,11 +12867,6 @@
       "on_wikipedia": 6
      },
      {
-      "pollster": "New York Times / The Philadelphia Inquirer / Siena University",
-      "carried": 1,
-      "on_wikipedia": 6
-     },
-     {
       "pollster": "co/efficient",
       "carried": 1,
       "on_wikipedia": 5
@@ -12653,9 +12892,9 @@
       "on_wikipedia": 4
      },
      {
-      "pollster": "Research & Polling",
-      "carried": 1,
-      "on_wikipedia": 3
+      "pollster": "New York Times / The Philadelphia Inquirer / Siena University",
+      "carried": 0,
+      "on_wikipedia": 4
      },
      {
       "pollster": "Change Research",
@@ -12694,6 +12933,11 @@
      },
      {
       "pollster": "Franklin & Marshall College",
+      "carried": 1,
+      "on_wikipedia": 2
+     },
+     {
+      "pollster": "University of New Hampshire",
       "carried": 1,
       "on_wikipedia": 2
      },
@@ -12783,6 +13027,11 @@
       "on_wikipedia": 1
      },
      {
+      "pollster": "J.L. Partners",
+      "carried": 1,
+      "on_wikipedia": 1
+     },
+     {
       "pollster": "Keating Research",
       "carried": 0,
       "on_wikipedia": 1
@@ -12818,8 +13067,18 @@
       "on_wikipedia": 1
      },
      {
+      "pollster": "Public Opinion Strategies",
+      "carried": 0,
+      "on_wikipedia": 1
+     },
+     {
       "pollster": "Remington Research Group",
       "carried": 1,
+      "on_wikipedia": 1
+     },
+     {
+      "pollster": "Research & Polling",
+      "carried": 0,
       "on_wikipedia": 1
      },
      {
@@ -12895,6 +13154,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "2 of 9",
+       "votehub_polls_by_pollster_2026": 5,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -12906,6 +13166,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 13",
+       "votehub_polls_by_pollster_2026": 6,
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -13072,7 +13333,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 14",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 25,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Peak Insights",
@@ -13083,6 +13345,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 7",
+       "votehub_polls_by_pollster_2026": 1,
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -13119,16 +13382,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": -4.77,
-        "p": 0.178
+        "mu": -5.43,
+        "p": 0.147
        },
        "polls_fundamentals": {
-        "mu": -4.47,
-        "p": 0.18
+        "mu": -5.15,
+        "p": 0.147
        },
        "polls_fundamentals_biasadj": {
-        "mu": -6.52,
-        "p": 0.098
+        "mu": -7.22,
+        "p": 0.078
        }
       },
       "plus_all_missing": {
@@ -13325,6 +13588,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 2",
+       "votehub_polls_by_pollster_2026": 1,
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -13404,7 +13668,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "15 of 34",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 103,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Global Strategy Group",
@@ -13415,7 +13680,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 14",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 78,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Global Strategy Group",
@@ -13426,7 +13692,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 14",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 78,
+       "kind": "probably a gap"
       }
      ],
      "votehub_only": [],
@@ -13462,16 +13729,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": -5.79,
-        "p": null
+        "mu": -2.93,
+        "p": 0.274
        },
        "polls_fundamentals": {
-        "mu": -5.3,
-        "p": null
+        "mu": -2.65,
+        "p": 0.283
        },
        "polls_fundamentals_biasadj": {
-        "mu": -7.0,
-        "p": null
+        "mu": -4.72,
+        "p": 0.157
        }
       },
       "plus_all_missing": {
@@ -13505,7 +13772,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 2",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 63,
+       "kind": "probably a gap"
       }
      ],
      "votehub_only": [],
@@ -13541,16 +13809,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": 3.28,
-        "p": null
+        "mu": 1.58,
+        "p": 0.627
        },
        "polls_fundamentals": {
-        "mu": 3.77,
-        "p": null
+        "mu": 1.87,
+        "p": 0.656
        },
        "polls_fundamentals_biasadj": {
-        "mu": 2.07,
-        "p": null
+        "mu": -0.18,
+        "p": 0.484
        }
       },
       "plus_all_missing": {
@@ -13581,10 +13849,11 @@
        "end": "2026-10-19",
        "n": 414,
        "wiki_margin": 0.0,
-       "cause": "not in VoteHub",
-       "detail": "",
+       "cause": "in VoteHub under another race label, not used by the forecast",
+       "detail": "VoteHub 2026 FL-07, end 2026-10-19",
        "pollster_carried": "4 of 13",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 6,
+       "kind": "our matching"
       }
      ],
      "votehub_only": [],
@@ -13620,16 +13889,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": -1.29,
-        "p": null
+        "mu": -0.76,
+        "p": 0.438
        },
        "polls_fundamentals": {
-        "mu": -0.79,
-        "p": null
+        "mu": -0.47,
+        "p": 0.459
        },
        "polls_fundamentals_biasadj": {
-        "mu": -2.49,
-        "p": null
+        "mu": -2.52,
+        "p": 0.29
        }
       },
       "plus_all_missing": {
@@ -13663,6 +13932,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 1",
+       "votehub_polls_by_pollster_2026": 0,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -13674,7 +13944,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "15 of 34",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 103,
+       "kind": "probably a gap"
       }
      ],
      "votehub_only": [],
@@ -13710,16 +13981,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": -11.24,
-        "p": null
+        "mu": -11.61,
+        "p": 0.032
        },
        "polls_fundamentals": {
-        "mu": -10.74,
-        "p": null
+        "mu": -11.32,
+        "p": 0.03
        },
        "polls_fundamentals_biasadj": {
-        "mu": -12.44,
-        "p": null
+        "mu": -13.37,
+        "p": 0.017
        }
       },
       "plus_all_missing": {
@@ -13753,6 +14024,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 3",
+       "votehub_polls_by_pollster_2026": 0,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -13764,6 +14036,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 3",
+       "votehub_polls_by_pollster_2026": 0,
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -13843,7 +14116,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "1 of 2",
-       "kind": "probably a gap"
+       "votehub_polls_by_pollster_2026": 6,
+       "kind": "probably VoteHub's choice"
       }
      ],
      "votehub_only": [],
@@ -13879,16 +14153,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": -4.65,
-        "p": 0.183
+        "mu": -4.91,
+        "p": null
        },
        "polls_fundamentals": {
-        "mu": -4.35,
-        "p": 0.186
+        "mu": -4.42,
+        "p": null
        },
        "polls_fundamentals_biasadj": {
-        "mu": -6.4,
-        "p": 0.101
+        "mu": -6.12,
+        "p": null
        }
       },
       "plus_all_missing": {
@@ -13922,6 +14196,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "1 of 21",
+       "votehub_polls_by_pollster_2026": 2,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -13933,6 +14208,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "6 of 9",
+       "votehub_polls_by_pollster_2026": 36,
        "kind": "probably a gap"
       },
       {
@@ -13944,6 +14220,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 8",
+       "votehub_polls_by_pollster_2026": 10,
        "kind": "probably a gap"
       }
      ],
@@ -14033,7 +14310,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "2 of 4",
-       "kind": "probably a gap"
+       "votehub_polls_by_pollster_2026": 4,
+       "kind": "probably VoteHub's choice"
       }
      ],
      "votehub_only": [],
@@ -14069,16 +14347,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": 5.75,
-        "p": 0.864
+        "mu": 5.22,
+        "p": 0.842
        },
        "polls_fundamentals": {
-        "mu": 6.03,
-        "p": 0.884
+        "mu": 5.52,
+        "p": 0.864
        },
        "polls_fundamentals_biasadj": {
-        "mu": 3.96,
-        "p": 0.804
+        "mu": 3.47,
+        "p": 0.772
        }
       },
       "plus_all_missing": {
@@ -14112,6 +14390,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 3",
+       "votehub_polls_by_pollster_2026": 0,
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -14191,7 +14470,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "1 of 2",
-       "kind": "probably a gap"
+       "votehub_polls_by_pollster_2026": 3,
+       "kind": "probably VoteHub's choice"
       }
      ],
      "votehub_only": [],
@@ -14227,16 +14507,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": -12.46,
-        "p": 0.027
+        "mu": -9.42,
+        "p": null
        },
        "polls_fundamentals": {
-        "mu": -12.17,
-        "p": 0.025
+        "mu": -8.93,
+        "p": null
        },
        "polls_fundamentals_biasadj": {
-        "mu": -14.21,
-        "p": 0.014
+        "mu": -10.63,
+        "p": null
        }
       },
       "plus_all_missing": {
@@ -14270,6 +14550,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "2 of 9",
+       "votehub_polls_by_pollster_2026": 5,
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -14349,7 +14630,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "15 of 34",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 103,
+       "kind": "probably a gap"
       },
       {
        "pollster": "National Research Inc.",
@@ -14360,6 +14642,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 7",
+       "votehub_polls_by_pollster_2026": 17,
        "kind": "probably a gap"
       }
      ],
@@ -14396,16 +14679,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": 3.92,
-        "p": 0.781
+        "mu": 4.36,
+        "p": 0.806
        },
        "polls_fundamentals": {
-        "mu": 4.22,
-        "p": 0.808
+        "mu": 4.65,
+        "p": 0.831
        },
        "polls_fundamentals_biasadj": {
-        "mu": 2.16,
-        "p": 0.684
+        "mu": 2.58,
+        "p": 0.717
        }
       },
       "plus_all_missing": {
@@ -14439,6 +14722,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 1",
+       "votehub_polls_by_pollster_2026": 1,
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -14518,6 +14802,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 2",
+       "votehub_polls_by_pollster_2026": 1,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -14529,6 +14814,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 2",
+       "votehub_polls_by_pollster_2026": 1,
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -14608,6 +14894,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 1",
+       "votehub_polls_by_pollster_2026": 7,
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -14687,7 +14974,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 19",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 42,
+       "kind": "probably a gap"
       }
      ],
      "votehub_only": [],
@@ -14723,16 +15011,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": -8.14,
+        "mu": -8.06,
         "p": 0.073
        },
        "polls_fundamentals": {
-        "mu": -7.86,
-        "p": 0.07
+        "mu": -7.78,
+        "p": 0.071
        },
        "polls_fundamentals_biasadj": {
-        "mu": -9.93,
-        "p": 0.037
+        "mu": -9.85,
+        "p": 0.038
        }
       },
       "plus_all_missing": {
@@ -14766,6 +15054,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 1",
+       "votehub_polls_by_pollster_2026": 0,
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -14845,6 +15134,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 13",
+       "votehub_polls_by_pollster_2026": 6,
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -14924,6 +15214,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 13",
+       "votehub_polls_by_pollster_2026": 6,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -14932,10 +15223,11 @@
        "end": "2026-10-05",
        "n": 524,
        "wiki_margin": 10.59,
-       "cause": "not in VoteHub",
-       "detail": "",
+       "cause": "in VoteHub under another race label, not used by the forecast",
+       "detail": "VoteHub 2026 KY-06, end 2026-10-05",
        "pollster_carried": "6 of 11",
-       "kind": "probably a gap"
+       "votehub_polls_by_pollster_2026": 41,
+       "kind": "our matching"
       },
       {
        "pollster": "GQR",
@@ -14946,6 +15238,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 8",
+       "votehub_polls_by_pollster_2026": 10,
        "kind": "probably a gap"
       },
       {
@@ -14957,6 +15250,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "2 of 5",
+       "votehub_polls_by_pollster_2026": 9,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -14968,6 +15262,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 13",
+       "votehub_polls_by_pollster_2026": 6,
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -15047,6 +15342,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "2 of 9",
+       "votehub_polls_by_pollster_2026": 5,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -15058,6 +15354,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "2 of 9",
+       "votehub_polls_by_pollster_2026": 5,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -15068,7 +15365,8 @@
        "wiki_margin": 6.25,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "31 of 45",
+       "pollster_carried": "16 of 17",
+       "votehub_polls_by_pollster_2026": 77,
        "kind": "probably a gap"
       },
       {
@@ -15080,7 +15378,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 19",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 42,
+       "kind": "probably a gap"
       },
       {
        "pollster": "DCCC Targeting Team",
@@ -15091,6 +15390,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 13",
+       "votehub_polls_by_pollster_2026": 8,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -15102,6 +15402,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "2 of 9",
+       "votehub_polls_by_pollster_2026": 5,
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -15148,16 +15449,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": -0.1,
-        "p": 0.492
+        "mu": -0.16,
+        "p": 0.486
        },
        "polls_fundamentals": {
-        "mu": 0.2,
-        "p": 0.517
+        "mu": 0.12,
+        "p": 0.51
        },
        "polls_fundamentals_biasadj": {
-        "mu": -1.85,
-        "p": 0.341
+        "mu": -1.95,
+        "p": 0.33
        }
       },
       "plus_all_missing": {
@@ -15191,6 +15492,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "1 of 3",
+       "votehub_polls_by_pollster_2026": 7,
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -15270,6 +15572,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "1 of 21",
+       "votehub_polls_by_pollster_2026": 2,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -15281,7 +15584,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 14",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 25,
+       "kind": "probably a gap"
       }
      ],
      "votehub_only": [],
@@ -15317,16 +15621,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": -2.16,
-        "p": null
+        "mu": -1.34,
+        "p": 0.391
        },
        "polls_fundamentals": {
-        "mu": -1.67,
-        "p": null
+        "mu": -1.05,
+        "p": 0.41
        },
        "polls_fundamentals_biasadj": {
-        "mu": -3.37,
-        "p": null
+        "mu": -3.1,
+        "p": 0.251
        }
       },
       "plus_all_missing": {
@@ -15360,6 +15664,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "1 of 21",
+       "votehub_polls_by_pollster_2026": 2,
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -15439,7 +15744,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 19",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 42,
+       "kind": "probably a gap"
       }
      ],
      "votehub_only": [],
@@ -15475,16 +15781,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": 13.23,
-        "p": null
+        "mu": 12.66,
+        "p": 0.974
        },
        "polls_fundamentals": {
-        "mu": 13.73,
-        "p": null
+        "mu": 12.95,
+        "p": 0.979
        },
        "polls_fundamentals_biasadj": {
-        "mu": 12.02,
-        "p": null
+        "mu": 10.9,
+        "p": 0.969
        }
       },
       "plus_all_missing": {
@@ -15518,7 +15824,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "15 of 34",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 103,
+       "kind": "probably a gap"
       }
      ],
      "votehub_only": [],
@@ -15554,16 +15861,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": -9.42,
-        "p": null
+        "mu": -8.56,
+        "p": 0.068
        },
        "polls_fundamentals": {
-        "mu": -8.93,
-        "p": null
+        "mu": -8.26,
+        "p": 0.065
        },
        "polls_fundamentals_biasadj": {
-        "mu": -10.63,
-        "p": null
+        "mu": -10.31,
+        "p": 0.036
        }
       },
       "plus_all_missing": {
@@ -15597,7 +15904,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "22 of 29",
-       "kind": "probably a gap"
+       "votehub_polls_by_pollster_2026": 134,
+       "kind": "possibly lag"
       }
      ],
      "votehub_only": [],
@@ -15676,7 +15984,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "22 of 29",
-       "kind": "probably a gap"
+       "votehub_polls_by_pollster_2026": 134,
+       "kind": "possibly lag"
       },
       {
        "pollster": "RedBox Research",
@@ -15687,6 +15996,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "1 of 21",
+       "votehub_polls_by_pollster_2026": 2,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -15698,7 +16008,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 19",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 42,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Public Policy Polling",
@@ -15709,7 +16020,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "15 of 34",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 103,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Rutgers University Eagleton Institute of Politics",
@@ -15720,6 +16032,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 2",
+       "votehub_polls_by_pollster_2026": 8,
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -15756,16 +16069,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": 0.91,
-        "p": 0.575
+        "mu": 0.81,
+        "p": 0.567
        },
        "polls_fundamentals": {
-        "mu": 1.19,
-        "p": 0.603
+        "mu": 1.08,
+        "p": 0.595
        },
        "polls_fundamentals_biasadj": {
-        "mu": -0.87,
-        "p": 0.421
+        "mu": -0.99,
+        "p": 0.41
        }
       },
       "plus_all_missing": {
@@ -15799,7 +16112,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 14",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 25,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Strategies 360",
@@ -15810,6 +16124,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 1",
+       "votehub_polls_by_pollster_2026": 0,
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -15856,16 +16171,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": -4.32,
-        "p": 0.199
+        "mu": -3.71,
+        "p": 0.228
        },
        "polls_fundamentals": {
-        "mu": -4.02,
-        "p": 0.203
+        "mu": -3.43,
+        "p": 0.233
        },
        "polls_fundamentals_biasadj": {
-        "mu": -6.07,
-        "p": 0.111
+        "mu": -5.5,
+        "p": 0.127
        }
       },
       "plus_all_missing": {
@@ -15899,6 +16214,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "1 of 21",
+       "votehub_polls_by_pollster_2026": 2,
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -16055,6 +16371,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 1",
+       "votehub_polls_by_pollster_2026": 1,
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -16133,7 +16450,8 @@
        "wiki_margin": 4.35,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "3 of 16",
+       "pollster_carried": "0 of 1",
+       "votehub_polls_by_pollster_2026": 0,
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -16213,6 +16531,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "1 of 21",
+       "votehub_polls_by_pollster_2026": 2,
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -16292,7 +16611,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "15 of 34",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 103,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Global Strategy Group",
@@ -16303,7 +16623,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 14",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 78,
+       "kind": "probably a gap"
       }
      ],
      "votehub_only": [],
@@ -16339,16 +16660,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": 15.92,
-        "p": null
+        "mu": 16.38,
+        "p": 0.989
        },
        "polls_fundamentals": {
-        "mu": 16.42,
-        "p": null
+        "mu": 16.67,
+        "p": 0.991
        },
        "polls_fundamentals_biasadj": {
-        "mu": 14.72,
-        "p": null
+        "mu": 14.6,
+        "p": 0.988
        }
       },
       "plus_all_missing": {
@@ -16382,7 +16703,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 19",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 42,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Public Policy Polling",
@@ -16393,7 +16715,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "15 of 34",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 103,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Impact Research",
@@ -16404,7 +16727,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 19",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 42,
+       "kind": "probably a gap"
       }
      ],
      "votehub_only": [],
@@ -16413,12 +16737,14 @@
        "pollster": "J.L. Partners",
        "wiki_pollster": "J.L. Partners",
        "end": "2026-08-17",
+       "wiki_end": "2026-08-17",
        "n": 500,
        "votehub_margin": -13.98,
        "closest_wiki_margin_diff": 2.87,
        "supplement": false,
        "blocklisted": "",
-       "extra_version": false
+       "extra_version": false,
+       "dates_differ": false
       }
      ],
      "what_if": {
@@ -16452,16 +16778,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": -6.86,
-        "p": 0.103
+        "mu": -7.06,
+        "p": 0.095
        },
        "polls_fundamentals": {
-        "mu": -6.57,
-        "p": 0.102
+        "mu": -6.78,
+        "p": 0.092
        },
        "polls_fundamentals_biasadj": {
-        "mu": -8.62,
-        "p": 0.055
+        "mu": -8.86,
+        "p": 0.049
        }
       },
       "plus_all_missing": {
@@ -16495,7 +16821,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "15 of 34",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 103,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Cygnal",
@@ -16506,6 +16833,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 5",
+       "votehub_polls_by_pollster_2026": 65,
        "kind": "probably a gap"
       }
      ],
@@ -16542,15 +16870,15 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": -18.14,
+        "mu": -17.81,
         "p": 0.009
        },
        "polls_fundamentals": {
-        "mu": -17.84,
+        "mu": -17.53,
         "p": 0.008
        },
        "polls_fundamentals_biasadj": {
-        "mu": -19.89,
+        "mu": -19.6,
         "p": 0.005
        }
       },
@@ -16585,6 +16913,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "1 of 21",
+       "votehub_polls_by_pollster_2026": 2,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -16596,6 +16925,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "9 of 17",
+       "votehub_polls_by_pollster_2026": 41,
        "kind": "probably a gap"
       },
       {
@@ -16607,6 +16937,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 8",
+       "votehub_polls_by_pollster_2026": 10,
        "kind": "probably a gap"
       },
       {
@@ -16618,7 +16949,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 14",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 25,
+       "kind": "probably a gap"
       }
      ],
      "votehub_only": [],
@@ -16654,16 +16986,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": 4.28,
-        "p": 0.803
+        "mu": 4.36,
+        "p": 0.809
        },
        "polls_fundamentals": {
-        "mu": 4.56,
-        "p": 0.828
+        "mu": 4.64,
+        "p": 0.834
        },
        "polls_fundamentals_biasadj": {
-        "mu": 2.49,
-        "p": 0.711
+        "mu": 2.56,
+        "p": 0.718
        }
       },
       "plus_all_missing": {
@@ -16697,6 +17029,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "2 of 9",
+       "votehub_polls_by_pollster_2026": 5,
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -16776,7 +17109,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "15 of 34",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 103,
+       "kind": "probably a gap"
       }
      ],
      "votehub_only": [],
@@ -16812,16 +17146,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": -9.42,
-        "p": null
+        "mu": -8.99,
+        "p": 0.061
        },
        "polls_fundamentals": {
-        "mu": -8.93,
-        "p": null
+        "mu": -8.7,
+        "p": 0.058
        },
        "polls_fundamentals_biasadj": {
-        "mu": -10.63,
-        "p": null
+        "mu": -10.75,
+        "p": 0.032
        }
       },
       "plus_all_missing": {
@@ -16855,6 +17189,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "2 of 5",
+       "votehub_polls_by_pollster_2026": 9,
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -16934,6 +17269,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "1 of 21",
+       "votehub_polls_by_pollster_2026": 2,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -16945,7 +17281,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "15 of 34",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 103,
+       "kind": "probably a gap"
       }
      ],
      "votehub_only": [],
@@ -16981,16 +17318,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": 1.89,
-        "p": 0.65
+        "mu": 0.46,
+        "p": 0.538
        },
        "polls_fundamentals": {
-        "mu": 2.19,
-        "p": 0.68
+        "mu": 0.75,
+        "p": 0.565
        },
        "polls_fundamentals_biasadj": {
-        "mu": 0.14,
-        "p": 0.513
+        "mu": -1.31,
+        "p": 0.385
        }
       },
       "plus_all_missing": {
@@ -17024,6 +17361,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "1 of 21",
+       "votehub_polls_by_pollster_2026": 2,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -17035,6 +17373,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "15 of 20",
+       "votehub_polls_by_pollster_2026": 101,
        "kind": "probably a gap"
       },
       {
@@ -17046,6 +17385,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 2",
+       "votehub_polls_by_pollster_2026": 0,
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -17125,6 +17465,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "1 of 21",
+       "votehub_polls_by_pollster_2026": 2,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -17136,6 +17477,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "9 of 17",
+       "votehub_polls_by_pollster_2026": 41,
        "kind": "probably a gap"
       },
       {
@@ -17147,6 +17489,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "9 of 17",
+       "votehub_polls_by_pollster_2026": 41,
        "kind": "probably a gap"
       }
      ],
@@ -17236,6 +17579,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "1 of 21",
+       "votehub_polls_by_pollster_2026": 2,
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -17315,7 +17659,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 14",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 78,
+       "kind": "probably a gap"
       },
       {
        "pollster": "FM3 Research",
@@ -17326,7 +17671,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "1 of 2",
-       "kind": "probably a gap"
+       "votehub_polls_by_pollster_2026": 4,
+       "kind": "probably VoteHub's choice"
       }
      ],
      "votehub_only": [],
@@ -17362,16 +17708,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": -2.66,
-        "p": 0.295
+        "mu": -2.88,
+        "p": 0.281
        },
        "polls_fundamentals": {
-        "mu": -2.37,
-        "p": 0.306
+        "mu": -2.59,
+        "p": 0.291
        },
        "polls_fundamentals_biasadj": {
-        "mu": -4.42,
-        "p": 0.175
+        "mu": -4.64,
+        "p": 0.165
        }
       },
       "plus_all_missing": {
@@ -17405,6 +17751,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "7 of 10",
+       "votehub_polls_by_pollster_2026": 43,
        "kind": "probably a gap"
       }
      ],
@@ -17484,7 +17831,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 14",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 25,
+       "kind": "probably a gap"
       }
      ],
      "votehub_only": [],
@@ -17520,16 +17868,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": -13.05,
-        "p": null
+        "mu": -10.48,
+        "p": 0.042
        },
        "polls_fundamentals": {
-        "mu": -12.56,
-        "p": null
+        "mu": -10.18,
+        "p": 0.04
        },
        "polls_fundamentals_biasadj": {
-        "mu": -14.26,
-        "p": null
+        "mu": -12.23,
+        "p": 0.022
        }
       },
       "plus_all_missing": {
@@ -17563,6 +17911,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "1 of 21",
+       "votehub_polls_by_pollster_2026": 2,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -17573,7 +17922,8 @@
        "wiki_margin": 2.13,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "31 of 45",
+       "pollster_carried": "15 of 28",
+       "votehub_polls_by_pollster_2026": 71,
        "kind": "probably a gap"
       },
       {
@@ -17585,7 +17935,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 14",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 78,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Public Opinion Strategies",
@@ -17595,7 +17946,8 @@
        "wiki_margin": -10.11,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "3 of 16",
+       "pollster_carried": "0 of 2",
+       "votehub_polls_by_pollster_2026": 5,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -17607,7 +17959,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 14",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 78,
+       "kind": "probably a gap"
       }
      ],
      "votehub_only": [],
@@ -17643,16 +17996,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": 3.2,
-        "p": 0.742
+        "mu": 2.51,
+        "p": 0.698
        },
        "polls_fundamentals": {
-        "mu": 3.48,
-        "p": 0.77
+        "mu": 2.78,
+        "p": 0.728
        },
        "polls_fundamentals_biasadj": {
-        "mu": 1.41,
-        "p": 0.625
+        "mu": 0.7,
+        "p": 0.564
        }
       },
       "plus_all_missing": {
@@ -17686,6 +18039,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "1 of 21",
+       "votehub_polls_by_pollster_2026": 2,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -17696,7 +18050,8 @@
        "wiki_margin": 5.38,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "31 of 45",
+       "pollster_carried": "15 of 28",
+       "votehub_polls_by_pollster_2026": 71,
        "kind": "probably a gap"
       }
      ],
@@ -17776,6 +18131,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "1 of 21",
+       "votehub_polls_by_pollster_2026": 2,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -17786,7 +18142,8 @@
        "wiki_margin": 5.15,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "31 of 45",
+       "pollster_carried": "15 of 28",
+       "votehub_polls_by_pollster_2026": 71,
        "kind": "probably a gap"
       }
      ],
@@ -17866,6 +18223,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "1 of 21",
+       "votehub_polls_by_pollster_2026": 2,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -17876,7 +18234,8 @@
        "wiki_margin": 0.0,
        "cause": "not in VoteHub",
        "detail": "",
-       "pollster_carried": "31 of 45",
+       "pollster_carried": "15 of 28",
+       "votehub_polls_by_pollster_2026": 71,
        "kind": "probably a gap"
       },
       {
@@ -17888,7 +18247,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "1 of 2",
-       "kind": "probably a gap"
+       "votehub_polls_by_pollster_2026": 4,
+       "kind": "probably VoteHub's choice"
       },
       {
        "pollster": "Franklin & Marshall College",
@@ -17896,10 +18256,11 @@
        "end": "2026-09-20",
        "n": 390,
        "wiki_margin": 3.3,
-       "cause": "not in VoteHub",
-       "detail": "",
+       "cause": "in VoteHub under another race label, not used by the forecast",
+       "detail": "VoteHub 2026 PA-10, end 2026-09-20",
        "pollster_carried": "1 of 2",
-       "kind": "probably a gap"
+       "votehub_polls_by_pollster_2026": 5,
+       "kind": "our matching"
       }
      ],
      "votehub_only": [],
@@ -17935,16 +18296,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": -0.39,
-        "p": 0.467
+        "mu": -0.72,
+        "p": 0.44
        },
        "polls_fundamentals": {
-        "mu": -0.12,
-        "p": 0.49
+        "mu": -0.44,
+        "p": 0.461
        },
        "polls_fundamentals_biasadj": {
-        "mu": -2.19,
-        "p": 0.31
+        "mu": -2.51,
+        "p": 0.288
        }
       },
       "plus_all_missing": {
@@ -17978,6 +18339,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 8",
+       "votehub_polls_by_pollster_2026": 10,
        "kind": "probably a gap"
       },
       {
@@ -17989,6 +18351,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "9 of 17",
+       "votehub_polls_by_pollster_2026": 41,
        "kind": "probably a gap"
       },
       {
@@ -18000,7 +18363,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "15 of 34",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 103,
+       "kind": "probably a gap"
       }
      ],
      "votehub_only": [],
@@ -18036,16 +18400,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": -2.37,
-        "p": 0.311
+        "mu": -2.53,
+        "p": 0.3
        },
        "polls_fundamentals": {
-        "mu": -2.1,
-        "p": 0.323
+        "mu": -2.25,
+        "p": 0.31
        },
        "polls_fundamentals_biasadj": {
-        "mu": -4.18,
-        "p": 0.182
+        "mu": -4.33,
+        "p": 0.174
        }
       },
       "plus_all_missing": {
@@ -18079,7 +18443,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 19",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 42,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Impact Research",
@@ -18090,7 +18455,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 19",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 42,
+       "kind": "probably a gap"
       }
      ],
      "votehub_only": [],
@@ -18126,16 +18492,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": -10.36,
-        "p": null
+        "mu": -9.45,
+        "p": 0.052
        },
        "polls_fundamentals": {
-        "mu": -9.86,
-        "p": null
+        "mu": -9.17,
+        "p": 0.049
        },
        "polls_fundamentals_biasadj": {
-        "mu": -11.57,
-        "p": null
+        "mu": -11.23,
+        "p": 0.027
        }
       },
       "plus_all_missing": {
@@ -18169,7 +18535,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 19",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 42,
+       "kind": "probably a gap"
       }
      ],
      "votehub_only": [],
@@ -18205,16 +18572,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": -12.17,
-        "p": null
+        "mu": -12.13,
+        "p": 0.029
        },
        "polls_fundamentals": {
-        "mu": -11.68,
-        "p": null
+        "mu": -11.83,
+        "p": 0.027
        },
        "polls_fundamentals_biasadj": {
-        "mu": -13.38,
-        "p": null
+        "mu": -13.88,
+        "p": 0.015
        }
       },
       "plus_all_missing": {
@@ -18248,6 +18615,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 13",
+       "votehub_polls_by_pollster_2026": 6,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -18259,7 +18627,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 2",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 13,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Public Policy Polling",
@@ -18270,7 +18639,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "15 of 34",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 103,
+       "kind": "probably a gap"
       }
      ],
      "votehub_only": [],
@@ -18306,16 +18676,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": -8.54,
-        "p": null
+        "mu": -8.05,
+        "p": 0.074
        },
        "polls_fundamentals": {
-        "mu": -8.05,
-        "p": null
+        "mu": -7.77,
+        "p": 0.071
        },
        "polls_fundamentals_biasadj": {
-        "mu": -9.75,
-        "p": null
+        "mu": -9.84,
+        "p": 0.038
        }
       },
       "plus_all_missing": {
@@ -18349,6 +18719,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "6 of 11",
+       "votehub_polls_by_pollster_2026": 41,
        "kind": "probably a gap"
       }
      ],
@@ -18428,7 +18799,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "15 of 34",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 103,
+       "kind": "probably a gap"
       },
       {
        "pollster": "Normington Petts",
@@ -18439,6 +18811,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 5",
+       "votehub_polls_by_pollster_2026": 11,
        "kind": "probably a gap"
       }
      ],
@@ -18485,16 +18858,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": -1.57,
-        "p": 0.371
+        "mu": -1.8,
+        "p": 0.353
        },
        "polls_fundamentals": {
-        "mu": -1.3,
-        "p": 0.387
+        "mu": -1.53,
+        "p": 0.367
        },
        "polls_fundamentals_biasadj": {
-        "mu": -3.38,
-        "p": 0.227
+        "mu": -3.61,
+        "p": 0.212
        }
       },
       "plus_all_missing": {
@@ -18528,7 +18901,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "15 of 34",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 103,
+       "kind": "probably a gap"
       }
      ],
      "votehub_only": [
@@ -18574,16 +18948,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": 12.13,
-        "p": 0.972
+        "mu": 11.61,
+        "p": 0.969
        },
        "polls_fundamentals": {
-        "mu": 12.42,
-        "p": 0.978
+        "mu": 11.89,
+        "p": 0.975
        },
        "polls_fundamentals_biasadj": {
-        "mu": 10.35,
-        "p": 0.966
+        "mu": 9.81,
+        "p": 0.962
        }
       },
       "plus_all_missing": {
@@ -18617,7 +18991,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "15 of 34",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 103,
+       "kind": "probably a gap"
       }
      ],
      "votehub_only": [
@@ -18663,16 +19038,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": 6.63,
-        "p": 0.892
+        "mu": 6.27,
+        "p": 0.883
        },
        "polls_fundamentals": {
-        "mu": 6.91,
-        "p": 0.909
+        "mu": 6.55,
+        "p": 0.901
        },
        "polls_fundamentals_biasadj": {
-        "mu": 4.85,
-        "p": 0.847
+        "mu": 4.48,
+        "p": 0.832
        }
       },
       "plus_all_missing": {
@@ -18706,6 +19081,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "6 of 7",
+       "votehub_polls_by_pollster_2026": 171,
        "kind": "probably a gap"
       }
      ],
@@ -18785,6 +19161,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 13",
+       "votehub_polls_by_pollster_2026": 8,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -18796,6 +19173,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "4 of 13",
+       "votehub_polls_by_pollster_2026": 8,
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -18875,6 +19253,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 1",
+       "votehub_polls_by_pollster_2026": 7,
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -18954,6 +19333,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "1 of 3",
+       "votehub_polls_by_pollster_2026": 2,
        "kind": "probably VoteHub's choice"
       },
       {
@@ -18965,6 +19345,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "1 of 3",
+       "votehub_polls_by_pollster_2026": 2,
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -18974,12 +19355,14 @@
        "pollster": "The Washington Post/George Mason University Schar School of Policy and Government",
        "wiki_pollster": "The Washington Post / SSPG",
        "end": "2026-09-28",
+       "wiki_end": "2026-09-28",
        "n": 600,
        "votehub_margin": -5.15,
        "closest_wiki_margin_diff": 1.1,
        "supplement": false,
        "blocklisted": "",
-       "extra_version": false
+       "extra_version": false,
+       "dates_differ": false
       }
      ],
      "what_if": {
@@ -19056,6 +19439,7 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "0 of 1",
+       "votehub_polls_by_pollster_2026": 4,
        "kind": "probably VoteHub's choice"
       }
      ],
@@ -19135,7 +19519,8 @@
        "cause": "not in VoteHub",
        "detail": "",
        "pollster_carried": "3 of 19",
-       "kind": "probably VoteHub's choice"
+       "votehub_polls_by_pollster_2026": 42,
+       "kind": "probably a gap"
       }
      ],
      "votehub_only": [],
@@ -19171,16 +19556,16 @@
       },
       "plus_probable_gaps": {
        "polls_only": {
-        "mu": -0.49,
-        "p": 0.459
+        "mu": -0.64,
+        "p": 0.446
        },
        "polls_fundamentals": {
-        "mu": -0.21,
-        "p": 0.482
+        "mu": -0.37,
+        "p": 0.468
        },
        "polls_fundamentals_biasadj": {
-        "mu": -2.28,
-        "p": 0.305
+        "mu": -2.44,
+        "p": 0.292
        }
       },
       "plus_all_missing": {
@@ -19538,6 +19923,7 @@
    },
    "n_races": 0
   },
+  "poll_audit_scores": null,
   "senate_margins": [
    {
     "race": "2026|AL|S|regular",

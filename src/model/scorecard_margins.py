@@ -193,6 +193,31 @@ def layers(sen, hou):
     return out
 
 
+def poll_audit_scores(sen, hou):
+    """Error of the poll audit's what-if expected margins (polls + fundamentals) against settled results: would a
+    second poll source have helped? Over audited races with a settled count."""
+    path = SC / "poll_audit.json"
+    if not path.exists():
+        return None
+    A = json.loads(path.read_text())
+    out = {}
+    for ch, df in (("senate", sen), ("house", hou)):
+        if ch not in A:
+            continue
+        act = df.set_index("race_key").actual
+        rows = []
+        for r in A[ch]["races"]:
+            a = act.get(r["race_key"])
+            if a is None or pd.isna(a):
+                continue
+            rows.append({k: r["what_if"][k]["polls_fundamentals"]["mu"] - a for k in r["what_if"]})
+        if not rows:
+            continue
+        e = pd.DataFrame(rows)
+        out[ch] = {"n": int(len(e)), **{k: {"rmse": float(np.sqrt((e[k] ** 2).mean())), "mean": float(-e[k].mean())} for k in e}}
+    return out or None
+
+
 def margin_row(r):
     rnd = lambda x: None if pd.isna(x) else round(float(x), 2)
     return {"race": r.race_key, "actual": rnd(r.actual), "counted": rnd(r.counted), "settled": bool(r.settled),
@@ -219,6 +244,7 @@ def stage2(sen, hou):
            "national": national(hm),
            "ordering": ordering(sen),
            "layers": layers(sen, hou),
+           "poll_audit_scores": poll_audit_scores(sen, hou),
            "senate_margins": [margin_row(r) for _, r in sen.iterrows()],
            "house_margins": [margin_row(r) for _, r in hou[hou.contested].iterrows()]}
     return out
