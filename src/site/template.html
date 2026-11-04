@@ -1785,7 +1785,7 @@ function renderScorecard() {
     ...(SC.official_senate ? [(() => { const O = SC.official_senate, ok = O.filter(o => o.status === "ok"), no = O.filter(o => o.status !== "ok");
       return `Official counts: for the ${O.length} close Senate races (any published version between 5% and 95%), the state's own results replace Wikipedia's where a script can fetch them: ` +
         ok.map(o => `${STATE[o.race_key.split("|")[1]]} (<a href="${esc(o.url)}">${esc(o.source)}</a>)`).join(", ") + `. ` +
-        (no.length ? `Not yet checked against official results, until certification: ` + no.map(o => `${STATE[o.race_key.split("|")[1]]} (${esc(o.status.replace(/^no scripted source: /, "").replace(/; checked at certification$/, ""))})`).join("; ") + `. Their margins come from Wikipedia.` : ""); })()] : []),
+        (no.length ? `Not yet checked against official results, until certification: ` + no.map(o => `${STATE[o.race_key.split("|")[1]]} (${esc(o.status.replace(/^no scripted source: /, "").replace(/; checked at certification$/, ""))})`).join("; ") + `. Their margins come from Wikipedia, provisionally, until an official file is available (a download from the state's site, or the certified results).` : ""); })()] : []),
     `California House margins come from the California Secretary of State's results API.`,
   ].map(x => `<li>${x}</li>`).join("");
 }

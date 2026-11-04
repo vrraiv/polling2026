@@ -11,8 +11,10 @@ minus Republican; ranked-choice states: the final round once published, first ch
 Writes data/scorecard/official_senate.csv: one row per race with the official margin, the Wikipedia margin from the
 same day, and the difference. results_margins.py uses the official row in place of Wikipedia's when there is one.
 
-Run:  python src/collect/official_senate.py          (fetch + parse every adapter)
-      python src/collect/official_senate.py parse    (re-parse the latest raw copies)
+Run:  python src/collect/official_senate.py            (fetch + parse every adapter)
+      python src/collect/official_senate.py parse      (re-parse the latest raw copies)
+      add --manual to also read the user's own downloads in data/raw/official_manual/<ST>/<date>/ for states no
+      script can reach (see the README there)
 """
 import json
 import re
@@ -29,6 +31,8 @@ from results import FINAL, OUT, fold  # noqa: E402
 from results_margins import MULTI_CANDIDATE, margins_rcv  # noqa: E402
 
 LO, HI = 0.05, 0.95
+STATE_NAME = {"AK": "Alaska", "ME": "Maine", "NH": "New Hampshire", "ID": "Idaho", "KS": "Kansas", "MS": "Mississippi",
+              "OH": "Ohio", "FL": "Florida", "MI": "Michigan"}
 # States checked on 2026-11-04 with no official source a script may fetch. Bot checks are never bypassed.
 UNAVAILABLE = {
     "AK": "the Division of Elections site requires a human-verification check (and ranked-choice tabulation comes ~15 days after the election)",
@@ -406,12 +410,182 @@ class Nebraska(Adapter):
                 "complete": (lambda a: len(a) == 2 and a[0] == a[1])(str(sen[0].get("PrecinctsReporting", "")).strip('="').split("/"))}
 
 
+# ---------------- manual downloads (--manual) ----------------
+# For states a script can't reach, the user can download the state's results file in a browser and drop it, as
+# downloaded, into data/raw/official_manual/<ST>/<YYYY-MM-DD>/. With --manual, the latest such folder is read for every
+# close race that has no working scripted source. Nothing is typed by hand: the file is parsed, and a file that can't
+# be parsed with certainty is reported, not guessed at.
+MANUAL = RAW / "official_manual"
+US_SENATE = re.compile(r"(?:\bu\.?\s*s\.?\s*|united\s+states\s+)senat", re.I)
+TOTAL_ROW = re.compile(r"^\s*(grand\s+)?totals?\b|^\s*total\s+votes|^\s*state\s*total", re.I)
+PARTY_TOKEN = re.compile(r"\(([A-Za-z]{1,12})\)\s*$|\s[-–]\s*([A-Za-z]{1,12})\s*$")
+
+
+def manual_files(st):
+    d = sorted(p for p in (MANUAL / st).glob("20??-??-??") if p.is_dir() and any(f.is_file() for f in p.iterdir())) \
+        if (MANUAL / st).exists() else []
+    return sorted(f for f in d[-1].iterdir() if f.is_file() and f.suffix.lower() in (".csv", ".tsv", ".txt", ".xlsx", ".xls", ".json")) if d else []
+
+
+def to_int(x):
+    s = re.sub(r"[,\s]", "", str(x))
+    return int(float(s)) if re.fullmatch(r"-?\d+(\.0+)?", s) else None
+
+
+def raw_tables(path):
+    """[(label, DataFrame of raw cells, no header)] for every sheet / the file."""
+    suf = path.suffix.lower()
+    if suf in (".xlsx", ".xls"):
+        return [(f"{path.name}:{k}", v) for k, v in pd.read_excel(path, sheet_name=None, header=None, dtype=str).items()]
+    txt = path.read_text(encoding="utf-8-sig", errors="replace")
+    sep = max([",", "\t", ";", "|"], key=lambda c: txt[:5000].count(c))
+    return [(path.name, pd.read_csv(io_string(txt), sep=sep, header=None, dtype=str, engine="python", on_bad_lines="skip"))]
+
+
+def io_string(t):
+    import io
+    return io.StringIO(t)
+
+
+def find_header(df, need):
+    """First of the top rows whose cells match every pattern in `need` (column-name regexes) -> (row index, {key: col})."""
+    for i in range(min(len(df), 15)):
+        cells = [str(c).strip().lower() for c in df.iloc[i].tolist()]
+        cols = {}
+        for k, rx in need.items():
+            j = next((j for j, c in enumerate(cells) if re.search(rx, c)), None)
+            if j is None:
+                break
+            cols[k] = j
+        if len(cols) == len(need):
+            return i, cols
+    return None, None
+
+
+def long_columns(cells):
+    """Column roles in a long-format header row: votes, candidate name (first+last if split), party, contest columns.
+    'Name' alone is ambiguous (CountyName, PartyName), so it only counts when nothing else in the header says what it
+    names."""
+    c = [str(x).strip().lower() for x in cells]
+    votes = next((j for j, x in enumerate(c) if re.search(r"\bvotes?\b|canvotes|votetotal|vote_total|total votes", x)
+                  and "percent" not in x and "%" not in x), None)
+    other = r"county|party|office|race|precinct|town|jurisdiction|contest|election|district|ward"
+    cand = [j for j, x in enumerate(c) if re.search(r"cand|choice", x) and "id" != x[-2:] and not re.search(r"party|order|code", x)] or \
+           [j for j, x in enumerate(c) if "name" in x and not re.search(other, x)]
+    first = next((j for j in cand if "first" in c[j]), None)
+    last = next((j for j in cand if "last" in c[j]), None)
+    party = next((j for j, x in enumerate(c) if "party" in x and ("code" in x or "abbr" in x)), None) or \
+        next((j for j, x in enumerate(c) if "party" in x), None)
+    contests = [j for j, x in enumerate(c) if re.search(r"office|race|contest", x)]
+    if votes is None or not cand or not contests:
+        return None
+    return {"votes": votes, "cand": cand[0], "first": first, "last": last, "party": party, "contests": contests}
+
+
+def parse_long(label, df):
+    """One row per candidate (per county/precinct): contest, candidate, votes columns."""
+    hdr = next(((i, long_columns(df.iloc[i].tolist())) for i in range(min(len(df), 15)) if long_columns(df.iloc[i].tolist())), None)
+    if hdr is None:
+        return None
+    i, cols = hdr
+    body = df.iloc[i + 1:]
+    # the contest column is whichever office/race/contest column actually names the US Senate (FL: OfficeDesc, not RaceCode)
+    ccol = max(cols["contests"], key=lambda j: body.iloc[:, j].astype(str).str.contains(US_SENATE).sum())
+    sen = body[body.iloc[:, ccol].astype(str).str.contains(US_SENATE)]
+    if not len(sen):
+        return None
+    if sen.iloc[:, ccol].map(lambda s: re.sub(r"\s+", " ", str(s)).strip().lower()).nunique() != 1:
+        raise ValueError(f"{label}: more than one contest title matches the US Senate")
+    tot, party = {}, {}
+    for _, r in sen.iterrows():
+        if cols["first"] is not None and cols["last"] is not None:
+            name = f"{str(r.iloc[cols['first']]).strip()} {str(r.iloc[cols['last']]).strip()}"
+        else:
+            name = str(r.iloc[cols["cand"]]).strip()
+        v = to_int(r.iloc[cols["votes"]])
+        if v is None or TOTAL_ROW.match(name):
+            continue
+        tot[name] = tot.get(name, 0) + v
+        if cols["party"] is not None:
+            party[name] = str(r.iloc[cols["party"]]).strip()
+    return [{"name": n, "party": party.get(n, ""), "votes": v} for n, v in tot.items()]
+
+
+def parse_wide(label, df):
+    """One column per candidate, one row per town/county, on a sheet or file about the US Senate: sum the candidate
+    columns, skipping total rows; if the file has a total row, the sums must match it."""
+    head_text = " ".join(str(x) for x in df.head(8).fillna("").values.ravel()) + " " + label
+    if not US_SENATE.search(head_text):
+        return None
+    for i in range(min(len(df), 15)):
+        cells = df.iloc[i].tolist()
+        below = df.iloc[i + 1:]
+        cand = [j for j, c in enumerate(cells) if isinstance(c, str) and re.search(r"[A-Za-z]{2,}\s+[A-Za-z]", c)
+                and below.iloc[:, j].map(to_int).notna().mean() > 0.6]
+        if len(cand) >= 2:
+            first = below.iloc[:, 0].astype(str)
+            is_tot = first.str.match(TOTAL_ROW)
+            sums = {j: int(below.loc[~is_tot].iloc[:, j].map(to_int).fillna(0).sum()) for j in cand}
+            if is_tot.any():
+                totrow = below.loc[is_tot].iloc[-1]
+                tv = {j: to_int(totrow.iloc[j]) for j in cand}
+                # a per-county file's grand total row should equal the column sums; if subtotal rows are present,
+                # trust the grand total row instead (the last one)
+                if any(tv[j] is not None and tv[j] != sums[j] for j in cand):
+                    sums = {j: tv[j] for j in cand if tv[j] is not None}
+            out = []
+            for j in cand:
+                h = str(cells[j]).strip()
+                m = PARTY_TOKEN.search(h)
+                out.append({"name": PARTY_TOKEN.sub("", h).strip(), "party": (m.group(1) or m.group(2)) if m else "", "votes": sums[j]})
+            return out
+    return None
+
+
+def parse_manual(st, files):
+    found = []
+    for f in files:
+        if f.suffix.lower() == ".json":
+            try:
+                summ = json.loads(f.read_text(encoding="utf-8"))
+                hits = [c for c in summ if isinstance(c, dict) and US_SENATE.search(str(c.get("C", "")))] if isinstance(summ, list) else []
+                for c in hits:
+                    found.append((f.name, [{"name": n, "party": p, "votes": int(v)} for n, p, v in zip(c["CH"], c.get("P") or [""] * len(c["CH"]), c["V"])]))
+            except (ValueError, KeyError):
+                pass
+            continue
+        for label, df in raw_tables(f):
+            res = parse_long(label, df) or parse_wide(label, df)
+            if res:
+                found.append((label, res))
+    if len(found) != 1:
+        raise ValueError(f"{len(found)} US Senate tables found in {[f.name for f in files]}" + (": " + ", ".join(l for l, _ in found) if found else ""))
+    label, cands = found[0]
+    if not 2 <= len(cands) <= 15 or sum(c["votes"] for c in cands) <= 0:
+        raise ValueError(f"{label}: implausible candidate list ({len(cands)} candidates)")
+    day = files[0].parent.name
+    return {"candidates": cands, "as_of": f"manual download {day} ({label})", "url": str(files[0].relative_to(ROOT)) if files[0].is_relative_to(ROOT) else str(files[0]),
+            "reporting": "downloaded by hand from the state's site", "complete": False, "label": label}
+
+
 # ---------------- margins and comparison ----------------
 def official_margin(key, cands, frozen):
     """Margin from official candidate rows, with the same rules as the Wikipedia path."""
     f = frozen.loc[key]
     st = key.split("|")[1]
-    rows = [{"candidate": c["name"], "party_code": c.get("party_code") or party_code(c.get("party")),
+    sur = lambda n: (fold(re.sub(r"\s+(jr|sr|ii|iii|iv)\.?$", "", str(n).strip(), flags=re.I)).replace(".", " ").split() or [""])[-1]
+
+    def code(c):
+        pc = c.get("party_code") or party_code(c.get("party"))
+        if pc in ("D", "R", "I"):
+            return pc
+        # a file without party labels (some town-by-town spreadsheets): recognize the frozen forecast's nominees by surname
+        if sur(c["name"]) == sur(f["rep"]):
+            return "R"
+        if sur(c["name"]) == sur(f["dem"]):
+            return "I" if f["dside"] == "I" else "D"
+        return pc
+    rows = [{"candidate": c["name"], "party_code": code(c),
              "votes_first": float(c["votes"]), "votes_final": float(c.get("votes_final", c["votes"])),
              **({"votes_by_round": c["votes_by_round"]} if "votes_by_round" in c else {})} for c in cands]
     m, d, r, dname, k = margins_rcv(rows, dside_name=f["dem"], dside_party=f["dside"], multi=st in MULTI_CANDIDATE)
@@ -447,7 +621,7 @@ def merge_into_margins(off):
     m.to_csv(path, index=False)
 
 
-def main(parse_only=False):
+def main(parse_only=False, manual=False):
     frozen = pd.read_csv(FINAL / "senate_polls_fundamentals.csv").set_index("race_key")
     wp = OUT / "margins_senate_wiki.csv"
     wiki = pd.read_csv(wp).set_index("race_key") if wp.exists() else pd.DataFrame()
@@ -456,19 +630,28 @@ def main(parse_only=False):
         st = key.split("|")[1]
         row = {"race_key": key, "state": st}
         A = ADAPTERS.get(st)
-        if A is None:
-            rows.append({**row, "status": f"no scripted source: {UNAVAILABLE.get(st, 'not checked')}; checked at certification"})
-            continue
-        try:
-            paths = A.saved(st) if parse_only else A.fetch(st)
-            res = A.parse(paths)
-        except Exception as e:  # noqa: BLE001  (one state's site failing must not stop the rest)
-            rows.append({**row, "status": f"error: {type(e).__name__}: {str(e)[:160]}"})
+        res, err, name, paths = None, None, None, []
+        if A is not None:
+            try:
+                paths = A.saved(st) if parse_only else A.fetch(st)
+                res, name = A.parse(paths), A.name
+            except Exception as e:  # noqa: BLE001  (one state's site failing must not stop the rest)
+                err = f"error: {type(e).__name__}: {str(e)[:160]}"
+        if res is None and manual and manual_files(st):
+            # --manual: the user's own download from the state's site (only where no scripted source worked)
+            try:
+                paths = manual_files(st)
+                res, name = parse_manual(st, paths), f"{STATE_NAME.get(st, st)} official results, downloaded by hand"
+            except Exception as e:  # noqa: BLE001
+                err = f"manual file present but not parsed: {str(e)[:200]}"
+        if res is None:
+            rows.append({**row, "status": err or f"no scripted source: {UNAVAILABLE.get(st, 'not checked')}; checked at certification"
+                         + ("" if manual_files(st) else "")})
             continue
         m, d, r, dname, s = official_margin(key, res["candidates"], frozen)
         w = wiki.loc[key] if key in wiki.index else None
         wm = float(w["margin"]) if w is not None and pd.notna(w.get("margin")) else np.nan
-        row.update(status="ok", source=A.name, url=res.get("url"), as_of=res.get("as_of"), reporting=res.get("reporting"),
+        row.update(status="ok", source=name, url=res.get("url"), as_of=res.get("as_of"), reporting=res.get("reporting"),
                    complete=bool(res.get("complete")),
                    margin=m, dside_votes=d, rep_votes=r, dside_candidate=dname, cand_sum=s,
                    candidates=json.dumps(res["candidates"]), snapshot=str(Path(paths[0]).relative_to(ROOT)) if paths else "",
@@ -489,4 +672,4 @@ def main(parse_only=False):
 
 
 if __name__ == "__main__":
-    main(parse_only=sys.argv[1:] == ["parse"])
+    main(parse_only="parse" in sys.argv[1:], manual="--manual" in sys.argv[1:])
