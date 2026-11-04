@@ -258,6 +258,8 @@ td .none { color: var(--text-3); font-size: .8rem; }
   <h3>How each version scored</h3>
   <p class="muted small">Brier score: the average squared gap between the forecast probability and the result (1 if the Democratic side won, 0 if not); 0 is perfect and 50% everywhere scores 0.25. Log loss punishes confident misses harder. "Close races" are fixed from the frozen forecast before any result: every race any published version gave the Democratic side between 2% and 98%. Margin error is the actual two-party margin minus the forecast's expected margin (positive = Democrats did better).</p>
   <div class="tbl-wrap"><table id="scScores"></table></div>
+  <p class="tiny" id="scScoresNote"></p>
+  <div id="scEarly"></div>
   <div id="scNational"></div>
   <h3>Senate races</h3>
   <div class="controls"><div class="seg modelSeg" role="group" aria-label="Model"></div></div>
@@ -1611,9 +1613,10 @@ function renderScorecard() {
   const M = SC.margins || null, S = SC.senate, H = SC.house, sen = DATA.models[model].senate_races;
   const nameOf = Object.fromEntries(sen.map(r => [r.race_key, r]));
   const src = SC.sources;
-  $("#scBanner").innerHTML = `<b>${SC.provisional ? "Provisional." : "Final."}</b> Results as of ${asOf(src.senate.page_modified)} from Wikipedia ` +
+  $("#scBanner").innerHTML = `<b>${SC.provisional ? "Provisional, partial." : "Final."}</b> Results as of ${asOf(src.senate.page_modified)} from Wikipedia ` +
     `(<a href="https://en.wikipedia.org/w/index.php?oldid=${src.senate.revision}">Senate</a>, <a href="https://en.wikipedia.org/w/index.php?oldid=${src.house.revision}">House</a> revisions)` +
-    (M ? ` and each state's results page on Wikipedia` : "") + `. ` +
+    (M ? `; vote counts from each state's Wikipedia results page, California's Secretary of State` +
+      (SC.official_senate ? `, and the state's own results in ${SC.official_senate.filter(o => o.status === "ok").length} close Senate races` : "") : "") + `. ` +
     (SC.provisional ? `Races still being called or counted are left out and listed below; the scores will be re-run on certified results.` : "");
   // headline
   const ss = S.seats, hs = H.seats, vS = ss.versions, vH = hs.versions;
@@ -1648,6 +1651,26 @@ function renderScorecard() {
         `<td class="num">${f2(b.brier)}</td><td class="num">${f2(b.log_loss)}</td><td class="num">${b.upsets} of ${b.n}</td>` +
         (e ? `<td class="num">${fSgn(e[0].mean)}</td><td class="num">${f2(e[0].rmse, 1)}</td><td class="num">${fSgn(e[1].mean)}</td><td class="num">${f2(e[1].rmse, 1)}</td>` : "") + `</tr>`; }).join("") +
     `</tbody>`;
+  // which races the winner-based scores rest on so far
+  const closeS = S.races.filter(r => r.contested), closeH = H.races;   // H.races is trimmed to the close districts
+  $("#scScoresNote").textContent = `Called so far: ${closeS.filter(r => r.called).length} of ${closeS.length} close Senate races and ` +
+    `${closeH.filter(r => r.called).length} of ${closeH.length} close House districts. The earliest calls are the clearer races, so the House scores especially will move as the rest are called. Margin errors appear once counts settle.`;
+  // early read: Senate polling miss from the latest counts, shown but not scored
+  const ER = M ? M.early_read : null;
+  if (ER && ER.n_polled) {
+    const sc = (DATA.error_model && DATA.error_model.sen_cycles) || [];
+    const lo = sc.length ? sc.reduce((a, b) => (b.mean < a.mean ? b : a)) : null, hi = sc.length ? sc.reduce((a, b) => (b.mean > a.mean ? b : a)) : null;
+    const er = ER.races.filter(x => x.n_polls >= 2).sort((a, b) => b.miss_vs_polls - a.miss_vs_polls);
+    $("#scEarly").innerHTML = `<h3>Early read: how far the Senate polls missed</h3>` +
+      `<p class="note">From the latest counts, most of which aren't final: shown, not scored. This becomes a score once the counts settle.</p>` +
+      `<p class="small">In the ${ER.n_polled} close Senate races with a count and at least two polls, Democrats ran <b>${fSgn(ER.mean_miss)}</b> points ahead of the forecast's final poll average on average (median ${fSgn(ER.median_miss)}; positive means Democrats did better than their polls). ` +
+      (lo && hi ? `For scale, the average Senate polling miss in a cycle from ${sc[0].cycle} to ${sc[sc.length - 1].cycle} ranged from ${fSgn(lo.mean)} (${lo.cycle}) to ${fSgn(hi.mean)} (${hi.cycle}). ` : "") +
+      `The forecast's expected margins missed by ${PUB.map(v => `${fSgn(ER.mean_error_vs_mu[v])} (${MODELS[v].toLowerCase()})`).join(", ")}.</p>` +
+      `<div class="tbl-wrap"><table><thead><tr><th>Race</th><th class="num">Count now</th><th>Count status</th><th class="num">Final poll average</th><th class="num">Polls</th><th class="num">Miss vs polls</th><th class="num">Forecast expected</th></tr></thead><tbody>` +
+      er.map(x => `<tr><td>${raceLab(x.race)}</td><td class="num">${fmtM(x.count)}</td><td style="white-space:normal">${esc(x.status)}</td><td class="num">${fmtM(x.poll_avg)}</td><td class="num">${x.n_polls}</td>` +
+        `<td class="num"><b>${fSgn(x.miss_vs_polls)}</b></td><td class="num">${fmtM(x[`mu_${model}`])}</td></tr>`).join("") +
+      `</tbody></table></div><p class="tiny">Miss = count minus the final poll average (before the forecast's adjustments). Nebraska's and Idaho's Democratic side is the independent; Montana's is the best non-Republican. Close races without a count yet aren't listed.</p>`;
+  } else $("#scEarly").innerHTML = "";
   // national miss
   const N = M ? M.national : null;
   const C = M ? M.completeness : null;

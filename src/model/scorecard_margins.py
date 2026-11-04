@@ -218,6 +218,36 @@ def poll_audit_scores(sen, hou):
     return out or None
 
 
+def early_read(sen):
+    """The Senate polling miss from the latest counts, settled or not: published as an early read, never scored. Miss =
+    count minus the forecast's final poll average (polls-only version's average, before any adjustment), over races
+    with at least two polls; the forecast's expected-margin errors alongside."""
+    po = pd.read_csv(FINAL / "senate_polls_only.csv").set_index("race_key")
+    off = pd.read_csv(SC / "official_senate.csv").set_index("race_key") if (SC / "official_senate.csv").exists() else None
+    rows = []
+    for _, r in sen.iterrows():
+        if pd.isna(r.counted) or not r.contested:   # the scorecard's fixed close-race set
+            continue
+        k, p = r.race_key, po.loc[r.race_key]
+        n = int(p.n_polls)
+        o = off.loc[k] if off is not None and k in off.index and off.loc[k, "status"] == "ok" else None
+        status = (("official, complete" if bool(o["complete"]) else f"official, still counting ({o['reporting']})") if o is not None
+                  else "Wikipedia count")
+        pa = float(p.poll_avg_raw) if n and pd.notna(p.poll_avg_raw) else None
+        rows.append({"race": k, "count": round(float(r.counted), 2), "settled": bool(r.settled), "status": status,
+                     "poll_avg": None if pa is None else round(pa, 2), "n_polls": n,
+                     "miss_vs_polls": None if pa is None else round(float(r.counted) - pa, 2),
+                     **{f"mu_{v}": round(float(r[f"mu_{v}"]), 2) for v in PUBLISHED}})
+    polled = [x for x in rows if x["n_polls"] >= 2]
+    miss = np.array([x["miss_vs_polls"] for x in polled], float)
+    out = {"races": rows, "n_polled": len(polled),
+           "note": "counts as of the latest run, most not final; shown, not scored"}
+    if len(polled):
+        out.update(mean_miss=float(miss.mean()), median_miss=float(np.median(miss)),
+                   mean_error_vs_mu={v: float(np.mean([x["count"] - x[f"mu_{v}"] for x in polled])) for v in PUBLISHED})
+    return out
+
+
 def margin_row(r):
     rnd = lambda x: None if pd.isna(x) else round(float(x), 2)
     return {"race": r.race_key, "actual": rnd(r.actual), "counted": rnd(r.counted), "settled": bool(r.settled),
@@ -245,6 +275,7 @@ def stage2(sen, hou):
            "ordering": ordering(sen),
            "layers": layers(sen, hou),
            "poll_audit_scores": poll_audit_scores(sen, hou),
+           "early_read": early_read(sen),
            "senate_margins": [margin_row(r) for _, r in sen.iterrows()],
            "house_margins": [margin_row(r) for _, r in hou[hou.contested].iterrows()]}
     return out

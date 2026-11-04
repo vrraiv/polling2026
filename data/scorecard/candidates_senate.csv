@@ -1,7 +1,6 @@
 race_key,party,party_code,candidate,pct_first,votes_first,votes_final
-2026|AL|S|regular,Republican,R,Barry Moore,,,
-2026|AL|S|regular,Democratic,D,Everett Wess,,,
-2026|AL|S|regular,Write-in,O,Write-in,,,
+2026|AL|S|regular,Republican,R,Barry Moore,54.71,917347.0,917347.0
+2026|AL|S|regular,Democratic,D,Everett Wess,45.29,759335.0,759335.0
 2026|AK|S|regular,Republican,R,Dan S. Sullivan,,,
 2026|AK|S|regular,Democratic,D,Mary Peltola,,,
 2026|AK|S|regular,No party listed,O,Daniel J. Sullivan Jr.,,,
@@ -61,7 +60,7 @@ race_key,party,party_code,candidate,pct_first,votes_first,votes_final
 2026|MS|S|regular,Republican,R,Cindy Hyde-Smith,,,
 2026|MS|S|regular,Democratic,D,Scott Colom,,,
 2026|MS|S|regular,Independent,I,Ty Pinkins,,,
-2026|MT|S|regular,Republican,R,Kurt Alme,47.7,187961.0,187961.0
+2026|MT|S|regular,Republican,R,Sawyer Adams,47.7,187961.0,187961.0
 2026|MT|S|regular,Independent,I,Seth Bodnar,38.6,152203.0,152203.0
 2026|MT|S|regular,Democratic,D,Alani Bankhead,11.9,46838.0,46838.0
 2026|MT|S|regular,Libertarian,O,Kyle Austin,1.8,7066.0,7066.0
@@ -81,10 +80,10 @@ race_key,party,party_code,candidate,pct_first,votes_first,votes_final
 2026|NJ|S|regular,Write-in,O,Eduardo Castillo,,,
 2026|NM|S|regular,Democratic,D,Ben Ray Luján,,,
 2026|NM|S|regular,Republican,R,Larry Marker,,,
-2026|NC|S|regular,Democratic,D,Roy Cooper,,,
-2026|NC|S|regular,Republican,R,Michael Whatley,,,
-2026|NC|S|regular,Libertarian,O,Shannon W. Bray,,,
-2026|NC|S|regular,Green,O,Michael Dublin,,,
+2026|NC|S|regular,Democratic,D,Roy Cooper,58.72,2467963.0,2467963.0
+2026|NC|S|regular,Republican,R,Michael Whatley,39.09,1643088.0,1643088.0
+2026|NC|S|regular,Libertarian,O,Shannon W. Bray,1.33,55726.0,55726.0
+2026|NC|S|regular,Green,O,Michael Dublin,0.87,36404.0,36404.0
 2026|OK|S|regular,Republican,R,Kevin Hern,57.29,628799.0,628799.0
 2026|OK|S|regular,Democratic,D,N'Kiyla Jasmine Thomas,39.2,430321.0,430321.0
 2026|OK|S|regular,Independent,I,Curtis Stinnett,1.3,14265.0,14265.0

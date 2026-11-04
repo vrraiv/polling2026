@@ -1,20 +1,20 @@
 {
   "raceTitle": "U.S. House of Representatives District 24 - Districtwide Results",
-  "Reporting": "89.2% (559 of 627) precincts reporting",
-  "ReportingTime": "November 4, 2026, 3:57 a.m.",
+  "Reporting": "100% (627 of 627) precincts reporting",
+  "ReportingTime": "November 4, 2026, 6:27 a.m.",
   "candidates": [
     {
       "Name": "Salud Carbajal",
       "Party": "Dem",
-      "Votes": "108,231",
-      "Percent": "65.9",
+      "Votes": "109,061",
+      "Percent": "65.8",
       "incumbent": false
     },
     {
       "Name": "Bob Smith",
       "Party": "Rep",
-      "Votes": "56,044",
-      "Percent": "34.1",
+      "Votes": "56,606",
+      "Percent": "34.2",
       "incumbent": false
     }
   ]
