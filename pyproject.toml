@@ -1,0 +1,28 @@
+[project]
+name = "polling2026"
+version = "2026.11.4"
+description = "2026 midterm Senate and House forecast, frozen final forecast, and post-election scorecard"
+readme = "README.md"
+# Python is pinned exactly by the environment (uv-managed CPython 3.14.3; see README "Environment"), not by a
+# .python-version file: Cloudflare's build image reads that file when it deploys site/.
+requires-python = ">=3.14.3,<3.15"
+# Ranges: today's versions are the floor, the next major (minor for 0.x) is the ceiling. uv.lock holds the exact
+# versions actually installed; nothing moves until `uv lock --upgrade` is run on purpose (see README "Upgrading").
+dependencies = [
+    "numpy>=2.4.3,<3",
+    "pandas>=3.0.1,<4",
+    "scipy>=1.18.1,<2",
+    "statsmodels>=0.15.0,<0.16",
+    "requests>=2.33.1,<3",
+    "beautifulsoup4>=4.15.0,<5",
+    "lxml>=6.1.3,<7",            # BeautifulSoup(..., "lxml") and pandas.read_html
+    "html5lib>=1.1,<2",          # pandas.read_html fallback parser
+    "openpyxl>=3.1.5,<4",        # run_scorecard.py --manual: .xlsx downloads
+    "xlrd>=2.0.2,<3",            # run_scorecard.py --manual: .xls downloads
+    "pillow>=12.1.1,<13",        # src/site/og_image.py
+    "tzdata>=2025.3",            # zoneinfo on Windows (America/New_York)
+]
+
+[tool.uv]
+# Not an installable package: uv only manages the environment.
+package = false

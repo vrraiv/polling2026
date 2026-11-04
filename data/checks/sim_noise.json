@@ -1,0 +1,2208 @@
+{
+ "what": "how each simulation output moved when the forecast's random seed (2026) was shifted by 1..20: rms and max of the absolute difference from data/final, and in how many of the 20 runs it moved at all. check_frozen.py allows 5x the rms for a number and 2x the max for labels (text_fields). Anything not listed never moved with the seed and must match to rounding.",
+ "ref": "HEAD (a948fe3)",
+ "environment": "3.14.3 numpy 2.4.3 pandas 3.0.1 scipy 1.18.1 statsmodels 0.15.0",
+ "lock_date": "2026-11-03",
+ "runs": 20,
+ "stale_files": [
+  "money_test.json",
+  "pollster_effects_bigloco.json"
+ ],
+ "fields": {
+  "bias_decomposition.json:adjusted.house_seats": {
+   "rms": 0.06600993793551013,
+   "max": 0.12557499999999777,
+   "moved": 19
+  },
+  "bias_decomposition.json:adjusted.p_house": {
+   "rms": 0.003290887038474583,
+   "max": 0.00495000000000001,
+   "moved": 20
+  },
+  "bias_decomposition.json:adjusted.p_sen": {
+   "rms": 0.0027880268560399354,
+   "max": 0.0063750000000000195,
+   "moved": 20
+  },
+  "bias_decomposition.json:adjusted.sen_seats": {
+   "rms": 0.015602891358654992,
+   "max": 0.03324999999999534,
+   "moved": 20
+  },
+  "bias_decomposition.json:flat_minus1.house_seats": {
+   "rms": 0.11328694265008424,
+   "max": 0.17115000000001146,
+   "moved": 20
+  },
+  "bias_decomposition.json:flat_minus1.p_house": {
+   "rms": 0.0011358366960086996,
+   "max": 0.0025999999999999357,
+   "moved": 20
+  },
+  "bias_decomposition.json:flat_minus1.p_sen": {
+   "rms": 0.0028318059608666646,
+   "max": 0.0068749999999999645,
+   "moved": 20
+  },
+  "bias_decomposition.json:flat_minus1.sen_seats": {
+   "rms": 0.015772971343410252,
+   "max": 0.028350000000003206,
+   "moved": 20
+  },
+  "bias_decomposition.json:flat_minus2.house_seats": {
+   "rms": 0.09768000323121165,
+   "max": 0.14300000000000068,
+   "moved": 20
+  },
+  "bias_decomposition.json:flat_minus2.p_house": {
+   "rms": 0.003671362996218177,
+   "max": 0.005574999999999997,
+   "moved": 20
+  },
+  "bias_decomposition.json:flat_minus2.p_sen": {
+   "rms": 0.0028982160461221923,
+   "max": 0.0061500000000001,
+   "moved": 20
+  },
+  "bias_decomposition.json:flat_minus2.sen_seats": {
+   "rms": 0.021960818803038178,
+   "max": 0.04454999999999387,
+   "moved": 20
+  },
+  "bias_decomposition.json:flat_minus3.house_seats": {
+   "rms": 0.042129717465820435,
+   "max": 0.08719999999999573,
+   "moved": 20
+  },
+  "bias_decomposition.json:flat_minus3.p_house": {
+   "rms": 0.0011936420108223213,
+   "max": 0.0024999999999999467,
+   "moved": 20
+  },
+  "bias_decomposition.json:flat_minus3.p_sen": {
+   "rms": 0.00426776434447824,
+   "max": 0.007899999999999963,
+   "moved": 20
+  },
+  "bias_decomposition.json:flat_minus3.sen_seats": {
+   "rms": 0.017380856926514674,
+   "max": 0.04757500000000192,
+   "moved": 20
+  },
+  "bias_decomposition.json:flat_minus4.house_seats": {
+   "rms": 0.05715742351172973,
+   "max": 0.1540249999999901,
+   "moved": 20
+  },
+  "bias_decomposition.json:flat_minus4.p_house": {
+   "rms": 0.002148611470229108,
+   "max": 0.005975000000000064,
+   "moved": 20
+  },
+  "bias_decomposition.json:flat_minus4.p_sen": {
+   "rms": 0.0025029732319783223,
+   "max": 0.004325000000000023,
+   "moved": 20
+  },
+  "bias_decomposition.json:flat_minus4.sen_seats": {
+   "rms": 0.01705232022335966,
+   "max": 0.03532500000000027,
+   "moved": 20
+  },
+  "bias_decomposition.json:lean_only.house_seats": {
+   "rms": 0.0611950855869953,
+   "max": 0.11414999999999509,
+   "moved": 20
+  },
+  "bias_decomposition.json:lean_only.p_house": {
+   "rms": 0.0007375211861363802,
+   "max": 0.0016249999999999876,
+   "moved": 20
+  },
+  "bias_decomposition.json:lean_only.p_sen": {
+   "rms": 0.0022848550282239177,
+   "max": 0.004275000000000029,
+   "moved": 20
+  },
+  "bias_decomposition.json:lean_only.sen_seats": {
+   "rms": 0.014391333112329157,
+   "max": 0.02955000000000041,
+   "moved": 20
+  },
+  "bias_decomposition.json:unadjusted.house_seats": {
+   "rms": 0.07839777838848383,
+   "max": 0.15737500000000182,
+   "moved": 20
+  },
+  "bias_decomposition.json:unadjusted.p_house": {
+   "rms": 0.0011316470297756075,
+   "max": 0.002174999999999927,
+   "moved": 18
+  },
+  "bias_decomposition.json:unadjusted.p_sen": {
+   "rms": 0.0027696626599641983,
+   "max": 0.004475000000000007,
+   "moved": 20
+  },
+  "bias_decomposition.json:unadjusted.sen_seats": {
+   "rms": 0.018029182940443953,
+   "max": 0.031100000000002126,
+   "moved": 20
+  },
+  "error_sensitivity.json:estimated.corr_pairs.AK~IA": {
+   "rms": 0.013519117503565775,
+   "max": 0.0205335469707133,
+   "moved": 20
+  },
+  "error_sensitivity.json:estimated.corr_pairs.ME~NC": {
+   "rms": 0.007182669462106545,
+   "max": 0.014600045401166495,
+   "moved": 20
+  },
+  "error_sensitivity.json:estimated.corr_pairs.MI~IA": {
+   "rms": 0.007159247204826393,
+   "max": 0.01421211295480801,
+   "moved": 20
+  },
+  "error_sensitivity.json:estimated.corr_pairs.MI~OH-sp": {
+   "rms": 0.009326882305898815,
+   "max": 0.01939623051820627,
+   "moved": 20
+  },
+  "error_sensitivity.json:estimated.corr_pairs.OH-sp~IA": {
+   "rms": 0.007555158871613794,
+   "max": 0.015506448547590646,
+   "moved": 20
+  },
+  "error_sensitivity.json:estimated.corr_pairs.TX~KS": {
+   "rms": 0.011257871215247243,
+   "max": 0.02398130292645273,
+   "moved": 20
+  },
+  "error_sensitivity.json:estimated.corr_pairs.TX~ME": {
+   "rms": 0.007155142928022147,
+   "max": 0.015197860857205314,
+   "moved": 20
+  },
+  "error_sensitivity.json:estimated.house_p90": {
+   "rms": 0.4472135954999579,
+   "max": 1.0,
+   "moved": 4
+  },
+  "error_sensitivity.json:estimated.p_dem_house": {
+   "rms": 0.0013954949838677372,
+   "max": 0.002375000000000016,
+   "moved": 20
+  },
+  "error_sensitivity.json:estimated.p_dem_senate": {
+   "rms": 0.001799435675427169,
+   "max": 0.0034000000000000696,
+   "moved": 20
+  },
+  "error_sensitivity.json:national_only.corr_pairs.AK~IA": {
+   "rms": 0.008172959152945547,
+   "max": 0.015068020597712728,
+   "moved": 20
+  },
+  "error_sensitivity.json:national_only.corr_pairs.ME~NC": {
+   "rms": 0.01405010778024636,
+   "max": 0.02510574891252554,
+   "moved": 20
+  },
+  "error_sensitivity.json:national_only.corr_pairs.MI~IA": {
+   "rms": 0.008020640206124944,
+   "max": 0.013301775326783838,
+   "moved": 20
+  },
+  "error_sensitivity.json:national_only.corr_pairs.MI~OH-sp": {
+   "rms": 0.009233829261879777,
+   "max": 0.018569014953957352,
+   "moved": 20
+  },
+  "error_sensitivity.json:national_only.corr_pairs.OH-sp~IA": {
+   "rms": 0.014600204635464931,
+   "max": 0.027112457829758574,
+   "moved": 20
+  },
+  "error_sensitivity.json:national_only.corr_pairs.TX~KS": {
+   "rms": 0.00580167444749188,
+   "max": 0.013672813935127481,
+   "moved": 20
+  },
+  "error_sensitivity.json:national_only.corr_pairs.TX~ME": {
+   "rms": 0.008480859861691292,
+   "max": 0.016275670910119888,
+   "moved": 20
+  },
+  "error_sensitivity.json:national_only.house_p10": {
+   "rms": 0.6324555320336759,
+   "max": 1.0,
+   "moved": 8
+  },
+  "error_sensitivity.json:national_only.house_p90": {
+   "rms": 0.5,
+   "max": 1.0,
+   "moved": 5
+  },
+  "error_sensitivity.json:national_only.p_dem_house": {
+   "rms": 0.0018469823361364063,
+   "max": 0.003249999999999975,
+   "moved": 20
+  },
+  "error_sensitivity.json:national_only.p_dem_senate": {
+   "rms": 0.0026288245947571347,
+   "max": 0.005750000000000033,
+   "moved": 20
+  },
+  "error_sensitivity.json:strong_region_2pt.corr_pairs.AK~IA": {
+   "rms": 0.012848753161320236,
+   "max": 0.0204903350822625,
+   "moved": 20
+  },
+  "error_sensitivity.json:strong_region_2pt.corr_pairs.ME~NC": {
+   "rms": 0.013696486856959927,
+   "max": 0.023865018911686964,
+   "moved": 20
+  },
+  "error_sensitivity.json:strong_region_2pt.corr_pairs.MI~IA": {
+   "rms": 0.014333042540110728,
+   "max": 0.023952977037963674,
+   "moved": 20
+  },
+  "error_sensitivity.json:strong_region_2pt.corr_pairs.MI~OH-sp": {
+   "rms": 0.009125827957592682,
+   "max": 0.01766557216953807,
+   "moved": 20
+  },
+  "error_sensitivity.json:strong_region_2pt.corr_pairs.OH-sp~IA": {
+   "rms": 0.00984116745409754,
+   "max": 0.01863981973554163,
+   "moved": 20
+  },
+  "error_sensitivity.json:strong_region_2pt.corr_pairs.TX~KS": {
+   "rms": 0.010216081290663134,
+   "max": 0.0234010735119366,
+   "moved": 20
+  },
+  "error_sensitivity.json:strong_region_2pt.corr_pairs.TX~ME": {
+   "rms": 0.008564652661334927,
+   "max": 0.016020649532261066,
+   "moved": 20
+  },
+  "error_sensitivity.json:strong_region_2pt.house_p90": {
+   "rms": 0.5916079783099616,
+   "max": 1.0,
+   "moved": 7
+  },
+  "error_sensitivity.json:strong_region_2pt.p_dem_house": {
+   "rms": 0.0018753499673394018,
+   "max": 0.004149999999999987,
+   "moved": 20
+  },
+  "error_sensitivity.json:strong_region_2pt.p_dem_senate": {
+   "rms": 0.0035934532486175054,
+   "max": 0.005849999999999911,
+   "moved": 20
+  },
+  "error_sensitivity.json:strong_region_2pt.senate_p90": {
+   "rms": 0.31622776601683794,
+   "max": 1.0,
+   "moved": 2
+  },
+  "house_polls_fundamentals.csv:p_dem": {
+   "rms": 0.009266768584571438,
+   "max": 0.0131,
+   "moved": 20
+  },
+  "house_polls_fundamentals_biasadj.csv:p_dem": {
+   "rms": 0.008044138005404933,
+   "max": 0.01117499999999999,
+   "moved": 20
+  },
+  "house_polls_only.csv:p_dem": {
+   "rms": 0.009364644280483917,
+   "max": 0.01282500000000003,
+   "moved": 20
+  },
+  "pocket/house_pocket_full_historical_bias.csv:p_dem": {
+   "rms": 0.007555746984911561,
+   "max": 0.01067499999999999,
+   "moved": 20
+  },
+  "pocket/house_pocket_senate_wide_shift.csv:p_dem": {
+   "rms": 0.00884021351552098,
+   "max": 0.014274999999999982,
+   "moved": 20
+  },
+  "pocket/senate_pocket_full_historical_bias.csv:p_dside": {
+   "rms": 0.006087615501984334,
+   "max": 0.007174999999999987,
+   "moved": 20
+  },
+  "pocket/senate_pocket_full_historical_bias.csv:q10": {
+   "rms": 0.2917474682448841,
+   "max": 0.4021486194473596,
+   "moved": 20
+  },
+  "pocket/senate_pocket_full_historical_bias.csv:q25": {
+   "rms": 0.19204198289883728,
+   "max": 0.28085920107476703,
+   "moved": 20
+  },
+  "pocket/senate_pocket_full_historical_bias.csv:q75": {
+   "rms": 0.16577379443635681,
+   "max": 0.238926188553787,
+   "moved": 20
+  },
+  "pocket/senate_pocket_full_historical_bias.csv:q90": {
+   "rms": 0.22472834989190432,
+   "max": 0.3371095812088285,
+   "moved": 20
+  },
+  "pocket/senate_pocket_senate_wide_shift.csv:p_dside": {
+   "rms": 0.00533824936191631,
+   "max": 0.00799999999999998,
+   "moved": 20
+  },
+  "pocket/senate_pocket_senate_wide_shift.csv:q10": {
+   "rms": 0.29431465903597803,
+   "max": 0.39857311559389075,
+   "moved": 20
+  },
+  "pocket/senate_pocket_senate_wide_shift.csv:q25": {
+   "rms": 0.18300969661994781,
+   "max": 0.2681494302241987,
+   "moved": 20
+  },
+  "pocket/senate_pocket_senate_wide_shift.csv:q75": {
+   "rms": 0.1648370950512537,
+   "max": 0.2383320771353894,
+   "moved": 20
+  },
+  "pocket/senate_pocket_senate_wide_shift.csv:q90": {
+   "rms": 0.2610092049065677,
+   "max": 0.3423575438353126,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:house.dem_seats_mean": {
+   "rms": 0.043255060397601144,
+   "max": 0.07484999999999786,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:house.dem_seats_p10": {
+   "rms": 0.8660254037844386,
+   "max": 1.0,
+   "moved": 15
+  },
+  "pocket/summary_pocket_full_historical_bias.json:house.hist[*]": {
+   "rms": 116.20542156026973,
+   "max": 180.0,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:house.p_dem_majority": {
+   "rms": 0.0019068134413203748,
+   "max": 0.003674999999999984,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:house.p_kiley_wins": {
+   "rms": 0.0016122480423309581,
+   "max": 0.0029,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:house.p_no_majority": {
+   "rms": 0.00024277046772620424,
+   "max": 0.00047499999999999994,
+   "moved": 19
+  },
+  "pocket/summary_pocket_full_historical_bias.json:house.p_rep_majority": {
+   "rms": 0.0020468573472521264,
+   "max": 0.0037750000000000006,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:house.reading.exp_gain_from_R": {
+   "rms": 0.03844685211431224,
+   "max": 0.0794499999999978,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:house.reading.exp_loss_from_D": {
+   "rms": 0.01857371126081202,
+   "max": 0.027675000000000338,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:house.reading.exp_open_D": {
+   "rms": 0.013333317057281791,
+   "max": 0.020124999999999282,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:house.reading.flip_to_d[*].p_flip": {
+   "rms": 0.005927647088010577,
+   "max": 0.008525000000000005,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:house.reading.flip_to_r[*].p_flip": {
+   "rms": 0.00476892283435155,
+   "max": 0.007400000000000073,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:house.reading.ladder (items in one file only)": {
+   "rms": 3.872983346207417,
+   "max": 7.0,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:house.reading.ladder[*].p": {
+   "rms": 0.007555746984911561,
+   "max": 0.01067499999999999,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:house.reading.ladder[*].p_ctrl_given_loss": {
+   "rms": 0.03364073435393161,
+   "max": 0.04314406373493218,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:house.reading.ladder[*].p_ctrl_given_win": {
+   "rms": 0.018229898060066394,
+   "max": 0.023499036464667222,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:house.reading.ladder[*].seat": {
+   "rms": 7.848566748139434,
+   "max": 9.0,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:house.reading.ladder[*].tp": {
+   "rms": 0.002278074845126911,
+   "max": 0.002999999999999999,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:house.reading.n_above_ladder": {
+   "rms": 0.8944271909999159,
+   "max": 2.0,
+   "moved": 13
+  },
+  "pocket/summary_pocket_full_historical_bias.json:house.reading.n_comp": {
+   "rms": 0.5,
+   "max": 1.0,
+   "moved": 5
+  },
+  "pocket/summary_pocket_full_historical_bias.json:house.reading.n_flip_to_d": {
+   "rms": 0.5,
+   "max": 1.0,
+   "moved": 5
+  },
+  "pocket/summary_pocket_full_historical_bias.json:house.reading.p_upsets[*]": {
+   "rms": 0.0038001192415501907,
+   "max": 0.004899999999999988,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:house.reading.p_upsets[*] (count)": {
+   "rms": 0.9219544457292888,
+   "max": 1.0,
+   "moved": 17
+  },
+  "pocket/summary_pocket_full_historical_bias.json:house.reading.tipping_point (items in one file only)": {
+   "rms": 1.1832159566199232,
+   "max": 2.0,
+   "moved": 7
+  },
+  "pocket/summary_pocket_full_historical_bias.json:house.reading.tipping_point[*].p": {
+   "rms": 0.0015816131006033062,
+   "max": 0.0027500000000000024,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:house.reading.upsets_mean": {
+   "rms": 0.03203111475581193,
+   "max": 0.07267500000000027,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:house.reading.upsets_to_dem_mean": {
+   "rms": 0.03405969575612805,
+   "max": 0.0681750000000001,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:house.reading.upsets_to_rep_mean": {
+   "rms": 0.014995895271706833,
+   "max": 0.03342499999999937,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:senate.dem_seats_mean": {
+   "rms": 0.01690964776392425,
+   "max": 0.03237500000000182,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:senate.error_corr_pairs.AK~IA": {
+   "rms": 0.007344359586032485,
+   "max": 0.018037779136309717,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:senate.error_corr_pairs.ME~NC": {
+   "rms": 0.00951283496168119,
+   "max": 0.01754314402681678,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:senate.error_corr_pairs.MI~IA": {
+   "rms": 0.00937313160074886,
+   "max": 0.01651641921479305,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:senate.error_corr_pairs.MI~OH-sp": {
+   "rms": 0.009644110809037883,
+   "max": 0.02249974229128987,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:senate.error_corr_pairs.OH-sp~IA": {
+   "rms": 0.007457078066006174,
+   "max": 0.02045800774012249,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:senate.error_corr_pairs.TX~KS": {
+   "rms": 0.007337573951457688,
+   "max": 0.016738606975140707,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:senate.error_corr_pairs.TX~ME": {
+   "rms": 0.00598500753903444,
+   "max": 0.01660249751457951,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:senate.hist[*]": {
+   "rms": 163.97972435639718,
+   "max": 258.0,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:senate.p_dem_control_if_independents_caucus_D": {
+   "rms": 0.0032727711881523174,
+   "max": 0.006849999999999967,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:senate.p_dem_control_without_osborn": {
+   "rms": 0.0035784598642432846,
+   "max": 0.0065749999999999975,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:senate.p_house_D_senate_R": {
+   "rms": 0.004014423215108228,
+   "max": 0.00892499999999996,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:senate.p_house_and_senate_D": {
+   "rms": 0.0036374441576469646,
+   "max": 0.006850000000000023,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:senate.p_indep_wins_each.ID": {
+   "rms": 0.0009973715456137705,
+   "max": 0.002450000000000001,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:senate.p_indep_wins_each.NE": {
+   "rms": 0.002464656416217075,
+   "max": 0.005874999999999991,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:senate.p_indep_wins_each.SD": {
+   "rms": 0.0005481788029466298,
+   "max": 0.0012250000000000004,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:senate.p_independents_pivotal": {
+   "rms": 0.001047810216594588,
+   "max": 0.0022749999999999992,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:senate.p_osborn_wins": {
+   "rms": 0.002464656416217075,
+   "max": 0.005874999999999991,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:senate.p_rep_control": {
+   "rms": 0.0032727711881523204,
+   "max": 0.006850000000000023,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:senate.reading.comp_races (items in one file only)": {
+   "rms": 1.161895003862225,
+   "max": 2.0,
+   "moved": 18
+  },
+  "pocket/summary_pocket_full_historical_bias.json:senate.reading.expected_comp_dem_wins": {
+   "rms": 0.8934760340938089,
+   "max": 1.0127000000000006,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:senate.reading.ladder[*].p": {
+   "rms": 0.006087615501984334,
+   "max": 0.007174999999999987,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:senate.reading.ladder[*].p_ctrl_given_loss": {
+   "rms": 0.11524546420867487,
+   "max": 0.1784688995215311,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:senate.reading.ladder[*].p_ctrl_given_win": {
+   "rms": 0.07858990670709597,
+   "max": 0.12357217030114231,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:senate.reading.ladder[*].p_win_given_ctrl": {
+   "rms": 0.008810008534876998,
+   "max": 0.011986244729058515,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:senate.reading.ladder[*].tp": {
+   "rms": 0.0036473406407957014,
+   "max": 0.005099999999999993,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:senate.reading.maps (items in one file only)": {
+   "rms": 7.602631123499285,
+   "max": 8.0,
+   "moved": 19
+  },
+  "pocket/summary_pocket_full_historical_bias.json:senate.reading.maps[*].p": {
+   "rms": 0.00036025164815722886,
+   "max": 0.0011999999999999988,
+   "moved": 2
+  },
+  "pocket/summary_pocket_full_historical_bias.json:senate.reading.n_comp": {
+   "rms": 1.161895003862225,
+   "max": 2.0,
+   "moved": 18
+  },
+  "pocket/summary_pocket_full_historical_bias.json:senate.reading.p_favorites_map": {
+   "rms": 0.0006553624951124374,
+   "max": 0.0011999999999999988,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:senate.reading.p_upsets[*]": {
+   "rms": 0.006033611584283496,
+   "max": 0.009224999999999983,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:senate.reading.p_upsets_cancel": {
+   "rms": 0.002756600034462749,
+   "max": 0.005650000000000016,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:senate.reading.tipping_point[*].p": {
+   "rms": 0.0035340707760315162,
+   "max": 0.005025000000000002,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:senate.reading.upsets_mean": {
+   "rms": 0.05016421377585812,
+   "max": 0.09715000000000007,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:senate.reading.upsets_to_dem_mean": {
+   "rms": 0.02261534600663893,
+   "max": 0.05767499999999992,
+   "moved": 20
+  },
+  "pocket/summary_pocket_full_historical_bias.json:senate.reading.upsets_to_rep_mean": {
+   "rms": 0.03886690791984866,
+   "max": 0.056074999999999875,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:house.dem_seats_mean": {
+   "rms": 0.057366612949086244,
+   "max": 0.12417500000000814,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:house.dem_seats_p10": {
+   "rms": 0.31622776601683794,
+   "max": 1.0,
+   "moved": 2
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:house.hist[*]": {
+   "rms": 123.1391489332292,
+   "max": 175.0,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:house.p_dem_majority": {
+   "rms": 0.0019858719747254876,
+   "max": 0.003450000000000064,
+   "moved": 19
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:house.p_kiley_wins": {
+   "rms": 0.0013943524482712406,
+   "max": 0.0030000000000000027,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:house.p_no_majority": {
+   "rms": 0.00020007810974716846,
+   "max": 0.0005,
+   "moved": 17
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:house.p_rep_majority": {
+   "rms": 0.002076753776931685,
+   "max": 0.0034500000000000086,
+   "moved": 19
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:house.reading.exp_gain_from_R": {
+   "rms": 0.049515618748025514,
+   "max": 0.0922999999999945,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:house.reading.exp_loss_from_D": {
+   "rms": 0.01165880166440747,
+   "max": 0.02934999999999821,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:house.reading.exp_open_D": {
+   "rms": 0.0054531556231225175,
+   "max": 0.011149999999998883,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:house.reading.flip_to_d[*].p_flip": {
+   "rms": 0.0055759500311605955,
+   "max": 0.009075000000000055,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:house.reading.flip_to_r[*].p_flip": {
+   "rms": 0.008056643221590425,
+   "max": 0.014274999999999927,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:house.reading.ladder (items in one file only)": {
+   "rms": 8.851553535961921,
+   "max": 13.0,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:house.reading.ladder[*].p": {
+   "rms": 0.00884021351552098,
+   "max": 0.014274999999999982,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:house.reading.ladder[*].p_ctrl_given_loss": {
+   "rms": 0.03673518155684119,
+   "max": 0.04900521852576645,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:house.reading.ladder[*].p_ctrl_given_win": {
+   "rms": 0.017513161858463678,
+   "max": 0.023192659667567894,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:house.reading.ladder[*].seat": {
+   "rms": 8.387490685538792,
+   "max": 9.0,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:house.reading.ladder[*].tp": {
+   "rms": 0.0024357044668842738,
+   "max": 0.0038000000000000013,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:house.reading.n_above_ladder": {
+   "rms": 0.9219544457292888,
+   "max": 1.0,
+   "moved": 17
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:house.reading.n_comp": {
+   "rms": 1.91049731745428,
+   "max": 3.0,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:house.reading.n_flip_to_d": {
+   "rms": 2.073644135332772,
+   "max": 4.0,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:house.reading.p_upsets[*]": {
+   "rms": 0.004087381496753149,
+   "max": 0.0055750000000000036,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:house.reading.p_upsets[*] (count)": {
+   "rms": 0.4472135954999579,
+   "max": 1.0,
+   "moved": 4
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:house.reading.tipping_point (items in one file only)": {
+   "rms": 2.4083189157584592,
+   "max": 4.0,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:house.reading.tipping_point[*].p": {
+   "rms": 0.001350138881745134,
+   "max": 0.002074999999999997,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:house.reading.upsets_mean": {
+   "rms": 0.14442317150910922,
+   "max": 0.23482499999999717,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:house.reading.upsets_to_dem_mean": {
+   "rms": 0.1367010815154725,
+   "max": 0.23587500000000006,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:house.reading.upsets_to_rep_mean": {
+   "rms": 0.01867234502546487,
+   "max": 0.05025000000000013,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:senate.dem_seats_mean": {
+   "rms": 0.016525706301091184,
+   "max": 0.032399999999995543,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:senate.error_corr_pairs.AK~IA": {
+   "rms": 0.007960057259834081,
+   "max": 0.0174271660273545,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:senate.error_corr_pairs.ME~NC": {
+   "rms": 0.01237048817743267,
+   "max": 0.021451375120573962,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:senate.error_corr_pairs.MI~IA": {
+   "rms": 0.007683545287533392,
+   "max": 0.01852656391732993,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:senate.error_corr_pairs.MI~OH-sp": {
+   "rms": 0.010309437577246077,
+   "max": 0.01687071765633577,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:senate.error_corr_pairs.OH-sp~IA": {
+   "rms": 0.014020512701039304,
+   "max": 0.02565318589348195,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:senate.error_corr_pairs.TX~KS": {
+   "rms": 0.011564244082949988,
+   "max": 0.02007388518705691,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:senate.error_corr_pairs.TX~ME": {
+   "rms": 0.007139383474533671,
+   "max": 0.012606302373257744,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:senate.hist[*]": {
+   "rms": 142.94072197942754,
+   "max": 216.0,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:senate.p_dem_control_if_independents_caucus_D": {
+   "rms": 0.0029822181342081823,
+   "max": 0.004574999999999996,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:senate.p_dem_control_without_osborn": {
+   "rms": 0.0035647186074078668,
+   "max": 0.005525000000000002,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:senate.p_house_D_senate_R": {
+   "rms": 0.004153812255025495,
+   "max": 0.007674999999999987,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:senate.p_house_and_senate_D": {
+   "rms": 0.003604888174409873,
+   "max": 0.005600000000000049,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:senate.p_indep_wins_each.ID": {
+   "rms": 0.0012172330302780965,
+   "max": 0.003124999999999996,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:senate.p_indep_wins_each.NE": {
+   "rms": 0.0022366059666378436,
+   "max": 0.007374999999999993,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:senate.p_indep_wins_each.SD": {
+   "rms": 0.0005797359312652615,
+   "max": 0.0013249999999999998,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:senate.p_independents_pivotal": {
+   "rms": 0.0009562785943437195,
+   "max": 0.0020000000000000018,
+   "moved": 18
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:senate.p_osborn_wins": {
+   "rms": 0.0022366059666378436,
+   "max": 0.007374999999999993,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:senate.p_rep_control": {
+   "rms": 0.002982218134208178,
+   "max": 0.004575000000000051,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:senate.reading.expected_comp_dem_wins": {
+   "rms": 0.013634917262309096,
+   "max": 0.02925000000000111,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:senate.reading.ladder[*].p": {
+   "rms": 0.005171593081440174,
+   "max": 0.00799999999999998,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:senate.reading.ladder[*].p_ctrl_given_loss": {
+   "rms": 0.11571385383439432,
+   "max": 0.2717391304347826,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:senate.reading.ladder[*].p_ctrl_given_win": {
+   "rms": 0.061871229901518617,
+   "max": 0.10863039399624763,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:senate.reading.ladder[*].p_win_given_ctrl": {
+   "rms": 0.00672062325655687,
+   "max": 0.012249252142305322,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:senate.reading.ladder[*].tp": {
+   "rms": 0.003616066578479995,
+   "max": 0.005549999999999999,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:senate.reading.maps (items in one file only)": {
+   "rms": 0.7745966692414834,
+   "max": 2.0,
+   "moved": 3
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:senate.reading.maps[*].p": {
+   "rms": 0.0013738745393957934,
+   "max": 0.0020000000000000018,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:senate.reading.p_favorites_map": {
+   "rms": 0.0007795030468189335,
+   "max": 0.001850000000000001,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:senate.reading.p_upsets[*]": {
+   "rms": 0.0032878802061510693,
+   "max": 0.005750000000000005,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:senate.reading.p_upsets_cancel": {
+   "rms": 0.0021695837734459532,
+   "max": 0.004674999999999985,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:senate.reading.tipping_point[*].p": {
+   "rms": 0.0027308652474994054,
+   "max": 0.004524999999999987,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:senate.reading.upsets_mean": {
+   "rms": 0.008077677574649783,
+   "max": 0.016550000000000065,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:senate.reading.upsets_to_dem_mean": {
+   "rms": 0.008409217413053388,
+   "max": 0.013549999999999951,
+   "moved": 20
+  },
+  "pocket/summary_pocket_senate_wide_shift.json:senate.reading.upsets_to_rep_mean": {
+   "rms": 0.007438670076028332,
+   "max": 0.016799999999999926,
+   "moved": 20
+  },
+  "senate_polls_fundamentals.csv:p_dside": {
+   "rms": 0.004957396620202987,
+   "max": 0.006300000000000028,
+   "moved": 20
+  },
+  "senate_polls_fundamentals.csv:q10": {
+   "rms": 0.2665270011965855,
+   "max": 0.3805499784265436,
+   "moved": 20
+  },
+  "senate_polls_fundamentals.csv:q25": {
+   "rms": 0.17893123361977217,
+   "max": 0.2781816796692702,
+   "moved": 20
+  },
+  "senate_polls_fundamentals.csv:q75": {
+   "rms": 0.18235984244945508,
+   "max": 0.27872048506358027,
+   "moved": 20
+  },
+  "senate_polls_fundamentals.csv:q90": {
+   "rms": 0.31183890819210913,
+   "max": 0.45414985467699687,
+   "moved": 20
+  },
+  "senate_polls_fundamentals_biasadj.csv:p_dside": {
+   "rms": 0.00671633503110137,
+   "max": 0.010649999999999937,
+   "moved": 20
+  },
+  "senate_polls_fundamentals_biasadj.csv:q10": {
+   "rms": 0.27864894573208876,
+   "max": 0.3902404483463755,
+   "moved": 20
+  },
+  "senate_polls_fundamentals_biasadj.csv:q25": {
+   "rms": 0.18414053376336792,
+   "max": 0.2520594744430653,
+   "moved": 20
+  },
+  "senate_polls_fundamentals_biasadj.csv:q75": {
+   "rms": 0.16531137966582402,
+   "max": 0.19889490995668524,
+   "moved": 20
+  },
+  "senate_polls_fundamentals_biasadj.csv:q90": {
+   "rms": 0.2646144475448121,
+   "max": 0.3679870185189422,
+   "moved": 20
+  },
+  "senate_polls_only.csv:p_dside": {
+   "rms": 0.006533253879193747,
+   "max": 0.009649999999999992,
+   "moved": 20
+  },
+  "senate_polls_only.csv:q10": {
+   "rms": 0.30460463375344693,
+   "max": 0.5142559678359699,
+   "moved": 20
+  },
+  "senate_polls_only.csv:q25": {
+   "rms": 0.17688273235589083,
+   "max": 0.27467714952894795,
+   "moved": 20
+  },
+  "senate_polls_only.csv:q75": {
+   "rms": 0.1636741537629565,
+   "max": 0.22696749583086062,
+   "moved": 20
+  },
+  "senate_polls_only.csv:q90": {
+   "rms": 0.23318068277336726,
+   "max": 0.32158214842895205,
+   "moved": 20
+  },
+  "sensitivity.json:pH_max": {
+   "rms": 0.0008224582056250659,
+   "max": 0.0014250000000000096,
+   "moved": 20
+  },
+  "sensitivity.json:pH_min": {
+   "rms": 0.0010162892058858185,
+   "max": 0.0021499999999999853,
+   "moved": 20
+  },
+  "sensitivity.json:pS_max": {
+   "rms": 0.0021417720466940103,
+   "max": 0.00484999999999991,
+   "moved": 19
+  },
+  "sensitivity.json:pS_min": {
+   "rms": 0.0024325526715777202,
+   "max": 0.004549999999999943,
+   "moved": 20
+  },
+  "sensitivity.json:specs[*].pH": {
+   "rms": 0.0023936830930597094,
+   "max": 0.003450000000000064,
+   "moved": 20
+  },
+  "sensitivity.json:specs[*].pS": {
+   "rms": 0.005598618691248748,
+   "max": 0.008974999999999955,
+   "moved": 20
+  },
+  "sims_polls_fundamentals.bin:house_mean": {
+   "rms": 0.05955719624864134,
+   "max": 0.10369999999997503,
+   "moved": 20
+  },
+  "sims_polls_fundamentals.bin:house_p10_p90": {
+   "rms": 0.31622776601683794,
+   "max": 1.0,
+   "moved": 2
+  },
+  "sims_polls_fundamentals.bin:nat_mean": {
+   "rms": 0.01618437076897029,
+   "max": 0.0359575,
+   "moved": 20
+  },
+  "sims_polls_fundamentals.bin:nat_sd": {
+   "rms": 0.031304640720663274,
+   "max": 0.07222268038726298,
+   "moved": 20
+  },
+  "sims_polls_fundamentals.bin:race_win_rate": {
+   "rms": 0.004957396620202987,
+   "max": 0.006300000000000028,
+   "moved": 20
+  },
+  "sims_polls_fundamentals.bin:races_in_one_file_only": {
+   "rms": 1.0954451150103321,
+   "max": 2.0,
+   "moved": 6
+  },
+  "sims_polls_fundamentals.bin:senate_mean": {
+   "rms": 0.010356083658893088,
+   "max": 0.019824999999997317,
+   "moved": 20
+  },
+  "sims_polls_fundamentals_biasadj.bin:house_mean": {
+   "rms": 0.09073342634469446,
+   "max": 0.134050000000002,
+   "moved": 20
+  },
+  "sims_polls_fundamentals_biasadj.bin:house_p10_p90": {
+   "rms": 0.3872983346207417,
+   "max": 1.0,
+   "moved": 3
+  },
+  "sims_polls_fundamentals_biasadj.bin:nat_mean": {
+   "rms": 0.030537206215328544,
+   "max": 0.041162500000000005,
+   "moved": 20
+  },
+  "sims_polls_fundamentals_biasadj.bin:nat_sd": {
+   "rms": 0.08945510383905263,
+   "max": 0.13265991487304962,
+   "moved": 20
+  },
+  "sims_polls_fundamentals_biasadj.bin:race_win_rate": {
+   "rms": 0.00671633503110137,
+   "max": 0.010649999999999937,
+   "moved": 20
+  },
+  "sims_polls_fundamentals_biasadj.bin:senate_mean": {
+   "rms": 0.026455134189791913,
+   "max": 0.04714999999999492,
+   "moved": 20
+  },
+  "sims_polls_only.bin:house_mean": {
+   "rms": 0.11563952949251902,
+   "max": 0.22939999999999827,
+   "moved": 20
+  },
+  "sims_polls_only.bin:house_p10_p90": {
+   "rms": 0.9219544457292888,
+   "max": 1.0,
+   "moved": 17
+  },
+  "sims_polls_only.bin:nat_mean": {
+   "rms": 0.026851850320322432,
+   "max": 0.0534525,
+   "moved": 20
+  },
+  "sims_polls_only.bin:nat_sd": {
+   "rms": 0.07090537339527136,
+   "max": 0.12396820703424272,
+   "moved": 20
+  },
+  "sims_polls_only.bin:race_win_rate": {
+   "rms": 0.006533253879193747,
+   "max": 0.009649999999999992,
+   "moved": 20
+  },
+  "sims_polls_only.bin:races_in_one_file_only": {
+   "rms": 0.6324555320336759,
+   "max": 2.0,
+   "moved": 2
+  },
+  "sims_polls_only.bin:senate_mean": {
+   "rms": 0.018109137023889128,
+   "max": 0.042099999999997806,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:house.dem_seats_mean": {
+   "rms": 0.05955719624864134,
+   "max": 0.10369999999997503,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:house.dem_seats_median": {
+   "rms": 0.7071067811865476,
+   "max": 1.0,
+   "moved": 10
+  },
+  "summary_polls_fundamentals.json:house.dem_seats_p90": {
+   "rms": 0.31622776601683794,
+   "max": 1.0,
+   "moved": 2
+  },
+  "summary_polls_fundamentals.json:house.hist[*]": {
+   "rms": 99.7679808355366,
+   "max": 139.0,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:house.p_dem_majority": {
+   "rms": 0.0010774825984673744,
+   "max": 0.0019000000000000128,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:house.p_kiley_wins": {
+   "rms": 0.0015327671055969318,
+   "max": 0.003025,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:house.p_no_majority": {
+   "rms": 0.00014979152178945241,
+   "max": 0.000325,
+   "moved": 16
+  },
+  "summary_polls_fundamentals.json:house.p_rep_majority": {
+   "rms": 0.0010779465432014734,
+   "max": 0.002200000000000004,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:house.reading.exp_gain_from_R": {
+   "rms": 0.0551449524548721,
+   "max": 0.10630000000000095,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:house.reading.exp_loss_from_D": {
+   "rms": 0.01776569288685308,
+   "max": 0.033949999999999037,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:house.reading.exp_open_D": {
+   "rms": 0.0063401301248483385,
+   "max": 0.012950000000000905,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:house.reading.flip_to_d[*].p_flip": {
+   "rms": 0.005064493434688202,
+   "max": 0.007974999999999954,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:house.reading.flip_to_r[*].p_flip": {
+   "rms": 0.004601497718134825,
+   "max": 0.007675000000000098,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:house.reading.ladder (items in one file only)": {
+   "rms": 10.497618777608569,
+   "max": 15.0,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:house.reading.ladder[*].p": {
+   "rms": 0.009266768584571438,
+   "max": 0.0131,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:house.reading.ladder[*].p_ctrl_given_loss": {
+   "rms": 0.025199897387930523,
+   "max": 0.04195698519172575,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:house.reading.ladder[*].p_ctrl_given_win": {
+   "rms": 0.008994680907744376,
+   "max": 0.011903247239775538,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:house.reading.ladder[*].seat": {
+   "rms": 11.949895397031725,
+   "max": 14.0,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:house.reading.ladder[*].tp": {
+   "rms": 0.0024860674266801368,
+   "max": 0.0032999999999999974,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:house.reading.n_above_ladder": {
+   "rms": 4.636809247747852,
+   "max": 7.0,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:house.reading.n_comp": {
+   "rms": 0.5916079783099616,
+   "max": 2.0,
+   "moved": 4
+  },
+  "summary_polls_fundamentals.json:house.reading.n_flip_to_d": {
+   "rms": 0.4472135954999579,
+   "max": 1.0,
+   "moved": 4
+  },
+  "summary_polls_fundamentals.json:house.reading.p_upsets[*]": {
+   "rms": 0.003943225995298773,
+   "max": 0.005374999999999998,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:house.reading.p_upsets[*] (count)": {
+   "rms": 0.806225774829855,
+   "max": 2.0,
+   "moved": 10
+  },
+  "summary_polls_fundamentals.json:house.reading.tipping_point (items in one file only)": {
+   "rms": 2.280350850198276,
+   "max": 4.0,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:house.reading.tipping_point[*].p": {
+   "rms": 0.0015097599146884234,
+   "max": 0.0020499999999999997,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:house.reading.upsets_mean": {
+   "rms": 0.04612538922599988,
+   "max": 0.1318749999999973,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:house.reading.upsets_to_dem_mean": {
+   "rms": 0.05077061250122967,
+   "max": 0.13214999999999932,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:house.reading.upsets_to_rep_mean": {
+   "rms": 0.017115480931016825,
+   "max": 0.045074999999999754,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:senate.dem_seats_mean": {
+   "rms": 0.010356083658893088,
+   "max": 0.019824999999997317,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:senate.error_corr_pairs.AK~IA": {
+   "rms": 0.008403570392638289,
+   "max": 0.018313263758890752,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:senate.error_corr_pairs.ME~NC": {
+   "rms": 0.007991417746332111,
+   "max": 0.015637942404641003,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:senate.error_corr_pairs.MI~IA": {
+   "rms": 0.0071702133352115754,
+   "max": 0.01520335900526043,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:senate.error_corr_pairs.MI~OH-sp": {
+   "rms": 0.009411106113232153,
+   "max": 0.021162840123322257,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:senate.error_corr_pairs.OH-sp~IA": {
+   "rms": 0.006054323474432116,
+   "max": 0.009673071889528762,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:senate.error_corr_pairs.TX~KS": {
+   "rms": 0.010050125277145482,
+   "max": 0.027615740675092204,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:senate.error_corr_pairs.TX~ME": {
+   "rms": 0.011761213653326772,
+   "max": 0.027658093602596023,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:senate.hist[*]": {
+   "rms": 215.99710646210056,
+   "max": 322.0,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:senate.p_dem_control_if_independents_caucus_D": {
+   "rms": 0.0021346545387954485,
+   "max": 0.004850000000000021,
+   "moved": 19
+  },
+  "summary_polls_fundamentals.json:senate.p_dem_control_without_osborn": {
+   "rms": 0.0020876347261913368,
+   "max": 0.005475000000000008,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:senate.p_house_D_senate_R": {
+   "rms": 0.0017891688014270775,
+   "max": 0.002824999999999994,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:senate.p_house_and_senate_D": {
+   "rms": 0.0020772427638579083,
+   "max": 0.005475000000000008,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:senate.p_indep_wins_each.ID": {
+   "rms": 0.0010260969739746832,
+   "max": 0.002125000000000002,
+   "moved": 19
+  },
+  "summary_polls_fundamentals.json:senate.p_indep_wins_each.NE": {
+   "rms": 0.0017898760431940641,
+   "max": 0.005875000000000019,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:senate.p_indep_wins_each.SD": {
+   "rms": 0.001484292760879741,
+   "max": 0.00255,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:senate.p_independents_pivotal": {
+   "rms": 0.0007977899159553224,
+   "max": 0.0017999999999999995,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:senate.p_osborn_wins": {
+   "rms": 0.0017898760431940641,
+   "max": 0.005875000000000019,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:senate.p_rep_control": {
+   "rms": 0.002134654538795446,
+   "max": 0.004849999999999993,
+   "moved": 19
+  },
+  "summary_polls_fundamentals.json:senate.reading.expected_comp_dem_wins": {
+   "rms": 0.009275801852131118,
+   "max": 0.019524999999999793,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:senate.reading.fav_dem": {
+   "rms": 0.22360679774997896,
+   "max": 1.0,
+   "moved": 1
+  },
+  "summary_polls_fundamentals.json:senate.reading.ladder[*].p": {
+   "rms": 0.004914315822166905,
+   "max": 0.006300000000000028,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:senate.reading.ladder[*].p_ctrl_given_loss": {
+   "rms": 0.165251508176672,
+   "max": 0.33710801393728224,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:senate.reading.ladder[*].p_ctrl_given_win": {
+   "rms": 0.056317244407652574,
+   "max": 0.09612612612612614,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:senate.reading.ladder[*].p_win_given_ctrl": {
+   "rms": 0.006094312197421505,
+   "max": 0.008345603759608133,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:senate.reading.ladder[*].tp": {
+   "rms": 0.0037695075938376835,
+   "max": 0.005324999999999996,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:senate.reading.maps (items in one file only)": {
+   "rms": 0.6324555320336759,
+   "max": 2.0,
+   "moved": 2
+  },
+  "summary_polls_fundamentals.json:senate.reading.maps[*].p": {
+   "rms": 0.0019630652052338962,
+   "max": 0.003875,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:senate.reading.p_favorites_map": {
+   "rms": 0.0014175462955402908,
+   "max": 0.005375000000000001,
+   "moved": 19
+  },
+  "summary_polls_fundamentals.json:senate.reading.p_upsets[*]": {
+   "rms": 0.005600343181448791,
+   "max": 0.016674999999999995,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:senate.reading.p_upsets_cancel": {
+   "rms": 0.002380867751472138,
+   "max": 0.006149999999999989,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:senate.reading.seats_if_favorites_win": {
+   "rms": 0.22360679774997896,
+   "max": 1.0,
+   "moved": 1
+  },
+  "summary_polls_fundamentals.json:senate.reading.tipping_point[*].p": {
+   "rms": 0.0032405921526782655,
+   "max": 0.004650000000000001,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:senate.reading.upsets_mean": {
+   "rms": 0.006738756840100388,
+   "max": 0.015474999999999905,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:senate.reading.upsets_to_dem_mean": {
+   "rms": 0.1108447928129689,
+   "max": 0.495225,
+   "moved": 20
+  },
+  "summary_polls_fundamentals.json:senate.reading.upsets_to_rep_mean": {
+   "rms": 0.11140698053757679,
+   "max": 0.4973000000000003,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:house.dem_seats_mean": {
+   "rms": 0.09073342634469446,
+   "max": 0.134050000000002,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:house.dem_seats_p10": {
+   "rms": 0.3872983346207417,
+   "max": 1.0,
+   "moved": 3
+  },
+  "summary_polls_fundamentals_biasadj.json:house.hist[*]": {
+   "rms": 118.10800142242692,
+   "max": 162.0,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:house.p_dem_majority": {
+   "rms": 0.004756176904825933,
+   "max": 0.007099999999999995,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:house.p_kiley_wins": {
+   "rms": 0.001335418941755735,
+   "max": 0.003600000000000006,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:house.p_no_majority": {
+   "rms": 0.0002655772015817623,
+   "max": 0.00065,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:house.p_rep_majority": {
+   "rms": 0.0049191145036479944,
+   "max": 0.007150000000000004,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:house.reading.exp_gain_from_R": {
+   "rms": 0.052035308625490446,
+   "max": 0.08472500000000238,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:house.reading.exp_loss_from_D": {
+   "rms": 0.038644253696377556,
+   "max": 0.051849999999999064,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:house.reading.exp_open_D": {
+   "rms": 0.004812003221112621,
+   "max": 0.009149999999999103,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:house.reading.flip_to_d[*].p_flip": {
+   "rms": 0.00553817998082404,
+   "max": 0.008275000000000032,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:house.reading.flip_to_r[*].p_flip": {
+   "rms": 0.005570387666042667,
+   "max": 0.008175000000000043,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:house.reading.ladder (items in one file only)": {
+   "rms": 8.734987120768983,
+   "max": 11.0,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:house.reading.ladder[*].p": {
+   "rms": 0.008044138005404933,
+   "max": 0.01117499999999999,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:house.reading.ladder[*].p_ctrl_given_loss": {
+   "rms": 0.04383898943828743,
+   "max": 0.057482596425211585,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:house.reading.ladder[*].p_ctrl_given_win": {
+   "rms": 0.017134309375849296,
+   "max": 0.026398333830630838,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:house.reading.ladder[*].seat": {
+   "rms": 8.108637370113428,
+   "max": 9.0,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:house.reading.ladder[*].tp": {
+   "rms": 0.00300691910433254,
+   "max": 0.004075000000000002,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:house.reading.n_above_ladder": {
+   "rms": 0.7745966692414834,
+   "max": 2.0,
+   "moved": 3
+  },
+  "summary_polls_fundamentals_biasadj.json:house.reading.n_comp": {
+   "rms": 1.3601470508735443,
+   "max": 3.0,
+   "moved": 11
+  },
+  "summary_polls_fundamentals_biasadj.json:house.reading.n_flip_to_d": {
+   "rms": 1.3601470508735443,
+   "max": 3.0,
+   "moved": 11
+  },
+  "summary_polls_fundamentals_biasadj.json:house.reading.p_upsets[*]": {
+   "rms": 0.004546303443458212,
+   "max": 0.0065749999999999975,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:house.reading.p_upsets[*] (count)": {
+   "rms": 0.6708203932499369,
+   "max": 1.0,
+   "moved": 9
+  },
+  "summary_polls_fundamentals_biasadj.json:house.reading.tipping_point (items in one file only)": {
+   "rms": 2.280350850198276,
+   "max": 4.0,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:house.reading.tipping_point[*].p": {
+   "rms": 0.00152373923293981,
+   "max": 0.0023500000000000014,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:house.reading.upsets_mean": {
+   "rms": 0.08213510059651807,
+   "max": 0.18455000000000155,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:house.reading.upsets_to_dem_mean": {
+   "rms": 0.10168827335292965,
+   "max": 0.21770000000000067,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:house.reading.upsets_to_rep_mean": {
+   "rms": 0.03027288493850558,
+   "max": 0.05217500000000008,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:senate.dem_seats_mean": {
+   "rms": 0.026455134189791913,
+   "max": 0.04714999999999492,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:senate.error_corr_pairs.AK~IA": {
+   "rms": 0.021009691490019897,
+   "max": 0.0320347543875204,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:senate.error_corr_pairs.ME~NC": {
+   "rms": 0.019942151229937723,
+   "max": 0.03720278510635022,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:senate.error_corr_pairs.MI~IA": {
+   "rms": 0.021557147495867582,
+   "max": 0.0375444066891788,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:senate.error_corr_pairs.MI~OH-sp": {
+   "rms": 0.020147647045613074,
+   "max": 0.03269627643318346,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:senate.error_corr_pairs.OH-sp~IA": {
+   "rms": 0.007783689086363535,
+   "max": 0.016228689690554687,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:senate.error_corr_pairs.TX~KS": {
+   "rms": 0.0248156206839282,
+   "max": 0.03108219159373171,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:senate.error_corr_pairs.TX~ME": {
+   "rms": 0.021101939515397832,
+   "max": 0.03803776033235151,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:senate.hist[*]": {
+   "rms": 149.05217207407614,
+   "max": 193.0,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:senate.p_dem_control_if_independents_caucus_D": {
+   "rms": 0.002218480617449687,
+   "max": 0.003950000000000009,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:senate.p_dem_control_without_osborn": {
+   "rms": 0.0021044447011028837,
+   "max": 0.003249999999999975,
+   "moved": 19
+  },
+  "summary_polls_fundamentals_biasadj.json:senate.p_house_D_senate_R": {
+   "rms": 0.00297837518623829,
+   "max": 0.00605,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:senate.p_house_and_senate_D": {
+   "rms": 0.0024997562381160188,
+   "max": 0.0045999999999999375,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:senate.p_indep_wins_each.ID": {
+   "rms": 0.001696743203905646,
+   "max": 0.00315,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:senate.p_indep_wins_each.NE": {
+   "rms": 0.00295169442862908,
+   "max": 0.004949999999999982,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:senate.p_indep_wins_each.SD": {
+   "rms": 0.0006635369243681916,
+   "max": 0.00115,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:senate.p_independents_pivotal": {
+   "rms": 0.0010492407969574943,
+   "max": 0.0017999999999999995,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:senate.p_osborn_wins": {
+   "rms": 0.00295169442862908,
+   "max": 0.004949999999999982,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:senate.p_rep_control": {
+   "rms": 0.0022184806174496943,
+   "max": 0.003950000000000009,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:senate.reading.expected_comp_dem_wins": {
+   "rms": 0.026842140958761175,
+   "max": 0.047150000000001135,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:senate.reading.ladder[*].p": {
+   "rms": 0.006670084800810216,
+   "max": 0.010649999999999937,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:senate.reading.ladder[*].p_ctrl_given_loss": {
+   "rms": 0.12646689610502748,
+   "max": 0.303921568627451,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:senate.reading.ladder[*].p_ctrl_given_win": {
+   "rms": 0.053644027953493656,
+   "max": 0.09567936985984016,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:senate.reading.ladder[*].p_win_given_ctrl": {
+   "rms": 0.007268379831433953,
+   "max": 0.010531739633044657,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:senate.reading.ladder[*].tp": {
+   "rms": 0.004042210874014363,
+   "max": 0.0063,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:senate.reading.maps[*].p": {
+   "rms": 0.001503714151692402,
+   "max": 0.002425,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:senate.reading.p_favorites_map": {
+   "rms": 0.0010809284203868454,
+   "max": 0.0019500000000000003,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:senate.reading.p_upsets[*]": {
+   "rms": 0.0035142166623587656,
+   "max": 0.005149999999999988,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:senate.reading.p_upsets_cancel": {
+   "rms": 0.002304994577000128,
+   "max": 0.004299999999999998,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:senate.reading.tipping_point[*].p": {
+   "rms": 0.0036715119501371566,
+   "max": 0.0063,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:senate.reading.upsets_mean": {
+   "rms": 0.01914743047382596,
+   "max": 0.03390000000000004,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:senate.reading.upsets_to_dem_mean": {
+   "rms": 0.00512189845174623,
+   "max": 0.01252500000000012,
+   "moved": 20
+  },
+  "summary_polls_fundamentals_biasadj.json:senate.reading.upsets_to_rep_mean": {
+   "rms": 0.021231873150996415,
+   "max": 0.03670000000000018,
+   "moved": 20
+  },
+  "summary_polls_only.json:house.dem_seats_mean": {
+   "rms": 0.11563952949251902,
+   "max": 0.22939999999999827,
+   "moved": 20
+  },
+  "summary_polls_only.json:house.dem_seats_p10": {
+   "rms": 0.9219544457292888,
+   "max": 1.0,
+   "moved": 17
+  },
+  "summary_polls_only.json:house.dem_seats_p90": {
+   "rms": 0.5916079783099616,
+   "max": 1.0,
+   "moved": 7
+  },
+  "summary_polls_only.json:house.hist[*]": {
+   "rms": 116.01055986417788,
+   "max": 170.0,
+   "moved": 20
+  },
+  "summary_polls_only.json:house.p_dem_majority": {
+   "rms": 0.0018196153439669876,
+   "max": 0.0036000000000000476,
+   "moved": 20
+  },
+  "summary_polls_only.json:house.p_kiley_wins": {
+   "rms": 0.001824460536706672,
+   "max": 0.0037499999999999964,
+   "moved": 19
+  },
+  "summary_polls_only.json:house.p_no_majority": {
+   "rms": 0.00016250000000000002,
+   "max": 0.00034999999999999994,
+   "moved": 18
+  },
+  "summary_polls_only.json:house.p_rep_majority": {
+   "rms": 0.0018540411942564816,
+   "max": 0.0034249999999999975,
+   "moved": 20
+  },
+  "summary_polls_only.json:house.reading.exp_gain_from_R": {
+   "rms": 0.08288506330304699,
+   "max": 0.15715000000000146,
+   "moved": 20
+  },
+  "summary_polls_only.json:house.reading.exp_loss_from_D": {
+   "rms": 0.027697779130283783,
+   "max": 0.05529999999999902,
+   "moved": 20
+  },
+  "summary_polls_only.json:house.reading.exp_open_D": {
+   "rms": 0.013692774098041371,
+   "max": 0.020174999999999166,
+   "moved": 20
+  },
+  "summary_polls_only.json:house.reading.flip_to_d[*].p_flip": {
+   "rms": 0.006105630086240082,
+   "max": 0.008074999999999943,
+   "moved": 20
+  },
+  "summary_polls_only.json:house.reading.flip_to_r[*].p_flip": {
+   "rms": 0.005401834179239499,
+   "max": 0.008099999999999996,
+   "moved": 20
+  },
+  "summary_polls_only.json:house.reading.ladder (items in one file only)": {
+   "rms": 3.057776970284131,
+   "max": 6.0,
+   "moved": 18
+  },
+  "summary_polls_only.json:house.reading.ladder[*].p": {
+   "rms": 0.009364644280483917,
+   "max": 0.01282500000000003,
+   "moved": 20
+  },
+  "summary_polls_only.json:house.reading.ladder[*].p_ctrl_given_loss": {
+   "rms": 0.04404220113183505,
+   "max": 0.06423565514286111,
+   "moved": 20
+  },
+  "summary_polls_only.json:house.reading.ladder[*].p_ctrl_given_win": {
+   "rms": 0.013742119987643436,
+   "max": 0.019697675192071107,
+   "moved": 20
+  },
+  "summary_polls_only.json:house.reading.ladder[*].seat": {
+   "rms": 12.204507364084796,
+   "max": 14.0,
+   "moved": 20
+  },
+  "summary_polls_only.json:house.reading.ladder[*].tp": {
+   "rms": 0.002173555554845561,
+   "max": 0.0034249999999999975,
+   "moved": 20
+  },
+  "summary_polls_only.json:house.reading.n_above_ladder": {
+   "rms": 0.3872983346207417,
+   "max": 1.0,
+   "moved": 3
+  },
+  "summary_polls_only.json:house.reading.n_comp": {
+   "rms": 1.8027756377319946,
+   "max": 3.0,
+   "moved": 17
+  },
+  "summary_polls_only.json:house.reading.n_flip_to_d": {
+   "rms": 1.0488088481701516,
+   "max": 2.0,
+   "moved": 10
+  },
+  "summary_polls_only.json:house.reading.n_flip_to_r": {
+   "rms": 0.7416198487095663,
+   "max": 1.0,
+   "moved": 11
+  },
+  "summary_polls_only.json:house.reading.p_upsets[*]": {
+   "rms": 0.004317142428736859,
+   "max": 0.006175,
+   "moved": 20
+  },
+  "summary_polls_only.json:house.reading.p_upsets[*] (count)": {
+   "rms": 1.0488088481701516,
+   "max": 2.0,
+   "moved": 13
+  },
+  "summary_polls_only.json:house.reading.tipping_point (items in one file only)": {
+   "rms": 2.1447610589527217,
+   "max": 4.0,
+   "moved": 20
+  },
+  "summary_polls_only.json:house.reading.tipping_point[*].p": {
+   "rms": 0.0013001442227691515,
+   "max": 0.0017500000000000016,
+   "moved": 20
+  },
+  "summary_polls_only.json:house.reading.upsets_mean": {
+   "rms": 0.11127775257772746,
+   "max": 0.2346749999999993,
+   "moved": 20
+  },
+  "summary_polls_only.json:house.reading.upsets_to_dem_mean": {
+   "rms": 0.09065011927736223,
+   "max": 0.19845000000000113,
+   "moved": 20
+  },
+  "summary_polls_only.json:house.reading.upsets_to_rep_mean": {
+   "rms": 0.10424746714549005,
+   "max": 0.18015000000000025,
+   "moved": 20
+  },
+  "summary_polls_only.json:senate.dem_seats_mean": {
+   "rms": 0.018109137023889128,
+   "max": 0.042099999999997806,
+   "moved": 20
+  },
+  "summary_polls_only.json:senate.dem_seats_median": {
+   "rms": 0.5,
+   "max": 1.0,
+   "moved": 5
+  },
+  "summary_polls_only.json:senate.error_corr_pairs.AK~IA": {
+   "rms": 0.007494585367713962,
+   "max": 0.017533549757124567,
+   "moved": 20
+  },
+  "summary_polls_only.json:senate.error_corr_pairs.ME~NC": {
+   "rms": 0.01748445394877072,
+   "max": 0.03123193751955733,
+   "moved": 20
+  },
+  "summary_polls_only.json:senate.error_corr_pairs.MI~IA": {
+   "rms": 0.007983913119086276,
+   "max": 0.01704884871775847,
+   "moved": 20
+  },
+  "summary_polls_only.json:senate.error_corr_pairs.MI~OH-sp": {
+   "rms": 0.011310008254414743,
+   "max": 0.0237823881070236,
+   "moved": 20
+  },
+  "summary_polls_only.json:senate.error_corr_pairs.OH-sp~IA": {
+   "rms": 0.007184833156610705,
+   "max": 0.0147649079864407,
+   "moved": 20
+  },
+  "summary_polls_only.json:senate.error_corr_pairs.TX~KS": {
+   "rms": 0.009440793045446462,
+   "max": 0.019571193035699985,
+   "moved": 20
+  },
+  "summary_polls_only.json:senate.error_corr_pairs.TX~ME": {
+   "rms": 0.009746331727630527,
+   "max": 0.02120021640675085,
+   "moved": 20
+  },
+  "summary_polls_only.json:senate.hist[*]": {
+   "rms": 149.47173645877,
+   "max": 218.0,
+   "moved": 20
+  },
+  "summary_polls_only.json:senate.p_dem_control_if_independents_caucus_D": {
+   "rms": 0.001978541129216158,
+   "max": 0.00385000000000002,
+   "moved": 20
+  },
+  "summary_polls_only.json:senate.p_dem_control_without_osborn": {
+   "rms": 0.002092411885838911,
+   "max": 0.0070749999999999424,
+   "moved": 20
+  },
+  "summary_polls_only.json:senate.p_house_D_senate_R": {
+   "rms": 0.0025666734307270237,
+   "max": 0.0037750000000000006,
+   "moved": 20
+  },
+  "summary_polls_only.json:senate.p_house_and_senate_D": {
+   "rms": 0.002265902138222206,
+   "max": 0.007774999999999976,
+   "moved": 20
+  },
+  "summary_polls_only.json:senate.p_indep_wins_each.ID": {
+   "rms": 0.0012043021838392567,
+   "max": 0.002024999999999999,
+   "moved": 20
+  },
+  "summary_polls_only.json:senate.p_indep_wins_each.NE": {
+   "rms": 0.006165377117419512,
+   "max": 0.009649999999999992,
+   "moved": 20
+  },
+  "summary_polls_only.json:senate.p_indep_wins_each.SD": {
+   "rms": 0.001060232875362766,
+   "max": 0.003074999999999998,
+   "moved": 20
+  },
+  "summary_polls_only.json:senate.p_independents_pivotal": {
+   "rms": 0.0018632800379975098,
+   "max": 0.003225000000000002,
+   "moved": 20
+  },
+  "summary_polls_only.json:senate.p_osborn_wins": {
+   "rms": 0.006165377117419512,
+   "max": 0.009649999999999992,
+   "moved": 20
+  },
+  "summary_polls_only.json:senate.p_rep_control": {
+   "rms": 0.001978541129216176,
+   "max": 0.0038499999999999923,
+   "moved": 20
+  },
+  "summary_polls_only.json:senate.reading.expected_comp_dem_wins": {
+   "rms": 0.016439952288556384,
+   "max": 0.042375000000001606,
+   "moved": 20
+  },
+  "summary_polls_only.json:senate.reading.ladder[*].p": {
+   "rms": 0.00483850764699199,
+   "max": 0.0064750000000000085,
+   "moved": 20
+  },
+  "summary_polls_only.json:senate.reading.ladder[*].p_ctrl_given_loss": {
+   "rms": 0.11417662307285058,
+   "max": 0.21791443850267384,
+   "moved": 20
+  },
+  "summary_polls_only.json:senate.reading.ladder[*].p_ctrl_given_win": {
+   "rms": 0.03841476877322316,
+   "max": 0.07837709585574182,
+   "moved": 20
+  },
+  "summary_polls_only.json:senate.reading.ladder[*].p_win_given_ctrl": {
+   "rms": 0.005689347874256176,
+   "max": 0.009401668537519448,
+   "moved": 20
+  },
+  "summary_polls_only.json:senate.reading.ladder[*].tp": {
+   "rms": 0.004279478648153299,
+   "max": 0.006750000000000006,
+   "moved": 20
+  },
+  "summary_polls_only.json:senate.reading.maps (items in one file only)": {
+   "rms": 0.4472135954999579,
+   "max": 2.0,
+   "moved": 1
+  },
+  "summary_polls_only.json:senate.reading.maps[*].p": {
+   "rms": 0.0020493139095804722,
+   "max": 0.0028000000000000004,
+   "moved": 20
+  },
+  "summary_polls_only.json:senate.reading.p_favorites_map": {
+   "rms": 0.0006582410272840792,
+   "max": 0.0010749999999999996,
+   "moved": 20
+  },
+  "summary_polls_only.json:senate.reading.p_upsets[*]": {
+   "rms": 0.004453373019408987,
+   "max": 0.007949999999999985,
+   "moved": 20
+  },
+  "summary_polls_only.json:senate.reading.p_upsets_cancel": {
+   "rms": 0.0017886622095857002,
+   "max": 0.003725000000000006,
+   "moved": 20
+  },
+  "summary_polls_only.json:senate.reading.tipping_point[*].p": {
+   "rms": 0.004190599599102733,
+   "max": 0.006750000000000006,
+   "moved": 20
+  },
+  "summary_polls_only.json:senate.reading.upsets_mean": {
+   "rms": 0.00905031076814483,
+   "max": 0.01684999999999981,
+   "moved": 20
+  },
+  "summary_polls_only.json:senate.reading.upsets_to_dem_mean": {
+   "rms": 0.008028821130776331,
+   "max": 0.014425000000000132,
+   "moved": 20
+  },
+  "summary_polls_only.json:senate.reading.upsets_to_rep_mean": {
+   "rms": 0.01044211275317401,
+   "max": 0.028699999999999948,
+   "moved": 20
+  }
+ },
+ "text_fields": {
+  "pocket/summary_pocket_senate_wide_shift.json:house.reading.pivot": {
+   "max": 1,
+   "moved": 16
+  },
+  "sims_polls_fundamentals.json:races[*]": {
+   "max": 6,
+   "moved": 6
+  },
+  "sims_polls_only.json:races[*]": {
+   "max": 6,
+   "moved": 2
+  },
+  "summary_polls_fundamentals.json:house.reading.pivot": {
+   "max": 1,
+   "moved": 13
+  },
+  "summary_polls_fundamentals.json:senate.reading.maps[*].is_favorites": {
+   "max": 2,
+   "moved": 1
+  },
+  "summary_polls_fundamentals_biasadj.json:house.reading.pivot": {
+   "max": 1,
+   "moved": 15
+  },
+  "summary_polls_only.json:house.reading.pivot": {
+   "max": 1,
+   "moved": 12
+  }
+ }
+}

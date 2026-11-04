@@ -9,3 +9,5 @@ data/raw/atlasintel/**/*.pdf
 data/raw/wikipedia_results_pages/
 # per-race Wikipedia pages as of the final forecast's VoteHub snapshot (poll audit); revision ids are kept in data/scorecard/wiki_polls_*.csv
 data/raw/wikipedia_polls_asof/
+# project environment lives outside OneDrive (README "Environment"); this catches an accidental uv sync without UV_PROJECT_ENVIRONMENT
+.venv/
