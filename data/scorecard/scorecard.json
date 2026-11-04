@@ -7347,7 +7347,7 @@
     "settled": 0,
     "of": 435
    },
-   "rule": "scores use settled counts: vote total moved less than 1% since the previous day's snapshot"
+   "rule": "scores use settled counts: candidate votes moved less than 1% since the previous day's snapshot, the source was updated in between (page edited or report re-issued), and nothing moved the way a count in progress can't (votes falling, a swing with no new votes)"
   },
   "sign_mismatches": [],
   "box_issues": {
@@ -7502,8 +7502,9 @@
   },
   "national": {
    "districts_with_counts": 64,
-   "districts_settled": 0,
+   "districts_count_stable": 0,
    "of": 435,
+   "ready": false,
    "dem_votes": 6269428.0,
    "rep_votes": 3839320.0,
    "house_vote_margin": 24.039653575299337,

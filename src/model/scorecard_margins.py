@@ -70,8 +70,12 @@ def national(hm):
     d = hm[(hm.d_votes_all + hm.r_votes_all) > 0]
     D, R = float(d.d_votes_all.sum()), float(d.r_votes_all.sum())
     actual = 100 * (D - R) / (D + R) if D + R else None
-    out = {"districts_with_counts": int(len(d)), "districts_settled": int(d.settled.sum()) if "settled" in d else 0,
-           "of": 435, "dem_votes": D, "rep_votes": R, "house_vote_margin": actual,
+    stable = int(d.count_stable.fillna(False).astype(bool).sum()) if "count_stable" in d else 0
+    out = {"districts_with_counts": int(len(d)), "districts_count_stable": stable, "of": 435,
+           # shown on the page once at least 380 districts report votes and 95% of those have stable counts (uncontested
+           # races left off the ballot and the slow counters keep it below 435 for a while)
+           "ready": bool(len(d) >= 380 and stable >= 0.95 * len(d)),
+           "dem_votes": D, "rep_votes": R, "house_vote_margin": actual,
            "note": "sum of reported district votes; uncontested races not on the ballot add nothing (as in the calibration's "
                    "national House vote)", "versions": {}}
     for v in VERSIONS:
@@ -205,7 +209,9 @@ def stage2(sen, hou):
                             "house_contested": {"counted": int((hou.contested & hou.counted.notna()).sum()),
                                                 "settled": int((hou.contested & hou.actual.notna()).sum()), "of": int(hou.contested.sum())},
                             "house_all": {"counted": int(hou.counted.notna().sum()), "settled": int(hou.actual.notna().sum()), "of": int(len(hou))},
-                            "rule": "scores use settled counts: vote total moved less than 1% since the previous day's snapshot"},
+                            "rule": "scores use settled counts: candidate votes moved less than 1% since the previous day's "
+                                    "snapshot, the source was updated in between (page edited or report re-issued), and "
+                                    "nothing moved the way a count in progress can't (votes falling, a swing with no new votes)"},
            "sign_mismatches": sen.loc[sen.sign_mismatch, "race_key"].tolist() + hou.loc[hou.sign_mismatch, "race_key"].tolist(),
            "box_issues": {r.race_key: r.issues for _, r in pd.concat([sm.reset_index(), hm.reset_index()])
                           .loc[lambda x: x.issues.fillna("") != ""].iterrows()},

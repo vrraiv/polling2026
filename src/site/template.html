@@ -1650,10 +1650,10 @@ function renderScorecard() {
   // national miss
   const N = M ? M.national : null;
   const C = M ? M.completeness : null;
-  $("#scNational").innerHTML = !N || N.house_vote_margin == null || N.districts_settled < 400 ?
+  $("#scNational").innerHTML = !N || N.house_vote_margin == null || !N.ready ?
     `<p class="note">Vote margins are still coming in${C ? ` (settled counts so far: ${C.senate.settled} of ${C.senate.of} Senate races, ${C.house_all.settled} of ${C.house_all.of} House districts)` : ""}. ` +
     `The scores above that need margins use settled counts only; the national House vote appears once nearly every district has settled.</p>` :
-    `<h3>The national polling miss</h3><p class="small">House popular vote, summed over the ${N.districts_with_counts} of 435 districts with counts (${N.districts_settled} settled): <b>${fmtM(N.house_vote_margin)}</b>. ` +
+    `<h3>The national polling miss</h3><p class="small">House popular vote, summed over the ${N.districts_with_counts} of 435 districts with vote counts (${N.districts_count_stable} of them no longer moving): <b>${fmtM(N.house_vote_margin)}</b>. ` +
     `The generic-ballot average the forecast used was ${fmtM(N.versions[FV].G_polls)}, so the polls missed by <b>${fSgn(N.versions[FV].polling_miss)}</b> points ` +
     `(positive = Democrats did better than the polls). The bias-adjusted version assumed a miss of ${fSgn(N.versions[AD].bias_shift_assumed)}. National environment used by each version: ` +
     PUB.map(v => `${MODELS[v]} ${fmtM(N.versions[v].G_used)} (off by ${fSgn(N.versions[v].G_error)})`).join("; ") + `.</p>`;
@@ -1667,7 +1667,7 @@ function renderScorecard() {
     rows.map(r => { const fav = r.p > 0.5 ? 1 : 0, res = !r.called ? `<span class="none">pending</span>` : `${esc(r.winner)} (${r.winner_party}) ${r.y === fav ? "✓" : "<b style='color:var(--ochre)'>upset</b>"}`;
       return `<tr${r.contested ? "" : ' class="muted"'}><td>${raceLab(r.race_key)}</td><td class="num">${fmtP(r.p)}</td><td class="num">${fmtM(r.mu)}</td><td class="num">${actCell(r)}</td>` +
         `<td class="num">${r.actual == null || r.mu == null ? "—" : fSgn(r.actual - r.mu)}</td><td>${res}</td></tr>`; }).join("") +
-    `</tbody><caption class="tiny" style="caption-side:bottom;text-align:left;padding:6px 10px">* still counting (total moved 1% or more since the previous day): shown, not scored. Grey rows: not close races.</caption>`;
+    `</tbody><caption class="tiny" style="caption-side:bottom;text-align:left;padding:6px 10px">* count not yet confirmed final (it must hold within 1% across an update on a later day): shown, not scored. Grey rows: not close races.</caption>`;
   const pts = rows.filter(r => r.actual != null && r.mu != null).map(r => ({ mu: r.mu, actual: r.actual, st: r.race_key.split("|")[1] + (r.race_key.endsWith("special") ? "*" : ""), lab: raceLab(r.race_key) }));
   $("#scScatterCard").hidden = pts.length < 3;
   $("#scScatter").innerHTML = pts.length >= 3 ? scScatter(pts) : "";

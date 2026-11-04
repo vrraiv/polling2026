@@ -191,6 +191,13 @@ def page_meta(html, path):
             "snapshot": str(path.relative_to(ROOT)) if str(path).startswith(str(ROOT)) else str(path)}
 
 
+def cand_sum(rows):
+    """Sum of first-round candidate votes: the count-progress measure (the box's "Total votes" row can lag the candidate
+    rows when an editor updates one and not the other; AK-H on Nov 4)."""
+    v = [x["votes_first"] for x in rows if np.isfinite(x["votes_first"])]
+    return float(sum(v)) if v else np.nan
+
+
 def checks(box):
     rows = box["rows"]
     s = np.nansum([x["votes_first"] for x in rows])
@@ -250,7 +257,7 @@ def parse_senate(paths=None):
             m, d, r, dname, k = margins_rcv(box["rows"], **kw)
             m1 = margins_rcv(box["rows"], first=True, **kw)[0]
             row.update(caption=cap, margin=m, margin_first_choice=m1, dside_votes=d, rep_votes=r, dside_candidate=dname,
-                       total=box["total"], n_rounds=box["n_rounds"], margin_round=k,
+                       total=box["total"], cand_sum=cand_sum(box["rows"]), n_rounds=box["n_rounds"], margin_round=k,
                        margin_type="raw best non-R minus R" if st in MULTI_CANDIDATE else "two-party",
                        issues="; ".join(checks(box)))
             cands += [{"race_key": key, **{k: v for k, v in x.items() if k != "votes_by_round"}} for x in box["rows"]]
@@ -277,7 +284,8 @@ def parse_house(paths=None):
             m, d, r, dname, k = margins_rcv(box["rows"], alt_opponent=alt)
             m1 = margins_rcv(box["rows"], first=True, alt_opponent=alt)[0]
             rows.append({"race_key": key, "source": "wikipedia", **meta, "caption": cap, "margin": m, "margin_first_choice": m1,
-                         "dside_votes": d, "rep_votes": r, "dside_candidate": dname, "total": box["total"], "n_rounds": box["n_rounds"],
+                         "dside_votes": d, "rep_votes": r, "dside_candidate": dname, "total": box["total"],
+                         "cand_sum": cand_sum(box["rows"]), "n_rounds": box["n_rounds"],
                          "margin_round": k, "margin_type": "two-party", "issues": "; ".join(checks(box) + ([box["note"]] if box.get("note") else [])),
                          "d_votes_all": sum(x["votes_first"] for x in box["rows"] if x["party_code"] == "D" and np.isfinite(x["votes_first"])),
                          "r_votes_all": sum(x["votes_first"] for x in box["rows"] if x["party_code"] == "R" and np.isfinite(x["votes_first"]))})
@@ -328,35 +336,53 @@ def parse_ca():
         rows.append({"race_key": key, "source": "ca_sos", "revision": None, "page_modified": j.get("ReportingTime"),
                      "snapshot": str(path.relative_to(ROOT)), "caption": j.get("raceTitle"), "reporting": j.get("Reporting"),
                      "margin": m, "margin_first_choice": m, "dside_votes": dv, "rep_votes": rv, "dside_candidate": dname,
-                     "total": s, "n_rounds": 1, "margin_round": k, "margin_type": "two-party", "issues": "; ".join(issues),
+                     "total": s, "cand_sum": s, "n_rounds": 1, "margin_round": k, "margin_type": "two-party", "issues": "; ".join(issues),
                      "d_votes_all": sum(x["votes_first"] for x in cs if x["party_code"] == "D" and np.isfinite(x["votes_first"])),
                      "r_votes_all": sum(x["votes_first"] for x in cs if x["party_code"] == "R" and np.isfinite(x["votes_first"]))})
         cands += [{"race_key": key, **x} for x in cs]
     return pd.DataFrame(rows), pd.DataFrame(cands)
 
 
-SETTLED_GROWTH = 0.01   # a count is "settled" when its vote total grew less than 1% between snapshots on different days
+SETTLED_GROWTH = 0.01   # a count is stable when its candidate votes grew less than 1% between snapshots on different days
+SWING_FLAG = 2.0         # margin moved this many points with almost no new votes: flag, don't trust
 
 
 def settledness(df, chamber):
-    """Append today's totals to data/scorecard/margins_history_<chamber>.csv (one row per race and snapshot day) and
-    mark a race settled when its total moved less than SETTLED_GROWTH since the previous day's snapshot. Counting
-    continues for days or weeks in some states (California, Alaska), and early counts lean one way or the other, so the
-    margin scores use settled races only."""
+    """Append today's counts to data/scorecard/margins_history_<chamber>.csv (one row per race and snapshot day) and
+    judge each race against the previous day's snapshot:
+      count_stable  candidate votes moved less than SETTLED_GROWTH, AND there is new evidence: the Wikipedia page was
+                    edited (revision changed) or California re-issued its report (report time changed). An unedited page
+                    proves nothing about whether counting has stopped.
+      count_flag    the count moved the way a count in progress can't: candidate votes fell, or the margin swung more than
+                    SWING_FLAG points with under SETTLED_GROWTH new votes. Flagged races are never settled.
+      settled       count_stable, no flag, and a margin exists (scores use settled races only).
+    count_stable doesn't need a margin, so uncontested and same-party races still count toward the national House vote."""
     hist_path = OUT / f"margins_history_{chamber}.csv"
     day = df.snapshot.astype(str).str.extract(r"(\d{4}-\d{2}-\d{2})")[0]
-    now = pd.DataFrame({"race_key": df.race_key, "day": day, "total": df.total, "margin": df.margin})
-    hist = pd.read_csv(hist_path) if hist_path.exists() else now.iloc[0:0]
+    evidence = np.where(df.source.eq("wikipedia"), df.revision.astype(str), df.page_modified.astype(str))
+    now = pd.DataFrame({"race_key": df.race_key, "day": day, "cand_sum": df.cand_sum, "margin": df.margin, "evidence": evidence})
+    hist = pd.read_csv(hist_path, dtype={"evidence": str}) if hist_path.exists() else now.iloc[0:0]
+    if "cand_sum" not in hist:   # history written before the switch to candidate sums: start over
+        hist = now.iloc[0:0]
     hist = pd.concat([hist[~hist.set_index(["race_key", "day"]).index.isin(now.set_index(["race_key", "day"]).index)], now])
-    hist = hist[hist.total.fillna(0) > 0].sort_values(["race_key", "day"])
+    hist = hist[hist.cand_sum.fillna(0) > 0].sort_values(["race_key", "day"])
     hist.to_csv(hist_path, index=False)
     prev = hist.merge(now[["race_key", "day"]], on="race_key", suffixes=("", "_now"))
     prev = prev[prev.day < prev.day_now].groupby("race_key").last()
     df = df.copy()
     df["prev_day"] = df.race_key.map(prev.day)
-    df["prev_total"] = df.race_key.map(prev.total)
-    df["growth_since_prev"] = df.total / df.prev_total - 1
-    df["settled"] = df.margin.notna() & df.growth_since_prev.abs().lt(SETTLED_GROWTH)
+    df["prev_cand_sum"] = df.race_key.map(prev.cand_sum)
+    df["growth_since_prev"] = df.cand_sum / df.prev_cand_sum - 1
+    new_evidence = pd.Series(evidence, index=df.index) != df.race_key.map(prev.evidence).astype(str)
+    swing = (df.margin - df.race_key.map(prev.margin)).abs()
+    df["count_flag"] = np.where(df.growth_since_prev < -0.001, "votes fell since the previous snapshot",
+                                np.where(swing.gt(SWING_FLAG) & df.growth_since_prev.abs().lt(SETTLED_GROWTH),
+                                         "margin swung with almost no new votes", ""))
+    df["count_stable"] = df.cand_sum.gt(0) & df.prev_cand_sum.notna() & df.growth_since_prev.abs().lt(SETTLED_GROWTH) \
+        & new_evidence & df.count_flag.eq("")
+    df["settled"] = df.count_stable & df.margin.notna()
+    for _, r in df[df.count_flag != ""].iterrows():
+        print(f"  [count] {r.race_key}: {r.count_flag} ({r.prev_cand_sum:,.0f} -> {r.cand_sum:,.0f})")
     return df
 
 
