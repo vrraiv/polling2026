@@ -1,0 +1,21 @@
+{
+  "raceTitle": "U.S. House of Representatives District 39 - Districtwide Results",
+  "Reporting": "100% (210 of 210) precincts reporting",
+  "ReportingTime": "November 4, 2026, 7:20 p.m.",
+  "candidates": [
+    {
+      "Name": "Mark Takano",
+      "Party": "Dem",
+      "Votes": "54,601",
+      "Percent": "65.9",
+      "incumbent": false
+    },
+    {
+      "Name": "Steve Manos",
+      "Party": "Rep",
+      "Votes": "28,191",
+      "Percent": "34.1",
+      "incumbent": false
+    }
+  ]
+}

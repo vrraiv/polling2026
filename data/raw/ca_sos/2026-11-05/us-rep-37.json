@@ -1,0 +1,21 @@
+{
+  "raceTitle": "U.S. House of Representatives District 37 - Districtwide Results",
+  "Reporting": "100% (140 of 140) precincts reporting",
+  "ReportingTime": "November 4, 2026, 7:20 p.m.",
+  "candidates": [
+    {
+      "Name": "Sydney Kamlager-Dove",
+      "Party": "Dem",
+      "Votes": "78,568",
+      "Percent": "62.0",
+      "incumbent": false
+    },
+    {
+      "Name": "Samantha Mota",
+      "Party": "Dem",
+      "Votes": "48,195",
+      "Percent": "38.0",
+      "incumbent": false
+    }
+  ]
+}

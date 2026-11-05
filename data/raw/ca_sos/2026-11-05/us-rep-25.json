@@ -1,0 +1,21 @@
+{
+  "raceTitle": "U.S. House of Representatives District 25 - Districtwide Results",
+  "Reporting": "100% (656 of 656) precincts reporting",
+  "ReportingTime": "November 4, 2026, 7:20 p.m.",
+  "candidates": [
+    {
+      "Name": "Raul Ruiz",
+      "Party": "Dem",
+      "Votes": "76,658",
+      "Percent": "64.7",
+      "incumbent": false
+    },
+    {
+      "Name": "Joe Males",
+      "Party": "Rep",
+      "Votes": "41,876",
+      "Percent": "35.3",
+      "incumbent": false
+    }
+  ]
+}

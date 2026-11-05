@@ -1,0 +1,21 @@
+{
+  "raceTitle": "U.S. House of Representatives District 35 - Districtwide Results",
+  "Reporting": "100% (272 of 272) precincts reporting",
+  "ReportingTime": "November 4, 2026, 7:20 p.m.",
+  "candidates": [
+    {
+      "Name": "Norma J. Torres",
+      "Party": "Dem",
+      "Votes": "74,533",
+      "Percent": "65.4",
+      "incumbent": false
+    },
+    {
+      "Name": "Mike Cargile",
+      "Party": "Rep",
+      "Votes": "39,363",
+      "Percent": "34.6",
+      "incumbent": false
+    }
+  ]
+}

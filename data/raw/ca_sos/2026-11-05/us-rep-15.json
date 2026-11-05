@@ -1,0 +1,21 @@
+{
+  "raceTitle": "U.S. House of Representatives District 15 - Districtwide Results",
+  "Reporting": "100% (299 of 299) precincts reporting",
+  "ReportingTime": "November 4, 2026, 7:20 p.m.",
+  "candidates": [
+    {
+      "Name": "Kevin Mullin",
+      "Party": "Dem",
+      "Votes": "102,633",
+      "Percent": "77.5",
+      "incumbent": false
+    },
+    {
+      "Name": "Charles Hoelter",
+      "Party": "Rep",
+      "Votes": "29,845",
+      "Percent": "22.5",
+      "incumbent": false
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "raceTitle": "U.S. House of Representatives District 29 - Districtwide Results",
+  "Reporting": "100% (115 of 115) precincts reporting",
+  "ReportingTime": "November 4, 2026, 7:20 p.m.",
+  "candidates": [
+    {
+      "Name": "Angélica María Dueñas",
+      "Party": "Dem",
+      "Votes": "48,916",
+      "Percent": "40.1",
+      "incumbent": false
+    },
+    {
+      "Name": "Luz Maria Rivas",
+      "Party": "Dem",
+      "Votes": "72,919",
+      "Percent": "59.9",
+      "incumbent": false
+    }
+  ]
+}

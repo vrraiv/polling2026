@@ -1,0 +1,12 @@
+{
+  "statewide.csv": {
+    "url": "https://electionresults.nebraska.gov/resultsCSV.aspx?text=All&type=SW&map=CTY",
+    "retrieved": "2026-11-05T05:24:09",
+    "bytes": 2926
+  },
+  "index.html": {
+    "url": "https://electionresults.nebraska.gov/",
+    "retrieved": "2026-11-05T05:24:10",
+    "bytes": 54945
+  }
+}

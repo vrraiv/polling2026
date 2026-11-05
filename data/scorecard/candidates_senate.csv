@@ -33,34 +33,34 @@ race_key,party,party_code,candidate,pct_first,votes_first,votes_final
 2026|KS|S|regular,Republican,R,Roger Marshall,,,
 2026|KS|S|regular,Democratic,D,Adam Hamilton,,,
 2026|KS|S|regular,Libertarian,O,David Graham,,,
-2026|KY|S|regular,Republican,R,Andy Barr,54.98,784000.0,784000.0
-2026|KY|S|regular,Democratic,D,Charles Booker,42.92,611987.0,611987.0
-2026|KY|S|regular,Kentucky,O,Christopher Campbell,2.09,29865.0,29865.0
-2026|KY|S|regular,Write-in,O,Write-in,0.01,126.0,126.0
+2026|KY|S|regular,Republican,R,Andy Barr,54.99,784869.0,784869.0
+2026|KY|S|regular,Democratic,D,Charles Booker,42.9,612357.0,612357.0
+2026|KY|S|regular,Kentucky,O,Christopher Campbell,2.09,29892.0,29892.0
+2026|KY|S|regular,Write-in,O,Write-in,0.01,152.0,152.0
 2026|LA|S|regular,Republican,R,Julia Letlow,50.9,745963.0,745963.0
 2026|LA|S|regular,Democratic,D,Jamie Davis,49.1,720106.0,720106.0
-2026|ME|S|regular,Republican,R,Susan Collins,,,
 2026|ME|S|regular,Democratic,D,Troy Jackson,,,
+2026|ME|S|regular,Republican,R,Susan Collins,,,
 2026|MA|S|regular,Democratic,D,Ed Markey,,,
 2026|MA|S|regular,Republican,R,John Deaton,,,
 2026|MA|S|regular,Socialism and Liberation,O,Joe Tache,,,
 2026|MA|S|regular,Independent,I,Shiva Ayyadurai,,,
 2026|MA|S|regular,Write-in,O,Write-in,,,
-2026|MI|S|regular,Democratic,D,Abdul El-Sayed,,,
-2026|MI|S|regular,Republican,R,Mike Rogers,,,
-2026|MI|S|regular,Libertarian,O,Lydia Christensen,,,
-2026|MI|S|regular,U.S. Taxpayers,O,Tim Long,,,
-2026|MI|S|regular,Green,O,Douglas P. Marsh,,,
-2026|MI|S|regular,Natural Law,O,Walter P. Kristy,,,
+2026|MI|S|regular,Democratic,D,Abdul El-Sayed,52.5,2507454.0,2507454.0
+2026|MI|S|regular,Republican,R,Mike Rogers,45.49,2172586.0,2172586.0
+2026|MI|S|regular,Libertarian,O,Lydia Christensen,1.04,49484.0,49484.0
+2026|MI|S|regular,U.S. Taxpayers,O,Tim Long,0.55,26417.0,26417.0
+2026|MI|S|regular,Green,O,Douglas P. Marsh,0.26,12510.0,12510.0
+2026|MI|S|regular,Natural Law,O,Walter P. Kristy,0.15,7232.0,7232.0
 2026|MN|S|regular,Democratic (DFL),D,Peggy Flanagan,,,
 2026|MN|S|regular,Republican,R,Michele Tafoya,,,
 2026|MN|S|regular,Independent,I,Marisa Simonetti,,,
 2026|MN|S|regular,Libertarian,O,Rebecca Whiting,,,
 2026|MN|S|regular,Write-in,O,Write-in,,,
 2026|MS|S|regular,Republican,R,Cindy Hyde-Smith,,,
-2026|MS|S|regular,Democratic,D,Scott Colom,,,
+2026|MS|S|regular,Democratic,D,Scott Colom (projected),,,
 2026|MS|S|regular,Independent,I,Ty Pinkins,,,
-2026|MT|S|regular,Republican,R,Sawyer Adams,47.7,187961.0,187961.0
+2026|MT|S|regular,Republican,R,Kurt Alme,47.7,187961.0,187961.0
 2026|MT|S|regular,Independent,I,Seth Bodnar,38.6,152203.0,152203.0
 2026|MT|S|regular,Democratic,D,Alani Bankhead,11.9,46838.0,46838.0
 2026|MT|S|regular,Libertarian,O,Kyle Austin,1.8,7066.0,7066.0
@@ -84,11 +84,11 @@ race_key,party,party_code,candidate,pct_first,votes_first,votes_final
 2026|NC|S|regular,Republican,R,Michael Whatley,39.09,1643088.0,1643088.0
 2026|NC|S|regular,Libertarian,O,Shannon W. Bray,1.33,55726.0,55726.0
 2026|NC|S|regular,Green,O,Michael Dublin,0.87,36404.0,36404.0
-2026|OK|S|regular,Republican,R,Kevin Hern,57.29,628799.0,628799.0
-2026|OK|S|regular,Democratic,D,N'Kiyla Jasmine Thomas,39.2,430321.0,430321.0
-2026|OK|S|regular,Independent,I,Curtis Stinnett,1.3,14265.0,14265.0
-2026|OK|S|regular,Independent,I,Ron Meinhardt,1.3,14223.0,14223.0
-2026|OK|S|regular,Libertarian,O,Sevier White,0.91,10010.0,10010.0
+2026|OK|S|regular,Republican,R,Kevin Hern,57.29,638103.0,638103.0
+2026|OK|S|regular,Democratic,D,N'Kiyla Jasmine Thomas,39.2,436604.0,436604.0
+2026|OK|S|regular,Independent,I,Curtis Stinnett,1.31,14562.0,14562.0
+2026|OK|S|regular,Independent,I,Ron Meinhardt,1.3,14440.0,14440.0
+2026|OK|S|regular,Libertarian,O,Sevier White,0.91,10170.0,10170.0
 2026|OR|S|regular,Democratic,D,Jeff Merkley,,,
 2026|OR|S|regular,Republican,R,David Brock Smith,,,
 2026|OR|S|regular,Libertarian,O,Gary Dye,,,
@@ -116,10 +116,10 @@ race_key,party,party_code,candidate,pct_first,votes_first,votes_final
 2026|TN|S|regular,Independent,I,David Sutman Jr.,,,
 2026|TN|S|regular,Independent,I,Catherine Whitson,,,
 2026|TN|S|regular,Independent,I,Andrew Mixon,,,
-2026|TX|S|regular,Republican,R,Ken Paxton,,,
-2026|TX|S|regular,Democratic,D,James Talarico,,,
-2026|TX|S|regular,Libertarian,O,Ted Brown,,,
-2026|TX|S|regular,Write-in,O,Write-in,,,
+2026|TX|S|regular,Democratic,D,James Talarico,55.1,5445121.0,5445121.0
+2026|TX|S|regular,Republican,R,Ken Paxton,43.0,4249752.0,4249752.0
+2026|TX|S|regular,Libertarian,O,Ted Brown,1.9,190258.0,190258.0
+2026|TX|S|regular,Write-in,O,Write-in,0.1,5112.0,5112.0
 2026|VA|S|regular,Democratic,D,Mark Warner,,,
 2026|VA|S|regular,Republican,R,Bert Mizusawa,,,
 2026|VA|S|regular,Write-in,O,Write-in,,,
