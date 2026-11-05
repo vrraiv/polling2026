@@ -345,6 +345,11 @@ def parse_ca():
 
 SETTLED_GROWTH = 0.01   # a count is stable when its candidate votes grew less than 1% between snapshots on different days
 SWING_FLAG = 2.0         # margin moved this many points with almost no new votes: flag, don't trust
+# States that count mail ballots for weeks, county by county. A day without movement there proves nothing (California
+# re-issues its statewide report while a district's counties add nothing; "100% of precincts" is reported on election
+# night), so these settle only once the count has held still for SLOW_COUNT_DAYS.
+SLOW_COUNT = {"CA", "WA", "OR", "NV", "AZ", "UT", "AK"}
+SLOW_COUNT_DAYS = 7
 
 
 def settledness(df, chamber):
@@ -355,6 +360,7 @@ def settledness(df, chamber):
                     proves nothing about whether counting has stopped.
       count_flag    the count moved the way a count in progress can't: candidate votes fell, or the margin swung more than
                     SWING_FLAG points with under SETTLED_GROWTH new votes. Flagged races are never settled.
+                    In SLOW_COUNT states the count must also have held still for SLOW_COUNT_DAYS.
       settled       count_stable, no flag, and a margin exists (scores use settled races only).
     count_stable doesn't need a margin, so uncontested and same-party races still count toward the national House vote."""
     hist_path = OUT / f"margins_history_{chamber}.csv"
@@ -388,6 +394,16 @@ def settledness(df, chamber):
     complete = df["complete"].fillna(False).astype(bool) if "complete" in df else pd.Series(False, index=df.index)
     df["count_stable"] = df.cand_sum.gt(0) & df.prev_cand_sum.notna() & df.growth_since_prev.abs().lt(SETTLED_GROWTH) \
         & (new_evidence | (complete & ~df.source.eq("wikipedia"))) & df.count_flag.eq("")
+    # slow-count states: the count must have held within SETTLED_GROWTH of today's for SLOW_COUNT_DAYS
+    same = hist.merge(now[["race_key", "source", "day", "cand_sum"]], on=["race_key", "source"], suffixes=("", "_now"))
+    same = same[same.day <= same.day_now]
+    moved = same[(same.cand_sum / same.cand_sum_now - 1).abs() >= SETTLED_GROWTH].groupby("race_key").day.max()
+    first = same.groupby("race_key").day.min()
+    plateau_from = pd.to_datetime(df.race_key.map(moved)).add(pd.Timedelta(days=1)).fillna(pd.to_datetime(df.race_key.map(first)))
+    held_days = (pd.to_datetime(day) - plateau_from).dt.days
+    slow = df.race_key.str.split("|").str[1].isin(SLOW_COUNT)
+    df["held_days"] = held_days
+    df["count_stable"] = df.count_stable & (~slow | held_days.ge(SLOW_COUNT_DAYS))
     df["settled"] = df.count_stable & df.margin.notna()
     for _, r in df[df.count_flag != ""].iterrows():
         print(f"  [count] {r.race_key}: {r.count_flag} ({r.prev_cand_sum:,.0f} -> {r.cand_sum:,.0f})")

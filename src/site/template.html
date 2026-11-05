@@ -1692,7 +1692,7 @@ function renderScorecard() {
     rows.map(r => { const fav = r.p > 0.5 ? 1 : 0, res = !r.called ? `<span class="none">pending</span>` : `${esc(r.winner)} (${r.winner_party}) ${r.y === fav ? "✓" : "<b style='color:var(--ochre)'>upset</b>"}`;
       return `<tr${r.contested ? "" : ' class="muted"'}><td>${raceLab(r.race_key)}</td><td class="num">${fmtP(r.p)}</td><td class="num">${fmtM(r.mu)}</td><td class="num">${actCell(r)}</td>` +
         `<td class="num">${r.actual == null || r.mu == null ? "—" : fSgn(r.actual - r.mu)}</td><td>${res}</td></tr>`; }).join("") +
-    `</tbody><caption class="tiny" style="caption-side:bottom;text-align:left;padding:6px 10px">* count not yet confirmed final (it must hold within 1% across an update on a later day): shown, not scored. Grey rows: not close races.</caption>`;
+    `</tbody><caption class="tiny" style="caption-side:bottom;text-align:left;padding:6px 10px">* count not yet confirmed final (it must hold within 1% across an update on a later day; in states that count mail ballots for weeks, CA, WA, OR, NV, AZ, UT and AK, for 7 days): shown, not scored. Grey rows: not close races.</caption>`;
   const pts = rows.filter(r => r.actual != null && r.mu != null).map(r => ({ mu: r.mu, actual: r.actual, st: r.race_key.split("|")[1] + (r.race_key.endsWith("special") ? "*" : ""), lab: raceLab(r.race_key) }));
   $("#scScatterCard").hidden = pts.length < 3;
   $("#scScatter").innerHTML = pts.length >= 3 ? scScatter(pts) : "";
