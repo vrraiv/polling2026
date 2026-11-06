@@ -267,7 +267,7 @@ def stage2(sen, hou):
                             "rule": "scores use settled counts: candidate votes moved less than 1% since the previous day's "
                                     "snapshot, the source was updated in between (page edited or report re-issued), and "
                                     "nothing moved the way a count in progress can't (votes falling, a swing with no new votes); in states that "
-                                    "count mail ballots for weeks (CA, WA, OR, NV, AZ, UT, AK) the count must also have held "
+                                    "count mail ballots for weeks (CA, WA, OR, NV, AZ, UT, AK, NJ, NY, IL, MD) the count must also have held "
                                     "still for 7 days"},
            "sign_mismatches": sen.loc[sen.sign_mismatch, "race_key"].tolist() + hou.loc[hou.sign_mismatch, "race_key"].tolist(),
            "box_issues": {r.race_key: r.issues for _, r in pd.concat([sm.reset_index(), hm.reset_index()])

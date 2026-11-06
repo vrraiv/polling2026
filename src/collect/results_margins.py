@@ -345,10 +345,11 @@ def parse_ca():
 
 SETTLED_GROWTH = 0.01   # a count is stable when its candidate votes grew less than 1% between snapshots on different days
 SWING_FLAG = 2.0         # margin moved this many points with almost no new votes: flag, don't trust
-# States that count mail ballots for weeks, county by county. A day without movement there proves nothing (California
+# States that count mail ballots for weeks, county by county, or accept them days after Election Day. A day without movement there proves nothing (California
 # re-issues its statewide report while a district's counties add nothing; "100% of precincts" is reported on election
 # night), so these settle only once the count has held still for SLOW_COUNT_DAYS.
-SLOW_COUNT = {"CA", "WA", "OR", "NV", "AZ", "UT", "AK"}
+SLOW_COUNT = {"CA", "WA", "OR", "NV", "AZ", "UT", "AK",   # all-mail or weeks-long mail counts
+              "NJ", "NY", "IL", "MD"}                     # accept mail ballots arriving days after Election Day
 SLOW_COUNT_DAYS = 7
 
 
