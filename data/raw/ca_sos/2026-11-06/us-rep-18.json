@@ -1,0 +1,21 @@
+{
+  "raceTitle": "U.S. House of Representatives District 18 - Districtwide Results",
+  "Reporting": "100% (376 of 376) precincts reporting",
+  "ReportingTime": "November 5, 2026, 6:58 p.m.",
+  "candidates": [
+    {
+      "Name": "Zoe Lofgren",
+      "Party": "Dem",
+      "Votes": "82,533",
+      "Percent": "71.7",
+      "incumbent": false
+    },
+    {
+      "Name": "Shane Lewis",
+      "Party": "Rep",
+      "Votes": "32,521",
+      "Percent": "28.3",
+      "incumbent": false
+    }
+  ]
+}

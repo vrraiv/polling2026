@@ -30,9 +30,9 @@ race_key,party,party_code,candidate,pct_first,votes_first,votes_final
 2026|IA|S|regular,Democratic,D,Josh Turek,,,
 2026|IA|S|regular,Libertarian,O,Thomas Laehn,,,
 2026|IA|S|regular,Write-in,O,Write-in,,,
-2026|KS|S|regular,Democratic,D,Adam Hamilton,51.0,559853.0,559853.0
-2026|KS|S|regular,Republican,R,Roger Marshall,46.0,504950.0,504950.0
-2026|KS|S|regular,Libertarian,O,David Graham,3.0,33117.0,33117.0
+2026|KS|S|regular,Democratic,D,Adam Hamilton,50.99,559853.0,559853.0
+2026|KS|S|regular,Republican,R,Roger Marshall,45.99,504950.0,504950.0
+2026|KS|S|regular,Libertarian,O,David Graham,3.02,33117.0,33117.0
 2026|KY|S|regular,Republican,R,Andy Barr,54.99,784869.0,784869.0
 2026|KY|S|regular,Democratic,D,Charles Booker,42.9,612357.0,612357.0
 2026|KY|S|regular,Kentucky,O,Christopher Campbell,2.09,29892.0,29892.0
@@ -57,9 +57,9 @@ race_key,party,party_code,candidate,pct_first,votes_first,votes_final
 2026|MN|S|regular,Independent,I,Marisa Simonetti,,,
 2026|MN|S|regular,Libertarian,O,Rebecca Whiting,,,
 2026|MN|S|regular,Write-in,O,Write-in,,,
-2026|MS|S|regular,Republican,R,Cindy Hyde-Smith,48.9,464502.0,464502.0
-2026|MS|S|regular,Democratic,D,Scott Colom,49.0,466226.0,466226.0
-2026|MS|S|regular,Independent,I,Ty Pinkins,2.1,19978.0,19978.0
+2026|MS|S|regular,Democratic,D,Scott Colom,49.04,466775.0,466775.0
+2026|MS|S|regular,Republican,R,Cindy Hyde-Smith,48.85,464962.0,464962.0
+2026|MS|S|regular,Independent,I,Ty Pinkins,2.1,20007.0,20007.0
 2026|MT|S|regular,Republican,R,Kurt Alme,47.7,187961.0,187961.0
 2026|MT|S|regular,Independent,I,Seth Bodnar,38.6,152203.0,152203.0
 2026|MT|S|regular,Democratic,D,Alani Bankhead,11.9,46838.0,46838.0
@@ -78,8 +78,8 @@ race_key,party,party_code,candidate,pct_first,votes_first,votes_final
 2026|NJ|S|regular,End the Corruption!,O,Veronica Fernandez,,,
 2026|NJ|S|regular,Socialist Workers,O,Joanne Kuniansky,,,
 2026|NJ|S|regular,Write-in,O,Eduardo Castillo,,,
-2026|NM|S|regular,Democratic,D,Ben Ray Luján,,,
-2026|NM|S|regular,Republican,R,Larry Marker,,,
+2026|NM|S|regular,Democratic,D,Ben Ray Luján,63.24,458007.0,458007.0
+2026|NM|S|regular,Republican,R,Larry Marker,36.76,266260.0,266260.0
 2026|NC|S|regular,Democratic,D,Roy Cooper,58.72,2467963.0,2467963.0
 2026|NC|S|regular,Republican,R,Michael Whatley,39.09,1643088.0,1643088.0
 2026|NC|S|regular,Libertarian,O,Shannon W. Bray,1.33,55726.0,55726.0
@@ -98,11 +98,11 @@ race_key,party,party_code,candidate,pct_first,votes_first,votes_final
 2026|RI|S|regular,Republican,R,Raymond McKay,,,
 2026|RI|S|regular,Independent,I,Michael Bahry,,,
 2026|RI|S|regular,Write-in,O,Write-in,,,
-2026|SC|S|regular,Democratic,D,Annie Andrews,,,
-2026|SC|S|regular,Republican,R,Darline Graham,,,
-2026|SC|S|regular,Libertarian,O,Kasie Whitener,,,
-2026|SC|S|regular,Constitution,O,Mark Hackett,,,
-2026|SC|S|regular,Write-in,O,Write-in,,,
+2026|SC|S|regular,Democratic,D,Annie Andrews,51.13,1042362.0,1042362.0
+2026|SC|S|regular,Republican,R,Darline Graham,46.65,951165.0,951165.0
+2026|SC|S|regular,Libertarian,O,Kasie Whitener,1.16,23560.0,23560.0
+2026|SC|S|regular,Constitution,O,Mark Hackett,0.82,16799.0,16799.0
+2026|SC|S|regular,Write-in,O,Write-in,0.24,4894.0,4894.0
 2026|SD|S|regular,Republican,R,Mike Rounds,,,
 2026|SD|S|regular,Independent,I,Brian Bengs,,,
 2026|TN|S|regular,Republican,R,Bill Hagerty,,,
@@ -116,10 +116,10 @@ race_key,party,party_code,candidate,pct_first,votes_first,votes_final
 2026|TN|S|regular,Independent,I,David Sutman Jr.,,,
 2026|TN|S|regular,Independent,I,Catherine Whitson,,,
 2026|TN|S|regular,Independent,I,Andrew Mixon,,,
-2026|TX|S|regular,Democratic,D,James Talarico,55.1,5445121.0,5445121.0
-2026|TX|S|regular,Republican,R,Ken Paxton,43.0,4249752.0,4249752.0
-2026|TX|S|regular,Libertarian,O,Ted Brown,1.9,190258.0,190258.0
-2026|TX|S|regular,Write-in,O,Write-in,0.1,5112.0,5112.0
+2026|TX|S|regular,Democratic,D,James Talarico,55.06,5445156.0,5445156.0
+2026|TX|S|regular,Republican,R,Ken Paxton,42.97,4249763.0,4249763.0
+2026|TX|S|regular,Libertarian,O,Ted Brown,1.92,190259.0,190259.0
+2026|TX|S|regular,Write-in,O,Write-in,0.05,5112.0,5112.0
 2026|VA|S|regular,Democratic,D,Mark Warner,,,
 2026|VA|S|regular,Republican,R,Bert Mizusawa,,,
 2026|VA|S|regular,Write-in,O,Write-in,,,

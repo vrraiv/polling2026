@@ -1,0 +1,21 @@
+{
+  "raceTitle": "U.S. House of Representatives District 47 - Districtwide Results",
+  "Reporting": "100% (561 of 561) precincts reporting",
+  "ReportingTime": "November 5, 2026, 6:58 p.m.",
+  "candidates": [
+    {
+      "Name": "Dave Min",
+      "Party": "Dem",
+      "Votes": "128,743",
+      "Percent": "57.4",
+      "incumbent": false
+    },
+    {
+      "Name": "Jenny Rae Le Roux",
+      "Party": "Rep",
+      "Votes": "95,500",
+      "Percent": "42.6",
+      "incumbent": false
+    }
+  ]
+}
