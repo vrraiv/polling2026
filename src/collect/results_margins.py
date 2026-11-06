@@ -349,13 +349,13 @@ SWING_FLAG = 2.0         # margin moved this many points with almost no new vote
 # re-issues its statewide report while a district's counties add nothing; "100% of precincts" is reported on election
 # night), so these settle only once the count has held still for SLOW_COUNT_DAYS.
 SLOW_COUNT = {"CA", "WA", "OR", "NV", "AZ", "UT", "AK",   # all-mail or weeks-long mail counts
-              "NJ", "NY", "IL", "MD"}                     # accept mail ballots arriving days after Election Day
+              "NJ", "NY", "IL", "MD", "MS"}               # accept mail ballots arriving days after Election Day
 SLOW_COUNT_DAYS = 7
 
 
 def settledness(df, chamber):
     """Append today's counts to data/scorecard/margins_history_<chamber>.csv (one row per race and snapshot day) and
-    judge each race against the previous day's snapshot:
+    judge each race against the latest earlier day's snapshot with different evidence (else the previous day's):
       count_stable  candidate votes moved less than SETTLED_GROWTH, AND there is new evidence: the Wikipedia page was
                     edited (revision changed) or California re-issued its report (report time changed). An unedited page
                     proves nothing about whether counting has stopped.
@@ -378,9 +378,13 @@ def settledness(df, chamber):
     hist = pd.concat([hist[~hist.set_index(idx).index.isin(now.set_index(idx).index)], now])
     hist = hist[hist.cand_sum.fillna(0) > 0].sort_values(idx)
     hist.to_csv(hist_path, index=False)
-    # compare with the previous day's count from the SAME source (official vs official, Wikipedia vs Wikipedia)
-    prev = hist.merge(now[["race_key", "source", "day"]], on=["race_key", "source"], suffixes=("", "_now"))
-    prev = prev[prev.day < prev.day_now].groupby("race_key").last()
+    # compare with an earlier day's count from the SAME source (official vs official, Wikipedia vs Wikipedia): the
+    # latest earlier snapshot whose evidence differs from today's, so a finished count stays settled after the source
+    # stops being edited (comparing with yesterday alone would un-settle it); with no such snapshot, yesterday's
+    prev = hist.merge(now[["race_key", "source", "day", "evidence"]], on=["race_key", "source"], suffixes=("", "_now"))
+    prev = prev[prev.day < prev.day_now]
+    prev = prev.assign(differs=prev.evidence.astype(str) != prev.evidence_now.astype(str)).sort_values(["race_key", "differs", "day"])
+    prev = prev.groupby("race_key").last()
     df = df.copy()
     df["prev_day"] = df.race_key.map(prev.day)
     df["prev_cand_sum"] = df.race_key.map(prev.cand_sum)
