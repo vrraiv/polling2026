@@ -1,20 +1,20 @@
 {
   "raceTitle": "U.S. House of Representatives District 23 - Districtwide Results",
   "Reporting": "100% (1,324 of 1,324) precincts reporting",
-  "ReportingTime": "November 4, 2026, 7:20 p.m.",
+  "ReportingTime": "November 5, 2026, 5:47 p.m.",
   "candidates": [
     {
       "Name": "Tessa Lynn Hodge",
       "Party": "Dem",
-      "Votes": "64,075",
-      "Percent": "48.6",
+      "Votes": "74,188",
+      "Percent": "48.7",
       "incumbent": false
     },
     {
       "Name": "Jay Obernolte",
       "Party": "Rep",
-      "Votes": "67,660",
-      "Percent": "51.4",
+      "Votes": "78,084",
+      "Percent": "51.3",
       "incumbent": false
     }
   ]

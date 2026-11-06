@@ -1,20 +1,20 @@
 {
   "raceTitle": "U.S. House of Representatives District 41 - Districtwide Results",
   "Reporting": "100% (281 of 281) precincts reporting",
-  "ReportingTime": "November 4, 2026, 7:20 p.m.",
+  "ReportingTime": "November 5, 2026, 5:47 p.m.",
   "candidates": [
     {
       "Name": "Linda Sánchez",
       "Party": "Dem",
-      "Votes": "119,039",
-      "Percent": "65.5",
+      "Votes": "133,195",
+      "Percent": "66.4",
       "incumbent": false
     },
     {
       "Name": "Mitch Clemmons",
       "Party": "Rep",
-      "Votes": "62,687",
-      "Percent": "34.5",
+      "Votes": "67,497",
+      "Percent": "33.6",
       "incumbent": false
     }
   ]

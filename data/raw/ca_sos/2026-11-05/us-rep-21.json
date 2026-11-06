@@ -1,20 +1,20 @@
 {
   "raceTitle": "U.S. House of Representatives District 21 - Districtwide Results",
   "Reporting": "100% (323 of 323) precincts reporting",
-  "ReportingTime": "November 4, 2026, 7:20 p.m.",
+  "ReportingTime": "November 5, 2026, 5:47 p.m.",
   "candidates": [
     {
       "Name": "Jim Costa",
       "Party": "Dem",
-      "Votes": "53,874",
-      "Percent": "62.2",
+      "Votes": "60,705",
+      "Percent": "62.8",
       "incumbent": false
     },
     {
       "Name": "Kyle Kirkland",
       "Party": "Rep",
-      "Votes": "32,732",
-      "Percent": "37.8",
+      "Votes": "35,944",
+      "Percent": "37.2",
       "incumbent": false
     }
   ]

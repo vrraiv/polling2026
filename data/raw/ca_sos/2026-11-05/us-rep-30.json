@@ -1,20 +1,20 @@
 {
   "raceTitle": "U.S. House of Representatives District 30 - Districtwide Results",
   "Reporting": "100% (193 of 193) precincts reporting",
-  "ReportingTime": "November 4, 2026, 7:20 p.m.",
+  "ReportingTime": "November 5, 2026, 5:47 p.m.",
   "candidates": [
     {
       "Name": "Laura Friedman",
       "Party": "Dem",
-      "Votes": "142,477",
-      "Percent": "75.9",
+      "Votes": "159,698",
+      "Percent": "76.5",
       "incumbent": false
     },
     {
       "Name": "Scott Alan Meyers",
       "Party": "Rep",
-      "Votes": "45,262",
-      "Percent": "24.1",
+      "Votes": "48,944",
+      "Percent": "23.5",
       "incumbent": false
     }
   ]

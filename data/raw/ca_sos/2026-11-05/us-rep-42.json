@@ -1,20 +1,20 @@
 {
   "raceTitle": "U.S. House of Representatives District 42 - Districtwide Results",
   "Reporting": "100% (402 of 402) precincts reporting",
-  "ReportingTime": "November 4, 2026, 7:20 p.m.",
+  "ReportingTime": "November 5, 2026, 5:47 p.m.",
   "candidates": [
     {
       "Name": "Robert Garcia",
       "Party": "Dem",
-      "Votes": "121,913",
-      "Percent": "59.9",
+      "Votes": "131,223",
+      "Percent": "60.6",
       "incumbent": false
     },
     {
       "Name": "Brian Burley",
       "Party": "Rep",
-      "Votes": "81,638",
-      "Percent": "40.1",
+      "Votes": "85,211",
+      "Percent": "39.4",
       "incumbent": false
     }
   ]

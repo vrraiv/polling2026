@@ -1,20 +1,20 @@
 {
   "raceTitle": "U.S. House of Representatives District 43 - Districtwide Results",
   "Reporting": "100% (193 of 193) precincts reporting",
-  "ReportingTime": "November 4, 2026, 7:20 p.m.",
+  "ReportingTime": "November 5, 2026, 5:47 p.m.",
   "candidates": [
     {
       "Name": "Maxine Waters",
       "Party": "Dem",
-      "Votes": "106,609",
-      "Percent": "81.6",
+      "Votes": "120,332",
+      "Percent": "82.1",
       "incumbent": false
     },
     {
       "Name": "Cristian Morales",
       "Party": "Rep",
-      "Votes": "24,080",
-      "Percent": "18.4",
+      "Votes": "26,295",
+      "Percent": "17.9",
       "incumbent": false
     }
   ]

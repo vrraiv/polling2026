@@ -1,20 +1,20 @@
 {
   "raceTitle": "U.S. House of Representatives District 36 - Districtwide Results",
   "Reporting": "100% (156 of 156) precincts reporting",
-  "ReportingTime": "November 4, 2026, 7:20 p.m.",
+  "ReportingTime": "November 5, 2026, 5:47 p.m.",
   "candidates": [
     {
       "Name": "Ted W. Lieu",
       "Party": "Dem",
-      "Votes": "158,941",
-      "Percent": "71.3",
+      "Votes": "176,955",
+      "Percent": "71.9",
       "incumbent": false
     },
     {
       "Name": "Houston Brignano",
       "Party": "Rep",
-      "Votes": "63,999",
-      "Percent": "28.7",
+      "Votes": "69,139",
+      "Percent": "28.1",
       "incumbent": false
     }
   ]
