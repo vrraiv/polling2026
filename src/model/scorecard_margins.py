@@ -12,7 +12,11 @@ partial count is visible rather than silently scored.
   layers      the simulation's error layers, peeled off in the model's order: national miss per chamber (as a z-score
               against the national SD used), Census-region shocks (vs. sigma_region), the polarization slope on lean
               (vs. its SD, and vs. the bias-adjusted model's lean correction), then race-level coverage of the central
-              50/80/95% intervals with the realized national miss removed, under t(df used), t(6) and normal.
+              50/80/95% intervals with the realized national miss removed, under t(df used), t(6) and normal. Each layer's
+              z comes with a two-sided p-value under the distribution the simulation draws it from (national: t(df used);
+              region and slope: normal).
+  attribution each close Senate race's error split into those layers (national miss, its region's shock, slope x lean,
+              and the race-specific remainder), each against the spread the simulation gave it.
 Ratings/PVI baselines and all intervals come from data/final/ only.
 """
 import json
@@ -34,6 +38,16 @@ LEAN_CORRECTION = float(json.loads((FINAL / "bias_analysis.json").read_text())["
 COOK = {"Solid D": 3, "Safe D": 3, "Likely D": 2, "Lean D": 1, "Tilt D": 0.5, "Toss-up": 0, "Tossup": 0, "Tilt R": -0.5,
         "Lean R": -1, "Likely R": -2, "Solid R": -3, "Safe R": -3}
 REF = "polls_fundamentals"   # the version whose residuals are used for the layer diagnostics (layers are shared)
+T_SCALE = np.sqrt((DF_T - 2) / DF_T)   # as in forecast.py: the t draws are scaled to unit variance
+
+
+def p_t(z):
+    """Two-sided p-value of a z-score (in SDs) under the simulation's unit-variance t(DF_T)."""
+    return None if z is None or not np.isfinite(z) else float(2 * stats.t.sf(abs(z) / T_SCALE, DF_T))
+
+
+def p_norm(z):
+    return None if z is None or not np.isfinite(z) else float(2 * stats.norm.sf(abs(z)))
 
 
 def add_margins(df, chamber):
@@ -148,8 +162,8 @@ def layers(sen, hou):
         nat = summary(REF)["national"]
         sd_nat = nat["sd_nat_senate_used"] if ch == "senate" else H_G_NAT * nat["sd_nat_house_used"]
         miss = float(d.err.mean()) if len(d) else None
-        out[f"national_{ch}"] = {"n": int(len(d)), "miss": miss, "sd_assumed": float(sd_nat),
-                                 "z": None if miss is None else miss / sd_nat}
+        z = None if miss is None else miss / sd_nat
+        out[f"national_{ch}"] = {"n": int(len(d)), "miss": miss, "sd_assumed": float(sd_nat), "z": z, "p": p_t(z)}
         d["resid"] = d.err - (miss or 0.0)
         d["chamber"] = ch
         d["sd"] = d[f"sd_{REF}"]
@@ -162,16 +176,16 @@ def layers(sen, hou):
     reg = {}
     for g, x in r.groupby("region"):
         se = float(x.resid.std(ddof=1) / np.sqrt(len(x))) if len(x) > 1 else np.nan
-        reg[g] = {"n": int(len(x)), "mean": float(x.resid.mean()), "se": se,
-                  "z": float(x.resid.mean() / np.sqrt(SIGMA_REGION ** 2 + se ** 2)) if np.isfinite(se) else None}
+        z = float(x.resid.mean() / np.sqrt(SIGMA_REGION ** 2 + se ** 2)) if np.isfinite(se) else None
+        reg[g] = {"n": int(len(x)), "mean": float(x.resid.mean()), "se": se, "z": z, "p": p_norm(z)}
     out["region"] = {"sigma_assumed": SIGMA_REGION, "by_region": reg}
     # polarization slope on lean, pooled and per chamber
     sl = {}
     for lab, x in (("pooled", r), ("senate", r[r.chamber == "senate"]), ("house", r[r.chamber == "house"])):
         if len(x) >= 5 and x.lean.std() > 0:
             res = stats.linregress(x.lean, x.resid)
-            sl[lab] = {"n": int(len(x)), "slope": float(res.slope), "se": float(res.stderr),
-                       "z_vs_assumed_sd": float(res.slope / np.sqrt(SIGMA_SLOPE ** 2 + res.stderr ** 2))}
+            z = float(res.slope / np.sqrt(SIGMA_SLOPE ** 2 + res.stderr ** 2))
+            sl[lab] = {"n": int(len(x)), "slope": float(res.slope), "se": float(res.stderr), "z_vs_assumed_sd": z, "p": p_norm(z)}
     out["slope"] = {"sd_assumed": SIGMA_SLOPE, "bias_adjusted_lean_correction": LEAN_CORRECTION, **sl}
     # race-level coverage with the realized national miss removed
     cov = {}
@@ -190,7 +204,44 @@ def layers(sen, hou):
                                              for ch, x in r.groupby("chamber")},
                        "note": "share of races whose error, after removing the chamber's realized national miss, falls inside "
                                "the central interval of the race-level error (region, slope and race-specific layers)"}
+    out["attribution"] = attribution(sen, out)
     return out
+
+
+def attribution(sen, L):
+    """Each close Senate race's error (actual minus the reference version's expected margin) split into the simulation's
+    layers, using the realized layer estimates above: the Senate national miss, the race's region shock, the pooled
+    slope times the race's lean, and the race-specific remainder (so the four add up to the error exactly). Each piece
+    is set against the spread the simulation gave that layer for this race; the race-specific SD is the idiosyncratic
+    SD of forecast.correlated_part (total race SD with the region and slope variance taken out, floored at half)."""
+    ns, reg, sl = L["national_senate"], L["region"]["by_region"], L["slope"].get("pooled")
+    if ns["miss"] is None or sl is None:
+        return None
+    rows = []
+    d = sen[sen.contested & sen.actual.notna()]
+    for _, r in d.iterrows():
+        err = float(r.actual - r[f"mu_{REF}"])
+        g = reg.get(r.region)
+        lean, sd = float(r.lean), float(r[f"sd_{REF}"])
+        region = g["mean"] if g else 0.0
+        slope = sl["slope"] * lean
+        race = err - ns["miss"] - region - slope
+        sd_idio = float(np.sqrt(max(sd ** 2 - SIGMA_REGION ** 2 - (SIGMA_SLOPE * lean) ** 2, (0.5 * sd) ** 2)))
+        sd_total = float(np.sqrt(ns["sd_assumed"] ** 2 + sd ** 2))
+        z_race = race / sd_idio
+        rows.append({"race": r.race_key, "region": r.region, "lean": round(lean, 2), "mu": float(r[f"mu_{REF}"]),
+                     "actual": float(r.actual), "error": err,
+                     "layers": {
+                         "national": {"value": ns["miss"], "sd": ns["sd_assumed"], "z": ns["z"], "p": ns["p"]},
+                         "region": {"value": region, "sd": SIGMA_REGION, "z": g["z"] if g else None, "p": g["p"] if g else None,
+                                    "n": g["n"] if g else 0},
+                         "slope": {"value": slope, "sd": SIGMA_SLOPE * abs(lean), "z": sl["z_vs_assumed_sd"], "p": sl["p"]},
+                         "race": {"value": race, "sd": sd_idio, "z": z_race, "p": p_t(z_race)}},
+                     "total": {"value": err, "sd": sd_total, "z": err / sd_total}})
+    return {"reference_version": REF, "n": len(rows), "races": sorted(rows, key=lambda x: -abs(x["error"])),
+            "note": "national, region and slope are the shared estimates in the layer table (one 2026 draw each; their z and "
+                    "p are the layer's, the same for every race they touch); race-specific is what is left, against t(df "
+                    "used) with the race's idiosyncratic SD. Two-sided p-values."}
 
 
 def poll_audit_scores(sen, hou):
