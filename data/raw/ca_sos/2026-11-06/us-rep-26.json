@@ -1,19 +1,19 @@
 {
   "raceTitle": "U.S. House of Representatives District 26 - Districtwide Results",
   "Reporting": "100% (1,087 of 1,087) precincts reporting",
-  "ReportingTime": "November 5, 2026, 6:58 p.m.",
+  "ReportingTime": "November 6, 2026, 5:11 p.m.",
   "candidates": [
     {
       "Name": "Jacqui Irwin",
       "Party": "Dem",
-      "Votes": "120,416",
+      "Votes": "122,966",
       "Percent": "61.9",
       "incumbent": false
     },
     {
       "Name": "Sam Gallucci",
       "Party": "Rep",
-      "Votes": "74,211",
+      "Votes": "75,776",
       "Percent": "38.1",
       "incumbent": false
     }

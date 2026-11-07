@@ -1,20 +1,20 @@
 {
   "raceTitle": "U.S. House of Representatives District 5 - Districtwide Results",
   "Reporting": "100% (399 of 399) precincts reporting",
-  "ReportingTime": "November 5, 2026, 6:58 p.m.",
+  "ReportingTime": "November 6, 2026, 5:11 p.m.",
   "candidates": [
     {
       "Name": "Michael Masuda",
       "Party": "Dem",
-      "Votes": "89,961",
-      "Percent": "44.3",
+      "Votes": "91,609",
+      "Percent": "44.0",
       "incumbent": false
     },
     {
       "Name": "Tom McClintock",
       "Party": "Rep",
-      "Votes": "113,168",
-      "Percent": "55.7",
+      "Votes": "116,493",
+      "Percent": "56.0",
       "incumbent": false
     }
   ]

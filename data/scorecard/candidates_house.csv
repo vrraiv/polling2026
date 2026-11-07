@@ -185,8 +185,8 @@ race_key,party,party_code,candidate,pct_first,votes_first,votes_final
 2026|GA|H|7,Democratic,D,Anthony Kozycki,,,
 2026|GA|H|8,Republican,R,Austin Scott,,,
 2026|GA|H|8,Democratic,D,Kelly Esti,,,
-2026|GA|H|9,Republican,R,Andrew Clyde,,,
-2026|GA|H|9,Democratic,D,Caitlyn Gegan,,,
+2026|GA|H|9,Republican,R,Andrew Clyde,59.3,182886.0,182886.0
+2026|GA|H|9,Democratic,D,Caitlyn Gegan,40.7,125526.0,125526.0
 2026|GA|H|10,Republican,R,Houston Gaines,,,
 2026|GA|H|10,Democratic,D,Pamela DeLancy,,,
 2026|GA|H|11,Republican,R,John Cowan,,,
@@ -381,9 +381,9 @@ race_key,party,party_code,candidate,pct_first,votes_first,votes_final
 2026|MI|H|3,Democratic,D,Hillary Scholten,57.1,211061.0,211061.0
 2026|MI|H|3,Republican,R,Terri DeBoer,41.4,152988.0,152988.0
 2026|MI|H|3,Independent,I,Joe Jock,1.4,5339.0,5339.0
-2026|MI|H|4,Democratic,D,Sean McCann,,,
-2026|MI|H|4,Republican,R,Bill Huizenga,,,
-2026|MI|H|4,Green,O,Shafina Che Barnett,,,
+2026|MI|H|4,Democratic,D,Sean McCann,50.12,184257.0,184257.0
+2026|MI|H|4,Republican,R,Bill Huizenga,48.35,177753.0,177753.0
+2026|MI|H|4,Green,O,Shafina Che Barnett,1.54,5652.0,5652.0
 2026|MI|H|5,Republican,R,Tim Walberg,59.1,198729.0,198729.0
 2026|MI|H|5,Democratic,D,Christian Vukasovich,38.6,129797.0,129797.0
 2026|MI|H|5,Independent,I,Ronald Muszynski,1.0,3457.0,3457.0
@@ -686,8 +686,8 @@ race_key,party,party_code,candidate,pct_first,votes_first,votes_final
 2026|NC|H|8,Republican,R,Mark Harris,,,
 2026|NC|H|8,Democratic,D,Colby Watson,,,
 2026|NC|H|8,Green,O,Bo Whitehead,,,
-2026|NC|H|9,Republican,R,Richard Hudson,,,
-2026|NC|H|9,Democratic,D,Richard Ojeda,,,
+2026|NC|H|9,Republican,R,Richard Hudson,48.9,132692.0,132692.0
+2026|NC|H|9,Democratic,D,Richard Ojeda,51.5,138707.0,138707.0
 2026|NC|H|10,Republican,R,Pat Harrigan,,,
 2026|NC|H|10,Democratic,D,Ashley Bell,,,
 2026|NC|H|10,Libertarian,O,Steve Feldman,,,
@@ -699,8 +699,8 @@ race_key,party,party_code,candidate,pct_first,votes_first,votes_final
 2026|NC|H|13,Republican,R,Brad Knott,,,
 2026|NC|H|13,Democratic,D,Paul Barringer,,,
 2026|NC|H|13,Libertarian,O,Steven Swinton,,,
-2026|NC|H|14,Republican,R,Tim Moore,,,
-2026|NC|H|14,Democratic,D,LaKesha Womack,,,
+2026|NC|H|14,Republican,R,Tim Moore,48.9,140973.0,140973.0
+2026|NC|H|14,Democratic,D,LaKesha Womack,51.1,147388.0,147388.0
 2026|OH|H|1,Democratic,D,Greg Landsman,,,
 2026|OH|H|1,Republican,R,Eric Conroy,,,
 2026|OH|H|1,Libertarian,O,Nathan Weise,,,
@@ -708,9 +708,9 @@ race_key,party,party_code,candidate,pct_first,votes_first,votes_final
 2026|OH|H|2,Democratic,D,Jennifer Mazzuckelli,,,
 2026|OH|H|3,Democratic,D,Joyce Beatty,,,
 2026|OH|H|3,Republican,R,Cleophus Dulaney,,,
-2026|OH|H|4,Republican,R,Jim Jordan,,,
-2026|OH|H|4,Democratic,D,Joshua Kolasinski,,,
-2026|OH|H|4,Independent,I,Tracey Tackett,,,
+2026|OH|H|4,Republican,R,Jim Jordan,64.49,197084.0,197084.0
+2026|OH|H|4,Democratic,D,Joshua Kolasinski,31.25,95497.0,95497.0
+2026|OH|H|4,Independent,I,Tracey Tackett,4.26,13005.0,13005.0
 2026|OH|H|5,Republican,R,Bob Latta,,,
 2026|OH|H|5,Democratic,D,Brian Shaver,,,
 2026|OH|H|5,Libertarian,O,Michael Veloff,,,
@@ -801,9 +801,9 @@ race_key,party,party_code,candidate,pct_first,votes_first,votes_final
 2026|PA|H|16,Democratic,D,Justin Wagner,,,
 2026|PA|H|17,Democratic,D,Chris Deluzio,,,
 2026|PA|H|17,Republican,R,Tony Guy,,,
-2026|SC|H|1,Democratic,D,Nancy Lacore,49.7,161878.0,161878.0
-2026|SC|H|1,Republican,R,Jenny Costa Honeycutt,48.6,158570.0,158570.0
-2026|SC|H|1,Libertarian,O,Bill Reeside Jr.,1.6,5346.0,5346.0
+2026|SC|H|1,Democratic,D,Nancy Lacore,49.7,162103.0,162103.0
+2026|SC|H|1,Republican,R,Jenny Costa Honeycutt,48.6,158751.0,158751.0
+2026|SC|H|1,Libertarian,O,Bill Reeside Jr.,1.6,5351.0,5351.0
 2026|SC|H|1,n/a,O,Write-ins,0.1,218.0,218.0
 2026|SC|H|2,Republican,R,Joe Wilson,,,
 2026|SC|H|2,Democratic,D,Zyon Khalifa,,,
@@ -977,104 +977,104 @@ race_key,party,party_code,candidate,pct_first,votes_first,votes_final
 2026|WV|H|1,Constitution,O,Belinda Fox-Spencer,,,
 2026|WV|H|2,Republican,R,Riley Moore,,,
 2026|WV|H|2,Democratic,D,Ace Parsi,,,
-2026|CA|H|1,Dem,D,Mike McGuire,55.5,97062.0,97062.0
-2026|CA|H|1,Rep,R,James Gallagher,44.5,77970.0,77970.0
-2026|CA|H|2,Dem,D,Jared Huffman,66.1,114657.0,114657.0
-2026|CA|H|2,Rep,R,Robin Littau,33.9,58839.0,58839.0
-2026|CA|H|3,Dem,D,Ami Bera,57.0,95702.0,95702.0
-2026|CA|H|3,Rep,R,Robb Tucker,43.0,72252.0,72252.0
-2026|CA|H|4,Dem,D,Eric Jones,51.5,63994.0,63994.0
-2026|CA|H|4,Dem,D,Mike Thompson,48.5,60365.0,60365.0
-2026|CA|H|5,Dem,D,Michael Masuda,44.3,89961.0,89961.0
-2026|CA|H|5,Rep,R,Tom McClintock,55.7,113168.0,113168.0
-2026|CA|H|6,Dem,D,Richard Pan,57.5,86732.0,86732.0
-2026|CA|H|6,NPP,I,Kevin Kiley,42.5,64143.0,64143.0
-2026|CA|H|7,Dem,D,Doris Matsui,57.5,77536.0,77536.0
-2026|CA|H|7,Dem,D,Mai Vang,42.5,57310.0,57310.0
-2026|CA|H|8,Dem,D,John Garamendi,71.7,139369.0,139369.0
-2026|CA|H|8,Rep,R,Rudy Recile,28.3,55134.0,55134.0
-2026|CA|H|9,Dem,D,Josh Harder,65.8,78226.0,78226.0
-2026|CA|H|9,Rep,R,John McBride,34.2,40665.0,40665.0
-2026|CA|H|10,Dem,D,Mark DeSaulnier,69.1,131901.0,131901.0
-2026|CA|H|10,Rep,R,Jeff Frese,30.9,59082.0,59082.0
-2026|CA|H|11,Dem,D,Connie Chan,45.4,99460.0,99460.0
-2026|CA|H|11,Dem,D,Scott Wiener,54.6,119475.0,119475.0
+2026|CA|H|1,Dem,D,Mike McGuire,55.5,97082.0,97082.0
+2026|CA|H|1,Rep,R,James Gallagher,44.5,77980.0,77980.0
+2026|CA|H|2,Dem,D,Jared Huffman,65.0,118456.0,118456.0
+2026|CA|H|2,Rep,R,Robin Littau,35.0,63878.0,63878.0
+2026|CA|H|3,Dem,D,Ami Bera,58.0,120081.0,120081.0
+2026|CA|H|3,Rep,R,Robb Tucker,42.0,87087.0,87087.0
+2026|CA|H|4,Dem,D,Eric Jones,51.4,71227.0,71227.0
+2026|CA|H|4,Dem,D,Mike Thompson,48.6,67426.0,67426.0
+2026|CA|H|5,Dem,D,Michael Masuda,44.0,91609.0,91609.0
+2026|CA|H|5,Rep,R,Tom McClintock,56.0,116493.0,116493.0
+2026|CA|H|6,Dem,D,Richard Pan,58.6,108065.0,108065.0
+2026|CA|H|6,NPP,I,Kevin Kiley,41.4,76313.0,76313.0
+2026|CA|H|7,Dem,D,Doris Matsui,55.7,97765.0,97765.0
+2026|CA|H|7,Dem,D,Mai Vang,44.3,77894.0,77894.0
+2026|CA|H|8,Dem,D,John Garamendi,72.8,155929.0,155929.0
+2026|CA|H|8,Rep,R,Rudy Recile,27.2,58119.0,58119.0
+2026|CA|H|9,Dem,D,Josh Harder,66.9,111799.0,111799.0
+2026|CA|H|9,Rep,R,John McBride,33.1,55263.0,55263.0
+2026|CA|H|10,Dem,D,Mark DeSaulnier,69.5,175025.0,175025.0
+2026|CA|H|10,Rep,R,Jeff Frese,30.5,76666.0,76666.0
+2026|CA|H|11,Dem,D,Connie Chan,46.0,121206.0,121206.0
+2026|CA|H|11,Dem,D,Scott Wiener,54.0,142519.0,142519.0
 2026|CA|H|12,Dem,D,Jamie Joyce,20.2,27460.0,27460.0
 2026|CA|H|12,Dem,D,Lateefah Simon,79.8,108161.0,108161.0
-2026|CA|H|13,Dem,D,Adam Gray,61.3,61503.0,61503.0
-2026|CA|H|13,Rep,R,Kevin Lincoln,38.7,38830.0,38830.0
+2026|CA|H|13,Dem,D,Adam Gray,61.7,70184.0,70184.0
+2026|CA|H|13,Rep,R,Kevin Lincoln,38.3,43640.0,43640.0
 2026|CA|H|14,Dem,D,Melissa Hernandez,43.5,52755.0,52755.0
 2026|CA|H|14,Dem,D,Aisha Wahab,56.5,68612.0,68612.0
-2026|CA|H|15,Dem,D,Kevin Mullin,78.2,117262.0,117262.0
-2026|CA|H|15,Rep,R,Charles Hoelter,21.8,32747.0,32747.0
-2026|CA|H|16,Dem,D,Sam Liccardo,76.5,128227.0,128227.0
-2026|CA|H|16,Rep,R,Peter Sundin Soulé,23.5,39423.0,39423.0
-2026|CA|H|17,Dem,D,Ro Khanna,70.8,84918.0,84918.0
-2026|CA|H|17,Rep,R,Ritesh Tandon,29.2,35104.0,35104.0
-2026|CA|H|18,Dem,D,Zoe Lofgren,71.7,82533.0,82533.0
-2026|CA|H|18,Rep,R,Shane Lewis,28.3,32521.0,32521.0
-2026|CA|H|19,Dem,D,Jimmy Panetta,72.6,149224.0,149224.0
-2026|CA|H|19,Rep,R,Peter Coe Verbica,27.4,56439.0,56439.0
-2026|CA|H|20,Dem,D,Sandra Van Scotter,38.0,62639.0,62639.0
-2026|CA|H|20,Rep,R,Vince Fong,62.0,102237.0,102237.0
-2026|CA|H|21,Dem,D,Jim Costa,62.7,61997.0,61997.0
-2026|CA|H|21,Rep,R,Kyle Kirkland,37.3,36838.0,36838.0
-2026|CA|H|22,Dem,D,Randy Villegas,66.6,61492.0,61492.0
-2026|CA|H|22,Rep,R,David G. Valadao,33.4,30871.0,30871.0
-2026|CA|H|23,Dem,D,Tessa Lynn Hodge,48.7,74188.0,74188.0
-2026|CA|H|23,Rep,R,Jay Obernolte,51.3,78084.0,78084.0
-2026|CA|H|24,Dem,D,Salud Carbajal,66.1,119531.0,119531.0
-2026|CA|H|24,Rep,R,Bob Smith,33.9,61274.0,61274.0
-2026|CA|H|25,Dem,D,Raul Ruiz,64.8,83461.0,83461.0
-2026|CA|H|25,Rep,R,Joe Males,35.2,45408.0,45408.0
-2026|CA|H|26,Dem,D,Jacqui Irwin,61.9,120416.0,120416.0
-2026|CA|H|26,Rep,R,Sam Gallucci,38.1,74211.0,74211.0
-2026|CA|H|27,Dem,D,George Whitesides,62.8,118634.0,118634.0
-2026|CA|H|27,Rep,R,Jason Gibbs,37.2,70403.0,70403.0
-2026|CA|H|28,Dem,D,Judy Chu,69.7,144219.0,144219.0
-2026|CA|H|28,Rep,R,April A. Verlato,30.3,62777.0,62777.0
-2026|CA|H|29,Dem,D,Angélica María Dueñas,40.9,55282.0,55282.0
-2026|CA|H|29,Dem,D,Luz Maria Rivas,59.1,79934.0,79934.0
-2026|CA|H|30,Dem,D,Laura Friedman,76.5,159698.0,159698.0
-2026|CA|H|30,Rep,R,Scott Alan Meyers,23.5,48944.0,48944.0
-2026|CA|H|31,Dem,D,Gil Cisneros,64.8,121467.0,121467.0
-2026|CA|H|31,Rep,R,Eric Ching,35.2,65971.0,65971.0
-2026|CA|H|32,Dem,D,Brad Sherman,66.9,144752.0,144752.0
-2026|CA|H|32,Rep,R,Larry Thompson,33.1,71470.0,71470.0
+2026|CA|H|15,Dem,D,Kevin Mullin,78.5,127733.0,127733.0
+2026|CA|H|15,Rep,R,Charles Hoelter,21.5,35056.0,35056.0
+2026|CA|H|16,Dem,D,Sam Liccardo,76.8,141302.0,141302.0
+2026|CA|H|16,Rep,R,Peter Sundin Soulé,23.2,42651.0,42651.0
+2026|CA|H|17,Dem,D,Ro Khanna,71.2,95116.0,95116.0
+2026|CA|H|17,Rep,R,Ritesh Tandon,28.8,38525.0,38525.0
+2026|CA|H|18,Dem,D,Zoe Lofgren,72.2,92221.0,92221.0
+2026|CA|H|18,Rep,R,Shane Lewis,27.8,35451.0,35451.0
+2026|CA|H|19,Dem,D,Jimmy Panetta,72.3,160763.0,160763.0
+2026|CA|H|19,Rep,R,Peter Coe Verbica,27.7,61469.0,61469.0
+2026|CA|H|20,Dem,D,Sandra Van Scotter,38.1,64310.0,64310.0
+2026|CA|H|20,Rep,R,Vince Fong,61.9,104338.0,104338.0
+2026|CA|H|21,Dem,D,Jim Costa,62.7,62615.0,62615.0
+2026|CA|H|21,Rep,R,Kyle Kirkland,37.3,37316.0,37316.0
+2026|CA|H|22,Dem,D,Randy Villegas,66.6,62193.0,62193.0
+2026|CA|H|22,Rep,R,David G. Valadao,33.4,31179.0,31179.0
+2026|CA|H|23,Dem,D,Tessa Lynn Hodge,48.8,74466.0,74466.0
+2026|CA|H|23,Rep,R,Jay Obernolte,51.2,78200.0,78200.0
+2026|CA|H|24,Dem,D,Salud Carbajal,65.9,122472.0,122472.0
+2026|CA|H|24,Rep,R,Bob Smith,34.1,63240.0,63240.0
+2026|CA|H|25,Dem,D,Raul Ruiz,64.9,86319.0,86319.0
+2026|CA|H|25,Rep,R,Joe Males,35.1,46686.0,46686.0
+2026|CA|H|26,Dem,D,Jacqui Irwin,61.9,122966.0,122966.0
+2026|CA|H|26,Rep,R,Sam Gallucci,38.1,75776.0,75776.0
+2026|CA|H|27,Dem,D,George Whitesides,63.4,131636.0,131636.0
+2026|CA|H|27,Rep,R,Jason Gibbs,36.6,75985.0,75985.0
+2026|CA|H|28,Dem,D,Judy Chu,70.2,154135.0,154135.0
+2026|CA|H|28,Rep,R,April A. Verlato,29.8,65457.0,65457.0
+2026|CA|H|29,Dem,D,Angélica María Dueñas,41.6,62172.0,62172.0
+2026|CA|H|29,Dem,D,Luz Maria Rivas,58.4,87237.0,87237.0
+2026|CA|H|30,Dem,D,Laura Friedman,76.9,175104.0,175104.0
+2026|CA|H|30,Rep,R,Scott Alan Meyers,23.1,52662.0,52662.0
+2026|CA|H|31,Dem,D,Gil Cisneros,65.4,131821.0,131821.0
+2026|CA|H|31,Rep,R,Eric Ching,34.6,69758.0,69758.0
+2026|CA|H|32,Dem,D,Brad Sherman,67.3,154621.0,154621.0
+2026|CA|H|32,Rep,R,Larry Thompson,32.7,74968.0,74968.0
 2026|CA|H|33,Dem,D,Pete Aguilar,68.0,92727.0,92727.0
 2026|CA|H|33,Rep,R,Stephanie M. Vargas,32.0,43701.0,43701.0
-2026|CA|H|34,Dem,D,Jimmy Gomez,39.7,53761.0,53761.0
-2026|CA|H|34,Dem,D,Angela Gonzales-Torres,60.3,81602.0,81602.0
-2026|CA|H|35,Dem,D,Norma J. Torres,65.8,84222.0,84222.0
-2026|CA|H|35,Rep,R,Mike Cargile,34.2,43770.0,43770.0
-2026|CA|H|36,Dem,D,Ted W. Lieu,71.9,176955.0,176955.0
-2026|CA|H|36,Rep,R,Houston Brignano,28.1,69139.0,69139.0
-2026|CA|H|37,Dem,D,Sydney Kamlager-Dove,61.8,88216.0,88216.0
-2026|CA|H|37,Dem,D,Samantha Mota,38.2,54416.0,54416.0
-2026|CA|H|38,Dem,D,Hilda Solis,66.2,114712.0,114712.0
-2026|CA|H|38,Rep,R,Pedro Antonio Casas,33.8,58582.0,58582.0
+2026|CA|H|34,Dem,D,Jimmy Gomez,39.0,58114.0,58114.0
+2026|CA|H|34,Dem,D,Angela Gonzales-Torres,61.0,90919.0,90919.0
+2026|CA|H|35,Dem,D,Norma J. Torres,66.0,85641.0,85641.0
+2026|CA|H|35,Rep,R,Mike Cargile,34.0,44150.0,44150.0
+2026|CA|H|36,Dem,D,Ted W. Lieu,72.3,191876.0,191876.0
+2026|CA|H|36,Rep,R,Houston Brignano,27.7,73599.0,73599.0
+2026|CA|H|37,Dem,D,Sydney Kamlager-Dove,61.5,97626.0,97626.0
+2026|CA|H|37,Dem,D,Samantha Mota,38.5,61140.0,61140.0
+2026|CA|H|38,Dem,D,Hilda Solis,66.8,124960.0,124960.0
+2026|CA|H|38,Rep,R,Pedro Antonio Casas,33.2,62027.0,62027.0
 2026|CA|H|39,Dem,D,Mark Takano,66.1,60770.0,60770.0
 2026|CA|H|39,Rep,R,Steve Manos,33.9,31188.0,31188.0
-2026|CA|H|40,Rep,R,Ken Calvert,54.2,81470.0,81470.0
-2026|CA|H|40,Rep,R,Young Kim,45.8,68864.0,68864.0
-2026|CA|H|41,Dem,D,Linda Sánchez,66.4,133195.0,133195.0
-2026|CA|H|41,Rep,R,Mitch Clemmons,33.6,67497.0,67497.0
-2026|CA|H|42,Dem,D,Robert Garcia,60.6,131223.0,131223.0
-2026|CA|H|42,Rep,R,Brian Burley,39.4,85211.0,85211.0
-2026|CA|H|43,Dem,D,Maxine Waters,82.1,120332.0,120332.0
-2026|CA|H|43,Rep,R,Cristian Morales,17.9,26295.0,26295.0
-2026|CA|H|44,Dem,D,Nanette Diaz Barragan,80.7,114528.0,114528.0
-2026|CA|H|44,Rep,R,Genevieve Angel,19.3,27338.0,27338.0
-2026|CA|H|45,Dem,D,Derek Tran,59.6,115937.0,115937.0
-2026|CA|H|45,Rep,R,Chuong V. Vo,40.4,78606.0,78606.0
-2026|CA|H|46,Dem,D,Lou Correa,69.2,96702.0,96702.0
-2026|CA|H|46,Rep,R,David Pan,30.8,42956.0,42956.0
-2026|CA|H|47,Dem,D,Dave Min,57.4,128743.0,128743.0
-2026|CA|H|47,Rep,R,Jenny Rae Le Roux,42.6,95500.0,95500.0
+2026|CA|H|40,Rep,R,Ken Calvert,54.0,83376.0,83376.0
+2026|CA|H|40,Rep,R,Young Kim,46.0,71084.0,71084.0
+2026|CA|H|41,Dem,D,Linda Sánchez,66.9,146164.0,146164.0
+2026|CA|H|41,Rep,R,Mitch Clemmons,33.1,72241.0,72241.0
+2026|CA|H|42,Dem,D,Robert Garcia,60.7,144841.0,144841.0
+2026|CA|H|42,Rep,R,Brian Burley,39.3,93607.0,93607.0
+2026|CA|H|43,Dem,D,Maxine Waters,82.4,132494.0,132494.0
+2026|CA|H|43,Rep,R,Cristian Morales,17.6,28305.0,28305.0
+2026|CA|H|44,Dem,D,Nanette Diaz Barragan,81.1,126076.0,126076.0
+2026|CA|H|44,Rep,R,Genevieve Angel,18.9,29313.0,29313.0
+2026|CA|H|45,Dem,D,Derek Tran,59.9,122492.0,122492.0
+2026|CA|H|45,Rep,R,Chuong V. Vo,40.1,82045.0,82045.0
+2026|CA|H|46,Dem,D,Lou Correa,69.6,103747.0,103747.0
+2026|CA|H|46,Rep,R,David Pan,30.4,45286.0,45286.0
+2026|CA|H|47,Dem,D,Dave Min,57.5,136330.0,136330.0
+2026|CA|H|47,Rep,R,Jenny Rae Le Roux,42.5,100584.0,100584.0
 2026|CA|H|48,Dem,D,Marni von Wilpert,59.4,102132.0,102132.0
 2026|CA|H|48,Rep,R,Jim Desmond,40.6,69686.0,69686.0
-2026|CA|H|49,Dem,D,Mike Levin,57.7,129312.0,129312.0
-2026|CA|H|49,Rep,R,Armen Kurdian,42.3,94738.0,94738.0
+2026|CA|H|49,Dem,D,Mike Levin,57.5,131357.0,131357.0
+2026|CA|H|49,Rep,R,Armen Kurdian,42.5,96982.0,96982.0
 2026|CA|H|50,Dem,D,Scott Peters,61.4,125988.0,125988.0
 2026|CA|H|50,Rep,R,Steve Cohen,38.6,79053.0,79053.0
 2026|CA|H|51,Dem,D,Sara Jacobs,63.4,116892.0,116892.0

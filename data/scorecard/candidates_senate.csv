@@ -26,10 +26,9 @@ race_key,party,party_code,candidate,pct_first,votes_first,votes_final
 2026|IL|S|regular,Democratic,D,Juliana Stratton,,,
 2026|IL|S|regular,Republican,R,Don Tracy,,,
 2026|IL|S|regular,American Center,O,Whitfield Harrington Jr.,,,
-2026|IA|S|regular,Republican,R,Ashley Hinson,,,
-2026|IA|S|regular,Democratic,D,Josh Turek,,,
-2026|IA|S|regular,Libertarian,O,Thomas Laehn,,,
-2026|IA|S|regular,Write-in,O,Write-in,,,
+2026|IA|S|regular,Democratic,D,Josh Turek,50.51,686486.0,686486.0
+2026|IA|S|regular,Republican,R,Ashley Hinson,46.4,630615.0,630615.0
+2026|IA|S|regular,Libertarian,O,Thomas Laehn,3.09,42086.0,42086.0
 2026|KS|S|regular,Democratic,D,Adam Hamilton,50.99,559853.0,559853.0
 2026|KS|S|regular,Republican,R,Roger Marshall,45.99,504950.0,504950.0
 2026|KS|S|regular,Libertarian,O,David Graham,3.02,33117.0,33117.0
@@ -46,12 +45,12 @@ race_key,party,party_code,candidate,pct_first,votes_first,votes_final
 2026|MA|S|regular,Socialism and Liberation,O,Joe Tache,,,
 2026|MA|S|regular,Independent,I,Shiva Ayyadurai,,,
 2026|MA|S|regular,Write-in,O,Write-in,,,
-2026|MI|S|regular,Democratic,D,Abdul El-Sayed,52.5,2507454.0,2507454.0
-2026|MI|S|regular,Republican,R,Mike Rogers,45.49,2172586.0,2172586.0
-2026|MI|S|regular,Libertarian,O,Lydia Christensen,1.04,49484.0,49484.0
-2026|MI|S|regular,U.S. Taxpayers,O,Tim Long,0.55,26417.0,26417.0
-2026|MI|S|regular,Green,O,Douglas P. Marsh,0.26,12510.0,12510.0
-2026|MI|S|regular,Natural Law,O,Walter P. Kristy,0.15,7232.0,7232.0
+2026|MI|S|regular,Democratic,D,Abdul El-Sayed,52.55,2517819.0,2517819.0
+2026|MI|S|regular,Republican,R,Mike Rogers,45.45,2177618.0,2177618.0
+2026|MI|S|regular,Libertarian,O,Lydia Christensen,1.04,49640.0,49640.0
+2026|MI|S|regular,U.S. Taxpayers,O,Tim Long,0.55,26512.0,26512.0
+2026|MI|S|regular,Green,O,Douglas P. Marsh,0.26,12549.0,12549.0
+2026|MI|S|regular,Natural Law,O,Walter P. Kristy,0.15,7250.0,7250.0
 2026|MN|S|regular,Democratic (DFL),D,Peggy Flanagan,,,
 2026|MN|S|regular,Republican,R,Michele Tafoya,,,
 2026|MN|S|regular,Independent,I,Marisa Simonetti,,,
@@ -132,8 +131,8 @@ race_key,party,party_code,candidate,pct_first,votes_first,votes_final
 2026|FL|S|special,Republican,R,Ashley Moody,50.88,4207173.0,4207173.0
 2026|FL|S|special,Democratic,D,Angie Nixon,47.98,3967674.0,3967674.0
 2026|FL|S|special,Independent,I,Neil J. Gillespie,1.14,94501.0,94501.0
-2026|OH|S|special,Democratic,D,Sherrod Brown,50.0,,
-2026|OH|S|special,Republican,R,Jon Husted,45.2,,
-2026|OH|S|special,Libertarian,O,Bill Redpath,2.8,,
-2026|OH|S|special,Independent,I,Greg Levy,2.1,,
+2026|OH|S|special,Democratic,D,Sherrod Brown,50.0,2301042.0,2301042.0
+2026|OH|S|special,Republican,R,Jon Husted,45.2,2077748.0,2077748.0
+2026|OH|S|special,Libertarian,O,Bill Redpath,2.8,128272.0,128272.0
+2026|OH|S|special,Independent,I,Greg Levy,2.1,94509.0,94509.0
 2026|OH|S|special,Write-in,O,Write-in,,,
