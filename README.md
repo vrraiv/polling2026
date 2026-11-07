@@ -41,6 +41,7 @@ The environment that matches the frozen forecast is tagged `env-2026`. To rebuil
 | `python src/run_scorecard.py` | Daily during counting: fetch results, then score. `--build` previews the site locally. |
 | `python src/run_scorecard.py --manual` | Also read official results downloaded by hand into `data/raw/official_manual/<ST>/<date>/`. |
 | `python src/run_scorecard.py --parse` | Re-parse the saved snapshots without fetching. After an upgrade, `git diff data/scorecard` should be empty. |
+| `python src/check_scorecard.py` | Check a scorecard refresh against the last commit before publishing: HOLD, REVIEW or CLEAN. |
 | `python src/check_frozen.py` | Rebuild the model from the frozen inputs and compare every file in `data/final/`. |
 | `python src/run_all.py` | The pre-election refresh. It refuses to run after polls closed on Nov 3, 2026. |
 
