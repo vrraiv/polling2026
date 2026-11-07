@@ -1,0 +1,21 @@
+{
+  "raceTitle": "U.S. House of Representatives District 12 - Districtwide Results",
+  "Reporting": "100% (190 of 190) precincts reporting",
+  "ReportingTime": "November 6, 2026, 5:37 p.m.",
+  "candidates": [
+    {
+      "Name": "Jamie Joyce",
+      "Party": "Dem",
+      "Votes": "38,227",
+      "Percent": "19.4",
+      "incumbent": false
+    },
+    {
+      "Name": "Lateefah Simon",
+      "Party": "Dem",
+      "Votes": "158,425",
+      "Percent": "80.6",
+      "incumbent": false
+    }
+  ]
+}

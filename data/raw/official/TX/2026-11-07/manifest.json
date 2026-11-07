@@ -1,0 +1,12 @@
+{
+  "electionConstants.json": {
+    "url": "https://goelect.txelections.civixapps.com/api-ivis-system/api/s3/enr/electionConstants",
+    "retrieved": "2026-11-07T03:03:09",
+    "bytes": 2953
+  },
+  "election.json": {
+    "url": "https://goelect.txelections.civixapps.com/api-ivis-system/api/s3/enr/election/53815",
+    "retrieved": "2026-11-07T03:03:11",
+    "bytes": 1648956
+  }
+}

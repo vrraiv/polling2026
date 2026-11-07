@@ -3,14 +3,14 @@
  "provisional": true,
  "sources": {
   "senate": {
-   "revision": 1384156763.0,
-   "page_modified": "2026-11-06T22:00:06Z",
-   "snapshot": "data\\raw\\wikipedia_results\\2026-11-06\\2026_United_States_Senate_elections.html"
+   "revision": 1384188814.0,
+   "page_modified": "2026-11-07T01:45:50Z",
+   "snapshot": "data/raw/wikipedia_results/2026-11-07/2026_United_States_Senate_elections.html"
   },
   "house": {
-   "revision": 1384182891.0,
-   "page_modified": "2026-11-07T01:08:12Z",
-   "snapshot": "data\\raw\\wikipedia_results\\2026-11-06\\2026_United_States_House_of_Representatives_elections.html"
+   "revision": 1384188188.0,
+   "page_modified": "2026-11-07T01:42:09Z",
+   "snapshot": "data/raw/wikipedia_results/2026-11-07/2026_United_States_House_of_Representatives_elections.html"
   }
  },
  "contested_rule": "any published model gave the D side between 2% and 98% (fixed from data/final/)",
@@ -8593,7 +8593,7 @@
    "status": "ok",
    "source": "Minnesota Secretary of State (media text files)",
    "url": "https://electionresultsfiles.sos.mn.gov/20261103/ussenate.txt",
-   "as_of": "Sat, 07 Nov 2026 01:18:17 GMT",
+   "as_of": "Sat, 07 Nov 2026 02:38:17 GMT",
    "reporting": "precincts 4105/4105",
    "complete": true,
    "margin": 10.4249181928,
@@ -8615,7 +8615,7 @@
    "status": "ok",
    "source": "Montana Secretary of State",
    "url": "https://electionresults.mt.gov/resultsSW.aspx?type=FED&map=CTY",
-   "as_of": "11/6/2026 6:15:25 PM MT (Montana time)",
+   "as_of": "11/6/2026 7:55:25 PM MT (Montana time)",
    "reporting": "precincts fully reporting 728/728, partially 0",
    "complete": true,
    "margin": -10.6308115532,
@@ -20978,13 +20978,13 @@
     "of": 35
    },
    "house_contested": {
-    "counted": 26,
-    "settled": 15,
+    "counted": 27,
+    "settled": 16,
     "of": 162
    },
    "house_all": {
-    "counted": 90,
-    "settled": 34,
+    "counted": 92,
+    "settled": 36,
     "of": 435
    },
    "rule": "scores use settled counts: candidate votes moved less than 1% since an earlier day's snapshot, the source was updated in between (page edited or report re-issued), and nothing moved the way a count in progress can't (votes falling, a swing with no new votes); in states that count mail ballots for weeks (CA, WA, OR, NV, AZ, UT, AK, NJ, NY, IL, MD, MS) the count must also have held still for 7 days"
@@ -21073,120 +21073,120 @@
    "house": {
     "polls_only": {
      "contested": {
-      "n": 15,
-      "mean": 6.032610936335986,
-      "rmse": 8.329816546783668,
-      "mae": 6.142351070504279
+      "n": 16,
+      "mean": 6.193793188359342,
+      "rmse": 8.347701975240248,
+      "mae": 6.2966745641421165
      },
      "all": {
-      "n": 34,
-      "mean": 4.516714870907983,
-      "rmse": 7.291317552323812,
-      "mae": 5.629652544334656
+      "n": 36,
+      "mean": 4.641579226062664,
+      "rmse": 7.276079671951832,
+      "mae": 5.692687028743409
      }
     },
     "polls_fundamentals": {
      "contested": {
-      "n": 15,
-      "mean": 5.636059755562193,
-      "rmse": 8.025990618950244,
-      "mae": 5.7833691040543425
+      "n": 16,
+      "mean": 5.803679983608291,
+      "rmse": 8.044550675559691,
+      "mae": 5.9417824978196805
      },
      "all": {
-      "n": 34,
-      "mean": 4.0655101304757135,
-      "rmse": 7.01948859664917,
-      "mae": 5.400346934820577
+      "n": 36,
+      "mean": 4.193555419767157,
+      "rmse": 7.000076029535588,
+      "mae": 5.45423462387064
      }
     },
     "polls_fundamentals_biasadj": {
      "contested": {
-      "n": 15,
-      "mean": 7.506668707605102,
-      "rmse": 9.405486761070058,
-      "mae": 7.506668707605102
+      "n": 16,
+      "mean": 7.685385279827386,
+      "rmse": 9.468383076913625,
+      "mae": 7.685385279827386
      },
      "all": {
-      "n": 34,
-      "mean": 5.841919491485315,
-      "rmse": 8.177775418319554,
-      "mae": 6.496862001673896
+      "n": 36,
+      "mean": 5.975447364100874,
+      "rmse": 8.196803497636363,
+      "mae": 6.594004179278977
      }
     },
     "pocket_senate_wide_shift": {
      "contested": {
-      "n": 15,
-      "mean": 7.506668707605102,
-      "rmse": 9.405486761070058,
-      "mae": 7.506668707605102
+      "n": 16,
+      "mean": 7.685385279827386,
+      "rmse": 9.468383076913625,
+      "mae": 7.685385279827386
      },
      "all": {
-      "n": 34,
-      "mean": 5.841919491485315,
-      "rmse": 8.177775418319554,
-      "mae": 6.496862001673896
+      "n": 36,
+      "mean": 5.975447364100874,
+      "rmse": 8.196803497636363,
+      "mae": 6.594004179278977
      }
     },
     "pocket_full_historical_bias": {
      "contested": {
-      "n": 15,
-      "mean": 7.758892698155285,
-      "rmse": 9.603197451892681,
-      "mae": 7.758892698155285
+      "n": 16,
+      "mean": 7.939654718346251,
+      "rmse": 9.672017084189417,
+      "mae": 7.939654718346251
      },
      "all": {
-      "n": 34,
-      "mean": 6.076779171856393,
-      "rmse": 8.347482978504516,
-      "mae": 6.679686149235512
+      "n": 36,
+      "mean": 6.211317678131593,
+      "rmse": 8.371332689826973,
+      "mae": 6.780729823434096
      }
     }
    }
   },
   "national": {
-   "districts_with_counts": 99,
-   "districts_count_stable": 34,
+   "districts_with_counts": 101,
+   "districts_count_stable": 36,
    "of": 435,
    "ready": false,
-   "dem_votes": 13165914.0,
-   "rep_votes": 9374802.0,
-   "house_vote_margin": 16.81895109276919,
+   "dem_votes": 13546422.0,
+   "rep_votes": 9743763.0,
+   "house_vote_margin": 16.327302681365563,
    "note": "sum of reported district votes; uncontested races not on the ballot add nothing (as in the calibration's national House vote)",
    "versions": {
     "polls_only": {
      "G_polls": 8.989638452842437,
      "G_used": 8.989638452842437,
      "bias_shift_assumed": 0.0,
-     "polling_miss": 7.829312639926753,
-     "G_error": 7.829312639926753
+     "polling_miss": 7.337664228523126,
+     "G_error": 7.337664228523126
     },
     "polls_fundamentals": {
      "G_polls": 8.989638452842437,
      "G_used": 9.621161475209849,
      "bias_shift_assumed": 0.0,
-     "polling_miss": 7.829312639926753,
-     "G_error": 7.197789617559341
+     "polling_miss": 7.337664228523126,
+     "G_error": 6.7061412061557135
     },
     "polls_fundamentals_biasadj": {
      "G_polls": 8.989638452842437,
      "G_used": 7.446845163533031,
      "bias_shift_assumed": -2.5540952480150283,
-     "polling_miss": 7.829312639926753,
-     "G_error": 9.37210592923616
+     "polling_miss": 7.337664228523126,
+     "G_error": 8.880457517832532
     },
     "pocket_senate_wide_shift": {
      "G_polls": 8.989638452842437,
      "G_used": 7.446845163533031,
      "bias_shift_assumed": -2.5540952480150283,
-     "polling_miss": 7.829312639926753,
-     "G_error": 9.37210592923616
+     "polling_miss": 7.337664228523126,
+     "G_error": 8.880457517832532
     },
     "pocket_full_historical_bias": {
      "G_polls": 8.989638452842437,
      "G_used": 7.164330122009899,
      "bias_shift_assumed": -2.932309892200151,
-     "polling_miss": 7.829312639926753,
-     "G_error": 9.654620970759291
+     "polling_miss": 7.337664228523126,
+     "G_error": 9.162972559355664
     }
    }
   },
@@ -21418,32 +21418,32 @@
     "z": 1.4455150740332559
    },
    "national_house": {
-    "n": 15,
-    "miss": 5.636059755562193,
+    "n": 16,
+    "miss": 5.803679983608291,
     "sd_assumed": 2.3306142350553474,
-    "z": 2.4182722609296805
+    "z": 2.4901933131247973
    },
-   "n_races": 28,
+   "n_races": 29,
    "region": {
     "sigma_assumed": 0.47638341360970904,
     "by_region": {
      "Midwest": {
       "n": 13,
-      "mean": -2.138986942228611,
-      "se": 0.6230245219019404,
-      "z": -2.7273132262126576
+      "mean": -2.2550317154912944,
+      "se": 0.6294968040867429,
+      "z": -2.85651401655579
      },
      "South": {
-      "n": 12,
-      "mean": 4.094549581098045,
-      "se": 1.4598890832962763,
-      "z": 2.6663319979460103
+      "n": 13,
+      "mean": 3.9085228656644238,
+      "se": 1.3434582066507428,
+      "z": 2.742015610535185
      },
      "West": {
       "n": 3,
-      "mean": -7.1092549080681975,
-      "se": 3.881320601995079,
-      "z": -1.8180162172796384
+      "mean": -7.1651283174168965,
+      "se": 3.855754644841288,
+      "z": -1.8442716574403772
      }
     }
    },
@@ -21451,10 +21451,10 @@
     "sd_assumed": 0.07836006383184495,
     "bias_adjusted_lean_correction": 0.0820784840431592,
     "pooled": {
-     "n": 28,
-     "slope": -0.014547517709321224,
-     "se": 0.10328360762373873,
-     "z_vs_assumed_sd": -0.11221047926133543
+     "n": 29,
+     "slope": -0.017385099604108393,
+     "se": 0.10166138949196893,
+     "z_vs_assumed_sd": -0.13544407774676098
     },
     "senate": {
      "n": 13,
@@ -21463,36 +21463,36 @@
      "z_vs_assumed_sd": 1.3340346719304303
     },
     "house": {
-     "n": 15,
-     "slope": -0.3084002043804445,
-     "se": 0.15157627859104045,
-     "z_vs_assumed_sd": -1.8073875199296177
+     "n": 16,
+     "slope": -0.3125767856997359,
+     "se": 0.14587765076059594,
+     "z_vs_assumed_sd": -1.8876363611256197
     }
    },
    "coverage": {
-    "n": 28,
+    "n": 29,
     "expected": {
      "50": 0.5,
      "80": 0.8,
      "95": 0.95
     },
     "t_used": {
-     "50": 0.5357142857142857,
-     "80": 0.8928571428571429,
-     "95": 0.9642857142857143
+     "50": 0.5517241379310345,
+     "80": 0.896551724137931,
+     "95": 0.9655172413793104
     },
     "t6": {
-     "50": 0.5714285714285714,
-     "80": 0.8928571428571429,
-     "95": 0.9642857142857143
+     "50": 0.5862068965517241,
+     "80": 0.896551724137931,
+     "95": 0.9655172413793104
     },
     "normal": {
-     "50": 0.6785714285714286,
-     "80": 0.9285714285714286,
-     "95": 0.9642857142857143
+     "50": 0.6896551724137931,
+     "80": 0.9310344827586207,
+     "95": 0.9655172413793104
     },
     "by_chamber_t_used": {
-     "house": 0.8666666666666667,
+     "house": 0.875,
      "senate": 0.9230769230769231
     },
     "note": "share of races whose error, after removing the chamber's realized national miss, falls inside the central interval of the race-level error (region, slope and race-specific layers)"
@@ -21519,22 +21519,22 @@
     }
    },
    "house": {
-    "n": 15,
+    "n": 16,
     "as_frozen": {
-     "rmse": 8.025990618950244,
-     "mean": 5.636059755562193
+     "rmse": 8.044550675559691,
+     "mean": 5.803679983608291
     },
     "without_blocklisted": {
-     "rmse": 8.025990618950244,
-     "mean": 5.636059755562193
+     "rmse": 8.044550675559691,
+     "mean": 5.803679983608291
     },
     "plus_probable_gaps": {
-     "rmse": 7.721497969586787,
-     "mean": 5.495395000581395
+     "rmse": 7.760121661937713,
+     "mean": 5.671806775813791
     },
     "plus_all_missing": {
-     "rmse": 7.7802305249417225,
-     "mean": 5.722351604534765
+     "rmse": 7.822066442070178,
+     "mean": 5.891249118809955
     }
    }
   },
@@ -22122,9 +22122,9 @@
   "house_margins": [
    {
     "race": "2026|AL|H|2",
-    "actual": null,
+    "actual": 7.51,
     "counted": 7.51,
-    "settled": false,
+    "settled": true,
     "source": "wikipedia",
     "mu_polls_only": -1.11,
     "mu_polls_fundamentals": -0.81,
@@ -22193,7 +22193,7 @@
    {
     "race": "2026|CA|H|5",
     "actual": null,
-    "counted": -11.96,
+    "counted": -12.27,
     "settled": false,
     "source": "ca_sos",
     "mu_polls_only": -14.87,
@@ -22233,7 +22233,7 @@
    {
     "race": "2026|CA|H|23",
     "actual": null,
-    "counted": -2.45,
+    "counted": -2.46,
     "settled": false,
     "source": "ca_sos",
     "mu_polls_only": -13.05,
@@ -22243,7 +22243,7 @@
    {
     "race": "2026|CA|H|48",
     "actual": null,
-    "counted": 18.88,
+    "counted": 18.55,
     "settled": false,
     "source": "ca_sos",
     "mu_polls_only": 9.36,
@@ -22293,7 +22293,7 @@
    {
     "race": "2026|FL|H|2",
     "actual": null,
-    "counted": null,
+    "counted": -4.18,
     "settled": false,
     "source": "wikipedia",
     "mu_polls_only": -6.73,
