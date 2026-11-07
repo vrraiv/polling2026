@@ -1608,6 +1608,44 @@ function scScatter(rows) {
   return s + "</svg>";
 }
 
+const fP = (p) => p == null ? "—" : p < 0.001 ? "<b>&lt;0.001</b>" : p < 0.05 ? `<b>${p.toFixed(3)}</b>` : p.toFixed(p < 0.1 ? 3 : 2);
+let scAttrOpen = null;
+// close Senate races: each race's error split into the simulation's layers; click a race for the layer-by-layer test
+function renderScAttr(A) {
+  const el = $("#scAttr"); if (!el) return;
+  if (!A || !A.races.length) { el.innerHTML = ""; return; }
+  const LAY = [["national", "National miss (Senate)"], ["region", "Region shock"], ["slope", "Polarization slope × lean"], ["race", "Race-specific"]];
+  const cols = 9;
+  const detail = (r) => {
+    const x = r.layers, t = r.total;
+    const sdTxt = (k, v) => k === "slope" ? `SD ${v.sd.toFixed(2)} <span class="tiny">(PVI ${fmtPVI(r.lean / 2)})</span>` : `SD ${v.sd.toFixed(k === "region" ? 2 : 1)}`;
+    return `<div class="detail-box"><p class="small" style="margin:0 0 8px">${raceLab(r.race)} (${esc(r.region)}): expected ${fmtM(r.mu)}, actual ${fmtM(r.actual)}, error <b>${fSgn(r.error)}</b>. The four layers below add up to the error.</p>` +
+      `<div style="overflow-x:auto"><table class="mini"><thead><tr><th>Layer</th><th class="num">Assumed spread</th><th class="num">2026</th><th class="num">Share of error</th><th class="num">z</th><th class="num">p</th></tr></thead><tbody>` +
+      LAY.map(([k, lab]) => { const v = x[k];
+        return `<tr><td>${lab}${k === "region" ? ` <span class="tiny">(${esc(r.region)}${v.n ? `, ${v.n} races` : ", no estimate"})</span>` : ""}${k === "race" ? "" : ` <span class="tiny">(shared)</span>`}</td>` +
+          `<td class="num">${sdTxt(k, v)}</td><td class="num">${fSgn(v.value, 2)}</td><td class="num">${Math.abs(r.error) < 0.05 ? "—" : Math.round(100 * v.value / r.error) + "%"}</td>` +
+          `<td class="num">${f2(v.z, 2)}</td><td class="num">${fP(v.p)}</td></tr>`; }).join("") +
+      `<tr><td><b>Total error</b></td><td class="num">SD ${t.sd.toFixed(1)}</td><td class="num"><b>${fSgn(t.value, 2)}</b></td><td class="num">100%</td><td class="num">${f2(t.z, 2)}</td><td class="num">—</td></tr>` +
+      `</tbody></table></div><p class="tiny" style="margin-bottom:0">Shared layers carry the same z and p for every race they touch (from the layer table above); the slope's z is the pooled slope's. Race-specific SD is the race's own spread with the region and slope variance taken out, tested against Student-t(${DATA.scorecard.margins.layers.df_t_used}). Total: national SD and race SD combined (no p: it is a mix of distributions).</p></div>`;
+  };
+  el.innerHTML = `<h3>Where each close Senate race's miss came from</h3>` +
+    `<p class="small">Each close Senate race with a settled count, its error (actual minus the polls + fundamentals expected margin) split into the simulation's layers: the Senate national miss, its region's shock and the polarization slope (all three estimated jointly from the close races of both chambers, as in the table above), and the race-specific remainder. Click a race to test each layer against the spread the simulation assumed for it. Sorted by the size of the error.</p>` +
+    `<div class="tbl-wrap scroll"><table id="scAttrTable"><thead><tr><th>Race</th><th class="hide-sm">Region</th><th class="num hide-sm">Expected</th><th class="num hide-sm">Actual</th><th class="num">Error</th>` +
+    `<th class="num">National</th><th class="num">Region</th><th class="num">Slope</th><th class="num">Race-specific</th></tr></thead><tbody>` +
+    A.races.map(r => { const open = r.race === scAttrOpen, x = r.layers;
+      const cell = (v) => `<td class="num">${fSgn(v.value)}${v.p != null && v.p < 0.05 ? "<sup>*</sup>" : ""}</td>`;
+      return `<tr class="race${open ? " open" : ""}" data-k="${esc(r.race)}" tabindex="0" aria-expanded="${open}"><td>${raceLab(r.race)}</td><td class="hide-sm">${esc(r.region)}</td>` +
+        `<td class="num hide-sm">${fmtM(r.mu)}</td><td class="num hide-sm">${fmtM(r.actual)}</td><td class="num"><b>${fSgn(r.error)}</b></td>` +
+        cell(x.national) + cell(x.region) + cell(x.slope) + cell(x.race) + `</tr>` +
+        (open ? `<tr class="detail"><td colspan="${cols}">${detail(r)}</td></tr>` : ""); }).join("") +
+    `</tbody></table></div><p class="tiny">Points of two-party margin; positive = Democrats did better than expected. * the layer's two-sided p is under 0.05. National, region and slope are single 2026 draws shared across races, so the same value recurs; the race-specific column has one draw per race.</p>`;
+  el.querySelectorAll("tr.race").forEach(tr => {
+    const toggle = () => { const k = tr.dataset.k; scAttrOpen = scAttrOpen === k ? null : k; renderScAttr(A); $("#scAttr").querySelector(`tr.race[data-k="${CSS.escape(k)}"]`)?.focus({ preventScroll: true }); };
+    tr.addEventListener("click", toggle);
+    tr.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); } });
+  });
+}
+
 function renderScorecard() {
   const SC = DATA.scorecard; if (!SC) return;
   const M = SC.margins || null, S = SC.senate, H = SC.house, sen = DATA.models[model].senate_races;
@@ -1720,16 +1758,18 @@ function renderScorecard() {
     const c = L.coverage, ns = L.national_senate, nh = L.national_house, sl = L.slope;
     $("#scLayers").innerHTML = `<h3>The simulation's error layers, checked one at a time</h3>` +
       `<p class="small">The simulations stack four layers of error (see the technical appendix). 2026 is one draw of the national, regional and slope layers, so those are reported as where this year landed against the assumed spread (a z-score); only the race-level layer has hundreds of races behind it. Residuals are from the polls + fundamentals version.</p>` +
-      `<div class="tbl-wrap"><table><thead><tr><th>Layer</th><th class="num">Assumed spread</th><th class="num">2026</th><th class="num">z</th></tr></thead><tbody>` +
-      `<tr><td>National miss, Senate (${ns.n} close races)</td><td class="num">SD ${ns.sd_assumed.toFixed(1)}</td><td class="num">${fSgn(ns.miss)}</td><td class="num">${f2(ns.z, 2)}</td></tr>` +
-      `<tr><td>National miss, House (${nh.n} close districts)</td><td class="num">SD ${nh.sd_assumed.toFixed(1)}</td><td class="num">${fSgn(nh.miss)}</td><td class="num">${f2(nh.z, 2)}</td></tr>` +
-      Object.entries(L.region.by_region).map(([g, x]) => `<tr><td>Region shock: ${g} (${x.n})</td><td class="num">SD ${L.region.sigma_assumed.toFixed(2)}</td><td class="num">${fSgn(x.mean, 2)}</td><td class="num">${f2(x.z, 2)}</td></tr>`).join("") +
-      (sl.pooled ? `<tr><td>Polarization slope (per point of lean)</td><td class="num">SD ${sl.sd_assumed.toFixed(3)}</td><td class="num">${fSgn(sl.pooled.slope, 3)} ± ${sl.pooled.se.toFixed(3)}</td><td class="num">${f2(sl.pooled.z_vs_assumed_sd, 2)}</td></tr>` : "") +
-      `</tbody></table></div>` +
+      `<div class="tbl-wrap"><table><thead><tr><th>Layer</th><th class="num">Assumed spread</th><th class="num">2026</th><th class="num">z</th><th class="num">p</th></tr></thead><tbody>` +
+      `<tr><td>National miss, Senate (${ns.n} close races)</td><td class="num">SD ${ns.sd_assumed.toFixed(1)}</td><td class="num">${fSgn(ns.miss)}</td><td class="num">${f2(ns.z, 2)}</td><td class="num">${fP(ns.p)}</td></tr>` +
+      `<tr><td>National miss, House (${nh.n} close districts)</td><td class="num">SD ${nh.sd_assumed.toFixed(1)}</td><td class="num">${fSgn(nh.miss)}</td><td class="num">${f2(nh.z, 2)}</td><td class="num">${fP(nh.p)}</td></tr>` +
+      Object.entries(L.region.by_region).map(([g, x]) => `<tr><td>Region shock: ${g} (${x.n})</td><td class="num">SD ${L.region.sigma_assumed.toFixed(2)}</td><td class="num">${fSgn(x.mean, 2)}</td><td class="num">${f2(x.z, 2)}</td><td class="num">${fP(x.p)}</td></tr>`).join("") +
+      (sl.pooled ? `<tr><td>Polarization slope (per point of lean)</td><td class="num">SD ${sl.sd_assumed.toFixed(3)}</td><td class="num">${fSgn(sl.pooled.slope, 3)} ± ${sl.pooled.se.toFixed(3)}</td><td class="num">${f2(sl.pooled.z_vs_assumed_sd, 2)}</td><td class="num">${fP(sl.pooled.p)}</td></tr>` : "") +
+      `</tbody></table></div><p class="tiny">p: two-sided chance of a value at least this far from zero if the layer's assumed spread were right, under the distribution the simulation draws it from (national miss: Student-t with ${L.df_t_used} degrees of freedom; region and slope: normal). Each is a single 2026 draw, and several layers are tested at once, so read a lone small p with caution. Bold: under 0.05.</p>` +
       (sl.pooled ? `<p class="tiny">The bias-adjusted version corrected Senate polls by ${fSgn(sl.bias_adjusted_lean_correction, 3)} per point of lean; a 2026 slope near that value supports the correction, one near zero doesn't. Senate alone: ${sl.senate ? fSgn(sl.senate.slope, 3) + " ± " + sl.senate.se.toFixed(3) : "—"}; House alone: ${sl.house ? fSgn(sl.house.slope, 3) + " ± " + sl.house.se.toFixed(3) : "—"}.</p>` : "") +
       `<h3>Race-level error: does the spread fit?</h3><p class="small">With each chamber's realized national miss removed, the share of ${c.n} close races whose error fell inside the forecast's central intervals. If the race-level spread is right, the shares match the interval sizes. The forecast used fat tails (Student-t, ${L.df_t_used} degrees of freedom); a t with 6 and a normal are shown for comparison: too few inside the 50% interval with the right number inside the 95% means the tails were fatter than needed.</p>` +
       `<div class="tbl-wrap"><table><thead><tr><th>Interval</th><th class="num">Expected</th><th class="num">t(${L.df_t_used}) used</th><th class="num">t(6)</th><th class="num">Normal</th></tr></thead><tbody>` +
-      ["50", "80", "95"].map(k => `<tr><td>Central ${k}%</td><td class="num">${k}%</td><td class="num">${fmtP(c.t_used[k])}</td><td class="num">${fmtP(c.t6[k])}</td><td class="num">${fmtP(c.normal[k])}</td></tr>`).join("") + `</tbody></table></div>`;
+      ["50", "80", "95"].map(k => `<tr><td>Central ${k}%</td><td class="num">${k}%</td><td class="num">${fmtP(c.t_used[k])}</td><td class="num">${fmtP(c.t6[k])}</td><td class="num">${fmtP(c.normal[k])}</td></tr>`).join("") + `</tbody></table></div>` +
+      `<div id="scAttr"></div>`;
+    renderScAttr(L.attribution);
   } else $("#scLayers").innerHTML = "";
   // poll data audit
   const A = SC.poll_audit;
