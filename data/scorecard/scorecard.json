@@ -22203,6 +22203,210 @@
     "note": "national, region and slope are the shared estimates in the layer table (one 2026 draw each; their z and p are the layer's, the same for every race they touch); race-specific is what is left, against t(df used) with the race's idiosyncratic SD. Two-sided p-values."
    }
   },
+  "brier_attribution": {
+   "n_mc": 200000,
+   "seed": 20261103,
+   "versions": {
+    "polls_only": {
+     "senate": {
+      "n": 25,
+      "n_settled_for_layers": 14,
+      "reported": 0.0450178722,
+      "reconstructed": 0.044777561316000004,
+      "mc_gap": 0.00024031088399999873,
+      "layers": {
+       "national": {
+        "contribution": 0.017446324405500008,
+        "brier_alone": 0.028132709966999993,
+        "value": 5.047393494926909
+       },
+       "region": {
+        "contribution": -0.013665232141499993,
+        "brier_alone": 0.06147321014399999,
+        "values": {
+         "Midwest": -2.792796873072691,
+         "South": 3.811262339292907,
+         "West": -5.215643934862154
+        }
+       },
+       "slope": {
+        "contribution": 0.00029626601000000023,
+        "brier_alone": 0.042216700703,
+        "value": -0.024074520679956038
+       }
+      },
+      "race": {
+       "contribution": 0.04070020304199999,
+       "expected_if_right": 0.07181139695800001
+      }
+     },
+     "house": {
+      "n": 149,
+      "n_settled_for_layers": 18,
+      "reported": 0.11995092399748321,
+      "reconstructed": 0.11963918320989926,
+      "mc_gap": 0.0003117407875839473,
+      "layers": {
+       "national": {
+        "contribution": 0.02004875040027954,
+        "brier_alone": 0.08696683572953016,
+        "value": 6.877316096994132
+       },
+       "region": {
+        "contribution": -0.0312746717921699,
+        "brier_alone": 0.14044488164379168,
+        "values": {
+         "Midwest": -2.792796873072691,
+         "South": 3.811262339292907,
+         "West": -5.215643934862154
+        }
+       },
+       "slope": {
+        "contribution": -0.0011434994693512745,
+        "brier_alone": 0.11686485323271814,
+        "value": -0.024074520679956038
+       }
+      },
+      "race": {
+       "contribution": 0.1320086040711409,
+       "expected_if_right": 0.12142012076107381
+      }
+     }
+    },
+    "polls_fundamentals": {
+     "senate": {
+      "n": 25,
+      "n_settled_for_layers": 14,
+      "reported": 0.04413312380000001,
+      "reconstructed": 0.04426230459,
+      "mc_gap": -0.00012918078999999555,
+      "layers": {
+       "national": {
+        "contribution": 0.017405761060333338,
+        "brier_alone": 0.028005010233999997,
+        "value": 4.893905619272618
+       },
+       "region": {
+        "contribution": -0.013583685234166669,
+        "brier_alone": 0.06062366298400001,
+        "values": {
+         "Midwest": -2.769461643453136,
+         "South": 3.7798173150908294,
+         "West": -5.17356459036791
+        }
+       },
+       "slope": {
+        "contribution": 0.0003897242638333323,
+        "brier_alone": 0.042223450737000005,
+        "value": -0.018142852101914634
+       }
+      },
+      "race": {
+       "contribution": 0.0400505045,
+       "expected_if_right": 0.0725830955
+      }
+     },
+     "house": {
+      "n": 149,
+      "n_settled_for_layers": 18,
+      "reported": 0.11485248223993291,
+      "reconstructed": 0.11489108636057041,
+      "mc_gap": -3.860412063749763e-05,
+      "layers": {
+       "national": {
+        "contribution": 0.016211826578103997,
+        "brier_alone": 0.08734357165989928,
+        "value": 6.486776812107585
+       },
+       "region": {
+        "contribution": -0.03169607193766778,
+        "brier_alone": 0.13679569716610743,
+        "values": {
+         "Midwest": -2.769461643453136,
+         "South": 3.7798173150908294,
+         "West": -5.17356459036791
+        }
+       },
+       "slope": {
+        "contribution": -0.0008790809278523385,
+        "brier_alone": 0.11280154923338925,
+        "value": -0.018142852101914634
+       }
+      },
+      "race": {
+       "contribution": 0.13125441264798654,
+       "expected_if_right": 0.12169102359362424
+      }
+     }
+    },
+    "polls_fundamentals_biasadj": {
+     "senate": {
+      "n": 25,
+      "n_settled_for_layers": 14,
+      "reported": 0.05503952170000001,
+      "reconstructed": 0.05485176448800002,
+      "mc_gap": 0.00018775721199999068,
+      "layers": {
+       "national": {
+        "contribution": 0.02755496660233335,
+        "brier_alone": 0.025751571529999993,
+        "value": 5.861525172813914
+       },
+       "region": {
+        "contribution": -0.014499942484666656,
+        "brier_alone": 0.073273022822,
+        "values": {
+         "Midwest": -2.893529760569361,
+         "South": 3.888584195617899,
+         "West": -5.178219011716699
+        }
+       },
+       "slope": {
+        "contribution": 0.0011794765673333403,
+        "brier_alone": 0.048077224239,
+        "value": -0.05369362344965013
+       }
+      },
+      "race": {
+       "contribution": 0.04061726380299999,
+       "expected_if_right": 0.068942536197
+      }
+     },
+     "house": {
+      "n": 149,
+      "n_settled_for_layers": 18,
+      "reported": 0.15153661392197987,
+      "reconstructed": 0.1514514211387584,
+      "mc_gap": 8.519278322147161e-05,
+      "layers": {
+       "national": {
+        "contribution": 0.0416989360639541,
+        "brier_alone": 0.08806585103137582,
+        "value": 8.367747726618301
+       },
+       "region": {
+        "contribution": -0.032230151812723706,
+        "brier_alone": 0.16819134660805365,
+        "values": {
+         "Midwest": -2.893529760569361,
+         "South": 3.888584195617899,
+         "West": -5.178219011716699
+        }
+       },
+       "slope": {
+        "contribution": -0.002629525265827763,
+        "brier_alone": 0.14381820285150998,
+        "value": -0.05369362344965013
+       }
+      },
+      "race": {
+       "contribution": 0.14461216215335576,
+       "expected_if_right": 0.12561629422248322
+      }
+     }
+    }
+   }
+  },
   "poll_audit_scores": {
    "senate": {
     "n": 16,

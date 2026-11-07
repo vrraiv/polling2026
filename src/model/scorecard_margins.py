@@ -17,6 +17,10 @@ partial count is visible rather than silently scored.
               region and slope: normal).
   attribution each close Senate race's error split into those layers (national miss, its region's shock, slope x lean,
               and the race-specific remainder), each against the spread the simulation gave it.
+  brier_attribution  each reported Brier score (published versions x chamber, close called races) split into the
+              layers: the score is recomputed with each race's probability conditioned on the layers' realized 2026
+              values (estimated per version), and each layer is credited its Shapley share of the drop; what is left
+              once all shared layers are known is the race-specific part.
 Ratings/PVI baselines and all intervals come from data/final/ only.
 """
 import json
@@ -153,20 +157,21 @@ def ordering(sen):
     return out
 
 
-def layers(sen, hou):
-    out = {"reference_version": REF, "df_t_used": DF_T}
+def layers(sen, hou, v=REF):
+    """Layer estimates from version v's residuals (REF for the published table; brier_attribution asks for each version)."""
+    out = {"reference_version": v, "df_t_used": DF_T}
     rows = []
     for ch, df in (("senate", sen), ("house", hou)):
         d = df[df.contested & df.actual.notna()].copy()
-        d["err"] = d.actual - d[f"mu_{REF}"]
-        nat = summary(REF)["national"]
+        d["err"] = d.actual - d[f"mu_{v}"]
+        nat = summary(v)["national"]
         sd_nat = nat["sd_nat_senate_used"] if ch == "senate" else H_G_NAT * nat["sd_nat_house_used"]
         miss = float(d.err.mean()) if len(d) else None
         z = None if miss is None else miss / sd_nat
         out[f"national_{ch}"] = {"n": int(len(d)), "miss": miss, "sd_assumed": float(sd_nat), "z": z, "p": p_t(z)}
         d["resid"] = d.err - (miss or 0.0)
         d["chamber"] = ch
-        d["sd"] = d[f"sd_{REF}"]
+        d["sd"] = d[f"sd_{v}"]
         rows.append(d[["race_key", "chamber", "region", "lean", "resid", "sd"]])
     r = pd.concat(rows)
     out["n_races"] = int(len(r))
@@ -204,7 +209,8 @@ def layers(sen, hou):
                                              for ch, x in r.groupby("chamber")},
                        "note": "share of races whose error, after removing the chamber's realized national miss, falls inside "
                                "the central interval of the race-level error (region, slope and race-specific layers)"}
-    out["attribution"] = attribution(sen, out)
+    if v == REF:
+        out["attribution"] = attribution(sen, out)
     return out
 
 
@@ -242,6 +248,75 @@ def attribution(sen, L):
             "note": "national, region and slope are the shared estimates in the layer table (one 2026 draw each; their z and "
                     "p are the layer's, the same for every race they touch); race-specific is what is left, against t(df "
                     "used) with the race's idiosyncratic SD. Two-sided p-values."}
+
+
+N_MC, MC_SEED = 200_000, 20261103   # fixed seed: the same counts give the same attribution on every run
+LAYERS = ("national", "region", "slope")
+
+
+def brier_attribution(sen, hou):
+    """Split each reported Brier score (close called races, as in the scores table) into the simulation's layers.
+
+    For each race, the simulation's error is national + region + slope x lean + race-specific. Knowing a layer's realized
+    2026 value (estimated from version v's settled residuals, as in layers()) fixes that piece and drops its variance;
+    P(D side wins) is then recomputed by Monte Carlo over the layers still unknown (common random numbers, fixed seed).
+    B(S) is the Brier score with the layers in S known. Each layer is credited its Shapley value, the average over
+    orderings of how much knowing it lowers the score; with all three known, what is left (B(all)) is the race-specific
+    part. B(none) reproduces the simulation's own probabilities up to Monte Carlo noise; the small remainder against
+    the reported score is shown as such. A layer can be credited a negative share: knowing it would have made the
+    score worse (the race-specific errors happened to offset it)."""
+    rng = np.random.default_rng(MC_SEED)
+    draws = {"national": rng.standard_t(DF_T, N_MC) * T_SCALE, "region": rng.standard_normal(N_MC),
+             "slope": rng.standard_normal(N_MC), "race": rng.standard_t(DF_T, N_MC) * T_SCALE}
+    subsets = [frozenset(c) for k in range(4) for c in __import__("itertools").combinations(LAYERS, k)]
+    out = {"n_mc": N_MC, "seed": MC_SEED, "versions": {}}
+    for v in PUBLISHED:
+        L = layers(sen, hou, v)
+        if "slope" not in L or "pooled" not in L["slope"]:
+            return None
+        reg, slope = L["region"]["by_region"], L["slope"]["pooled"]["slope"]
+        sig_r = float(summary(v)["national"].get("sigma_region", SIGMA_REGION))
+        out["versions"][v] = {}
+        for ch, df in (("senate", sen), ("house", hou)):
+            d = df[df.contested & df.called]
+            if not len(d):
+                continue
+            nat = L[f"national_{ch}"]
+            B = {S: 0.0 for S in subsets}
+            exp_all = 0.0
+            for _, r in d.iterrows():
+                mu, sd, lean = float(r[f"mu_{v}"]), float(r[f"sd_{v}"]), float(r.lean)
+                sd_idio = np.sqrt(max(sd ** 2 - sig_r ** 2 - (SIGMA_SLOPE * lean) ** 2, (0.5 * sd) ** 2))
+                g = reg.get(r.region)
+                known = {"national": nat["miss"], "region": g["mean"] if g else None, "slope": slope * lean}
+                spread = {"national": nat["sd_assumed"], "region": sig_r, "slope": SIGMA_SLOPE * abs(lean)}
+                base = mu + sd_idio * draws["race"]
+                for S in subsets:
+                    m = base.copy()
+                    for k in LAYERS:
+                        if k in S and known[k] is not None:
+                            m += known[k]
+                        else:
+                            m += spread[k] * draws[k]
+                    p = float((m > 0).mean())
+                    B[S] += (p - r.y) ** 2
+                    if len(S) == 3:
+                        exp_all += p * (1 - p)
+            n = len(d)
+            B = {S: b / n for S, b in B.items()}
+            full = frozenset(LAYERS)
+            w = {0: 1 / 3, 1: 1 / 6, 2: 1 / 3}
+            shap = {k: float(sum(w[len(S)] * (B[S] - B[S | {k}]) for S in subsets if k not in S)) for k in LAYERS}
+            reported = float(((d[v] - d.y) ** 2).mean())
+            lay = {k: {"contribution": shap[k], "brier_alone": float(B[frozenset([k])])} for k in LAYERS}
+            lay["national"]["value"] = nat["miss"]
+            lay["region"]["values"] = {g: x["mean"] for g, x in reg.items()}
+            lay["slope"]["value"] = slope
+            out["versions"][v][ch] = {
+                "n": int(n), "n_settled_for_layers": nat["n"], "reported": reported, "reconstructed": float(B[frozenset()]),
+                "mc_gap": reported - float(B[frozenset()]), "layers": lay,
+                "race": {"contribution": float(B[full]), "expected_if_right": float(exp_all / n)}}
+    return out
 
 
 def poll_audit_scores(sen, hou):
@@ -327,6 +402,7 @@ def stage2(sen, hou):
            "national": national(hm),
            "ordering": ordering(sen),
            "layers": layers(sen, hou),
+           "brier_attribution": brier_attribution(sen, hou),
            "poll_audit_scores": poll_audit_scores(sen, hou),
            "early_read": early_read(sen),
            "senate_margins": [margin_row(r) for _, r in sen.iterrows()],
@@ -357,6 +433,14 @@ def report(m):
             print(f"   {k:9s} n={b['n']:2d} " + "  ".join(f"{v.replace('polls_', '')[:14]} tau {b[v]['tau_b']:.2f}/{b[v]['pairs_right']:.0%}" for v in PUBLISHED)
                   + f"  | PVI tau {b['baseline_pvi']['tau_b']:.2f}/{b['baseline_pvi']['pairs_right']:.0%}  Cook tau {b['baseline_cook']['tau_b']:.2f}/{b['baseline_cook']['pairs_right']:.0%}")
     print("   tipping point:", o.get("tipping_point") or ("pending " + str(o.get("tipping_point_pending"))))
+    BA = m.get("brier_attribution")
+    if BA:
+        print("brier attribution (contribution to the close-race Brier; race = Brier with every shared layer known):")
+        for v, chs in BA["versions"].items():
+            for ch, x in chs.items():
+                print(f"   {ch:6s} {v:30s} n={x['n']:3d} Brier {x['reported']:.4f} (MC {x['reconstructed']:.4f})  "
+                      + "  ".join(f"{k} {x['layers'][k]['contribution']:+.4f}" for k in LAYERS)
+                      + f"  race {x['race']['contribution']:.4f} (exp. {x['race']['expected_if_right']:.4f})")
     L = m["layers"]
     print("layers:", {k: L[k] for k in ("national_senate", "national_house")})
     for k in ("region", "slope", "coverage"):
