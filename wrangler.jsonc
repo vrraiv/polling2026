@@ -7,5 +7,7 @@
   "assets": {
     "directory": "./site",
     "not_found_handling": "404-page"
-  }
+  },
+  // Required by `npx wrangler preview` (the preview-build deploy command); empty keeps previews on the settings above.
+  "previews": {}
 }
