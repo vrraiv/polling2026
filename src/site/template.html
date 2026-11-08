@@ -260,6 +260,7 @@ td .none { color: var(--text-3); font-size: .8rem; }
   <div class="tbl-wrap"><table id="scScores"></table></div>
   <p class="tiny" id="scScoresNote"></p>
   <div id="scBrierAttr"></div>
+  <div id="scByPolls"></div>
   <div id="scEarly"></div>
   <div id="scNational"></div>
   <h3>Senate races</h3>
@@ -1730,6 +1731,23 @@ function renderScorecard() {
   $("#scScoresNote").textContent = `Called so far: ${closeS.filter(r => r.called).length} of ${closeS.length} close Senate races and ` +
     `${closeH.filter(r => r.called).length} of ${closeH.length} close House districts. The earliest calls are the clearer races, so the House scores especially will move as the rest are called. Margin errors appear once counts settle.`;
   renderScBrierAttr(M ? M.brier_attribution : null);
+  // close races grouped by how much polling they had
+  const BP = M ? M.by_polls : null;
+  if (BP && BP.senate && BP.house) {
+    const pc = (x) => x == null ? "—" : Math.round(100 * x) + "%", f1 = (x) => x == null ? "—" : x.toFixed(1);
+    const blk = (ch, lab) => { const b = BP[ch];
+      return `<tr><th colspan="9" style="position:static;background:var(--surface-2);color:var(--text-2)">${lab} <span class="tiny" style="text-transform:none;letter-spacing:0;font-weight:400">(${b.n} close ${ch === "senate" ? "races" : "districts"}; ${b.kind === "quartiles" ? "quartiles by number of polls" : "by number of polls: most had none, so quartiles can't be formed"}; national miss ${fSgn(b.national_miss[model])})</span></th></tr>` +
+        b.groups.map(g => { const x = g.versions[model];
+          return `<tr><td>${esc(g.label.replace(/^Q\d: /, ""))}${b.kind === "quartiles" ? ` <span class="tiny">(${g.label.slice(0, 2)})</span>` : ""}</td><td class="num">${g.n} <span class="tiny">(${x.settled} settled)</span></td><td class="num">${pc(g.poll_weight_mean)}</td>` +
+            `<td class="num">${f2(x.brier)} <span class="tiny">(${f2(x.brier_expected)})</span></td><td class="num">${pc(x.brier_share)}</td>` +
+            `<td class="num">${x.mean_error == null ? "—" : fSgn(x.mean_error)}</td><td class="num">${f1(x.rmse_after_national)}</td><td class="num">${f1(x.sd_forecast)}</td><td class="num">${pc(x.sq_error_share)}</td></tr>`; }).join(""); };
+    $("#scByPolls").innerHTML = `<h3>Thinly polled races vs. well-polled ones</h3>` +
+      `<p class="small">The close races grouped by how many polls the forecast had, fixed from the frozen forecast (${MODELS[model].toLowerCase()} shown; the model buttons above switch it). The shares say how much of each chamber's total Brier score and squared margin error each group carries. Margin error after the national miss sets aside the miss all races shared; set against the forecast's own race-level SD, it shows whether the spread fit that group (similar numbers: it did; error well below the SD: the forecast was too unsure there).</p>` +
+      `<div class="tbl-wrap scroll"><table><thead><tr><th>Polls</th><th class="num">Races</th><th class="num">Weight on polls</th><th class="num">Brier <span class="tiny">(expected)</span></th><th class="num">Share of Brier</th>` +
+      `<th class="num">Mean margin error</th><th class="num">RMSE after national miss</th><th class="num">Forecast SD</th><th class="num">Share of squared error</th></tr></thead><tbody>` +
+      blk("senate", "Senate") + blk("house", "House") + `</tbody></table></div>` +
+      `<p class="tiny">Brier: close called races; expected: the score if the forecast's probabilities were calibrated. Margin columns: close races with a settled count only, so groups with few settled races will move. Weight on polls: the forecast's average weight on the poll average versus the prior (polls + fundamentals version). Mean margin error positive = Democrats did better than expected.</p>`;
+  } else $("#scByPolls").innerHTML = "";
   // early read: Senate polling miss from the latest counts, shown but not scored
   const ER = M ? M.early_read : null;
   if (ER && ER.n_polled) {
