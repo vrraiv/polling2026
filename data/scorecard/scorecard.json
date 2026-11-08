@@ -22407,6 +22407,373 @@
     }
    }
   },
+  "by_polls": {
+   "senate": {
+    "kind": "quartiles",
+    "groups": [
+     {
+      "group": 0,
+      "label": "Q1: 0\u20131 polls",
+      "n": 6,
+      "polls_min": 0,
+      "polls_max": 1,
+      "poll_weight_mean": 0.34438263497471383,
+      "versions": {
+       "polls_only": {
+        "n": 6,
+        "called": 6,
+        "settled": 4,
+        "brier": 0.002630978229166667,
+        "brier_expected": 0.04208152177083333,
+        "brier_share": 0.014026313198339035,
+        "mean_error": 4.211438094089237,
+        "rmse": 9.308642396510093,
+        "rmse_after_national": 8.343466538432862,
+        "sd_forecast": 10.048983122404826,
+        "sq_error_share": 0.7619229864430423
+       },
+       "polls_fundamentals": {
+        "n": 6,
+        "called": 6,
+        "settled": 4,
+        "brier": 0.002995066458333333,
+        "brier_expected": 0.043746600208333326,
+        "brier_share": 0.01628744779674988,
+        "mean_error": 3.797400634211909,
+        "rmse": 8.993537429466889,
+        "rmse_after_national": 8.225921656615256,
+        "sd_forecast": 10.048983122404826,
+        "sq_error_share": 0.7558324960091894
+       },
+       "polls_fundamentals_biasadj": {
+        "n": 6,
+        "called": 6,
+        "settled": 4,
+        "brier": 0.0016786042708333343,
+        "brier_expected": 0.035417229062500014,
+        "brier_share": 0.007319558974292471,
+        "mean_error": 5.562117020519122,
+        "rmse": 9.573412305892267,
+        "rmse_after_national": 7.797610061443285,
+        "sd_forecast": 10.048983122404826,
+        "sq_error_share": 0.7324809183553409
+       }
+      }
+     },
+     {
+      "group": 1,
+      "label": "Q2: 2\u20134 polls",
+      "n": 7,
+      "polls_min": 2,
+      "polls_max": 4,
+      "poll_weight_mean": 0.7881941540192052,
+      "versions": {
+       "polls_only": {
+        "n": 7,
+        "called": 6,
+        "settled": 0,
+        "brier": 0.0159719159375,
+        "brier_expected": 0.06057391739583335,
+        "brier_share": 0.0851497335984707,
+        "mean_error": null,
+        "rmse": null,
+        "rmse_after_national": null,
+        "sd_forecast": null,
+        "sq_error_share": null
+       },
+       "polls_fundamentals": {
+        "n": 7,
+        "called": 6,
+        "settled": 0,
+        "brier": 0.015951765833333336,
+        "brier_expected": 0.06044823416666665,
+        "brier_share": 0.08674717469240191,
+        "mean_error": null,
+        "rmse": null,
+        "rmse_after_national": null,
+        "sd_forecast": null,
+        "sq_error_share": null
+       },
+       "polls_fundamentals_biasadj": {
+        "n": 7,
+        "called": 6,
+        "settled": 0,
+        "brier": 0.008886908333333334,
+        "brier_expected": 0.05053809166666667,
+        "brier_share": 0.03875139053034321,
+        "mean_error": null,
+        "rmse": null,
+        "rmse_after_national": null,
+        "sd_forecast": null,
+        "sq_error_share": null
+       }
+      }
+     },
+     {
+      "group": 2,
+      "label": "Q3: 5\u201312 polls",
+      "n": 7,
+      "polls_min": 5,
+      "polls_max": 12,
+      "poll_weight_mean": 0.9117197612524176,
+      "versions": {
+       "polls_only": {
+        "n": 7,
+        "called": 6,
+        "settled": 5,
+        "brier": 0.09063935375,
+        "brier_expected": 0.12648564625,
+        "brier_share": 0.4832179718169798,
+        "mean_error": 4.943663133479241,
+        "rmse": 5.730094137626361,
+        "rmse_after_national": 2.899126357478107,
+        "sd_forecast": 6.447530960678302,
+        "sq_error_share": 0.11499059485594654
+       },
+       "polls_fundamentals": {
+        "n": 7,
+        "called": 6,
+        "settled": 5,
+        "brier": 0.08817479104166669,
+        "brier_expected": 0.12547520895833333,
+        "brier_share": 0.4795026507958179,
+        "mean_error": 4.889344842260637,
+        "rmse": 5.674958156671846,
+        "rmse_after_national": 2.880881443954711,
+        "sd_forecast": 6.447530960678302,
+        "sq_error_share": 0.11588232696801447
+       },
+       "polls_fundamentals_biasadj": {
+        "n": 7,
+        "called": 6,
+        "settled": 5,
+        "brier": 0.11461734791666667,
+        "brier_expected": 0.1265326520833333,
+        "brier_share": 0.49978929050177406,
+        "mean_error": 5.4856956135681845,
+        "rmse": 6.20560544665685,
+        "rmse_after_national": 2.9253940678921864,
+        "sd_forecast": 6.447530960678302,
+        "sq_error_share": 0.12887006703274423
+       }
+      }
+     },
+     {
+      "group": 3,
+      "label": "Q4: 16\u201340 polls",
+      "n": 7,
+      "polls_min": 16,
+      "polls_max": 40,
+      "poll_weight_mean": 0.9298251432175352,
+      "versions": {
+       "polls_only": {
+        "n": 7,
+        "called": 7,
+        "settled": 5,
+        "brier": 0.0671419025,
+        "brier_expected": 0.15192238321428572,
+        "brier_share": 0.41760598138621036,
+        "mean_error": 5.819888177044713,
+        "rmse": 6.501617248387957,
+        "rmse_after_national": 2.999446029708025,
+        "sd_forecast": 4.939785668382208,
+        "sq_error_share": 0.12308641870101102
+       },
+       "polls_fundamentals": {
+        "n": 7,
+        "called": 7,
+        "settled": 5,
+        "brier": 0.065799765,
+        "brier_expected": 0.15038594928571428,
+        "brier_share": 0.41746272671503026,
+        "mean_error": 5.775670384333171,
+        "rmse": 6.462865290666714,
+        "rmse_after_national": 3.0311332002641445,
+        "sd_forecast": 4.939785668382208,
+        "sq_error_share": 0.12828517702279574
+       },
+       "polls_fundamentals_biasadj": {
+        "n": 7,
+        "called": 7,
+        "settled": 5,
+        "brier": 0.089270125625,
+        "brier_expected": 0.1540905886607143,
+        "brier_share": 0.45413975999359013,
+        "mean_error": 6.476881253895478,
+        "rmse": 7.12591418258315,
+        "rmse_after_national": 3.034357471854807,
+        "sd_forecast": 4.939785668382208,
+        "sq_error_share": 0.1386490146119149
+       }
+      }
+     }
+    ],
+    "n": 27,
+    "national_miss": {
+     "polls_only": 5.047393494926909,
+     "polls_fundamentals": 4.893905619272618,
+     "polls_fundamentals_biasadj": 5.861525172813914
+    }
+   },
+   "house": {
+    "kind": "poll counts",
+    "groups": [
+     {
+      "group": 0,
+      "label": "0 polls",
+      "n": 107,
+      "polls_min": 0,
+      "polls_max": 0,
+      "poll_weight_mean": 0.0,
+      "versions": {
+       "polls_only": {
+        "n": 107,
+        "called": 98,
+        "settled": 9,
+        "brier": 0.07814617875637755,
+        "brier_expected": 0.06412907634566326,
+        "brier_share": 0.4284932214514957,
+        "mean_error": 8.260321205757233,
+        "rmse": 10.632113812408269,
+        "rmse_after_national": 6.835323022987638,
+        "sd_forecast": 7.441072580549007,
+        "sq_error_share": 0.7365457071944663
+       },
+       "polls_fundamentals": {
+        "n": 107,
+        "called": 98,
+        "settled": 9,
+        "brier": 0.07588108281887755,
+        "brier_expected": 0.06335922330357144,
+        "brier_share": 0.4345431828982809,
+        "mean_error": 7.765968918226163,
+        "rmse": 10.252766013938622,
+        "rmse_after_national": 6.815076679104654,
+        "sd_forecast": 7.441072580549007,
+        "sq_error_share": 0.7388341938909073
+       },
+       "polls_fundamentals_biasadj": {
+        "n": 107,
+        "called": 98,
+        "settled": 9,
+        "brier": 0.08551766739795919,
+        "brier_expected": 0.05211651627551021,
+        "brier_share": 0.37117445111716285,
+        "mean_error": 9.468010181051577,
+        "rmse": 11.595350554692876,
+        "rmse_after_national": 6.783768507721618,
+        "sd_forecast": 7.441072580549007,
+        "sq_error_share": 0.7424792231217839
+       }
+      }
+     },
+     {
+      "group": 1,
+      "label": "1 poll",
+      "n": 28,
+      "polls_min": 1,
+      "polls_max": 1,
+      "poll_weight_mean": 0.4062057123757139,
+      "versions": {
+       "polls_only": {
+        "n": 28,
+        "called": 25,
+        "settled": 3,
+        "brier": 0.22044984567499998,
+        "brier_expected": 0.172739154325,
+        "brier_share": 0.30836135235504103,
+        "mean_error": 8.762920958469424,
+        "rmse": 8.978527730838419,
+        "rmse_after_national": 2.7167410959955385,
+        "sd_forecast": 5.733945336200788,
+        "sq_error_share": 0.03878438115189295
+       },
+       "polls_fundamentals": {
+        "n": 28,
+        "called": 25,
+        "settled": 3,
+        "brier": 0.21075119535000003,
+        "brier_expected": 0.16724680465000002,
+        "brier_share": 0.307881363358288,
+        "mean_error": 8.469377394059476,
+        "rmse": 8.692268399678962,
+        "rmse_after_national": 2.7849383398215046,
+        "sd_forecast": 5.733945336200788,
+        "sq_error_share": 0.04112589922332691
+       },
+       "polls_fundamentals_biasadj": {
+        "n": 28,
+        "called": 25,
+        "settled": 3,
+        "brier": 0.29335634435,
+        "brier_expected": 0.15750365565,
+        "brier_share": 0.32481168657572757,
+        "mean_error": 10.517527852921406,
+        "rmse": 10.697830089603654,
+        "rmse_after_national": 2.9063260451125523,
+        "sd_forecast": 5.733945336200788,
+        "sq_error_share": 0.045426542108618274
+       }
+      }
+     },
+     {
+      "group": 2,
+      "label": "2+ polls",
+      "n": 27,
+      "polls_min": 2,
+      "polls_max": 4,
+      "poll_weight_mean": 0.43069231320269663,
+      "versions": {
+       "polls_only": {
+        "n": 27,
+        "called": 26,
+        "settled": 6,
+        "brier": 0.1808890775240385,
+        "brier_expected": 0.16588111478365383,
+        "brier_share": 0.26314542619346337,
+        "mean_error": 3.860006003111834,
+        "rmse": 5.212760313561831,
+        "rmse_after_national": 4.623568313027271,
+        "sd_forecast": 5.633185792469581,
+        "sq_error_share": 0.22466991165364078
+       },
+       "polls_fundamentals": {
+        "n": 27,
+        "called": 26,
+        "settled": 6,
+        "brier": 0.1695343789903846,
+        "brier_expected": 0.15998869793269233,
+        "brier_share": 0.25757545374343094,
+        "mean_error": 3.576688361953772,
+        "rmse": 5.0072556709624605,
+        "rmse_after_national": 4.555054829919041,
+        "sd_forecast": 5.633185792469581,
+        "sq_error_share": 0.22003990688576555
+       },
+       "polls_fundamentals_biasadj": {
+        "n": 27,
+        "called": 26,
+        "settled": 6,
+        "brier": 0.2640121331009615,
+        "brier_expected": 0.15246575151442304,
+        "brier_share": 0.3040138623071096,
+        "mean_error": 5.642463981816834,
+        "rmse": 6.642959360731561,
+        "rmse_after_national": 4.440572122138083,
+        "sd_forecast": 5.633185792469581,
+        "sq_error_share": 0.21209423476959788
+       }
+      }
+     }
+    ],
+    "n": 162,
+    "national_miss": {
+     "polls_only": 6.877316096994132,
+     "polls_fundamentals": 6.486776812107585,
+     "polls_fundamentals_biasadj": 8.367747726618301
+    }
+   }
+  },
   "poll_audit_scores": {
    "senate": {
     "n": 16,

@@ -21,6 +21,9 @@ partial count is visible rather than silently scored.
               layers: the score is recomputed with each race's probability conditioned on the layers' realized 2026
               values (estimated per version), and each layer is credited its Shapley share of the drop; what is left
               once all shared layers are known is the race-specific part.
+  by_polls    close races grouped by how many polls the forecast had (Senate: quartiles; House: 0, 1, 2+ polls, since
+              most close districts had none), groups fixed from data/final/: Brier and its share, margin error before
+              and after the chamber's national miss, against the forecast's own spread.
 Ratings/PVI baselines and all intervals come from data/final/ only.
 """
 import json
@@ -319,6 +322,76 @@ def brier_attribution(sen, hou):
     return out
 
 
+def poll_groups(n):
+    """Groups by number of polls, fixed from the frozen forecast. Quartiles that keep equal counts together (each count
+    goes to the quartile holding its middle race); when ties leave fewer than four groups (the House, where most close
+    districts had no polls), one group per count instead, the highest counts merged until each group has 15 races."""
+    vc = n.value_counts().sort_index()
+    mid = (vc.cumsum() - vc / 2) / len(n)
+    q = np.minimum((4 * mid).astype(int), 3)
+    if q.nunique() == 4:
+        grp = {}
+        for k in range(4):
+            vals = q.index[q == k]
+            grp.update({c: (k, f"Q{k + 1}: {vals.min()}" + (f"–{vals.max()}" if vals.max() > vals.min() else "") + " polls") for c in vals})
+        return n.map(lambda c: grp[c][0]), {g: lab for g, lab in grp.values()}, "quartiles"
+    edges, acc = [], 0
+    for c in vc.index[::-1]:                      # merge from the top until the tail group has 15 races
+        acc += vc[c]
+        if acc >= 15:
+            edges.append(c)
+            acc = 0
+    edges = sorted(edges)                         # each edge starts a group; the lowest count always starts one
+    edges[0] = vc.index.min()
+    gi = n.map(lambda c: max(i for i, e in enumerate(edges) if c >= e))
+    labs = {}
+    for i, e in enumerate(edges):
+        hi = vc.index[vc.index >= e].max() if i == len(edges) - 1 else edges[i + 1] - 1
+        labs[i] = f"{e} poll{'s' if e != 1 else ''}" if hi == e else f"{e}+ polls" if i == len(edges) - 1 else f"{e}–{hi} polls"
+    return gi, labs, "poll counts"
+
+
+def by_polls(sen, hou):
+    """How the close races scored by how much polling they had. Squared-error and Brier shares say how much of the
+    chamber's total each group carries; RMSE after the national miss against the forecast's race SD says whether the
+    race-level spread fit that group (about 1 if it did)."""
+    out = {}
+    for ch, df in (("senate", sen), ("house", hou)):
+        f = pd.read_csv(FINAL / f"{ch}_{REF}.csv").set_index("race_key")
+        d = df[df.contested].copy()
+        d["n_polls"] = d.race_key.map(f.n_polls).fillna(0).astype(int)
+        d["group"], labels, kind = poll_groups(d.n_polls)
+        blk = {"kind": kind, "groups": [], "n": int(len(d))}
+        for v in PUBLISHED:
+            s_ = d[d.actual.notna()]
+            nat = float((s_.actual - s_[f"mu_{v}"]).mean()) if len(s_) else None
+            c = d[d.called]
+            tot_b = float(((c[v] - c.y) ** 2).sum())
+            tot_e = float(((s_.actual - s_[f"mu_{v}"] - (nat or 0)) ** 2).sum())
+            blk.setdefault("national_miss", {})[v] = nat
+            for g in sorted(labels):
+                x = d[d.group == g]
+                xc, xs = x[x.called], x[x.actual.notna()]
+                err = xs.actual - xs[f"mu_{v}"]
+                res = err - (nat or 0)
+                row = {"n": int(len(x)), "called": int(len(xc)), "settled": int(len(xs)),
+                       "brier": float(((xc[v] - xc.y) ** 2).mean()) if len(xc) else None,
+                       "brier_expected": float((xc[v] * (1 - xc[v])).mean()) if len(xc) else None,
+                       "brier_share": float(((xc[v] - xc.y) ** 2).sum() / tot_b) if len(xc) and tot_b else None,
+                       "mean_error": float(err.mean()) if len(xs) else None,
+                       "rmse": float(np.sqrt((err ** 2).mean())) if len(xs) else None,
+                       "rmse_after_national": float(np.sqrt((res ** 2).mean())) if len(xs) else None,
+                       "sd_forecast": float(np.sqrt((xs[f"sd_{v}"] ** 2).mean())) if len(xs) else None,
+                       "sq_error_share": float((res ** 2).sum() / tot_e) if len(xs) and tot_e else None}
+                if v == PUBLISHED[0]:
+                    blk["groups"].append({"group": int(g), "label": labels[g], "n": int(len(x)),
+                                          "polls_min": int(x.n_polls.min()), "polls_max": int(x.n_polls.max()),
+                                          "poll_weight_mean": float(f.reindex(x.race_key).poll_weight.mean())})
+                blk["groups"][int(g)].setdefault("versions", {})[v] = row
+        out[ch] = blk
+    return out
+
+
 def poll_audit_scores(sen, hou):
     """Error of the poll audit's what-if expected margins (polls + fundamentals) against settled results: would a
     second poll source have helped? Over audited races with a settled count."""
@@ -403,6 +476,7 @@ def stage2(sen, hou):
            "ordering": ordering(sen),
            "layers": layers(sen, hou),
            "brier_attribution": brier_attribution(sen, hou),
+           "by_polls": by_polls(sen, hou),
            "poll_audit_scores": poll_audit_scores(sen, hou),
            "early_read": early_read(sen),
            "senate_margins": [margin_row(r) for _, r in sen.iterrows()],
@@ -441,6 +515,14 @@ def report(m):
                 print(f"   {ch:6s} {v:30s} n={x['n']:3d} Brier {x['reported']:.4f} (MC {x['reconstructed']:.4f})  "
                       + "  ".join(f"{k} {x['layers'][k]['contribution']:+.4f}" for k in LAYERS)
                       + f"  race {x['race']['contribution']:.4f} (exp. {x['race']['expected_if_right']:.4f})")
+    for ch, b in m["by_polls"].items():
+        print(f"by polls, {ch} ({b['kind']}; {REF}):")
+        for g in b["groups"]:
+            x = g["versions"][REF]
+            fm = lambda k, d=3: "  —  " if x[k] is None else f"{x[k]:.{d}f}"
+            print(f"   {g['label']:16s} n={g['n']:3d} called {x['called']:3d} settled {x['settled']:3d}  Brier {fm('brier')} "
+                  f"(exp {fm('brier_expected')}, share {fm('brier_share', 2)})  mean err {fm('mean_error', 1)}  RMSE after nat "
+                  f"{fm('rmse_after_national', 1)} vs SD {fm('sd_forecast', 1)} (share {fm('sq_error_share', 2)})")
     L = m["layers"]
     print("layers:", {k: L[k] for k in ("national_senate", "national_house")})
     for k in ("region", "slope", "coverage"):
