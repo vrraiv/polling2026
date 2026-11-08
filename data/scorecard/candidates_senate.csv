@@ -56,9 +56,9 @@ race_key,party,party_code,candidate,pct_first,votes_first,votes_final
 2026|MN|S|regular,Independent,I,Marisa Simonetti,,,
 2026|MN|S|regular,Libertarian,O,Rebecca Whiting,,,
 2026|MN|S|regular,Write-in,O,Write-in,,,
-2026|MS|S|regular,Democratic,D,Scott Colom,49.08,467930.0,467930.0
-2026|MS|S|regular,Republican,R,Cindy Hyde-Smith,48.81,465356.0,465356.0
-2026|MS|S|regular,Independent,I,Ty Pinkins,2.1,20028.0,20028.0
+2026|MS|S|regular,Democratic,D,Scott Colom,49.09,468339.0,468339.0
+2026|MS|S|regular,Republican,R,Cindy Hyde-Smith,48.81,465643.0,465643.0
+2026|MS|S|regular,Independent,I,Ty Pinkins,2.1,20043.0,20043.0
 2026|MT|S|regular,Republican,R,Kurt Alme,47.7,187961.0,187961.0
 2026|MT|S|regular,Independent,I,Seth Bodnar,38.6,152203.0,152203.0
 2026|MT|S|regular,Democratic,D,Alani Bankhead,11.9,46838.0,46838.0
@@ -115,9 +115,9 @@ race_key,party,party_code,candidate,pct_first,votes_first,votes_final
 2026|TN|S|regular,Independent,I,David Sutman Jr.,,,
 2026|TN|S|regular,Independent,I,Catherine Whitson,,,
 2026|TN|S|regular,Independent,I,Andrew Mixon,,,
-2026|TX|S|regular,Democratic,D,James Talarico,55.06,5445156.0,5445156.0
-2026|TX|S|regular,Republican,R,Ken Paxton,42.97,4249763.0,4249763.0
-2026|TX|S|regular,Libertarian,O,Ted Brown,1.92,190259.0,190259.0
+2026|TX|S|regular,Democratic,D,James Talarico,55.06,5446309.0,5446309.0
+2026|TX|S|regular,Republican,R,Ken Paxton,42.97,4250166.0,4250166.0
+2026|TX|S|regular,Libertarian,O,Ted Brown,1.92,190293.0,190293.0
 2026|TX|S|regular,Write-in,O,Write-in,0.05,5112.0,5112.0
 2026|VA|S|regular,Democratic,D,Mark Warner,,,
 2026|VA|S|regular,Republican,R,Bert Mizusawa,,,

@@ -1,0 +1,21 @@
+{
+  "raceTitle": "U.S. House of Representatives District 38 - Districtwide Results",
+  "Reporting": "100% (415 of 415) precincts reporting",
+  "ReportingTime": "November 7, 2026, 5:48 p.m.",
+  "candidates": [
+    {
+      "Name": "Hilda Solis",
+      "Party": "Dem",
+      "Votes": "136,809",
+      "Percent": "67.4",
+      "incumbent": false
+    },
+    {
+      "Name": "Pedro Antonio Casas",
+      "Party": "Rep",
+      "Votes": "66,053",
+      "Percent": "32.6",
+      "incumbent": false
+    }
+  ]
+}

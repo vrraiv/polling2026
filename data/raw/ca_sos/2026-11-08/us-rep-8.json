@@ -1,0 +1,21 @@
+{
+  "raceTitle": "U.S. House of Representatives District 8 - Districtwide Results",
+  "Reporting": "100% (396 of 396) precincts reporting",
+  "ReportingTime": "November 7, 2026, 5:48 p.m.",
+  "candidates": [
+    {
+      "Name": "John Garamendi",
+      "Party": "Dem",
+      "Votes": "162,803",
+      "Percent": "72.7",
+      "incumbent": false
+    },
+    {
+      "Name": "Rudy Recile",
+      "Party": "Rep",
+      "Votes": "61,267",
+      "Percent": "27.3",
+      "incumbent": false
+    }
+  ]
+}

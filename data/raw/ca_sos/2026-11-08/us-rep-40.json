@@ -1,0 +1,21 @@
+{
+  "raceTitle": "U.S. House of Representatives District 40 - Districtwide Results",
+  "Reporting": "100% (558 of 558) precincts reporting",
+  "ReportingTime": "November 7, 2026, 5:48 p.m.",
+  "candidates": [
+    {
+      "Name": "Ken Calvert",
+      "Party": "Rep",
+      "Votes": "93,948",
+      "Percent": "53.8",
+      "incumbent": false
+    },
+    {
+      "Name": "Young Kim",
+      "Party": "Rep",
+      "Votes": "80,707",
+      "Percent": "46.2",
+      "incumbent": false
+    }
+  ]
+}

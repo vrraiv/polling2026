@@ -1,0 +1,21 @@
+{
+  "raceTitle": "U.S. House of Representatives District 44 - Districtwide Results",
+  "Reporting": "100% (179 of 179) precincts reporting",
+  "ReportingTime": "November 7, 2026, 5:48 p.m.",
+  "candidates": [
+    {
+      "Name": "Nanette Diaz Barragan",
+      "Party": "Dem",
+      "Votes": "141,145",
+      "Percent": "81.5",
+      "incumbent": false
+    },
+    {
+      "Name": "Genevieve Angel",
+      "Party": "Rep",
+      "Votes": "31,962",
+      "Percent": "18.5",
+      "incumbent": false
+    }
+  ]
+}

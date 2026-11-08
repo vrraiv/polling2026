@@ -1,0 +1,21 @@
+{
+  "raceTitle": "U.S. House of Representatives District 52 - Districtwide Results",
+  "Reporting": "100% (580 of 580) precincts reporting",
+  "ReportingTime": "November 7, 2026, 5:48 p.m.",
+  "candidates": [
+    {
+      "Name": "Juan Vargas",
+      "Party": "Dem",
+      "Votes": "106,561",
+      "Percent": "69.7",
+      "incumbent": false
+    },
+    {
+      "Name": "Jeff Belle",
+      "Party": "Rep",
+      "Votes": "46,266",
+      "Percent": "30.3",
+      "incumbent": false
+    }
+  ]
+}

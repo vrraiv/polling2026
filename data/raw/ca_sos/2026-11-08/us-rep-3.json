@@ -1,0 +1,21 @@
+{
+  "raceTitle": "U.S. House of Representatives District 3 - Districtwide Results",
+  "Reporting": "100% (531 of 531) precincts reporting",
+  "ReportingTime": "November 7, 2026, 5:48 p.m.",
+  "candidates": [
+    {
+      "Name": "Ami Bera",
+      "Party": "Dem",
+      "Votes": "120,081",
+      "Percent": "58.0",
+      "incumbent": false
+    },
+    {
+      "Name": "Robb Tucker",
+      "Party": "Rep",
+      "Votes": "87,087",
+      "Percent": "42.0",
+      "incumbent": false
+    }
+  ]
+}

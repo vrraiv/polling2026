@@ -1,0 +1,21 @@
+{
+  "raceTitle": "U.S. House of Representatives District 45 - Districtwide Results",
+  "Reporting": "100% (424 of 424) precincts reporting",
+  "ReportingTime": "November 7, 2026, 5:48 p.m.",
+  "candidates": [
+    {
+      "Name": "Derek Tran",
+      "Party": "Dem",
+      "Votes": "131,261",
+      "Percent": "60.2",
+      "incumbent": false
+    },
+    {
+      "Name": "Chuong V. Vo",
+      "Party": "Rep",
+      "Votes": "86,632",
+      "Percent": "39.8",
+      "incumbent": false
+    }
+  ]
+}
