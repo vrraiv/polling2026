@@ -50,7 +50,7 @@ def load(page):
     rev = re.search(r"Special:Redirect/revision/(\d+)", html[:2000])
     mod = soup.find("meta", property="dc:modified")
     return soup, {"page": PAGES[page], "revision": int(rev.group(1)) if rev else None,
-                  "page_modified": mod["content"] if mod else None, "snapshot": str(path.relative_to(ROOT))}
+                  "page_modified": mod["content"] if mod else None, "snapshot": path.relative_to(ROOT).as_posix()}
 
 
 def _span(c, k):

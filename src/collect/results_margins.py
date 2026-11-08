@@ -159,7 +159,10 @@ def general_boxes(soup, chamber, year=2026):
         if not cap or re.search(r"primary|runoff|convention|caucus|by county|by district", cap, re.I):
             continue
         secs = section_headings(t)
-        if not any(re.match(r"general election", s, re.I) for s in secs):
+        # a top-level "Results" section also counts for Senate pages: after the election editors fold "General
+        # election" into it (OH special on Nov 8). Only top-level: primaries keep their own nested "Results".
+        top_results = chamber == "senate" and [s.lower() for s in secs] == ["results"]
+        if not top_results and not any(re.match(r"general election", s, re.I) for s in secs):
             continue
         if chamber == "senate" and "senate" not in cap.lower():
             continue
@@ -188,7 +191,7 @@ def page_meta(html, path):
     rev = re.search(r"Special:Redirect/revision/(\d+)", html[:2000])
     mod = re.search(r'property="dc:modified" content="([^"]+)"', html[:4000])
     return {"revision": int(rev.group(1)) if rev else None, "page_modified": mod.group(1) if mod else None,
-            "snapshot": str(path.relative_to(ROOT)) if str(path).startswith(str(ROOT)) else str(path)}
+            "snapshot": path.relative_to(ROOT).as_posix() if str(path).startswith(str(ROOT)) else str(path)}
 
 
 def cand_sum(rows):
@@ -334,7 +337,7 @@ def parse_ca():
             if s > 0 and np.isfinite(x["pct_first"]) and abs(100 * x["votes_first"] / s - x["pct_first"]) > 0.3:
                 issues.append(f"{x['candidate']}: {x['pct_first']}% listed vs {100 * x['votes_first'] / s:.2f}% from votes")
         rows.append({"race_key": key, "source": "ca_sos", "revision": None, "page_modified": j.get("ReportingTime"),
-                     "snapshot": str(path.relative_to(ROOT)), "caption": j.get("raceTitle"), "reporting": j.get("Reporting"),
+                     "snapshot": path.relative_to(ROOT).as_posix(), "caption": j.get("raceTitle"), "reporting": j.get("Reporting"),
                      "margin": m, "margin_first_choice": m, "dside_votes": dv, "rep_votes": rv, "dside_candidate": dname,
                      "total": s, "cand_sum": s, "n_rounds": 1, "margin_round": k, "margin_type": "two-party", "issues": "; ".join(issues),
                      "d_votes_all": sum(x["votes_first"] for x in cs if x["party_code"] == "D" and np.isfinite(x["votes_first"])),

@@ -564,7 +564,7 @@ def parse_manual(st, files):
     if not 2 <= len(cands) <= 15 or sum(c["votes"] for c in cands) <= 0:
         raise ValueError(f"{label}: implausible candidate list ({len(cands)} candidates)")
     day = files[0].parent.name
-    return {"candidates": cands, "as_of": f"manual download {day} ({label})", "url": str(files[0].relative_to(ROOT)) if files[0].is_relative_to(ROOT) else str(files[0]),
+    return {"candidates": cands, "as_of": f"manual download {day} ({label})", "url": files[0].relative_to(ROOT).as_posix() if files[0].is_relative_to(ROOT) else str(files[0]),
             "reporting": "downloaded by hand from the state's site", "complete": False, "label": label}
 
 
@@ -654,7 +654,7 @@ def main(parse_only=False, manual=False):
         row.update(status="ok", source=name, url=res.get("url"), as_of=res.get("as_of"), reporting=res.get("reporting"),
                    complete=bool(res.get("complete")),
                    margin=m, dside_votes=d, rep_votes=r, dside_candidate=dname, cand_sum=s,
-                   candidates=json.dumps(res["candidates"]), snapshot=str(Path(paths[0]).relative_to(ROOT)) if paths else "",
+                   candidates=json.dumps(res["candidates"]), snapshot=Path(paths[0]).relative_to(ROOT).as_posix() if paths else "",
                    wiki_margin=wm, wiki_cand_sum=float(w["cand_sum"]) if w is not None and pd.notna(w.get("cand_sum")) else np.nan,
                    margin_diff_vs_wiki=(m - wm) if np.isfinite(m) and np.isfinite(wm) else np.nan)
         rows.append(row)
