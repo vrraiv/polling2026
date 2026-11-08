@@ -7,9 +7,51 @@ rewritten. The method is in `FORECAST.md`; the plan and its history are in `PLAN
 ## Environment
 
 Python 3.14.3 (uv-managed) with the exact package versions in `uv.lock`, in a virtual environment kept outside
-OneDrive at `C:\Users\Vikram\.venvs\polling2026`. OneDrive would otherwise sync its thousands of files.
+OneDrive at `$HOME\.venvs\polling2026` (e.g. `C:\Users\<you>\.venvs\polling2026`). OneDrive would otherwise sync
+its thousands of files. The environment is per device: a fresh clone, or this folder synced to a new machine, has
+none until you create it.
 
-Create or update it in PowerShell:
+### First-time setup on a new device
+
+In PowerShell:
+
+1. Install uv (once per machine), then open a new terminal so it is on `PATH`, and check it:
+
+   ```powershell
+   winget install --id=astral-sh.uv -e
+   # or: powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+   uv --version
+   ```
+
+   No system Python is needed: uv downloads and manages CPython 3.14.3 itself.
+
+2. From the repo root, point uv at the out-of-OneDrive location and create the environment. uv creates the folder,
+   downloads Python 3.14.3 if this machine doesn't have it, and installs exactly what `uv.lock` lists:
+
+   ```powershell
+   $env:UV_PROJECT_ENVIRONMENT = "$HOME\.venvs\polling2026"   # this session only
+   uv sync --locked --managed-python --python 3.14.3
+   ```
+
+3. Check it:
+
+   ```powershell
+   & "$HOME\.venvs\polling2026\Scripts\python.exe" --version   # Python 3.14.3
+   & "$HOME\.venvs\polling2026\Scripts\python.exe" -c "import numpy, pandas, scipy, statsmodels, lxml, PIL; print('ok')"
+   ```
+
+   `run_scorecard.py --parse` re-parses saved snapshots, some of which are gitignored (see `.gitignore`), so on a
+   bare `git clone` run `python src/run_scorecard.py` (which fetches) before `--parse`.
+
+4. Optional: an FEC API key in `.env` at the repo root (`fec_api_key=...`, gitignored). Without it the FEC
+   collectors use `DEMO_KEY`, which is rate-limited. If the folder is synced by OneDrive, `.env` comes with it.
+
+If PowerShell refuses `Activate.ps1` below because scripts are disabled, run
+`Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` once, or call `python.exe` by its full path instead.
+
+### Updating the environment
+
+The same command updates it after `uv.lock` changes (e.g. after pulling an upgrade). In each new PowerShell session:
 
 ```powershell
 $env:UV_PROJECT_ENVIRONMENT = "$HOME\.venvs\polling2026"   # this session only
