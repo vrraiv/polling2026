@@ -1,0 +1,5 @@
+region,Northeast,Midwest,South,West
+Northeast,0.24,0.09,0.03,-0.22
+Midwest,0.09,0.41,0.03,0.12
+South,0.03,0.03,0.06,-0.01
+West,-0.22,0.12,-0.01,0.22

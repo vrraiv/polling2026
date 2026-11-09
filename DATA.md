@@ -66,6 +66,15 @@ Built from the sources above; all in git.
 
 ## 3. Data pages plan
 
+**Status (Nov 9, 2026): built.** `src/site/history.py` writes six pages to `site/history/` (overview with sources and
+downloads; vote shares; approval and incumbency; states and regions; polling accuracy; off-cycle elections), 22
+charts and 23 CSV downloads, linked from the forecast page's nav. Charts: `site/assets/charts.js`, styles:
+`site/assets/history.css`. Two departures from the plan below: the forecast page keeps its own chart code (it's the
+frozen page; only its nav changed), and each download's sources and licence are shown beside its link rather than
+inside the CSV, so the files stay plain. Licences: `LICENSE` (MIT, code) and `LICENSE-DATA.md` (CC BY-SA 4.0,
+derived data). Still to do: the gaps listed below, and refreshing the provisional 2026 points once certified (rerun
+the script).
+
 ### Where they live
 
 The forecast is one page (`site/index.html`, about 1 MB, tabs, hand-drawn SVG charts, data embedded). Its "Data"
