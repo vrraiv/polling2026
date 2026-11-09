@@ -305,7 +305,48 @@ def poll_averages():
     g = g.sort_values("n_polls").drop_duplicates(["cycle", "location"], keep="last")    # specials: keep the main race
     g = g.rename(columns={"cycle": "year", "location": "state"})[["year", "state", "poll_avg", "n_polls"]]
     g["poll_source"] = "538 raw_polls"
-    return pd.concat([g, votehub_2025(), wiki_averages()], ignore_index=True)
+    arch = archive_averages()
+    wiki = wiki_averages()
+    wiki = wiki[~wiki.set_index(["year", "state"]).index.isin(arch.set_index(["year", "state"]).index)]   # fallback only
+    return pd.concat([g, votehub_2025(), arch, wiki], ignore_index=True)
+
+
+ARCHIVE_YEARS = (2023, 2024)        # 538's raw_polls.csv ends in 2022; its archived poll files cover these
+
+
+def archive_averages(years=ARCHIVE_YEARS):
+    """Final-three-week averages from 538's archived governor poll file (data/raw/538_wayback/), for years after
+    raw_polls.csv ends: each poll question's two-party margin between the nominees (matched by last name), averaged
+    within a poll, then across polls ending in the 21 days before the race's election date. Louisiana 2023's deciding
+    round was its all-party ("jungle") primary, so that stage counts. Questions without both nominees are skipped."""
+    from common import latest  # noqa: E402
+    from wiki_polls import lastname  # noqa: E402
+    a = pd.read_csv(latest("538_wayback", "governor_polls_historical.csv"), low_memory=False)
+    a["eday"] = pd.to_datetime(a.election_date, format="%m/%d/%y", errors="coerce")
+    a["end"] = pd.to_datetime(a.end_date, format="%m/%d/%y", errors="coerce")
+    # No filter on the archive's "hypothetical" flag: it marks every Kentucky 2023 poll of the actual Beshear-Cameron race
+    # as hypothetical. A question counts if it names both nominees, the rule used for the VoteHub and Wikipedia polls.
+    a = a[a.eday.dt.year.isin(years) & a.stage.isin(["general", "jungle primary"])]
+    a = a[(a.end <= a.eday) & (a.end >= a.eday - pd.Timedelta(days=21))]
+    a["st"] = a.state.map(STATE_NAMES)
+    h = pd.read_csv(INTERIM / "governor_history.csv").set_index(["year", "state"])
+    rows = []
+    for (y, st), x in a.groupby([a.eday.dt.year, "st"]):
+        if (y, st) not in h.index:
+            continue
+        r = h.loc[(y, st)]
+        r = r.iloc[0] if isinstance(r, pd.DataFrame) else r
+        dl, rl = lastname(r.dem_cand), lastname(r.rep_cand)
+        x = x.assign(ln=x.candidate_name.map(lastname))
+        q = x.pivot_table(index=["poll_id", "question_id"], columns="ln", values="pct", aggfunc="first")
+        if dl not in q.columns or rl not in q.columns:
+            continue
+        q = q[[dl, rl]].dropna()
+        q["m"] = 100 * (q[dl] - q[rl]) / (q[dl] + q[rl])
+        per_poll = q.groupby(level=0).m.mean()
+        rows.append({"year": int(y), "state": st, "poll_avg": float(per_poll.mean()), "n_polls": int(len(per_poll)),
+                     "poll_source": "538 polls archive"})
+    return pd.DataFrame(rows, columns=["year", "state", "poll_avg", "n_polls", "poll_source"])
 
 
 ELECTION_2025 = pd.Timestamp("2025-11-04")
@@ -475,6 +516,11 @@ def check():
     r26 = pd.read_csv(INTERIM / "governor_2026_races.csv")
     print("2026:", len(r26), "races; incumbents running", int(r26.inc_running.sum()), "; missing a D or R nominee:",
           r26[r26.dem_cand.isna() | r26.rep_cand.isna()].state.tolist())
+    # 2023-24: 538's archive (used) against the Wikipedia race pages (cross-check)
+    j = archive_averages().merge(wiki_averages(), on=["year", "state"], how="outer", suffixes=("_538", "_wiki"))
+    j = j.merge(h[["year", "state", "margin_2p"]], on=["year", "state"], how="left")
+    print("2023-24 polls, 538 archive vs Wikipedia:")
+    print(j[["year", "state", "poll_avg_538", "n_polls_538", "poll_avg_wiki", "n_polls_wiki", "margin_2p"]].round(1).to_string(index=False))
 
 
 if __name__ == "__main__":

@@ -276,16 +276,21 @@ date with no House election to poll (odd-year governors, special elections): pre
   presidential year: m = 0.2, with candidate-driven races (error about 20). The split was chosen after seeing the
   pattern, but it is a natural one and held out of sample. Special elections should use the same idea.
 
-*2023 and 2024 polls* (`python src/collect/governors.py polls`; `data/interim/governor_polls_wiki.csv`): from each
+*2023 and 2024 polls, first pass* (`python src/collect/governors.py polls`; `data/interim/governor_polls_wiki.csv`; now the fallback and cross-check, see the correction below): from each
 race's Wikipedia page, polls ending in the final 21 days, two-party between the nominees (538's rule). Checked
 against 538 on 14 competitive 2022 races: mean difference -0.4, RMS difference 1.4, error against results 2.9 vs
 538's 2.8 (Wikipedia lists about 60% as many polls). Now polled: KY and MS 2023, and 8 of 11 races in 2024. No
 polls in the final three weeks: LA 2023 (its all-party primary tables didn't match), DE, ND and WV 2024.
 
-*Correction (Nov 9, 2026):* 538's polls archive (`data/raw/538_wayback/`, already in the repo) covers 2016-2024,
-including the 2023-24 governor races: LA 2023 (19 polls), KY (15), MS (11), and every 2024 race (DE, ND and WV
-with 2 each). Only `raw_polls.csv` ends in 2022. Next data fix: take 2023-24 governor polls from the archive
-(final three weeks, as for the other years), keep the Wikipedia averages as a cross-check, and rerun the backtest.
+*Correction (Nov 9, 2026), done:* 538's polls archive (`data/raw/538_wayback/`, already in the repo) covers
+2016-2024, including the 2023-24 governor races; only `raw_polls.csv` ends in 2022. 2023-24 averages now come from
+the archive (`archive_averages()` in `governors.py`: final 21 days, two-party between the nominees, averaged within a
+poll and then across polls), with the Wikipedia averages kept as a fallback and printed against them by `check`:
+the two agree within 0-3 points on all 10 polled races. The archive's "hypothetical" flag is wrong for Kentucky 2023
+(every poll of the actual race is marked hypothetical), so questions qualify by naming both nominees instead.
+Coverage is unchanged: under the 21-day rule LA 2023 (last poll Sep 15 for an Oct 14 primary), DE, ND and WV 2024
+have no final-three-week polls. (The earlier note that the archive polled "every 2024 race" counted polls at any
+date.)
 
 *Backtest with off-year races* (all 28 cycles 1998-2025, 353 races; odd years use the estimator with their term
 year's m fitted without the test year; 2024 uses it as a presidential year, having no generic-ballot average):
@@ -293,9 +298,12 @@ year's m fitted without the test year; 2024 uses it as a presidential year, havi
 | | Model | Polls only | Prior only |
 |---|---|---|---|
 | Brier, generic-ballot cycles (307 races) | 0.0764 | 0.0785 | 0.1385 |
-| Brier, off-year cycles (35) | 0.0947 | 0.0991 | 0.2031 |
-| Margin error, off-year cycles | 7.41 | 7.93 | 11.55 |
-| Brier, 2024 (11) | 0.0406 | 0.0434 | 0.0972 |
+| Brier, off-year cycles (35) | 0.0949 | 0.0993 | 0.2031 |
+| Margin error, off-year cycles | 7.41 | 7.94 | 11.55 |
+| Brier, 2024 (11) | 0.0442 | 0.0476 | 0.0972 |
+| Brier, all 353 races | 0.0772 | 0.0796 | 0.1437 |
+
+(Updated Nov 9 with 2023-24 polls from 538's archive.)
 | Brier, unpolled races (22): two-factor vs one-factor | 0.0806 vs 0.0816 | | |
 
 Count intervals: every cycle's Democratic win count fell inside its 80% interval (28 of 28), but cycles with 2-4
@@ -371,3 +379,4 @@ actual D+14.5. Both governor polls understated the Democrat; the prior was close
 **6. Data pages** (added Nov 9, 2026). Present the historical data on the site: vote shares over time, approval and
 incumbency, states and regions, polling accuracy, off-cycle elections, sources and downloads. The catalogue of every
 source and its licence, the licensing decisions to make first, and the section-by-section plan are in `DATA.md`.
+Built Nov 9, 2026 (`python src/site/history.py` -> `site/history/`); licences added (`LICENSE`, `LICENSE-DATA.md`).

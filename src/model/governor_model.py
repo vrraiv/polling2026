@@ -289,7 +289,7 @@ def main():
     src = c.drop_duplicates("year").set_index("year").env_source
     r["env_source"] = r.year.map(src)
     groups = {"all": r, "generic-ballot cycles (1998-2022)": r[r.env_source == "generic ballot"],
-              "off-year cycles (estimator)": r[r.year % 2 == 1], "2024 (environment estimator; Wikipedia polls)": r[r.year == 2024],
+              "off-year cycles (estimator)": r[r.year % 2 == 1], "2024 (environment estimator; 538 archive polls)": r[r.year == 2024],
               "unpolled races": r[r.n_polls == 0]}
     sc = {k: scores(v, c[c.year.isin(v.year.unique())]) for k, v in groups.items() if len(v)}
     model = {"note": "governors model, estimated on all two-way races 1998-2025 (see module docstring)",
