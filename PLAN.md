@@ -164,19 +164,67 @@ historical data exploration. Deferred until counting ends, so 2026 is included: 
 1998/2002 (popular-president midterms) and 2026; code each state's map type by cycle.
 
 **3. Model rework** (candidate changes in `src/postmortem/README.md`): a state-level shared House error plus a
-carried-forward state intercept; Senate and House national errors correlated well below 1; a wave nonlinearity
+carried-forward state intercept; Senate and House national errors correlated well below 1 (better framed as
+national errors grouped by measurement: statewide polls for Senate and governors, generic ballot and district
+structure for the House; see item 4); a wave nonlinearity
 (competitive and modestly-opposed districts swing more; incumbents of the party the wave runs against are protected
 less); a wider national SD when fundamentals inputs leave their training range. Each is estimated and backtested on
 2006-2024 first, with 2026 added as a held-out check once final, so the work doesn't wait for certification.
 Upgrades follow README "Upgrading packages or Python" (branch, `check_frozen.py` against the frozen forecast).
 
-**4. Governors (next cycle).** Backtest once 2026 is final; a limited mock can start earlier. Already in hand: 558
-governor polls in the Nov 3 VoteHub snapshot, governor polling misses for 13 cycles (305 races) in
-`data/final/calibration.json`, and governor races 1998-2022 in the state-economy analysis. Open data questions:
-2026 governor results (the scorecard collects Senate and House only), nominees, incumbents and term limits; whether
-the poll-vs-prior weight (`prior_weight.py`, Senate 0.87) holds for governors, whose races are less nationalized;
-whether state economic conditions matter more than for Senate races; how governor errors correlate with the same
-state's Senate and House errors (the state-error test found r = 0.09 for governor results vs House).
+**4. Governors (next cycle).** Plan below. Design on history now; run the model on the pre-election Nov 3
+snapshot; score it against 2026 once certified.
+
+*What the data already says* (computed Nov 8, 2026 from `data/final/bias_race_level.csv`, 256 governor and 328
+Senate races with final-three-week polls, 2002-2022, and `data/final/calibration.json`):
+
+| | Governor | Senate |
+|---|---|---|
+| Weight on polls vs a lean + environment prior (within cycle) | 0.95 (SE 0.02) | 0.87 (SE 0.05; matches `prior_weight.py`) |
+| Result on state lean (within cycle): slope, R² | 0.50, 0.27 | 0.96, 0.57 |
+| Residual SD, lean only / polls only | 18.6 / 6.9 | 16.4 / 6.8 |
+| National polling miss SD by cycle (all / midterms) | 3.3 / 3.1 | 3.4 / 2.8 |
+
+- Polls carry almost everything in polled races; partisanship is a weak guide, so unpolled races need a wide prior.
+- The cycle-level governor polling miss correlates 0.89 with the Senate miss and 0.57 with the generic-ballot miss
+  (13 cycles). Within a state and cycle, after national misses, governor and Senate misses correlate 0.34 (159 pairs).
+  Errors group by what was measured (statewide polls vs the generic ballot and district structure), not by office.
+- 2026 coverage (VoteHub, Nov 3): 31 of 36 races polled, 25 with 3+ polls since Sep 1. Unpolled: AR, HI, ID, OK,
+  WY. The snapshot also has 2025 Virginia (53) and New Jersey (39) governor polls: off-cycle races with known results.
+
+*Model*
+1. **Races and candidates:** a collector for Wikipedia's 2026 gubernatorial overview (nominees, incumbents, term
+   limits, status), on the Senate collector's pattern. Alaska (top-four, ranked choice) and serious independents are
+   handled like Montana's Senate race: best non-Republican minus Republican.
+2. **Poll average:** generalize `pollavg.senate()` by poll type (VoteHub `poll_type` "governor", state in `subject`).
+   Same sponsor shifts, population weights and decay, after checking whether the pollster effects, estimated mostly on
+   Senate and generic polls, hold for governor polls.
+3. **Prior:** estimated on governor results history: lean (expect a slope near 0.5, not 1), environment,
+   incumbency, and possibly the previous governor margin (candidate and brand persistence), tested against
+   lean-only. It matters mainly for the five unpolled races and the thinly polled ones; the poll weight is
+   re-estimated for governors (expect about 0.95).
+4. **Errors:** two national factors, correlated about 0.5: a statewide-poll factor shared by Senate and governor
+   races (correlation about 0.9) and the generic-ballot/House factor. This is the same change as the chamber-coupling
+   fix in item 3 (group national errors by measurement, not by chamber). Plus a state-level component shared by a
+   state's governor and Senate races (about 0.34), the House state shock, and fat tails as now.
+5. **Outputs:** P(win) per race, Democratic governorships (mean, range), a Governors tab on the site.
+
+*Backtest*
+- 2018 and 2022, pseudo-prospective on `backtest.py`'s pattern (538 raw polls include governor races through 2022).
+- 2025 Virginia and New Jersey: off-cycle, so it also tests the environment estimate special elections will need.
+- 2026: hold it out. Freeze the governor design on history first, run it on the Nov 3 snapshot, and score once
+  after certification. Nobody has looked at 2026 governor results with this model in mind, so this can be a genuine
+  out-of-sample test, but only if the design is fixed before the results are scored.
+
+*Data questions to resolve*
+- **Governor results history with incumbency, including unpolled races.** The repo has only polled races (no
+  incumbency). Source: Wikipedia's yearly gubernatorial overview pages (as `house_structure.py` does for the House),
+  1998-2024; check MEDSL's coverage too.
+- **2024 governor polls** (11 races): 538's raw polls end in 2022. Optional; Wikipedia race pages as in the poll audit.
+- **Lean measure:** presidential lean explains little. Test a statewide-composite lean (recent Senate and governor
+  results) against it.
+- **Scorecard:** collect 2026 governor results (overview and state pages) and add governors to the scorecard.
+- **Off-cycle environment for 2025:** what generic-ballot and approval figures stood on the date.
 
 **5. Special elections.** Infrastructure to forecast one House, Senate or governor race on its own schedule. Needs:
 the single-race path through the reworked model (environment, lean, incumbency, polls, error layers) without a
