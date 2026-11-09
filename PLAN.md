@@ -216,15 +216,37 @@ Senate races with final-three-week polls, 2002-2022, and `data/final/calibration
   after certification. Nobody has looked at 2026 governor results with this model in mind, so this can be a genuine
   out-of-sample test, but only if the design is fixed before the results are scored.
 
-*Data questions to resolve*
-- **Governor results history with incumbency, including unpolled races.** The repo has only polled races (no
-  incumbency). Source: Wikipedia's yearly gubernatorial overview pages (as `house_structure.py` does for the House),
-  1998-2024; check MEDSL's coverage too.
+*Data* (`src/collect/governors.py`, Nov 8, 2026; run `python src/collect/governors.py all`, then `check`)
+
+Collected:
+- `data/interim/governor_history.csv`: all 370 governor races 1998-2025 (odd years, specials and recalls included)
+  from Wikipedia's yearly overview pages: incumbent, party, whether they ran, every candidate's share. Two-party
+  margins match 538's actuals on 255 polled races (median difference 0.04; the 7 over 1 point are New York and
+  Connecticut fusion tickets, where Wikipedia's totals are the right ones). D-side overrides for AK 2014 (Walker) and
+  VT 2020 (Zuckerman); 14 races flagged multi-candidate (a third candidate at 15%+); 3 recalls flagged.
+- `data/interim/state_presidential.csv`: state presidential results 1992-2024, all 50 states and DC, with two-party
+  lean against the nation (national margins check against the known results).
+- `data/interim/governor_2026_races.csv`: the 36 races as Wikipedia stood at the final VoteHub snapshot (revision of
+  Nov 3, 19:59 UTC): nominees, incumbents (17 running), status, PVI. The collector stops if that revision shows
+  vote shares, so 2026 stays held out.
+- `data/interim/governor_dataset.csv`: the estimation table. Each race joined to lean from the last presidential
+  election before it (and the one before), the national House vote, president's party and approval, the state's
+  previous governor margin, and the final-three-week poll average (538 raw polls, identical to
+  `bias_race_level.csv` where they overlap, plus 1998, 2000 and odd years; VoteHub for 2025 VA and NJ). 335 of 370
+  races polled.
+
+First look (smoke test, 318 two-way even-year races): margin = -1.6 + 0.34 x lean + 0.66 x national + 15.5 x
+incumbent (R² 0.53, residual SD 14.6). Governor incumbency is worth far more than the House's 4.5.
+2025: polls understated the Democrat by about 6 points in both races (NJ D+5.9 polled, D+14.5 result; VA D+9.5,
+D+15.4).
+
+Still open:
 - **2024 governor polls** (11 races): 538's raw polls end in 2022. Optional; Wikipedia race pages as in the poll audit.
 - **Lean measure:** presidential lean explains little. Test a statewide-composite lean (recent Senate and governor
-  results) against it.
-- **Scorecard:** collect 2026 governor results (overview and state pages) and add governors to the scorecard.
-- **Off-cycle environment for 2025:** what generic-ballot and approval figures stood on the date.
+  results, or the previous governor margin, now in the dataset) against it.
+- **2026 poll averages:** generalize `pollavg.senate()` to governors (558 VoteHub polls; part of the model work).
+- **Scorecard:** collect 2026 governor results only after the governor design is frozen.
+- **Off-cycle environment for 2025:** generic-ballot and approval figures as of each date (VoteHub has both).
 
 **5. Special elections.** Infrastructure to forecast one House, Senate or governor race on its own schedule. Needs:
 the single-race path through the reworked model (environment, lean, incumbency, polls, error layers) without a

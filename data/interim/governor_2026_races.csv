@@ -1,0 +1,37 @@
+year,state,special,incumbent,inc_party_text,first_elected,status,revision,inc_party,inc_running,dem_cand,rep_cand,ind_cand,other_cand,pvi,asof_utc,revision_timestamp
+2026,AL,False,Kay Ivey,Republican,2017,Incumbent term-limited,1383627330,R,False,Doug Jones,Tommy Tuberville,,,-15,2026-11-03T21:06:39Z,2026-11-03T19:59:54Z
+2026,AK,False,Mike Dunleavy,Republican,2018,Incumbent term-limited,1383627330,R,False,Jonathan Kreiss-Tomkins,"Dave Bronson, Treg Taylor, Bernadette Wilson",,,-6,2026-11-03T21:06:39Z,2026-11-03T19:59:54Z
+2026,AZ,False,Katie Hobbs,Democratic,2022,Incumbent renominated,1383627330,D,True,Katie Hobbs,Andy Biggs,,"Teri Hourihan, Risa Lombardo",-2,2026-11-03T21:06:39Z,2026-11-03T19:59:54Z
+2026,AR,False,Sarah Huckabee Sanders,Republican,2022,Incumbent renominated,1383627330,R,True,Fredrick Love,Sarah Huckabee Sanders,,Colt Shelby,-15,2026-11-03T21:06:39Z,2026-11-03T19:59:54Z
+2026,CA,False,Gavin Newsom,Democratic,2018,Incumbent term-limited,1383627330,D,False,Xavier Becerra,Steve Hilton,,,12,2026-11-03T21:06:39Z,2026-11-03T19:59:54Z
+2026,CO,False,Jared Polis,Democratic,2018,Incumbent term-limited,1383627330,D,False,Phil Weiser,Victor Marx,Greg Lopez,"Stephen Hamilton, Eric Mulder, Jeff Peckman, Erik Underwood",6,2026-11-03T21:06:39Z,2026-11-03T19:59:54Z
+2026,CT,False,Ned Lamont,Democratic,2018,Incumbent renominated,1383627330,D,True,Ned Lamont,Ryan Fazio,,,8,2026-11-03T21:06:39Z,2026-11-03T19:59:54Z
+2026,FL,False,Ron DeSantis,Republican,2018,Incumbent term-limited,1383627330,R,False,David Jolly,Byron Donalds,"Dean Abrams, Charles Burkett, Jeffrey Datto, Moe Dimanche, Frank Russo",Scott Jewett,-5,2026-11-03T21:06:39Z,2026-11-03T19:59:54Z
+2026,GA,False,Brian Kemp,Republican,2018,Incumbent term-limited,1383627330,R,False,Keisha Lance Bottoms,Rick Jackson,,,-1,2026-11-03T21:06:39Z,2026-11-03T19:59:54Z
+2026,HI,False,Josh Green,Democratic,2022,Incumbent renominated,1383627330,D,True,Josh Green,Gary Cordery,,,13,2026-11-03T21:06:39Z,2026-11-03T19:59:54Z
+2026,ID,False,Brad Little,Republican,2018,Incumbent renominated,1383627330,R,True,Terri Pickens,Brad Little,John Stegner,"Pro-Life, Paul Sand",-18,2026-11-03T21:06:39Z,2026-11-03T19:59:54Z
+2026,IL,False,JB Pritzker,Democratic,2018,Incumbent renominated,1383627330,D,True,JB Pritzker,Darren Bailey,Collin Corbett,,6,2026-11-03T21:06:39Z,2026-11-03T19:59:54Z
+2026,IA,False,Kim Reynolds,Republican,2017,Incumbent retiring,1383627330,R,False,Rob Sand,Zach Lahn,Sondra Wilson,,-6,2026-11-03T21:06:39Z,2026-11-03T19:59:54Z
+2026,KS,False,Laura Kelly,Democratic,2018,Incumbent term-limited,1383627330,D,False,Cindy Holscher,Ty Masterson,,,-8,2026-11-03T21:06:39Z,2026-11-03T19:59:54Z
+2026,ME,False,Janet Mills,Democratic,2018,Incumbent term-limited,1383627330,D,False,Hannah Pingree,Robert B. Charles,Rick Bennett,,4,2026-11-03T21:06:39Z,2026-11-03T19:59:54Z
+2026,MD,False,Wes Moore,Democratic,2022,Incumbent renominated,1383627330,D,True,Wes Moore,Dan Cox,,"Andy Ellis, Cathy White",15,2026-11-03T21:06:39Z,2026-11-03T19:59:54Z
+2026,MA,False,Maura Healey,Democratic,2022,Incumbent renominated,1383627330,D,True,Maura Healey,Mike Minogue,Andrea James,,14,2026-11-03T21:06:39Z,2026-11-03T19:59:54Z
+2026,MI,False,Gretchen Whitmer,Democratic,2018,Incumbent term-limited,1383627330,D,False,Jocelyn Benson,John James,,"Donna Brandenburg, Douglas Campbell, Anthony Hudson",0,2026-11-03T21:06:39Z,2026-11-03T19:59:54Z
+2026,MN,False,Tim Walz,DFL,2018,Incumbent retiring,1383627330,D,False,Amy Klobuchar,Lisa Demuth,,Steven Young,3,2026-11-03T21:06:39Z,2026-11-03T19:59:54Z
+2026,NE,False,Jim Pillen,Republican,2022,Incumbent renominated,1383627330,R,True,Lynne Walz,Jim Pillen,,"Rick Beard, Brett Lindstrom",-10,2026-11-03T21:06:39Z,2026-11-03T19:59:54Z
+2026,NV,False,Joe Lombardo,Republican,2022,Incumbent renominated,1383627330,R,True,Aaron Ford,Joe Lombardo,Danielle Ford,,-1,2026-11-03T21:06:39Z,2026-11-03T19:59:54Z
+2026,NH,False,Kelly Ayotte,Republican,2024,Incumbent renominated,1383627330,R,True,Cinde Warmington,Kelly Ayotte,,Jon Kiper,2,2026-11-03T21:06:39Z,2026-11-03T19:59:54Z
+2026,NM,False,Michelle Lujan Grisham,Democratic,2018,Incumbent term-limited,1383627330,D,False,Deb Haaland,Gregg Hull,,,4,2026-11-03T21:06:39Z,2026-11-03T19:59:54Z
+2026,NY,False,Kathy Hochul,Democratic,2021,Incumbent renominated,1383627330,D,True,Kathy Hochul,Bruce Blakeman,,,8,2026-11-03T21:06:39Z,2026-11-03T19:59:54Z
+2026,OH,False,Mike DeWine,Republican,2018,Incumbent term-limited,1383627330,R,False,Amy Acton,Vivek Ramaswamy,,Donald Kissick,-5,2026-11-03T21:06:39Z,2026-11-03T19:59:54Z
+2026,OK,False,Kevin Stitt,Republican,2018,Incumbent term-limited,1383627330,R,False,Cyndi Munson,Mike Mazzei,"Robert Brooks Sr., Orlando Bush, Jerry Griffin",,-17,2026-11-03T21:06:39Z,2026-11-03T19:59:54Z
+2026,OR,False,Tina Kotek,Democratic,2022,Incumbent renominated,1383627330,D,True,Tina Kotek,Christine Drazan,,Brett Smith,8,2026-11-03T21:06:39Z,2026-11-03T19:59:54Z
+2026,PA,False,Josh Shapiro,Democratic,2022,Incumbent renominated,1383627330,D,True,Josh Shapiro,Stacy Garrity,,Ken Krawchuk,-1,2026-11-03T21:06:39Z,2026-11-03T19:59:54Z
+2026,RI,False,Dan McKee,Democratic,2021,Incumbent lost renomination,1383627330,D,False,Helena Foulkes,Aaron Guckian,"Ken Block, Jasjit Gotra, CD Reynolds",,8,2026-11-03T21:06:39Z,2026-11-03T19:59:54Z
+2026,SC,False,Henry McMaster,Republican,2017,Incumbent term-limited,1383627330,R,False,Jermaine Johnson,Alan Wilson,,"Michael Addison, Walid Hakim",-8,2026-11-03T21:06:39Z,2026-11-03T19:59:54Z
+2026,SD,False,Larry Rhoden,Republican,2025,Incumbent nominated to full term,1383627330,R,True,Dan Ahlers,Larry Rhoden,,,-15,2026-11-03T21:06:39Z,2026-11-03T19:59:54Z
+2026,TN,False,Bill Lee,Republican,2018,Incumbent term-limited,1383627330,R,False,Jerri Green,Marsha Blackburn,"Misam Abidi, Santiago Asconape, Dean Brewer, Ray Brown, Taylor Hafley, David Hatley, Wendell Jackson, Charles Van Morgan, Eddie Lee Murphy, Lauren Pinkston, Karl Smithson, L. Webb Taylor, Robert Vick",,-14,2026-11-03T21:06:39Z,2026-11-03T19:59:54Z
+2026,TX,False,Greg Abbott,Republican,2014,Incumbent renominated,1383627330,R,True,Gina Hinojosa,Greg Abbott,,Pat Dixon,-6,2026-11-03T21:06:39Z,2026-11-03T19:59:54Z
+2026,VT,False,Phil Scott,Republican,2016,Incumbent renominated,1383627330,R,True,Amanda Janoo,Phil Scott,Brian Judd,"June Goodband, Dean Roy",17,2026-11-03T21:06:39Z,2026-11-03T19:59:54Z
+2026,WI,False,Tony Evers,Democratic,2018,Incumbent retiring,1383627330,D,False,David Crowley,Tom Tiffany,,,0,2026-11-03T21:06:39Z,2026-11-03T19:59:54Z
+2026,WY,False,Mark Gordon,Republican,2018,Incumbent term-limited,1383627330,R,False,Kenneth Casner,Eric Barlow,,Joseph Kibler,-23,2026-11-03T21:06:39Z,2026-11-03T19:59:54Z
