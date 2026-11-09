@@ -1,6 +1,6 @@
 {
  "question": "Which national environment fits House special elections, and does the year of the term matter?",
- "n_specials": 78,
+ "n_specials": 77,
  "prior": {
   "const": 0.7505502419562372,
   "b_lean2": 0.9072772366754991,
@@ -8,66 +8,66 @@
  },
  "errors": {
   "prev_vote": {
-   "n": 78,
-   "rmse": 15.897289495873412,
-   "mae": 13.283895848335764,
-   "mean_err": 0.8171633585891682,
-   "out_party_overperformance": 4.160549778346613,
-   "winner_acc": 0.8589743589743589
+   "n": 77,
+   "rmse": 14.007020633043782,
+   "mae": 11.917475876747671,
+   "mean_err": 0.8573199653946454,
+   "out_party_overperformance": 3.7167068637799585,
+   "winner_acc": 0.8831168831168831
   },
   "fund_m0": {
-   "n": 78,
-   "rmse": 16.024924573915335,
-   "mae": 13.372467845827755,
-   "mean_err": 0.6076214568983049,
-   "out_party_overperformance": 5.085435600905727,
-   "winner_acc": 0.8461538461538461
+   "n": 77,
+   "rmse": 14.1447850437285,
+   "mae": 12.01624354814314,
+   "mean_err": 0.6434727181180696,
+   "out_party_overperformance": 4.652020168341024,
+   "winner_acc": 0.8701298701298701
   },
   "fund_m1": {
-   "n": 78,
-   "rmse": 15.363513687340946,
-   "mae": 12.479554810115472,
-   "mean_err": 1.1725426150892548,
-   "out_party_overperformance": -2.2585394555766247,
-   "winner_acc": 0.8717948717948718
+   "n": 77,
+   "rmse": 13.626454909712278,
+   "mae": 11.228212837896008,
+   "mean_err": 1.31110681416192,
+   "out_party_overperformance": -2.6919548881413293,
+   "winner_acc": 0.8961038961038961
   },
   "fund_m_by_term_year (LOYO)": {
-   "n": 78,
-   "rmse": 15.485278633150292,
-   "mae": 12.940096663302304,
-   "mean_err": 2.611435035468989,
-   "out_party_overperformance": -0.22790402430911635,
-   "winner_acc": 0.8333333333333334
+   "n": 77,
+   "rmse": 13.4775316987545,
+   "mae": 11.598285940116613,
+   "mean_err": 2.7022598192306715,
+   "out_party_overperformance": -0.1984670583818399,
+   "winner_acc": 0.8571428571428571
   },
   "fund_m_pooled (LOYO)": {
-   "n": 78,
-   "rmse": 15.51077307230384,
-   "mae": 12.907852543786122,
-   "mean_err": 1.137444606735768,
-   "out_party_overperformance": -0.042631186978168735,
-   "winner_acc": 0.8589743589743589
+   "n": 77,
+   "rmse": 13.686708411884789,
+   "mae": 11.560555831377533,
+   "mean_err": 1.1904315311851732,
+   "out_party_overperformance": -0.035911176211701035,
+   "winner_acc": 0.8831168831168831
   }
  },
  "m_by_term_year_all_data": {
   "1": {
-   "m": 1.3163649277690006,
+   "m": 1.3346287024524164,
    "n": 24
   },
   "2": {
-   "m": 1.379285742452919,
-   "n": 20
+   "m": 1.2141558765721048,
+   "n": 19
   },
   "3": {
    "m": -0.20356231279611423,
    "n": 17
   },
   "4": {
-   "m": -0.1003382898275013,
+   "m": -0.16847409451294024,
    "n": 17
   },
   "pooled": {
-   "m": 0.6924636265501657,
-   "n": 78
+   "m": 0.6334471634996629,
+   "n": 77
   }
  },
  "m_by_term_year_loyo_values": {
@@ -80,38 +80,38 @@
   ],
   "4": [
    -0.58,
-   -0.35,
-   -0.0,
-   0.53
+   -0.42,
+   -0.09,
+   0.44
   ],
   "1": [
-   1.39,
-   1.46,
-   1.13,
+   1.41,
+   1.48,
+   1.15,
    1.43,
-   1.38,
-   1.1
+   1.4,
+   1.12
   ],
   "2": [
-   1.1,
-   1.35,
-   1.27,
-   2.03,
-   1.28
+   1.16,
+   1.17,
+   1.0,
+   1.73,
+   1.13
   ]
  },
  "out_party_overperformance_vs_m1_by_term_year": [
   {
    "term_year": 1,
    "size": 24,
-   "mean": 2.97,
-   "std": 12.28
+   "mean": 3.14,
+   "std": 12.46
   },
   {
    "term_year": 2,
-   "size": 20,
-   "mean": 3.56,
-   "std": 23.32
+   "size": 19,
+   "mean": 2.01,
+   "std": 15.34
   },
   {
    "term_year": 3,
@@ -122,8 +122,8 @@
   {
    "term_year": 4,
    "size": 17,
-   "mean": -10.32,
-   "std": 21.9
+   "mean": -10.96,
+   "std": 20.74
   }
  ],
  "governor_offcycle_m": {
@@ -134,43 +134,43 @@
   "by_k": [
    {
     "recent_specials_k": null,
-    "rmse": 14.719574555133386,
-    "mae": 12.18330233832994,
-    "mean_err": 2.095487331254564,
-    "winner_acc": 0.8461538461538461
+    "rmse": 12.76805179112584,
+    "mae": 10.99593064266957,
+    "mean_err": 2.2062681617311224,
+    "winner_acc": 0.8701298701298701
    },
    {
     "recent_specials_k": 0,
-    "rmse": 15.081642387901772,
-    "mae": 11.49657920851814,
-    "mean_err": -0.06332409397149528,
-    "winner_acc": 0.8589743589743589
+    "rmse": 13.223865574942874,
+    "mae": 10.563510184115627,
+    "mean_err": 0.4733026458473154,
+    "winner_acc": 0.8831168831168831
    },
    {
     "recent_specials_k": 2,
-    "rmse": 14.133127278113625,
-    "mae": 11.14532511020883,
-    "mean_err": 0.3825273225945712,
-    "winner_acc": 0.8589743589743589
+    "rmse": 12.13416834385382,
+    "mae": 10.150747971698422,
+    "mean_err": 0.8070707479738398,
+    "winner_acc": 0.8831168831168831
    },
    {
     "recent_specials_k": 4,
-    "rmse": 14.12676125488307,
-    "mae": 11.277789875917275,
-    "mean_err": 0.738382347480165,
-    "winner_acc": 0.8461538461538461
+    "rmse": 12.13075956022548,
+    "mae": 10.236802692436079,
+    "mean_err": 1.1022414948536778,
+    "winner_acc": 0.8701298701298701
    },
    {
     "recent_specials_k": 8,
-    "rmse": 14.231439128011028,
-    "mae": 11.440103297859515,
-    "mean_err": 1.1419749311627674,
-    "winner_acc": 0.8461538461538461
+    "rmse": 12.250894390621161,
+    "mae": 10.348146367657433,
+    "mean_err": 1.4362440582709344,
+    "winner_acc": 0.8701298701298701
    }
   ],
   "m_by_half_all_data": {
-   "years_1_2": 1.3449652980798723,
-   "years_3_4": -0.15195030131180776
+   "years_1_2": 1.2813965235750688,
+   "years_3_4": -0.1860182036545272
   },
   "chosen_k": 2,
   "note": "k chosen among 0, 2, 4, 8; the recent-specials term uses only earlier races"
@@ -206,20 +206,6 @@
   },
   {
    "date": "2007-12-11",
-   "state": "OH",
-   "district": 5,
-   "term_year": 3,
-   "president": "R",
-   "approval": 32.86,
-   "margin_2p": -14.11,
-   "pvi": -10,
-   "implied_env": 4.19,
-   "prev_vote": 8.28,
-   "e0": 7.37,
-   "slope": 9.38
-  },
-  {
-   "date": "2007-12-11",
    "state": "VA",
    "district": 1,
    "term_year": 3,
@@ -228,6 +214,20 @@
    "margin_2p": -23.88,
    "pvi": -9,
    "implied_env": -10.6,
+   "prev_vote": 8.28,
+   "e0": 7.37,
+   "slope": 9.38
+  },
+  {
+   "date": "2007-12-11",
+   "state": "OH",
+   "district": 5,
+   "term_year": 3,
+   "president": "R",
+   "approval": 32.86,
+   "margin_2p": -14.11,
+   "pvi": -10,
+   "implied_env": 4.19,
    "prev_vote": 8.28,
    "e0": 7.37,
    "slope": 9.38
@@ -267,9 +267,9 @@
    "term_year": 4,
    "president": "R",
    "approval": 32.5,
-   "margin_2p": 78.48,
+   "margin_2p": 69.98,
    "pvi": 22,
-   "implied_env": 48.3,
+   "implied_env": 37.44,
    "prev_vote": 8.28,
    "e0": 7.44,
    "slope": 9.38
@@ -421,9 +421,9 @@
    "term_year": 2,
    "president": "D",
    "approval": 49.0,
-   "margin_2p": -12.25,
+   "margin_2p": 19.43,
    "pvi": 7,
-   "implied_env": -32.84,
+   "implied_env": 7.63,
    "prev_vote": 11.02,
    "e0": 10.99,
    "slope": -9.38
@@ -743,9 +743,9 @@
    "term_year": 2,
    "president": "R",
    "approval": 41.0,
-   "margin_2p": -26.18,
+   "margin_2p": -20.16,
    "pvi": -13,
-   "implied_env": -4.27,
+   "implied_env": 3.42,
    "prev_vote": -1.05,
    "e0": -1.57,
    "slope": 9.38
@@ -822,20 +822,6 @@
   },
   {
    "date": "2020-05-12",
-   "state": "CA",
-   "district": 25,
-   "term_year": 4,
-   "president": "R",
-   "approval": 47.14,
-   "margin_2p": -9.8,
-   "pvi": 0,
-   "implied_env": -13.48,
-   "prev_vote": 8.76,
-   "e0": 5.04,
-   "slope": 9.38
-  },
-  {
-   "date": "2020-05-12",
    "state": "WI",
    "district": 7,
    "term_year": 4,
@@ -844,6 +830,20 @@
    "margin_2p": -14.4,
    "pvi": -8,
    "implied_env": -0.81,
+   "prev_vote": 8.76,
+   "e0": 5.04,
+   "slope": 9.38
+  },
+  {
+   "date": "2020-05-12",
+   "state": "CA",
+   "district": 25,
+   "term_year": 4,
+   "president": "R",
+   "approval": 47.14,
+   "margin_2p": -9.8,
+   "pvi": 0,
+   "implied_env": -13.48,
    "prev_vote": 8.76,
    "e0": 5.04,
    "slope": 9.38
@@ -869,9 +869,9 @@
    "term_year": 1,
    "president": "D",
    "approval": 48.0,
-   "margin_2p": -40.78,
+   "margin_2p": -44.0,
    "pvi": -15,
-   "implied_env": -18.28,
+   "implied_env": -22.4,
    "prev_vote": 3.18,
    "e0": 4.58,
    "slope": -9.38
@@ -953,9 +953,9 @@
    "term_year": 2,
    "president": "D",
    "approval": 41.33,
-   "margin_2p": -7.95,
+   "margin_2p": -4.9,
    "pvi": 10,
-   "implied_env": -34.3,
+   "implied_env": -30.39,
    "prev_vote": 3.18,
    "e0": 3.32,
    "slope": -9.38
@@ -995,9 +995,9 @@
    "term_year": 2,
    "president": "D",
    "approval": 40.0,
-   "margin_2p": 3.0,
+   "margin_2p": -8.21,
    "pvi": -9,
-   "implied_env": 23.74,
+   "implied_env": 9.41,
    "prev_vote": 3.18,
    "e0": 3.07,
    "slope": -9.38
@@ -1213,20 +1213,6 @@
    "slope": 9.38
   },
   {
-   "date": "2026-01-31",
-   "state": "TX",
-   "district": 18,
-   "term_year": 2,
-   "president": "R",
-   "approval": 40.85,
-   "margin_2p": 82.28,
-   "pvi": 23,
-   "implied_env": 50.83,
-   "prev_vote": -2.68,
-   "e0": -2.84,
-   "slope": 9.38
-  },
-  {
    "date": "2026-03-10",
    "state": "GA",
    "district": 14,
@@ -1261,9 +1247,9 @@
    "term_year": 2,
    "president": "R",
    "approval": 38.94,
-   "margin_2p": -54.09,
+   "margin_2p": -27.75,
    "pvi": -12,
-   "implied_env": -42.25,
+   "implied_env": -8.59,
    "prev_vote": -2.68,
    "e0": -2.47,
    "slope": 9.38

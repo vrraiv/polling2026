@@ -313,27 +313,52 @@ approval, recent specials).
 *Data* (`src/collect/specials.py` -> `data/interim/house_specials.csv`, Nov 8, 2026): 79 House specials 2007-2026
 with a Democrat and a Republican, not on a general-election day, from the special-election tables of the yearly
 House pages (cached) and the odd-year pages (2007-2025, fetched). Lean: the district's Cook PVI on the lines in
-force. 78 usable (NY-23 2009 flagged: the Republican withdrew).
+force. 77 usable (NY-23 2009 flagged: the Republican withdrew; TX-18 2026, a D-vs-D runoff, dropped). Margins are
+all Democrats against all Republicans in the deciding round (updated Nov 9; numbers below are on the corrected data).
 
 *Environment for a special* (`src/model/special_model.py` -> `data/processed/specials_environment.json`). Prior: the
 frozen House district model for an open seat (0.75 + 0.91 x lean + 0.78 x environment). Environment: the
-off-cycle estimator from `environment.py`. Race error, all 78:
+off-cycle estimator from `environment.py`. Race error, all 77:
 
 | Environment | RMSE | MAE | Mean error | Winners right |
 |---|---|---|---|---|
-| Last House vote carried forward | 15.9 | 13.3 | +0.8 | 86% |
-| Midterm-like (m = 1) | 15.4 | 12.5 | +1.2 | 87% |
-| m by half of the term (years 1-2: 1.3; years 3-4: -0.15) | 14.7 | 12.2 | +2.1 | 85% |
-| ... plus recent specials (prior 12 months, shrunk n/(n+2)) | 14.1 | 11.2 | +0.4 | 86% |
+| Last House vote carried forward | 14.0 | 11.9 | +0.9 | 88% |
+| Midterm-like (m = 1) | 13.6 | 11.2 | +1.3 | 90% |
+| m by half of the term (years 1-2: 1.3; years 3-4: -0.2) | 12.8 | 11.0 | +2.2 | 87% |
+| ... plus recent specials (prior 12 months, shrunk n/(n+2)) | 12.1 | 10.2 | +0.8 | 88% |
 
 (m fitted without the special's calendar year; the recent-specials term uses only earlier races; k = 2 was chosen
 among 0, 2, 4 and 8.)
 - **The term-half pattern replicates the governor result** in an independent dataset: the first half of a term is
   midterm-like or stronger (governors' year 1: m = 2.2; specials' years 1-2: 1.3), the second half shows no midterm
-  effect (governors' year 3: 0.2; specials' years 3-4: -0.15).
+  effect (governors' year 3: 0.2; specials' years 3-4: -0.2).
 - **The special electorate has moved toward Democrats since 2017.** Against m = 1, Democrats beat the environment
-  by 12.7 points of environment under Biden and 2.6 under Trump since 2017; before 2017 they fell short (-3.8 under
-  Obama, -10.9 under Bush, partly the term-half effect). A fixed post-2016 shift is unstable out of sample; the
+  by 12.0 points of environment under Biden and 2.6 under Trump since 2017; before 2017 they fell short (-2.0 under
+  Obama, -11.9 under Bush, partly the term-half effect). A fixed post-2016 shift is unstable out of sample; the
   recent-specials term captures it prospectively and is the better tool.
-- Next: the single-race forecast path (prior + polls where they exist + this environment, with its error), and a
-  test of the recent-specials term on off-year governor races (2025 NJ/VA).
+*Single-race forecast path* (`src/model/single_race.py`, Nov 9, 2026). One race on one date, using only what was
+known before it:
+- House special: environment (m for the term half fitted on earlier specials, plus recent specials), the frozen
+  House district model as an open seat, district polls if supplied (precision-weighted, poll SD 8.1), normal error
+  with SD from earlier specials' own forecast errors. No historical special-election polls are collected, so the
+  backtest is prior-only.
+- Governor (off-cycle): the governor model fitted on earlier races, the term-year environment, polls (`--poll` or
+  `--votehub`), national-factor variance by poll weight.
+- Data fixes found on the way: specials now use the deciding round (TX-18 2026's D-vs-D runoff dropped) and
+  all-Democrats against all-Republicans (CA-1 2026's all-party primary: R+27.7, not R+54).
+
+Prospective backtest, 68 House specials 2008-2026 in date order:
+
+| | Model | Naive (last House vote) |
+|---|---|---|
+| Margin RMSE / MAE / mean | 11.5 / 9.6 / +0.6 | 13.8 |
+| Brier / log loss | 0.081 / 0.257 | 0.083 / 0.278 |
+| Winners right | 90% | 90% |
+| Coverage of 50 / 80 / 95% intervals | 49% / 82% / 100% | |
+
+Error shape chosen by log score: normal (-3.875) beats t(10) (-3.890) and the forecast's t(3.9) (-3.937), which put
+35% of races inside its 50% intervals. Examples, each from data before the race: TN-7 Dec 2025 R+5.3 (32%), actual
+R+8.9; VA governor 2025 D+9.7 (96%; polls D+9.5 at weight 0.92, prior D+11.9), actual D+15.4; NJ D+6.5 (90%),
+actual D+14.5. Both governor polls understated the Democrat; the prior was closer.
+- Next: test the recent-specials term on off-year governor races (2025's specials ran 7-10 points toward
+  Democrats); Senate specials (a history like the House one); special-election polls for the backtest.

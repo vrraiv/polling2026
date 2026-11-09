@@ -8,7 +8,8 @@ election date (from the results text), every candidate's share.
 Joined to the district's lean on the lines in force (Cook PVI from data/interim/house_history.csv for the last
 regular election before the special) and that election's result. Specials held on a regular general-election day
 are dropped (their environment is the general's), as are races without both a Democrat and a Republican in the
-deciding round (all-party formats that end D vs D or R vs R).
+deciding round (all-party formats that end D vs D or R vs R). Margin: all Democrats' share against all Republicans'
+in the deciding round (the runoff when there was one), so all-party formats aren't read off the top two alone.
 
 Run:  python src/collect/specials.py
 Writes data/interim/house_specials.csv
@@ -77,6 +78,24 @@ def special_tables(html, whole_page=False):
                 yield t
 
 
+def deciding_round(cands):
+    """Candidates of the deciding round: everything after a 'Runoff:' marker when the cell lists both rounds."""
+    idx = next((i for i, c in enumerate(cands) if re.match(r"\s*Runoff:", c[0])), None)
+    if idx is None:
+        return cands
+    out = [list(c) for c in cands[idx:]]
+    out[0][0] = re.sub(r"^\s*Runoff:\s*", "", out[0][0])
+    return out
+
+
+def party_margin(cands):
+    """Two-party margin from all Democrats' and all Republicans' shares in the round (all-party formats such as
+    California's special primary split a party's vote across several candidates); replaces the top-candidate margin."""
+    d = sum(c[3] for c in cands if c[1] == "D" and c[3] is not None)
+    r = sum(c[3] for c in cands if c[1] == "R" and c[3] is not None)
+    return {"d_total": d, "r_total": r, "margin_2p": 100 * (d - r) / (d + r) if d + r > 0 else np.nan, "contested": d > 0 and r > 0}
+
+
 def collect():
     rows = []
     for p, whole in pages():
@@ -94,11 +113,11 @@ def collect():
                 date = special_date(status)
                 if not st or date is None:
                     continue
-                cands = parse_candidates(r.iloc[ci["Candidates"]])
+                cands = deciding_round(parse_candidates(r.iloc[ci["Candidates"]]))
                 rows.append({"state": st, "district": dist, "date": date.date().isoformat(), "page": p.name,
                              "vacating": clean(r.iloc[ci["Member"]]) if ci["Member"] is not None else None,
                              "vacating_party_text": clean(r.iloc[ci["Party"]]) if ci["Party"] is not None else None,
-                             "status": status, "candidates": json.dumps(cands), **outcome(cands)})
+                             "status": status, "candidates": json.dumps(cands), **outcome(cands), **party_margin(cands)})
     df = pd.DataFrame(rows).drop_duplicates(["state", "district", "date"])
     df["date"] = pd.to_datetime(df.date)
     return df

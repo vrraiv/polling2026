@@ -84,6 +84,7 @@ The environment that matches the frozen forecast is tagged `env-2026`. To rebuil
 | `python src/run_scorecard.py --manual` | Also read official results downloaded by hand into `data/raw/official_manual/<ST>/<date>/`. |
 | `python src/run_scorecard.py --parse` | Re-parse the saved snapshots without fetching. After an upgrade, `git diff data/scorecard` should be empty. |
 | `python src/check_scorecard.py` | Check a scorecard refresh against the last commit before publishing: HOLD, REVIEW or CLEAN. |
+| `python src/model/single_race.py house --state TN --district 7 --date 2025-12-02` | Forecast one House special (or `governor --state VA --date 2025-11-04 --votehub ...`) from data before its date; `--poll D,R` adds polls. `backtest` scores every House special since 2008. |
 | `python src/postmortem/<script>.py` | Post-mortem and historical analyses (what-if environment, where the House missed, history, state-level error). Each writes to `data/postmortem/`; see `src/postmortem/README.md`. |
 | `python src/check_frozen.py` | Rebuild the model from the frozen inputs and compare every file in `data/final/`. |
 | `python src/run_all.py` | The pre-election refresh. It refuses to run after polls closed on Nov 3, 2026. |
