@@ -1,0 +1,572 @@
+{
+ "question": "Do House districts in the same state share an error the frozen model left out?",
+ "estimate": {
+  "residual_sd": 8.430157899920458,
+  "components": [
+   {
+    "subset": "all contested",
+    "n": 3752,
+    "state_cycles": 475,
+    "sd_state_reml": 3.2895520887322283,
+    "sd_idio_reml": 7.877915193128995,
+    "share_of_variance": 0.14847354496213286,
+    "sd_state_mom": 3.0901574403706826
+   },
+   {
+    "subset": "competitive (|fitted| <= 15)",
+    "n": 848,
+    "state_cycles": 283,
+    "sd_state_reml": 2.9450559293699157,
+    "sd_idio_reml": 8.37122688264211,
+    "share_of_variance": 0.1101367236102722,
+    "sd_state_mom": 2.4649948793733585
+   },
+   {
+    "subset": "midterms",
+    "n": 1872,
+    "state_cycles": 239,
+    "sd_state_reml": 3.5380694582252854,
+    "sd_idio_reml": 7.832748083979196,
+    "share_of_variance": 0.16945926842785908,
+    "sd_state_mom": 3.286443219900623
+   },
+   {
+    "subset": "competitive midterms",
+    "n": 443,
+    "state_cycles": 139,
+    "sd_state_reml": 3.5768707944956897,
+    "sd_idio_reml": 7.909529891899615,
+    "share_of_variance": 0.16978383762421023,
+    "sd_state_mom": 3.002406702079366
+   },
+   {
+    "subset": "year 2006",
+    "n": 364,
+    "state_cycles": 49,
+    "sd_state_reml": 3.638399607758673,
+    "sd_idio_reml": 11.005232104447646,
+    "share_of_variance": 0.09853105843043428,
+    "sd_state_mom": 3.453472975038492
+   },
+   {
+    "subset": "year 2008",
+    "n": 365,
+    "state_cycles": 47,
+    "sd_state_reml": 4.911253929566884,
+    "sd_idio_reml": 11.307140182767535,
+    "share_of_variance": 0.15871635211881685,
+    "sd_state_mom": 4.289425755667649
+   },
+   {
+    "subset": "year 2010",
+    "n": 395,
+    "state_cycles": 49,
+    "sd_state_reml": 3.2563007933952166,
+    "sd_idio_reml": 8.266486074709547,
+    "share_of_variance": 0.13432638680298817,
+    "sd_state_mom": 3.12886003214361
+   },
+   {
+    "subset": "year 2012",
+    "n": 377,
+    "state_cycles": 48,
+    "sd_state_reml": 1.552876224557466,
+    "sd_idio_reml": 8.737457900606282,
+    "share_of_variance": 0.030619477691468788,
+    "sd_state_mom": 1.8528192655886162
+   },
+   {
+    "subset": "year 2014",
+    "n": 346,
+    "state_cycles": 48,
+    "sd_state_reml": 4.625938765825776,
+    "sd_idio_reml": 8.068721819302038,
+    "share_of_variance": 0.24738061884680282,
+    "sd_state_mom": 4.012230848778468
+   },
+   {
+    "subset": "year 2016",
+    "n": 359,
+    "state_cycles": 47,
+    "sd_state_reml": 3.8084234065598785,
+    "sd_idio_reml": 7.270413202493144,
+    "share_of_variance": 0.21531240434917975,
+    "sd_state_mom": 3.482312406532201
+   },
+   {
+    "subset": "year 2018",
+    "n": 381,
+    "state_cycles": 48,
+    "sd_state_reml": 2.717787914676717,
+    "sd_idio_reml": 6.016571846847636,
+    "share_of_variance": 0.16946851140898395,
+    "sd_state_mom": 2.6879180158833536
+   },
+   {
+    "subset": "year 2020",
+    "n": 395,
+    "state_cycles": 47,
+    "sd_state_reml": 2.1443252518313085,
+    "sd_idio_reml": 6.118548639310587,
+    "share_of_variance": 0.10938875075244453,
+    "sd_state_mom": 2.1201190811897694
+   },
+   {
+    "subset": "year 2022",
+    "n": 386,
+    "state_cycles": 45,
+    "sd_state_reml": 3.3561608342800744,
+    "sd_idio_reml": 4.479332551655426,
+    "share_of_variance": 0.35954196942342476,
+    "sd_state_mom": 3.424703110810276
+   },
+   {
+    "subset": "year 2024",
+    "n": 384,
+    "state_cycles": 47,
+    "sd_state_reml": 2.3990703370484576,
+    "sd_idio_reml": 4.6817227514961335,
+    "share_of_variance": 0.20797588609086995,
+    "sd_state_mom": 2.5255807139658906
+   }
+  ],
+  "placebo_sd_state": 0.7113757714909673,
+  "model_region_sd": 0.47638341360970904,
+  "largest_shocks_4plus_districts": [
+   {
+    "state": "LA",
+    "year": 2008,
+    "n": 5,
+    "shock": -19.97
+   },
+   {
+    "state": "UT",
+    "year": 2014,
+    "n": 4,
+    "shock": 19.82
+   },
+   {
+    "state": "TN",
+    "year": 2008,
+    "n": 6,
+    "shock": -17.68
+   },
+   {
+    "state": "MA",
+    "year": 2016,
+    "n": 4,
+    "shock": 16.2
+   },
+   {
+    "state": "UT",
+    "year": 2016,
+    "n": 4,
+    "shock": 15.04
+   },
+   {
+    "state": "KS",
+    "year": 2008,
+    "n": 4,
+    "shock": -14.72
+   },
+   {
+    "state": "AL",
+    "year": 2010,
+    "n": 4,
+    "shock": 14.3
+   },
+   {
+    "state": "NV",
+    "year": 2014,
+    "n": 4,
+    "shock": -14.23
+   },
+   {
+    "state": "AL",
+    "year": 2016,
+    "n": 4,
+    "shock": 11.81
+   },
+   {
+    "state": "KS",
+    "year": 2014,
+    "n": 4,
+    "shock": 11.81
+   },
+   {
+    "state": "IN",
+    "year": 2006,
+    "n": 9,
+    "shock": 10.27
+   },
+   {
+    "state": "FL",
+    "year": 2010,
+    "n": 20,
+    "shock": -10.08
+   },
+   {
+    "state": "KS",
+    "year": 2018,
+    "n": 4,
+    "shock": 9.1
+   },
+   {
+    "state": "AL",
+    "year": 2006,
+    "n": 4,
+    "shock": -9.09
+   },
+   {
+    "state": "IN",
+    "year": 2008,
+    "n": 9,
+    "shock": 8.72
+   }
+  ]
+ },
+ "test_redraw": {
+  "first_cycle_new_map": {
+   "n_state_cycles": 90,
+   "sd_state": 2.62685796523973,
+   "ci90": [
+    1.3651686209059455,
+    3.637414591134232
+   ]
+  },
+  "other_cycles": {
+   "n_state_cycles": 321,
+   "sd_state": 4.232111616588795,
+   "ci90": [
+    3.5822492076158112,
+    4.867014010279402
+   ]
+  },
+  "census_redraw_years": {
+   "n_state_cycles": 82,
+   "sd_state": 2.71874373231404,
+   "ci90": [
+    1.2256374639355962,
+    3.7714373353205337
+   ]
+  },
+  "mid_decade_redraws": {
+   "n_state_cycles": 8,
+   "sd_state": 1.3659207396095374,
+   "ci90": [
+    0.0,
+    2.5516460174228683
+   ]
+  },
+  "same_years_not_redrawn": {
+   "n_state_cycles": 156,
+   "sd_state": 2.442022688419175,
+   "ci90": [
+    1.2024444211650367,
+    3.360592278317138
+   ]
+  },
+  "note": "2012/2022 redraws are confounded with their years; the mid-decade rows compare redrawn and not-redrawn states in the same cycles"
+ },
+ "test_band": {
+  "state_level": {
+   "high_band_share": {
+    "n_state_cycles": 197,
+    "sd_state": 3.673418176335693,
+    "ci90": [
+     2.86171935063175,
+     4.421722048803598
+    ]
+   },
+   "low_band_share": {
+    "n_state_cycles": 157,
+    "sd_state": 3.6618178056920927,
+    "ci90": [
+     2.827199713038076,
+     4.478163441493042
+    ]
+   },
+   "wls_excess_on_band_share": {
+    "slope": 4.087332294148295,
+    "se": 8.631324017642426,
+    "p": 0.6361169691326635
+   }
+  },
+  "district_resid_sd_by_abs_pvi": [
+   {
+    "abs_band": "(-0.1, 2.0]",
+    "size": 391,
+    "std": 8.83
+   },
+   {
+    "abs_band": "(12.0, 20.0]",
+    "size": 954,
+    "std": 8.28
+   },
+   {
+    "abs_band": "(2.0, 5.0]",
+    "size": 565,
+    "std": 9.01
+   },
+   {
+    "abs_band": "(20.0, 60.0]",
+    "size": 580,
+    "std": 7.29
+   },
+   {
+    "abs_band": "(5.0, 8.0]",
+    "size": 593,
+    "std": 8.47
+   },
+   {
+    "abs_band": "(8.0, 12.0]",
+    "size": 669,
+    "std": 8.63
+   }
+  ],
+  "wave_years": {
+   "2006": 8.281573498964804,
+   "2008": 11.017838405036729,
+   "2010": -7.039337474120088,
+   "2014": -5.894519131334025,
+   "2018": 8.757637474541754
+  },
+  "wave_by_lean_vs_wave": [
+   {
+    "band": "(-10.0, -4.0]",
+    "n": 151,
+    "mean_resid_toward_wave": 0.97,
+    "se": 0.87
+   },
+   {
+    "band": "(-16.0, -10.0]",
+    "n": 156,
+    "mean_resid_toward_wave": 1.54,
+    "se": 0.82
+   },
+   {
+    "band": "(-24.0, -16.0]",
+    "n": 199,
+    "mean_resid_toward_wave": 0.69,
+    "se": 0.77
+   },
+   {
+    "band": "(-4.0, 4.0]",
+    "n": 176,
+    "mean_resid_toward_wave": 2.09,
+    "se": 0.74
+   },
+   {
+    "band": "(-80.0, -24.0]",
+    "n": 401,
+    "mean_resid_toward_wave": -0.84,
+    "se": 0.49
+   },
+   {
+    "band": "(16.0, 80.0]",
+    "n": 473,
+    "mean_resid_toward_wave": -1.46,
+    "se": 0.4
+   },
+   {
+    "band": "(4.0, 16.0]",
+    "n": 284,
+    "mean_resid_toward_wave": 0.43,
+    "se": 0.55
+   }
+  ],
+  "wave_by_lean_and_incumbent": [
+   {
+    "band": "(-10.0, -4.0]",
+    "inc_against_wave": false,
+    "n": 47,
+    "mean_resid_toward_wave": 0.22
+   },
+   {
+    "band": "(-10.0, -4.0]",
+    "inc_against_wave": true,
+    "n": 104,
+    "mean_resid_toward_wave": 1.31
+   },
+   {
+    "band": "(-16.0, -10.0]",
+    "inc_against_wave": false,
+    "n": 36,
+    "mean_resid_toward_wave": 0.85
+   },
+   {
+    "band": "(-16.0, -10.0]",
+    "inc_against_wave": true,
+    "n": 120,
+    "mean_resid_toward_wave": 1.74
+   },
+   {
+    "band": "(-24.0, -16.0]",
+    "inc_against_wave": false,
+    "n": 24,
+    "mean_resid_toward_wave": 3.39
+   },
+   {
+    "band": "(-24.0, -16.0]",
+    "inc_against_wave": true,
+    "n": 175,
+    "mean_resid_toward_wave": 0.32
+   },
+   {
+    "band": "(-4.0, 4.0]",
+    "inc_against_wave": false,
+    "n": 98,
+    "mean_resid_toward_wave": 2.23
+   },
+   {
+    "band": "(-4.0, 4.0]",
+    "inc_against_wave": true,
+    "n": 78,
+    "mean_resid_toward_wave": 1.91
+   },
+   {
+    "band": "(-80.0, -24.0]",
+    "inc_against_wave": false,
+    "n": 56,
+    "mean_resid_toward_wave": -1.05
+   },
+   {
+    "band": "(-80.0, -24.0]",
+    "inc_against_wave": true,
+    "n": 345,
+    "mean_resid_toward_wave": -0.8
+   },
+   {
+    "band": "(16.0, 80.0]",
+    "inc_against_wave": false,
+    "n": 459,
+    "mean_resid_toward_wave": -1.17
+   },
+   {
+    "band": "(16.0, 80.0]",
+    "inc_against_wave": true,
+    "n": 14,
+    "mean_resid_toward_wave": -11.07
+   },
+   {
+    "band": "(4.0, 16.0]",
+    "inc_against_wave": false,
+    "n": 238,
+    "mean_resid_toward_wave": 0.83
+   },
+   {
+    "band": "(4.0, 16.0]",
+    "inc_against_wave": true,
+    "n": 46,
+    "mean_resid_toward_wave": -1.61
+   }
+  ],
+  "note": "lean x cycle is already removed, so the wave rows show departures from a linear swing; lean_vs_wave < 0 = the district leans against the wave (margin units, 2*PVI)"
+ },
+ "test_offices": {
+  "Sen-G": {
+   "n": 232,
+   "corr_house_shock_vs_result_resid": 0.22050559336149225,
+   "corr_house_shock_vs_poll_miss": 0.16582948423586027,
+   "house_shock_per_point_of_result_resid": 0.08195248938175796,
+   "se": 0.022294949127725915
+  },
+  "Gov-G": {
+   "n": 173,
+   "corr_house_shock_vs_result_resid": 0.08795127977207166,
+   "corr_house_shock_vs_poll_miss": 0.13630747799475532,
+   "house_shock_per_point_of_result_resid": 0.03722707187947928,
+   "se": 0.019394793145091026
+  },
+  "note": "result_resid: the race's result against lean + cycle + region (no polls). poll_miss: result minus the final poll average. If the House shock tracks result_resid but not poll_miss, the statewide race's polls already saw the state's shift, and could inform its House districts."
+ },
+ "test_persist": {
+  "corr_all": 0.37222851074846064,
+  "n_pairs": 362,
+  "corr_same_map": 0.39077538839303283,
+  "n_same_map": 273,
+  "corr_across_redraw": 0.2805391420239503,
+  "n_across_redraw": 89,
+  "loyo_mse_reduction": 0.1780755481106292,
+  "k_all": 0.39819344391498335
+ },
+ "sim_2026": {
+  "actual_states_with_3plus_upsets": 2,
+  "actual_upsets_by_state": {
+   "NC": 4,
+   "OH": 2,
+   "PA": 2,
+   "TX": 3,
+   "WI": 2
+  },
+  "runs": [
+   {
+    "environment": "as forecast",
+    "state_sd": 0.0,
+    "house_d_p10": 224.0,
+    "house_d_p90": 252.0,
+    "brier_called": 0.11472788041107383,
+    "p_NC_d_at_least_6_of_7": 0.001325,
+    "p_OH_d_at_least_6_of_8": 0.08465,
+    "p_TX_d_at_least_6_of_23": 0.1751,
+    "mean_states_with_3plus_upsets": 1.4767
+   },
+   {
+    "environment": "as forecast",
+    "state_sd": 3.3,
+    "house_d_p10": 224.0,
+    "house_d_p90": 253.0,
+    "brier_called": 0.11461225851090605,
+    "p_NC_d_at_least_6_of_7": 0.003825,
+    "p_OH_d_at_least_6_of_8": 0.15935,
+    "p_TX_d_at_least_6_of_23": 0.2281,
+    "mean_states_with_3plus_upsets": 1.58215
+   },
+   {
+    "environment": "as forecast",
+    "state_sd": 5.0,
+    "house_d_p10": 223.0,
+    "house_d_p90": 254.0,
+    "brier_called": 0.11451049828439598,
+    "p_NC_d_at_least_6_of_7": 0.0135,
+    "p_OH_d_at_least_6_of_8": 0.23775,
+    "p_TX_d_at_least_6_of_23": 0.253475,
+    "mean_states_with_3plus_upsets": 1.7304
+   },
+   {
+    "environment": "fixed at D+15",
+    "state_sd": 0.0,
+    "house_d_p10": 249.0,
+    "house_d_p90": 268.0,
+    "brier_called": 0.07881758334312082,
+    "p_NC_d_at_least_6_of_7": 0.001475,
+    "p_OH_d_at_least_6_of_8": 0.3933,
+    "p_TX_d_at_least_6_of_23": 0.64065,
+    "mean_states_with_3plus_upsets": 2.40955
+   },
+   {
+    "environment": "fixed at D+15",
+    "state_sd": 3.3,
+    "house_d_p10": 248.0,
+    "house_d_p90": 270.0,
+    "brier_called": 0.08028075236157718,
+    "p_NC_d_at_least_6_of_7": 0.017175,
+    "p_OH_d_at_least_6_of_8": 0.442125,
+    "p_TX_d_at_least_6_of_23": 0.567,
+    "mean_states_with_3plus_upsets": 2.4122
+   },
+   {
+    "environment": "fixed at D+15",
+    "state_sd": 5.0,
+    "house_d_p10": 247.0,
+    "house_d_p90": 272.0,
+    "brier_called": 0.0820493874580537,
+    "p_NC_d_at_least_6_of_7": 0.050925,
+    "p_OH_d_at_least_6_of_8": 0.498425,
+    "p_TX_d_at_least_6_of_23": 0.517275,
+    "mean_states_with_3plus_upsets": 2.46555
+   }
+  ],
+  "note": "P+F House. The state shock is carved out of each district's race-level variance, so single-race probabilities (and Brier) barely move; what changes is how districts in one state move together."
+ }
+}

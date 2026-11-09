@@ -1,0 +1,548 @@
+{
+ "question": "How unusual was 2026, and how are Senate and House errors linked historically?",
+ "extreme_environment": {
+  "midterms": [
+   {
+    "year": 1974,
+    "pres_party": "R",
+    "approval": 48.71,
+    "prev": -5.4,
+    "outcome": -17.11,
+    "change_vs_prev": -11.71
+   },
+   {
+    "year": 1958,
+    "pres_party": "R",
+    "approval": 55.67,
+    "prev": -2.5,
+    "outcome": -12.45,
+    "change_vs_prev": -9.95
+   },
+   {
+    "year": 1982,
+    "pres_party": "R",
+    "approval": 41.67,
+    "prev": -2.75,
+    "outcome": -11.97,
+    "change_vs_prev": -9.22
+   },
+   {
+    "year": 1986,
+    "pres_party": "R",
+    "approval": 62.0,
+    "prev": -5.15,
+    "outcome": -10.03,
+    "change_vs_prev": -4.88
+   },
+   {
+    "year": 1970,
+    "pres_party": "R",
+    "approval": 55.2,
+    "prev": -1.72,
+    "outcome": -8.83,
+    "change_vs_prev": -7.11
+   },
+   {
+    "year": 2018,
+    "pres_party": "R",
+    "approval": 41.25,
+    "prev": 1.05,
+    "outcome": -8.76,
+    "change_vs_prev": -9.8
+   },
+   {
+    "year": 1946,
+    "pres_party": "D",
+    "approval": 33.0,
+    "prev": NaN,
+    "outcome": -8.63,
+    "change_vs_prev": NaN
+   },
+   {
+    "year": 2006,
+    "pres_party": "R",
+    "approval": 38.89,
+    "prev": 2.7,
+    "outcome": -8.28,
+    "change_vs_prev": -10.98
+   },
+   {
+    "year": 1990,
+    "pres_party": "R",
+    "approval": 67.0,
+    "prev": -7.79,
+    "outcome": -8.09,
+    "change_vs_prev": -0.31
+   },
+   {
+    "year": 1994,
+    "pres_party": "D",
+    "approval": 42.11,
+    "prev": 5.25,
+    "outcome": -7.07,
+    "change_vs_prev": -12.32
+   },
+   {
+    "year": 2010,
+    "pres_party": "D",
+    "approval": 44.88,
+    "prev": 11.02,
+    "outcome": -7.04,
+    "change_vs_prev": -18.06
+   },
+   {
+    "year": 2014,
+    "pres_party": "D",
+    "approval": 41.73,
+    "prev": 1.14,
+    "outcome": -5.89,
+    "change_vs_prev": -7.03
+   },
+   {
+    "year": 1954,
+    "pres_party": "R",
+    "approval": 66.4,
+    "prev": -0.5,
+    "outcome": -5.53,
+    "change_vs_prev": -5.02
+   },
+   {
+    "year": 2022,
+    "pres_party": "D",
+    "approval": 41.0,
+    "prev": 3.18,
+    "outcome": -2.77,
+    "change_vs_prev": -5.95
+   },
+   {
+    "year": 1998,
+    "pres_party": "D",
+    "approval": 64.0,
+    "prev": 0.07,
+    "outcome": -1.15,
+    "change_vs_prev": -1.22
+   },
+   {
+    "year": 1950,
+    "pres_party": "D",
+    "approval": 39.29,
+    "prev": 7.35,
+    "outcome": 0.71,
+    "change_vs_prev": -6.64
+   },
+   {
+    "year": 1966,
+    "pres_party": "D",
+    "approval": 46.4,
+    "prev": 14.77,
+    "outcome": 2.72,
+    "change_vs_prev": -12.05
+   },
+   {
+    "year": 2002,
+    "pres_party": "R",
+    "approval": 67.23,
+    "prev": 0.53,
+    "outcome": 5.04,
+    "change_vs_prev": 4.51
+   },
+   {
+    "year": 1962,
+    "pres_party": "D",
+    "approval": 64.25,
+    "prev": 10.04,
+    "outcome": 5.33,
+    "change_vs_prev": -4.71
+   },
+   {
+    "year": 1978,
+    "pres_party": "D",
+    "approval": 43.12,
+    "prev": 13.85,
+    "outcome": 9.04,
+    "change_vs_prev": -4.81
+   },
+   {
+    "year": 2026,
+    "pres_party": "R",
+    "approval": 35.58,
+    "prev": 2.68,
+    "outcome": NaN,
+    "change_vs_prev": NaN
+   }
+  ],
+  "training_years": [
+   1962,
+   1970,
+   1974,
+   1978,
+   1982,
+   1986,
+   1990,
+   1994,
+   1998,
+   2002,
+   2006,
+   2010,
+   2014,
+   2018,
+   2022
+  ],
+  "range_check_2026": {
+   "approval": {
+    "min": 38.888888888888886,
+    "max": 67.23076923076923,
+    "2026": 35.57929661036673
+   },
+   "prev": {
+    "min": -7.785642062689581,
+    "max": 13.849287169042771,
+    "2026": 2.680412371134014
+   },
+   "infl": {
+    "min": 1.143682658159273,
+    "max": 11.946902654867241,
+    "2026": 3.737684729064039
+   },
+   "gas": {
+    "min": -29.521322588455025,
+    "max": 25.518854136217485,
+    "2026": 29.33556036727307
+   },
+   "rdi": {
+    "min": -2.657619451512583,
+    "max": 4.862862301920856,
+    "2026": 0.7092865743528076
+   },
+   "unemp": {
+    "min": -1.2999999999999998,
+    "max": 2.5,
+    "2026": -0.20000000000000018
+   },
+   "unemp_level": {
+    "min": 3.5,
+    "max": 10.1,
+    "2026": 4.2
+   }
+  },
+  "pred_2026_pres_party": -9.640040891183553,
+  "realized_2026_partial": {
+   "house_vote_margin": 12.83113026770012,
+   "ready": false,
+   "districts_with_counts": 153,
+   "of": 435
+  }
+ },
+ "chamber_coupling": {
+  "cycles": [
+   {
+    "cycle": 1998,
+    "generic_miss": -2.56,
+    "senate_miss": 4.08
+   },
+   {
+    "cycle": 2000,
+    "generic_miss": -2.94,
+    "senate_miss": 2.56
+   },
+   {
+    "cycle": 2002,
+    "generic_miss": -6.06,
+    "senate_miss": -1.4
+   },
+   {
+    "cycle": 2004,
+    "generic_miss": -5.52,
+    "senate_miss": -2.44
+   },
+   {
+    "cycle": 2006,
+    "generic_miss": -5.65,
+    "senate_miss": 2.45
+   },
+   {
+    "cycle": 2008,
+    "generic_miss": 1.07,
+    "senate_miss": 0.87
+   },
+   {
+    "cycle": 2010,
+    "generic_miss": -0.93,
+    "senate_miss": 2.03
+   },
+   {
+    "cycle": 2012,
+    "generic_miss": 0.13,
+    "senate_miss": 3.48
+   },
+   {
+    "cycle": 2014,
+    "generic_miss": -4.66,
+    "senate_miss": -3.29
+   },
+   {
+    "cycle": 2016,
+    "generic_miss": -5.58,
+    "senate_miss": -4.95
+   },
+   {
+    "cycle": 2018,
+    "generic_miss": 0.46,
+    "senate_miss": -1.58
+   },
+   {
+    "cycle": 2020,
+    "generic_miss": -4.73,
+    "senate_miss": -6.62
+   },
+   {
+    "cycle": 2022,
+    "generic_miss": -3.63,
+    "senate_miss": -2.27
+   }
+  ],
+  "all": {
+   "n": 13,
+   "corr": 0.4763632968370294,
+   "corr_95ci": [
+    -0.10118942351729066,
+    0.8137651802455862
+   ],
+   "slope_senate_on_generic": 0.6308007346959185
+  },
+  "midterms": {
+   "n": 7,
+   "corr": 0.12768067547121242,
+   "corr_95ci": [
+    -0.6919141316680193,
+    0.8034894884486679
+   ],
+   "slope_senate_on_generic": 0.1474378531073444
+  },
+  "model_assumed": {
+   "polls_only": {
+    "corr": 1.0,
+    "senate_per_point_of_house_env": 0.8291528507873109
+   },
+   "polls_fundamentals": {
+    "corr": 1.0,
+    "senate_per_point_of_house_env": 1.1057778223580301
+   },
+   "polls_fundamentals_biasadj": {
+    "corr": 1.0,
+    "senate_per_point_of_house_env": 1.4544289104310424
+   }
+  }
+ },
+ "approval_effects": {
+  "senate": {
+   "cycles": [
+    {
+     "cycle": 2002,
+     "n": 27,
+     "senate_miss_toward_pres": 1.4,
+     "midterm": 1,
+     "approval": 67.23,
+     "generic_miss_toward_pres": 6.06
+    },
+    {
+     "cycle": 2004,
+     "n": 27,
+     "senate_miss_toward_pres": 2.44,
+     "midterm": 0,
+     "approval": 50.0,
+     "generic_miss_toward_pres": 5.52
+    },
+    {
+     "cycle": 2006,
+     "n": 28,
+     "senate_miss_toward_pres": -2.45,
+     "midterm": 1,
+     "approval": 38.89,
+     "generic_miss_toward_pres": 5.65
+    },
+    {
+     "cycle": 2008,
+     "n": 34,
+     "senate_miss_toward_pres": -0.87,
+     "midterm": 0,
+     "approval": 29.56,
+     "generic_miss_toward_pres": -1.07
+    },
+    {
+     "cycle": 2010,
+     "n": 36,
+     "senate_miss_toward_pres": 2.03,
+     "midterm": 1,
+     "approval": 44.88,
+     "generic_miss_toward_pres": -0.93
+    },
+    {
+     "cycle": 2012,
+     "n": 28,
+     "senate_miss_toward_pres": 3.48,
+     "midterm": 0,
+     "approval": 47.62,
+     "generic_miss_toward_pres": 0.13
+    },
+    {
+     "cycle": 2014,
+     "n": 27,
+     "senate_miss_toward_pres": -3.56,
+     "midterm": 1,
+     "approval": 41.73,
+     "generic_miss_toward_pres": -4.66
+    },
+    {
+     "cycle": 2016,
+     "n": 28,
+     "senate_miss_toward_pres": -4.47,
+     "midterm": 0,
+     "approval": 52.06,
+     "generic_miss_toward_pres": -5.58
+    },
+    {
+     "cycle": 2018,
+     "n": 32,
+     "senate_miss_toward_pres": 1.58,
+     "midterm": 1,
+     "approval": 41.25,
+     "generic_miss_toward_pres": -0.46
+    },
+    {
+     "cycle": 2020,
+     "n": 32,
+     "senate_miss_toward_pres": 6.62,
+     "midterm": 0,
+     "approval": 43.33,
+     "generic_miss_toward_pres": 4.73
+    },
+    {
+     "cycle": 2022,
+     "n": 29,
+     "senate_miss_toward_pres": -2.27,
+     "midterm": 1,
+     "approval": 41.0,
+     "generic_miss_toward_pres": -3.63
+    }
+   ],
+   "all": {
+    "n": 11,
+    "corr_approval_vs_senate_miss": 0.1630476026870829,
+    "corr_approval_vs_senate_minus_generic": -0.2229909744082354
+   },
+   "midterms": {
+    "n": 6,
+    "corr_approval_vs_senate_miss": 0.4804522476816865,
+    "corr_approval_vs_senate_minus_generic": -0.28174553370105776
+   }
+  },
+  "house_incumbency": {
+   "cycles": [
+    {
+     "year": 2006,
+     "midterm": true,
+     "approval": 38.89,
+     "n": 364,
+     "inc_premium_pres_party": 20.59,
+     "inc_premium_out_party": 19.53,
+     "gap": 1.06,
+     "gap_se": 3.39
+    },
+    {
+     "year": 2008,
+     "midterm": false,
+     "approval": 29.56,
+     "n": 365,
+     "inc_premium_pres_party": 17.35,
+     "inc_premium_out_party": 19.69,
+     "gap": -2.34,
+     "gap_se": 3.36
+    },
+    {
+     "year": 2010,
+     "midterm": true,
+     "approval": 44.88,
+     "n": 395,
+     "inc_premium_pres_party": 10.71,
+     "inc_premium_out_party": 13.6,
+     "gap": -2.89,
+     "gap_se": 2.2
+    },
+    {
+     "year": 2012,
+     "midterm": false,
+     "approval": 47.62,
+     "n": 377,
+     "inc_premium_pres_party": 7.92,
+     "inc_premium_out_party": 10.09,
+     "gap": -2.17,
+     "gap_se": 2.11
+    },
+    {
+     "year": 2014,
+     "midterm": true,
+     "approval": 41.73,
+     "n": 346,
+     "inc_premium_pres_party": 9.71,
+     "inc_premium_out_party": 10.09,
+     "gap": -0.38,
+     "gap_se": 2.52
+    },
+    {
+     "year": 2016,
+     "midterm": false,
+     "approval": 52.06,
+     "n": 359,
+     "inc_premium_pres_party": 13.98,
+     "inc_premium_out_party": 8.4,
+     "gap": 5.58,
+     "gap_se": 2.38
+    },
+    {
+     "year": 2018,
+     "midterm": true,
+     "approval": 41.25,
+     "n": 381,
+     "inc_premium_pres_party": 5.01,
+     "inc_premium_out_party": 2.33,
+     "gap": 2.69,
+     "gap_se": 1.59
+    },
+    {
+     "year": 2020,
+     "midterm": false,
+     "approval": 43.33,
+     "n": 395,
+     "inc_premium_pres_party": 6.97,
+     "inc_premium_out_party": 5.24,
+     "gap": 1.74,
+     "gap_se": 1.69
+    },
+    {
+     "year": 2022,
+     "midterm": true,
+     "approval": 41.0,
+     "n": 386,
+     "inc_premium_pres_party": 3.49,
+     "inc_premium_out_party": 3.99,
+     "gap": -0.51,
+     "gap_se": 1.29
+    },
+    {
+     "year": 2024,
+     "midterm": false,
+     "approval": NaN,
+     "n": 384,
+     "inc_premium_pres_party": 3.62,
+     "inc_premium_out_party": 5.29,
+     "gap": -1.68,
+     "gap_se": 1.33
+    }
+   ],
+   "midterms_corr_approval_vs_gap": -0.7310295159823389,
+   "n_midterms": 5,
+   "note": "every 2006-2022 midterm had approval 38.9-44.9: no popular-president midterm in this data"
+  }
+ }
+}
