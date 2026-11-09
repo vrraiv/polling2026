@@ -150,3 +150,36 @@ started. `run_all.py` refuses to run after 23:00 UTC Nov 3 (polls closing; Wikip
   for close races; MEDSL later.
 - Publish as a "Scorecard" tab on the site.
 - Also score the off-site pocket scenarios in `data/final/pocket/` (not published): `pocket_senate_wide_shift` (the dropped -1.56 Senate-wide shift on top of Bias-adjusted) and `pocket_full_historical_bias` (full -2.93 on all polls). Did dropping the Senate-wide shift help or hurt?
+
+## After the scorecard: post-mortem, model rework, governors, special elections (added Nov 8, 2026)
+
+Target: the reworked model ready before Christmas 2026, so a special election can be forecast whenever one is called.
+
+**1. Finish the scorecard.** Counting and certification run into December (California certifies last). The
+post-mortem's 2026 numbers are provisional until then.
+
+**2. Post-mortem analyses** (`src/postmortem/`, outputs in `data/postmortem/`; questions, methods and findings so far
+in `src/postmortem/README.md`). Two planned site pages once the scorecard is final: a 2026 post-mortem and a
+historical data exploration. Deferred until counting ends, so 2026 is included: extend the House history to
+1998/2002 (popular-president midterms) and 2026; code each state's map type by cycle.
+
+**3. Model rework** (candidate changes in `src/postmortem/README.md`): a state-level shared House error plus a
+carried-forward state intercept; Senate and House national errors correlated well below 1; a wave nonlinearity
+(competitive and modestly-opposed districts swing more; incumbents of the party the wave runs against are protected
+less); a wider national SD when fundamentals inputs leave their training range. Each is estimated and backtested on
+2006-2024 first, with 2026 added as a held-out check once final, so the work doesn't wait for certification.
+Upgrades follow README "Upgrading packages or Python" (branch, `check_frozen.py` against the frozen forecast).
+
+**4. Governors (next cycle).** Backtest once 2026 is final; a limited mock can start earlier. Already in hand: 558
+governor polls in the Nov 3 VoteHub snapshot, governor polling misses for 13 cycles (305 races) in
+`data/final/calibration.json`, and governor races 1998-2022 in the state-economy analysis. Open data questions:
+2026 governor results (the scorecard collects Senate and House only), nominees, incumbents and term limits; whether
+the poll-vs-prior weight (`prior_weight.py`, Senate 0.87) holds for governors, whose races are less nationalized;
+whether state economic conditions matter more than for Senate races; how governor errors correlate with the same
+state's Senate and House errors (the state-error test found r = 0.09 for governor results vs House).
+
+**5. Special elections.** Infrastructure to forecast one House, Senate or governor race on its own schedule. Needs:
+the single-race path through the reworked model (environment, lean, incumbency, polls, error layers) without a
+national seat simulation; a history of special-election results against lean, since specials have run well ahead of
+the national environment for the out-party; and an environment estimate for an off-cycle date (generic ballot,
+approval, recent specials).
