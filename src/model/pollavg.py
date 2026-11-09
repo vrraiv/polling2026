@@ -3,6 +3,7 @@
 All margins are TWO-PARTY D-R margins in points: 100*(D-R)/(D+R).
 For Nebraska the independent (Osborn) is treated as the anti-R candidate.
 """
+import difflib
 import json
 import re
 import sys
@@ -153,6 +154,47 @@ def senate(polls, races, since="2026-06-15", half_life=None):
         if res:
             out[r["race_key"]] = res
     return out
+
+
+def statewide(polls, races, poll_type, since, half_life=None, year=2026):
+    """Statewide head-to-head averages for any poll type (governor, ...); senate() above is the frozen original.
+    races: race_key, state_name, dem_nominee, rep_nominee. A nominee cell may list several candidates (Alaska's
+    top-four ballot): the one with the highest mean share in the race's polls is used for that side."""
+    out = {}
+    for _, r in races.iterrows():
+        if not isinstance(r["dem_nominee"], str) or not isinstance(r["rep_nominee"], str):
+            continue
+        rel = [x for x in polls if x["poll_type"] == poll_type and x["subject"] == f"{year} {r['state_name']}"
+               and x["end"] >= pd.Timestamp(since) and len(x["answers"]) >= 2]
+
+        def pick(cell):
+            names = [lastname(n) for n in cell.split(",")]
+            if len(names) == 1:
+                return names[0]
+            share = {n: [y["pct"] for x in rel for y in x["answers"] if lastname(y["choice"]) == n] for n in names}
+            return max(names, key=lambda n: np.mean(share[n]) if share[n] else -1)
+        dl, rl = pick(r["dem_nominee"]), pick(r["rep_nominee"])
+
+        def find(a, key):
+            # exact surname, else one close spelling (VoteHub has "Maura Healy" for Healey in some MA polls)
+            if key in a:
+                return a[key]
+            close = difflib.get_close_matches(key, list(a), n=2, cutoff=0.8)
+            return a[close[0]] if len(close) == 1 else None
+        rows = []
+        for x in rel:
+            a = {lastname(y["choice"]): y["pct"] for y in x["answers"]}
+            d_, r_ = find(a, dl), find(a, rl)
+            if d_ is not None and r_ is not None:
+                rows.append((x, two_party(d_, r_)))
+        res = weighted_avg(rows, half_life)
+        if res:
+            out[r["race_key"]] = dict(res, dem=dl, rep=rl)
+    return out
+
+
+def governor(polls, races, since="2026-06-15", half_life=None):
+    return statewide(polls, races, "governor", since, half_life)
 
 
 def house(polls, races, since="2026-07-01", half_life=None):

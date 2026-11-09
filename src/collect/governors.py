@@ -15,7 +15,7 @@
 Pages are fetched through the MediaWiki action API (with their revision ids, kept in every output row) and cached in
 data/raw/wikipedia_hist/<date>/ (the yearly House pages live there too). A cached page is reused; delete it to refetch.
 
-Run:  python src/collect/governors.py [history|pres|2026|all]   (default all; fetches what isn't cached, then parses)
+Run:  python src/collect/governors.py [history|pres|2026|polls|dataset|all]   (default all; fetches what isn't cached)
       python src/collect/governors.py check                     validation report on the parsed files
 """
 import json
@@ -120,7 +120,7 @@ def parse_candidates(text):
         m = re.search(r"([^()]+?)\s*((?:\([^()]+\)\s*)+)(\d+(?:\.\d+)?)?\s*$", ch)
         if not m:
             continue
-        name = re.sub(r"^(?:[\d.\s]+|Others?\s+|Write-?ins?\s+|Replacement candidates?\s+)+", "", m.group(1)).strip(" ,;")
+        name = re.sub(r"^(?:[\d.\s]+|Others?\s+|Write-?ins?\s+|Replacement candidates?\s+|Instant runoff:\s*|First round:\s*)+", "", m.group(1)).strip(" ,;")
         parties = re.findall(r"\(([^()]+)\)", m.group(2))
         codes = [party_code(x.strip()) for p in parties for x in re.split(r"[/,]", p)]   # "Progressive/Democratic" counts as D
         code = "D" if "D" in codes else "R" if "R" in codes else codes[0]
@@ -305,7 +305,7 @@ def poll_averages():
     g = g.sort_values("n_polls").drop_duplicates(["cycle", "location"], keep="last")    # specials: keep the main race
     g = g.rename(columns={"cycle": "year", "location": "state"})[["year", "state", "poll_avg", "n_polls"]]
     g["poll_source"] = "538 raw_polls"
-    return pd.concat([g, votehub_2025()], ignore_index=True)
+    return pd.concat([g, votehub_2025(), wiki_averages()], ignore_index=True)
 
 
 ELECTION_2025 = pd.Timestamp("2025-11-04")
@@ -374,6 +374,86 @@ def dataset():
     return h[cols]
 
 
+ELECTION_DATES = {2022: {"*": "2022-11-08"}, 2023: {"*": "2023-11-07", "LA": "2023-10-14"}, 2024: {"*": "2024-11-05"}}
+WIKI_POLL_YEARS = (2023, 2024)      # no 538 or VoteHub coverage; 2022 is collected too, to validate against 538
+
+
+def polls_wiki(years=WIKI_POLL_YEARS + (2022,), states_2022=None):
+    """General-election polls from each race's Wikipedia page ("YYYY <State> gubernatorial election"), for years
+    without 538 or VoteHub coverage. Same rule as 538's archive: polls ending in the final 21 days, two-party margin
+    between the nominees (columns matched by last name). Louisiana's deciding round is the October all-party primary,
+    so its primary tables count. Hypothetical match-ups are skipped.
+    -> data/interim/governor_polls_wiki.csv (one row per poll)"""
+    from bs4 import BeautifulSoup  # noqa: E402
+    from results import grid, header_labels, text  # noqa: E402
+    from results_margins import section_headings  # noqa: E402
+    from wiki_polls import headings_before, lastname, parse_dates, pct  # noqa: E402
+    h = pd.read_csv(INTERIM / "governor_history.csv")
+    rows = []
+    for y in years:
+        races = h[(h.year == y) & h.contested.astype(bool) & ~h.recall.astype(bool)]
+        if y == 2022:
+            races = races[races.state.isin(states_2022 or [])]
+        for _, r in races.iterrows():
+            name = next(k for k, v in STATE_ABBR.items() if v == r.state)
+            title = f"{y}_{name.replace(' ', '_')}_gubernatorial_election"
+            try:
+                html, rev = get_page(title)
+            except RuntimeError as e:
+                print(f"  {title}: {e}")
+                continue
+            eday = pd.Timestamp(ELECTION_DATES[y].get(r.state, ELECTION_DATES[y]["*"]))
+            dl, rl = lastname(r.dem_cand), lastname(r.rep_cand)
+            n0 = len(rows)
+            for tb in BeautifulSoup(html, "lxml").find_all("table"):
+                g = grid(tb)
+                labels, nh = header_labels(g)
+                if not any("Poll source" in l for l in labels):
+                    continue
+                secs = section_headings(tb) or headings_before(tb)
+                if any(re.search(r"hypothetical", s, re.I) for s in secs):
+                    continue
+                if r.state != "LA" and (not any(re.match(r"general election", s, re.I) for s in secs)
+                                        or any(re.search(r"primary|runoff", s, re.I) for s in secs)):
+                    continue
+                ln = [lastname(l) for l in labels]
+                if dl not in ln or rl not in ln:
+                    continue
+                dcol, rcol = ln.index(dl), ln.index(rl)
+                jsrc = next(j for j, l in enumerate(labels) if "Poll source" in l)
+                jdate = next((j for j, l in enumerate(labels) if "Date" in l), None)
+                for row in g[nh:]:
+                    if len(row) <= max(jsrc, dcol, rcol) or row[jsrc] is None or jdate is None:
+                        continue
+                    src = text(row[jsrc])
+                    if not src or row[jsrc] is row[dcol]:
+                        continue
+                    _, end = parse_dates(text(row[jdate]))
+                    d_, r_ = pct(text(row[dcol])), pct(text(row[rcol]))
+                    if end is None or not (np.isfinite(d_) and np.isfinite(r_)) or d_ + r_ <= 0:
+                        continue
+                    if not (eday - pd.Timedelta(days=21) <= pd.Timestamp(end) <= eday):
+                        continue
+                    rows.append({"year": y, "state": r.state, "pollster": src, "end": str(end), "d": d_, "r": r_,
+                                 "margin_2p": 100 * (d_ - r_) / (d_ + r_), "page": title, "revision": rev})
+            print(f"  {y} {r.state}: {len(rows) - n0} polls in the final 21 days")
+    df = pd.DataFrame(rows).drop_duplicates(["year", "state", "pollster", "end", "d", "r"])
+    df.to_csv(INTERIM / "governor_polls_wiki.csv", index=False)
+    print(f"governor_polls_wiki.csv: {len(df)} polls")
+    return df
+
+
+def wiki_averages(years=WIKI_POLL_YEARS):
+    p = INTERIM / "governor_polls_wiki.csv"
+    if not p.exists():
+        return pd.DataFrame(columns=["year", "state", "poll_avg", "n_polls", "poll_source"])
+    w = pd.read_csv(p)
+    w = w[w.year.isin(years)]
+    g = w.groupby(["year", "state"]).agg(poll_avg=("margin_2p", "mean"), n_polls=("margin_2p", "size")).reset_index()
+    g["poll_source"] = "Wikipedia race pages"
+    return g
+
+
 def check():
     """Validation report: counts by year, parse gaps, and margins against the 538 polled-race actuals."""
     h = pd.read_csv(INTERIM / "governor_history.csv")
@@ -408,5 +488,8 @@ if __name__ == "__main__":
             pres()
         if what in ("2026", "all"):
             races_2026()
+        if what in ("polls", "all"):
+            # 2022: the competitive races, to compare these Wikipedia averages with 538's for the same races
+            polls_wiki(states_2022=["AZ", "GA", "KS", "MI", "MN", "NV", "NY", "OR", "PA", "WI", "TX", "OK", "NM", "ME"])
         if what in ("dataset", "all"):
             dataset()

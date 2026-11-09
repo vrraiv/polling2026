@@ -1,0 +1,2576 @@
+{
+ "scores": {
+  "all": {
+   "one_factor": {
+    "n": 353,
+    "brier": 0.0771437203009915,
+    "log_loss": 0.24436734890606537,
+    "accuracy": 0.9008498583569405,
+    "mae_margin": 5.989145850988708,
+    "calibration": [
+     {
+      "bin": "(-0.001, 0.1]",
+      "n": 133,
+      "forecast": 0.021546804511278196,
+      "d_won": 0.022556390977443608
+     },
+     {
+      "bin": "(0.1, 0.3]",
+      "n": 32,
+      "forecast": 0.1733546875,
+      "d_won": 0.21875
+     },
+     {
+      "bin": "(0.3, 0.5]",
+      "n": 23,
+      "forecast": 0.4240891304347826,
+      "d_won": 0.17391304347826086
+     },
+     {
+      "bin": "(0.5, 0.7]",
+      "n": 29,
+      "forecast": 0.588398275862069,
+      "d_won": 0.6206896551724138
+     },
+     {
+      "bin": "(0.7, 0.9]",
+      "n": 35,
+      "forecast": 0.8084828571428571,
+      "d_won": 0.7428571428571429
+     },
+     {
+      "bin": "(0.9, 1.0]",
+      "n": 101,
+      "forecast": 0.9733537128712869,
+      "d_won": 0.9900990099009901
+     }
+    ],
+    "count_in_80pct": 1.0,
+    "count_pit": [
+     0.891,
+     0.822,
+     0.627,
+     0.54,
+     0.161,
+     0.61,
+     0.257,
+     0.701,
+     0.226,
+     0.214,
+     0.776,
+     0.27,
+     0.711,
+     0.476,
+     0.84,
+     0.549,
+     0.216,
+     0.208,
+     0.148,
+     0.579,
+     0.308,
+     0.622,
+     0.397,
+     0.263,
+     0.717,
+     0.541,
+     0.398,
+     0.568
+    ],
+    "competitive_brier": 0.1971975043067227
+   },
+   "polls_only": {
+    "n": 353,
+    "brier": 0.0794170275371813,
+    "log_loss": 0.2520820833447427,
+    "accuracy": 0.8838526912181303,
+    "mae_margin": 6.146672605984026,
+    "calibration": [
+     {
+      "bin": "(-0.001, 0.1]",
+      "n": 131,
+      "forecast": 0.02174618320610687,
+      "d_won": 0.022900763358778626
+     },
+     {
+      "bin": "(0.1, 0.3]",
+      "n": 31,
+      "forecast": 0.18507419354838708,
+      "d_won": 0.1935483870967742
+     },
+     {
+      "bin": "(0.3, 0.5]",
+      "n": 20,
+      "forecast": 0.38333000000000006,
+      "d_won": 0.25
+     },
+     {
+      "bin": "(0.5, 0.7]",
+      "n": 33,
+      "forecast": 0.5860424242424243,
+      "d_won": 0.5454545454545454
+     },
+     {
+      "bin": "(0.7, 0.9]",
+      "n": 41,
+      "forecast": 0.8117853658536586,
+      "d_won": 0.7317073170731707
+     },
+     {
+      "bin": "(0.9, 1.0]",
+      "n": 97,
+      "forecast": 0.9736461340206185,
+      "d_won": 0.9896907216494846
+     }
+    ],
+    "count_in_80pct": 1.0,
+    "count_pit": [
+     0.89,
+     0.807,
+     0.567,
+     0.538,
+     0.145,
+     0.617,
+     0.237,
+     0.725,
+     0.21,
+     0.212,
+     0.8,
+     0.311,
+     0.735,
+     0.465,
+     0.835,
+     0.531,
+     0.205,
+     0.135,
+     0.126,
+     0.594,
+     0.294,
+     0.525,
+     0.389,
+     0.228,
+     0.712,
+     0.382,
+     0.369,
+     0.582
+    ],
+    "competitive_brier": 0.19365811983
+   },
+   "prior_only": {
+    "n": 353,
+    "brier": 0.14365051556480168,
+    "log_loss": 0.449870954094843,
+    "accuracy": 0.8045325779036827,
+    "mae_margin": 11.683886422206584,
+    "calibration": [
+     {
+      "bin": "(-0.001, 0.1]",
+      "n": 99,
+      "forecast": 0.048800757575757574,
+      "d_won": 0.10101010101010101
+     },
+     {
+      "bin": "(0.1, 0.3]",
+      "n": 59,
+      "forecast": 0.18293347457627115,
+      "d_won": 0.1864406779661017
+     },
+     {
+      "bin": "(0.3, 0.5]",
+      "n": 44,
+      "forecast": 0.390252840909091,
+      "d_won": 0.38636363636363635
+     },
+     {
+      "bin": "(0.5, 0.7]",
+      "n": 47,
+      "forecast": 0.6090643617021277,
+      "d_won": 0.6595744680851063
+     },
+     {
+      "bin": "(0.7, 0.9]",
+      "n": 43,
+      "forecast": 0.8206499999999999,
+      "d_won": 0.6976744186046512
+     },
+     {
+      "bin": "(0.9, 1.0]",
+      "n": 61,
+      "forecast": 0.9413807377049181,
+      "d_won": 0.9672131147540983
+     }
+    ],
+    "count_in_80pct": 0.9642857142857143,
+    "count_pit": [
+     0.472,
+     0.802,
+     0.93,
+     0.723,
+     0.505,
+     0.468,
+     0.423,
+     0.656,
+     0.313,
+     0.649,
+     0.856,
+     0.045,
+     0.388,
+     0.7,
+     0.824,
+     0.94,
+     0.244,
+     0.892,
+     0.381,
+     0.598,
+     0.353,
+     0.832,
+     0.138,
+     0.545,
+     0.728,
+     0.677,
+     0.6,
+     0.621
+    ],
+    "competitive_brier": 0.2056112099319948
+   },
+   "two_factor": {
+    "n": 353,
+    "brier": 0.0770891317634561,
+    "log_loss": 0.2440464815316422,
+    "accuracy": 0.9008498583569405,
+    "mae_margin": 5.989145850988708,
+    "calibration": [
+     {
+      "bin": "(-0.001, 0.1]",
+      "n": 134,
+      "forecast": 0.021203171641791044,
+      "d_won": 0.022388059701492536
+     },
+     {
+      "bin": "(0.1, 0.3]",
+      "n": 31,
+      "forecast": 0.1719540322580645,
+      "d_won": 0.22580645161290322
+     },
+     {
+      "bin": "(0.3, 0.5]",
+      "n": 21,
+      "forecast": 0.4150547619047619,
+      "d_won": 0.14285714285714285
+     },
+     {
+      "bin": "(0.5, 0.7]",
+      "n": 31,
+      "forecast": 0.5841129032258064,
+      "d_won": 0.6129032258064516
+     },
+     {
+      "bin": "(0.7, 0.9]",
+      "n": 34,
+      "forecast": 0.8098132352941176,
+      "d_won": 0.7352941176470589
+     },
+     {
+      "bin": "(0.9, 1.0]",
+      "n": 102,
+      "forecast": 0.9737745098039214,
+      "d_won": 0.9901960784313726
+     }
+    ],
+    "count_in_80pct": 1.0,
+    "count_pit": [
+     0.899,
+     0.826,
+     0.631,
+     0.539,
+     0.153,
+     0.613,
+     0.25,
+     0.7,
+     0.214,
+     0.214,
+     0.777,
+     0.27,
+     0.718,
+     0.477,
+     0.846,
+     0.548,
+     0.209,
+     0.207,
+     0.14,
+     0.578,
+     0.302,
+     0.624,
+     0.399,
+     0.261,
+     0.725,
+     0.541,
+     0.395,
+     0.567
+    ],
+    "competitive_brier": 0.20029770912927353
+   }
+  },
+  "generic-ballot cycles (1998-2022)": {
+   "one_factor": {
+    "n": 307,
+    "brier": 0.07642983799267102,
+    "log_loss": 0.2424628030290066,
+    "accuracy": 0.9055374592833876,
+    "mae_margin": 5.689778977878648,
+    "calibration": [
+     {
+      "bin": "(-0.001, 0.1]",
+      "n": 121,
+      "forecast": 0.0203702479338843,
+      "d_won": 0.024793388429752067
+     },
+     {
+      "bin": "(0.1, 0.3]",
+      "n": 25,
+      "forecast": 0.17604299999999998,
+      "d_won": 0.2
+     },
+     {
+      "bin": "(0.3, 0.5]",
+      "n": 18,
+      "forecast": 0.41715,
+      "d_won": 0.16666666666666666
+     },
+     {
+      "bin": "(0.5, 0.7]",
+      "n": 23,
+      "forecast": 0.5862054347826087,
+      "d_won": 0.6521739130434783
+     },
+     {
+      "bin": "(0.7, 0.9]",
+      "n": 32,
+      "forecast": 0.8073476562499999,
+      "d_won": 0.71875
+     },
+     {
+      "bin": "(0.9, 1.0]",
+      "n": 88,
+      "forecast": 0.9750167613636364,
+      "d_won": 0.9886363636363636
+     }
+    ],
+    "count_in_80pct": 1.0,
+    "count_pit": [
+     0.891,
+     0.627,
+     0.161,
+     0.257,
+     0.226,
+     0.776,
+     0.711,
+     0.84,
+     0.216,
+     0.148,
+     0.308,
+     0.397,
+     0.717
+    ],
+    "competitive_brier": 0.2015555929017857
+   },
+   "polls_only": {
+    "n": 307,
+    "brier": 0.07846367864210099,
+    "log_loss": 0.24977377748571566,
+    "accuracy": 0.8859934853420195,
+    "mae_margin": 5.8471267656031065,
+    "calibration": [
+     {
+      "bin": "(-0.001, 0.1]",
+      "n": 118,
+      "forecast": 0.01970423728813559,
+      "d_won": 0.025423728813559324
+     },
+     {
+      "bin": "(0.1, 0.3]",
+      "n": 27,
+      "forecast": 0.18584814814814815,
+      "d_won": 0.18518518518518517
+     },
+     {
+      "bin": "(0.3, 0.5]",
+      "n": 15,
+      "forecast": 0.3832966666666667,
+      "d_won": 0.26666666666666666
+     },
+     {
+      "bin": "(0.5, 0.7]",
+      "n": 26,
+      "forecast": 0.5817480769230768,
+      "d_won": 0.5384615384615384
+     },
+     {
+      "bin": "(0.7, 0.9]",
+      "n": 37,
+      "forecast": 0.8137067567567567,
+      "d_won": 0.7297297297297297
+     },
+     {
+      "bin": "(0.9, 1.0]",
+      "n": 84,
+      "forecast": 0.9748252976190476,
+      "d_won": 0.9880952380952381
+     }
+    ],
+    "count_in_80pct": 1.0,
+    "count_pit": [
+     0.89,
+     0.567,
+     0.145,
+     0.237,
+     0.21,
+     0.8,
+     0.735,
+     0.835,
+     0.205,
+     0.126,
+     0.294,
+     0.389,
+     0.712
+    ],
+    "competitive_brier": 0.19353908614285714
+   },
+   "prior_only": {
+    "n": 307,
+    "brier": 0.1385441114047231,
+    "log_loss": 0.43310594428847227,
+    "accuracy": 0.8110749185667753,
+    "mae_margin": 11.604865555995056,
+    "calibration": [
+     {
+      "bin": "(-0.001, 0.1]",
+      "n": 85,
+      "forecast": 0.048262352941176465,
+      "d_won": 0.08235294117647059
+     },
+     {
+      "bin": "(0.1, 0.3]",
+      "n": 48,
+      "forecast": 0.18010520833333332,
+      "d_won": 0.16666666666666666
+     },
+     {
+      "bin": "(0.3, 0.5]",
+      "n": 40,
+      "forecast": 0.38951250000000004,
+      "d_won": 0.375
+     },
+     {
+      "bin": "(0.5, 0.7]",
+      "n": 40,
+      "forecast": 0.6065175,
+      "d_won": 0.65
+     },
+     {
+      "bin": "(0.7, 0.9]",
+      "n": 35,
+      "forecast": 0.8169821428571429,
+      "d_won": 0.6571428571428571
+     },
+     {
+      "bin": "(0.9, 1.0]",
+      "n": 59,
+      "forecast": 0.9423911016949152,
+      "d_won": 0.9661016949152542
+     }
+    ],
+    "count_in_80pct": 1.0,
+    "count_pit": [
+     0.472,
+     0.93,
+     0.505,
+     0.423,
+     0.313,
+     0.856,
+     0.388,
+     0.824,
+     0.244,
+     0.381,
+     0.353,
+     0.138,
+     0.728
+    ],
+    "competitive_brier": 0.20956189853144172
+   },
+   "two_factor": {
+    "n": 307,
+    "brier": 0.07639071716612376,
+    "log_loss": 0.24226183591599693,
+    "accuracy": 0.9055374592833876,
+    "mae_margin": 5.689778977878648,
+    "calibration": [
+     {
+      "bin": "(-0.001, 0.1]",
+      "n": 121,
+      "forecast": 0.019502066115702484,
+      "d_won": 0.024793388429752067
+     },
+     {
+      "bin": "(0.1, 0.3]",
+      "n": 25,
+      "forecast": 0.17224899999999999,
+      "d_won": 0.2
+     },
+     {
+      "bin": "(0.3, 0.5]",
+      "n": 16,
+      "forecast": 0.4046453125,
+      "d_won": 0.125
+     },
+     {
+      "bin": "(0.5, 0.7]",
+      "n": 25,
+      "forecast": 0.5808469999999999,
+      "d_won": 0.64
+     },
+     {
+      "bin": "(0.7, 0.9]",
+      "n": 31,
+      "forecast": 0.808560483870968,
+      "d_won": 0.7096774193548387
+     },
+     {
+      "bin": "(0.9, 1.0]",
+      "n": 89,
+      "forecast": 0.9752994382022473,
+      "d_won": 0.9887640449438202
+     }
+    ],
+    "count_in_80pct": 1.0,
+    "count_pit": [
+     0.899,
+     0.631,
+     0.153,
+     0.25,
+     0.214,
+     0.777,
+     0.718,
+     0.846,
+     0.209,
+     0.14,
+     0.302,
+     0.399,
+     0.725
+    ],
+    "competitive_brier": 0.20344112887886595
+   }
+  },
+  "off-year cycles (estimator)": {
+   "one_factor": {
+    "n": 35,
+    "brier": 0.09479656132142857,
+    "log_loss": 0.2921867841131228,
+    "accuracy": 0.8285714285714286,
+    "mae_margin": 7.406864061400157,
+    "calibration": [
+     {
+      "bin": "(-0.001, 0.1]",
+      "n": 6,
+      "forecast": 0.03494166666666667,
+      "d_won": 0.0
+     },
+     {
+      "bin": "(0.1, 0.3]",
+      "n": 6,
+      "forecast": 0.17353333333333332,
+      "d_won": 0.3333333333333333
+     },
+     {
+      "bin": "(0.3, 0.5]",
+      "n": 4,
+      "forecast": 0.43643125,
+      "d_won": 0.25
+     },
+     {
+      "bin": "(0.5, 0.7]",
+      "n": 5,
+      "forecast": 0.6003700000000001,
+      "d_won": 0.4
+     },
+     {
+      "bin": "(0.7, 0.9]",
+      "n": 3,
+      "forecast": 0.8205916666666667,
+      "d_won": 1.0
+     },
+     {
+      "bin": "(0.9, 1.0]",
+      "n": 11,
+      "forecast": 0.9599000000000001,
+      "d_won": 1.0
+     }
+    ],
+    "count_in_80pct": 1.0,
+    "count_pit": [
+     0.822,
+     0.54,
+     0.61,
+     0.701,
+     0.214,
+     0.27,
+     0.476,
+     0.549,
+     0.208,
+     0.579,
+     0.622,
+     0.263,
+     0.541,
+     0.568
+    ],
+    "competitive_brier": 0.18200705340277779
+   },
+   "polls_only": {
+    "n": 35,
+    "brier": 0.09910700975,
+    "log_loss": 0.30370587051299314,
+    "accuracy": 0.8571428571428571,
+    "mae_margin": 7.934283915101646,
+    "calibration": [
+     {
+      "bin": "(-0.001, 0.1]",
+      "n": 7,
+      "forecast": 0.045839285714285714,
+      "d_won": 0.0
+     },
+     {
+      "bin": "(0.1, 0.3]",
+      "n": 3,
+      "forecast": 0.194775,
+      "d_won": 0.3333333333333333
+     },
+     {
+      "bin": "(0.3, 0.5]",
+      "n": 5,
+      "forecast": 0.38343000000000005,
+      "d_won": 0.2
+     },
+     {
+      "bin": "(0.5, 0.7]",
+      "n": 5,
+      "forecast": 0.62259,
+      "d_won": 0.6
+     },
+     {
+      "bin": "(0.7, 0.9]",
+      "n": 4,
+      "forecast": 0.7940125,
+      "d_won": 0.75
+     },
+     {
+      "bin": "(0.9, 1.0]",
+      "n": 11,
+      "forecast": 0.9635999999999999,
+      "d_won": 1.0
+     }
+    ],
+    "count_in_80pct": 1.0,
+    "count_pit": [
+     0.807,
+     0.538,
+     0.617,
+     0.725,
+     0.212,
+     0.311,
+     0.465,
+     0.531,
+     0.135,
+     0.594,
+     0.525,
+     0.228,
+     0.382,
+     0.582
+    ],
+    "competitive_brier": 0.2011874186397059
+   },
+   "prior_only": {
+    "n": 35,
+    "brier": 0.2030548054285714,
+    "log_loss": 0.6384922143336423,
+    "accuracy": 0.7142857142857143,
+    "mae_margin": 11.547922965110544,
+    "calibration": [
+     {
+      "bin": "(-0.001, 0.1]",
+      "n": 10,
+      "forecast": 0.0562525,
+      "d_won": 0.3
+     },
+     {
+      "bin": "(0.1, 0.3]",
+      "n": 8,
+      "forecast": 0.195171875,
+      "d_won": 0.375
+     },
+     {
+      "bin": "(0.3, 0.5]",
+      "n": 2,
+      "forecast": 0.42745,
+      "d_won": 0.5
+     },
+     {
+      "bin": "(0.5, 0.7]",
+      "n": 5,
+      "forecast": 0.6320950000000001,
+      "d_won": 0.6
+     },
+     {
+      "bin": "(0.7, 0.9]",
+      "n": 8,
+      "forecast": 0.8366968749999999,
+      "d_won": 0.875
+     },
+     {
+      "bin": "(0.9, 1.0]",
+      "n": 2,
+      "forecast": 0.911575,
+      "d_won": 1.0
+     }
+    ],
+    "count_in_80pct": 0.9285714285714286,
+    "count_pit": [
+     0.802,
+     0.723,
+     0.468,
+     0.656,
+     0.649,
+     0.045,
+     0.7,
+     0.94,
+     0.892,
+     0.598,
+     0.832,
+     0.545,
+     0.677,
+     0.621
+    ],
+    "competitive_brier": 0.19410147497282607
+   },
+   "two_factor": {
+    "n": 35,
+    "brier": 0.09468793578571429,
+    "log_loss": 0.29126876479127417,
+    "accuracy": 0.8285714285714286,
+    "mae_margin": 7.406864061400157,
+    "calibration": [
+     {
+      "bin": "(-0.001, 0.1]",
+      "n": 7,
+      "forecast": 0.04257142857142857,
+      "d_won": 0.0
+     },
+     {
+      "bin": "(0.1, 0.3]",
+      "n": 5,
+      "forecast": 0.18479999999999996,
+      "d_won": 0.4
+     },
+     {
+      "bin": "(0.3, 0.5]",
+      "n": 4,
+      "forecast": 0.43563125,
+      "d_won": 0.25
+     },
+     {
+      "bin": "(0.5, 0.7]",
+      "n": 5,
+      "forecast": 0.6012,
+      "d_won": 0.4
+     },
+     {
+      "bin": "(0.7, 0.9]",
+      "n": 3,
+      "forecast": 0.8227583333333334,
+      "d_won": 1.0
+     },
+     {
+      "bin": "(0.9, 1.0]",
+      "n": 11,
+      "forecast": 0.9611045454545455,
+      "d_won": 1.0
+     }
+    ],
+    "count_in_80pct": 1.0,
+    "count_pit": [
+     0.826,
+     0.539,
+     0.613,
+     0.7,
+     0.214,
+     0.27,
+     0.477,
+     0.548,
+     0.207,
+     0.578,
+     0.624,
+     0.261,
+     0.541,
+     0.567
+    ],
+    "competitive_brier": 0.19209086757352942
+   }
+  },
+  "2024 (environment estimator; Wikipedia polls)": {
+   "one_factor": {
+    "n": 11,
+    "brier": 0.04089939602272727,
+    "log_loss": 0.14536874454334078,
+    "accuracy": 1.0,
+    "mae_margin": 9.83328154920575,
+    "calibration": [
+     {
+      "bin": "(-0.001, 0.1]",
+      "n": 6,
+      "forecast": 0.03187916666666666,
+      "d_won": 0.0
+     },
+     {
+      "bin": "(0.1, 0.3]",
+      "n": 1,
+      "forecast": 0.105075,
+      "d_won": 0.0
+     },
+     {
+      "bin": "(0.3, 0.5]",
+      "n": 1,
+      "forecast": 0.499625,
+      "d_won": 0.0
+     },
+     {
+      "bin": "(0.5, 0.7]",
+      "n": 1,
+      "forecast": 0.578975,
+      "d_won": 1.0
+     },
+     {
+      "bin": "(0.9, 1.0]",
+      "n": 2,
+      "forecast": 0.974175,
+      "d_won": 1.0
+     }
+    ],
+    "count_in_80pct": 1.0,
+    "count_pit": [
+     0.398
+    ],
+    "competitive_brier": 0.14597598229166667
+   },
+   "polls_only": {
+    "n": 11,
+    "brier": 0.04337418511363637,
+    "log_loss": 0.1522472967840634,
+    "accuracy": 0.9090909090909091,
+    "mae_margin": 8.81887053124092,
+    "calibration": [
+     {
+      "bin": "(-0.001, 0.1]",
+      "n": 6,
+      "forecast": 0.03379583333333333,
+      "d_won": 0.0
+     },
+     {
+      "bin": "(0.1, 0.3]",
+      "n": 1,
+      "forecast": 0.135075,
+      "d_won": 0.0
+     },
+     {
+      "bin": "(0.5, 0.7]",
+      "n": 2,
+      "forecast": 0.5505,
+      "d_won": 0.5
+     },
+     {
+      "bin": "(0.9, 1.0]",
+      "n": 2,
+      "forecast": 0.979375,
+      "d_won": 1.0
+     }
+    ],
+    "count_in_80pct": 1.0,
+    "count_pit": [
+     0.369
+    ],
+    "competitive_brier": 0.15515827229166668
+   },
+   "prior_only": {
+    "n": 11,
+    "brier": 0.09715196392045455,
+    "log_loss": 0.3176085815673734,
+    "accuracy": 0.9090909090909091,
+    "mae_margin": 14.321897960870263,
+    "calibration": [
+     {
+      "bin": "(-0.001, 0.1]",
+      "n": 4,
+      "forecast": 0.041612500000000004,
+      "d_won": 0.0
+     },
+     {
+      "bin": "(0.1, 0.3]",
+      "n": 3,
+      "forecast": 0.19555,
+      "d_won": 0.0
+     },
+     {
+      "bin": "(0.3, 0.5]",
+      "n": 2,
+      "forecast": 0.3678625,
+      "d_won": 0.5
+     },
+     {
+      "bin": "(0.5, 0.7]",
+      "n": 2,
+      "forecast": 0.602425,
+      "d_won": 1.0
+     }
+    ],
+    "count_in_80pct": 1.0,
+    "count_pit": [
+     0.6
+    ],
+    "competitive_brier": 0.15143430455357146
+   },
+   "two_factor": {
+    "n": 11,
+    "brier": 0.04058505363636364,
+    "log_loss": 0.14360159879673015,
+    "accuracy": 1.0,
+    "mae_margin": 9.83328154920575,
+    "calibration": [
+     {
+      "bin": "(-0.001, 0.1]",
+      "n": 6,
+      "forecast": 0.030579166666666668,
+      "d_won": 0.0
+     },
+     {
+      "bin": "(0.1, 0.3]",
+      "n": 1,
+      "forecast": 0.10035,
+      "d_won": 0.0
+     },
+     {
+      "bin": "(0.3, 0.5]",
+      "n": 1,
+      "forecast": 0.4993,
+      "d_won": 0.0
+     },
+     {
+      "bin": "(0.5, 0.7]",
+      "n": 1,
+      "forecast": 0.580325,
+      "d_won": 1.0
+     },
+     {
+      "bin": "(0.9, 1.0]",
+      "n": 2,
+      "forecast": 0.9756,
+      "d_won": 1.0
+     }
+    ],
+    "count_in_80pct": 1.0,
+    "count_pit": [
+     0.395
+    ],
+    "competitive_brier": 0.14516590604166668
+   }
+  },
+  "unpolled races": {
+   "one_factor": {
+    "n": 22,
+    "brier": 0.08160799122159092,
+    "log_loss": 0.3341617935372015,
+    "accuracy": 0.9090909090909091,
+    "mae_margin": 16.953235180452385,
+    "calibration": [
+     {
+      "bin": "(-0.001, 0.1]",
+      "n": 11,
+      "forecast": 0.048731818181818175,
+      "d_won": 0.09090909090909091
+     },
+     {
+      "bin": "(0.1, 0.3]",
+      "n": 4,
+      "forecast": 0.13986875000000001,
+      "d_won": 0.0
+     },
+     {
+      "bin": "(0.3, 0.5]",
+      "n": 1,
+      "forecast": 0.388125,
+      "d_won": 0.0
+     },
+     {
+      "bin": "(0.5, 0.7]",
+      "n": 2,
+      "forecast": 0.5663750000000001,
+      "d_won": 0.5
+     },
+     {
+      "bin": "(0.7, 0.9]",
+      "n": 2,
+      "forecast": 0.7878875000000001,
+      "d_won": 1.0
+     },
+     {
+      "bin": "(0.9, 1.0]",
+      "n": 2,
+      "forecast": 0.952275,
+      "d_won": 1.0
+     }
+    ],
+    "count_in_80pct": 1.0,
+    "count_pit": [
+     0.891,
+     0.822,
+     0.257,
+     0.226,
+     0.214,
+     0.476,
+     0.84,
+     0.216,
+     0.308,
+     0.717,
+     0.541,
+     0.398
+    ],
+    "competitive_brier": 0.08950727340277778
+   },
+   "polls_only": {
+    "n": 22,
+    "brier": 0.08063014812499998,
+    "log_loss": 0.3321605345357264,
+    "accuracy": 0.9090909090909091,
+    "mae_margin": 16.953235180452385,
+    "calibration": [
+     {
+      "bin": "(-0.001, 0.1]",
+      "n": 12,
+      "forecast": 0.05085208333333333,
+      "d_won": 0.08333333333333333
+     },
+     {
+      "bin": "(0.1, 0.3]",
+      "n": 3,
+      "forecast": 0.147975,
+      "d_won": 0.0
+     },
+     {
+      "bin": "(0.3, 0.5]",
+      "n": 1,
+      "forecast": 0.379525,
+      "d_won": 0.0
+     },
+     {
+      "bin": "(0.5, 0.7]",
+      "n": 2,
+      "forecast": 0.566325,
+      "d_won": 0.5
+     },
+     {
+      "bin": "(0.7, 0.9]",
+      "n": 2,
+      "forecast": 0.7947375,
+      "d_won": 1.0
+     },
+     {
+      "bin": "(0.9, 1.0]",
+      "n": 2,
+      "forecast": 0.954375,
+      "d_won": 1.0
+     }
+    ],
+    "count_in_80pct": 1.0,
+    "count_pit": [
+     0.89,
+     0.807,
+     0.237,
+     0.21,
+     0.212,
+     0.465,
+     0.835,
+     0.205,
+     0.294,
+     0.712,
+     0.382,
+     0.369
+    ],
+    "competitive_brier": 0.09695838257812499
+   },
+   "prior_only": {
+    "n": 22,
+    "brier": 0.08063014812499998,
+    "log_loss": 0.3321605345357264,
+    "accuracy": 0.9090909090909091,
+    "mae_margin": 16.953235180452385,
+    "calibration": [
+     {
+      "bin": "(-0.001, 0.1]",
+      "n": 12,
+      "forecast": 0.05085208333333333,
+      "d_won": 0.08333333333333333
+     },
+     {
+      "bin": "(0.1, 0.3]",
+      "n": 3,
+      "forecast": 0.147975,
+      "d_won": 0.0
+     },
+     {
+      "bin": "(0.3, 0.5]",
+      "n": 1,
+      "forecast": 0.379525,
+      "d_won": 0.0
+     },
+     {
+      "bin": "(0.5, 0.7]",
+      "n": 2,
+      "forecast": 0.566325,
+      "d_won": 0.5
+     },
+     {
+      "bin": "(0.7, 0.9]",
+      "n": 2,
+      "forecast": 0.7947375,
+      "d_won": 1.0
+     },
+     {
+      "bin": "(0.9, 1.0]",
+      "n": 2,
+      "forecast": 0.954375,
+      "d_won": 1.0
+     }
+    ],
+    "count_in_80pct": 1.0,
+    "count_pit": [
+     0.472,
+     0.802,
+     0.423,
+     0.313,
+     0.649,
+     0.7,
+     0.824,
+     0.244,
+     0.353,
+     0.728,
+     0.677,
+     0.6
+    ],
+    "competitive_brier": 0.09695838257812499
+   },
+   "two_factor": {
+    "n": 22,
+    "brier": 0.08063014812499998,
+    "log_loss": 0.3321605345357264,
+    "accuracy": 0.9090909090909091,
+    "mae_margin": 16.953235180452385,
+    "calibration": [
+     {
+      "bin": "(-0.001, 0.1]",
+      "n": 12,
+      "forecast": 0.05085208333333333,
+      "d_won": 0.08333333333333333
+     },
+     {
+      "bin": "(0.1, 0.3]",
+      "n": 3,
+      "forecast": 0.147975,
+      "d_won": 0.0
+     },
+     {
+      "bin": "(0.3, 0.5]",
+      "n": 1,
+      "forecast": 0.379525,
+      "d_won": 0.0
+     },
+     {
+      "bin": "(0.5, 0.7]",
+      "n": 2,
+      "forecast": 0.566325,
+      "d_won": 0.5
+     },
+     {
+      "bin": "(0.7, 0.9]",
+      "n": 2,
+      "forecast": 0.7947375,
+      "d_won": 1.0
+     },
+     {
+      "bin": "(0.9, 1.0]",
+      "n": 2,
+      "forecast": 0.954375,
+      "d_won": 1.0
+     }
+    ],
+    "count_in_80pct": 1.0,
+    "count_pit": [
+     0.899,
+     0.826,
+     0.25,
+     0.214,
+     0.214,
+     0.477,
+     0.846,
+     0.209,
+     0.302,
+     0.725,
+     0.541,
+     0.395
+    ],
+    "competitive_brier": 0.09695838257812499
+   }
+  }
+ },
+ "counts": [
+  {
+   "year": 1998,
+   "structure": "two_factor",
+   "n": 33,
+   "n_polled": 28,
+   "env": 1.630410889383752,
+   "env_source": "generic ballot",
+   "d_wins": 10,
+   "expected": 7.465125000000001,
+   "pit": 0.8994375,
+   "in_80": true
+  },
+  {
+   "year": 1998,
+   "structure": "one_factor",
+   "n": 33,
+   "n_polled": 28,
+   "env": 1.630410889383752,
+   "env_source": "generic ballot",
+   "d_wins": 10,
+   "expected": 7.49665,
+   "pit": 0.89095,
+   "in_80": true
+  },
+  {
+   "year": 1998,
+   "structure": "polls_only",
+   "n": 33,
+   "n_polled": 28,
+   "env": 1.630410889383752,
+   "env_source": "generic ballot",
+   "d_wins": 10,
+   "expected": 7.535875,
+   "pit": 0.88985,
+   "in_80": true
+  },
+  {
+   "year": 1998,
+   "structure": "prior_only",
+   "n": 33,
+   "n_polled": 28,
+   "env": 1.630410889383752,
+   "env_source": "generic ballot",
+   "d_wins": 10,
+   "expected": 10.297975000000001,
+   "pit": 0.4718,
+   "in_80": true
+  },
+  {
+   "year": 1999,
+   "structure": "two_factor",
+   "n": 2,
+   "n_polled": 1,
+   "env": 2.845310583310547,
+   "env_source": "estimator (term year 3, m=0.05)",
+   "d_wins": 1,
+   "expected": 0.3486,
+   "pit": 0.8257,
+   "in_80": true
+  },
+  {
+   "year": 1999,
+   "structure": "one_factor",
+   "n": 2,
+   "n_polled": 1,
+   "env": 2.845310583310547,
+   "env_source": "estimator (term year 3, m=0.05)",
+   "d_wins": 1,
+   "expected": 0.3567,
+   "pit": 0.82165,
+   "in_80": true
+  },
+  {
+   "year": 1999,
+   "structure": "polls_only",
+   "n": 2,
+   "n_polled": 1,
+   "env": 2.845310583310547,
+   "env_source": "estimator (term year 3, m=0.05)",
+   "d_wins": 1,
+   "expected": 0.3865,
+   "pit": 0.80675,
+   "in_80": true
+  },
+  {
+   "year": 1999,
+   "structure": "prior_only",
+   "n": 2,
+   "n_polled": 1,
+   "env": 2.845310583310547,
+   "env_source": "estimator (term year 3, m=0.05)",
+   "d_wins": 1,
+   "expected": 0.395275,
+   "pit": 0.8023625,
+   "in_80": true
+  },
+  {
+   "year": 2000,
+   "structure": "two_factor",
+   "n": 11,
+   "n_polled": 11,
+   "env": 2.573455221551987,
+   "env_source": "generic ballot",
+   "d_wins": 8,
+   "expected": 7.4281999999999995,
+   "pit": 0.63065,
+   "in_80": true
+  },
+  {
+   "year": 2000,
+   "structure": "one_factor",
+   "n": 11,
+   "n_polled": 11,
+   "env": 2.573455221551987,
+   "env_source": "generic ballot",
+   "d_wins": 8,
+   "expected": 7.41925,
+   "pit": 0.6272625000000001,
+   "in_80": true
+  },
+  {
+   "year": 2000,
+   "structure": "polls_only",
+   "n": 11,
+   "n_polled": 11,
+   "env": 2.573455221551987,
+   "env_source": "generic ballot",
+   "d_wins": 8,
+   "expected": 7.643924999999999,
+   "pit": 0.56675,
+   "in_80": true
+  },
+  {
+   "year": 2000,
+   "structure": "prior_only",
+   "n": 11,
+   "n_polled": 11,
+   "env": 2.573455221551987,
+   "env_source": "generic ballot",
+   "d_wins": 8,
+   "expected": 5.8453,
+   "pit": 0.929775,
+   "in_80": true
+  },
+  {
+   "year": 2001,
+   "structure": "two_factor",
+   "n": 2,
+   "n_polled": 2,
+   "env": 13.285646471398936,
+   "env_source": "estimator (term year 1, m=2.13)",
+   "d_wins": 2,
+   "expected": 1.919675,
+   "pit": 0.53905,
+   "in_80": true
+  },
+  {
+   "year": 2001,
+   "structure": "one_factor",
+   "n": 2,
+   "n_polled": 2,
+   "env": 13.285646471398936,
+   "env_source": "estimator (term year 1, m=2.13)",
+   "d_wins": 2,
+   "expected": 1.91765,
+   "pit": 0.539975,
+   "in_80": true
+  },
+  {
+   "year": 2001,
+   "structure": "polls_only",
+   "n": 2,
+   "n_polled": 2,
+   "env": 13.285646471398936,
+   "env_source": "estimator (term year 1, m=2.13)",
+   "d_wins": 2,
+   "expected": 1.921575,
+   "pit": 0.5381,
+   "in_80": true
+  },
+  {
+   "year": 2001,
+   "structure": "prior_only",
+   "n": 2,
+   "n_polled": 2,
+   "env": 13.285646471398936,
+   "env_source": "estimator (term year 1, m=2.13)",
+   "d_wins": 2,
+   "expected": 1.50025,
+   "pit": 0.7229375,
+   "in_80": true
+  },
+  {
+   "year": 2002,
+   "structure": "two_factor",
+   "n": 35,
+   "n_polled": 35,
+   "env": 1.0895212489078592,
+   "env_source": "generic ballot",
+   "d_wins": 14,
+   "expected": 16.9665,
+   "pit": 0.15316249999999998,
+   "in_80": true
+  },
+  {
+   "year": 2002,
+   "structure": "one_factor",
+   "n": 35,
+   "n_polled": 35,
+   "env": 1.0895212489078592,
+   "env_source": "generic ballot",
+   "d_wins": 14,
+   "expected": 16.960350000000002,
+   "pit": 0.160725,
+   "in_80": true
+  },
+  {
+   "year": 2002,
+   "structure": "polls_only",
+   "n": 35,
+   "n_polled": 35,
+   "env": 1.0895212489078592,
+   "env_source": "generic ballot",
+   "d_wins": 14,
+   "expected": 17.186175000000002,
+   "pit": 0.1446625,
+   "in_80": true
+  },
+  {
+   "year": 2002,
+   "structure": "prior_only",
+   "n": 35,
+   "n_polled": 35,
+   "env": 1.0895212489078592,
+   "env_source": "generic ballot",
+   "d_wins": 14,
+   "expected": 14.002075,
+   "pit": 0.504725,
+   "in_80": true
+  },
+  {
+   "year": 2003,
+   "structure": "two_factor",
+   "n": 3,
+   "n_polled": 3,
+   "env": -5.916003616258085,
+   "env_source": "estimator (term year 3, m=0.17)",
+   "d_wins": 1,
+   "expected": 0.8190249999999999,
+   "pit": 0.612875,
+   "in_80": true
+  },
+  {
+   "year": 2003,
+   "structure": "one_factor",
+   "n": 3,
+   "n_polled": 3,
+   "env": -5.916003616258085,
+   "env_source": "estimator (term year 3, m=0.17)",
+   "d_wins": 1,
+   "expected": 0.827175,
+   "pit": 0.610475,
+   "in_80": true
+  },
+  {
+   "year": 2003,
+   "structure": "polls_only",
+   "n": 3,
+   "n_polled": 3,
+   "env": -5.916003616258085,
+   "env_source": "estimator (term year 3, m=0.17)",
+   "d_wins": 1,
+   "expected": 0.814575,
+   "pit": 0.6171,
+   "in_80": true
+  },
+  {
+   "year": 2003,
+   "structure": "prior_only",
+   "n": 3,
+   "n_polled": 3,
+   "env": -5.916003616258085,
+   "env_source": "estimator (term year 3, m=0.17)",
+   "d_wins": 1,
+   "expected": 1.10365,
+   "pit": 0.46833749999999996,
+   "in_80": true
+  },
+  {
+   "year": 2004,
+   "structure": "two_factor",
+   "n": 11,
+   "n_polled": 10,
+   "env": 2.8408457750350866,
+   "env_source": "generic ballot",
+   "d_wins": 5,
+   "expected": 5.966575000000001,
+   "pit": 0.2504,
+   "in_80": true
+  },
+  {
+   "year": 2004,
+   "structure": "one_factor",
+   "n": 11,
+   "n_polled": 10,
+   "env": 2.8408457750350866,
+   "env_source": "generic ballot",
+   "d_wins": 5,
+   "expected": 5.971474999999999,
+   "pit": 0.2574625,
+   "in_80": true
+  },
+  {
+   "year": 2004,
+   "structure": "polls_only",
+   "n": 11,
+   "n_polled": 10,
+   "env": 2.8408457750350866,
+   "env_source": "generic ballot",
+   "d_wins": 5,
+   "expected": 5.933949999999999,
+   "pit": 0.2365875,
+   "in_80": true
+  },
+  {
+   "year": 2004,
+   "structure": "prior_only",
+   "n": 11,
+   "n_polled": 10,
+   "env": 2.8408457750350866,
+   "env_source": "generic ballot",
+   "d_wins": 5,
+   "expected": 5.267124999999999,
+   "pit": 0.42295000000000005,
+   "in_80": true
+  },
+  {
+   "year": 2005,
+   "structure": "two_factor",
+   "n": 2,
+   "n_polled": 2,
+   "env": 17.700632048933233,
+   "env_source": "estimator (term year 1, m=2.24)",
+   "d_wins": 2,
+   "expected": 1.5668250000000001,
+   "pit": 0.700125,
+   "in_80": true
+  },
+  {
+   "year": 2005,
+   "structure": "one_factor",
+   "n": 2,
+   "n_polled": 2,
+   "env": 17.700632048933233,
+   "env_source": "estimator (term year 1, m=2.24)",
+   "d_wins": 2,
+   "expected": 1.5631249999999999,
+   "pit": 0.7010375,
+   "in_80": true
+  },
+  {
+   "year": 2005,
+   "structure": "polls_only",
+   "n": 2,
+   "n_polled": 2,
+   "env": 17.700632048933233,
+   "env_source": "estimator (term year 1, m=2.24)",
+   "d_wins": 2,
+   "expected": 1.5079500000000001,
+   "pit": 0.7246625,
+   "in_80": true
+  },
+  {
+   "year": 2005,
+   "structure": "prior_only",
+   "n": 2,
+   "n_polled": 2,
+   "env": 17.700632048933233,
+   "env_source": "estimator (term year 1, m=2.24)",
+   "d_wins": 2,
+   "expected": 1.6600000000000001,
+   "pit": 0.656025,
+   "in_80": true
+  },
+  {
+   "year": 2006,
+   "structure": "two_factor",
+   "n": 34,
+   "n_polled": 33,
+   "env": 13.861984647427242,
+   "env_source": "generic ballot",
+   "d_wins": 19,
+   "expected": 20.377025,
+   "pit": 0.2140375,
+   "in_80": true
+  },
+  {
+   "year": 2006,
+   "structure": "one_factor",
+   "n": 34,
+   "n_polled": 33,
+   "env": 13.861984647427242,
+   "env_source": "generic ballot",
+   "d_wins": 19,
+   "expected": 20.378825000000003,
+   "pit": 0.22562500000000002,
+   "in_80": true
+  },
+  {
+   "year": 2006,
+   "structure": "polls_only",
+   "n": 34,
+   "n_polled": 33,
+   "env": 13.861984647427242,
+   "env_source": "generic ballot",
+   "d_wins": 19,
+   "expected": 20.405075000000004,
+   "pit": 0.21002500000000002,
+   "in_80": true
+  },
+  {
+   "year": 2006,
+   "structure": "prior_only",
+   "n": 34,
+   "n_polled": 33,
+   "env": 13.861984647427242,
+   "env_source": "generic ballot",
+   "d_wins": 19,
+   "expected": 20.21945,
+   "pit": 0.3131875,
+   "in_80": true
+  },
+  {
+   "year": 2007,
+   "structure": "two_factor",
+   "n": 3,
+   "n_polled": 1,
+   "env": 10.180326190251911,
+   "env_source": "estimator (term year 3, m=0.31)",
+   "d_wins": 1,
+   "expected": 1.6151749999999998,
+   "pit": 0.2142,
+   "in_80": true
+  },
+  {
+   "year": 2007,
+   "structure": "one_factor",
+   "n": 3,
+   "n_polled": 1,
+   "env": 10.180326190251911,
+   "env_source": "estimator (term year 3, m=0.31)",
+   "d_wins": 1,
+   "expected": 1.6198000000000001,
+   "pit": 0.2137375,
+   "in_80": true
+  },
+  {
+   "year": 2007,
+   "structure": "polls_only",
+   "n": 3,
+   "n_polled": 1,
+   "env": 10.180326190251911,
+   "env_source": "estimator (term year 3, m=0.31)",
+   "d_wins": 1,
+   "expected": 1.6201499999999998,
+   "pit": 0.2117875,
+   "in_80": true
+  },
+  {
+   "year": 2007,
+   "structure": "prior_only",
+   "n": 3,
+   "n_polled": 1,
+   "env": 10.180326190251911,
+   "env_source": "estimator (term year 3, m=0.31)",
+   "d_wins": 1,
+   "expected": 0.705975,
+   "pit": 0.6491750000000001,
+   "in_80": true
+  },
+  {
+   "year": 2008,
+   "structure": "two_factor",
+   "n": 10,
+   "n_polled": 10,
+   "env": 10.001993177461515,
+   "env_source": "generic ballot",
+   "d_wins": 7,
+   "expected": 6.2955250000000005,
+   "pit": 0.77685,
+   "in_80": true
+  },
+  {
+   "year": 2008,
+   "structure": "one_factor",
+   "n": 10,
+   "n_polled": 10,
+   "env": 10.001993177461515,
+   "env_source": "generic ballot",
+   "d_wins": 7,
+   "expected": 6.2902499999999995,
+   "pit": 0.7763,
+   "in_80": true
+  },
+  {
+   "year": 2008,
+   "structure": "polls_only",
+   "n": 10,
+   "n_polled": 10,
+   "env": 10.001993177461515,
+   "env_source": "generic ballot",
+   "d_wins": 7,
+   "expected": 6.180575000000001,
+   "pit": 0.7998375,
+   "in_80": true
+  },
+  {
+   "year": 2008,
+   "structure": "prior_only",
+   "n": 10,
+   "n_polled": 10,
+   "env": 10.001993177461515,
+   "env_source": "generic ballot",
+   "d_wins": 7,
+   "expected": 5.759649999999999,
+   "pit": 0.85595,
+   "in_80": true
+  },
+  {
+   "year": 2009,
+   "structure": "two_factor",
+   "n": 2,
+   "n_polled": 2,
+   "env": -5.689485206180503,
+   "env_source": "estimator (term year 1, m=1.86)",
+   "d_wins": 0,
+   "expected": 0.477625,
+   "pit": 0.2700125,
+   "in_80": true
+  },
+  {
+   "year": 2009,
+   "structure": "one_factor",
+   "n": 2,
+   "n_polled": 2,
+   "env": -5.689485206180503,
+   "env_source": "estimator (term year 1, m=1.86)",
+   "d_wins": 0,
+   "expected": 0.478375,
+   "pit": 0.2700125,
+   "in_80": true
+  },
+  {
+   "year": 2009,
+   "structure": "polls_only",
+   "n": 2,
+   "n_polled": 2,
+   "env": -5.689485206180503,
+   "env_source": "estimator (term year 1, m=1.86)",
+   "d_wins": 0,
+   "expected": 0.394575,
+   "pit": 0.3109,
+   "in_80": true
+  },
+  {
+   "year": 2009,
+   "structure": "prior_only",
+   "n": 2,
+   "n_polled": 2,
+   "env": -5.689485206180503,
+   "env_source": "estimator (term year 1, m=1.86)",
+   "d_wins": 0,
+   "expected": 1.1477,
+   "pit": 0.044925,
+   "in_80": false
+  },
+  {
+   "year": 2010,
+   "structure": "two_factor",
+   "n": 34,
+   "n_polled": 34,
+   "env": -5.832502170121619,
+   "env_source": "generic ballot",
+   "d_wins": 12,
+   "expected": 10.624675000000002,
+   "pit": 0.7177499999999999,
+   "in_80": true
+  },
+  {
+   "year": 2010,
+   "structure": "one_factor",
+   "n": 34,
+   "n_polled": 34,
+   "env": -5.832502170121619,
+   "env_source": "generic ballot",
+   "d_wins": 12,
+   "expected": 10.62375,
+   "pit": 0.7114375000000001,
+   "in_80": true
+  },
+  {
+   "year": 2010,
+   "structure": "polls_only",
+   "n": 34,
+   "n_polled": 34,
+   "env": -5.832502170121619,
+   "env_source": "generic ballot",
+   "d_wins": 12,
+   "expected": 10.509325,
+   "pit": 0.7349,
+   "in_80": true
+  },
+  {
+   "year": 2010,
+   "structure": "prior_only",
+   "n": 34,
+   "n_polled": 34,
+   "env": -5.832502170121619,
+   "env_source": "generic ballot",
+   "d_wins": 12,
+   "expected": 12.841275,
+   "pit": 0.38845,
+   "in_80": true
+  },
+  {
+   "year": 2011,
+   "structure": "two_factor",
+   "n": 4,
+   "n_polled": 3,
+   "env": -4.5744447005097815,
+   "env_source": "estimator (term year 3, m=-0.02)",
+   "d_wins": 2,
+   "expected": 2.048575,
+   "pit": 0.4765125,
+   "in_80": true
+  },
+  {
+   "year": 2011,
+   "structure": "one_factor",
+   "n": 4,
+   "n_polled": 3,
+   "env": -4.5744447005097815,
+   "env_source": "estimator (term year 3, m=-0.02)",
+   "d_wins": 2,
+   "expected": 2.05075,
+   "pit": 0.47576250000000003,
+   "in_80": true
+  },
+  {
+   "year": 2011,
+   "structure": "polls_only",
+   "n": 4,
+   "n_polled": 3,
+   "env": -4.5744447005097815,
+   "env_source": "estimator (term year 3, m=-0.02)",
+   "d_wins": 2,
+   "expected": 2.0721,
+   "pit": 0.4651625,
+   "in_80": true
+  },
+  {
+   "year": 2011,
+   "structure": "prior_only",
+   "n": 4,
+   "n_polled": 3,
+   "env": -4.5744447005097815,
+   "env_source": "estimator (term year 3, m=-0.02)",
+   "d_wins": 2,
+   "expected": 1.4955,
+   "pit": 0.7001124999999999,
+   "in_80": true
+  },
+  {
+   "year": 2012,
+   "structure": "two_factor",
+   "n": 11,
+   "n_polled": 8,
+   "env": 1.0042728622044628,
+   "env_source": "generic ballot",
+   "d_wins": 7,
+   "expected": 5.69875,
+   "pit": 0.8464499999999999,
+   "in_80": true
+  },
+  {
+   "year": 2012,
+   "structure": "one_factor",
+   "n": 11,
+   "n_polled": 8,
+   "env": 1.0042728622044628,
+   "env_source": "generic ballot",
+   "d_wins": 7,
+   "expected": 5.683125000000001,
+   "pit": 0.839625,
+   "in_80": true
+  },
+  {
+   "year": 2012,
+   "structure": "polls_only",
+   "n": 11,
+   "n_polled": 8,
+   "env": 1.0042728622044628,
+   "env_source": "generic ballot",
+   "d_wins": 7,
+   "expected": 5.755375,
+   "pit": 0.8354999999999999,
+   "in_80": true
+  },
+  {
+   "year": 2012,
+   "structure": "prior_only",
+   "n": 11,
+   "n_polled": 8,
+   "env": 1.0042728622044628,
+   "env_source": "generic ballot",
+   "d_wins": 7,
+   "expected": 5.6552,
+   "pit": 0.8238624999999999,
+   "in_80": true
+  },
+  {
+   "year": 2013,
+   "structure": "two_factor",
+   "n": 2,
+   "n_polled": 2,
+   "env": -20.539250819825376,
+   "env_source": "estimator (term year 1, m=2.44)",
+   "d_wins": 1,
+   "expected": 0.904825,
+   "pit": 0.5475875,
+   "in_80": true
+  },
+  {
+   "year": 2013,
+   "structure": "one_factor",
+   "n": 2,
+   "n_polled": 2,
+   "env": -20.539250819825376,
+   "env_source": "estimator (term year 1, m=2.44)",
+   "d_wins": 1,
+   "expected": 0.902575,
+   "pit": 0.5487124999999999,
+   "in_80": true
+  },
+  {
+   "year": 2013,
+   "structure": "polls_only",
+   "n": 2,
+   "n_polled": 2,
+   "env": -20.539250819825376,
+   "env_source": "estimator (term year 1, m=2.44)",
+   "d_wins": 1,
+   "expected": 0.938725,
+   "pit": 0.5306375,
+   "in_80": true
+  },
+  {
+   "year": 2013,
+   "structure": "prior_only",
+   "n": 2,
+   "n_polled": 2,
+   "env": -20.539250819825376,
+   "env_source": "estimator (term year 1, m=2.44)",
+   "d_wins": 1,
+   "expected": 0.12079999999999999,
+   "pit": 0.9396,
+   "in_80": true
+  },
+  {
+   "year": 2014,
+   "structure": "two_factor",
+   "n": 35,
+   "n_polled": 34,
+   "env": -1.2269874485036345,
+   "env_source": "generic ballot",
+   "d_wins": 11,
+   "expected": 13.541325,
+   "pit": 0.209175,
+   "in_80": true
+  },
+  {
+   "year": 2014,
+   "structure": "one_factor",
+   "n": 35,
+   "n_polled": 34,
+   "env": -1.2269874485036345,
+   "env_source": "generic ballot",
+   "d_wins": 11,
+   "expected": 13.542425,
+   "pit": 0.2163875,
+   "in_80": true
+  },
+  {
+   "year": 2014,
+   "structure": "polls_only",
+   "n": 35,
+   "n_polled": 34,
+   "env": -1.2269874485036345,
+   "env_source": "generic ballot",
+   "d_wins": 11,
+   "expected": 13.869774999999999,
+   "pit": 0.20545,
+   "in_80": true
+  },
+  {
+   "year": 2014,
+   "structure": "prior_only",
+   "n": 35,
+   "n_polled": 34,
+   "env": -1.2269874485036345,
+   "env_source": "generic ballot",
+   "d_wins": 11,
+   "expected": 12.22945,
+   "pit": 0.2444125,
+   "in_80": true
+  },
+  {
+   "year": 2015,
+   "structure": "two_factor",
+   "n": 3,
+   "n_polled": 3,
+   "env": -6.378148442938846,
+   "env_source": "estimator (term year 3, m=0.36)",
+   "d_wins": 1,
+   "expected": 1.58825,
+   "pit": 0.20723750000000002,
+   "in_80": true
+  },
+  {
+   "year": 2015,
+   "structure": "one_factor",
+   "n": 3,
+   "n_polled": 3,
+   "env": -6.378148442938846,
+   "env_source": "estimator (term year 3, m=0.36)",
+   "d_wins": 1,
+   "expected": 1.5870500000000003,
+   "pit": 0.2079875,
+   "in_80": true
+  },
+  {
+   "year": 2015,
+   "structure": "polls_only",
+   "n": 3,
+   "n_polled": 3,
+   "env": -6.378148442938846,
+   "env_source": "estimator (term year 3, m=0.36)",
+   "d_wins": 1,
+   "expected": 1.7339499999999999,
+   "pit": 0.13515,
+   "in_80": true
+  },
+  {
+   "year": 2015,
+   "structure": "prior_only",
+   "n": 3,
+   "n_polled": 3,
+   "env": -6.378148442938846,
+   "env_source": "estimator (term year 3, m=0.36)",
+   "d_wins": 1,
+   "expected": 0.21582500000000002,
+   "pit": 0.8924125,
+   "in_80": true
+  },
+  {
+   "year": 2016,
+   "structure": "two_factor",
+   "n": 12,
+   "n_polled": 12,
+   "env": 4.501530740133635,
+   "env_source": "generic ballot",
+   "d_wins": 6,
+   "expected": 7.857150000000001,
+   "pit": 0.1399375,
+   "in_80": true
+  },
+  {
+   "year": 2016,
+   "structure": "one_factor",
+   "n": 12,
+   "n_polled": 12,
+   "env": 4.501530740133635,
+   "env_source": "generic ballot",
+   "d_wins": 6,
+   "expected": 7.83675,
+   "pit": 0.1477125,
+   "in_80": true
+  },
+  {
+   "year": 2016,
+   "structure": "polls_only",
+   "n": 12,
+   "n_polled": 12,
+   "env": 4.501530740133635,
+   "env_source": "generic ballot",
+   "d_wins": 6,
+   "expected": 7.862150000000001,
+   "pit": 0.1264,
+   "in_80": true
+  },
+  {
+   "year": 2016,
+   "structure": "prior_only",
+   "n": 12,
+   "n_polled": 12,
+   "env": 4.501530740133635,
+   "env_source": "generic ballot",
+   "d_wins": 6,
+   "expected": 6.447975,
+   "pit": 0.3808125,
+   "in_80": true
+  },
+  {
+   "year": 2017,
+   "structure": "two_factor",
+   "n": 2,
+   "n_polled": 2,
+   "env": 20.297505543807354,
+   "env_source": "estimator (term year 1, m=2.25)",
+   "d_wins": 2,
+   "expected": 1.8424,
+   "pit": 0.5776375,
+   "in_80": true
+  },
+  {
+   "year": 2017,
+   "structure": "one_factor",
+   "n": 2,
+   "n_polled": 2,
+   "env": 20.297505543807354,
+   "env_source": "estimator (term year 1, m=2.25)",
+   "d_wins": 2,
+   "expected": 1.840025,
+   "pit": 0.5787125,
+   "in_80": true
+  },
+  {
+   "year": 2017,
+   "structure": "polls_only",
+   "n": 2,
+   "n_polled": 2,
+   "env": 20.297505543807354,
+   "env_source": "estimator (term year 1, m=2.25)",
+   "d_wins": 2,
+   "expected": 1.80955,
+   "pit": 0.5939,
+   "in_80": true
+  },
+  {
+   "year": 2017,
+   "structure": "prior_only",
+   "n": 2,
+   "n_polled": 2,
+   "env": 20.297505543807354,
+   "env_source": "estimator (term year 1, m=2.25)",
+   "d_wins": 2,
+   "expected": 1.7901,
+   "pit": 0.5983875,
+   "in_80": true
+  },
+  {
+   "year": 2018,
+   "structure": "two_factor",
+   "n": 36,
+   "n_polled": 35,
+   "env": 8.285152382881098,
+   "env_source": "generic ballot",
+   "d_wins": 16,
+   "expected": 17.443900000000003,
+   "pit": 0.3020875,
+   "in_80": true
+  },
+  {
+   "year": 2018,
+   "structure": "one_factor",
+   "n": 36,
+   "n_polled": 35,
+   "env": 8.285152382881098,
+   "env_source": "generic ballot",
+   "d_wins": 16,
+   "expected": 17.430525,
+   "pit": 0.30847499999999994,
+   "in_80": true
+  },
+  {
+   "year": 2018,
+   "structure": "polls_only",
+   "n": 36,
+   "n_polled": 35,
+   "env": 8.285152382881098,
+   "env_source": "generic ballot",
+   "d_wins": 16,
+   "expected": 17.506025,
+   "pit": 0.29445,
+   "in_80": true
+  },
+  {
+   "year": 2018,
+   "structure": "prior_only",
+   "n": 36,
+   "n_polled": 35,
+   "env": 8.285152382881098,
+   "env_source": "generic ballot",
+   "d_wins": 16,
+   "expected": 17.230575,
+   "pit": 0.3531125,
+   "in_80": true
+  },
+  {
+   "year": 2019,
+   "structure": "two_factor",
+   "n": 3,
+   "n_polled": 3,
+   "env": 6.762200062947816,
+   "env_source": "estimator (term year 3, m=0.05)",
+   "d_wins": 2,
+   "expected": 1.6174,
+   "pit": 0.6238125,
+   "in_80": true
+  },
+  {
+   "year": 2019,
+   "structure": "one_factor",
+   "n": 3,
+   "n_polled": 3,
+   "env": 6.762200062947816,
+   "env_source": "estimator (term year 3, m=0.05)",
+   "d_wins": 2,
+   "expected": 1.61595,
+   "pit": 0.6224625,
+   "in_80": true
+  },
+  {
+   "year": 2019,
+   "structure": "polls_only",
+   "n": 3,
+   "n_polled": 3,
+   "env": 6.762200062947816,
+   "env_source": "estimator (term year 3, m=0.05)",
+   "d_wins": 2,
+   "expected": 1.8626,
+   "pit": 0.5250250000000001,
+   "in_80": true
+  },
+  {
+   "year": 2019,
+   "structure": "prior_only",
+   "n": 3,
+   "n_polled": 3,
+   "env": 6.762200062947816,
+   "env_source": "estimator (term year 3, m=0.05)",
+   "d_wins": 2,
+   "expected": 1.2244249999999999,
+   "pit": 0.8320375,
+   "in_80": true
+  },
+  {
+   "year": 2020,
+   "structure": "two_factor",
+   "n": 11,
+   "n_polled": 11,
+   "env": 7.769363565236954,
+   "env_source": "generic ballot",
+   "d_wins": 3,
+   "expected": 3.238775,
+   "pit": 0.39880000000000004,
+   "in_80": true
+  },
+  {
+   "year": 2020,
+   "structure": "one_factor",
+   "n": 11,
+   "n_polled": 11,
+   "env": 7.769363565236954,
+   "env_source": "generic ballot",
+   "d_wins": 3,
+   "expected": 3.24465,
+   "pit": 0.397375,
+   "in_80": true
+  },
+  {
+   "year": 2020,
+   "structure": "polls_only",
+   "n": 11,
+   "n_polled": 11,
+   "env": 7.769363565236954,
+   "env_source": "generic ballot",
+   "d_wins": 3,
+   "expected": 3.268975,
+   "pit": 0.38894999999999996,
+   "in_80": true
+  },
+  {
+   "year": 2020,
+   "structure": "prior_only",
+   "n": 11,
+   "n_polled": 11,
+   "env": 7.769363565236954,
+   "env_source": "generic ballot",
+   "d_wins": 3,
+   "expected": 4.26865,
+   "pit": 0.13777499999999998,
+   "in_80": true
+  },
+  {
+   "year": 2021,
+   "structure": "two_factor",
+   "n": 2,
+   "n_polled": 2,
+   "env": -16.799503512062152,
+   "env_source": "estimator (term year 1, m=2.24)",
+   "d_wins": 1,
+   "expected": 1.477425,
+   "pit": 0.2612875,
+   "in_80": true
+  },
+  {
+   "year": 2021,
+   "structure": "one_factor",
+   "n": 2,
+   "n_polled": 2,
+   "env": -16.799503512062152,
+   "env_source": "estimator (term year 1, m=2.24)",
+   "d_wins": 1,
+   "expected": 1.475,
+   "pit": 0.2625,
+   "in_80": true
+  },
+  {
+   "year": 2021,
+   "structure": "polls_only",
+   "n": 2,
+   "n_polled": 2,
+   "env": -16.799503512062152,
+   "env_source": "estimator (term year 1, m=2.24)",
+   "d_wins": 1,
+   "expected": 1.544225,
+   "pit": 0.22788750000000002,
+   "in_80": true
+  },
+  {
+   "year": 2021,
+   "structure": "prior_only",
+   "n": 2,
+   "n_polled": 2,
+   "env": -16.799503512062152,
+   "env_source": "estimator (term year 1, m=2.24)",
+   "d_wins": 1,
+   "expected": 0.9091,
+   "pit": 0.54545,
+   "in_80": true
+  },
+  {
+   "year": 2022,
+   "structure": "two_factor",
+   "n": 34,
+   "n_polled": 32,
+   "env": 0.9539543013264747,
+   "env_source": "generic ballot",
+   "d_wins": 18,
+   "expected": 16.624975,
+   "pit": 0.7250125,
+   "in_80": true
+  },
+  {
+   "year": 2022,
+   "structure": "one_factor",
+   "n": 34,
+   "n_polled": 32,
+   "env": 0.9539543013264747,
+   "env_source": "generic ballot",
+   "d_wins": 18,
+   "expected": 16.615875,
+   "pit": 0.7167,
+   "in_80": true
+  },
+  {
+   "year": 2022,
+   "structure": "polls_only",
+   "n": 34,
+   "n_polled": 32,
+   "env": 0.9539543013264747,
+   "env_source": "generic ballot",
+   "d_wins": 18,
+   "expected": 16.553175,
+   "pit": 0.7118,
+   "in_80": true
+  },
+  {
+   "year": 2022,
+   "structure": "prior_only",
+   "n": 34,
+   "n_polled": 32,
+   "env": 0.9539543013264747,
+   "env_source": "generic ballot",
+   "d_wins": 18,
+   "expected": 16.719299999999997,
+   "pit": 0.72765,
+   "in_80": true
+  },
+  {
+   "year": 2023,
+   "structure": "two_factor",
+   "n": 3,
+   "n_polled": 2,
+   "env": -3.797276919295022,
+   "env_source": "estimator (term year 3, m=0.23)",
+   "d_wins": 1,
+   "expected": 0.934775,
+   "pit": 0.5407375,
+   "in_80": true
+  },
+  {
+   "year": 2023,
+   "structure": "one_factor",
+   "n": 3,
+   "n_polled": 2,
+   "env": -3.797276919295022,
+   "env_source": "estimator (term year 3, m=0.23)",
+   "d_wins": 1,
+   "expected": 0.93845,
+   "pit": 0.5405500000000001,
+   "in_80": true
+  },
+  {
+   "year": 2023,
+   "structure": "polls_only",
+   "n": 3,
+   "n_polled": 2,
+   "env": -3.797276919295022,
+   "env_source": "estimator (term year 3, m=0.23)",
+   "d_wins": 1,
+   "expected": 1.28815,
+   "pit": 0.38175000000000003,
+   "in_80": true
+  },
+  {
+   "year": 2023,
+   "structure": "prior_only",
+   "n": 3,
+   "n_polled": 2,
+   "env": -3.797276919295022,
+   "env_source": "estimator (term year 3, m=0.23)",
+   "d_wins": 1,
+   "expected": 0.648325,
+   "pit": 0.676875,
+   "in_80": true
+  },
+  {
+   "year": 2024,
+   "structure": "two_factor",
+   "n": 11,
+   "n_polled": 8,
+   "env": -1.651117419390843,
+   "env_source": "estimator (presidential year)",
+   "d_wins": 3,
+   "expected": 3.31465,
+   "pit": 0.395325,
+   "in_80": true
+  },
+  {
+   "year": 2024,
+   "structure": "one_factor",
+   "n": 11,
+   "n_polled": 8,
+   "env": -1.651117419390843,
+   "env_source": "estimator (presidential year)",
+   "d_wins": 3,
+   "expected": 3.3233,
+   "pit": 0.398475,
+   "in_80": true
+  },
+  {
+   "year": 2024,
+   "structure": "polls_only",
+   "n": 11,
+   "n_polled": 8,
+   "env": -1.651117419390843,
+   "env_source": "estimator (presidential year)",
+   "d_wins": 3,
+   "expected": 3.3975999999999993,
+   "pit": 0.369225,
+   "in_80": true
+  },
+  {
+   "year": 2024,
+   "structure": "prior_only",
+   "n": 11,
+   "n_polled": 8,
+   "env": -1.651117419390843,
+   "env_source": "estimator (presidential year)",
+   "d_wins": 3,
+   "expected": 2.6936750000000003,
+   "pit": 0.5997375,
+   "in_80": true
+  },
+  {
+   "year": 2025,
+   "structure": "two_factor",
+   "n": 2,
+   "n_polled": 2,
+   "env": 16.809716385084783,
+   "env_source": "estimator (term year 1, m=2.12)",
+   "d_wins": 2,
+   "expected": 1.850375,
+   "pit": 0.5671125,
+   "in_80": true
+  },
+  {
+   "year": 2025,
+   "structure": "one_factor",
+   "n": 2,
+   "n_polled": 2,
+   "env": 16.809716385084783,
+   "env_source": "estimator (term year 1, m=2.12)",
+   "d_wins": 2,
+   "expected": 1.846475,
+   "pit": 0.56845,
+   "in_80": true
+  },
+  {
+   "year": 2025,
+   "structure": "polls_only",
+   "n": 2,
+   "n_polled": 2,
+   "env": 16.809716385084783,
+   "env_source": "estimator (term year 1, m=2.12)",
+   "d_wins": 2,
+   "expected": 1.816325,
+   "pit": 0.5821624999999999,
+   "in_80": true
+  },
+  {
+   "year": 2025,
+   "structure": "prior_only",
+   "n": 2,
+   "n_polled": 2,
+   "env": 16.809716385084783,
+   "env_source": "estimator (term year 1, m=2.12)",
+   "d_wins": 2,
+   "expected": 1.7390750000000001,
+   "pit": 0.6208625,
+   "in_80": true
+  }
+ ]
+}

@@ -1,0 +1,300 @@
+{
+ "question": "What national environment should an off-cycle race use?",
+ "fund_model": {
+  "Intercept": -7.0156630714752035,
+  "approval": 0.18914532112889057,
+  "prev": 0.7930156894927387,
+  "midterm": -9.381749494927009
+ },
+ "fund_model_se": {
+  "Intercept": 3.191135446061203,
+  "approval": 0.06316129991048754,
+  "prev": 0.10960655508239431,
+  "midterm": 1.6444186875969693
+ },
+ "fund_loyo_rmse_even_years": 4.563618690480004,
+ "fund_n_elections": 38,
+ "approval_check_vs_fundamentals_dataset": {
+  "1962": 0.0,
+  "1964": NaN,
+  "1966": 0.0,
+  "1968": 0.0,
+  "1970": 0.0,
+  "1972": NaN,
+  "1974": -4.12,
+  "1976": NaN,
+  "1978": 0.0,
+  "1980": 0.0,
+  "1982": -0.0,
+  "1984": -0.05,
+  "1986": 0.0,
+  "1988": 0.33,
+  "1990": 0.0,
+  "1992": 0.0,
+  "1994": -0.01,
+  "1996": 0.0,
+  "1998": -0.2,
+  "2000": 0.01,
+  "2002": 0.0,
+  "2004": 0.0,
+  "2006": 0.0,
+  "2008": 0.0,
+  "2010": 0.08,
+  "2012": -0.11,
+  "2014": -0.0,
+  "2016": -0.2,
+  "2018": 0.12,
+  "2020": 0.0,
+  "2022": 0.0
+ },
+ "prior_env_coef": 0.656626012912953,
+ "race_errors": [
+  {
+   "estimator": "fund_m0",
+   "n": 35,
+   "mean": 0.40618921263474334,
+   "rmse": 18.159889557386467,
+   "mae": 14.661199492349722
+  },
+  {
+   "estimator": "fund_m0.5",
+   "n": 35,
+   "mean": 0.4941935092776292,
+   "rmse": 17.38918101680541,
+   "mae": 13.706107970526126
+  },
+  {
+   "estimator": "fund_m1",
+   "n": 35,
+   "mean": 0.5821978059205155,
+   "rmse": 17.145270394240484,
+   "mae": 13.161807471842982
+  },
+  {
+   "estimator": "prev_vote",
+   "n": 35,
+   "mean": 0.4857260222375605,
+   "rmse": 17.842152989072314,
+   "mae": 14.352170817055276
+  }
+ ],
+ "env_errors_vs_implied": {
+  "fund_m0": {
+   "rmse_vs_implied": 15.35112699575267,
+   "mean_vs_implied": -0.6186005498514882
+  },
+  "fund_m0.5": {
+   "rmse_vs_implied": 13.119145270808234,
+   "mean_vs_implied": -0.75262554263616
+  },
+  "fund_m1": {
+   "rmse_vs_implied": 12.352143823085745,
+   "mean_vs_implied": -0.8866505354208312
+  },
+  "prev_vote": {
+   "rmse_vs_implied": 14.461183278455511,
+   "mean_vs_implied": -0.7397300939735256
+  }
+ },
+ "by_year": [
+  {
+   "year": 1999,
+   "n": 2,
+   "states": "LA,MS",
+   "implied_env": -8.17,
+   "prev_vote": -1.15,
+   "fund_m0": 3.35,
+   "fund_m0.5": -1.34,
+   "fund_m1": -6.03,
+   "prev_year": 1998,
+   "approval": 59.62,
+   "approval_source": "Gallup (APP sheet)",
+   "president": "D"
+  },
+  {
+   "year": 2001,
+   "n": 2,
+   "states": "NJ,VA",
+   "implied_env": 16.92,
+   "prev_vote": -0.53,
+   "fund_m0": -6.66,
+   "fund_m0.5": -1.97,
+   "fund_m1": 2.72,
+   "prev_year": 2000,
+   "approval": 70.09,
+   "approval_source": "Gallup (APP sheet)",
+   "president": "R"
+  },
+  {
+   "year": 2003,
+   "n": 3,
+   "states": "KY,LA,MS",
+   "implied_env": -6.36,
+   "prev_vote": -5.04,
+   "fund_m0": -7.53,
+   "fund_m0.5": -2.84,
+   "fund_m1": 1.85,
+   "prev_year": 2002,
+   "approval": 55.78,
+   "approval_source": "Gallup (APP sheet)",
+   "president": "R"
+  },
+  {
+   "year": 2005,
+   "n": 2,
+   "states": "NJ,VA",
+   "implied_env": 13.62,
+   "prev_vote": -2.7,
+   "fund_m0": -3.35,
+   "fund_m0.5": 1.34,
+   "fund_m1": 6.03,
+   "prev_year": 2004,
+   "approval": 43.46,
+   "approval_source": "Gallup (APP sheet)",
+   "president": "R"
+  },
+  {
+   "year": 2007,
+   "n": 3,
+   "states": "KY,LA,MS",
+   "implied_env": 0.96,
+   "prev_vote": 8.28,
+   "fund_m0": 7.31,
+   "fund_m0.5": 12.0,
+   "fund_m1": 16.69,
+   "prev_year": 2006,
+   "approval": 33.17,
+   "approval_source": "Gallup (APP sheet)",
+   "president": "R"
+  },
+  {
+   "year": 2009,
+   "n": 2,
+   "states": "NJ,VA",
+   "implied_env": -26.99,
+   "prev_vote": 11.02,
+   "fund_m0": 11.73,
+   "fund_m0.5": 7.04,
+   "fund_m1": 2.35,
+   "prev_year": 2008,
+   "approval": 52.93,
+   "approval_source": "Gallup (APP sheet)",
+   "president": "D"
+  },
+  {
+   "year": 2011,
+   "n": 4,
+   "states": "KY,LA,MS,WV",
+   "implied_env": -13.88,
+   "prev_vote": -7.04,
+   "fund_m0": -4.79,
+   "fund_m0.5": -9.48,
+   "fund_m1": -14.17,
+   "prev_year": 2010,
+   "approval": 41.27,
+   "approval_source": "Gallup (APP sheet)",
+   "president": "D"
+  },
+  {
+   "year": 2013,
+   "n": 2,
+   "states": "NJ,VA",
+   "implied_env": -3.84,
+   "prev_vote": 1.14,
+   "fund_m0": 2.31,
+   "fund_m0.5": -2.38,
+   "fund_m1": -7.07,
+   "prev_year": 2012,
+   "approval": 44.53,
+   "approval_source": "Gallup (APP sheet)",
+   "president": "D"
+  },
+  {
+   "year": 2015,
+   "n": 3,
+   "states": "KY,LA,MS",
+   "implied_env": 6.64,
+   "prev_vote": -5.89,
+   "fund_m0": -2.96,
+   "fund_m0.5": -7.66,
+   "fund_m1": -12.35,
+   "prev_year": 2014,
+   "approval": 46.13,
+   "approval_source": "Gallup (APP sheet)",
+   "president": "D"
+  },
+  {
+   "year": 2017,
+   "n": 2,
+   "states": "NJ,VA",
+   "implied_env": 16.05,
+   "prev_vote": -1.05,
+   "fund_m0": -0.77,
+   "fund_m0.5": 3.92,
+   "fund_m1": 8.61,
+   "prev_year": 2016,
+   "approval": 36.8,
+   "approval_source": "Gallup (APP sheet)",
+   "president": "R"
+  },
+  {
+   "year": 2019,
+   "n": 3,
+   "states": "KY,LA,MS",
+   "implied_env": 14.12,
+   "prev_vote": 8.76,
+   "fund_m0": 6.26,
+   "fund_m0.5": 10.95,
+   "fund_m1": 15.64,
+   "prev_year": 2018,
+   "approval": 40.71,
+   "approval_source": "Gallup (APP sheet)",
+   "president": "R"
+  },
+  {
+   "year": 2021,
+   "n": 2,
+   "states": "NJ,VA",
+   "implied_env": -13.02,
+   "prev_vote": 3.18,
+   "fund_m0": 4.21,
+   "fund_m0.5": -0.48,
+   "fund_m1": -5.18,
+   "prev_year": 2020,
+   "approval": 46.0,
+   "approval_source": "Gallup (538 archive)",
+   "president": "D"
+  },
+  {
+   "year": 2023,
+   "n": 3,
+   "states": "KY,LA,MS",
+   "implied_env": 0.35,
+   "prev_vote": -2.77,
+   "fund_m0": -1.65,
+   "fund_m0.5": -6.34,
+   "fund_m1": -11.03,
+   "prev_year": 2022,
+   "approval": 40.0,
+   "approval_source": "Gallup (538 archive)",
+   "president": "D"
+  },
+  {
+   "year": 2025,
+   "n": 2,
+   "states": "NJ,VA",
+   "implied_env": 20.68,
+   "prev_vote": -2.68,
+   "fund_m0": -3.1,
+   "fund_m0.5": 1.59,
+   "fund_m1": 6.28,
+   "prev_year": 2024,
+   "approval": 42.26,
+   "approval_source": "VoteHub mean of 198 polls + Gallup house effect -1.2",
+   "president": "R"
+  }
+ ],
+ "chosen": "fund_m1",
+ "sd_env_offcycle": 4.563618690480004,
+ "note": "implied_env inverts the even-year governor prior on each odd year's results; it is noisy with 2-4 races per year"
+}

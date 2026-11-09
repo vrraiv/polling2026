@@ -1,0 +1,194 @@
+{
+ "note": "governors model, estimated on all two-way races 1998-2025 (see module docstring)",
+ "prior_comparison": {
+  "lean": {
+   "n": 276,
+   "loyo_rmse": 14.938706618467961,
+   "loyo_mae": 11.453797020081115,
+   "coef": {
+    "Intercept": -1.7796607957637205,
+    "lean_prev": 0.3477861094410995,
+    "env": 0.660084676222472,
+    "inc": 15.154366657673549
+   },
+   "se": {
+    "Intercept": 0.909769405298856,
+    "lean_prev": 0.04528463905021431,
+    "env": 0.14209835773142612,
+    "inc": 1.1976591253171371
+   },
+   "r2": 0.5381332903757118
+  },
+  "lean_avg2": {
+   "n": 276,
+   "loyo_rmse": 14.892787038619739,
+   "loyo_mae": 11.445132192877248,
+   "coef": {
+    "Intercept": -1.7599439517577347,
+    "lean_avg2": 0.3687872134505929,
+    "env": 0.6593653063173266,
+    "inc": 15.100377033730798
+   },
+   "se": {
+    "Intercept": 0.9041249338029439,
+    "lean_avg2": 0.04656305554289173,
+    "env": 0.14129692508031613,
+    "inc": 1.190565272864047
+   },
+   "r2": 0.5433029755906369
+  },
+  "lean_prevgov": {
+   "n": 276,
+   "loyo_rmse": 15.040926858585589,
+   "loyo_mae": 11.590262128315967,
+   "coef": {
+    "Intercept": -1.430686796637425,
+    "lean_prev": 0.3203926239064704,
+    "prev_gov_margin": 0.1270292200388693,
+    "env": 0.68688087187492,
+    "inc": 13.51543045405275
+   },
+   "se": {
+    "Intercept": 0.9101823920292,
+    "lean_prev": 0.046029954316936246,
+    "prev_gov_margin": 0.04879289095131015,
+    "env": 0.14098894049124788,
+    "inc": 1.3419601089010464
+   },
+   "r2": 0.5494030111596271
+  },
+  "lean_avg2_prevgov": {
+   "n": 276,
+   "loyo_rmse": 15.02225488943418,
+   "loyo_mae": 11.588152467738903,
+   "coef": {
+    "Intercept": -1.4476112477314915,
+    "lean_avg2": 0.3401013074658681,
+    "prev_gov_margin": 0.11713580807791714,
+    "env": 0.6839989432106012,
+    "inc": 13.606368470839435
+   },
+   "se": {
+    "Intercept": 0.9057768295834098,
+    "lean_avg2": 0.047689815591391856,
+    "prev_gov_margin": 0.048888515420371315,
+    "env": 0.14045824072341986,
+    "inc": 1.3349070613014715
+   },
+   "r2": 0.5527767008786046
+  }
+ },
+ "prior_chosen": "lean_avg2",
+ "params": {
+  "spec": "lean_avg2",
+  "w": 0.8471490477830467,
+  "w_se": 0.023373070720081796,
+  "sd_prior_implied": 16.79976113298211,
+  "sd_prior_robust": 13.00101761897489,
+  "sd_prior_raw": 14.519075893653758,
+  "g_env": 0.656626012912953,
+  "sd_S": 3.643461898301756,
+  "sd_H": 3.9719449743804525,
+  "rho": 0.683541772292168,
+  "n_cycles_factors": 13
+ },
+ "prior_coef": {
+  "Intercept": -1.533971024486793,
+  "lean_avg2": 0.36121418899630175,
+  "env": 0.656626012912953,
+  "inc": 15.388591867104381
+ },
+ "offcycle_m": {
+  "1": 2.1814427968492986,
+  "3": 0.16564216236009388
+ },
+ "env_sd_offcycle": 4.563618690480004,
+ "generic_by_cycle": [
+  {
+   "year": 1998,
+   "generic": 1.63,
+   "generic_actual": -0.934,
+   "generic_miss": -2.564
+  },
+  {
+   "year": 2000,
+   "generic": 2.573,
+   "generic_actual": -0.363,
+   "generic_miss": -2.937
+  },
+  {
+   "year": 2002,
+   "generic": 1.09,
+   "generic_actual": -4.974,
+   "generic_miss": -6.063
+  },
+  {
+   "year": 2004,
+   "generic": 2.841,
+   "generic_actual": -2.684,
+   "generic_miss": -5.524
+  },
+  {
+   "year": 2006,
+   "generic": 13.862,
+   "generic_actual": 8.212,
+   "generic_miss": -5.65
+  },
+  {
+   "year": 2008,
+   "generic": 10.002,
+   "generic_actual": 11.069,
+   "generic_miss": 1.067
+  },
+  {
+   "year": 2010,
+   "generic": -5.833,
+   "generic_actual": -6.767,
+   "generic_miss": -0.935
+  },
+  {
+   "year": 2012,
+   "generic": 1.004,
+   "generic_actual": 1.137,
+   "generic_miss": 0.133
+  },
+  {
+   "year": 2014,
+   "generic": -1.227,
+   "generic_actual": -5.887,
+   "generic_miss": -4.66
+  },
+  {
+   "year": 2016,
+   "generic": 4.502,
+   "generic_actual": -1.08,
+   "generic_miss": -5.582
+  },
+  {
+   "year": 2018,
+   "generic": 8.285,
+   "generic_actual": 8.747,
+   "generic_miss": 0.462
+  },
+  {
+   "year": 2020,
+   "generic": 7.769,
+   "generic_actual": 3.041,
+   "generic_miss": -4.729
+  },
+  {
+   "year": 2022,
+   "generic": 0.954,
+   "generic_actual": -2.68,
+   "generic_miss": -3.634
+  },
+  {
+   "year": 2025,
+   "generic": 3.53,
+   "generic_actual": NaN,
+   "generic_miss": NaN
+  }
+ ],
+ "n_races": 353,
+ "n_polled": 331
+}
