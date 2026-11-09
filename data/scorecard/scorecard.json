@@ -3,14 +3,14 @@
  "provisional": true,
  "sources": {
   "senate": {
-   "revision": 1384543314.0,
-   "page_modified": "2026-11-08T19:57:43Z",
-   "snapshot": "data/raw/wikipedia_results/2026-11-08/2026_United_States_Senate_elections.html"
+   "revision": 1384727603.0,
+   "page_modified": "2026-11-09T20:50:53Z",
+   "snapshot": "data/raw/wikipedia_results/2026-11-09/2026_United_States_Senate_elections.html"
   },
   "house": {
-   "revision": 1384530802.0,
-   "page_modified": "2026-11-08T18:32:13Z",
-   "snapshot": "data/raw/wikipedia_results/2026-11-08/2026_United_States_House_of_Representatives_elections.html"
+   "revision": 1384722295.0,
+   "page_modified": "2026-11-09T20:15:10Z",
+   "snapshot": "data/raw/wikipedia_results/2026-11-09/2026_United_States_House_of_Representatives_elections.html"
   }
  },
  "contested_rule": "any published model gave the D side between 2% and 98% (fixed from data/final/)",
@@ -843,21 +843,27 @@
   "scores": {
    "polls_only": {
     "all": {
-     "n": 400,
-     "brier": 0.0447048497984375,
-     "brier_expected": 0.0397095877015625,
-     "log_loss": 0.14641333808622303,
-     "upsets": 26,
-     "upsets_expected": 21.914825,
-     "upsets_to_d": 26,
+     "n": 404,
+     "brier": 0.04811410236695544,
+     "brier_expected": 0.04043688773205446,
+     "log_loss": 0.15691823385895715,
+     "upsets": 28,
+     "upsets_expected": 22.4623,
+     "upsets_to_d": 28,
      "upsets_to_r": 0,
-     "upsets_to_d_expected": 13.044025000000001,
+     "upsets_to_d_expected": 13.5915,
      "upsets_to_r_expected": 8.8708,
      "misses": [
       {
        "race": "2026|AL|H|2",
        "p_dside": 0.4182,
        "winner": "Shomari Figures",
+       "winner_party": "D"
+      },
+      {
+       "race": "2026|CO|H|4",
+       "p_dside": 0.0491,
+       "winner": "Eileen Laubacher",
        "winner_party": "D"
       },
       {
@@ -894,6 +900,12 @@
        "race": "2026|MI|H|4",
        "p_dside": 0.3714,
        "winner": "Sean McCann",
+       "winner_party": "D"
+      },
+      {
+       "race": "2026|MN|H|1",
+       "p_dside": 0.2202,
+       "winner": "Jake Johnson",
        "winner_party": "D"
       },
       {
@@ -1013,21 +1025,27 @@
      ]
     },
     "contested": {
-     "n": 149,
-     "brier": 0.11995092399748321,
-     "brier_expected": 0.10010763304949664,
-     "log_loss": 0.3864669105142575,
-     "upsets": 26,
-     "upsets_expected": 20.937774999999995,
-     "upsets_to_d": 26,
+     "n": 153,
+     "brier": 0.12698591576797386,
+     "brier_expected": 0.10044905155228757,
+     "log_loss": 0.4079294177199599,
+     "upsets": 28,
+     "upsets_expected": 21.48525,
+     "upsets_to_d": 28,
      "upsets_to_r": 0,
-     "upsets_to_d_expected": 12.633,
+     "upsets_to_d_expected": 13.180475,
      "upsets_to_r_expected": 8.304775000000001,
      "misses": [
       {
        "race": "2026|AL|H|2",
        "p_dside": 0.4182,
        "winner": "Shomari Figures",
+       "winner_party": "D"
+      },
+      {
+       "race": "2026|CO|H|4",
+       "p_dside": 0.0491,
+       "winner": "Eileen Laubacher",
        "winner_party": "D"
       },
       {
@@ -1064,6 +1082,12 @@
        "race": "2026|MI|H|4",
        "p_dside": 0.3714,
        "winner": "Sean McCann",
+       "winner_party": "D"
+      },
+      {
+       "race": "2026|MN|H|1",
+       "p_dside": 0.2202,
+       "winner": "Jake Johnson",
        "winner_party": "D"
       },
       {
@@ -1185,21 +1209,27 @@
    },
    "polls_fundamentals": {
     "all": {
-     "n": 400,
-     "brier": 0.042800060375000004,
-     "brier_expected": 0.038488314625,
-     "log_loss": 0.14147733759028328,
-     "upsets": 25,
-     "upsets_expected": 21.2626,
-     "upsets_to_d": 25,
+     "n": 404,
+     "brier": 0.046266343456064354,
+     "brier_expected": 0.03923736941522277,
+     "log_loss": 0.15231838660521618,
+     "upsets": 27,
+     "upsets_expected": 21.81625,
+     "upsets_to_d": 27,
      "upsets_to_r": 0,
-     "upsets_to_d_expected": 12.881450000000001,
+     "upsets_to_d_expected": 13.4351,
      "upsets_to_r_expected": 8.381149999999998,
      "misses": [
       {
        "race": "2026|AL|H|2",
        "p_dside": 0.4356,
        "winner": "Shomari Figures",
+       "winner_party": "D"
+      },
+      {
+       "race": "2026|CO|H|4",
+       "p_dside": 0.0449,
+       "winner": "Eileen Laubacher",
        "winner_party": "D"
       },
       {
@@ -1230,6 +1260,12 @@
        "race": "2026|MI|H|4",
        "p_dside": 0.3922,
        "winner": "Sean McCann",
+       "winner_party": "D"
+      },
+      {
+       "race": "2026|MN|H|1",
+       "p_dside": 0.2179,
+       "winner": "Jake Johnson",
        "winner_party": "D"
       },
       {
@@ -1349,21 +1385,27 @@
      ]
     },
     "contested": {
-     "n": 149,
-     "brier": 0.11485248223993291,
-     "brier_expected": 0.0976515446057047,
-     "log_loss": 0.3740610361592917,
-     "upsets": 25,
-     "upsets_expected": 20.410349999999998,
-     "upsets_to_d": 25,
+     "n": 153,
+     "brier": 0.1221215585620915,
+     "brier_expected": 0.09808268980392157,
+     "log_loss": 0.39660645451064375,
+     "upsets": 27,
+     "upsets_expected": 20.964,
+     "upsets_to_d": 27,
      "upsets_to_r": 0,
-     "upsets_to_d_expected": 12.502074999999998,
+     "upsets_to_d_expected": 13.055724999999999,
      "upsets_to_r_expected": 7.908275000000001,
      "misses": [
       {
        "race": "2026|AL|H|2",
        "p_dside": 0.4356,
        "winner": "Shomari Figures",
+       "winner_party": "D"
+      },
+      {
+       "race": "2026|CO|H|4",
+       "p_dside": 0.0449,
+       "winner": "Eileen Laubacher",
        "winner_party": "D"
       },
       {
@@ -1394,6 +1436,12 @@
        "race": "2026|MI|H|4",
        "p_dside": 0.3922,
        "winner": "Sean McCann",
+       "winner_party": "D"
+      },
+      {
+       "race": "2026|MN|H|1",
+       "p_dside": 0.2179,
+       "winner": "Jake Johnson",
        "winner_party": "D"
       },
       {
@@ -1515,21 +1563,27 @@
    },
    "polls_fundamentals_biasadj": {
     "all": {
-     "n": 400,
-     "brier": 0.056467522853125,
-     "brier_expected": 0.034717227146875,
-     "log_loss": 0.17946140833787258,
-     "upsets": 35,
-     "upsets_expected": 18.695,
-     "upsets_to_d": 35,
+     "n": 404,
+     "brier": 0.06023298162592822,
+     "brier_expected": 0.03505334263149752,
+     "log_loss": 0.1927656464427465,
+     "upsets": 37,
+     "upsets_expected": 18.998075,
+     "upsets_to_d": 37,
      "upsets_to_r": 0,
-     "upsets_to_d_expected": 12.454675,
+     "upsets_to_d_expected": 12.757750000000001,
      "upsets_to_r_expected": 6.240325,
      "misses": [
       {
        "race": "2026|AL|H|2",
        "p_dside": 0.2762,
        "winner": "Shomari Figures",
+       "winner_party": "D"
+      },
+      {
+       "race": "2026|CO|H|4",
+       "p_dside": 0.0227,
+       "winner": "Eileen Laubacher",
        "winner_party": "D"
       },
       {
@@ -1590,6 +1644,12 @@
        "race": "2026|MI|H|10",
        "p_dside": 0.4239,
        "winner": "Christina Hines",
+       "winner_party": "D"
+      },
+      {
+       "race": "2026|MN|H|1",
+       "p_dside": 0.1179,
+       "winner": "Jake Johnson",
        "winner_party": "D"
       },
       {
@@ -1739,21 +1799,27 @@
      ]
     },
     "contested": {
-     "n": 149,
-     "brier": 0.15153661392197987,
-     "brier_expected": 0.08730952701761746,
-     "log_loss": 0.47580294903988235,
-     "upsets": 35,
-     "upsets_expected": 17.809175000000003,
-     "upsets_to_d": 35,
+     "n": 153,
+     "brier": 0.1589939275163399,
+     "brier_expected": 0.08682208555555555,
+     "log_loss": 0.5031856028409348,
+     "upsets": 37,
+     "upsets_expected": 18.112250000000003,
+     "upsets_to_d": 37,
      "upsets_to_r": 0,
-     "upsets_to_d_expected": 12.177675000000002,
+     "upsets_to_d_expected": 12.480750000000002,
      "upsets_to_r_expected": 5.631500000000001,
      "misses": [
       {
        "race": "2026|AL|H|2",
        "p_dside": 0.2762,
        "winner": "Shomari Figures",
+       "winner_party": "D"
+      },
+      {
+       "race": "2026|CO|H|4",
+       "p_dside": 0.0227,
+       "winner": "Eileen Laubacher",
        "winner_party": "D"
       },
       {
@@ -1814,6 +1880,12 @@
        "race": "2026|MI|H|10",
        "p_dside": 0.4239,
        "winner": "Christina Hines",
+       "winner_party": "D"
+      },
+      {
+       "race": "2026|MN|H|1",
+       "p_dside": 0.1179,
+       "winner": "Jake Johnson",
        "winner_party": "D"
       },
       {
@@ -1965,21 +2037,27 @@
    },
    "pocket_senate_wide_shift": {
     "all": {
-     "n": 400,
-     "brier": 0.056449439928125004,
-     "brier_expected": 0.034581435071875,
-     "log_loss": 0.17948135038975388,
-     "upsets": 35,
-     "upsets_expected": 18.61325,
-     "upsets_to_d": 35,
+     "n": 404,
+     "brier": 0.060201480829207926,
+     "brier_expected": 0.03492747956683168,
+     "log_loss": 0.19258211969746508,
+     "upsets": 37,
+     "upsets_expected": 18.920550000000002,
+     "upsets_to_d": 37,
      "upsets_to_r": 0,
-     "upsets_to_d_expected": 12.424175,
+     "upsets_to_d_expected": 12.731475,
      "upsets_to_r_expected": 6.189075,
      "misses": [
       {
        "race": "2026|AL|H|2",
        "p_dside": 0.2771,
        "winner": "Shomari Figures",
+       "winner_party": "D"
+      },
+      {
+       "race": "2026|CO|H|4",
+       "p_dside": 0.0244,
+       "winner": "Eileen Laubacher",
        "winner_party": "D"
       },
       {
@@ -2040,6 +2118,12 @@
        "race": "2026|MI|H|10",
        "p_dside": 0.4269,
        "winner": "Christina Hines",
+       "winner_party": "D"
+      },
+      {
+       "race": "2026|MN|H|1",
+       "p_dside": 0.1194,
+       "winner": "Jake Johnson",
        "winner_party": "D"
       },
       {
@@ -2189,21 +2273,27 @@
      ]
     },
     "contested": {
-     "n": 149,
-     "brier": 0.15148815483221476,
-     "brier_expected": 0.08698869080536913,
-     "log_loss": 0.47590023363956685,
-     "upsets": 35,
-     "upsets_expected": 17.73395,
-     "upsets_to_d": 35,
+     "n": 153,
+     "brier": 0.158910832377451,
+     "brier_expected": 0.08653230487745099,
+     "log_loss": 0.5027436013998027,
+     "upsets": 37,
+     "upsets_expected": 18.041249999999998,
+     "upsets_to_d": 37,
      "upsets_to_r": 0,
-     "upsets_to_d_expected": 12.145850000000001,
+     "upsets_to_d_expected": 12.45315,
      "upsets_to_r_expected": 5.588099999999999,
      "misses": [
       {
        "race": "2026|AL|H|2",
        "p_dside": 0.2771,
        "winner": "Shomari Figures",
+       "winner_party": "D"
+      },
+      {
+       "race": "2026|CO|H|4",
+       "p_dside": 0.0244,
+       "winner": "Eileen Laubacher",
        "winner_party": "D"
       },
       {
@@ -2264,6 +2354,12 @@
        "race": "2026|MI|H|10",
        "p_dside": 0.4269,
        "winner": "Christina Hines",
+       "winner_party": "D"
+      },
+      {
+       "race": "2026|MN|H|1",
+       "p_dside": 0.1194,
+       "winner": "Jake Johnson",
        "winner_party": "D"
       },
       {
@@ -2415,21 +2511,27 @@
    },
    "pocket_full_historical_bias": {
     "all": {
-     "n": 400,
-     "brier": 0.058405954846875004,
-     "brier_expected": 0.034259545153125,
-     "log_loss": 0.18528481784845166,
-     "upsets": 36,
-     "upsets_expected": 18.3292,
-     "upsets_to_d": 36,
+     "n": 404,
+     "brier": 0.062188209696782175,
+     "brier_expected": 0.034568968521039606,
+     "log_loss": 0.19862928164128768,
+     "upsets": 38,
+     "upsets_expected": 18.61615,
+     "upsets_to_d": 38,
      "upsets_to_r": 0,
-     "upsets_to_d_expected": 12.268699999999999,
+     "upsets_to_d_expected": 12.55565,
      "upsets_to_r_expected": 6.060500000000001,
      "misses": [
       {
        "race": "2026|AL|H|2",
        "p_dside": 0.2579,
        "winner": "Shomari Figures",
+       "winner_party": "D"
+      },
+      {
+       "race": "2026|CO|H|4",
+       "p_dside": 0.0237,
+       "winner": "Eileen Laubacher",
        "winner_party": "D"
       },
       {
@@ -2490,6 +2592,12 @@
        "race": "2026|MI|H|10",
        "p_dside": 0.4032,
        "winner": "Christina Hines",
+       "winner_party": "D"
+      },
+      {
+       "race": "2026|MN|H|1",
+       "p_dside": 0.108,
+       "winner": "Jake Johnson",
        "winner_party": "D"
       },
       {
@@ -2645,21 +2753,27 @@
      ]
     },
     "contested": {
-     "n": 149,
-     "brier": 0.15673787683305368,
-     "brier_expected": 0.08600859967701342,
-     "log_loss": 0.4913598675357821,
-     "upsets": 36,
-     "upsets_expected": 17.432225,
-     "upsets_to_d": 36,
+     "n": 153,
+     "brier": 0.16415423808415033,
+     "brier_expected": 0.0854727227001634,
+     "log_loss": 0.5185942673629483,
+     "upsets": 38,
+     "upsets_expected": 17.719175,
+     "upsets_to_d": 38,
      "upsets_to_r": 0,
-     "upsets_to_d_expected": 11.999424999999997,
+     "upsets_to_d_expected": 12.286375,
      "upsets_to_r_expected": 5.4328,
      "misses": [
       {
        "race": "2026|AL|H|2",
        "p_dside": 0.2579,
        "winner": "Shomari Figures",
+       "winner_party": "D"
+      },
+      {
+       "race": "2026|CO|H|4",
+       "p_dside": 0.0237,
+       "winner": "Eileen Laubacher",
        "winner_party": "D"
       },
       {
@@ -2720,6 +2834,12 @@
        "race": "2026|MI|H|10",
        "p_dside": 0.4032,
        "winner": "Christina Hines",
+       "winner_party": "D"
+      },
+      {
+       "race": "2026|MN|H|1",
+       "p_dside": 0.108,
+       "winner": "Jake Johnson",
        "winner_party": "D"
       },
       {
@@ -2877,10 +2997,10 @@
    }
   },
   "seats": {
-   "dem_seats_called": 255,
-   "rep_seats_called": 163,
-   "n_pending": 17,
-   "n_pending_contested": 13,
+   "dem_seats_called": 257,
+   "rep_seats_called": 165,
+   "n_pending": 13,
+   "n_pending_contested": 9,
    "control_decided": "D",
    "versions": {
     "polls_only": {
@@ -2888,11 +3008,11 @@
      "p10": 219.0,
      "p90": 253.0,
      "range": {
-      "lo": 255,
-      "hi": 272,
-      "p_at_or_below_hi": 0.980925,
-      "p_below_lo": 0.910425,
-      "p_in_range": 0.07050000000000001
+      "lo": 257,
+      "hi": 270,
+      "p_at_or_below_hi": 0.977925,
+      "p_below_lo": 0.925925,
+      "p_in_range": 0.052000000000000046
      },
      "p_control_outcome": 0.92555
     },
@@ -2901,11 +3021,11 @@
      "p10": 224.0,
      "p90": 252.0,
      "range": {
-      "lo": 255,
-      "hi": 272,
-      "p_at_or_below_hi": 0.990375,
-      "p_below_lo": 0.928925,
-      "p_in_range": 0.061450000000000005
+      "lo": 257,
+      "hi": 270,
+      "p_at_or_below_hi": 0.988475,
+      "p_below_lo": 0.944375,
+      "p_in_range": 0.04410000000000003
      },
      "p_control_outcome": 0.9677
     },
@@ -2914,11 +3034,11 @@
      "p10": 218.0,
      "p90": 239.0,
      "range": {
-      "lo": 255,
-      "hi": 272,
-      "p_at_or_below_hi": 0.998325,
-      "p_below_lo": 0.99035,
-      "p_in_range": 0.007975000000000065
+      "lo": 257,
+      "hi": 270,
+      "p_at_or_below_hi": 0.998075,
+      "p_below_lo": 0.99235,
+      "p_in_range": 0.005725000000000091
      },
      "p_control_outcome": 0.916
     },
@@ -2927,11 +3047,11 @@
      "p10": 218.0,
      "p90": 239.0,
      "range": {
-      "lo": 255,
-      "hi": 272,
-      "p_at_or_below_hi": 0.99885,
-      "p_below_lo": 0.9911,
-      "p_in_range": 0.007750000000000035
+      "lo": 257,
+      "hi": 270,
+      "p_at_or_below_hi": 0.99855,
+      "p_below_lo": 0.992825,
+      "p_in_range": 0.005725000000000091
      },
      "p_control_outcome": 0.921625
     },
@@ -2940,11 +3060,11 @@
      "p10": 217.0,
      "p90": 238.0,
      "range": {
-      "lo": 255,
-      "hi": 272,
-      "p_at_or_below_hi": 0.998425,
-      "p_below_lo": 0.992325,
-      "p_in_range": 0.006099999999999994
+      "lo": 257,
+      "hi": 270,
+      "p_at_or_below_hi": 0.998225,
+      "p_below_lo": 0.99385,
+      "p_in_range": 0.004375000000000018
      },
      "p_control_outcome": 0.8994
     }
@@ -3071,10 +3191,10 @@
    {
     "race_key": "2026|AZ|H|2",
     "contested": true,
-    "called": false,
-    "winner": "",
-    "winner_party": "",
-    "y": null,
+    "called": true,
+    "winner": "Eli Crane",
+    "winner_party": "R",
+    "y": 0.0,
     "polls_only": 0.190175,
     "polls_fundamentals": 0.19685,
     "polls_fundamentals_biasadj": 0.101175,
@@ -3942,10 +4062,10 @@
    {
     "race_key": "2026|CO|H|4",
     "contested": true,
-    "called": false,
-    "winner": "",
-    "winner_party": "",
-    "y": null,
+    "called": true,
+    "winner": "Eileen Laubacher",
+    "winner_party": "D",
+    "y": 1.0,
     "polls_only": 0.049125,
     "polls_fundamentals": 0.044875,
     "polls_fundamentals_biasadj": 0.0227,
@@ -5697,10 +5817,10 @@
    {
     "race_key": "2026|MN|H|1",
     "contested": true,
-    "called": false,
-    "winner": "",
-    "winner_party": "",
-    "y": null,
+    "called": true,
+    "winner": "Jake Johnson",
+    "winner_party": "D",
+    "y": 1.0,
     "polls_only": 0.2202,
     "polls_fundamentals": 0.217875,
     "polls_fundamentals_biasadj": 0.11795,
@@ -6711,10 +6831,10 @@
    {
     "race_key": "2026|NC|H|7",
     "contested": true,
-    "called": false,
-    "winner": "",
-    "winner_party": "",
-    "y": null,
+    "called": true,
+    "winner": "David Rouzer",
+    "winner_party": "R",
+    "y": 0.0,
     "polls_only": 0.087975,
     "polls_fundamentals": 0.09405,
     "polls_fundamentals_biasadj": 0.06125,
@@ -8636,11 +8756,11 @@
    "status": "ok",
    "source": "Georgia Secretary of State",
    "url": "https://results.sos.ga.gov/results/public/api/elections/Georgia",
-   "as_of": "2026-11-07T20:05:49.2819869Z",
-   "reporting": "counties fully reporting 53/159; official: False",
+   "as_of": "2026-11-09T20:39:08.0490823Z",
+   "reporting": "counties fully reporting 111/159; official: False",
    "complete": false,
-   "margin": 18.0439606612,
-   "wiki_margin": null
+   "margin": 18.0522689143,
+   "wiki_margin": 18.0426460193
   },
   {
    "race_key": "2026|ID|S|regular",
@@ -8662,7 +8782,7 @@
    "reporting": "counties reporting 95/99 for this contest; precincts 1659/1659",
    "complete": false,
    "margin": 4.2419677762,
-   "wiki_margin": 4.2419677762
+   "wiki_margin": 4.3250117087
   },
   {
    "race_key": "2026|KS|S|regular",
@@ -8680,10 +8800,10 @@
    "status": "ok",
    "source": "Louisiana Secretary of State",
    "url": "https://voterportal.sos.la.gov/graphical",
-   "as_of": "2026-11-08T05:00:13.607 (Louisiana time)",
+   "as_of": "2026-11-09T09:59:20.137 (Louisiana time)",
    "reporting": "precincts 3722/3722, absentee 64/64",
    "complete": true,
-   "margin": -1.7632149035,
+   "margin": -1.7631210995,
    "wiki_margin": -1.7636959788
   },
   {
@@ -8713,11 +8833,11 @@
    "status": "ok",
    "source": "Minnesota Secretary of State (media text files)",
    "url": "https://electionresultsfiles.sos.mn.gov/20261103/ussenate.txt",
-   "as_of": "Sun, 08 Nov 2026 19:58:13 GMT",
+   "as_of": "Mon, 09 Nov 2026 20:28:18 GMT",
    "reporting": "precincts 4105/4105",
    "complete": true,
-   "margin": 10.4249181928,
-   "wiki_margin": null
+   "margin": 10.4357575001,
+   "wiki_margin": 10.4342335951
   },
   {
    "race_key": "2026|MS|S|regular",
@@ -8735,10 +8855,10 @@
    "status": "ok",
    "source": "Montana Secretary of State",
    "url": "https://electionresults.mt.gov/resultsSW.aspx?type=FED&map=CTY",
-   "as_of": "11/8/2026 1:40:23 PM MT (Montana time)",
+   "as_of": "11/9/2026 1:55:26 PM MT (Montana time)",
    "reporting": "precincts fully reporting 728/728, partially 0",
    "complete": true,
-   "margin": -10.6308115532,
+   "margin": -10.6307894983,
    "wiki_margin": -9.0740684349
   },
   {
@@ -8783,7 +8903,7 @@
    "reporting": "counties reporting 0/46 for this contest; precincts 2312/2312",
    "complete": false,
    "margin": 4.6009035843,
-   "wiki_margin": 4.5746558737
+   "wiki_margin": 4.6008188921
   },
   {
    "race_key": "2026|TX|S|regular",
@@ -21076,16 +21196,16 @@
   "sources": {
    "senate_pages": [
     {
-     "revision": "1384533218.0",
-     "page_modified": "2026-11-08T18:48:21Z"
+     "revision": "1384644340.0",
+     "page_modified": "2026-11-09T08:48:28Z"
     },
     {
-     "revision": "1384547442.0",
-     "page_modified": "2026-11-08T20:24:30Z"
+     "revision": "1384726276.0",
+     "page_modified": "2026-11-09T20:41:56Z"
     },
     {
-     "revision": "1384533874.0",
-     "page_modified": "2026-11-08T18:53:32Z"
+     "revision": "1384615307.0",
+     "page_modified": "2026-11-09T03:59:20Z"
     }
    ],
    "n_pages_senate": 27,
@@ -21093,240 +21213,251 @@
   },
   "completeness": {
    "senate": {
-    "counted": 20,
-    "settled": 18,
+    "counted": 27,
+    "settled": 10,
     "of": 35
    },
    "house_contested": {
-    "counted": 49,
-    "settled": 23,
+    "counted": 54,
+    "settled": 3,
     "of": 162
    },
    "house_all": {
-    "counted": 144,
-    "settled": 56,
+    "counted": 151,
+    "settled": 10,
     "of": 435
    },
-   "rule": "scores use settled counts: candidate votes moved less than 1% since an earlier day's snapshot, the source was updated in between (page edited or report re-issued), and nothing moved the way a count in progress can't (votes falling, a swing with no new votes); in states that count mail ballots for weeks (CA, WA, OR, NV, AZ, UT, AK, NJ, NY, IL, MD, MS) the count must also have held still for 7 days"
+   "rule": "scores use settled counts: candidate votes moved less than 1% since an earlier day's snapshot, the source was updated in between (page edited or report re-issued), and nothing moved the way a count in progress can't (votes falling, a swing with no new votes); the count must also have held still for 5 days, or 7 in states that count mail ballots for weeks (CA, WA, OR, NV, AZ, UT, AK, NJ, NY, IL, MD, MS)"
   },
   "sign_mismatches": [],
   "box_issues": {
+   "2026|ID|S|regular": "candidate votes 710,749 vs total 571,686; Jim Risch: 56.53% listed vs 70.28% from votes; Todd Achilles: 33.54% listed vs 41.69% from votes; Natalie Fleming: 7.02% listed vs 8.73% from votes; Matt Loesby: 2.91% listed vs 3.62% from votes",
    "2026|MT|S|regular": "official margin differs from Wikipedia by -1.56",
    "2026|AL|H|3": "Mike Rogers: 64.0% listed vs 31.98% from votes; Lee McInnis: 36.0% listed vs 18.02% from votes; Write-in: 100.0% listed vs 50.00% from votes",
    "2026|AL|H|5": "candidate votes 276,843 vs total 266,843; Dale Strong: 53.2% listed vs 56.99% from votes",
    "2026|FL|H|12": "caption says district 8, section says 12",
+   "2026|IA|H|2": "Lindsay James: 49.5% listed vs 50.94% from votes; Joe Mitchell: 45.6% listed vs 46.84% from votes",
    "2026|MO|H|3": "candidate votes 189,276 vs total 282,239; Bethany E. Mann: 44.39% listed vs 11.45% from votes",
    "2026|MO|H|5": "candidate votes 217,692 vs total 257,956; Rick Brattin: 28.13% listed vs 12.52% from votes",
    "2026|NC|H|9": "Richard Ojeda: 51.5% listed vs 51.11% from votes",
-   "2026|OH|H|7": "candidate votes 328,791 vs total 148,177; Brian Poindexter: 54.9% listed vs 121.89% from votes; Max Miller: 45.1% listed vs 100.00% from votes"
+   "2026|OH|H|7": "candidate votes 328,791 vs total 148,177; Brian Poindexter: 54.9% listed vs 121.89% from votes; Max Miller: 45.1% listed vs 100.00% from votes",
+   "2026|UT|H|3": "Celeste Maloy: 57.1% listed vs 58.40% from votes; Kent Udell: 35.29% listed vs 36.13% from votes"
   },
   "errors": {
    "senate": {
     "polls_only": {
      "contested": {
-      "n": 16,
-      "mean": 4.9811749365133835,
-      "rmse": 6.998724071973952,
-      "mae": 6.219868141084395
+      "n": 9,
+      "mean": 7.531498779374614,
+      "rmse": 7.920263636125734,
+      "mae": 7.531498779374614
      },
      "all": {
-      "n": 18,
-      "mean": 5.242479567252442,
-      "rmse": 7.045703506188574,
-      "mae": 6.343540193537786
+      "n": 10,
+      "mean": 7.6187736475306265,
+      "rmse": 7.9699846924335365,
+      "mae": 7.6187736475306265
      }
     },
     "polls_fundamentals": {
      "contested": {
-      "n": 16,
-      "mean": 4.8318535468724475,
-      "rmse": 6.8550810832279785,
-      "mae": 6.095115738616864
+      "n": 9,
+      "mean": 7.347374091589062,
+      "rmse": 7.709634468927179,
+      "mae": 7.347374091589062
      },
      "all": {
-      "n": 18,
-      "mean": 5.070044819937241,
-      "rmse": 6.8832106019472565,
-      "mae": 6.192944545932278
+      "n": 10,
+      "mean": 7.444745409018506,
+      "rmse": 7.772944526282683,
+      "mae": 7.444745409018506
      }
     },
     "polls_fundamentals_biasadj": {
      "contested": {
-      "n": 16,
-      "mean": 5.749710360740916,
-      "rmse": 7.408081285395084,
-      "mae": 6.673984567211052
+      "n": 9,
+      "mean": 8.381244118206155,
+      "rmse": 8.791546398853365,
+      "mae": 8.381244118206155
      },
      "all": {
-      "n": 18,
-      "mean": 6.1414031763971675,
-      "rmse": 7.653799261122154,
-      "mae": 6.962980248815068
+      "n": 10,
+      "mean": 8.61767094124453,
+      "rmse": 9.006040352909942,
+      "mae": 8.61767094124453
      }
     },
     "pocket_senate_wide_shift": {
      "contested": {
-      "n": 16,
-      "mean": 6.920827856478658,
-      "rmse": 8.263432297995603,
-      "mae": 7.713050899070334
+      "n": 9,
+      "mean": 9.467835248622242,
+      "rmse": 9.752694984406553,
+      "mae": 9.467835248622242
      },
      "all": {
-      "n": 18,
-      "mean": 7.256385529239342,
-      "rmse": 8.496151192569023,
-      "mae": 7.960583789320832
+      "n": 10,
+      "mean": 9.728783200554531,
+      "rmse": 10.009480841351584,
+      "mae": 9.728783200554531
      }
     },
     "pocket_full_historical_bias": {
      "contested": {
-      "n": 16,
-      "mean": 7.651738216755612,
-      "rmse": 9.046979115577928,
-      "mae": 8.56695985131633
+      "n": 9,
+      "mean": 10.141055090714259,
+      "rmse": 10.390151739153731,
+      "mae": 10.141055090714259
      },
      "all": {
-      "n": 18,
-      "mean": 7.872527265120583,
-      "rmse": 9.129316275062221,
-      "mae": 8.686057606952334
+      "n": 10,
+      "mean": 10.246028102428141,
+      "rmse": 10.472969741348711,
+      "mae": 10.246028102428141
      }
     }
    },
    "house": {
     "polls_only": {
      "contested": {
-      "n": 23,
-      "mean": 6.2435276927345145,
-      "rmse": 8.109824557809022,
-      "mae": 6.315097345452967
+      "n": 3,
+      "mean": 10.03313281053874,
+      "rmse": 10.19413566136787,
+      "mae": 10.03313281053874
      },
      "all": {
-      "n": 56,
-      "mean": 5.413315320738017,
-      "rmse": 10.712739175137303,
-      "mae": 7.6056828396806555
+      "n": 10,
+      "mean": 8.425721390513354,
+      "rmse": 8.852917961323461,
+      "mae": 8.425721390513354
      }
     },
     "polls_fundamentals": {
      "contested": {
-      "n": 23,
-      "mean": 5.8486079866757485,
-      "rmse": 7.8004865192420505,
-      "mae": 5.944679300909759
+      "n": 3,
+      "mean": 9.609747060418764,
+      "rmse": 9.783879721533717,
+      "mae": 9.609747060418764
      },
      "all": {
-      "n": 56,
-      "mean": 4.959801414883073,
-      "rmse": 10.49135674363874,
-      "mae": 7.283172285562265
+      "n": 10,
+      "mean": 7.952659064205612,
+      "rmse": 8.410219231528439,
+      "mae": 7.952659064205612
      }
     },
     "polls_fundamentals_biasadj": {
      "contested": {
-      "n": 23,
-      "mean": 7.722028910196767,
-      "rmse": 9.27737941678383,
-      "mae": 7.722028910196767
+      "n": 3,
+      "mean": 11.434104579366348,
+      "rmse": 11.591835089063103,
+      "mae": 11.434104579366348
      },
      "all": {
-      "n": 56,
-      "mean": 6.7322307526370375,
-      "rmse": 11.438592871066769,
-      "mae": 8.661720379841688
+      "n": 10,
+      "mean": 9.691395203867678,
+      "rmse": 10.08024534831539,
+      "mae": 9.691395203867678
      }
     },
     "pocket_senate_wide_shift": {
      "contested": {
-      "n": 23,
-      "mean": 7.722028910196767,
-      "rmse": 9.27737941678383,
-      "mae": 7.722028910196767
+      "n": 3,
+      "mean": 11.434104579366348,
+      "rmse": 11.591835089063103,
+      "mae": 11.434104579366348
      },
      "all": {
-      "n": 56,
-      "mean": 6.7322307526370375,
-      "rmse": 11.438592871066769,
-      "mae": 8.661720379841688
+      "n": 10,
+      "mean": 9.691395203867678,
+      "rmse": 10.08024534831539,
+      "mae": 9.691395203867678
      }
     },
     "pocket_full_historical_bias": {
      "contested": {
-      "n": 23,
-      "mean": 7.974771246362098,
-      "rmse": 9.48719711635229,
-      "mae": 7.974771246362098
+      "n": 3,
+      "mean": 11.677802797971182,
+      "rmse": 11.83454595528796,
+      "mae": 11.677802797971182
      },
      "all": {
-      "n": 56,
-      "mean": 6.966356774214346,
-      "rmse": 11.578521696108844,
-      "mae": 8.85635514884039
+      "n": 10,
+      "mean": 9.919310379557269,
+      "rmse": 10.301488162299131,
+      "mae": 9.919310379557269
      }
     }
    }
   },
   "national": {
-   "districts_with_counts": 153,
-   "districts_count_stable": 56,
+   "districts_with_counts": 160,
+   "districts_count_stable": 10,
    "of": 435,
    "ready": false,
-   "dem_votes": 21437020.0,
-   "rep_votes": 16561394.0,
-   "house_vote_margin": 12.83113026770012,
+   "dem_votes": 22589969.0,
+   "rep_votes": 17717231.0,
+   "house_vote_margin": 12.089001468720229,
    "note": "sum of reported district votes; uncontested races not on the ballot add nothing (as in the calibration's national House vote)",
    "versions": {
     "polls_only": {
      "G_polls": 8.989638452842437,
      "G_used": 8.989638452842437,
      "bias_shift_assumed": 0.0,
-     "polling_miss": 3.841491814857683,
-     "G_error": 3.841491814857683
+     "polling_miss": 3.099363015877792,
+     "G_error": 3.099363015877792
     },
     "polls_fundamentals": {
      "G_polls": 8.989638452842437,
      "G_used": 9.621161475209849,
      "bias_shift_assumed": 0.0,
-     "polling_miss": 3.841491814857683,
-     "G_error": 3.2099687924902707
+     "polling_miss": 3.099363015877792,
+     "G_error": 2.4678399935103794
     },
     "polls_fundamentals_biasadj": {
      "G_polls": 8.989638452842437,
      "G_used": 7.446845163533031,
      "bias_shift_assumed": -2.5540952480150283,
-     "polling_miss": 3.841491814857683,
-     "G_error": 5.3842851041670885
+     "polling_miss": 3.099363015877792,
+     "G_error": 4.642156305187197
     },
     "pocket_senate_wide_shift": {
      "G_polls": 8.989638452842437,
      "G_used": 7.446845163533031,
      "bias_shift_assumed": -2.5540952480150283,
-     "polling_miss": 3.841491814857683,
-     "G_error": 5.3842851041670885
+     "polling_miss": 3.099363015877792,
+     "G_error": 4.642156305187197
     },
     "pocket_full_historical_bias": {
      "G_polls": 8.989638452842437,
      "G_used": 7.164330122009899,
      "bias_shift_assumed": -2.932309892200151,
-     "polling_miss": 3.841491814857683,
-     "G_error": 5.666800145690221
+     "polling_miss": 3.099363015877792,
+     "G_error": 4.92467134671033
     }
    }
   },
   "ordering": {
-   "n_with_margins": 18,
+   "n_with_margins": 10,
    "of": 35,
    "pending": [
     "2026|AK|S|regular",
     "2026|AR|S|regular",
+    "2026|CO|S|regular",
     "2026|DE|S|regular",
+    "2026|ID|S|regular",
     "2026|IL|S|regular",
+    "2026|KS|S|regular",
     "2026|ME|S|regular",
     "2026|MA|S|regular",
+    "2026|MI|S|regular",
     "2026|MS|S|regular",
+    "2026|MT|S|regular",
     "2026|NE|S|regular",
     "2026|NH|S|regular",
     "2026|NJ|S|regular",
+    "2026|NM|S|regular",
+    "2026|OH|S|special",
+    "2026|OK|S|regular",
     "2026|OR|S|regular",
     "2026|RI|S|regular",
     "2026|SD|S|regular",
@@ -21336,211 +21467,162 @@
     "2026|WY|S|regular"
    ],
    "all": {
-    "n": 18,
+    "n": 10,
     "polls_only": {
-     "tau_b": 0.8431372549019609,
-     "pairs_right": 0.9215686274509803
+     "tau_b": 0.8666666666666666,
+     "pairs_right": 0.9333333333333333
     },
     "polls_fundamentals": {
-     "tau_b": 0.8562091503267976,
-     "pairs_right": 0.9281045751633987
+     "tau_b": 0.8666666666666666,
+     "pairs_right": 0.9333333333333333
     },
     "polls_fundamentals_biasadj": {
-     "tau_b": 0.8431372549019609,
-     "pairs_right": 0.9215686274509803
+     "tau_b": 0.8666666666666666,
+     "pairs_right": 0.9333333333333333
     },
     "pocket_senate_wide_shift": {
-     "tau_b": 0.8431372549019609,
-     "pairs_right": 0.9215686274509803
+     "tau_b": 0.8666666666666666,
+     "pairs_right": 0.9333333333333333
     },
     "pocket_full_historical_bias": {
-     "tau_b": 0.8562091503267976,
-     "pairs_right": 0.9281045751633987
+     "tau_b": 0.8666666666666666,
+     "pairs_right": 0.9333333333333333
     },
     "baseline_pvi": {
-     "tau_b": 0.7442887413069734,
-     "pairs_right": 0.8660130718954249
+     "tau_b": 0.5980568180967069,
+     "pairs_right": 0.7888888888888889
     },
     "baseline_cook": {
-     "n": 18,
-     "tau_b": 0.8612808672139473,
-     "pairs_right": 0.8954248366013072
+     "n": 10,
+     "tau_b": 0.8013876853447537,
+     "pairs_right": 0.8777777777777778
     }
    },
    "contested": {
-    "n": 16,
+    "n": 9,
     "polls_only": {
-     "tau_b": 0.8499999999999999,
-     "pairs_right": 0.925
+     "tau_b": 0.8333333333333334,
+     "pairs_right": 0.9166666666666666
     },
     "polls_fundamentals": {
-     "tau_b": 0.8666666666666667,
-     "pairs_right": 0.9333333333333333
+     "tau_b": 0.8333333333333334,
+     "pairs_right": 0.9166666666666666
     },
     "polls_fundamentals_biasadj": {
-     "tau_b": 0.8499999999999999,
-     "pairs_right": 0.925
+     "tau_b": 0.8333333333333334,
+     "pairs_right": 0.9166666666666666
     },
     "pocket_senate_wide_shift": {
-     "tau_b": 0.8499999999999999,
-     "pairs_right": 0.925
+     "tau_b": 0.8333333333333334,
+     "pairs_right": 0.9166666666666666
     },
     "pocket_full_historical_bias": {
-     "tau_b": 0.8666666666666667,
-     "pairs_right": 0.9333333333333333
+     "tau_b": 0.8333333333333334,
+     "pairs_right": 0.9166666666666666
     },
     "baseline_pvi": {
-     "tau_b": 0.6950150912113306,
-     "pairs_right": 0.8416666666666667
+     "tau_b": 0.5144957554275265,
+     "pairs_right": 0.75
     },
     "baseline_cook": {
-     "n": 16,
-     "tau_b": 0.8641446821835055,
-     "pairs_right": 0.9041666666666667
+     "n": 9,
+     "tau_b": 0.7833494518006403,
+     "pairs_right": 0.875
     }
    },
    "ranks": [
     {
-     "race": "2026|NM|S|regular",
-     "mu": 18.93,
-     "actual": 26.47,
+     "race": "2026|NC|S|regular",
+     "mu": 11.03,
+     "actual": 20.06,
      "rank_forecast": 1,
      "rank_actual": 1,
      "displacement": 0
     },
     {
-     "race": "2026|CO|S|regular",
-     "mu": 18.38,
-     "actual": 25.02,
-     "rank_forecast": 2,
-     "rank_actual": 2,
-     "displacement": 0
-    },
-    {
-     "race": "2026|NC|S|regular",
-     "mu": 11.03,
-     "actual": 20.06,
-     "rank_forecast": 3,
-     "rank_actual": 3,
-     "displacement": 0
-    },
-    {
      "race": "2026|GA|S|regular",
      "mu": 9.29,
-     "actual": 18.04,
-     "rank_forecast": 4,
-     "rank_actual": 4,
+     "actual": 18.05,
+     "rank_forecast": 2,
+     "rank_actual": 2,
      "displacement": 0
     },
     {
      "race": "2026|TX|S|regular",
      "mu": 2.83,
      "actual": 12.33,
-     "rank_forecast": 9,
-     "rank_actual": 5,
-     "displacement": -4
+     "rank_forecast": 4,
+     "rank_actual": 3,
+     "displacement": -1
     },
     {
      "race": "2026|MN|S|regular",
      "mu": 4.78,
-     "actual": 10.42,
-     "rank_forecast": 5,
-     "rank_actual": 6,
+     "actual": 10.44,
+     "rank_forecast": 3,
+     "rank_actual": 4,
      "displacement": 1
-    },
-    {
-     "race": "2026|MI|S|regular",
-     "mu": 4.52,
-     "actual": 7.25,
-     "rank_forecast": 6,
-     "rank_actual": 7,
-     "displacement": 1
-    },
-    {
-     "race": "2026|KS|S|regular",
-     "mu": 3.8,
-     "actual": 5.16,
-     "rank_forecast": 8,
-     "rank_actual": 8,
-     "displacement": 0
-    },
-    {
-     "race": "2026|OH|S|special",
-     "mu": 3.85,
-     "actual": 5.1,
-     "rank_forecast": 7,
-     "rank_actual": 9,
-     "displacement": 2
     },
     {
      "race": "2026|SC|S|regular",
      "mu": -2.29,
      "actual": 4.6,
-     "rank_forecast": 11,
-     "rank_actual": 10,
+     "rank_forecast": 6,
+     "rank_actual": 5,
      "displacement": -1
     },
     {
      "race": "2026|IA|S|regular",
      "mu": -0.06,
      "actual": 4.24,
-     "rank_forecast": 10,
-     "rank_actual": 11,
+     "rank_forecast": 5,
+     "rank_actual": 6,
      "displacement": 1
     },
     {
      "race": "2026|LA|S|regular",
      "mu": -12.38,
      "actual": -1.76,
-     "rank_forecast": 13,
-     "rank_actual": 12,
+     "rank_forecast": 8,
+     "rank_actual": 7,
      "displacement": -1
     },
     {
      "race": "2026|FL|S|special",
      "mu": -6.25,
-     "actual": -2.93,
-     "rank_forecast": 12,
-     "rank_actual": 13,
+     "actual": -2.91,
+     "rank_forecast": 7,
+     "rank_actual": 8,
      "displacement": 1
-    },
-    {
-     "race": "2026|MT|S|regular",
-     "mu": -12.44,
-     "actual": -10.63,
-     "rank_forecast": 14,
-     "rank_actual": 14,
-     "displacement": 0
     },
     {
      "race": "2026|KY|S|regular",
      "mu": -20.38,
      "actual": -12.35,
-     "rank_forecast": 16,
-     "rank_actual": 15,
-     "displacement": -1
-    },
-    {
-     "race": "2026|ID|S|regular",
-     "mu": -13.14,
-     "actual": -23.24,
-     "rank_forecast": 15,
-     "rank_actual": 16,
-     "displacement": 1
+     "rank_forecast": 9,
+     "rank_actual": 9,
+     "displacement": 0
     }
    ],
-   "mean_abs_displacement": 0.875,
+   "mean_abs_displacement": 0.6666666666666666,
    "tipping_point": null,
    "tipping_point_pending": [
     "2026|AK|S|regular",
     "2026|AR|S|regular",
+    "2026|CO|S|regular",
     "2026|DE|S|regular",
     "2026|IL|S|regular",
+    "2026|KS|S|regular",
     "2026|ME|S|regular",
     "2026|MA|S|regular",
+    "2026|MI|S|regular",
     "2026|MS|S|regular",
+    "2026|MT|S|regular",
     "2026|NH|S|regular",
     "2026|NJ|S|regular",
+    "2026|NM|S|regular",
+    "2026|OH|S|special",
+    "2026|OK|S|regular",
     "2026|OR|S|regular",
     "2026|RI|S|regular",
     "2026|TN|S|regular",
@@ -21553,43 +21635,36 @@
    "reference_version": "polls_fundamentals",
    "df_t_used": 3.9,
    "national_senate": {
-    "n": 16,
-    "miss": 4.8318535468724475,
+    "n": 9,
+    "miss": 7.347374091589062,
     "sd_assumed": 3.2922356210659323,
-    "z": 1.467651196030748,
-    "p": 0.10511298243358226
+    "z": 2.2317279008147635,
+    "p": 0.034185340456324285
    },
    "national_house": {
-    "n": 23,
-    "miss": 5.8486079866757485,
+    "n": 3,
+    "miss": 9.609747060418764,
     "sd_assumed": 2.3306142350553474,
-    "z": 2.5094706359831602,
-    "p": 0.02385270628658352
+    "z": 4.123267984841151,
+    "p": 0.004449368865760004
    },
-   "n_races": 39,
+   "n_races": 12,
    "region": {
     "sigma_assumed": 0.47638341360970904,
     "by_region": {
      "Midwest": {
-      "n": 17,
-      "mean": -2.201129872688937,
-      "se": 0.5132496617447085,
-      "z": -3.1432963480030405,
-      "p": 0.0016705661603255634
+      "n": 2,
+      "mean": -2.3692694777549645,
+      "se": 0.6762548126657276,
+      "z": -2.8641999618160527,
+      "p": 0.004180640058214447
      },
      "South": {
-      "n": 17,
-      "mean": 3.210439604892416,
-      "se": 1.2202839900020395,
-      "z": 2.4507642598859873,
-      "p": 0.014255328055184143
-     },
-     "West": {
-      "n": 5,
-      "mean": -3.4316530894918222,
-      "se": 3.145858154463788,
-      "z": -1.0785516234793122,
-      "p": 0.28078765686238105
+      "n": 10,
+      "mean": 0.4738538955509923,
+      "se": 0.7058117308149505,
+      "z": 0.556470443327151,
+      "p": 0.5778892943936255
      }
     }
    },
@@ -21597,137 +21672,90 @@
     "sd_assumed": 0.07836006383184495,
     "bias_adjusted_lean_correction": 0.0820784840431592,
     "pooled": {
-     "n": 39,
-     "slope": 0.0006540768805779519,
-     "se": 0.07959580668901058,
-     "z_vs_assumed_sd": 0.005855914606373581,
-     "p": 0.9953276828498541
+     "n": 12,
+     "slope": -0.03338030650190683,
+     "se": 0.07262261866588385,
+     "z_vs_assumed_sd": -0.31243870930034834,
+     "p": 0.7547071359310144
     },
     "senate": {
-     "n": 16,
-     "slope": 0.1601669071385901,
-     "se": 0.09059189569840947,
-     "z_vs_assumed_sd": 1.3371783819176835,
-     "p": 0.18116441667254768
-    },
-    "house": {
-     "n": 23,
-     "slope": -0.28059836390557547,
-     "se": 0.12395188890989113,
-     "z_vs_assumed_sd": -1.9134704899854158,
-     "p": 0.0556878478498604
+     "n": 9,
+     "slope": -0.052705385998143874,
+     "se": 0.08307596783553663,
+     "z_vs_assumed_sd": -0.46151338208053666,
+     "p": 0.6444303226654899
     }
    },
    "coverage": {
-    "n": 39,
+    "n": 12,
     "expected": {
      "50": 0.5,
      "80": 0.8,
      "95": 0.95
     },
     "t_used": {
-     "50": 0.5641025641025641,
-     "80": 0.9230769230769231,
-     "95": 0.9743589743589743
+     "50": 0.8333333333333334,
+     "80": 1.0,
+     "95": 1.0
     },
     "t6": {
-     "50": 0.5897435897435898,
-     "80": 0.9230769230769231,
-     "95": 0.9743589743589743
+     "50": 0.8333333333333334,
+     "80": 1.0,
+     "95": 1.0
     },
     "normal": {
-     "50": 0.6923076923076923,
-     "80": 0.9487179487179487,
-     "95": 0.9743589743589743
+     "50": 0.9166666666666666,
+     "80": 1.0,
+     "95": 1.0
     },
     "by_chamber_t_used": {
-     "house": 0.9130434782608695,
-     "senate": 0.9375
+     "house": 1.0,
+     "senate": 1.0
     },
     "note": "share of races whose error, after removing the chamber's realized national miss, falls inside the central interval of the race-level error (region, slope and race-specific layers)"
    },
    "attribution": {
     "reference_version": "polls_fundamentals",
-    "n": 16,
+    "n": 9,
     "races": [
      {
       "race": "2026|LA|S|regular",
       "region": "South",
       "lean": -22.0,
       "mu": -12.378838524790153,
-      "actual": -1.7632149034972362,
-      "error": 10.615623621292917,
+      "actual": -1.7631210994782254,
+      "error": 10.615717425311928,
       "layers": {
        "national": {
-        "value": 4.8318535468724475,
+        "value": 7.347374091589062,
         "sd": 3.2922356210659323,
-        "z": 1.467651196030748,
-        "p": 0.10511298243358226
+        "z": 2.2317279008147635,
+        "p": 0.034185340456324285
        },
        "region": {
-        "value": 3.210439604892416,
+        "value": 0.4738538955509923,
         "sd": 0.47638341360970904,
-        "z": 2.4507642598859873,
-        "p": 0.014255328055184143,
-        "n": 17
+        "z": 0.556470443327151,
+        "p": 0.5778892943936255,
+        "n": 10
        },
        "slope": {
-        "value": -0.014389691372714942,
+        "value": 0.7343667430419502,
         "sd": 1.7239214043005888,
-        "z": 0.005855914606373581,
-        "p": 0.9953276828498541
+        "z": -0.31243870930034834,
+        "p": 0.7547071359310144
        },
        "race": {
-        "value": 2.5877201609007683,
+        "value": 2.0601226951299236,
         "sd": 9.502556817351627,
-        "z": 0.2723183044983854,
-        "p": 0.7167932805735399
+        "z": 0.21679667217228826,
+        "p": 0.7719903358936785
        }
       },
       "total": {
-       "value": 10.615623621292917,
+       "value": 10.615717425311928,
        "sd": 10.214511619092683,
-       "z": 1.0392688380177166
-      }
-     },
-     {
-      "race": "2026|ID|S|regular",
-      "region": "West",
-      "lean": -36.0,
-      "mu": -13.13726308459577,
-      "actual": -23.243360618551105,
-      "error": -10.106097533955335,
-      "layers": {
-       "national": {
-        "value": 4.8318535468724475,
-        "sd": 3.2922356210659323,
-        "z": 1.467651196030748,
-        "p": 0.10511298243358226
-       },
-       "region": {
-        "value": -3.4316530894918222,
-        "sd": 0.47638341360970904,
-        "z": -1.0785516234793122,
-        "p": 0.28078765686238105,
-        "n": 5
-       },
-       "slope": {
-        "value": -0.023546767700806267,
-        "sd": 2.820962297946418,
-        "z": 0.005855914606373581,
-        "p": 0.9953276828498541
-       },
-       "race": {
-        "value": -11.482751223635155,
-        "sd": 10.01408617466379,
-        "z": -1.1466599171761844,
-        "p": 0.17758699697362396
-       }
-      },
-      "total": {
-       "value": -10.106097533955335,
-       "sd": 10.922706017347782,
-       "z": -0.9252375297755443
+       "z": 1.039278021424864
       }
      },
      {
@@ -21739,29 +21767,29 @@
       "error": 9.50271835775985,
       "layers": {
        "national": {
-        "value": 4.8318535468724475,
+        "value": 7.347374091589062,
         "sd": 3.2922356210659323,
-        "z": 1.467651196030748,
-        "p": 0.10511298243358226
+        "z": 2.2317279008147635,
+        "p": 0.034185340456324285
        },
        "region": {
-        "value": 3.210439604892416,
+        "value": 0.4738538955509923,
         "sd": 0.47638341360970904,
-        "z": 2.4507642598859873,
-        "p": 0.014255328055184143,
-        "n": 17
+        "z": 0.556470443327151,
+        "p": 0.5778892943936255,
+        "n": 10
        },
        "slope": {
-        "value": -0.007848922566935423,
+        "value": 0.40056367802288195,
         "sd": 0.9403207659821393,
-        "z": 0.005855914606373581,
-        "p": 0.9953276828498541
+        "z": -0.31243870930034834,
+        "p": 0.7547071359310144
        },
        "race": {
-        "value": 1.4682741285619216,
+        "value": 1.2809266925969136,
         "sd": 4.511152692378601,
-        "z": 0.3254764865402379,
-        "p": 0.6658445451626405
+        "z": 0.28394664954723975,
+        "p": 0.7054799163469928
        }
       },
       "total": {
@@ -21775,39 +21803,39 @@
       "region": "South",
       "lean": -2.0,
       "mu": 11.03027312103159,
-      "actual": 20.064820407238926,
-      "error": 9.034547286207337,
+      "actual": 20.064236068036525,
+      "error": 9.033962947004936,
       "layers": {
        "national": {
-        "value": 4.8318535468724475,
+        "value": 7.347374091589062,
         "sd": 3.2922356210659323,
-        "z": 1.467651196030748,
-        "p": 0.10511298243358226
+        "z": 2.2317279008147635,
+        "p": 0.034185340456324285
        },
        "region": {
-        "value": 3.210439604892416,
+        "value": 0.4738538955509923,
         "sd": 0.47638341360970904,
-        "z": 2.4507642598859873,
-        "p": 0.014255328055184143,
-        "n": 17
+        "z": 0.556470443327151,
+        "p": 0.5778892943936255,
+        "n": 10
        },
        "slope": {
-        "value": -0.0013081537611559038,
+        "value": 0.06676061300381365,
         "sd": 0.1567201276636899,
-        "z": 0.005855914606373581,
-        "p": 0.9953276828498541
+        "z": -0.31243870930034834,
+        "p": 0.7547071359310144
        },
        "race": {
-        "value": 0.993562288203629,
+        "value": 1.1459743468610677,
         "sd": 4.954136194654946,
-        "z": 0.20055207389647275,
-        "p": 0.7884768613967947
+        "z": 0.23131668202773029,
+        "p": 0.7573769297942684
        }
       },
       "total": {
-       "value": 9.034547286207337,
+       "value": 9.033962947004936,
        "sd": 5.969403921245649,
-       "z": 1.513475617565862
+       "z": 1.5133777285286798
       }
      },
      {
@@ -21815,39 +21843,39 @@
       "region": "South",
       "lean": -2.0,
       "mu": 9.289426830198334,
-      "actual": 18.04396066118534,
-      "error": 8.754533830987008,
+      "actual": 18.05226891431479,
+      "error": 8.762842084116457,
       "layers": {
        "national": {
-        "value": 4.8318535468724475,
+        "value": 7.347374091589062,
         "sd": 3.2922356210659323,
-        "z": 1.467651196030748,
-        "p": 0.10511298243358226
+        "z": 2.2317279008147635,
+        "p": 0.034185340456324285
        },
        "region": {
-        "value": 3.210439604892416,
+        "value": 0.4738538955509923,
         "sd": 0.47638341360970904,
-        "z": 2.4507642598859873,
-        "p": 0.014255328055184143,
-        "n": 17
+        "z": 0.556470443327151,
+        "p": 0.5778892943936255,
+        "n": 10
        },
        "slope": {
-        "value": -0.0013081537611559038,
+        "value": 0.06676061300381365,
         "sd": 0.1567201276636899,
-        "z": 0.005855914606373581,
-        "p": 0.9953276828498541
+        "z": -0.31243870930034834,
+        "p": 0.7547071359310144
        },
        "race": {
-        "value": 0.7135488329832997,
+        "value": 0.874853483972589,
         "sd": 5.572038921784275,
-        "z": 0.12805883860459602,
-        "p": 0.8635713522151027
+        "z": 0.1570077840900013,
+        "p": 0.8333146902302184
        }
       },
       "total": {
-       "value": 8.754533830987008,
+       "value": 8.762842084116457,
        "sd": 6.491373928966934,
-       "z": 1.3486411238645504
+       "z": 1.3499210151819145
       }
      },
      {
@@ -21859,75 +21887,35 @@
       "error": 8.032088607453943,
       "layers": {
        "national": {
-        "value": 4.8318535468724475,
+        "value": 7.347374091589062,
         "sd": 3.2922356210659323,
-        "z": 1.467651196030748,
-        "p": 0.10511298243358226
+        "z": 2.2317279008147635,
+        "p": 0.034185340456324285
        },
        "region": {
-        "value": 3.210439604892416,
+        "value": 0.4738538955509923,
         "sd": 0.47638341360970904,
-        "z": 2.4507642598859873,
-        "p": 0.014255328055184143,
-        "n": 17
+        "z": 0.556470443327151,
+        "p": 0.5778892943936255,
+        "n": 10
        },
        "slope": {
-        "value": -0.019622306417338555,
+        "value": 1.0014091950572048,
         "sd": 2.3508019149553485,
-        "z": 0.005855914606373581,
-        "p": 0.9953276828498541
+        "z": -0.31243870930034834,
+        "p": 0.7547071359310144
        },
        "race": {
-        "value": 0.009417762106417895,
+        "value": -0.7905485747433161,
         "sd": 9.36718855536942,
-        "z": 0.0010053990106796223,
-        "p": 0.9989213537170784
+        "z": -0.08439550138981254,
+        "p": 0.9097320416854826
        }
       },
       "total": {
        "value": 8.032088607453943,
        "sd": 10.214511619092683,
        "z": 0.7863409340531352
-      }
-     },
-     {
-      "race": "2026|NM|S|regular",
-      "region": "West",
-      "lean": 8.0,
-      "mu": 18.931107413379905,
-      "actual": 26.474628831632533,
-      "error": 7.543521418252627,
-      "layers": {
-       "national": {
-        "value": 4.8318535468724475,
-        "sd": 3.2922356210659323,
-        "z": 1.467651196030748,
-        "p": 0.10511298243358226
-       },
-       "region": {
-        "value": -3.4316530894918222,
-        "sd": 0.47638341360970904,
-        "z": -1.0785516234793122,
-        "p": 0.28078765686238105,
-        "n": 5
-       },
-       "slope": {
-        "value": 0.005232615044623615,
-        "sd": 0.6268805106547596,
-        "z": 0.005855914606373581,
-        "p": 0.9953276828498541
-       },
-       "race": {
-        "value": 6.138088345827378,
-        "sd": 10.3849299961718,
-        "z": 0.5910572674144229,
-        "p": 0.4459337174980038
-       }
-      },
-      "total": {
-       "value": 7.543521418252627,
-       "sd": 10.922706017347782,
-       "z": 0.6906275245595526
       }
      },
      {
@@ -21939,29 +21927,29 @@
       "error": 6.887072368066164,
       "layers": {
        "national": {
-        "value": 4.8318535468724475,
+        "value": 7.347374091589062,
         "sd": 3.2922356210659323,
-        "z": 1.467651196030748,
-        "p": 0.10511298243358226
+        "z": 2.2317279008147635,
+        "p": 0.034185340456324285
        },
        "region": {
-        "value": 3.210439604892416,
+        "value": 0.4738538955509923,
         "sd": 0.47638341360970904,
-        "z": 2.4507642598859873,
-        "p": 0.014255328055184143,
-        "n": 17
+        "z": 0.556470443327151,
+        "p": 0.5778892943936255,
+        "n": 10
        },
        "slope": {
-        "value": -0.01046523008924723,
+        "value": 0.5340849040305092,
         "sd": 1.2537610213095192,
-        "z": 0.005855914606373581,
-        "p": 0.9953276828498541
+        "z": -0.31243870930034834,
+        "p": 0.7547071359310144
        },
        "race": {
-        "value": -1.1447555536094525,
+        "value": -1.4682405231043996,
         "sd": 6.640248155609064,
-        "z": -0.17239650187507968,
-        "p": 0.8173687733654361
+        "z": -0.22111229711560804,
+        "p": 0.7676345215923297
        }
       },
       "total": {
@@ -21971,83 +21959,43 @@
       }
      },
      {
-      "race": "2026|CO|S|regular",
-      "region": "West",
-      "lean": 12.0,
-      "mu": 18.375796608130702,
-      "actual": 25.023784450186813,
-      "error": 6.647987842056111,
-      "layers": {
-       "national": {
-        "value": 4.8318535468724475,
-        "sd": 3.2922356210659323,
-        "z": 1.467651196030748,
-        "p": 0.10511298243358226
-       },
-       "region": {
-        "value": -3.4316530894918222,
-        "sd": 0.47638341360970904,
-        "z": -1.0785516234793122,
-        "p": 0.28078765686238105,
-        "n": 5
-       },
-       "slope": {
-        "value": 0.007848922566935423,
-        "sd": 0.9403207659821393,
-        "z": 0.005855914606373581,
-        "p": 0.9953276828498541
-       },
-       "race": {
-        "value": 5.239938462108549,
-        "sd": 10.36125219541974,
-        "z": 0.5057244397955006,
-        "p": 0.5098036547485193
-       }
-      },
-      "total": {
-       "value": 6.647987842056111,
-       "sd": 10.922706017347782,
-       "z": 0.6086392723101373
-      }
-     },
-     {
       "race": "2026|MN|S|regular",
       "region": "Midwest",
       "lean": 6.0,
       "mu": 4.781398073565525,
-      "actual": 10.424918192790509,
-      "error": 5.643520119224984,
+      "actual": 10.43575750006535,
+      "error": 5.654359426499825,
       "layers": {
        "national": {
-        "value": 4.8318535468724475,
+        "value": 7.347374091589062,
         "sd": 3.2922356210659323,
-        "z": 1.467651196030748,
-        "p": 0.10511298243358226
+        "z": 2.2317279008147635,
+        "p": 0.034185340456324285
        },
        "region": {
-        "value": -2.201129872688937,
+        "value": -2.3692694777549645,
         "sd": 0.47638341360970904,
-        "z": -3.1432963480030405,
-        "p": 0.0016705661603255634,
-        "n": 17
+        "z": -2.8641999618160527,
+        "p": 0.004180640058214447,
+        "n": 2
        },
        "slope": {
-        "value": 0.003924461283467712,
+        "value": -0.20028183901144098,
         "sd": 0.47016038299106966,
-        "z": 0.005855914606373581,
-        "p": 0.9953276828498541
+        "z": -0.31243870930034834,
+        "p": 0.7547071359310144
        },
        "race": {
-        "value": 3.008871983758006,
+        "value": 0.8765366516771687,
         "sd": 6.331791254486533,
-        "z": 0.47520075486158864,
-        "p": 0.5342563343982766
+        "z": 0.13843423076464798,
+        "p": 0.8526909733685871
        }
       },
       "total": {
-       "value": 5.643520119224984,
+       "value": 5.654359426499825,
        "sd": 7.167871916929339,
-       "z": 0.7873355138916356
+       "z": 0.7888477210572297
       }
      },
      {
@@ -22059,29 +22007,29 @@
       "error": 4.30184980116837,
       "layers": {
        "national": {
-        "value": 4.8318535468724475,
+        "value": 7.347374091589062,
         "sd": 3.2922356210659323,
-        "z": 1.467651196030748,
-        "p": 0.10511298243358226
+        "z": 2.2317279008147635,
+        "p": 0.034185340456324285
        },
        "region": {
-        "value": -2.201129872688937,
+        "value": -2.3692694777549645,
         "sd": 0.47638341360970904,
-        "z": -3.1432963480030405,
-        "p": 0.0016705661603255634,
-        "n": 17
+        "z": -2.8641999618160527,
+        "p": 0.004180640058214447,
+        "n": 2
        },
        "slope": {
-        "value": -0.007848922566935423,
+        "value": 0.40056367802288195,
         "sd": 0.9403207659821393,
-        "z": 0.005855914606373581,
-        "p": 0.9953276828498541
+        "z": -0.31243870930034834,
+        "p": 0.7547071359310144
        },
        "race": {
-        "value": 1.6789750495517946,
+        "value": -1.0768184906886096,
         "sd": 4.866602869627628,
-        "z": 0.344999395785969,
-        "p": 0.6476504914338749
+        "z": -0.2212669740136415,
+        "p": 0.7674785970130849
        }
       },
       "total": {
@@ -22095,199 +22043,39 @@
       "region": "South",
       "lean": -10.0,
       "mu": -6.246256804373499,
-      "actual": -2.929706207345532,
-      "error": 3.316550597027967,
+      "actual": -2.910500997453417,
+      "error": 3.335755806920082,
       "layers": {
        "national": {
-        "value": 4.8318535468724475,
+        "value": 7.347374091589062,
         "sd": 3.2922356210659323,
-        "z": 1.467651196030748,
-        "p": 0.10511298243358226
+        "z": 2.2317279008147635,
+        "p": 0.034185340456324285
        },
        "region": {
-        "value": 3.210439604892416,
+        "value": 0.4738538955509923,
         "sd": 0.47638341360970904,
-        "z": 2.4507642598859873,
-        "p": 0.014255328055184143,
-        "n": 17
+        "z": 0.556470443327151,
+        "p": 0.5778892943936255,
+        "n": 10
        },
        "slope": {
-        "value": -0.006540768805779518,
+        "value": 0.33380306501906826,
         "sd": 0.7836006383184495,
-        "z": 0.005855914606373581,
-        "p": 0.9953276828498541
+        "z": -0.31243870930034834,
+        "p": 0.7547071359310144
        },
        "race": {
-        "value": -4.7192017859311175,
+        "value": -4.819275245239041,
         "sd": 5.277023447039061,
-        "z": -0.8942923663867862,
-        "p": 0.2709815317500324
+        "z": -0.913256363858519,
+        "p": 0.2625095473622867
        }
       },
       "total": {
-       "value": 3.316550597027967,
+       "value": 3.335755806920082,
        "sd": 6.28703133142749,
-       "z": 0.5275225177341265
-      }
-     },
-     {
-      "race": "2026|MI|S|regular",
-      "region": "Midwest",
-      "lean": 0.0,
-      "mu": 4.52266742840064,
-      "actual": 7.24535330790297,
-      "error": 2.7226858795023308,
-      "layers": {
-       "national": {
-        "value": 4.8318535468724475,
-        "sd": 3.2922356210659323,
-        "z": 1.467651196030748,
-        "p": 0.10511298243358226
-       },
-       "region": {
-        "value": -2.201129872688937,
-        "sd": 0.47638341360970904,
-        "z": -3.1432963480030405,
-        "p": 0.0016705661603255634,
-        "n": 17
-       },
-       "slope": {
-        "value": 0.0,
-        "sd": 0.0,
-        "z": 0.005855914606373581,
-        "p": 0.9953276828498541
-       },
-       "race": {
-        "value": 0.09196220531882027,
-        "sd": 4.694778484538311,
-        "z": 0.01958818837175955,
-        "p": 0.9789881910989625
-       }
-      },
-      "total": {
-       "value": 2.7226858795023308,
-       "sd": 5.753842330153101,
-       "z": 0.4731943844262212
-      }
-     },
-     {
-      "race": "2026|MT|S|regular",
-      "region": "West",
-      "lean": -20.0,
-      "mu": -12.440230143563436,
-      "actual": -10.630811553191402,
-      "error": 1.8094185903720348,
-      "layers": {
-       "national": {
-        "value": 4.8318535468724475,
-        "sd": 3.2922356210659323,
-        "z": 1.467651196030748,
-        "p": 0.10511298243358226
-       },
-       "region": {
-        "value": -3.4316530894918222,
-        "sd": 0.47638341360970904,
-        "z": -1.0785516234793122,
-        "p": 0.28078765686238105,
-        "n": 5
-       },
-       "slope": {
-        "value": -0.013081537611559037,
-        "sd": 1.567201276636899,
-        "z": 0.005855914606373581,
-        "p": 0.9953276828498541
-       },
-       "race": {
-        "value": 0.4222996706029686,
-        "sd": 7.435934728208843,
-        "z": 0.05679173984690039,
-        "p": 0.9391550510199229
-       }
-      },
-      "total": {
-       "value": 1.8094185903720348,
-       "sd": 8.295480797702593,
-       "z": 0.21812100280831792
-      }
-     },
-     {
-      "race": "2026|KS|S|regular",
-      "region": "Midwest",
-      "lean": -16.0,
-      "mu": 3.804013979488156,
-      "actual": 5.15616503710076,
-      "error": 1.3521510576126046,
-      "layers": {
-       "national": {
-        "value": 4.8318535468724475,
-        "sd": 3.2922356210659323,
-        "z": 1.467651196030748,
-        "p": 0.10511298243358226
-       },
-       "region": {
-        "value": -2.201129872688937,
-        "sd": 0.47638341360970904,
-        "z": -3.1432963480030405,
-        "p": 0.0016705661603255634,
-        "n": 17
-       },
-       "slope": {
-        "value": -0.01046523008924723,
-        "sd": 1.2537610213095192,
-        "z": 0.005855914606373581,
-        "p": 0.9953276828498541
-       },
-       "race": {
-        "value": -1.2681073864816588,
-        "sd": 5.508882586463384,
-        "z": -0.23019321370139487,
-        "p": 0.758503329109388
-       }
-      },
-      "total": {
-       "value": 1.3521510576126046,
-       "sd": 6.55632981105835,
-       "z": 0.2062359729573053
-      }
-     },
-     {
-      "race": "2026|OH|S|special",
-      "region": "Midwest",
-      "lean": -10.0,
-      "mu": 3.847960373615285,
-      "actual": 5.099445280545539,
-      "error": 1.251484906930254,
-      "layers": {
-       "national": {
-        "value": 4.8318535468724475,
-        "sd": 3.2922356210659323,
-        "z": 1.467651196030748,
-        "p": 0.10511298243358226
-       },
-       "region": {
-        "value": -2.201129872688937,
-        "sd": 0.47638341360970904,
-        "z": -3.1432963480030405,
-        "p": 0.0016705661603255634,
-        "n": 17
-       },
-       "slope": {
-        "value": -0.006540768805779518,
-        "sd": 0.7836006383184495,
-        "z": 0.005855914606373581,
-        "p": 0.9953276828498541
-       },
-       "race": {
-        "value": -1.372697998447477,
-        "sd": 4.827827918384079,
-        "z": -0.2843303493109863,
-        "p": 0.7051081636024796
-       }
-      },
-      "total": {
-       "value": 1.251484906930254,
-       "sd": 5.915040905292173,
-       "z": 0.21157671214252355
+       "z": 0.5305772519766795
       }
      }
     ],
@@ -22301,198 +22089,192 @@
     "polls_only": {
      "senate": {
       "n": 25,
-      "n_settled_for_layers": 16,
+      "n_settled_for_layers": 9,
       "reported": 0.0450178722,
       "reconstructed": 0.044777561316000004,
       "mc_gap": 0.00024031088399999873,
       "layers": {
        "national": {
-        "contribution": 0.017873785622333334,
-        "brier_alone": 0.027799109728000003,
-        "value": 4.9811749365133835
+        "contribution": 0.0028255179439999954,
+        "brier_alone": 0.047120637396000004,
+        "value": 7.531498779374614
        },
        "region": {
-        "contribution": -0.008771214530166674,
-        "brier_alone": 0.05486979630300001,
+        "contribution": -0.007064795622500005,
+        "brier_alone": 0.06474879912500002,
         "values": {
-         "Midwest": -2.2335825035906263,
-         "South": 3.249537402462505,
-         "West": -3.4542466561643876
+         "Midwest": -2.494197984274311,
+         "South": 0.4988395968548618
         }
        },
        "slope": {
-        "contribution": 0.0005169069738333384,
-        "brier_alone": 0.043837119426,
-        "value": -0.004781351352820217
+        "contribution": -0.002060083201499998,
+        "brier_alone": 0.040438399598999995,
+        "value": -0.04965535219596262
        }
       },
       "race": {
-       "contribution": 0.035158083250000007,
-       "expected_if_right": 0.06961551675
+       "contribution": 0.05107692219600001,
+       "expected_if_right": 0.07154467780399999
       }
      },
      "house": {
-      "n": 149,
-      "n_settled_for_layers": 23,
-      "reported": 0.11995092399748321,
-      "reconstructed": 0.11963918320989926,
-      "mc_gap": 0.0003117407875839473,
+      "n": 153,
+      "n_settled_for_layers": 3,
+      "reported": 0.12698591576797386,
+      "reconstructed": 0.12672131042222204,
+      "mc_gap": 0.00026460534575181716,
       "layers": {
        "national": {
-        "contribution": 0.02795534102430086,
-        "brier_alone": 0.08286281063473154,
-        "value": 6.2435276927345145
+        "contribution": -0.008870841078159103,
+        "brier_alone": 0.13107551904362738,
+        "value": 10.03313281053874
        },
        "region": {
-        "contribution": -0.019850553165044735,
-        "brier_alone": 0.1309147481216443,
+        "contribution": -0.00869805271459693,
+        "brier_alone": 0.14172372539901956,
         "values": {
-         "Midwest": -2.2335825035906263,
-         "South": 3.249537402462505,
-         "West": -3.4542466561643876
+         "Midwest": -2.494197984274311,
+         "South": 0.4988395968548618
         }
        },
        "slope": {
-        "contribution": -0.00010454876076622377,
-        "brier_alone": 0.11929321872197987,
-        "value": -0.004781351352820217
+        "contribution": -0.004761595881917291,
+        "brier_alone": 0.12070608866421567,
+        "value": -0.04965535219596262
        }
       },
       "race": {
-       "contribution": 0.11163894411140936,
-       "expected_if_right": 0.11724400890872481
+       "contribution": 0.14905180009689536,
+       "expected_if_right": 0.11882202343251629
       }
      }
     },
     "polls_fundamentals": {
      "senate": {
       "n": 25,
-      "n_settled_for_layers": 16,
+      "n_settled_for_layers": 9,
       "reported": 0.04413312380000001,
       "reconstructed": 0.04426230459,
       "mc_gap": -0.00012918078999999555,
       "layers": {
        "national": {
-        "contribution": 0.01781208240316666,
-        "brier_alone": 0.027693831839,
-        "value": 4.8318535468724475
+        "contribution": 0.004430399482166671,
+        "brier_alone": 0.046538941584,
+        "value": 7.347374091589062
        },
        "region": {
-        "contribution": -0.00855327283833333,
-        "brier_alone": 0.05397071394099998,
+        "contribution": -0.006465761183333335,
+        "brier_alone": 0.062536643061,
         "values": {
-         "Midwest": -2.201129872688937,
-         "South": 3.210439604892416,
-         "West": -3.4316530894918222
+         "Midwest": -2.3692694777549645,
+         "South": 0.4738538955509923
         }
        },
        "slope": {
-        "contribution": 0.0005596340861666685,
-        "brier_alone": 0.04381459414999999,
-        "value": 0.0006540768805779519
+        "contribution": -0.0010885428548333279,
+        "brier_alone": 0.04107764790699999,
+        "value": -0.03338030650190683
        }
       },
       "race": {
-       "contribution": 0.034443860939,
-       "expected_if_right": 0.070360339061
+       "contribution": 0.047386209145999995,
+       "expected_if_right": 0.07089259085399999
       }
      },
      "house": {
-      "n": 149,
-      "n_settled_for_layers": 23,
-      "reported": 0.11485248223993291,
-      "reconstructed": 0.11489108636057041,
-      "mc_gap": -3.860412063749763e-05,
+      "n": 153,
+      "n_settled_for_layers": 3,
+      "reported": 0.1221215585620915,
+      "reconstructed": 0.12214390848006534,
+      "mc_gap": -2.234991797384067e-05,
       "layers": {
        "national": {
-        "contribution": 0.02394793604032436,
-        "brier_alone": 0.08314535995486572,
-        "value": 5.8486079866757485
+        "contribution": -0.010528205824700496,
+        "brier_alone": 0.13171344317352948,
+        "value": 9.609747060418764
        },
        "region": {
-        "contribution": -0.019994185960934066,
-        "brier_alone": 0.12686471315671144,
+        "contribution": -0.008531691857461868,
+        "brier_alone": 0.13691082800245086,
         "values": {
-         "Midwest": -2.201129872688937,
-         "South": 3.210439604892416,
-         "West": -3.4316530894918222
+         "Midwest": -2.3692694777549645,
+         "South": 0.4738538955509923
         }
        },
        "slope": {
-        "contribution": -7.191067142089485e-06,
-        "brier_alone": 0.11522832227499998,
-        "value": 0.0006540768805779519
+        "contribution": -0.003114131691040365,
+        "brier_alone": 0.1180834643093138,
+        "value": -0.03338030650190683
        }
       },
       "race": {
-       "contribution": 0.1109445273483222,
-       "expected_if_right": 0.11751520419530194
+       "contribution": 0.14431793785326807,
+       "expected_if_right": 0.11872265038202609
       }
      }
     },
     "polls_fundamentals_biasadj": {
      "senate": {
       "n": 25,
-      "n_settled_for_layers": 16,
+      "n_settled_for_layers": 9,
       "reported": 0.05503952170000001,
       "reconstructed": 0.05485176448800002,
       "mc_gap": 0.00018775721199999068,
       "layers": {
        "national": {
-        "contribution": 0.02816372562066667,
-        "brier_alone": 0.025309860462000008,
-        "value": 5.749710360740916
+        "contribution": 0.013620777515666687,
+        "brier_alone": 0.043439242915999994,
+        "value": 8.381244118206155
        },
        "region": {
-        "contribution": -0.009145649756333325,
-        "brier_alone": 0.06576532065400001,
+        "contribution": -0.011196091473833327,
+        "brier_alone": 0.08439954374500001,
         "values": {
-         "Midwest": -2.2683244008915193,
-         "South": 3.3102915456066637,
-         "West": -3.542688292031495
+         "Midwest": -2.9594877606129613,
+         "South": 0.5918975521225933
         }
        },
        "slope": {
-        "contribution": 0.000993410297666672,
-        "brier_alone": 0.05052816053300001,
-        "value": -0.03229975379714694
+        "contribution": -0.002775565519833309,
+        "brier_alone": 0.04410665006999999,
+        "value": -0.0954793162581961
        }
       },
       "race": {
-       "contribution": 0.034840278326,
-       "expected_if_right": 0.067034121674
+       "contribution": 0.05520264396599997,
+       "expected_if_right": 0.07244895603400002
       }
      },
      "house": {
-      "n": 149,
-      "n_settled_for_layers": 23,
-      "reported": 0.15153661392197987,
-      "reconstructed": 0.1514514211387584,
-      "mc_gap": 8.519278322147161e-05,
+      "n": 153,
+      "n_settled_for_layers": 3,
+      "reported": 0.1589939275163399,
+      "reconstructed": 0.15891749131209146,
+      "mc_gap": 7.643620424843678e-05,
       "layers": {
        "national": {
-        "contribution": 0.0521230761785794,
-        "brier_alone": 0.08369191618892612,
-        "value": 7.722028910196767
+        "contribution": 0.009509363391312631,
+        "brier_alone": 0.13284146210882353,
+        "value": 11.434104579366348
        },
        "region": {
-        "contribution": -0.020136838833501158,
-        "brier_alone": 0.159151239706208,
+        "contribution": -0.010630344220942356,
+        "brier_alone": 0.1767143198250001,
         "values": {
-         "Midwest": -2.2683244008915193,
-         "South": 3.3102915456066637,
-         "West": -3.542688292031495
+         "Midwest": -2.9594877606129613,
+         "South": 0.5918975521225933
         }
        },
        "slope": {
-        "contribution": -0.0005736026368567937,
-        "brier_alone": 0.14710642507953006,
-        "value": -0.03229975379714694
+        "contribution": -0.010044453773801776,
+        "brier_alone": 0.14474429130767988,
+        "value": -0.0954793162581961
        }
       },
       "race": {
-       "contribution": 0.12003878643053695,
-       "expected_if_right": 0.12284477061644294
+       "contribution": 0.17008292591552296,
+       "expected_if_right": 0.1227474989210785
       }
      }
     }
@@ -22513,41 +22295,41 @@
        "polls_only": {
         "n": 6,
         "called": 6,
-        "settled": 4,
+        "settled": 2,
         "brier": 0.002630978229166667,
         "brier_expected": 0.04208152177083333,
         "brier_share": 0.014026313198339035,
-        "mean_error": 4.211438094089237,
-        "rmse": 9.308642396510093,
-        "rmse_after_national": 8.33709225403823,
-        "sd_forecast": 10.048983122404826,
-        "sq_error_share": 0.7189388386893979
+        "mean_error": 9.955426038750348,
+        "rmse": 10.038888986344306,
+        "rmse_after_national": 2.7466721365793396,
+        "sd_forecast": 9.66940702587103,
+        "sq_error_share": 0.27908475194695526
        },
        "polls_fundamentals": {
         "n": 6,
         "called": 6,
-        "settled": 4,
+        "settled": 2,
         "brier": 0.002995066458333333,
         "brier_expected": 0.043746600208333326,
         "brier_share": 0.01628744779674988,
-        "mean_error": 3.797400634211909,
-        "rmse": 8.993537429466889,
-        "rmse_after_national": 8.217880307416308,
-        "sd_forecast": 10.048983122404826,
-        "sq_error_share": 0.7140264332929968
+        "mean_error": 9.323903016382936,
+        "rmse": 9.412967222190426,
+        "rmse_after_national": 2.3612393054629996,
+        "sd_forecast": 9.66940702587103,
+        "sq_error_share": 0.22714750015808638
        },
        "polls_fundamentals_biasadj": {
         "n": 6,
         "called": 6,
-        "settled": 4,
+        "settled": 2,
         "brier": 0.0016786042708333343,
         "brier_expected": 0.035417229062500014,
         "brier_share": 0.007319558974292471,
-        "mean_error": 5.562117020519122,
-        "rmse": 9.573412305892267,
-        "rmse_after_national": 7.794117569677567,
-        "sd_forecast": 10.048983122404826,
-        "sq_error_share": 0.6959999908277514
+        "mean_error": 11.498219328059754,
+        "rmse": 11.570558853542185,
+        "rmse_after_national": 3.374065637470386,
+        "sd_forecast": 9.66940702587103,
+        "sq_error_share": 0.3590457057338665
        }
       }
      },
@@ -22562,41 +22344,41 @@
        "polls_only": {
         "n": 7,
         "called": 6,
-        "settled": 1,
+        "settled": 0,
         "brier": 0.0159719159375,
         "brier_expected": 0.06057391739583335,
         "brier_share": 0.0851497335984707,
-        "mean_error": 7.740073315639869,
-        "rmse": 7.740073315639869,
-        "rmse_after_national": 2.758898379126485,
-        "sd_forecast": 10.414734339232568,
-        "sq_error_share": 0.01968222300304256
+        "mean_error": null,
+        "rmse": null,
+        "rmse_after_national": null,
+        "sd_forecast": null,
+        "sq_error_share": null
        },
        "polls_fundamentals": {
         "n": 7,
         "called": 6,
-        "settled": 1,
+        "settled": 0,
         "brier": 0.015951765833333336,
         "brier_expected": 0.06044823416666665,
         "brier_share": 0.08674717469240191,
-        "mean_error": 7.543521418252627,
-        "rmse": 7.543521418252627,
-        "rmse_after_national": 2.71166787138018,
-        "sd_forecast": 10.414734339232568,
-        "sq_error_share": 0.0194360347247071
+        "mean_error": null,
+        "rmse": null,
+        "rmse_after_national": null,
+        "sd_forecast": null,
+        "sq_error_share": null
        },
        "polls_fundamentals_biasadj": {
         "n": 7,
         "called": 6,
-        "settled": 1,
+        "settled": 0,
         "brier": 0.008886908333333334,
         "brier_expected": 0.05053809166666667,
         "brier_share": 0.03875139053034321,
-        "mean_error": 7.767981694809709,
-        "rmse": 7.767981694809709,
-        "rmse_after_national": 2.0182713340687934,
-        "sd_forecast": 10.414734339232568,
-        "sq_error_share": 0.011667409506525141
+        "mean_error": null,
+        "rmse": null,
+        "rmse_after_national": null,
+        "sd_forecast": null,
+        "sq_error_share": null
        }
       }
      },
@@ -22611,41 +22393,41 @@
        "polls_only": {
         "n": 7,
         "called": 6,
-        "settled": 5,
+        "settled": 3,
         "brier": 0.09063935375,
         "brier_expected": 0.12648564625,
         "brier_share": 0.4832179718169798,
-        "mean_error": 4.943657484471163,
-        "rmse": 5.730085451042297,
-        "rmse_after_national": 2.897505394591458,
-        "sd_forecast": 6.447530960678302,
-        "sq_error_share": 0.10854785624497539
+        "mean_error": 7.172537525016053,
+        "rmse": 7.284153960972111,
+        "rmse_after_national": 1.320021803423319,
+        "sd_forecast": 6.2644618273062695,
+        "sq_error_share": 0.09668874735912097
        },
        "polls_fundamentals": {
         "n": 7,
         "called": 6,
-        "settled": 5,
+        "settled": 3,
         "brier": 0.08817479104166669,
         "brier_expected": 0.12547520895833333,
         "brier_share": 0.4795026507958179,
-        "mean_error": 4.8893391932525585,
-        "rmse": 5.674949442149428,
-        "rmse_after_national": 2.881443739484819,
-        "sd_forecast": 6.447530960678302,
-        "sq_error_share": 0.10972989619424516
+        "mean_error": 7.101424626227481,
+        "rmse": 7.215514481961545,
+        "rmse_after_national": 1.3015024613569894,
+        "sd_forecast": 6.2644618273062695,
+        "sq_error_share": 0.10351640959692655
        },
        "polls_fundamentals_biasadj": {
         "n": 7,
         "called": 6,
-        "settled": 5,
+        "settled": 3,
         "brier": 0.11461734791666667,
         "brier_expected": 0.1265326520833333,
         "brier_share": 0.49978929050177406,
-        "mean_error": 5.485689964560106,
-        "rmse": 6.205597163549293,
-        "rmse_after_national": 2.9131338003214093,
-        "sd_forecast": 6.447530960678302,
-        "sq_error_share": 0.12153635470573208
+        "mean_error": 7.6311154321814,
+        "rmse": 7.789070464658318,
+        "rmse_after_national": 1.7315856922868802,
+        "sd_forecast": 6.2644618273062695,
+        "sq_error_share": 0.14184757626686317
        }
       }
      },
@@ -22660,50 +22442,50 @@
        "polls_only": {
         "n": 7,
         "called": 7,
-        "settled": 6,
+        "settled": 4,
         "brier": 0.0671419025,
         "brier_expected": 0.15192238321428572,
         "brier_share": 0.41760598138621036,
-        "mean_error": 5.065780978310251,
-        "rmse": 5.9586462919149215,
-        "rmse_after_national": 3.1385485330403946,
-        "sd_forecast": 4.935522697317809,
-        "sq_error_share": 0.15283108206258406
+        "mean_error": 6.588756090455666,
+        "rmse": 7.138625631903764,
+        "rmse_after_national": 2.904657100324735,
+        "sd_forecast": 4.993483905854834,
+        "sq_error_share": 0.6242265006939238
        },
        "polls_fundamentals": {
         "n": 7,
         "called": 7,
-        "settled": 6,
+        "settled": 4,
         "brier": 0.065799765,
         "brier_expected": 0.15038594928571428,
         "brier_share": 0.41746272671503026,
-        "mean_error": 5.021639471432685,
-        "rmse": 5.921843087232174,
-        "rmse_after_national": 3.144420656640892,
-        "sd_forecast": 4.935522697317809,
-        "sq_error_share": 0.156807635788051
+        "mean_error": 6.543571728213309,
+        "rmse": 7.098368143981713,
+        "rmse_after_national": 2.8661119281337077,
+        "sd_forecast": 4.993483905854834,
+        "sq_error_share": 0.6693360902449872
        },
        "polls_fundamentals_biasadj": {
         "n": 7,
         "called": 7,
-        "settled": 6,
+        "settled": 4,
         "brier": 0.089270125625,
         "brier_expected": 0.1540905886607143,
         "brier_share": 0.45413975999359013,
-        "mean_error": 5.758411028694655,
-        "rmse": 6.564869638077898,
-        "rmse_after_national": 3.152505589398319,
-        "sd_forecast": 4.935522697317809,
-        "sq_error_share": 0.17079624495999118
+        "mean_error": 7.385353027797923,
+        "rmse": 7.83991505489568,
+        "rmse_after_national": 2.8129393499914785,
+        "sd_forecast": 4.993483905854834,
+        "sq_error_share": 0.4991067179992702
        }
       }
      }
     ],
     "n": 27,
     "national_miss": {
-     "polls_only": 4.9811749365133835,
-     "polls_fundamentals": 4.8318535468724475,
-     "polls_fundamentals_biasadj": 5.749710360740916
+     "polls_only": 7.531498779374614,
+     "polls_fundamentals": 7.347374091589062,
+     "polls_fundamentals_biasadj": 8.381244118206155
     }
    },
    "house": {
@@ -22719,42 +22501,42 @@
       "versions": {
        "polls_only": {
         "n": 107,
-        "called": 98,
-        "settled": 12,
-        "brier": 0.07814617875637755,
-        "brier_expected": 0.06412907634566326,
-        "brier_share": 0.4284932214514957,
-        "mean_error": 6.944097304136015,
-        "rmse": 9.334933929416184,
-        "rmse_after_national": 6.277842135453525,
+        "called": 99,
+        "settled": 2,
+        "brier": 0.07743500119949495,
+        "brier_expected": 0.06429176647727272,
+        "brier_share": 0.39457132291501257,
+        "mean_error": 9.644416322072303,
+        "rmse": 9.87149616324356,
+        "rmse_after_national": 2.1407407166407033,
         "sd_forecast": 7.441072580549007,
-        "sq_error_share": 0.767609112141752
+        "sq_error_share": 0.9381365896956152
        },
        "polls_fundamentals": {
         "n": 107,
-        "called": 98,
-        "settled": 12,
-        "brier": 0.07588108281887755,
-        "brier_expected": 0.06335922330357144,
-        "brier_share": 0.4345431828982809,
-        "mean_error": 6.449745016604946,
-        "rmse": 8.973277822316476,
-        "rmse_after_national": 6.267525015985856,
+        "called": 99,
+        "settled": 2,
+        "brier": 0.07520395473484849,
+        "brier_expected": 0.06357988364898991,
+        "brier_share": 0.39846676580653695,
+        "mean_error": 9.15006403454123,
+        "rmse": 9.389107632979965,
+        "rmse_after_national": 2.1547572465959126,
         "sd_forecast": 7.441072580549007,
-        "sq_error_share": 0.7692879570650389
+        "sq_error_share": 0.9165711224194955
        },
        "polls_fundamentals_biasadj": {
         "n": 107,
-        "called": 98,
-        "settled": 12,
-        "brier": 0.08551766739795919,
-        "brier_expected": 0.05211651627551021,
-        "brier_share": 0.37117445111716285,
-        "mean_error": 8.15178627943036,
-        "rmse": 10.265092480965064,
-        "rmse_after_national": 6.253414706675627,
+        "called": 99,
+        "settled": 2,
+        "brier": 0.08469174714646467,
+        "brier_expected": 0.052170879116161625,
+        "brier_share": 0.3446706621270801,
+        "mean_error": 10.852105297366647,
+        "rmse": 11.054404538129175,
+        "rmse_after_national": 2.184123044090199,
         "sd_forecast": 7.441072580549007,
-        "sq_error_share": 0.7716596481409693
+        "sq_error_share": 0.8756486326068713
        }
       }
      },
@@ -22768,42 +22550,42 @@
       "versions": {
        "polls_only": {
         "n": 28,
-        "called": 25,
-        "settled": 4,
-        "brier": 0.22044984567499998,
-        "brier_expected": 0.172739154325,
-        "brier_share": 0.30836135235504103,
-        "mean_error": 7.591951213332934,
-        "rmse": 8.038663820840583,
-        "rmse_after_national": 2.966587060877689,
-        "sd_forecast": 5.733945336200788,
-        "sq_error_share": 0.05713632220406166
+        "called": 27,
+        "settled": 0,
+        "brier": 0.23894725696759256,
+        "brier_expected": 0.1673777430324074,
+        "brier_share": 0.33206173093501207,
+        "mean_error": null,
+        "rmse": null,
+        "rmse_after_national": null,
+        "sd_forecast": null,
+        "sq_error_share": null
        },
        "polls_fundamentals": {
         "n": 28,
-        "called": 25,
-        "settled": 4,
-        "brier": 0.21075119535000003,
-        "brier_expected": 0.16724680465000002,
-        "brier_share": 0.307881363358288,
-        "mean_error": 7.298407648922986,
-        "rmse": 7.762032401937101,
-        "rmse_after_national": 3.014019220163682,
-        "sd_forecast": 5.733945336200788,
-        "sq_error_share": 0.059301757126997284
+        "called": 27,
+        "settled": 0,
+        "brier": 0.23036272488425927,
+        "brier_expected": 0.16230116400462966,
+        "brier_share": 0.33288344864302744,
+        "mean_error": null,
+        "rmse": null,
+        "rmse_after_national": null,
+        "sd_forecast": null,
+        "sq_error_share": null
        },
        "polls_fundamentals_biasadj": {
         "n": 28,
-        "called": 25,
-        "settled": 4,
-        "brier": 0.29335634435,
-        "brier_expected": 0.15750365565,
-        "brier_share": 0.32481168657572757,
-        "mean_error": 9.346558107784915,
-        "rmse": 9.712905912293387,
-        "rmse_after_national": 3.101852335731068,
-        "sd_forecast": 5.733945336200788,
-        "sq_error_share": 0.06328667997149583
+        "called": 27,
+        "settled": 0,
+        "brier": 0.30738001034722223,
+        "brier_expected": 0.15002647113425926,
+        "brier_share": 0.34116731428104674,
+        "mean_error": null,
+        "rmse": null,
+        "rmse_after_national": null,
+        "sd_forecast": null,
+        "sq_error_share": null
        }
       }
      },
@@ -22817,140 +22599,152 @@
       "versions": {
        "polls_only": {
         "n": 27,
-        "called": 26,
-        "settled": 7,
-        "brier": 0.1808890775240385,
-        "brier_expected": 0.16588111478365383,
-        "brier_share": 0.26314542619346337,
-        "mean_error": 4.272023489989988,
-        "rmse": 5.457897142770296,
-        "rmse_after_national": 3.9275037038140717,
-        "sd_forecast": 5.6239867467317834,
-        "sq_error_share": 0.1752545656541862
+        "called": 27,
+        "settled": 1,
+        "brier": 0.19671126131944447,
+        "brier_expected": 0.1660970720138889,
+        "brier_share": 0.2733669461499754,
+        "mean_error": 10.810565787471614,
+        "rmse": 10.810565787471614,
+        "rmse_after_national": 0.7774329769328734,
+        "sd_forecast": 5.6146146844757165,
+        "sq_error_share": 0.0618634103043847
        },
        "polls_fundamentals": {
         "n": 27,
-        "called": 26,
-        "settled": 7,
-        "brier": 0.1695343789903846,
-        "brier_expected": 0.15998869793269233,
-        "brier_share": 0.25757545374343094,
-        "mean_error": 3.9896304140844236,
-        "rmse": 5.240793315023484,
-        "rmse_after_national": 3.8735721685809494,
-        "sd_forecast": 5.6239867467317834,
-        "sq_error_share": 0.17141028580796386
+        "called": 27,
+        "settled": 1,
+        "brier": 0.1859116062731481,
+        "brier_expected": 0.16037450483796298,
+        "brier_share": 0.26864978555043556,
+        "mean_error": 10.529113112173826,
+        "rmse": 10.529113112173826,
+        "rmse_after_national": 0.9193660517550626,
+        "sd_forecast": 5.6146146844757165,
+        "sq_error_share": 0.08342887758050438
        },
        "polls_fundamentals_biasadj": {
         "n": 27,
-        "called": 26,
-        "settled": 7,
-        "brier": 0.2640121331009615,
-        "brier_expected": 0.15246575151442304,
-        "brier_share": 0.3040138623071096,
-        "mean_error": 6.0569995928888085,
-        "rmse": 6.946499988490991,
-        "rmse_after_national": 3.78667936975725,
-        "sd_forecast": 5.6239867467317834,
-        "sq_error_share": 0.16505367188753498
+        "called": 27,
+        "settled": 1,
+        "brier": 0.28304917270833335,
+        "brier_expected": 0.15067212358796295,
+        "brier_share": 0.3141620235918732,
+        "mean_error": 12.598103143365751,
+        "rmse": 12.598103143365751,
+        "rmse_after_national": 1.163998563999403,
+        "sd_forecast": 5.6146146844757165,
+        "sq_error_share": 0.12435136739312867
        }
       }
      }
     ],
     "n": 162,
     "national_miss": {
-     "polls_only": 6.2435276927345145,
-     "polls_fundamentals": 5.8486079866757485,
-     "polls_fundamentals_biasadj": 7.722028910196767
+     "polls_only": 10.03313281053874,
+     "polls_fundamentals": 9.609747060418764,
+     "polls_fundamentals_biasadj": 11.434104579366348
     }
    }
   },
   "poll_audit_scores": {
    "senate": {
-    "n": 18,
+    "n": 10,
     "as_frozen": {
-     "rmse": 6.8832106019472565,
-     "mean": 5.070044819937241
+     "rmse": 7.772944526282683,
+     "mean": 7.444745409018506
     },
     "without_blocklisted": {
-     "rmse": 6.885311935119744,
-     "mean": 5.065338763564966
+     "rmse": 7.778534653275291,
+     "mean": 7.449814754522196
     },
     "plus_probable_gaps": {
-     "rmse": 5.813404606014163,
-     "mean": 5.212147827040109
+     "rmse": 6.58022203269033,
+     "mean": 6.057590722771775
     },
     "plus_all_missing": {
-     "rmse": 6.038905840745484,
-     "mean": 4.961447268952285
+     "rmse": 6.604992804440948,
+     "mean": 6.030390163051875
     }
    },
    "house": {
-    "n": 23,
+    "n": 3,
     "as_frozen": {
-     "rmse": 7.8004865192420505,
-     "mean": 5.84860798667575
+     "rmse": 9.783879721533719,
+     "mean": 9.609747060418764
     },
     "without_blocklisted": {
-     "rmse": 7.8004865192420505,
-     "mean": 5.84860798667575
+     "rmse": 9.783879721533719,
+     "mean": 9.609747060418764
     },
     "plus_probable_gaps": {
-     "rmse": 7.582641720615342,
-     "mean": 5.717416856159203
+     "rmse": 8.622240561073545,
+     "mean": 8.549501484244594
     },
     "plus_all_missing": {
-     "rmse": 7.660063957722253,
-     "mean": 5.942449344148
+     "rmse": 8.822114562823876,
+     "mean": 8.724132755101124
     }
    }
   },
   "early_read": {
    "races": [
     {
+     "race": "2026|AR|S|regular",
+     "count": -12.26,
+     "settled": false,
+     "status": "Wikipedia count",
+     "poll_avg": -12.83,
+     "n_polls": 4,
+     "miss_vs_polls": 0.57,
+     "mu_polls_only": -14.42,
+     "mu_polls_fundamentals": -14.32,
+     "mu_polls_fundamentals_biasadj": -16.74
+    },
+    {
      "race": "2026|CO|S|regular",
-     "count": 25.02,
-     "settled": true,
+     "count": 26.61,
+     "settled": false,
      "status": "Wikipedia count",
      "poll_avg": 16.01,
      "n_polls": 1,
-     "miss_vs_polls": 9.02,
+     "miss_vs_polls": 10.61,
      "mu_polls_only": 18.18,
      "mu_polls_fundamentals": 18.38,
      "mu_polls_fundamentals_biasadj": 18.38
     },
     {
      "race": "2026|FL|S|special",
-     "count": -2.93,
+     "count": -2.91,
      "settled": true,
      "status": "Wikipedia count",
      "poll_avg": -6.59,
      "n_polls": 16,
-     "miss_vs_polls": 3.66,
+     "miss_vs_polls": 3.68,
      "mu_polls_only": -6.3,
      "mu_polls_fundamentals": -6.25,
      "mu_polls_fundamentals_biasadj": -7.18
     },
     {
      "race": "2026|GA|S|regular",
-     "count": 18.04,
+     "count": 18.05,
      "settled": true,
-     "status": "official, still counting (counties fully reporting 53/159; official: False)",
+     "status": "official, still counting (counties fully reporting 111/159; official: False)",
      "poll_avg": 9.26,
      "n_polls": 12,
-     "miss_vs_polls": 8.79,
+     "miss_vs_polls": 8.8,
      "mu_polls_only": 9.23,
      "mu_polls_fundamentals": 9.29,
      "mu_polls_fundamentals_biasadj": 8.94
     },
     {
      "race": "2026|ID|S|regular",
-     "count": -23.24,
-     "settled": true,
+     "count": -25.53,
+     "settled": false,
      "status": "Wikipedia count",
      "poll_avg": -6.25,
      "n_polls": 1,
-     "miss_vs_polls": -16.99,
+     "miss_vs_polls": -19.28,
      "mu_polls_only": -13.33,
      "mu_polls_fundamentals": -13.14,
      "mu_polls_fundamentals_biasadj": -15.85
@@ -22969,12 +22763,12 @@
     },
     {
      "race": "2026|KS|S|regular",
-     "count": 5.16,
-     "settled": true,
+     "count": 5.21,
+     "settled": false,
      "status": "Wikipedia count",
      "poll_avg": 5.04,
      "n_polls": 9,
-     "miss_vs_polls": 0.11,
+     "miss_vs_polls": 0.17,
      "mu_polls_only": 3.75,
      "mu_polls_fundamentals": 3.8,
      "mu_polls_fundamentals_biasadj": 2.41
@@ -23006,7 +22800,7 @@
     {
      "race": "2026|MI|S|regular",
      "count": 7.25,
-     "settled": true,
+     "settled": false,
      "status": "Wikipedia count",
      "poll_avg": 4.17,
      "n_polls": 37,
@@ -23017,12 +22811,12 @@
     },
     {
      "race": "2026|MN|S|regular",
-     "count": 10.42,
+     "count": 10.44,
      "settled": true,
      "status": "official, complete",
      "poll_avg": 3.35,
      "n_polls": 8,
-     "miss_vs_polls": 7.07,
+     "miss_vs_polls": 7.08,
      "mu_polls_only": 4.71,
      "mu_polls_fundamentals": 4.78,
      "mu_polls_fundamentals_biasadj": 4.96
@@ -23042,7 +22836,7 @@
     {
      "race": "2026|MT|S|regular",
      "count": -10.63,
-     "settled": true,
+     "settled": false,
      "status": "official, complete",
      "poll_avg": -12.44,
      "n_polls": 6,
@@ -23064,13 +22858,25 @@
      "mu_polls_fundamentals_biasadj": -5.18
     },
     {
+     "race": "2026|NH|S|regular",
+     "count": 14.0,
+     "settled": false,
+     "status": "Wikipedia count",
+     "poll_avg": 8.07,
+     "n_polls": 12,
+     "miss_vs_polls": 5.93,
+     "mu_polls_only": 8.51,
+     "mu_polls_fundamentals": 8.57,
+     "mu_polls_fundamentals_biasadj": 8.67
+    },
+    {
      "race": "2026|NM|S|regular",
-     "count": 26.47,
-     "settled": true,
+     "count": 26.52,
+     "settled": false,
      "status": "Wikipedia count",
      "poll_avg": 18.62,
      "n_polls": 2,
-     "miss_vs_polls": 7.86,
+     "miss_vs_polls": 7.9,
      "mu_polls_only": 18.73,
      "mu_polls_fundamentals": 18.93,
      "mu_polls_fundamentals_biasadj": 18.71
@@ -23090,7 +22896,7 @@
     {
      "race": "2026|OH|S|special",
      "count": 5.1,
-     "settled": true,
+     "settled": false,
      "status": "Wikipedia count",
      "poll_avg": 4.31,
      "n_polls": 25,
@@ -23112,6 +22918,30 @@
      "mu_polls_fundamentals_biasadj": -3.71
     },
     {
+     "race": "2026|SD|S|regular",
+     "count": -21.0,
+     "settled": false,
+     "status": "Wikipedia count",
+     "poll_avg": -13.24,
+     "n_polls": 4,
+     "miss_vs_polls": -7.76,
+     "mu_polls_only": -14.53,
+     "mu_polls_fundamentals": -14.45,
+     "mu_polls_fundamentals_biasadj": -16.87
+    },
+    {
+     "race": "2026|TN|S|regular",
+     "count": -12.42,
+     "settled": false,
+     "status": "Wikipedia count",
+     "poll_avg": -23.94,
+     "n_polls": 1,
+     "miss_vs_polls": 11.52,
+     "mu_polls_only": -23.03,
+     "mu_polls_fundamentals": -22.83,
+     "mu_polls_fundamentals_biasadj": -25.09
+    },
+    {
      "race": "2026|TX|S|regular",
      "count": 12.33,
      "settled": true,
@@ -23124,14 +22954,14 @@
      "mu_polls_fundamentals_biasadj": 1.77
     }
    ],
-   "n_polled": 14,
+   "n_polled": 17,
    "note": "counts as of the latest run, most not final; shown, not scored",
-   "mean_miss": 4.451428571428572,
-   "median_miss": 5.04,
+   "mean_miss": 3.6,
+   "median_miss": 4.12,
    "mean_error_vs_mu": {
-    "polls_only": 4.857142857142856,
-    "polls_fundamentals": 4.787142857142858,
-    "polls_fundamentals_biasadj": 5.590714285714285
+    "polls_only": 4.078235294117646,
+    "polls_fundamentals": 4.0064705882352944,
+    "polls_fundamentals_biasadj": 4.947058823529411
    }
   },
   "senate_margins": [
@@ -23158,7 +22988,7 @@
    {
     "race": "2026|AR|S|regular",
     "actual": null,
-    "counted": null,
+    "counted": -12.26,
     "settled": false,
     "source": "wikipedia",
     "mu_polls_only": -14.42,
@@ -23167,9 +22997,9 @@
    },
    {
     "race": "2026|CO|S|regular",
-    "actual": 25.02,
-    "counted": 25.02,
-    "settled": true,
+    "actual": null,
+    "counted": 26.61,
+    "settled": false,
     "source": "wikipedia",
     "mu_polls_only": 18.18,
     "mu_polls_fundamentals": 18.38,
@@ -23178,7 +23008,7 @@
    {
     "race": "2026|DE|S|regular",
     "actual": null,
-    "counted": null,
+    "counted": 27.13,
     "settled": false,
     "source": "wikipedia",
     "mu_polls_only": 26.99,
@@ -23187,8 +23017,8 @@
    },
    {
     "race": "2026|FL|S|special",
-    "actual": -2.93,
-    "counted": -2.93,
+    "actual": -2.91,
+    "counted": -2.91,
     "settled": true,
     "source": "wikipedia",
     "mu_polls_only": -6.3,
@@ -23197,8 +23027,8 @@
    },
    {
     "race": "2026|GA|S|regular",
-    "actual": 18.04,
-    "counted": 18.04,
+    "actual": 18.05,
+    "counted": 18.05,
     "settled": true,
     "source": "official (Georgia Secretary of State)",
     "mu_polls_only": 9.23,
@@ -23207,9 +23037,9 @@
    },
    {
     "race": "2026|ID|S|regular",
-    "actual": -23.24,
-    "counted": -23.24,
-    "settled": true,
+    "actual": null,
+    "counted": -25.53,
+    "settled": false,
     "source": "wikipedia",
     "mu_polls_only": -13.33,
     "mu_polls_fundamentals": -13.14,
@@ -23237,9 +23067,9 @@
    },
    {
     "race": "2026|KS|S|regular",
-    "actual": 5.16,
-    "counted": 5.16,
-    "settled": true,
+    "actual": null,
+    "counted": 5.21,
+    "settled": false,
     "source": "wikipedia",
     "mu_polls_only": 3.75,
     "mu_polls_fundamentals": 3.8,
@@ -23278,7 +23108,7 @@
    {
     "race": "2026|MA|S|regular",
     "actual": null,
-    "counted": null,
+    "counted": 32.7,
     "settled": false,
     "source": "wikipedia",
     "mu_polls_only": 31.36,
@@ -23287,9 +23117,9 @@
    },
    {
     "race": "2026|MI|S|regular",
-    "actual": 7.25,
+    "actual": null,
     "counted": 7.25,
-    "settled": true,
+    "settled": false,
     "source": "wikipedia",
     "mu_polls_only": 4.48,
     "mu_polls_fundamentals": 4.52,
@@ -23297,8 +23127,8 @@
    },
    {
     "race": "2026|MN|S|regular",
-    "actual": 10.42,
-    "counted": 10.42,
+    "actual": 10.44,
+    "counted": 10.44,
     "settled": true,
     "source": "official (Minnesota Secretary of State (media text files))",
     "mu_polls_only": 4.71,
@@ -23317,9 +23147,9 @@
    },
    {
     "race": "2026|MT|S|regular",
-    "actual": -10.63,
+    "actual": null,
     "counted": -10.63,
-    "settled": true,
+    "settled": false,
     "source": "official (Montana Secretary of State)",
     "mu_polls_only": -12.44,
     "mu_polls_fundamentals": -12.44,
@@ -23338,7 +23168,7 @@
    {
     "race": "2026|NH|S|regular",
     "actual": null,
-    "counted": null,
+    "counted": 14.0,
     "settled": false,
     "source": "wikipedia",
     "mu_polls_only": 8.51,
@@ -23357,9 +23187,9 @@
    },
    {
     "race": "2026|NM|S|regular",
-    "actual": 26.47,
-    "counted": 26.47,
-    "settled": true,
+    "actual": null,
+    "counted": 26.52,
+    "settled": false,
     "source": "wikipedia",
     "mu_polls_only": 18.73,
     "mu_polls_fundamentals": 18.93,
@@ -23377,9 +23207,9 @@
    },
    {
     "race": "2026|OH|S|special",
-    "actual": 5.1,
+    "actual": null,
     "counted": 5.1,
-    "settled": true,
+    "settled": false,
     "source": "wikipedia",
     "mu_polls_only": 3.8,
     "mu_polls_fundamentals": 3.85,
@@ -23387,9 +23217,9 @@
    },
    {
     "race": "2026|OK|S|regular",
-    "actual": -18.75,
-    "counted": -18.75,
-    "settled": true,
+    "actual": null,
+    "counted": -18.58,
+    "settled": false,
     "source": "wikipedia",
     "mu_polls_only": -25.01,
     "mu_polls_fundamentals": -24.38,
@@ -23428,7 +23258,7 @@
    {
     "race": "2026|SD|S|regular",
     "actual": null,
-    "counted": null,
+    "counted": -21.0,
     "settled": false,
     "source": "wikipedia",
     "mu_polls_only": -14.53,
@@ -23438,7 +23268,7 @@
    {
     "race": "2026|TN|S|regular",
     "actual": null,
-    "counted": null,
+    "counted": -12.42,
     "settled": false,
     "source": "wikipedia",
     "mu_polls_only": -23.03,
@@ -23468,7 +23298,7 @@
    {
     "race": "2026|WV|S|regular",
     "actual": null,
-    "counted": null,
+    "counted": -21.22,
     "settled": false,
     "source": "wikipedia",
     "mu_polls_only": -35.01,
@@ -23489,9 +23319,9 @@
   "house_margins": [
    {
     "race": "2026|AL|H|2",
-    "actual": 7.51,
+    "actual": null,
     "counted": 7.51,
-    "settled": true,
+    "settled": false,
     "source": "wikipedia",
     "mu_polls_only": -1.11,
     "mu_polls_fundamentals": -0.81,
@@ -23659,9 +23489,9 @@
    },
    {
     "race": "2026|FL|H|2",
-    "actual": -4.18,
+    "actual": null,
     "counted": -4.18,
-    "settled": true,
+    "settled": false,
     "source": "wikipedia",
     "mu_polls_only": -6.73,
     "mu_polls_fundamentals": -6.23,
@@ -23669,9 +23499,9 @@
    },
    {
     "race": "2026|FL|H|3",
-    "actual": -12.39,
+    "actual": null,
     "counted": -12.39,
-    "settled": true,
+    "settled": false,
     "source": "wikipedia",
     "mu_polls_only": -14.87,
     "mu_polls_fundamentals": -14.37,
@@ -23680,7 +23510,7 @@
    {
     "race": "2026|FL|H|4",
     "actual": null,
-    "counted": null,
+    "counted": -2.15,
     "settled": false,
     "source": "wikipedia",
     "mu_polls_only": -5.79,
@@ -23690,7 +23520,7 @@
    {
     "race": "2026|FL|H|5",
     "actual": null,
-    "counted": null,
+    "counted": -12.83,
     "settled": false,
     "source": "wikipedia",
     "mu_polls_only": -14.87,
@@ -23960,7 +23790,7 @@
    {
     "race": "2026|IA|H|1",
     "actual": null,
-    "counted": null,
+    "counted": 9.59,
     "settled": false,
     "source": "wikipedia",
     "mu_polls_only": 0.35,
@@ -23970,7 +23800,7 @@
    {
     "race": "2026|IA|H|2",
     "actual": null,
-    "counted": null,
+    "counted": 4.19,
     "settled": false,
     "source": "wikipedia",
     "mu_polls_only": 1.18,
@@ -23980,7 +23810,7 @@
    {
     "race": "2026|IA|H|3",
     "actual": null,
-    "counted": null,
+    "counted": 7.29,
     "settled": false,
     "source": "wikipedia",
     "mu_polls_only": -0.35,
@@ -24039,9 +23869,9 @@
    },
    {
     "race": "2026|MI|H|1",
-    "actual": -9.76,
+    "actual": null,
     "counted": -9.76,
-    "settled": true,
+    "settled": false,
     "source": "wikipedia",
     "mu_polls_only": -16.68,
     "mu_polls_fundamentals": -16.19,
@@ -24049,9 +23879,9 @@
    },
    {
     "race": "2026|MI|H|4",
-    "actual": 1.8,
+    "actual": null,
     "counted": 1.8,
-    "settled": true,
+    "settled": false,
     "source": "wikipedia",
     "mu_polls_only": -2.16,
     "mu_polls_fundamentals": -1.67,
@@ -24059,9 +23889,9 @@
    },
    {
     "race": "2026|MI|H|7",
-    "actual": 3.36,
+    "actual": null,
     "counted": 3.36,
-    "settled": true,
+    "settled": false,
     "source": "wikipedia",
     "mu_polls_only": 4.18,
     "mu_polls_fundamentals": 4.46,
@@ -24069,9 +23899,9 @@
    },
    {
     "race": "2026|MI|H|8",
-    "actual": 13.97,
+    "actual": null,
     "counted": 13.97,
-    "settled": true,
+    "settled": false,
     "source": "wikipedia",
     "mu_polls_only": 10.48,
     "mu_polls_fundamentals": 10.97,
@@ -24079,9 +23909,9 @@
    },
    {
     "race": "2026|MI|H|10",
-    "actual": 7.34,
+    "actual": null,
     "counted": 7.34,
-    "settled": true,
+    "settled": false,
     "source": "wikipedia",
     "mu_polls_only": 0.9,
     "mu_polls_fundamentals": 1.19,
@@ -24089,9 +23919,9 @@
    },
    {
     "race": "2026|MN|H|1",
-    "actual": 0.1,
+    "actual": null,
     "counted": 0.1,
-    "settled": true,
+    "settled": false,
     "source": "wikipedia",
     "mu_polls_only": -4.13,
     "mu_polls_fundamentals": -3.86,
@@ -24099,9 +23929,9 @@
    },
    {
     "race": "2026|MN|H|2",
-    "actual": 14.3,
+    "actual": null,
     "counted": 14.3,
-    "settled": true,
+    "settled": false,
     "source": "wikipedia",
     "mu_polls_only": 13.23,
     "mu_polls_fundamentals": 13.73,
@@ -24109,9 +23939,9 @@
    },
    {
     "race": "2026|MN|H|6",
-    "actual": -11.58,
+    "actual": null,
     "counted": -11.58,
-    "settled": true,
+    "settled": false,
     "source": "wikipedia",
     "mu_polls_only": -14.87,
     "mu_polls_fundamentals": -14.37,
@@ -24119,9 +23949,9 @@
    },
    {
     "race": "2026|MN|H|8",
-    "actual": -6.24,
+    "actual": null,
     "counted": -6.24,
-    "settled": true,
+    "settled": false,
     "source": "wikipedia",
     "mu_polls_only": -9.42,
     "mu_polls_fundamentals": -8.93,
@@ -24129,9 +23959,9 @@
    },
    {
     "race": "2026|MO|H|2",
-    "actual": 5.07,
+    "actual": null,
     "counted": 5.07,
-    "settled": true,
+    "settled": false,
     "source": "wikipedia",
     "mu_polls_only": -1.68,
     "mu_polls_fundamentals": -1.4,
@@ -24139,9 +23969,9 @@
    },
    {
     "race": "2026|MT|H|1",
-    "actual": 3.65,
+    "actual": null,
     "counted": 3.65,
-    "settled": true,
+    "settled": false,
     "source": "wikipedia",
     "mu_polls_only": 1.24,
     "mu_polls_fundamentals": 1.53,
@@ -24159,9 +23989,9 @@
    },
    {
     "race": "2026|NE|H|2",
-    "actual": 15.79,
+    "actual": null,
     "counted": 15.79,
-    "settled": true,
+    "settled": false,
     "source": "wikipedia",
     "mu_polls_only": 12.05,
     "mu_polls_fundamentals": 12.34,
@@ -24439,9 +24269,9 @@
    },
    {
     "race": "2026|NC|H|9",
-    "actual": 2.22,
+    "actual": null,
     "counted": 2.22,
-    "settled": true,
+    "settled": false,
     "source": "wikipedia",
     "mu_polls_only": -9.01,
     "mu_polls_fundamentals": -8.72,
@@ -24479,9 +24309,9 @@
    },
    {
     "race": "2026|NC|H|14",
-    "actual": 2.22,
+    "actual": null,
     "counted": 2.22,
-    "settled": true,
+    "settled": false,
     "source": "wikipedia",
     "mu_polls_only": -11.24,
     "mu_polls_fundamentals": -10.74,
@@ -24489,9 +24319,9 @@
    },
    {
     "race": "2026|OH|H|1",
-    "actual": 11.75,
+    "actual": null,
     "counted": 11.75,
-    "settled": true,
+    "settled": false,
     "source": "wikipedia",
     "mu_polls_only": 7.67,
     "mu_polls_fundamentals": 7.97,
@@ -24649,9 +24479,9 @@
    },
    {
     "race": "2026|SC|H|1",
-    "actual": 1.04,
+    "actual": null,
     "counted": 1.04,
-    "settled": true,
+    "settled": false,
     "source": "wikipedia",
     "mu_polls_only": -1.74,
     "mu_polls_fundamentals": -1.46,
@@ -24799,9 +24629,9 @@
    },
    {
     "race": "2026|TX|H|9",
-    "actual": 15.1,
+    "actual": null,
     "counted": 15.1,
-    "settled": true,
+    "settled": false,
     "source": "wikipedia",
     "mu_polls_only": -8.54,
     "mu_polls_fundamentals": -8.05,

@@ -1,0 +1,21 @@
+{
+  "raceTitle": "U.S. House of Representatives District 49 - Districtwide Results",
+  "Reporting": "100% (699 of 699) precincts reporting",
+  "ReportingTime": "November 9, 2026, 7:43 a.m.",
+  "candidates": [
+    {
+      "Name": "Mike Levin",
+      "Party": "Dem",
+      "Votes": "139,475",
+      "Percent": "57.7",
+      "incumbent": false
+    },
+    {
+      "Name": "Armen Kurdian",
+      "Party": "Rep",
+      "Votes": "102,258",
+      "Percent": "42.3",
+      "incumbent": false
+    }
+  ]
+}

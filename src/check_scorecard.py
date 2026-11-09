@@ -22,7 +22,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src" / "collect"))
-from results_margins import SLOW_COUNT, SLOW_COUNT_DAYS  # noqa: E402
+from results_margins import SETTLED_DAYS, SLOW_COUNT, SLOW_COUNT_DAYS  # noqa: E402
 
 BIG_MISS = 15.0           # a newly scored race whose count is this far from the forecast's expected margin: verify it
 THIN_PAGE = 0.5           # a newly settled House race on a state page where under half the districts have counts
@@ -101,12 +101,17 @@ def main(ref):
             why = "race missing" if r is None else (f"count {oo.loc[k].cand_sum:,.0f} -> {r.cand_sum:,.0f}"
                                                     if pd.notna(r.cand_sum) else "no count")
             moved = r is not None and pd.notna(r.cand_sum) and abs(r.cand_sum / oo.loc[k].cand_sum - 1) >= 0.01
+            held = None if r is None else r.get("held_days")
+            if not moved and r is not None and pd.notna(held) and held < (SLOW_COUNT_DAYS if r.st in SLOW_COUNT else SETTLED_DAYS):
+                info.append(f"{k}: no longer settled: count unchanged, but not yet held still for the required days ({held:.0f})")
+                continue
             (review if moved else hold).append(f"{k}: was settled, no longer ({why})")
         for k in sorted(s_new):
             r = nn.loc[k]
             held = r.get("held_days")
-            if r.st in SLOW_COUNT and not (pd.notna(held) and held >= SLOW_COUNT_DAYS):
-                hold.append(f"{k}: settled in a slow-count state after {held} days (rule is {SLOW_COUNT_DAYS})")
+            need = SLOW_COUNT_DAYS if r.st in SLOW_COUNT else SETTLED_DAYS
+            if not (pd.notna(held) and held >= need):
+                hold.append(f"{k}: settled after {held} days held still (rule is {need})")
         for k in sorted(s_new - s_old):
             r = nn.loc[k]
             info.append(f"newly settled {k}: {r.margin:+.1f} ({r.source}, {r.cand_sum:,.0f} votes)")

@@ -1,0 +1,21 @@
+{
+  "raceTitle": "U.S. House of Representatives District 28 - Districtwide Results",
+  "Reporting": "100% (391 of 391) precincts reporting",
+  "ReportingTime": "November 9, 2026, 7:43 a.m.",
+  "candidates": [
+    {
+      "Name": "Judy Chu",
+      "Party": "Dem",
+      "Votes": "176,046",
+      "Percent": "69.8",
+      "incumbent": false
+    },
+    {
+      "Name": "April A. Verlato",
+      "Party": "Rep",
+      "Votes": "76,329",
+      "Percent": "30.2",
+      "incumbent": false
+    }
+  ]
+}

@@ -351,9 +351,15 @@ SWING_FLAG = 2.0         # margin moved this many points with almost no new vote
 # States that count mail ballots for weeks, county by county, or accept them days after Election Day. A day without movement there proves nothing (California
 # re-issues its statewide report while a district's counties add nothing; "100% of precincts" is reported on election
 # night), so these settle only once the count has held still for SLOW_COUNT_DAYS.
+# Every other state also needs the count to have held still for SETTLED_DAYS. A source can be edited many times (new
+# page revisions, re-issued reports) without the race's own total moving, and counts arrive in irregular batches: on
+# Nov 9, 2026 Colorado's and Idaho's Senate counts, unchanged for 3 and 4 days across several page edits, grew 12% and
+# 24% when the page was brought up to date. Five days clears every count in the first week's history that moved
+# after sitting still; it was set from that one case, so lengthen it if a count moves after settling again.
 SLOW_COUNT = {"CA", "WA", "OR", "NV", "AZ", "UT", "AK",   # all-mail or weeks-long mail counts
               "NJ", "NY", "IL", "MD", "MS"}               # accept mail ballots arriving days after Election Day
 SLOW_COUNT_DAYS = 7
+SETTLED_DAYS = 5
 
 
 def settledness(df, chamber):
@@ -364,7 +370,8 @@ def settledness(df, chamber):
                     proves nothing about whether counting has stopped.
       count_flag    the count moved the way a count in progress can't: candidate votes fell, or the margin swung more than
                     SWING_FLAG points with under SETTLED_GROWTH new votes. Flagged races are never settled.
-                    In SLOW_COUNT states the count must also have held still for SLOW_COUNT_DAYS.
+                    The count must also have held within SETTLED_GROWTH of today's for SETTLED_DAYS (SLOW_COUNT_DAYS in
+                    SLOW_COUNT states).
       settled       count_stable, no flag, and a margin exists (scores use settled races only).
     count_stable doesn't need a margin, so uncontested and same-party races still count toward the national House vote."""
     hist_path = OUT / f"margins_history_{chamber}.csv"
@@ -402,7 +409,7 @@ def settledness(df, chamber):
     complete = df["complete"].fillna(False).astype(bool) if "complete" in df else pd.Series(False, index=df.index)
     df["count_stable"] = df.cand_sum.gt(0) & df.prev_cand_sum.notna() & df.growth_since_prev.abs().lt(SETTLED_GROWTH) \
         & (new_evidence | (complete & ~df.source.eq("wikipedia"))) & df.count_flag.eq("")
-    # slow-count states: the count must have held within SETTLED_GROWTH of today's for SLOW_COUNT_DAYS
+    # the count must have held within SETTLED_GROWTH of today's for SETTLED_DAYS (SLOW_COUNT_DAYS in slow-count states)
     same = hist.merge(now[["race_key", "source", "day", "cand_sum"]], on=["race_key", "source"], suffixes=("", "_now"))
     same = same[same.day <= same.day_now]
     moved = same[(same.cand_sum / same.cand_sum_now - 1).abs() >= SETTLED_GROWTH].groupby("race_key").day.max()
@@ -411,7 +418,7 @@ def settledness(df, chamber):
     held_days = (pd.to_datetime(day) - plateau_from).dt.days
     slow = df.race_key.str.split("|").str[1].isin(SLOW_COUNT)
     df["held_days"] = held_days
-    df["count_stable"] = df.count_stable & (~slow | held_days.ge(SLOW_COUNT_DAYS))
+    df["count_stable"] = df.count_stable & held_days.ge(np.where(slow, SLOW_COUNT_DAYS, SETTLED_DAYS))
     df["settled"] = df.count_stable & df.margin.notna()
     for _, r in df[df.count_flag != ""].iterrows():
         print(f"  [count] {r.race_key}: {r.count_flag} ({r.prev_cand_sum:,.0f} -> {r.cand_sum:,.0f})")

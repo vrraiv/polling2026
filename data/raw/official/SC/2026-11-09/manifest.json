@@ -1,0 +1,17 @@
+{
+  "current_ver.txt": {
+    "url": "https://www.enr-scvotes.org/SC/127300/current_ver.txt",
+    "retrieved": "2026-11-09T15:56:32",
+    "bytes": 6
+  },
+  "summary.json": {
+    "url": "https://www.enr-scvotes.org/SC/127300/386034/json/en/summary.json",
+    "retrieved": "2026-11-09T15:56:33",
+    "bytes": 148370
+  },
+  "electionsettings.json": {
+    "url": "https://www.enr-scvotes.org/SC/127300/386034/json/en/electionsettings.json",
+    "retrieved": "2026-11-09T15:56:34",
+    "bytes": 33463
+  }
+}

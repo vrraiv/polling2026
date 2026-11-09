@@ -1,0 +1,21 @@
+{
+  "raceTitle": "U.S. House of Representatives District 27 - Districtwide Results",
+  "Reporting": "100% (378 of 378) precincts reporting",
+  "ReportingTime": "November 9, 2026, 7:43 a.m.",
+  "candidates": [
+    {
+      "Name": "George Whitesides",
+      "Party": "Dem",
+      "Votes": "146,466",
+      "Percent": "64.0",
+      "incumbent": false
+    },
+    {
+      "Name": "Jason Gibbs",
+      "Party": "Rep",
+      "Votes": "82,342",
+      "Percent": "36.0",
+      "incumbent": false
+    }
+  ]
+}

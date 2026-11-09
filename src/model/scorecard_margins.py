@@ -465,9 +465,9 @@ def stage2(sen, hou):
                             "house_all": {"counted": int(hou.counted.notna().sum()), "settled": int(hou.actual.notna().sum()), "of": int(len(hou))},
                             "rule": "scores use settled counts: candidate votes moved less than 1% since an earlier day's "
                                     "snapshot, the source was updated in between (page edited or report re-issued), and "
-                                    "nothing moved the way a count in progress can't (votes falling, a swing with no new votes); in states that "
-                                    "count mail ballots for weeks (CA, WA, OR, NV, AZ, UT, AK, NJ, NY, IL, MD, MS) the count must also have held "
-                                    "still for 7 days"},
+                                    "nothing moved the way a count in progress can't (votes falling, a swing with no new votes); the count must "
+                                    "also have held still for 5 days, or 7 in states that count mail ballots for weeks (CA, WA, OR, NV, AZ, UT, "
+                                    "AK, NJ, NY, IL, MD, MS)"},
            "sign_mismatches": sen.loc[sen.sign_mismatch, "race_key"].tolist() + hou.loc[hou.sign_mismatch, "race_key"].tolist(),
            "box_issues": {r.race_key: r.issues for _, r in pd.concat([sm.reset_index(), hm.reset_index()])
                           .loc[lambda x: x.issues.fillna("") != ""].iterrows()},
