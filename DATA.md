@@ -54,6 +54,7 @@ Built from the sources above; all in git.
 | `data/interim/governor_dataset.csv` | `governors.py` | 1998-2025 | Governor races joined to lean, environment, approval, previous margin, poll averages |
 | `data/interim/governor_polls_wiki.csv` | `governors.py` | 2022-2024 | Governor polls from Wikipedia race pages (236) |
 | `data/interim/house_specials.csv` | `src/collect/specials.py` | 2007-2026 | House specials with lean on the lines in force (78) |
+| `data/interim/generic_ballot_daily.csv` | `src/collect/generic_ballot.py` | 1995-2026 | Generic-ballot polling average by day: 538's published average to 2016, then a plain average of 538's and VoteHub's polls (latest per pollster, 30 days) |
 | `data/final/bias_race_level.csv` | `src/model/bias_analysis.py` | 2002-2022 | Senate and governor races: final-three-week poll average vs result (584) |
 | `data/final/calibration.json` | `src/model/calibrate.py` | 1998-2022 | Polling misses by cycle (Senate, governor, House, generic); poll-average error by number of polls |
 | `data/final/pollster_effects.json` | `src/model/pollster_effects.py` | 1998-2022 | Pollster house effects and the sponsored-poll shift |
@@ -67,8 +68,12 @@ Built from the sources above; all in git.
 ## 3. Data pages plan
 
 **Status (Nov 9, 2026): built.** `src/site/history.py` writes six pages to `site/history/` (overview with sources and
-downloads; vote shares; approval and incumbency; states and regions; polling accuracy; off-cycle elections), 22
-charts and 23 CSV downloads, linked from the forecast page's nav. Charts: `site/assets/charts.js`, styles:
+downloads; vote shares; approval and incumbency; states and regions; polling accuracy; off-cycle elections), 21
+charts and 23 CSV downloads, linked from the forecast page's nav. The pages stand apart from the forecast: nothing on
+them compares results with the forecast or the model's predictions. Where a 2026 or off-cycle result needs a
+benchmark, it is the polls: a race's final three weeks of polls, or the generic ballot of the day (revised Nov 9:
+the 2026 incumbents and regional charts, the off-cycle charts and stats, and the VoteHub coverage chart, which was
+dropped as scorecard administration). Charts: `site/assets/charts.js`, styles:
 `site/assets/history.css`. Two departures from the plan below: the forecast page keeps its own chart code (it's the
 frozen page; only its nav changed), and each download's sources and licence are shown beside its link rather than
 inside the CSV, so the files stay plain. Licences: `LICENSE` (MIT, code) and `LICENSE-DATA.md` (CC BY-SA 4.0,
@@ -115,8 +120,9 @@ or need new work.
 - House incumbency premium by cycle, 2006-2024: from about 20 points to about 4. *Exists* (`house_structure.json`).
   Split by president's party vs out-party. *Exists* (`history_context.json`).
 - Governor incumbency (about 15 points) against House (4.5); Senate (needs data, see gaps).
-- 2026: Republican House incumbents in R+2 to R+12 seats won 52 of 74 against about 64 expected. *Exists*
-  (`house_2026_breakdown.json`).
+- 2026: seats from R+2 to R+12, the Democrat's lead in the final polls against the result, for the polled seats
+  (Wikipedia's poll tables, `data/scorecard/wiki_polls_house.csv`); Democrats won 22 of 81 held by a Republican
+  incumbent. *Built.*
 
 **C. States and regions** (how places move together)
 - State swing correlations: each state's change in presidential lean between elections, correlated across states
@@ -124,8 +130,8 @@ or need new work.
 - The state-level shared House error: about 3.3 points, a rising share of district error as district-specific
   error collapsed (11 to 4.5), persistence 0.37 from one cycle to the next; not tied to new maps. *Exists*
   (`state_error.json`).
-- Regional misses in 2026 (Midwest -2.2, South +3.2 vs the national miss) against the 0.48 the model assumed.
-  *Exists* (`scorecard.json` layers).
+- 2026: every settled race with final polls, result minus polls, coloured by region (Senate results ran about 4
+  points more Democratic than their polls). *Built* (`wiki_polls_*.csv`, `margins_*.csv`).
 - Same-state Senate and governor polling misses (correlation 0.34 after national misses); House shock vs the
   Senate result (0.22). *Exists* (`state_error.json`; governor plan figures).
 - Governor results vs presidential lean (slope 0.37, against 0.96 for the Senate): how much governors run apart
@@ -141,13 +147,13 @@ or need new work.
 - Results land further toward a state's lean than its polls (about 0.08 points per point of lean). *Exists*
   (`bias_analysis.json`).
 - Pollster house effects and the sponsored-poll shift. *Exists* (`pollster_effects.json`).
-- 2026: VoteHub's coverage against Wikipedia's poll tables. *Exists* (`scorecard.json` poll audit).
 
 **E. Off-cycle elections**
-- Off-year governor races 1999-2025 against the environment: NJ and VA swung against the president in all 7
-  years after a presidential election. *Exists* (`environment_offcycle.json`).
-- House special elections 2007-2026 against lean and environment; the special electorate's shift toward Democrats
-  since 2017. *Exists* (`specials_environment.json`, `single_race_backtest.json`).
+- Off-year governor races 1999-2025 against their final polls: in NJ and VA the result ran against the president's
+  party in 10 of 14 races. *Built* (`governor_dataset.csv`).
+- House special elections 2007-2026, margin against district lean, beside the generic-ballot polling average of the
+  day; the special electorate's shift toward Democrats since 2017. *Built* (`house_specials.csv`,
+  `generic_ballot_daily.csv`).
 
 **F. Sources and downloads**: section 1 of this file as a page, plus every chart's CSV.
 

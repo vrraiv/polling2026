@@ -124,7 +124,11 @@
     const n = s.cats.length, k = s.series.length, W = drawWidth(el, s);
     // angle the category labels when they don't fit side by side (about 6 units per character at size 11)
     const rot = s.rotate || s.cats.some((c) => c.length * 6 > (W - 66) / n);
-    const H = s.height || 260, m = { l: 52, r: 14, t: 16, b: rot ? 70 : 34 };
+    // angled labels drop about 3.2 units per character (size 10 at 40 degrees): the bottom margin grows to fit the
+    // longest, and the chart grows with it so the plot keeps its height
+    const longest = Math.max(...s.cats.map((c) => c.length));
+    const mb = rot ? Math.max(70, Math.round(16 + longest * 3.2)) : 34;
+    const H = (s.height || 260) + (rot ? mb - 70 : 0), m = { l: 52, r: 14, t: 16, b: mb };
     const vals = s.series.flatMap((se) => se.values.map((v, j) => [v, v + ((se.err || [])[j] || 0), v - ((se.err || [])[j] || 0)]).flat()).filter((v) => v != null);
     const [y0, y1] = domain(vals.concat((s.refs || []).map((r) => r.y)), Object.assign({ zero: true }, s.y));
     const bw = (W - m.l - m.r) / n, Y = (v) => m.t + (1 - (v - y0) / (y1 - y0)) * (H - m.t - m.b);

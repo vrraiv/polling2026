@@ -1,0 +1,28 @@
+race_key,race,chamber,region,poll,n_polls,result,miss,after_chamber_miss
+2026|TX|H|9,TX-9,house,South,-1.05,1,15.1,16.16,12.4
+2026|MI|H|10,MI-10,house,Midwest,-5.62,1,7.34,12.96,9.2
+2026|TX|S|regular,Texas Senate,senate,South,3.29,28,12.33,9.05,4.94
+2026|NC|S|regular,North Carolina Senate,senate,South,11.35,8,20.06,8.72,4.61
+2026|GA|S|regular,Georgia Senate,senate,South,9.63,6,18.04,8.41,4.31
+2026|AL|S|regular,Alabama Senate,senate,South,-16.6,3,-9.42,7.18,3.08
+2026|NC|H|9,NC-9,house,South,-4.55,1,2.22,6.76,3.01
+2026|NM|S|regular,New Mexico Senate,senate,West,20.43,1,26.47,6.04,1.94
+2026|SC|S|regular,South Carolina Senate,senate,South,-1.07,10,4.6,5.67,1.57
+2026|MI|H|4,MI-4,house,Midwest,-3.3,1,1.8,5.09,1.34
+2026|MN|S|regular,Minnesota Senate,senate,Midwest,5.98,9,10.42,4.45,0.34
+2026|IA|S|regular,Iowa Senate,senate,Midwest,-0.11,11,4.24,4.35,0.25
+2026|OH|H|1,OH-1,house,Midwest,7.98,2,11.75,3.77,0.01
+2026|FL|S|special,Florida Senate (special),senate,South,-6.38,17,-2.93,3.45,-0.65
+2026|CO|S|regular,Colorado Senate,senate,West,21.59,3,25.02,3.43,-0.67
+2026|KY|H|6,KY-6,house,South,6.82,1,9.79,2.97,-0.79
+2026|MO|H|2,MO-2,house,Midwest,2.42,3,5.07,2.65,-1.11
+2026|OH|S|special,Ohio Senate (special),senate,Midwest,2.61,21,5.1,2.49,-1.61
+2026|MI|S|regular,Michigan Senate,senate,Midwest,5.17,20,7.25,2.07,-2.03
+2026|MI|H|13,MI-13,house,Midwest,56.82,1,58.78,1.96,-1.79
+2026|KS|S|regular,Kansas Senate,senate,Midwest,3.85,9,5.16,1.31,-2.8
+2026|MN|H|8,MN-8,house,Midwest,-6.52,1,-6.24,0.29,-3.47
+2026|SC|H|1,SC-1,house,South,2.17,1,1.04,-1.13,-4.89
+2026|MT|H|1,MT-1,house,West,5.25,5,3.65,-1.6,-5.35
+2026|LA|S|regular,Louisiana Senate,senate,South,0.0,2,-1.76,-1.76,-5.87
+2026|ID|S|regular,Idaho Senate,senate,West,-19.93,2,-23.24,-3.32,-7.42
+2026|MI|H|7,MI-7,house,Midwest,8.16,1,3.36,-4.8,-8.56

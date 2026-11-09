@@ -1,11 +1,14 @@
-"""Build the Election data pages (site/history/): the historical data behind the forecast, presented. Plan: DATA.md,
+"""Build the Election data pages (site/history/): historical election and polling data, presented. Plan: DATA.md,
 section 3. Reads only committed data (data/interim, data/final, data/processed, data/scorecard, data/postmortem);
 writes site/history/*.html and one CSV per chart in site/history/data/. Charts are drawn in the browser by
 site/assets/charts.js from the specs embedded in each page; styles in site/assets/history.css.
 
     python src/site/history.py
 
-2026 figures that depend on the count are marked provisional while data/scorecard/scorecard.json says so.
+These pages stand apart from the forecast: no chart or caption compares results with the forecast or the model's
+predictions. Where a 2026 or off-cycle result needs a benchmark, it is the polls (each race's final three weeks of
+polls, or the national generic ballot of the time). 2026 figures that depend on the count are marked provisional while
+data/scorecard/scorecard.json says so.
 """
 import datetime as dt
 import html
@@ -26,6 +29,10 @@ DL = OUT / "data"
 NAME = {v: k for k, v in STATE_ABBR.items()}
 REGION = {st: r for r, sts in json.loads((F / "error_structure.json").read_text())["regions"].items() for st in sts}
 REGIONS = ["Northeast", "Midwest", "South", "West"]
+REGION_COLOR = {"Northeast": "text-2", "Midwest": "tint", "South": "ochre", "West": "teal"}
+ELECTION_2026 = pd.Timestamp("2026-11-03")
+# presidents' parties by inauguration date (for off-cycle races, which can fall either side of January 20)
+PRES_TERMS = [("2001-01-20", "R"), ("2009-01-20", "D"), ("2017-01-20", "R"), ("2021-01-20", "D"), ("2025-01-20", "R")]
 
 SRC = {
     "wiki": "Wikipedia (CC BY-SA 4.0)", "538": "FiveThirtyEight (CC BY 4.0)", "gallup": "Gallup via the American Presidency Project",
@@ -52,6 +59,11 @@ def sg(v, d=1):
     return f"{v:+.{d}f}".replace("-", "−")
 
 
+def more(v, d=1):
+    """'5.5 points more Democratic' / '2.1 points more Republican'."""
+    return f"{abs(v):.{d}f} points more {'Democratic' if v > 0 else 'Republican'}"
+
+
 def fit(x, y):
     x, y = np.asarray(x, float), np.asarray(y, float)
     b, a = np.polyfit(x, y, 1)
@@ -67,6 +79,50 @@ def within_slope(df, x, y, by):
 
 def pt(x, y, tip, **kw):
     return {"x": float(x), "y": float(y), "tip": tip, **kw}
+
+
+def president_on(date):
+    return [p for d, p in PRES_TERMS if pd.Timestamp(d) <= date][-1]
+
+
+def two_party(d, r):
+    return 100.0 * (d - r) / (d + r)
+
+
+def final_polls_2026(chamber):
+    """Each 2026 race's final-three-week poll average from Wikipedia's polling tables as they stood on election eve
+    (data/scorecard/wiki_polls_<chamber>.csv, nominees only): polls ending October 13 to November 3, one version per
+    poll (the final ranked-choice round, then likely voters, then the first row), two-party D-R margin, plain mean.
+    The same definition as the historical misses on the Polling accuracy page."""
+    w = pd.read_csv(SC / f"wiki_polls_{chamber}.csv")
+    w["end"] = pd.to_datetime(w.end)
+    if "rcv_round" not in w:
+        w["rcv_round"] = np.nan
+    w = w[(w.end >= ELECTION_2026 - pd.Timedelta(days=21)) & (w.end <= ELECTION_2026)]
+    rows = []
+    for (key, _, _, _), g in w.groupby(["race_key", "pollster", "start", "end"], dropna=False):
+        if g.rcv_round.notna().any():
+            g = g[g.rcv_round == g.rcv_round.max()]
+        v = g[g.population == "lv"].iloc[0] if (g.population == "lv").any() else g.iloc[0]
+        rows.append({"race_key": key, "margin": two_party(v.d, v.r)})
+    return pd.DataFrame(rows).groupby("race_key").margin.agg(poll="mean", n_polls="size").reset_index()
+
+
+def settled_2026(chamber):
+    """Settled 2026 counts (data/scorecard/margins_<chamber>.csv): two-party D-R margins of races with both sides on
+    the ballot whose winner the results check agrees on."""
+    m = pd.read_csv(SC / f"margins_{chamber}.csv")
+    res = pd.read_csv(SC / f"results_{chamber}.csv")
+    ok = set(res.loc[res.flag == "agree", "race_key"])
+    m = m[(m.settled == True) & m.margin.notna() & (m.margin_type == "two-party") & m.race_key.isin(ok) & (m.margin.abs() < 100)]  # noqa: E712
+    return m[["race_key", "margin"]].rename(columns={"margin": "result"})
+
+
+def race_label(key):
+    _, st, ch, seat = key.split("|")
+    if ch == "S":
+        return f"{NAME[st]} Senate" + (" (special)" if seat == "special" else "")
+    return f"{st}-{'AL' if seat == '0' else seat}"
 
 
 # ---------------- page assembly ----------------
@@ -126,7 +182,7 @@ class Page:
 </head>
 <body>
 <header class="top"><div class="wrap">
-  <div class="topbar"><h1><a href="./">Election data</a></h1><span class="stamp">Built {built} · <a href="../">2026 forecast</a></span></div>
+  <div class="topbar"><h1><a href="./">Election data</a></h1><span class="stamp">Built {built} · <a href="../">Main site</a></span></div>
   <nav class="tabs" aria-label="Sections">{nav}</nav>
 </div></header>
 <main class="wrap">
@@ -298,19 +354,37 @@ def page_approval(D):
               (f"{J(F / 'house_structure.json')['chosen']['inc']:.1f} pts", "House incumbency premium, 2018-2024"),
               (f"{hs['2006']:.0f} pts", "House incumbency premium, 2006")])
 
-    bd = pd.DataFrame(J(PM / "house_2026_breakdown.json")["band_R2_R12_by_seat"])
-    bd = bd[bd.seat != "incumbent I"]
-    lab = {"incumbent R": "Republican incumbent", "open": "Open seat", "incumbent D": "Democratic incumbent"}
-    cats = [f"{lab[s]} ({n})" for s, n in zip(bd.seat, bd.n)]
-    pg.add(pg.fig("incumbents_2026", "2026: Republican incumbents in R+2 to R+12 seats",
-                  {"type": "bars", "cats": cats, "series": [{"name": "Forecast Democratic wins", "values": bd.d_expected.round(1).tolist(), "color": "text-3"},
-                                                             {"name": "Actual Democratic wins", "values": bd.d_won.tolist(), "color": "dem"}],
-                   "y": {"fmt": "int", "label": "Democratic wins"}, "height": 240, "values": True,
-                   "legend": [{"name": "Forecast", "color": "text-3"}, {"name": "Won", "color": "dem"}]},
-                  bd[["seat", "n", "d_expected", "d_won"]].round(2), [SRC["wiki"], SRC["model"]],
-                  f"Contested 2026 House seats leaning Republican by 2 to 12 points. Democrats won {int(bd[bd.seat == 'incumbent R'].d_won.iloc[0])} "
-                  f"of {int(bd[bd.seat == 'incumbent R'].n.iloc[0])} held by a Republican incumbent, against {bd[bd.seat == 'incumbent R'].d_expected.iloc[0]:.0f} "
-                  "forecast: the incumbency premium protected them far less than in quiet years.", prov=D["prov"]))
+    hr = pd.read_csv(I / "house_2026_races.csv").merge(pd.read_csv(SC / "results_house.csv")[["race_key", "called", "flag", "winner_party"]], on="race_key")
+    band = hr[hr.pvi.between(-12, -2) & (hr.n_dem > 0) & (hr.n_rep > 0) & (hr.called == True) & (hr.flag == "agree")].copy()  # noqa: E712
+    band = band.merge(final_polls_2026("house"), on="race_key", how="left")
+    band["seat"] = np.where(band.open_seat.astype(bool), "open", "incumbent " + band.inc_party.astype(str))
+    band["won"] = band.winner_party == "D"
+    rows = []
+    short = {}
+    for s, lab, sh in (("incumbent R", "Republican incumbent", "R incumbent"), ("open", "Open seat", "Open seat"),
+                       ("incumbent D", "Democratic incumbent", "D incumbent")):
+        x = band[band.seat == s]
+        pol = x[x.poll.notna()]
+        short[lab] = sh
+        rows.append({"seat": lab, "seats": len(x), "polled": len(pol), "d_led_final_polls": int((pol.poll > 0).sum()),
+                     "d_won_polled": int(pol.won.sum()), "d_won_unpolled": int(x[x.poll.isna()].won.sum()), "d_won": int(x.won.sum())})
+    bt = pd.DataFrame(rows)
+    ri = bt.iloc[0]
+    cats = [f"{short[r.seat]} ({r.polled} of {r.seats} polled)" for r in bt.itertuples()]
+    pg.add(pg.fig("incumbents_2026", "2026: R+2 to R+12 seats, final polls and results",
+                  {"type": "bars", "cats": cats,
+                   "series": [{"name": "Democrat led the final polls", "values": bt.d_led_final_polls.tolist(), "color": "text-3",
+                               "tips": [f"<b>{r.seat}</b>: the Democrat led the final polls in {r.d_led_final_polls} of {r.polled} polled seats" for r in bt.itertuples()]},
+                              {"name": "Democrat won", "values": bt.d_won_polled.tolist(), "color": "dem",
+                               "tips": [f"<b>{r.seat}</b>: Democrats won {r.d_won_polled} of {r.polled} polled seats "
+                                        f"(and {r.d_won_unpolled} of {r.seats - r.polled} without a final poll)" for r in bt.itertuples()]}],
+                   "y": {"fmt": "int", "label": "Polled seats"}, "height": 240, "values": True,
+                   "legend": [{"name": "Democrat led the final polls", "color": "text-3"}, {"name": "Democrat won", "color": "dem"}]},
+                  bt, [SRC["wiki"], SRC["cook"]],
+                  f"2026 House seats with a Cook PVI from R+2 to R+12 and both parties on the ballot, counting the seats with district polls "
+                  f"in the final three weeks (Wikipedia's polling tables). Of {ri.seats} held by a Republican incumbent, {ri.polled} were polled: "
+                  f"the Democrat led the final polls in {ri.d_led_final_polls} and won {ri.d_won_polled}. Democrats also won {ri.d_won_unpolled} of the "
+                  f"{ri.seats - ri.polled} without a final poll, {ri.d_won} in all.", prov=D["prov"]))
     return pg
 
 
@@ -318,7 +392,7 @@ def page_approval(D):
 def page_states(D):
     pg = Page("states", "States and regions", "Which states move together, how much of a district's surprise it shares with "
               "the rest of its state, and how far governors run from their state's partisanship.",
-              "State swing correlations, the state-level shared House error, regional misses, governor and Senate lean.")
+              "State swing correlations, the state-level shared House error, 2026 races against their polls, governor and Senate lean.")
     sp = pd.read_csv(I / "state_presidential.csv")
     sp = sp[sp.state != "DC"]
     lean = sp.pivot(index="state", columns="year", values="lean_2p").sort_index(axis=1)
@@ -364,26 +438,43 @@ def page_states(D):
     allc = comp[comp.subset == "all contested"].iloc[0]
     ser = [{"name": "Shared by the state", "line": True, "color": "ochre", "pts": [pt(r.year, r.sd_state_reml, f"<b>{r.year}</b> state-shared SD {r.sd_state_reml:.1f}") for r in yrs.itertuples()]},
            {"name": "District's own", "line": True, "color": "tint", "pts": [pt(r.year, r.sd_idio_reml, f"<b>{r.year}</b> district-specific SD {r.sd_idio_reml:.1f}") for r in yrs.itertuples()]}]
-    f1 = pg.fig("state_shared_error", "A district's surprise: its own, or its state's?",
-                {"type": "xy", "width": 420, "height": 300, "series": ser, "x": {"ticks": yrs.year.tolist()[::2], "fmt": "year"}, "y": {"fmt": "int", "zero": True, "label": "SD of the surprise (pts)"},
-                 "legend": [{"name": s["name"], "color": s["color"], "line": True} for s in ser]},
-                yrs[["year", "sd_state_reml", "sd_idio_reml", "share_of_variance"]].round(3), [SRC["wiki"], SRC["cook"], SRC["model"]],
-                f"House results 2006-2024 after the national and regional environment, lean and incumbency: the part every district in a state "
-                f"shares (about {allc.sd_state_reml:.1f} points) has held steady, while each district's own surprise fell from "
-                f"{yrs.sd_idio_reml.iloc[0]:.0f} to {yrs.sd_idio_reml.iloc[-1]:.1f} points.")
-    lay = D["sc"]["margins"]["layers"]
-    rg = lay["region"]["by_region"]
-    names = [r for r in REGIONS if r in rg]
-    f2 = pg.fig("regions_2026", "2026: misses by region",
-                {"type": "bars", "cats": [f"{r} ({rg[r]['n']})" for r in names],
-                 "series": [{"name": "Miss", "values": [round(rg[r]["mean"], 2) for r in names], "err": [round(rg[r]["se"], 2) for r in names],
-                             "colors": ["dem" if rg[r]["mean"] > 0 else "rep" for r in names]}],
-                 "y": {"fmt": "signed0", "label": "vs the national miss (pts)"}, "width": 420, "height": 300,
-                 "refs": [{"y": lay["region"]["sigma_assumed"], "label": "forecast's assumed SD"}, {"y": -lay["region"]["sigma_assumed"]}]},
-                pd.DataFrame([{"region": r, **rg[r]} for r in names]).round(3), [SRC["wiki"], SRC["model"]],
-                f"Settled 2026 races' errors by region, after removing the national miss (bars: ± one standard error). The forecast assumed regional "
-                f"shocks of about {lay['region']['sigma_assumed']:.2f} points.", prov=D["prov"])
-    pg.grid(f1, f2)
+    pg.add(pg.fig("state_shared_error", "A district's surprise: its own, or its state's?",
+                  {"type": "xy", "height": 280, "series": ser, "x": {"ticks": yrs.year.tolist(), "fmt": "year"}, "y": {"fmt": "int", "zero": True, "label": "SD of the surprise (pts)"},
+                   "legend": [{"name": s["name"], "color": s["color"], "line": True} for s in ser]},
+                  yrs[["year", "sd_state_reml", "sd_idio_reml", "share_of_variance"]].round(3), [SRC["wiki"], SRC["cook"], SRC["model"]],
+                  f"House results 2006-2024 after the national and regional environment, lean and incumbency: the part every district in a state "
+                  f"shares (about {allc.sd_state_reml:.1f} points) has held steady, while each district's own surprise fell from "
+                  f"{yrs.sd_idio_reml.iloc[0]:.0f} to {yrs.sd_idio_reml.iloc[-1]:.1f} points."))
+
+    pm = []
+    for ch in ("senate", "house"):
+        x = settled_2026(ch).merge(final_polls_2026(ch), on="race_key")
+        x["chamber"] = ch
+        x["miss"] = x.result - x.poll
+        x["after_chamber_miss"] = x.miss - x.miss.mean()
+        pm.append(x)
+    pm = pd.concat(pm)
+    pm["state"] = pm.race_key.str.split("|").str[1]
+    pm["region"] = pm.state.map(REGION).fillna("South")
+    pm["race"] = pm.race_key.map(race_label)
+    pm = pm.sort_values("miss", ascending=False)
+    cm = pm.groupby("chamber").miss.agg(["mean", "size"])
+    rm = pm.groupby("region").after_chamber_miss.agg(["mean", "size"])
+    present = [r for r in REGIONS if r in rm.index]
+    pg.add(pg.fig("poll_misses_2026", "2026: settled races against their final polls",
+                  {"type": "bars", "horizontal": True, "cats": pm.race.tolist(),
+                   "series": [{"values": pm.miss.round(2).tolist(), "colors": [REGION_COLOR[r] for r in pm.region],
+                               "tips": [f"<b>{r.race}</b> ({r.region})<br>Final polls {dr(r.poll)} ({r.n_polls} poll{'s' if r.n_polls > 1 else ''}), "
+                                        f"result {dr(r.result)}<br>Result minus polls: {sg(r.miss)}" for r in pm.itertuples()]}],
+                   "x": {"fmt": "signed0", "label": "Result minus final polls (+ = more Democratic)"},
+                   "legend": [{"name": r, "color": REGION_COLOR[r]} for r in present]},
+                  pm[["race_key", "race", "chamber", "region", "poll", "n_polls", "result", "miss", "after_chamber_miss"]].round(2),
+                  [SRC["wiki"]],
+                  f"Every settled 2026 race with polls in the final three weeks: the count minus the average of those polls (Wikipedia's tables as of "
+                  f"election eve). Senate results ran {more(cm.loc['senate', 'mean'])} than their polls on average ({int(cm.loc['senate', 'size'])} races), "
+                  f"House districts {more(cm.loc['house', 'mean'])} ({int(cm.loc['house', 'size'])}). Beyond each chamber's average "
+                  "(+ = more Democratic): " + ", ".join(f"{r} {sg(rm.loc[r, 'mean'])} ({int(rm.loc[r, 'size'])} races)" for r in present)
+                  + (". No Northeastern race with final polls has settled yet." if "Northeast" not in present else "."), prov=D["prov"]))
 
     b = pd.read_csv(F / "bias_race_level.csv")
     sen = b[b.type_simple == "Sen-G"]
@@ -441,7 +532,7 @@ def page_states(D):
 def page_polling(D):
     pg = Page("polling", "Polling accuracy", "How far final polls have missed, whether the misses share a direction, and what "
               "makes a poll average more or less reliable.",
-              "Final-poll misses 1998-2022 for the generic ballot, Senate and governor; error by number of polls; house effects; 2026 poll coverage.")
+              "Final-poll misses 1998-2022 for the generic ballot, Senate and governor; error by number of polls; pollster house effects.")
     cal = J(F / "calibration.json")
     cy = {k: {c["cycle"]: c["mean"] for c in cal[k]["cycles"]} for k in ("House-G-US", "Sen-G", "Gov-G")}
     yrs = sorted(cy["House-G-US"])
@@ -504,84 +595,103 @@ def page_polling(D):
                   f"Each pollster's average lean against other polls of the same races, 2010-2022, shrunk toward zero for thin records. Pollsters with 60 "
                   f"or more polls shown ({len(show)}); all {len(t)} in the download. Polls paid for by a party or campaign lean about "
                   f"{pe['beta']:.1f} points toward their sponsor beyond the pollster's own effect."))
-
-    pa = D["sc"]["poll_audit"]
-    cats = ["Matched", "Gaps", "VoteHub's choice", "Possible lag", "VoteHub only"]
-    keys = ["matched_wikipedia_polls", "missing_probable_gaps", "missing_votehub_choice", "missing_possible_lag", "votehub_only"]
-    ser = [{"name": ch.title(), "values": [pa[ch]["totals"][k] for k in keys], "color": c} for ch, c in (("senate", "tint"), ("house", "teal"))]
-    pg.add(pg.fig("poll_audit_2026", "2026: VoteHub's polls against Wikipedia's tables",
-                  {"type": "bars", "cats": cats, "series": ser, "y": {"fmt": "int", "label": "Polls"}, "height": 260, "values": True,
-                   "legend": [{"name": "Senate", "color": "tint"}, {"name": "House", "color": "teal"}]},
-                  pd.DataFrame({"category": cats, "senate": ser[0]["values"], "house": ser[1]["values"]}), [SRC["vh"], SRC["wiki"], SRC["model"]],
-                  "Every general-election poll in the races' Wikipedia tables as of the final forecast, matched against the polls the forecast used "
-                  "(VoteHub). Matched: in both. Gaps: on Wikipedia, probably missing from VoteHub. VoteHub's choice: VoteHub listed the poll under "
-                  "another question or version. Possible lag: released too close to the snapshot to tell. VoteHub only: not in Wikipedia's tables."))
     return pg
 
 
 # ---------------- E. off-cycle ----------------
 def page_offcycle(D):
-    pg = Page("offcycle", "Off-cycle elections", "Governor races in odd years and House special elections: how they relate to the "
-              "national mood, and how the special-election electorate has changed.",
-              "Off-year governor races 1999-2025 and House special elections 2007-2026 against the national environment.")
-    eo = pd.DataFrame(J(P / "environment_offcycle.json")["by_year"])
-    eo["group"] = np.where(eo.year % 4 == 1, "year after a presidential election (NJ, VA)", "year before (KY, LA, MS)")
-    ser = [{"name": "Implied by the results", "pts": [pt(r.year, r.implied_env, f"<b>{r.year}</b> ({r.states}; president {r.president})<br>results implied {dr(r.implied_env)}",
-                                                          color="tint", r=4.5) for r in eo.itertuples()]},
-           {"name": "Estimate (midterm-like)", "pts": [pt(r.year, r["fund_m1"] if isinstance(r, dict) else getattr(r, "fund_m1"), f"<b>{r.year}</b> estimate {dr(getattr(r, 'fund_m1'))}",
-                                                           color="text-3", hollow=True) for r in eo.itertuples()]}]
-    pg.add(pg.fig("offyear_governors", "Odd-year governor races and the national mood",
-                  {"type": "xy", "height": 290, "series": ser, "x": {"fmt": "year", "ticks": list(range(1999, 2026, 2))}, "y": {"fmt": "dr0", "label": "National environment"},
-                   "refs": [{"y": 0}], "legend": [{"name": "Environment the results imply", "color": "tint", "dot": True}, {"name": "Estimate from approval and the last House vote", "color": "text-3", "hollow": True}]},
-                  eo[["year", "states", "president", "approval", "implied_env", "fund_m1", "prev_vote"]].round(2), [SRC["wiki"], SRC["gallup"], SRC["model"]],
-                  "Each odd year's governor results converted to the national environment they imply, against an estimate from approval and the last "
-                  "House vote. New Jersey and Virginia, a year after each presidential election, went against the new president all 7 times, usually "
-                  "by more than a midterm would. Two to four races a year: each point is noisy."))
+    pg = Page("offcycle", "Off-cycle elections", "Governor races in odd years and House special elections, set against their own polls "
+              "and the national generic ballot: how they lean against the president, and how the special-election electorate has changed.",
+              "Odd-year governor races 1999-2025 against their final polls; House special elections 2007-2026 against the generic ballot.")
+    g = pd.read_csv(I / "governor_dataset.csv")
+    o = g[(g.year % 2 == 1) & g.poll_avg.notna() & (g.contested == True) & (g.recall != True)].copy()  # noqa: E712
+    o["miss"] = o.margin_2p - o.poll_avg
+    o["against"] = np.where(o.pres_party == "D", -o.miss, o.miss)       # + = the result ran against the president's party
+    o["njva"] = o.state.isin(["NJ", "VA"])
+    off = {"NJ": -0.22, "VA": 0.22, "KY": -0.3, "LA": 0.0, "MS": 0.3, "WV": 0.15}
+    pts = [pt(r.year + off.get(r.state, 0), r.against,
+              f"<b>{NAME[r.state]} {r.year}</b> ({'Democratic' if r.pres_party == 'D' else 'Republican'} president)<br>Final polls {dr(r.poll_avg)} "
+              f"({int(r.n_polls)} poll{'s' if r.n_polls > 1 else ''}), result {dr(r.margin_2p)}<br>{abs(r.against):.1f} pts "
+              f"{'against' if r.against > 0 else 'toward'} the president's party",
+              color="tint" if r.njva else "ochre", r=4 if r.njva else 3.2, label=r.state if r.njva else None, ldy=-6) for r in o.itertuples()]
+    nj, rest = o[o.njva], o[~o.njva]
+    pg.add(pg.fig("offyear_governors", "Odd-year governor races against their polls",
+                  {"type": "xy", "height": 300, "series": [{"pts": pts}], "x": {"fmt": "year", "ticks": list(range(1999, 2026, 2))},
+                   "y": {"fmt": "signed0", "label": "Result vs polls, against the president"}, "refs": [{"y": 0}],
+                   "legend": [{"name": "New Jersey, Virginia (the year after a presidential election)", "color": "tint", "dot": True},
+                              {"name": "Kentucky, Louisiana, Mississippi, West Virginia", "color": "ochre", "dot": True}]},
+                  o.rename(columns={"pres_party": "president_party", "margin_2p": "result", "poll_avg": "final_polls", "miss": "result_minus_polls",
+                                    "against": "against_president_party"})[["year", "state", "president_party", "final_polls", "n_polls", "result",
+                                                                             "result_minus_polls", "against_president_party", "poll_source"]].round(2),
+                  [SRC["538"], SRC["vh"], SRC["wiki"]],
+                  f"Each odd-year governor race's result minus the average of its final three weeks of polls, signed so that above zero means the "
+                  f"result ran against the president's party. New Jersey and Virginia, the year after each presidential election: {int((nj.against > 0).sum())} "
+                  f"of {len(nj)} races (average {sg(nj.against.mean())} points). The other odd-year races: {int((rest.against > 0).sum())} of {len(rest)} "
+                  f"({sg(rest.against.mean())}). Polls: FiveThirtyEight to 2023, VoteHub for 2025; races without final polls are left out."))
 
-    spec = pd.DataFrame(J(P / "specials_environment.json")["specials"])
-    spec["date"] = pd.to_datetime(spec.date)
+    gb = pd.read_csv(I / "generic_ballot_daily.csv", parse_dates=["date"])
+    gbs = gb.set_index("date").margin_2p
+    spec = pd.read_csv(I / "house_specials.csv", parse_dates=["date"])
+    spec = spec[~spec.multi_candidate.astype(bool) & spec.pvi.notna() & spec.margin_2p.notna()].sort_values("date").copy()
+    spec["president"] = spec.date.map(president_on)
+    spec["over"] = spec.margin_2p - 2 * spec.pvi                       # Democratic margin relative to the district's presidential lean
+    spec["generic"] = spec.date.map(gbs)
+    spec["vs_generic"] = spec.over - spec.generic
     spec["dyear"] = spec.date.dt.year + (spec.date.dt.dayofyear - 1) / 365.25
-    spec["resid"] = spec.implied_env - (spec.e0 + spec.slope)
-    spec = spec.sort_values("date")
-    roll = [float(spec[(spec.date <= d) & (spec.date > d - pd.Timedelta(days=365))].resid.mean()) for d in spec.date]
+    spec["trailing_12m"] = [float(spec[(spec.date <= d) & (spec.date > d - pd.Timedelta(days=365))].over.mean()) for d in spec.date]
     months = pd.date_range(spec.date.min() + pd.Timedelta(days=180), spec.date.max(), freq="MS")
-    mgrid = []
+    trail = []
     for d in months:
         w = spec[(spec.date <= d) & (spec.date > d - pd.Timedelta(days=365))]
         if len(w) >= 2:
-            mgrid.append((d.year + (d.dayofyear - 1) / 365.25, float(w.resid.mean()), len(w), d))
-    pts = [pt(r.dyear, r.resid, f"<b>{r.state}-{int(r.district)}</b> {r.date.date()}<br>result {dr(r.margin_2p)} in a {dr(r.pvi * 2)} seat<br>"
-              f"Democrats {sg(r.resid)} vs a midterm-like environment", color="dem" if r.president == "D" else "rep", r=3.2, opacity=0.85) for r in spec.itertuples()]
-    trail = [pt(x, y, f"{d:%b %Y}: 12-month average {sg(y)} ({n} specials)") for x, y, n, d in mgrid]
-    post = spec[spec.date >= "2017-01-20"].resid.mean(); pre = spec[spec.date < "2017-01-20"].resid.mean()
-    pg.add(pg.fig("specials", "House special elections against the national mood, 2007-2026",
-                  {"type": "xy", "height": 300, "series": [{"pts": pts}, {"name": "12-month average", "line": True, "markers": False, "color": "ochre", "pts": trail}],
-                   "x": {"fmt": "year", "ticks": list(range(2008, 2027, 2))}, "y": {"fmt": "signed1", "label": "Democrats vs expectation (environment pts)"},
+            trail.append(pt(d.year + (d.dayofyear - 1) / 365.25, w.over.mean(), f"{d:%b %Y}: specials' 12-month average {sg(w.over.mean())} ({len(w)} specials)"))
+    gm = gbs[(gbs.index >= spec.date.min() - pd.Timedelta(days=60)) & (gbs.index <= spec.date.max())].resample("MS").mean().dropna()
+    gline = [pt(d.year + (d.dayofyear + 14) / 365.25, v, f"{d:%b %Y}: generic ballot {dr(v)} (month's average)") for d, v in gm.items()]
+    pts = [pt(r.dyear, r.over, f"<b>{r.state}-{'AL' if int(r.district) == 0 else int(r.district)}</b> {r.date.date()}<br>result {dr(r.margin_2p)} in a "
+              f"{dr(2 * r.pvi)} seat: {sg(r.over)} vs its lean<br>generic ballot then {dr(r.generic)}: {sg(r.vs_generic)} against it",
+              color="dem" if r.president == "D" else "rep", r=3.2, opacity=0.85) for r in spec.itertuples()]
+    cut = pd.Timestamp("2017-01-20")
+    pre, post = spec[spec.date < cut], spec[spec.date >= cut]
+    by_pres = post.groupby("president").vs_generic.agg(["mean", "size"])
+    pg.add(pg.fig("specials", "House special elections against the generic ballot, 2007-2026",
+                  {"type": "xy", "height": 320, "series": [{"pts": pts},
+                                                           {"name": "Generic ballot", "line": True, "markers": False, "color": "ochre", "width": 1.6, "pts": gline},
+                                                           {"name": "Specials, 12-month average", "line": True, "markers": False, "color": "teal", "pts": trail}],
+                   "x": {"fmt": "year", "ticks": list(range(2008, 2027, 2))}, "y": {"fmt": "dr0", "label": "Democratic margin vs district lean"},
                    "refs": [{"y": 0}], "vrefs": [{"x": 2017.05, "label": "2017"}],
-                   "legend": [{"name": "Democratic president", "color": "dem", "dot": True}, {"name": "Republican president", "color": "rep", "dot": True}, {"name": "12-month average", "color": "ochre", "line": True}]},
-                  spec.assign(date=spec.date.dt.date.astype(str))[["date", "state", "district", "president", "pvi", "margin_2p", "implied_env", "resid"]].assign(trailing_12m=roll).round(2),
-                  [SRC["wiki"], SRC["cook"], SRC["gallup"], SRC["model"]],
-                  f"How much better Democrats did in each House special than a midterm-like environment and the district's lean predicted. Before 2017 "
-                  f"they averaged {sg(pre)}; since, {sg(post)}, under both parties' presidents: special-election electorates now lean Democratic."))
-    sr = J(P / "single_race_backtest.json")
-    cov = sr["interval_coverage"]
-    pg.stats([(f"{sr['model']['rmse']:.1f} pts", f"Forecast error, {sr['n']} specials forecast from earlier data only"),
-              (f"{sr['naive_last_house_vote']['rmse']:.1f} pts", "Same, using the last House vote as the environment"),
-              (f"{cov['50%']:.0%} / {cov['80%']:.0%}", "Results inside the 50% / 80% intervals")])
+                   "legend": [{"name": "Democratic president", "color": "dem", "dot": True}, {"name": "Republican president", "color": "rep", "dot": True},
+                              {"name": "Generic-ballot polling average", "color": "ochre", "line": True}, {"name": "Specials, 12-month average", "color": "teal", "line": True}]},
+                  spec.assign(date=spec.date.dt.date.astype(str))[["date", "state", "district", "president", "pvi", "margin_2p", "over", "generic",
+                                                                     "vs_generic", "trailing_12m"]].rename(columns={
+                      "over": "margin_minus_lean", "generic": "generic_ballot_avg", "vs_generic": "vs_generic_ballot"}).round(2),
+                  [SRC["wiki"], SRC["cook"], SRC["538"], SRC["vh"]],
+                  f"Each House special's Democratic margin minus its district's presidential lean (twice the Cook PVI), against the national "
+                  f"generic-ballot polling average of the day. Before 2017, specials ran {more(pre.vs_generic.mean())} than the generic ballot on "
+                  f"average ({len(pre)} races); since, {more(post.vs_generic.mean())} ({len(post)}): "
+                  + "; ".join(f"{more(by_pres.loc[p, 'mean'])} under {'Democratic' if p == 'D' else 'Republican'} presidents ({int(by_pres.loc[p, 'size'])})"
+                              for p in ("R", "D") if p in by_pres.index)
+                  + ". Generic ballot: FiveThirtyEight's average to 2016, then a plain average of recent polls (FiveThirtyEight's and VoteHub's poll files)."))
+    DL.mkdir(parents=True, exist_ok=True)
+    gb.to_csv(DL / "generic_ballot_daily.csv", index=False)
+    DOWNLOADS.append({"file": "data/generic_ballot_daily.csv", "title": "Generic-ballot polling average by day, 1995-2026", "page": "offcycle",
+                      "sources": [SRC["538"], SRC["vh"]]})
+    pg.stats([(f"{int((nj.against > 0).sum())} of {len(nj)}", "New Jersey and Virginia governor races since 2001 that ran against the president's party, vs their polls"),
+              (sg(pre.vs_generic.mean()), f"House specials vs the generic ballot before 2017, after district lean ({len(pre)} races)"),
+              (sg(post.vs_generic.mean()), f"The same since 2017 ({len(post)} races)")])
     return pg
 
 
 # ---------------- index ----------------
 def page_index(D, pages):
-    pg = Page("index", "Overview", "The historical record behind the 2026 forecast: eighty years of House votes, three decades of "
+    pg = Page("index", "Overview", "The historical record of American elections and their polls: eighty years of House votes, three decades of "
               "state results and polls, every governor race since 1998 and every House special since 2007, with downloads.",
               "Historical election data: vote shares, approval and incumbency, state and regional patterns, polling accuracy, off-cycle elections.")
     blurbs = {
         "votes": "The national House vote since 1946, the midterm penalty, and how far apart the states have pulled.",
         "approval": "Approval and midterm losses, when in a term the president's party pays, and the collapse of House incumbency.",
         "states": "Which states swing together, the error a state's districts share, and how governors run apart from partisanship.",
-        "polling": "How far final polls have missed since 1998, which misses travel together, house effects, and 2026's poll coverage.",
-        "offcycle": "Odd-year governor races and House special elections against the national mood.",
+        "polling": "How far final polls have missed since 1998, which misses travel together, and pollster house effects.",
+        "offcycle": "Odd-year governor races against their polls, and House special elections against the generic ballot.",
     }
     pg.add('<div class="sections">' + "".join(f'<a class="sec" href="{k}.html"><h3>{t}</h3><p>{blurbs[k]}</p></a>' for k, t in PAGES[1:]) + "</div>")
     if D["prov"]:
@@ -594,7 +704,8 @@ def page_index(D, pages):
     pg.table(["Source", "What it provides", "Terms"], [
         ["Wikipedia", "House, Senate, governor and presidential results; candidates; incumbents; specials; 2026 race tables", "CC BY-SA 4.0"],
         ["Cook Political Report (via Wikipedia)", "District and state lean (PVI); expert ratings with other raters", "Their figures; credit by name"],
-        ["FiveThirtyEight (GitHub and archived poll files)", "Final-three-week polls with results 1998-2023; poll files 2016-2024; pollster ratings", "CC BY 4.0"],
+        ["FiveThirtyEight (GitHub and archived poll files)", "Final-three-week polls with results 1998-2023; poll files 2016-2024; "
+         "generic-ballot average 1995-2016; pollster ratings", "CC BY 4.0"],
         ["VoteHub", "2025-26 polls: Senate, House, governor, generic ballot, approval", "CC BY 4.0"],
         ["American Presidency Project", "Gallup presidential approval, 1941-2021", "Not openly licensed; Gallup's data, credited"],
         ["FRED (St. Louis Fed)", "Inflation, gas prices, income, unemployment (BLS, BEA, EIA)", "Public domain"],
@@ -612,6 +723,8 @@ def main():
     D = load()
     built = dt.date.today().isoformat()
     OUT.mkdir(parents=True, exist_ok=True)
+    for f in DL.glob("*.csv"):          # every download is rewritten below; this drops files of charts since removed
+        f.unlink()
     pages = [page_votes(D), page_approval(D), page_states(D), page_polling(D), page_offcycle(D)]
     pages.insert(0, page_index(D, pages))
     for pg in pages:
