@@ -240,8 +240,64 @@ incumbent (R² 0.53, residual SD 14.6). Governor incumbency is worth far more th
 2025: polls understated the Democrat by about 6 points in both races (NJ D+5.9 polled, D+14.5 result; VA D+9.5,
 D+15.4).
 
+*First model and backtest* (`src/model/governor_model.py`, Nov 8, 2026; outputs `data/processed/governor_*.json`)
+- Prior: lean (average of the last two presidential elections) + environment + incumbency; the previous governor
+  margin doesn't improve leave-one-cycle-out error (14.9 either way). Coefficients: lean 0.37, environment 0.66,
+  incumbent 15.1 points.
+- Weight on polls 0.84 (SE 0.02) given that prior; implied prior SD 16.1; prior-only robust SD 13.0.
+- National factors: statewide-poll miss SD 3.6, generic-ballot miss SD 4.0, correlation 0.68.
+- Backtest, 309 races in 14 cycles (1998-2022, 2025), every parameter re-estimated without the test cycle:
+
+  | | Brier | Log loss | Accuracy | Margin MAE |
+  |---|---|---|---|---|
+  | Two-factor model | 0.0759 | 0.241 | 90.9% | 5.72 |
+  | One-factor (frozen Senate structure) | 0.0760 | 0.241 | 90.9% | 5.72 |
+  | Polls only | 0.0780 | 0.249 | 88.7% | 5.86 |
+  | Prior only | 0.1385 | 0.433 | 81.2% | 11.60 |
+
+  The prior adds a little over polls alone. The two national structures score the same race by race, as expected
+  with 95% of races polled (they differ for unpolled races and in joint outcomes). On count intervals, see the
+  off-year backtest below (the first reading, 14 of 14 inside 80%, overstated it: small cycles cover almost
+  automatically). The 30-50% bin went 3 of 19 for Democrats (forecast 42%). Caveats: leave-one-cycle-out uses later cycles too;
+  the prior specification was chosen on all data; historical averages are 538's simple final-three-week means,
+  while 2026 uses the weighted average.
+- 2026 poll averages (`pollavg.governor()`): 31 of 36 races, as of the Nov 3 snapshot; no 2026 forecast run yet.
+
+*Off-cycle environment* (`src/model/environment.py`, Nov 8, 2026; `data/processed/environment_offcycle.json`). For a
+date with no House election to poll (odd-year governors, special elections): president's-party House margin =
+-7.0 + 0.19 x approval + 0.79 x previous House margin - 9.4 x m, fitted on every election 1946-2022
+(leave-one-out error 4.6). m is how midterm-like the date is. Approval is Gallup's over the ~15 weeks before.
+- Tested on the 35 odd-year governor races with the governor prior fitted on even years only. m = 1 (midterm-like)
+  beats the last House vote carried forward: race error 17.2 against 17.8.
+- **The year of the term matters.** The year after a presidential election (NJ, VA) swings against the new
+  president about twice as hard as a midterm: m = 2.2, and fitting it cuts leave-one-year-out error from 10.2 to 8.0
+  (14 races). The implied environment went against the president in all 7 NJ/VA years (2025: D+20.7 implied,
+  D+6.3 at m = 1; the generic ballot then was D+3.5). The year before (KY, LA, MS) behaves almost like a
+  presidential year: m = 0.2, with candidate-driven races (error about 20). The split was chosen after seeing the
+  pattern, but it is a natural one and held out of sample. Special elections should use the same idea.
+
+*2023 and 2024 polls* (`python src/collect/governors.py polls`; `data/interim/governor_polls_wiki.csv`): from each
+race's Wikipedia page, polls ending in the final 21 days, two-party between the nominees (538's rule). Checked
+against 538 on 14 competitive 2022 races: mean difference -0.4, RMS difference 1.4, error against results 2.9 vs
+538's 2.8 (Wikipedia lists about 60% as many polls). Now polled: KY and MS 2023, and 8 of 11 races in 2024. No
+polls in the final three weeks: LA 2023 (its all-party primary tables didn't match), DE, ND and WV 2024.
+
+*Backtest with off-year races* (all 28 cycles 1998-2025, 353 races; odd years use the estimator with their term
+year's m fitted without the test year; 2024 uses it as a presidential year, having no generic-ballot average):
+
+| | Model | Polls only | Prior only |
+|---|---|---|---|
+| Brier, generic-ballot cycles (307 races) | 0.0764 | 0.0785 | 0.1385 |
+| Brier, off-year cycles (35) | 0.0947 | 0.0991 | 0.2031 |
+| Margin error, off-year cycles | 7.41 | 7.93 | 11.55 |
+| Brier, 2024 (11) | 0.0406 | 0.0434 | 0.0972 |
+| Brier, unpolled races (22): two-factor vs one-factor | 0.0806 vs 0.0816 | | |
+
+Count intervals: every cycle's Democratic win count fell inside its 80% interval (28 of 28), but cycles with 2-4
+races make that nearly automatic. In the 14 cycles with 10+ races, none landed in the outer 10% of its forecast
+distribution (about 3 expected; about 4% by chance): suggestive that the intervals are too wide, not conclusive.
+
 Still open:
-- **2024 governor polls** (11 races): 538's raw polls end in 2022. Optional; Wikipedia race pages as in the poll audit.
 - **Lean measure:** presidential lean explains little. Test a statewide-composite lean (recent Senate and governor
   results, or the previous governor margin, now in the dataset) against it.
 - **2026 poll averages:** generalize `pollavg.senate()` to governors (558 VoteHub polls; part of the model work).
@@ -253,3 +309,31 @@ the single-race path through the reworked model (environment, lean, incumbency, 
 national seat simulation; a history of special-election results against lean, since specials have run well ahead of
 the national environment for the out-party; and an environment estimate for an off-cycle date (generic ballot,
 approval, recent specials).
+
+*Data* (`src/collect/specials.py` -> `data/interim/house_specials.csv`, Nov 8, 2026): 79 House specials 2007-2026
+with a Democrat and a Republican, not on a general-election day, from the special-election tables of the yearly
+House pages (cached) and the odd-year pages (2007-2025, fetched). Lean: the district's Cook PVI on the lines in
+force. 78 usable (NY-23 2009 flagged: the Republican withdrew).
+
+*Environment for a special* (`src/model/special_model.py` -> `data/processed/specials_environment.json`). Prior: the
+frozen House district model for an open seat (0.75 + 0.91 x lean + 0.78 x environment). Environment: the
+off-cycle estimator from `environment.py`. Race error, all 78:
+
+| Environment | RMSE | MAE | Mean error | Winners right |
+|---|---|---|---|---|
+| Last House vote carried forward | 15.9 | 13.3 | +0.8 | 86% |
+| Midterm-like (m = 1) | 15.4 | 12.5 | +1.2 | 87% |
+| m by half of the term (years 1-2: 1.3; years 3-4: -0.15) | 14.7 | 12.2 | +2.1 | 85% |
+| ... plus recent specials (prior 12 months, shrunk n/(n+2)) | 14.1 | 11.2 | +0.4 | 86% |
+
+(m fitted without the special's calendar year; the recent-specials term uses only earlier races; k = 2 was chosen
+among 0, 2, 4 and 8.)
+- **The term-half pattern replicates the governor result** in an independent dataset: the first half of a term is
+  midterm-like or stronger (governors' year 1: m = 2.2; specials' years 1-2: 1.3), the second half shows no midterm
+  effect (governors' year 3: 0.2; specials' years 3-4: -0.15).
+- **The special electorate has moved toward Democrats since 2017.** Against m = 1, Democrats beat the environment
+  by 12.7 points of environment under Biden and 2.6 under Trump since 2017; before 2017 they fell short (-3.8 under
+  Obama, -10.9 under Bush, partly the term-half effect). A fixed post-2016 shift is unstable out of sample; the
+  recent-specials term captures it prospectively and is the better tool.
+- Next: the single-race forecast path (prior + polls where they exist + this environment, with its error), and a
+  test of the recent-specials term on off-year governor races (2025 NJ/VA).
