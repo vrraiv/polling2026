@@ -1759,9 +1759,10 @@ function renderScorecard() {
       `<p class="small">In the ${ER.n_polled} close Senate races with a count and at least two polls, Democrats ran <b>${fSgn(ER.mean_miss)}</b> points ahead of the forecast's final poll average on average (median ${fSgn(ER.median_miss)}; positive means Democrats did better than their polls). ` +
       (lo && hi ? `For scale, the average Senate polling miss in a cycle from ${sc[0].cycle} to ${sc[sc.length - 1].cycle} ranged from ${fSgn(lo.mean)} (${lo.cycle}) to ${fSgn(hi.mean)} (${hi.cycle}). ` : "") +
       `The forecast's expected margins missed by ${PUB.map(v => `${fSgn(ER.mean_error_vs_mu[v])} (${MODELS[v].toLowerCase()})`).join(", ")}.</p>` +
-      `<div class="tbl-wrap"><table><thead><tr><th>Race</th><th class="num">Count now</th><th>Count status</th><th class="num">Final poll average</th><th class="num">Polls</th><th class="num">Miss vs polls</th><th class="num">Forecast expected</th></tr></thead><tbody>` +
-      er.map(x => `<tr><td>${raceLab(x.race)}</td><td class="num">${fmtM(x.count)}</td><td style="white-space:normal">${esc(x.status)}</td><td class="num">${fmtM(x.poll_avg)}</td><td class="num">${x.n_polls}</td>` +
-        `<td class="num"><b>${fSgn(x.miss_vs_polls)}</b></td><td class="num">${fmtM(x[`mu_${model}`])}</td></tr>`).join("") +
+      `<div class="tbl-wrap"><table><thead><tr><th>Race</th><th class="num">Count now</th><th class="num">Final poll average</th><th class="num">Miss vs polls</th><th>Count status</th><th class="num">Polls</th><th class="num">Forecast expected</th></tr></thead><tbody>` +
+      er.map(x => { const c = nameOf[x.race], cands = c ? [c.dem, c.rep].filter(Boolean).map(esc).join(" / ") : "";
+        return `<tr><td>${raceLab(x.race)}${cands ? `<div class="tiny">${cands}</div>` : ""}</td><td class="num">${fmtM(x.count)}</td><td class="num">${fmtM(x.poll_avg)}</td>` +
+        `<td class="num"><b>${fSgn(x.miss_vs_polls)}</b></td><td style="white-space:normal">${esc(x.status)}</td><td class="num">${x.n_polls}</td><td class="num">${fmtM(x[`mu_${model}`])}</td></tr>`; }).join("") +
       `</tbody></table></div><p class="tiny">Miss = count minus the final poll average (before the forecast's adjustments). Nebraska's and Idaho's Democratic side is the independent; Montana's is the best non-Republican. Close races without a count yet aren't listed.</p>`;
   } else $("#scEarly").innerHTML = "";
   // national miss
