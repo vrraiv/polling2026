@@ -1,10 +1,10 @@
 race_key,party,party_code,candidate,pct_first,votes_first,votes_final
 2026|AL|S|regular,Republican,R,Barry Moore,54.71,917338.0,917338.0
 2026|AL|S|regular,Democratic,D,Everett Wess,45.29,759321.0,759321.0
-2026|AK|S|regular,Republican,R,Dan S. Sullivan,,,
-2026|AK|S|regular,Democratic,D,Mary Peltola,,,
-2026|AK|S|regular,No party listed,O,Dan J. Sullivan,,,
-2026|AK|S|regular,Republican,R,Gerald L. Heikes,,,
+2026|AK|S|regular,Republican,R,Dan S. Sullivan,47.47,103804.0,103804.0
+2026|AK|S|regular,Democratic,D,Mary Peltola,48.63,106321.0,106321.0
+2026|AK|S|regular,No party listed,O,Dan J. Sullivan,1.67,3651.0,3651.0
+2026|AK|S|regular,Republican,R,Gerald L. Heikes,2.23,4882.0,4882.0
 2026|AR|S|regular,Republican,R,Tom Cotton,54.26,480627.0,480627.0
 2026|AR|S|regular,Democratic,D,Hallie Shoffner,42.41,375647.0,375647.0
 2026|AR|S|regular,Libertarian,O,Jeff Wadlin,3.33,29485.0,29485.0
@@ -36,10 +36,11 @@ race_key,party,party_code,candidate,pct_first,votes_first,votes_final
 2026|KY|S|regular,Democratic,D,Charles Booker,42.9,612357.0,612357.0
 2026|KY|S|regular,Kentucky,O,Christopher Campbell,2.09,29892.0,29892.0
 2026|KY|S|regular,Write-in,O,Write-in,0.01,152.0,152.0
-2026|LA|S|regular,Republican,R,Julia Letlow,50.88,745963.0,745963.0
-2026|LA|S|regular,Democratic,D,Jamie Davis,49.12,720106.0,720106.0
-2026|ME|S|regular,Democratic,D,Troy Jackson,,,
-2026|ME|S|regular,Republican,R,Susan Collins,,,
+2026|LA|S|regular,Republican,R,Julia Letlow,50.88,746000.0,746000.0
+2026|LA|S|regular,Democratic,D,Jamie Davis,49.12,720150.0,720150.0
+2026|ME|S|regular,Democratic,D,Troy Jackson,53.07,376955.0,376955.0
+2026|ME|S|regular,Republican,R,Susan Collins,46.87,332918.0,332918.0
+2026|ME|S|regular,Write-in,O,Write-in,0.01,488.0,488.0
 2026|MA|S|regular,Democratic,D,Ed Markey,63.39,1650772.0,1650772.0
 2026|MA|S|regular,Republican,R,John Deaton,32.14,837152.0,837152.0
 2026|MA|S|regular,Independent,I,Shiva Ayyadurai,2.3,59837.0,59837.0
@@ -104,19 +105,18 @@ race_key,party,party_code,candidate,pct_first,votes_first,votes_final
 2026|SC|S|regular,Write-in,O,Write-in,0.24,4898.0,4898.0
 2026|SD|S|regular,Republican,R,Mike Rounds,60.5,184589.0,184589.0
 2026|SD|S|regular,Independent,I,Brian Bengs,39.5,120509.0,120509.0
-2026|TN|S|regular,Republican,R,Bill Hagerty,55.08,1138457.0,1138457.0
+2026|TN|S|regular,Republican,R,Bill Hagerty,55.08,1138436.0,1138436.0
 2026|TN|S|regular,Democratic,D,Marquita Bradshaw,42.91,886974.0,886974.0
 2026|TN|S|regular,Independent,I,Robert Jones,0.46,9398.0,9398.0
 2026|TN|S|regular,Independent,I,Tharon Chandler,0.37,7689.0,7689.0
 2026|TN|S|regular,Independent,I,Andrew Gerena,0.27,5633.0,5633.0
-2026|TN|S|regular,Independent,I,Catherine Whitson,0.25,5113.0,5113.0
-2026|TN|S|regular,Independent,I,Jeremy Hearn,0.24,4937.0,4937.0
-2026|TN|S|regular,Independent,I,David Sutman Jr.,0.15,3087.0,3087.0
-2026|TN|S|regular,Independent,I,Yoshi Matthews,0.15,3026.0,3026.0
-2026|TN|S|regular,Independent,I,James Macon III,0.12,2576.0,2576.0
-2026|TN|S|regular,Independent,I,Andrew Mixon,0.0,0.0,0.0
-2026|TX|S|regular,Democratic,D,James Talarico,55.06,5446309.0,5446309.0
-2026|TX|S|regular,Republican,R,Ken Paxton,42.97,4250166.0,4250166.0
+2026|TN|S|regular,Independent,I,"Catherine Barcel ""Barcy"" Whitson",0.25,5113.0,5113.0
+2026|TN|S|regular,Independent,I,Jeremy Dean Hearn,0.24,4937.0,4937.0
+2026|TN|S|regular,Independent,I,"David Sutman, Jr.",0.15,3087.0,3087.0
+2026|TN|S|regular,Independent,I,Yoshi D. Matthews,0.15,3026.0,3026.0
+2026|TN|S|regular,Independent,I,James William Macon III,0.12,2576.0,2576.0
+2026|TX|S|regular,Democratic,D,James Talarico,55.06,5447069.0,5447069.0
+2026|TX|S|regular,Republican,R,Ken Paxton,42.97,4250664.0,4250664.0
 2026|TX|S|regular,Libertarian,O,Ted Brown,1.92,190293.0,190293.0
 2026|TX|S|regular,Write-in,O,Write-in,0.05,5112.0,5112.0
 2026|VA|S|regular,Democratic,D,Mark Warner,,,
