@@ -1,5 +1,5 @@
-"""Build the Election data pages (site/history/): historical election and polling data, presented. Plan: DATA.md,
-section 3. Reads only committed data (data/interim, data/final, data/processed, data/scorecard, data/postmortem);
+"""Build the Election data pages (site/history/): historical election and polling data, presented. Sources: DATA.md.
+Reads only committed data (data/interim, data/final, data/processed, data/scorecard, data/postmortem);
 writes site/history/*.html and one CSV per chart in site/history/data/. Charts are drawn in the browser by
 site/assets/charts.js from the specs embedded in each page; styles in site/assets/history.css.
 
@@ -35,12 +35,12 @@ ELECTION_2026 = pd.Timestamp("2026-11-03")
 PRES_TERMS = [("2001-01-20", "R"), ("2009-01-20", "D"), ("2017-01-20", "R"), ("2021-01-20", "D"), ("2025-01-20", "R")]
 
 SRC = {
-    "wiki": "Wikipedia (CC BY-SA 4.0)", "538": "FiveThirtyEight (CC BY 4.0)", "gallup": "Gallup via the American Presidency Project",
-    "vh": "VoteHub (CC BY 4.0)", "cook": "Cook PVI via Wikipedia", "fred": "BLS, BEA via FRED", "model": "polling2026 analysis",
+    "wiki": "Wikipedia", "538": "FiveThirtyEight", "gallup": "Gallup via the American Presidency Project",
+    "vh": "VoteHub", "cook": "Cook PVI via Wikipedia", "fred": "BLS, BEA via FRED", "model": "polling2026 analysis",
 }
 LICENCE = "CC BY-SA 4.0"
 PAGES = [("index", "Overview"), ("votes", "Vote shares"), ("approval", "Approval and incumbency"),
-         ("states", "States and regions"), ("polling", "Polling accuracy"), ("offcycle", "Off-cycle elections")]
+         ("states", "States and regions"), ("polling", "Polling accuracy"), ("offcycle", "Off-cycle elections"), ("sources", "Sources and downloads")]
 DOWNLOADS = []
 
 
@@ -190,9 +190,8 @@ class Page:
 {chr(10).join(self.parts)}
 </main>
 <footer><div class="wrap">
-  Derived data: {LICENCE} (<a href="https://github.com/vrraiv/polling2026/blob/main/LICENSE-DATA.md">terms</a>); code: MIT. Credit the original
-  sources: Wikipedia (CC BY-SA 4.0); FiveThirtyEight (CC BY 4.0); VoteHub (CC BY 4.0); Gallup via the American Presidency Project
-  (not openly licensed); Cook PVI (Cook Political Report); BLS and BEA via FRED. Full catalogue: <a href="https://github.com/vrraiv/polling2026/blob/main/DATA.md">DATA.md</a>.
+  Data: {LICENCE}, with credit to the original sources (<a href="sources.html">sources, licence and downloads</a>).
+  Code: MIT (<a href="https://github.com/vrraiv/polling2026">GitHub</a>).
 </div></footer>
 <script>window.CHARTS = {charts};</script>
 <script src="../assets/charts.js"></script>
@@ -693,25 +692,44 @@ def page_index(D, pages):
         "polling": "How far final polls have missed since 1998, which misses travel together, and pollster house effects.",
         "offcycle": "Odd-year governor races against their polls, and House special elections against the generic ballot.",
     }
-    pg.add('<div class="sections">' + "".join(f'<a class="sec" href="{k}.html"><h3>{t}</h3><p>{blurbs[k]}</p></a>' for k, t in PAGES[1:]) + "</div>")
+    pg.add('<div class="sections">' + "".join(f'<a class="sec" href="{k}.html"><h3>{t}</h3><p>{blurbs[k]}</p></a>' for k, t in PAGES[1:-1]) + "</div>")
     if D["prov"]:
         pg.add('<p class="note">2026 counts are still being finalized. Charts that use them are marked <span class="prov">provisional</span> '
                "and will be updated when the results are certified.</p>")
-    pg.h2("Sources and licences", "sources")
-    pg.p("Everything here is derived from public sources. Derived data is licensed CC BY-SA 4.0 (share-alike follows from the Wikipedia "
-         "tables it adapts); please credit the original sources too. The full catalogue, with where each raw file lives, is in "
-         "<a href='https://github.com/vrraiv/polling2026/blob/main/DATA.md'>DATA.md</a>.")
-    pg.table(["Source", "What it provides", "Terms"], [
-        ["Wikipedia", "House, Senate, governor and presidential results; candidates; incumbents; specials; 2026 race tables", "CC BY-SA 4.0"],
-        ["Cook Political Report (via Wikipedia)", "District and state lean (PVI); expert ratings with other raters", "Their figures; credit by name"],
-        ["FiveThirtyEight (GitHub and archived poll files)", "Final-three-week polls with results 1998-2023; poll files 2016-2024; "
-         "generic-ballot average 1995-2016; pollster ratings", "CC BY 4.0"],
-        ["VoteHub", "2025-26 polls: Senate, House, governor, generic ballot, approval", "CC BY 4.0"],
-        ["American Presidency Project", "Gallup presidential approval, 1941-2021", "Not openly licensed; Gallup's data, credited"],
-        ["FRED (St. Louis Fed)", "Inflation, gas prices, income, unemployment (BLS, BEA, EIA)", "Public domain"],
-        ["Federal Election Commission", "Candidate fundraising totals", "Public domain"],
-        ["State election offices", "2026 official results", "Public records"],
-    ])
+    pg.p("Every chart has a download of the numbers it shows. Where the data comes from, how to credit it, and every file: "
+         "<a href='sources.html'>Sources and downloads</a>.")
+    return pg
+
+
+# ---------------- sources and downloads ----------------
+def page_sources(D):
+    pg = Page("sources", "Sources and downloads", "Where the data on these pages comes from, how to credit it, and every chart's numbers as a CSV.",
+              "Data sources, licence and CSV downloads for the Election data pages.")
+    pg.h2("Sources", "sources")
+    w = "https://en.wikipedia.org/wiki/"
+    pg.table(["Source", "What it provides", "Years"], [
+        [f"<a href='{w}Main_Page'>Wikipedia</a>", "House, Senate, governor and presidential results; candidates and incumbents; House specials; "
+         "2026 race pages and poll tables", "1946-2026"],
+        ["<a href='https://www.cookpolitical.com'>Cook Political Report</a>, via Wikipedia", "District and state partisan lean (Cook PVI)", "2006-2026"],
+        ["<a href='https://github.com/fivethirtyeight/data'>FiveThirtyEight</a> (ABC News)", "Final-three-week polls with results; pollster ratings; "
+         "generic-ballot average", "1995-2023"],
+        ["FiveThirtyEight poll files, via the <a href='https://web.archive.org'>Internet Archive</a>", "Approval, generic-ballot, Senate, House and "
+         "governor polls", "2016-2025"],
+        ["<a href='https://votehub.com'>VoteHub</a>", "Senate, House, governor, generic-ballot and approval polls", "2025-2026"],
+        ["<a href='https://www.presidency.ucsb.edu'>American Presidency Project</a> (UC Santa Barbara)", "Gallup presidential approval, "
+         "compiled by Gerhard Peters", "1941-2021"],
+        ["<a href='https://fred.stlouisfed.org'>FRED</a> (Federal Reserve Bank of St. Louis)", "Inflation, gas prices, income and unemployment "
+         "from the BLS, BEA and EIA", "1946-2026"],
+        ["<a href='https://www.fec.gov'>Federal Election Commission</a>", "Candidate fundraising totals", "2002-2026"],
+        ["State election offices", "2026 official results", "2026"],
+    ], num=(2,))
+    pg.p("Each chart names the sources it draws on beside its download link.")
+    pg.h2("Licence and credit", "licence")
+    pg.p(f"The derived data on these pages and in the downloads is licensed "
+         f"<a href='https://creativecommons.org/licenses/by-sa/4.0/'>{LICENCE}</a>. Share-alike follows from the tables adapted from Wikipedia, "
+         "which is itself CC BY-SA 4.0. Please credit this site (polling2026.vikramrai.com) and the original sources named on each chart.")
+    pg.p("Some figures aren't this project's to license: Gallup's approval numbers (via the American Presidency Project) and Cook PVI are "
+         "their publishers' figures, shown here with credit. Polls belong to the pollsters that conducted them.")
     pg.h2("Downloads", "downloads")
     rows = [[f"<a href='{d['file']}' download>{d['file'].split('/')[-1]}</a>", d["title"], f"<a href='{d['page']}.html'>{dict(PAGES)[d['page']]}</a>",
              "; ".join(d["sources"])] for d in DOWNLOADS]
@@ -727,6 +745,7 @@ def main():
         f.unlink()
     pages = [page_votes(D), page_approval(D), page_states(D), page_polling(D), page_offcycle(D)]
     pages.insert(0, page_index(D, pages))
+    pages.append(page_sources(D))
     for pg in pages:
         (OUT / ("index.html" if pg.key == "index" else f"{pg.key}.html")).write_text(pg.html(built), encoding="utf-8")
     sizes = {p.name: f"{p.stat().st_size / 1024:.0f} KB" for p in sorted(OUT.glob("*.html"))}
