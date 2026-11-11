@@ -1,0 +1,21 @@
+{
+  "raceTitle": "U.S. House of Representatives District 11 - Districtwide Results",
+  "Reporting": "100% (453 of 453) precincts reporting",
+  "ReportingTime": "November 10, 2026, 5:31 p.m.",
+  "candidates": [
+    {
+      "Name": "Connie Chan",
+      "Party": "Dem",
+      "Votes": "140,395",
+      "Percent": "46.7",
+      "incumbent": false
+    },
+    {
+      "Name": "Scott Wiener",
+      "Party": "Dem",
+      "Votes": "160,400",
+      "Percent": "53.3",
+      "incumbent": false
+    }
+  ]
+}

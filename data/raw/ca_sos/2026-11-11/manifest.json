@@ -1,0 +1,262 @@
+{
+  "us-rep-1.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/1",
+    "retrieved": "2026-11-11T14:18:11",
+    "bytes": 497
+  },
+  "us-rep-2.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/2",
+    "retrieved": "2026-11-11T14:18:12",
+    "bytes": 495
+  },
+  "us-rep-3.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/3",
+    "retrieved": "2026-11-11T14:18:13",
+    "bytes": 490
+  },
+  "us-rep-4.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/4",
+    "retrieved": "2026-11-11T14:18:14",
+    "bytes": 493
+  },
+  "us-rep-5.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/5",
+    "retrieved": "2026-11-11T14:18:15",
+    "bytes": 499
+  },
+  "us-rep-6.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/6",
+    "retrieved": "2026-11-11T14:18:16",
+    "bytes": 492
+  },
+  "us-rep-7.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/7",
+    "retrieved": "2026-11-11T14:18:16",
+    "bytes": 491
+  },
+  "us-rep-8.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/8",
+    "retrieved": "2026-11-11T14:18:17",
+    "bytes": 495
+  },
+  "us-rep-9.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/9",
+    "retrieved": "2026-11-11T14:18:18",
+    "bytes": 493
+  },
+  "us-rep-10.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/10",
+    "retrieved": "2026-11-11T14:18:19",
+    "bytes": 496
+  },
+  "us-rep-11.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/11",
+    "retrieved": "2026-11-11T14:18:20",
+    "bytes": 495
+  },
+  "us-rep-12.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/12",
+    "retrieved": "2026-11-11T14:18:21",
+    "bytes": 496
+  },
+  "us-rep-13.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/13",
+    "retrieved": "2026-11-11T14:18:22",
+    "bytes": 492
+  },
+  "us-rep-14.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/14",
+    "retrieved": "2026-11-11T14:18:23",
+    "bytes": 499
+  },
+  "us-rep-15.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/15",
+    "retrieved": "2026-11-11T14:18:23",
+    "bytes": 498
+  },
+  "us-rep-16.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/16",
+    "retrieved": "2026-11-11T14:18:24",
+    "bytes": 502
+  },
+  "us-rep-17.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/17",
+    "retrieved": "2026-11-11T14:18:25",
+    "bytes": 493
+  },
+  "us-rep-18.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/18",
+    "retrieved": "2026-11-11T14:18:26",
+    "bytes": 493
+  },
+  "us-rep-19.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/19",
+    "retrieved": "2026-11-11T14:18:27",
+    "bytes": 501
+  },
+  "us-rep-20.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/20",
+    "retrieved": "2026-11-11T14:18:28",
+    "bytes": 499
+  },
+  "us-rep-21.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/21",
+    "retrieved": "2026-11-11T14:18:29",
+    "bytes": 492
+  },
+  "us-rep-22.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/22",
+    "retrieved": "2026-11-11T14:18:30",
+    "bytes": 500
+  },
+  "us-rep-23.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/23",
+    "retrieved": "2026-11-11T14:18:31",
+    "bytes": 505
+  },
+  "us-rep-24.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/24",
+    "retrieved": "2026-11-11T14:18:32",
+    "bytes": 494
+  },
+  "us-rep-25.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/25",
+    "retrieved": "2026-11-11T14:18:33",
+    "bytes": 489
+  },
+  "us-rep-26.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/26",
+    "retrieved": "2026-11-11T14:18:33",
+    "bytes": 499
+  },
+  "us-rep-27.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/27",
+    "retrieved": "2026-11-11T14:18:34",
+    "bytes": 499
+  },
+  "us-rep-28.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/28",
+    "retrieved": "2026-11-11T14:18:35",
+    "bytes": 495
+  },
+  "us-rep-29.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/29",
+    "retrieved": "2026-11-11T14:18:36",
+    "bytes": 509
+  },
+  "us-rep-30.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/30",
+    "retrieved": "2026-11-11T14:18:37",
+    "bytes": 502
+  },
+  "us-rep-31.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/31",
+    "retrieved": "2026-11-11T14:18:38",
+    "bytes": 493
+  },
+  "us-rep-32.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/32",
+    "retrieved": "2026-11-11T14:18:39",
+    "bytes": 497
+  },
+  "us-rep-33.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/33",
+    "retrieved": "2026-11-11T14:18:40",
+    "bytes": 502
+  },
+  "us-rep-34.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/34",
+    "retrieved": "2026-11-11T14:18:41",
+    "bytes": 504
+  },
+  "us-rep-35.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/35",
+    "retrieved": "2026-11-11T14:18:42",
+    "bytes": 498
+  },
+  "us-rep-36.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/36",
+    "retrieved": "2026-11-11T14:18:43",
+    "bytes": 498
+  },
+  "us-rep-37.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/37",
+    "retrieved": "2026-11-11T14:18:43",
+    "bytes": 504
+  },
+  "us-rep-38.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/38",
+    "retrieved": "2026-11-11T14:18:44",
+    "bytes": 501
+  },
+  "us-rep-39.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/39",
+    "retrieved": "2026-11-11T14:18:45",
+    "bytes": 492
+  },
+  "us-rep-40.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/40",
+    "retrieved": "2026-11-11T14:18:47",
+    "bytes": 491
+  },
+  "us-rep-41.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/41",
+    "retrieved": "2026-11-11T14:18:48",
+    "bytes": 499
+  },
+  "us-rep-42.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/42",
+    "retrieved": "2026-11-11T14:18:49",
+    "bytes": 497
+  },
+  "us-rep-43.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/43",
+    "retrieved": "2026-11-11T14:18:50",
+    "bytes": 500
+  },
+  "us-rep-44.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/44",
+    "retrieved": "2026-11-11T14:18:51",
+    "bytes": 507
+  },
+  "us-rep-45.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/45",
+    "retrieved": "2026-11-11T14:18:52",
+    "bytes": 493
+  },
+  "us-rep-46.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/46",
+    "retrieved": "2026-11-11T14:18:53",
+    "bytes": 490
+  },
+  "us-rep-47.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/47",
+    "retrieved": "2026-11-11T14:18:53",
+    "bytes": 497
+  },
+  "us-rep-48.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/48",
+    "retrieved": "2026-11-11T14:18:54",
+    "bytes": 499
+  },
+  "us-rep-49.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/49",
+    "retrieved": "2026-11-11T14:18:55",
+    "bytes": 495
+  },
+  "us-rep-50.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/50",
+    "retrieved": "2026-11-11T14:18:56",
+    "bytes": 495
+  },
+  "us-rep-51.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/51",
+    "retrieved": "2026-11-11T14:18:57",
+    "bytes": 497
+  },
+  "us-rep-52.json": {
+    "url": "https://api.sos.ca.gov/returns/us-rep/district/52",
+    "retrieved": "2026-11-11T14:18:58",
+    "bytes": 492
+  }
+}

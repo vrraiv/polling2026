@@ -1,10 +1,10 @@
 race_key,party,party_code,candidate,pct_first,votes_first,votes_final
 2026|AL|S|regular,Republican,R,Barry Moore,54.71,917338.0,917338.0
 2026|AL|S|regular,Democratic,D,Everett Wess,45.29,759321.0,759321.0
-2026|AK|S|regular,Republican,R,Dan S. Sullivan,47.47,103804.0,103804.0
-2026|AK|S|regular,Democratic,D,Mary Peltola,48.63,106321.0,106321.0
-2026|AK|S|regular,No party listed,O,Dan J. Sullivan,1.67,3651.0,3651.0
-2026|AK|S|regular,Republican,R,Gerald L. Heikes,2.23,4882.0,4882.0
+2026|AK|S|regular,Republican,R,Dan S. Sullivan,47.2,114676.0,114676.0
+2026|AK|S|regular,Democratic,D,Mary Peltola,49.0,118926.0,118926.0
+2026|AK|S|regular,No party listed,O,Dan J. Sullivan,1.7,3651.0,3651.0
+2026|AK|S|regular,Republican,R,Gerald L. Heikes,2.2,4865.0,4865.0
 2026|AR|S|regular,Republican,R,Tom Cotton,54.26,480627.0,480627.0
 2026|AR|S|regular,Democratic,D,Hallie Shoffner,42.41,375647.0,375647.0
 2026|AR|S|regular,Libertarian,O,Jeff Wadlin,3.33,29485.0,29485.0
@@ -15,8 +15,9 @@ race_key,party,party_code,candidate,pct_first,votes_first,votes_final
 2026|CO|S|regular,Unity,O,Adam Withrow,0.5,13409.0,13409.0
 2026|CO|S|regular,Approval Voting,O,Christopher Baum,0.16,4184.0,4184.0
 2026|CO|S|regular,Write-in,O,Write-in,,,
-2026|DE|S|regular,Democratic,D,Chris Coons,63.57,240347.0,240347.0
-2026|DE|S|regular,Republican,R,Michael Katz,36.43,137764.0,137764.0
+2026|DE|S|regular,Democratic,D,Chris Coons,63.35,240587.0,240587.0
+2026|DE|S|regular,Republican,R,Michael Katz,36.3,137837.0,137837.0
+2026|DE|S|regular,Write-in,O,Write-in,0.35,1330.0,1330.0
 2026|GA|S|regular,Democratic,D,Jon Ossoff,59.02,2466422.0,2466422.0
 2026|GA|S|regular,Republican,R,Mike Collins,40.98,1712444.0,1712444.0
 2026|ID|S|regular,Republican,R,Jim Risch,56.53,401788.0,401788.0
@@ -35,7 +36,7 @@ race_key,party,party_code,candidate,pct_first,votes_first,votes_final
 2026|KY|S|regular,Republican,R,Andy Barr,54.99,784869.0,784869.0
 2026|KY|S|regular,Democratic,D,Charles Booker,42.9,612357.0,612357.0
 2026|KY|S|regular,Kentucky,O,Christopher Campbell,2.09,29892.0,29892.0
-2026|KY|S|regular,Write-in,O,Write-in,0.01,152.0,152.0
+2026|KY|S|regular,Write-in,O,Write-in,0.01,158.0,158.0
 2026|LA|S|regular,Republican,R,Julia Letlow,50.88,746000.0,746000.0
 2026|LA|S|regular,Democratic,D,Jamie Davis,49.12,720150.0,720150.0
 2026|ME|S|regular,Democratic,D,Troy Jackson,53.07,376955.0,376955.0
@@ -57,13 +58,13 @@ race_key,party,party_code,candidate,pct_first,votes_first,votes_final
 2026|MN|S|regular,Independent,I,Marisa Simonetti,1.47,41574.0,41574.0
 2026|MN|S|regular,Libertarian,O,Rebecca Whiting,1.15,32493.0,32493.0
 2026|MN|S|regular,Write-in,O,Write-in,0.12,3381.0,3381.0
-2026|MS|S|regular,Democratic,D,Scott Colom,49.09,468339.0,468339.0
-2026|MS|S|regular,Republican,R,Cindy Hyde-Smith,48.81,465643.0,465643.0
+2026|MS|S|regular,Democratic,D,Scott Colom,49.09,470074.0,470074.0
+2026|MS|S|regular,Republican,R,Cindy Hyde-Smith,48.81,467084.0,467084.0
 2026|MS|S|regular,Independent,I,Ty Pinkins,2.1,20043.0,20043.0
-2026|MT|S|regular,Republican,R,Kurt Alme,47.7,187961.0,187961.0
-2026|MT|S|regular,Independent,I,Seth Bodnar,38.6,152203.0,152203.0
-2026|MT|S|regular,Democratic,D,Alani Bankhead,11.9,46838.0,46838.0
-2026|MT|S|regular,Libertarian,O,Kyle Austin,1.8,7066.0,7066.0
+2026|MT|S|regular,Republican,R,Kurt Alme,48.16,235549.0,235549.0
+2026|MT|S|regular,Independent,I,Seth Bodnar,37.74,184551.0,184551.0
+2026|MT|S|regular,Democratic,D,Alani Bankhead,12.26,59950.0,59950.0
+2026|MT|S|regular,Libertarian,O,Kyle Austin,1.84,9013.0,9013.0
 2026|NE|S|regular,Republican,R,Pete Ricketts,,,
 2026|NE|S|regular,Independent,I,Dan Osborn,,,
 2026|NE|S|regular,Legal Marijuana NOW,O,Mike Marvin (withdrawn),,,
@@ -98,11 +99,11 @@ race_key,party,party_code,candidate,pct_first,votes_first,votes_final
 2026|RI|S|regular,Republican,R,Raymond McKay,,,
 2026|RI|S|regular,Independent,I,Michael Bahry,,,
 2026|RI|S|regular,Write-in,O,Write-in,,,
-2026|SC|S|regular,Democratic,D,Annie Andrews,51.14,1043719.0,1043719.0
-2026|SC|S|regular,Republican,R,Darline Graham,46.64,951904.0,951904.0
-2026|SC|S|regular,Libertarian,O,Kasie Whitener,1.16,23592.0,23592.0
-2026|SC|S|regular,Constitution,O,Mark Hackett,0.82,16815.0,16815.0
-2026|SC|S|regular,Write-in,O,Write-in,0.24,4898.0,4898.0
+2026|SC|S|regular,Democratic,D,Annie Andrews,51.14,1044001.0,1044001.0
+2026|SC|S|regular,Republican,R,Darline Graham,46.64,952191.0,952191.0
+2026|SC|S|regular,Libertarian,O,Kasie Whitener,1.16,23585.0,23585.0
+2026|SC|S|regular,Constitution,O,Mark Hackett,0.82,16811.0,16811.0
+2026|SC|S|regular,Write-in,O,Write-in,0.24,4899.0,4899.0
 2026|SD|S|regular,Republican,R,Mike Rounds,60.5,184589.0,184589.0
 2026|SD|S|regular,Independent,I,Brian Bengs,39.5,120509.0,120509.0
 2026|TN|S|regular,Republican,R,Bill Hagerty,55.08,1138436.0,1138436.0
@@ -119,15 +120,16 @@ race_key,party,party_code,candidate,pct_first,votes_first,votes_final
 2026|TX|S|regular,Republican,R,Ken Paxton,42.97,4250664.0,4250664.0
 2026|TX|S|regular,Libertarian,O,Ted Brown,1.92,190293.0,190293.0
 2026|TX|S|regular,Write-in,O,Write-in,0.05,5112.0,5112.0
-2026|VA|S|regular,Democratic,D,Mark Warner,,,
-2026|VA|S|regular,Republican,R,Bert Mizusawa,,,
-2026|VA|S|regular,Write-in,O,Write-in,,,
+2026|VA|S|regular,Democratic,D,Mark Warner,61.34,2212571.0,2212571.0
+2026|VA|S|regular,Republican,R,Bert Mizusawa,38.39,1384680.0,1384680.0
+2026|VA|S|regular,Write-in,O,Write-in,0.27,9599.0,9599.0
 2026|WV|S|regular,Republican,R,Shelley Moore Capito,58.33,266067.0,266067.0
 2026|WV|S|regular,Democratic,D,Rachel Fetty Anderson,37.91,172922.0,172922.0
 2026|WV|S|regular,Constitution,O,S. Marshall Wilson,3.76,17139.0,17139.0
 2026|WV|S|regular,Write-in,O,Write-in,,,
-2026|WY|S|regular,Republican,R,Harriet Hageman,,,
-2026|WY|S|regular,Democratic,D,James Byrd,,,
+2026|WY|S|regular,Republican,R,Harriet Hageman,64.88,122174.0,122174.0
+2026|WY|S|regular,Democratic,D,James Byrd,34.57,65105.0,65105.0
+2026|WY|S|regular,Write-in,O,Write-in,0.55,1039.0,1039.0
 2026|FL|S|special,Republican,R,Ashley Moody,50.87,4210242.0,4210242.0
 2026|FL|S|special,Democratic,D,Angie Nixon,47.99,3972095.0,3972095.0
 2026|FL|S|special,Independent,I,Neil J. Gillespie,1.14,94608.0,94608.0

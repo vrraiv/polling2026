@@ -1,0 +1,21 @@
+{
+  "raceTitle": "U.S. House of Representatives District 9 - Districtwide Results",
+  "Reporting": "100% (322 of 322) precincts reporting",
+  "ReportingTime": "November 10, 2026, 5:31 p.m.",
+  "candidates": [
+    {
+      "Name": "Josh Harder",
+      "Party": "Dem",
+      "Votes": "139,355",
+      "Percent": "66.9",
+      "incumbent": false
+    },
+    {
+      "Name": "John McBride",
+      "Party": "Rep",
+      "Votes": "68,983",
+      "Percent": "33.1",
+      "incumbent": false
+    }
+  ]
+}
