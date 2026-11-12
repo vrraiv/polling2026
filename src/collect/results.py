@@ -168,7 +168,7 @@ def senate():
     for table in soup.find_all("table"):
         g = grid(table)
         labels, nh = header_labels(g)
-        cc, sc, stc = col(labels, "Candidates"), col(labels, "Results") or col(labels, "Status"), col(labels, "State")
+        cc, sc, stc = col(labels, "Candidate"), col(labels, "Results") or col(labels, "Status"), col(labels, "State")
         if cc is None or sc is None or stc is None or col(labels, "Ratings") is not None:
             continue
         for r in g[nh:]:
@@ -193,7 +193,7 @@ def house():
     for table in soup.find_all("table"):
         g = grid(table)
         labels, nh = header_labels(g)
-        cc, sc, lc = col(labels, "Candidates"), col(labels, "Status"), col(labels, "Location")
+        cc, sc, lc = col(labels, "Candidate"), col(labels, "Status"), col(labels, "Location")
         if cc is None or sc is None or lc is None or col(labels, "2026 PVI") is None:
             continue
         for r in g[nh:]:
