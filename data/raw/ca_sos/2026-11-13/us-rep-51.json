@@ -1,0 +1,21 @@
+{
+  "raceTitle": "U.S. House of Representatives District 51 - Districtwide Results",
+  "Reporting": "100% (663 of 663) precincts reporting",
+  "ReportingTime": "November 12, 2026, 8:46 p.m.",
+  "candidates": [
+    {
+      "Name": "Sara Jacobs",
+      "Party": "Dem",
+      "Votes": "184,748",
+      "Percent": "65.9",
+      "incumbent": false
+    },
+    {
+      "Name": "Ricardo Cabrera",
+      "Party": "Rep",
+      "Votes": "95,532",
+      "Percent": "34.1",
+      "incumbent": false
+    }
+  ]
+}

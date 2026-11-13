@@ -1,0 +1,21 @@
+{
+  "raceTitle": "U.S. House of Representatives District 19 - Districtwide Results",
+  "Reporting": "100% (428 of 428) precincts reporting",
+  "ReportingTime": "November 12, 2026, 8:46 p.m.",
+  "candidates": [
+    {
+      "Name": "Jimmy Panetta",
+      "Party": "Dem",
+      "Votes": "217,870",
+      "Percent": "72.3",
+      "incumbent": false
+    },
+    {
+      "Name": "Peter Coe Verbica",
+      "Party": "Rep",
+      "Votes": "83,446",
+      "Percent": "27.7",
+      "incumbent": false
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "raceTitle": "U.S. House of Representatives District 6 - Districtwide Results",
+  "Reporting": "100% (309 of 309) precincts reporting",
+  "ReportingTime": "November 12, 2026, 8:46 p.m.",
+  "candidates": [
+    {
+      "Name": "Richard Pan",
+      "Party": "Dem",
+      "Votes": "142,647",
+      "Percent": "59.2",
+      "incumbent": false
+    },
+    {
+      "Name": "Kevin Kiley",
+      "Party": "NPP",
+      "Votes": "98,368",
+      "Percent": "40.8",
+      "incumbent": false
+    }
+  ]
+}

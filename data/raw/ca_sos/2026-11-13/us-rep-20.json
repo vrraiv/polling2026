@@ -1,0 +1,21 @@
+{
+  "raceTitle": "U.S. House of Representatives District 20 - Districtwide Results",
+  "Reporting": "100% (764 of 764) precincts reporting",
+  "ReportingTime": "November 12, 2026, 8:46 p.m.",
+  "candidates": [
+    {
+      "Name": "Sandra Van Scotter",
+      "Party": "Dem",
+      "Votes": "95,520",
+      "Percent": "38.7",
+      "incumbent": false
+    },
+    {
+      "Name": "Vince Fong",
+      "Party": "Rep",
+      "Votes": "151,327",
+      "Percent": "61.3",
+      "incumbent": false
+    }
+  ]
+}

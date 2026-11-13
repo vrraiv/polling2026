@@ -1,0 +1,12 @@
+{
+  "resultsSW_FED.html": {
+    "url": "https://electionresults.mt.gov/resultsSW.aspx?type=FED&map=CTY",
+    "retrieved": "2026-11-13T13:40:35",
+    "bytes": 60300
+  },
+  "senate_by_county.json": {
+    "url": "https://esersws.mt.gov/ResultsAjax.svc/GetMapData?type=FED&category=CTY&raceID=450000000004069&osn=1000&county=0&party=0",
+    "retrieved": "2026-11-13T13:40:37",
+    "bytes": 131873
+  }
+}
