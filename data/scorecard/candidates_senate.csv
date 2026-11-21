@@ -19,8 +19,9 @@ race_key,party,party_code,candidate,pct_first,votes_first,votes_final
 2026|DE|S|regular,Democratic,D,Chris Coons,63.35,240587.0,240587.0
 2026|DE|S|regular,Republican,R,Michael Katz,36.3,137837.0,137837.0
 2026|DE|S|regular,Write-in,O,Write-in,0.35,1330.0,1330.0
-2026|GA|S|regular,Democratic,D,Jon Ossoff,59.02,2466422.0,2466422.0
-2026|GA|S|regular,Republican,R,Mike Collins,40.98,1712444.0,1712444.0
+2026|GA|S|regular,Democratic,D,Jon Ossoff,59.02,2469059.0,2469059.0
+2026|GA|S|regular,Republican,R,Mike Collins,40.96,1713673.0,1713673.0
+2026|GA|S|regular,Write-in,O,Write-in,0.02,631.0,631.0
 2026|ID|S|regular,Republican,R,Jim Risch,56.5,402983.0,402983.0
 2026|ID|S|regular,Independent,I,Todd Achilles,33.56,239422.0,239422.0
 2026|ID|S|regular,Independent,I,Natalie Fleming,7.03,50134.0,50134.0
@@ -43,11 +44,11 @@ race_key,party,party_code,candidate,pct_first,votes_first,votes_final
 2026|ME|S|regular,Democratic,D,Troy Jackson,53.07,376955.0,376955.0
 2026|ME|S|regular,Republican,R,Susan Collins,46.87,332918.0,332918.0
 2026|ME|S|regular,Write-in,O,Write-in,0.01,488.0,488.0
-2026|MA|S|regular,Democratic,D,Ed Markey,63.39,1650772.0,1650772.0
-2026|MA|S|regular,Republican,R,John Deaton,32.14,837152.0,837152.0
-2026|MA|S|regular,Independent,I,Shiva Ayyadurai,2.3,59837.0,59837.0
-2026|MA|S|regular,Socialism and Liberation,O,Joe Tache,2.17,56530.0,56530.0
-2026|MA|S|regular,Write-in,O,Write-in,,,
+2026|MA|S|regular,Democratic,D,Ed Markey,63.68,1718276.0,1718276.0
+2026|MA|S|regular,Republican,R,John Deaton,31.72,855969.0,855969.0
+2026|MA|S|regular,Independent,I,Shiva Ayyadurai,2.27,61085.0,61085.0
+2026|MA|S|regular,Socialism and Liberation,O,Joe Tache,2.19,59097.0,59097.0
+2026|MA|S|regular,Write-in,O,Write-in,0.14,3811.0,3811.0
 2026|MI|S|regular,Democratic,D,Abdul El-Sayed,52.56,2521693.0,2521693.0
 2026|MI|S|regular,Republican,R,Mike Rogers,45.44,2180388.0,2180388.0
 2026|MI|S|regular,Libertarian,O,Lydia Christensen,1.04,49692.0,49692.0
@@ -80,7 +81,7 @@ race_key,party,party_code,candidate,pct_first,votes_first,votes_final
 2026|NJ|S|regular,Republican,R,Justin Murphy,34.8,1035906.0,1035906.0
 2026|NJ|S|regular,End the Corruption!,O,Veronica Fernandez,1.67,49818.0,49818.0
 2026|NJ|S|regular,Socialist Workers,O,Joanne Kuniansky,0.95,28290.0,28290.0
-2026|NJ|S|regular,Write-in,O,Eduardo Castillo,0.0,79.0,79.0
+2026|NJ|S|regular,Write-in,O,Eduardo Castillo,0.0,89.0,89.0
 2026|NM|S|regular,Democratic,D,Ben Ray Luján,63.26,458756.0,458756.0
 2026|NM|S|regular,Republican,R,Larry Marker,36.74,266434.0,266434.0
 2026|NC|S|regular,Democratic,D,Roy Cooper,58.75,2480638.0,2480638.0
@@ -136,7 +137,7 @@ race_key,party,party_code,candidate,pct_first,votes_first,votes_final
 2026|FL|S|special,Democratic,D,Angie Nixon,48.0,3975375.0,3975375.0
 2026|FL|S|special,Independent,I,Neil J. Gillespie,1.14,94681.0,94681.0
 2026|OH|S|special,Democratic,D,Sherrod Brown,50.09,2323001.0,2323001.0
-2026|OH|S|special,Republican,R,Jon Husted,45.17,2090390.0,2090390.0
+2026|OH|S|special,Republican,R,Jon Husted,45.07,2090390.0,2090390.0
 2026|OH|S|special,Libertarian,O,Bill Redpath,2.79,129435.0,129435.0
-2026|OH|S|special,Independent,I,Greg Levy,2.04,94857.0,94857.0
+2026|OH|S|special,Independent,I,Greg Levy,2.05,94857.0,94857.0
 2026|OH|S|special,Write-in,O,Write-in,,,

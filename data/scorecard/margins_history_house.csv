@@ -11,7 +11,8 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|AK|H|0,2026-11-17,280268.0,-71.94609122825067,1386174767,wikipedia,two-party
 2026|AK|H|0,2026-11-18,280268.0,1.8498535532603668,1386471211,wikipedia,fold-third
 2026|AK|H|0,2026-11-19,286860.0,-2.702089591558212,1386669653,wikipedia,fold-third
-2026|AK|H|0,2026-11-20,286860.0,-2.7020895915582117,1386669653,wikipedia,fold-third
+2026|AK|H|0,2026-11-20,286860.0,-2.702089591558212,1386669653,wikipedia,fold-third
+2026|AK|H|0,2026-11-21,286860.0,-2.7020895915582117,1386942246,wikipedia,fold-third
 2026|AL|H|1,2026-11-05,231965.0,-18.142823270752054,1383986533,wikipedia,two-party
 2026|AL|H|1,2026-11-06,231965.0,-18.142823270752054,1383986533,wikipedia,two-party
 2026|AL|H|1,2026-11-07,231965.0,-18.142823270752054,1384202632,wikipedia,two-party
@@ -24,6 +25,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|AL|H|1,2026-11-18,231965.0,-18.142823270752054,1385998270,wikipedia,fold-third
 2026|AL|H|1,2026-11-19,231965.0,-18.142823270752054,1385998270,wikipedia,fold-third
 2026|AL|H|1,2026-11-20,231965.0,-18.142823270752054,1386720104,wikipedia,fold-third
+2026|AL|H|1,2026-11-21,231965.0,-18.142823270752054,1386720104,wikipedia,fold-third
 2026|AL|H|2,2026-11-05,231471.0,7.505475847946395,1383986533,wikipedia,two-party
 2026|AL|H|2,2026-11-06,231471.0,7.505475847946395,1383986533,wikipedia,two-party
 2026|AL|H|2,2026-11-07,231471.0,7.505475847946395,1384202632,wikipedia,two-party
@@ -36,6 +38,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|AL|H|2,2026-11-18,231471.0,7.505475847946395,1385998270,wikipedia,fold-third
 2026|AL|H|2,2026-11-19,231471.0,7.505475847946395,1385998270,wikipedia,fold-third
 2026|AL|H|2,2026-11-20,231471.0,7.505475847946395,1386720104,wikipedia,fold-third
+2026|AL|H|2,2026-11-21,231471.0,7.505475847946395,1386720104,wikipedia,fold-third
 2026|AL|H|3,2026-11-07,443452.0,-27.90561323435231,1384202632,wikipedia,two-party
 2026|AL|H|3,2026-11-08,443452.0,-27.90561323435231,1384512418,wikipedia,two-party
 2026|AL|H|3,2026-11-09,443452.0,-27.90561323435231,1384512418,wikipedia,two-party
@@ -46,6 +49,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|AL|H|3,2026-11-18,221726.0,-27.90561323435231,1385998270,wikipedia,fold-third
 2026|AL|H|3,2026-11-19,221726.0,-27.90561323435231,1385998270,wikipedia,fold-third
 2026|AL|H|3,2026-11-20,221726.0,-27.90561323435231,1386720104,wikipedia,fold-third
+2026|AL|H|3,2026-11-21,221726.0,-27.90561323435231,1386720104,wikipedia,fold-third
 2026|AL|H|4,2026-11-07,213641.0,-49.79147261059441,1384202632,wikipedia,two-party
 2026|AL|H|4,2026-11-08,213641.0,-49.79147261059441,1384512418,wikipedia,two-party
 2026|AL|H|4,2026-11-09,213641.0,-49.79147261059441,1384512418,wikipedia,two-party
@@ -56,6 +60,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|AL|H|4,2026-11-18,213641.0,-49.79147261059441,1385998270,wikipedia,fold-third
 2026|AL|H|4,2026-11-19,213641.0,-49.79147261059441,1385998270,wikipedia,fold-third
 2026|AL|H|4,2026-11-20,213641.0,-49.79147261059441,1386720104,wikipedia,fold-third
+2026|AL|H|4,2026-11-21,213641.0,-49.79147261059441,1386720104,wikipedia,fold-third
 2026|AL|H|5,2026-11-07,276843.0,-9.86732552385287,1384202632,wikipedia,two-party
 2026|AL|H|5,2026-11-08,276843.0,-9.86732552385287,1384512418,wikipedia,two-party
 2026|AL|H|5,2026-11-09,276843.0,-9.86732552385287,1384512418,wikipedia,two-party
@@ -66,6 +71,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|AL|H|5,2026-11-18,276843.0,-9.86732552385287,1385998270,wikipedia,fold-third
 2026|AL|H|5,2026-11-19,276843.0,-9.86732552385287,1385998270,wikipedia,fold-third
 2026|AL|H|5,2026-11-20,276843.0,-9.86732552385287,1386720104,wikipedia,fold-third
+2026|AL|H|5,2026-11-21,276843.0,-9.86732552385287,1386720104,wikipedia,fold-third
 2026|AL|H|6,2026-11-07,260878.0,-14.93571707848113,1384202632,wikipedia,two-party
 2026|AL|H|6,2026-11-08,260878.0,-14.93571707848113,1384512418,wikipedia,two-party
 2026|AL|H|6,2026-11-09,260878.0,-14.93571707848113,1384512418,wikipedia,two-party
@@ -76,6 +82,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|AL|H|6,2026-11-18,260878.0,-14.93571707848113,1385998270,wikipedia,fold-third
 2026|AL|H|6,2026-11-19,260878.0,-14.93571707848113,1385998270,wikipedia,fold-third
 2026|AL|H|6,2026-11-20,260878.0,-14.93571707848113,1386720104,wikipedia,fold-third
+2026|AL|H|6,2026-11-21,260878.0,-14.93571707848113,1386720104,wikipedia,fold-third
 2026|AL|H|7,2026-11-07,251908.0,38.799085380376965,1384202632,wikipedia,two-party
 2026|AL|H|7,2026-11-08,251908.0,38.799085380376965,1384512418,wikipedia,two-party
 2026|AL|H|7,2026-11-09,251908.0,38.799085380376965,1384512418,wikipedia,two-party
@@ -86,6 +93,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|AL|H|7,2026-11-18,251908.0,38.799085380376965,1385998270,wikipedia,fold-third
 2026|AL|H|7,2026-11-19,251908.0,38.799085380376965,1385998270,wikipedia,fold-third
 2026|AL|H|7,2026-11-20,251908.0,38.799085380376965,1386720104,wikipedia,fold-third
+2026|AL|H|7,2026-11-21,251908.0,38.799085380376965,1386720104,wikipedia,fold-third
 2026|AR|H|1,2026-11-08,193969.0,-35.760381968764534,1384524363,wikipedia,two-party
 2026|AR|H|1,2026-11-09,193969.0,-35.760381968764534,1384524363,wikipedia,two-party
 2026|AR|H|1,2026-11-10,193969.0,-35.760381968764534,1384825443,wikipedia,two-party
@@ -95,6 +103,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|AR|H|1,2026-11-18,194194.0,-35.7543391188251,1385030232,wikipedia,fold-third
 2026|AR|H|1,2026-11-19,194194.0,-35.7543391188251,1385030232,wikipedia,fold-third
 2026|AR|H|1,2026-11-20,194194.0,-35.7543391188251,1385030232,wikipedia,fold-third
+2026|AR|H|1,2026-11-21,194194.0,-35.7543391188251,1385030232,wikipedia,fold-third
 2026|AR|H|2,2026-11-08,250469.0,-1.7587006775289558,1384524363,wikipedia,two-party
 2026|AR|H|2,2026-11-09,250469.0,-1.7587006775289558,1384524363,wikipedia,two-party
 2026|AR|H|2,2026-11-10,250469.0,-1.7587006775289558,1384825443,wikipedia,two-party
@@ -104,6 +113,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|AR|H|2,2026-11-18,250548.0,-1.7385890128837589,1385030232,wikipedia,fold-third
 2026|AR|H|2,2026-11-19,250548.0,-1.7385890128837589,1385030232,wikipedia,fold-third
 2026|AR|H|2,2026-11-20,250548.0,-1.7385890128837589,1385030232,wikipedia,fold-third
+2026|AR|H|2,2026-11-21,250548.0,-1.7385890128837589,1385030232,wikipedia,fold-third
 2026|CA|H|1,2026-11-04,154458.0,14.06207512721905,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|1,2026-11-05,173699.0,11.46523583900886,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|1,2026-11-06,175062.0,10.911562760621951,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -117,6 +127,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|1,2026-11-18,286200.0,17.43955276030748,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|1,2026-11-19,286808.0,17.5887701877214,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|1,2026-11-20,287227.0,17.6045427484185,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|1,2026-11-21,289403.0,17.891659727093362,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|10,2026-11-04,190983.0,38.12852452836116,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|10,2026-11-05,190983.0,38.12852452836116,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|10,2026-11-06,251691.0,39.07926783238177,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -130,6 +141,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|10,2026-11-18,305964.0,39.40921154122707,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|10,2026-11-19,312239.0,39.60139508517514,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|10,2026-11-20,312239.0,39.60139508517514,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|10,2026-11-21,314742.0,39.64516969454347,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|11,2026-11-04,158152.0,,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|11,2026-11-05,218935.0,,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|11,2026-11-06,263725.0,,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -143,6 +155,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|11,2026-11-18,301991.0,,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|11,2026-11-19,301991.0,,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|11,2026-11-20,301991.0,,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|11,2026-11-21,301991.0,,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|12,2026-11-04,135621.0,,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|12,2026-11-05,135621.0,,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|12,2026-11-06,135621.0,,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -156,6 +169,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|12,2026-11-18,257619.0,,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|12,2026-11-19,257619.0,,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|12,2026-11-20,257619.0,,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|12,2026-11-21,257619.0,,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|13,2026-11-04,94941.0,22.63827008352556,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|13,2026-11-05,95150.0,22.707304256437205,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|13,2026-11-06,113824.0,23.32021366319933,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -169,6 +183,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|13,2026-11-18,173931.0,25.37270526818106,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|13,2026-11-19,173935.0,25.37442147928824,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|13,2026-11-20,174629.0,25.55302956553608,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|13,2026-11-21,175183.0,25.68000319665721,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|14,2026-11-04,121367.0,,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|14,2026-11-05,121367.0,,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|14,2026-11-06,121367.0,,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -182,6 +197,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|14,2026-11-18,212423.0,,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|14,2026-11-19,212423.0,,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|14,2026-11-20,212423.0,,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|14,2026-11-21,212423.0,,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|15,2026-11-04,130618.0,54.75968090156027,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|15,2026-11-05,150009.0,56.33995293615716,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|15,2026-11-06,162789.0,56.93075084925886,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -195,6 +211,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|15,2026-11-18,246265.0,59.90416827401376,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|15,2026-11-19,246265.0,59.90416827401376,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|15,2026-11-20,246265.0,59.90416827401376,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|15,2026-11-21,246265.0,59.90416827401376,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|16,2026-11-04,144183.0,51.7765617305785,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|16,2026-11-05,151564.0,52.35939932965612,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|16,2026-11-06,183953.0,53.628372464705656,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -208,6 +225,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|16,2026-11-18,281534.0,55.974056419473314,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|16,2026-11-19,281689.0,55.974141695273865,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|16,2026-11-20,281689.0,55.974141695273865,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|16,2026-11-21,281762.0,55.97135170817924,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|17,2026-11-04,102615.0,41.039808994786334,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|17,2026-11-05,107592.0,41.220536842887945,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|17,2026-11-06,133641.0,42.34553767182227,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -221,6 +239,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|17,2026-11-18,212252.0,45.53361099070916,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|17,2026-11-19,212392.0,45.537496704207314,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|17,2026-11-20,212392.0,45.537496704207314,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|17,2026-11-21,212463.0,45.53498726837143,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|18,2026-11-04,99621.0,43.30914164684153,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|18,2026-11-05,105882.0,43.58247860826203,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|18,2026-11-06,127672.0,44.46550535747854,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -234,6 +253,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|18,2026-11-18,199258.0,46.13616517279105,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|18,2026-11-19,199704.0,46.19036173536835,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|18,2026-11-20,199825.0,46.1839109220568,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|18,2026-11-21,199963.0,46.20204737876507,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|19,2026-11-04,181643.0,43.95710266842102,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|19,2026-11-05,197207.0,44.74638324197417,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|19,2026-11-06,222232.0,44.680334065301125,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -247,6 +267,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|19,2026-11-18,310413.0,43.97077441988576,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|19,2026-11-19,310887.0,44.00023159540283,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|19,2026-11-20,310887.0,44.00023159540283,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|19,2026-11-21,311882.0,44.056405948403565,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|2,2026-11-04,159147.0,33.86366064079122,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|2,2026-11-05,173496.0,32.1724996541707,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|2,2026-11-06,182334.0,29.932980135356,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -260,6 +281,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|2,2026-11-18,317226.0,33.04647160068847,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|2,2026-11-19,317765.0,33.10968797696411,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|2,2026-11-20,318120.0,33.12523576009053,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|2,2026-11-21,320980.0,33.416412237522586,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|20,2026-11-04,145328.0,-25.23257734228779,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|20,2026-11-05,158681.0,-24.468587921679344,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|20,2026-11-06,168648.0,-23.734642569138085,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -273,6 +295,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|20,2026-11-18,250583.0,-22.48795808175335,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|20,2026-11-19,250583.0,-22.48795808175335,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|20,2026-11-20,252182.0,-22.191115940075026,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|20,2026-11-21,252346.0,-22.151331901436915,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|21,2026-11-04,86606.0,24.41170357711937,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|21,2026-11-05,96649.0,25.61950977247566,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|21,2026-11-06,99931.0,25.31646836317059,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -286,6 +309,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|21,2026-11-18,165184.0,29.415681906237893,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|21,2026-11-19,165184.0,29.415681906237893,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|21,2026-11-20,168792.0,30.023934783639035,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|21,2026-11-21,168914.0,30.046058941236367,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|22,2026-11-04,81817.0,32.825696371169805,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|22,2026-11-05,90625.0,33.21048275862069,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|22,2026-11-06,93372.0,33.215524996787046,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -299,6 +323,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|22,2026-11-18,149010.0,35.679484598349106,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|22,2026-11-19,149010.0,35.679484598349106,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|22,2026-11-20,151393.0,36.25861169274669,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|22,2026-11-21,151538.0,36.29716638730879,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|23,2026-11-04,130850.0,-2.665647688192587,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|23,2026-11-05,152272.0,-2.5585793842597457,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|23,2026-11-06,152666.0,-2.44586220900528,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -312,6 +337,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|23,2026-11-18,215163.0,-1.6485176354670643,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|23,2026-11-19,215181.0,-1.6474502860382654,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|23,2026-11-20,215548.0,-1.6460370775882869,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|23,2026-11-21,217256.0,-1.3744154361674703,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|24,2026-11-04,165667.0,31.66291415912644,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|24,2026-11-05,180805.0,32.220900970658995,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|24,2026-11-06,185712.0,31.89454639441716,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -325,6 +351,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|24,2026-11-18,294044.0,32.60464420290841,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|24,2026-11-19,295368.0,32.8119498388451,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|24,2026-11-20,295368.0,32.8119498388451,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|24,2026-11-21,296077.0,32.79586053627941,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|25,2026-11-04,108036.0,28.810766781443224,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|25,2026-11-05,128869.0,29.528435853463595,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|25,2026-11-06,133005.0,29.79812788992895,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -338,6 +365,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|25,2026-11-18,216532.0,31.814235309330723,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|25,2026-11-19,217865.0,31.956027815390264,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|25,2026-11-20,219722.0,31.971309199807028,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|25,2026-11-21,220550.0,32.04624801632283,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|26,2026-11-04,177865.0,23.192308773508,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|26,2026-11-05,194627.0,23.740282694590164,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|26,2026-11-06,198742.0,23.744351973915933,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -351,6 +379,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|26,2026-11-18,280660.0,26.914416019382884,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|26,2026-11-19,280815.0,26.92626818367965,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|26,2026-11-20,280844.0,26.92526812038,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|26,2026-11-21,280844.0,26.92526812038,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|27,2026-11-04,164263.0,23.402105160626554,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|27,2026-11-05,189037.0,25.51405280447743,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|27,2026-11-06,207621.0,26.80412867677162,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -364,6 +393,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|27,2026-11-18,232244.0,28.433888496581183,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|27,2026-11-19,232244.0,28.433888496581183,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|27,2026-11-20,232353.0,28.436473813550933,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|27,2026-11-21,232353.0,28.436473813550933,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|28,2026-11-04,178300.0,36.74256870443074,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|28,2026-11-05,206996.0,39.34472163713309,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|28,2026-11-06,219592.0,40.38307406462895,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -377,6 +407,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|28,2026-11-18,260814.0,39.208784804496695,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|28,2026-11-19,260814.0,39.208784804496695,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|28,2026-11-20,260914.0,39.21828648520202,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|28,2026-11-21,261149.0,39.19333407365144,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|29,2026-11-04,115405.0,,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|29,2026-11-05,135216.0,,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|29,2026-11-06,149409.0,,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -390,6 +421,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|29,2026-11-18,174937.0,,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|29,2026-11-19,174937.0,,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|29,2026-11-20,175040.0,,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|29,2026-11-21,175040.0,,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|3,2026-11-04,167146.0,14.11819606810812,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|3,2026-11-05,167954.0,13.96215630470248,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|3,2026-11-06,207168.0,15.926204819277109,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -403,6 +435,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|3,2026-11-18,301418.0,17.4236442415516,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|3,2026-11-19,301536.0,17.436723973256925,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|3,2026-11-20,301536.0,17.436723973256925,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|3,2026-11-21,304874.0,17.380950819026875,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|30,2026-11-04,177177.0,50.94961535639501,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|30,2026-11-05,208642.0,53.08327182446487,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|30,2026-11-06,227766.0,53.7578040620637,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -416,6 +449,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|30,2026-11-18,259914.0,55.27212847326423,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|30,2026-11-19,259914.0,55.27212847326423,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|30,2026-11-20,260044.0,55.26833920413468,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|30,2026-11-21,260044.0,55.26833920413468,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|31,2026-11-04,163102.0,27.690647570232123,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|31,2026-11-05,187438.0,29.607656931892144,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|31,2026-11-06,201579.0,30.78842538161217,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -429,6 +463,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|31,2026-11-18,238426.0,32.79927524682711,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|31,2026-11-19,238426.0,32.79927524682711,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|31,2026-11-20,238537.0,32.80623131841182,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|31,2026-11-21,238817.0,32.83225231034642,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|32,2026-11-04,189006.0,31.605345862036128,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|32,2026-11-05,216222.0,33.892018388508106,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|32,2026-11-06,229589.0,34.693735327040926,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -442,6 +477,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|32,2026-11-18,275989.0,34.24955342423068,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|32,2026-11-19,276013.0,34.24947375667088,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|32,2026-11-20,276111.0,34.2510801815212,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|32,2026-11-21,276111.0,34.2510801815212,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|33,2026-11-04,113311.0,35.314311937940715,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|33,2026-11-05,136428.0,35.935438473040726,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|33,2026-11-06,136428.0,35.935438473040726,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -455,6 +491,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|33,2026-11-18,203035.0,37.90627231758072,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|33,2026-11-19,203036.0,37.90657814377746,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|33,2026-11-20,203047.0,37.90600205863667,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|33,2026-11-21,204892.0,38.09811998516292,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|34,2026-11-04,112828.0,,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|34,2026-11-05,135363.0,,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|34,2026-11-06,149033.0,,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -468,6 +505,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|34,2026-11-18,174769.0,,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|34,2026-11-19,174769.0,,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|34,2026-11-20,174856.0,,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|34,2026-11-21,174856.0,,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|35,2026-11-04,110809.0,31.229412773330687,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|35,2026-11-05,127992.0,31.605100318769924,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|35,2026-11-06,129791.0,31.967547826890925,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -481,6 +519,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|35,2026-11-18,209411.0,33.6902072957008,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|35,2026-11-19,209647.0,33.68471764442134,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|35,2026-11-20,210334.0,33.63222303574315,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|35,2026-11-21,211618.0,33.80808815885227,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|36,2026-11-04,209542.0,41.31391320117208,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|36,2026-11-05,246094.0,43.81090152543337,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|36,2026-11-06,265475.0,44.55297108955646,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -494,6 +533,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|36,2026-11-18,306851.0,46.06698365004514,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|36,2026-11-19,306851.0,46.06698365004514,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|36,2026-11-20,306982.0,46.06980213823612,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|36,2026-11-21,306982.0,46.06980213823612,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|37,2026-11-04,118792.0,,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|37,2026-11-05,142632.0,,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|37,2026-11-06,158766.0,,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -507,6 +547,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|37,2026-11-18,183550.0,,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|37,2026-11-19,183550.0,,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|37,2026-11-20,183681.0,,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|37,2026-11-21,183681.0,,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|38,2026-11-04,150025.0,30.02632894517581,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|38,2026-11-05,173294.0,32.390042355765345,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|38,2026-11-06,186987.0,33.656350441474544,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -520,6 +561,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|38,2026-11-18,215613.0,34.91487062468404,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|38,2026-11-19,215621.0,34.91543031522904,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|38,2026-11-20,215696.0,34.919516356353384,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|38,2026-11-21,215712.0,34.917853434208574,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|39,2026-11-04,73599.0,30.694710525958232,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|39,2026-11-05,91958.0,32.16903368929294,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|39,2026-11-06,91958.0,32.16903368929294,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -533,6 +575,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|39,2026-11-18,189811.0,38.0109688058121,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|39,2026-11-19,190387.0,38.10711865831176,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|39,2026-11-20,192804.0,38.35293873571088,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|39,2026-11-21,195858.0,38.56365325899376,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|4,2026-11-04,118970.0,,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|4,2026-11-05,124359.0,,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|4,2026-11-06,138653.0,,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -546,6 +589,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|4,2026-11-18,254393.0,,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|4,2026-11-19,254685.0,,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|4,2026-11-20,255425.0,,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|4,2026-11-21,257301.0,,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|40,2026-11-04,129367.0,,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|40,2026-11-05,150334.0,,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|40,2026-11-06,154460.0,,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -559,6 +603,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|40,2026-11-18,246673.0,,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|40,2026-11-19,248066.0,,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|40,2026-11-20,250175.0,,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|40,2026-11-21,250708.0,,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|41,2026-11-04,168668.0,29.890672801005525,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|41,2026-11-05,200692.0,32.73573435911745,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|41,2026-11-06,218405.0,33.84675259266042,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -572,6 +617,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|41,2026-11-18,253344.0,35.17983453328281,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|41,2026-11-19,253349.0,35.1787455249478,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|41,2026-11-20,253439.0,35.18519249207896,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|41,2026-11-21,253457.0,35.18348279984376,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|42,2026-11-04,193682.0,19.290383205460497,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|42,2026-11-05,216434.0,21.25913673452415,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|42,2026-11-06,238448.0,21.486445682077434,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -585,6 +631,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|42,2026-11-18,283168.0,23.921488303763137,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|42,2026-11-19,283182.0,23.92313070746022,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|42,2026-11-20,283231.0,23.929230910458248,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|42,2026-11-21,283276.0,23.92790070461317,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|43,2026-11-04,122164.0,62.499590714122,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|43,2026-11-05,146627.0,64.1334815552388,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|43,2026-11-06,160799.0,64.79455718008197,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -598,6 +645,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|43,2026-11-18,188228.0,65.93918014323054,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|43,2026-11-19,188228.0,65.93918014323054,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|43,2026-11-20,188318.0,65.94377595344045,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|43,2026-11-21,188318.0,65.94377595344045,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|44,2026-11-04,120534.0,59.61305523752634,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|44,2026-11-05,141866.0,61.45940535434847,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|44,2026-11-06,155389.0,62.27146065680325,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -611,6 +659,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|44,2026-11-18,182049.0,63.54388104301589,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|44,2026-11-19,182049.0,63.54388104301589,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|44,2026-11-20,182157.0,63.54573252743513,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|44,2026-11-21,182157.0,63.54573252743513,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|45,2026-11-04,174601.0,17.470117582373526,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|45,2026-11-05,194543.0,19.189073880838684,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|45,2026-11-06,204537.0,19.774906251680623,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -624,6 +673,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|45,2026-11-18,248914.0,22.039740633311105,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|45,2026-11-19,248940.0,22.039848959588657,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|45,2026-11-20,248967.0,22.04187703591239,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|45,2026-11-21,249009.0,22.04297836624379,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|46,2026-11-04,121609.0,36.11821493474989,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|46,2026-11-05,139658.0,38.48401094101305,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|46,2026-11-06,149033.0,39.22688263673146,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -637,6 +687,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|46,2026-11-18,195228.0,43.10754604872252,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|46,2026-11-19,195256.0,43.11058302945876,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|46,2026-11-20,195260.0,43.10969988732971,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|46,2026-11-21,195320.0,43.10464878148679,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|47,2026-11-04,200595.0,13.473416585657668,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|47,2026-11-05,224243.0,14.824543018065224,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|47,2026-11-06,236914.0,15.088175456072667,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -650,6 +701,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|47,2026-11-18,285211.0,17.15887535894478,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|47,2026-11-19,285236.0,17.157020852907767,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|47,2026-11-20,285249.0,17.160095215057723,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|47,2026-11-21,285319.0,17.172708442129686,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|48,2026-11-04,155939.0,19.179935744105062,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|48,2026-11-05,171818.0,18.88393532691569,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|48,2026-11-06,171818.0,18.88393532691569,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -663,6 +715,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|48,2026-11-18,276326.0,19.483508609396143,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|48,2026-11-19,276956.0,19.53162235156487,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|48,2026-11-20,278746.0,19.554002568646727,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|48,2026-11-21,280001.0,19.646715547444472,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|49,2026-11-04,209808.0,14.975596736063448,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|49,2026-11-05,224050.0,15.431376924793572,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|49,2026-11-06,228339.0,15.054370913422586,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -676,6 +729,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|49,2026-11-18,322971.0,19.01749692696868,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|49,2026-11-19,322977.0,19.01714363561492,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|49,2026-11-20,322977.0,19.01714363561492,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|49,2026-11-21,324316.0,19.18067563734136,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|5,2026-11-04,182603.0,-12.425316122955264,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|5,2026-11-05,195092.0,-11.751378836651426,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|5,2026-11-06,208102.0,-11.957597716504406,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -689,6 +743,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|5,2026-11-18,294808.0,-11.29820086293452,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|5,2026-11-19,294811.0,-11.2977466919484,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|5,2026-11-20,296419.0,-11.156167452153875,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|5,2026-11-21,296441.0,-11.158038193097449,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|50,2026-11-04,192876.0,22.04110412907775,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|50,2026-11-05,205041.0,22.890543842451024,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|50,2026-11-06,205041.0,22.890543842451024,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -702,6 +757,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|50,2026-11-18,309460.0,27.412266528792088,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|50,2026-11-19,309460.0,27.412266528792088,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|50,2026-11-20,309460.0,27.412266528792088,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|50,2026-11-21,311053.0,27.584688139963287,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|51,2026-11-04,172878.0,26.29252999224887,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|51,2026-11-05,184240.0,26.89101172383847,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|51,2026-11-06,184240.0,26.89101172383847,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -715,6 +771,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|51,2026-11-18,290100.0,32.36608066184075,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|51,2026-11-19,290100.0,32.36608066184075,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|51,2026-11-20,290100.0,32.36608066184075,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|51,2026-11-21,291686.0,32.53430058350418,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|52,2026-11-04,130688.0,37.861165523996085,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|52,2026-11-05,139544.0,38.42372298343175,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|52,2026-11-06,139544.0,38.42372298343175,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -728,6 +785,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|52,2026-11-18,220462.0,43.587557039308365,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|52,2026-11-19,220462.0,43.587557039308365,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|52,2026-11-20,220462.0,43.587557039308365,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|52,2026-11-21,221665.0,43.71326100196242,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|6,2026-11-04,150875.0,14.971996685998343,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|6,2026-11-05,150875.0,14.971996685998343,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|6,2026-11-06,184378.0,17.221143520376618,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -741,6 +799,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|6,2026-11-18,271342.0,17.695749275821658,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|6,2026-11-19,271342.0,17.695749275821658,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|6,2026-11-20,271342.0,17.695749275821658,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|6,2026-11-21,274346.0,17.681322126074374,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|7,2026-11-04,131980.0,,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|7,2026-11-05,134846.0,,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|7,2026-11-06,175659.0,,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -754,6 +813,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|7,2026-11-18,252313.0,,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|7,2026-11-19,252433.0,,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|7,2026-11-20,252433.0,,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|7,2026-11-21,253814.0,,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|8,2026-11-04,153628.0,44.67414794178145,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|8,2026-11-05,194503.0,43.30781530362,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|8,2026-11-06,214048.0,45.69535805053072,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -767,6 +827,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|8,2026-11-18,257670.0,46.84286102379012,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|8,2026-11-19,259888.0,47.10952410269039,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|8,2026-11-20,259888.0,47.10952410269039,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|8,2026-11-21,261409.0,47.27572501329335,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CA|H|9,2026-11-04,118891.0,31.592803492274435,"November 4, 2026, 6:27 a.m.",ca_sos,two-party
 2026|CA|H|9,2026-11-05,118891.0,31.592803492274435,"November 5, 2026, 5:47 p.m.",ca_sos,two-party
 2026|CA|H|9,2026-11-06,167062.0,33.841328369108474,"November 6, 2026, 5:11 p.m.",ca_sos,two-party
@@ -780,6 +841,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CA|H|9,2026-11-18,213448.0,34.299688917207,"November 17, 2026, 5:25 p.m.",ca_sos,fold-third
 2026|CA|H|9,2026-11-19,215017.0,34.45541515322044,"November 19, 2026, 1:59 p.m.",ca_sos,fold-third
 2026|CA|H|9,2026-11-20,215017.0,34.45541515322044,"November 19, 2026, 6:05 p.m.",ca_sos,fold-third
+2026|CA|H|9,2026-11-21,215887.0,34.56576820280981,"November 20, 2026, 6:26 p.m.",ca_sos,fold-third
 2026|CO|H|2,2026-11-10,366709.0,51.96273267756039,1384853439,wikipedia,two-party
 2026|CO|H|2,2026-11-15,366709.0,51.96273267756039,1385865594,wikipedia,two-party
 2026|CO|H|2,2026-11-16,366709.0,51.96273267756039,1385990435,wikipedia,two-party
@@ -787,6 +849,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CO|H|2,2026-11-18,366709.0,51.96273267756039,1385990435,wikipedia,fold-third
 2026|CO|H|2,2026-11-19,366709.0,51.96273267756039,1386586598,wikipedia,fold-third
 2026|CO|H|2,2026-11-20,366709.0,51.96273267756039,1386586598,wikipedia,fold-third
+2026|CO|H|2,2026-11-21,366709.0,51.96273267756039,1386586598,wikipedia,fold-third
 2026|CO|H|3,2026-11-10,321477.0,-1.91522255091344,1384853439,wikipedia,two-party
 2026|CO|H|3,2026-11-15,321477.0,-1.91522255091344,1385865594,wikipedia,two-party
 2026|CO|H|3,2026-11-16,321477.0,-1.91522255091344,1385990435,wikipedia,two-party
@@ -794,36 +857,42 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|CO|H|3,2026-11-18,321477.0,-1.91522255091344,1385990435,wikipedia,fold-third
 2026|CO|H|3,2026-11-19,321477.0,-1.91522255091344,1386586598,wikipedia,fold-third
 2026|CO|H|3,2026-11-20,321477.0,-1.91522255091344,1386586598,wikipedia,fold-third
+2026|CO|H|3,2026-11-21,321477.0,-1.91522255091344,1386586598,wikipedia,fold-third
 2026|CT|H|1,2026-11-15,253392.0,36.96392705069495,1385781906,wikipedia,two-party
 2026|CT|H|1,2026-11-16,253392.0,36.96392705069495,1385781906,wikipedia,two-party
 2026|CT|H|1,2026-11-17,253392.0,36.96392705069495,1385781906,wikipedia,two-party
 2026|CT|H|1,2026-11-18,253392.0,36.96392705069495,1385781906,wikipedia,fold-third
 2026|CT|H|1,2026-11-19,253392.0,36.96392705069495,1385781906,wikipedia,fold-third
 2026|CT|H|1,2026-11-20,253392.0,36.96392705069495,1385781906,wikipedia,fold-third
+2026|CT|H|1,2026-11-21,253392.0,36.96392705069495,1385781906,wikipedia,fold-third
 2026|CT|H|2,2026-11-15,292064.0,27.554324639992167,1385781906,wikipedia,two-party
 2026|CT|H|2,2026-11-16,292064.0,27.554324639992167,1385781906,wikipedia,two-party
 2026|CT|H|2,2026-11-17,292064.0,27.554324639992167,1385781906,wikipedia,two-party
 2026|CT|H|2,2026-11-18,292064.0,24.90394954012204,1385781906,wikipedia,fold-third
 2026|CT|H|2,2026-11-19,292064.0,24.90394954012204,1385781906,wikipedia,fold-third
 2026|CT|H|2,2026-11-20,292064.0,24.90394954012204,1385781906,wikipedia,fold-third
+2026|CT|H|2,2026-11-21,292064.0,24.90394954012204,1385781906,wikipedia,fold-third
 2026|CT|H|3,2026-11-15,247131.0,26.500965937126274,1385781906,wikipedia,two-party
 2026|CT|H|3,2026-11-16,247131.0,26.500965937126274,1385781906,wikipedia,two-party
 2026|CT|H|3,2026-11-17,247131.0,26.500965937126274,1385781906,wikipedia,two-party
 2026|CT|H|3,2026-11-18,247131.0,26.500965937126274,1385781906,wikipedia,fold-third
 2026|CT|H|3,2026-11-19,247131.0,26.500965937126274,1385781906,wikipedia,fold-third
 2026|CT|H|3,2026-11-20,247131.0,26.500965937126274,1385781906,wikipedia,fold-third
+2026|CT|H|3,2026-11-21,247131.0,26.500965937126274,1385781906,wikipedia,fold-third
 2026|CT|H|4,2026-11-15,240138.0,33.72023910606936,1385781906,wikipedia,two-party
 2026|CT|H|4,2026-11-16,240138.0,33.72023910606936,1385781906,wikipedia,two-party
 2026|CT|H|4,2026-11-17,240138.0,33.72023910606936,1385781906,wikipedia,two-party
 2026|CT|H|4,2026-11-18,240138.0,33.72023910606936,1385781906,wikipedia,fold-third
 2026|CT|H|4,2026-11-19,240138.0,33.72023910606936,1385781906,wikipedia,fold-third
 2026|CT|H|4,2026-11-20,240138.0,33.72023910606936,1385781906,wikipedia,fold-third
+2026|CT|H|4,2026-11-21,240138.0,33.72023910606936,1385781906,wikipedia,fold-third
 2026|CT|H|5,2026-11-15,253066.0,13.161311857107384,1385781906,wikipedia,two-party
 2026|CT|H|5,2026-11-16,253066.0,13.161311857107384,1385781906,wikipedia,two-party
 2026|CT|H|5,2026-11-17,253066.0,13.161311857107384,1385781906,wikipedia,two-party
 2026|CT|H|5,2026-11-18,253066.0,15.684926092798989,1385781906,wikipedia,fold-third
 2026|CT|H|5,2026-11-19,253066.0,15.684926092798989,1385781906,wikipedia,fold-third
 2026|CT|H|5,2026-11-20,253066.0,15.684926092798989,1385781906,wikipedia,fold-third
+2026|CT|H|5,2026-11-21,253066.0,15.684926092798989,1385781906,wikipedia,fold-third
 2026|FL|H|1,2026-11-07,291010.0,-27.37920629530967,1384232565,wikipedia,two-party
 2026|FL|H|1,2026-11-08,291010.0,-27.37920629530967,1384542091,wikipedia,two-party
 2026|FL|H|1,2026-11-09,291010.0,-27.37920629530967,1384726619,wikipedia,two-party
@@ -834,6 +903,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|FL|H|1,2026-11-18,291010.0,-27.37920629530967,1386271553,wikipedia,fold-third
 2026|FL|H|1,2026-11-19,291010.0,-27.37920629530967,1386605261,wikipedia,fold-third
 2026|FL|H|1,2026-11-20,291010.0,-27.37920629530967,1386605261,wikipedia,fold-third
+2026|FL|H|1,2026-11-21,291010.0,-27.37920629530967,1386605261,wikipedia,fold-third
 2026|FL|H|2,2026-11-07,309363.0,-4.180525790091252,1384232565,wikipedia,two-party
 2026|FL|H|2,2026-11-08,309363.0,-4.180525790091252,1384542091,wikipedia,two-party
 2026|FL|H|2,2026-11-09,309363.0,-4.180525790091252,1384726619,wikipedia,two-party
@@ -844,6 +914,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|FL|H|2,2026-11-18,309363.0,-4.180525790091252,1386271553,wikipedia,fold-third
 2026|FL|H|2,2026-11-19,309363.0,-4.180525790091252,1386605261,wikipedia,fold-third
 2026|FL|H|2,2026-11-20,309363.0,-4.180525790091252,1386605261,wikipedia,fold-third
+2026|FL|H|2,2026-11-21,309363.0,-4.180525790091252,1386605261,wikipedia,fold-third
 2026|FL|H|3,2026-11-07,300411.0,-12.386954958377714,1384232565,wikipedia,two-party
 2026|FL|H|3,2026-11-08,300411.0,-12.386954958377714,1384542091,wikipedia,two-party
 2026|FL|H|3,2026-11-09,300411.0,-12.386954958377714,1384726619,wikipedia,two-party
@@ -854,6 +925,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|FL|H|3,2026-11-18,300411.0,-12.386954958377714,1386271553,wikipedia,fold-third
 2026|FL|H|3,2026-11-19,300411.0,-12.386954958377714,1386605261,wikipedia,fold-third
 2026|FL|H|3,2026-11-20,300411.0,-12.386954958377714,1386605261,wikipedia,fold-third
+2026|FL|H|3,2026-11-21,300411.0,-12.386954958377714,1386605261,wikipedia,fold-third
 2026|FL|H|4,2026-11-09,300985.0,-2.1513114992279334,1384726619,wikipedia,two-party
 2026|FL|H|4,2026-11-10,300985.0,-2.1513114992279334,1384754611,wikipedia,two-party
 2026|FL|H|4,2026-11-15,300985.0,-2.1513114992279334,1385661090,wikipedia,two-party
@@ -862,6 +934,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|FL|H|4,2026-11-18,300985.0,-2.1513114992279334,1386271553,wikipedia,fold-third
 2026|FL|H|4,2026-11-19,300985.0,-2.1513114992279334,1386605261,wikipedia,fold-third
 2026|FL|H|4,2026-11-20,300985.0,-2.1513114992279334,1386605261,wikipedia,fold-third
+2026|FL|H|4,2026-11-21,300985.0,-2.1513114992279334,1386605261,wikipedia,fold-third
 2026|FL|H|5,2026-11-09,333358.0,-12.828850665050789,1384726619,wikipedia,two-party
 2026|FL|H|5,2026-11-10,333358.0,-12.828850665050789,1384754611,wikipedia,two-party
 2026|FL|H|5,2026-11-15,333358.0,-12.828850665050789,1385661090,wikipedia,two-party
@@ -870,8 +943,10 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|FL|H|5,2026-11-18,333358.0,-12.828850665050789,1386271553,wikipedia,fold-third
 2026|FL|H|5,2026-11-19,333358.0,-12.828850665050789,1386605261,wikipedia,fold-third
 2026|FL|H|5,2026-11-20,333358.0,-12.828850665050789,1386605261,wikipedia,fold-third
+2026|FL|H|5,2026-11-21,333358.0,-12.828850665050789,1386605261,wikipedia,fold-third
 2026|FL|H|7,2026-11-19,324454.0,-0.5081487620299779,1386605261,wikipedia,fold-third
 2026|FL|H|7,2026-11-20,324454.0,-0.5081487620299779,1386605261,wikipedia,fold-third
+2026|FL|H|7,2026-11-21,324454.0,-0.5081487620299779,1386605261,wikipedia,fold-third
 2026|GA|H|1,2026-11-04,272681.0,-2.842515613482421,2026-11-04T09:19:07.4133015Z,official,fold-third
 2026|GA|H|1,2026-11-05,272681.0,-2.842515613482421,2026-11-05T17:29:04.724999Z,official,fold-third
 2026|GA|H|1,2026-11-06,272776.0,-2.8250285948910463,2026-11-07T00:58:49.5754876Z,official,fold-third
@@ -884,7 +959,8 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|GA|H|1,2026-11-17,272875.0,-2.8060467246907925,2026-11-12T16:11:02.0542604Z,official,fold-third
 2026|GA|H|1,2026-11-18,272875.0,-2.8060467246907925,2026-11-16T21:42:20.4174438Z,official,fold-third
 2026|GA|H|1,2026-11-19,272875.0,-2.8060467246907925,2026-11-19T17:50:33.5925878Z,official,fold-third
-2026|GA|H|1,2026-11-20,272877.0,-2.8052932273515174,2026-11-20T15:50:56.8414116Z,official,fold-third
+2026|GA|H|1,2026-11-20,272877.0,-2.805293227351517,2026-11-20T15:50:56.8414116Z,official,fold-third
+2026|GA|H|1,2026-11-21,272877.0,-2.8052932273515174,2026-11-20T15:50:56.8414116Z,official,fold-third
 2026|GA|H|1,2026-11-10,272875.0,-2.8060467246907925,1384776260,wikipedia,two-party
 2026|GA|H|1,2026-11-15,272875.0,-2.8060467246907925,1385863099,wikipedia,two-party
 2026|GA|H|1,2026-11-16,272875.0,-2.8060467246907925,1386045029,wikipedia,two-party
@@ -892,6 +968,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|GA|H|1,2026-11-18,272875.0,-2.8060467246907925,1386045029,wikipedia,fold-third
 2026|GA|H|1,2026-11-19,272875.0,-2.8060467246907925,1386045029,wikipedia,fold-third
 2026|GA|H|1,2026-11-20,272875.0,-2.8060467246907925,1386045029,wikipedia,fold-third
+2026|GA|H|1,2026-11-21,272875.0,-2.8060467246907925,1386045029,wikipedia,fold-third
 2026|GA|H|10,2026-11-04,325169.0,-7.186724441751828,2026-11-04T09:19:07.4133015Z,official,fold-third
 2026|GA|H|10,2026-11-05,325175.0,-7.187821942031214,2026-11-05T17:29:04.724999Z,official,fold-third
 2026|GA|H|10,2026-11-06,325223.0,-7.174461830805324,2026-11-07T00:58:49.5754876Z,official,fold-third
@@ -905,6 +982,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|GA|H|10,2026-11-18,325969.0,-7.276458804364832,2026-11-16T21:42:20.4174438Z,official,fold-third
 2026|GA|H|10,2026-11-19,325970.0,-7.276743258582078,2026-11-19T17:50:33.5925878Z,official,fold-third
 2026|GA|H|10,2026-11-20,325970.0,-7.276743258582078,2026-11-20T15:50:56.8414116Z,official,fold-third
+2026|GA|H|10,2026-11-21,325970.0,-7.276743258582078,2026-11-20T15:50:56.8414116Z,official,fold-third
 2026|GA|H|11,2026-11-04,329020.0,-10.728223208315605,2026-11-04T09:19:07.4133015Z,official,fold-third
 2026|GA|H|11,2026-11-05,329021.0,-10.728494533783556,2026-11-05T17:29:04.724999Z,official,fold-third
 2026|GA|H|11,2026-11-06,329079.0,-10.726603642286502,2026-11-07T00:58:49.5754876Z,official,fold-third
@@ -917,7 +995,8 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|GA|H|11,2026-11-17,329197.0,-10.71182301175284,2026-11-12T16:11:02.0542604Z,official,fold-third
 2026|GA|H|11,2026-11-18,329197.0,-10.71182301175284,2026-11-16T21:42:20.4174438Z,official,fold-third
 2026|GA|H|11,2026-11-19,329197.0,-10.71182301175284,2026-11-19T17:50:33.5925878Z,official,fold-third
-2026|GA|H|11,2026-11-20,329197.0,-10.711823011752841,2026-11-20T15:50:56.8414116Z,official,fold-third
+2026|GA|H|11,2026-11-20,329197.0,-10.71182301175284,2026-11-20T15:50:56.8414116Z,official,fold-third
+2026|GA|H|11,2026-11-21,329197.0,-10.711823011752841,2026-11-20T15:50:56.8414116Z,official,fold-third
 2026|GA|H|12,2026-11-04,270341.0,-4.195811956011112,2026-11-04T09:19:07.4133015Z,official,fold-third
 2026|GA|H|12,2026-11-05,270343.0,-4.1957809153556775,2026-11-05T17:29:04.724999Z,official,fold-third
 2026|GA|H|12,2026-11-06,270451.0,-4.173399247922914,2026-11-07T00:58:49.5754876Z,official,fold-third
@@ -931,6 +1010,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|GA|H|12,2026-11-18,270541.0,-4.16461830184704,2026-11-16T21:42:20.4174438Z,official,fold-third
 2026|GA|H|12,2026-11-19,270542.0,-4.164972536611691,2026-11-19T17:50:33.5925878Z,official,fold-third
 2026|GA|H|12,2026-11-20,270542.0,-4.164972536611691,2026-11-20T15:50:56.8414116Z,official,fold-third
+2026|GA|H|12,2026-11-21,270542.0,-4.164972536611691,2026-11-20T15:50:56.8414116Z,official,fold-third
 2026|GA|H|13,2026-11-04,310587.0,59.65703651472856,2026-11-04T09:19:07.4133015Z,official,fold-third
 2026|GA|H|13,2026-11-05,310587.0,59.65703651472856,2026-11-05T17:29:04.724999Z,official,fold-third
 2026|GA|H|13,2026-11-06,310587.0,59.65703651472856,2026-11-07T00:58:49.5754876Z,official,fold-third
@@ -944,6 +1024,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|GA|H|13,2026-11-18,310774.0,59.66200518704911,2026-11-16T21:42:20.4174438Z,official,fold-third
 2026|GA|H|13,2026-11-19,310774.0,59.66200518704911,2026-11-19T17:50:33.5925878Z,official,fold-third
 2026|GA|H|13,2026-11-20,310774.0,59.66200518704911,2026-11-20T15:50:56.8414116Z,official,fold-third
+2026|GA|H|13,2026-11-21,310774.0,59.66200518704911,2026-11-20T15:50:56.8414116Z,official,fold-third
 2026|GA|H|14,2026-11-04,287088.0,-17.56116591428412,2026-11-04T09:19:07.4133015Z,official,fold-third
 2026|GA|H|14,2026-11-05,287088.0,-17.56116591428412,2026-11-05T17:29:04.724999Z,official,fold-third
 2026|GA|H|14,2026-11-06,287105.0,-17.560474390902282,2026-11-07T00:58:49.5754876Z,official,fold-third
@@ -957,6 +1038,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|GA|H|14,2026-11-18,287276.0,-17.53853437112742,2026-11-16T21:42:20.4174438Z,official,fold-third
 2026|GA|H|14,2026-11-19,287276.0,-17.53853437112742,2026-11-19T17:50:33.5925878Z,official,fold-third
 2026|GA|H|14,2026-11-20,287276.0,-17.53853437112742,2026-11-20T15:50:56.8414116Z,official,fold-third
+2026|GA|H|14,2026-11-21,287276.0,-17.53853437112742,2026-11-20T15:50:56.8414116Z,official,fold-third
 2026|GA|H|2,2026-11-04,243456.0,21.741094900105157,2026-11-04T09:19:07.4133015Z,official,fold-third
 2026|GA|H|2,2026-11-05,243459.0,21.74123774434299,2026-11-05T17:29:04.724999Z,official,fold-third
 2026|GA|H|2,2026-11-06,243858.0,21.58715317930927,2026-11-07T00:58:49.5754876Z,official,fold-third
@@ -970,6 +1052,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|GA|H|2,2026-11-18,244060.0,21.62746865524871,2026-11-16T21:42:20.4174438Z,official,fold-third
 2026|GA|H|2,2026-11-19,244060.0,21.62746865524871,2026-11-19T17:50:33.5925878Z,official,fold-third
 2026|GA|H|2,2026-11-20,244060.0,21.62746865524871,2026-11-20T15:50:56.8414116Z,official,fold-third
+2026|GA|H|2,2026-11-21,244060.0,21.62746865524871,2026-11-20T15:50:56.8414116Z,official,fold-third
 2026|GA|H|3,2026-11-04,321689.0,-17.236834333782006,2026-11-04T09:19:07.4133015Z,official,fold-third
 2026|GA|H|3,2026-11-05,321689.0,-17.236834333782006,2026-11-05T17:29:04.724999Z,official,fold-third
 2026|GA|H|3,2026-11-06,321733.0,-17.231990501440634,2026-11-07T00:58:49.5754876Z,official,fold-third
@@ -983,6 +1066,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|GA|H|3,2026-11-18,321864.0,-17.207267665846445,2026-11-16T21:42:20.4174438Z,official,fold-third
 2026|GA|H|3,2026-11-19,321864.0,-17.207267665846445,2026-11-19T17:50:33.5925878Z,official,fold-third
 2026|GA|H|3,2026-11-20,321864.0,-17.207267665846445,2026-11-20T15:50:56.8414116Z,official,fold-third
+2026|GA|H|3,2026-11-21,321864.0,-17.207267665846445,2026-11-20T15:50:56.8414116Z,official,fold-third
 2026|GA|H|4,2026-11-04,262763.0,65.27745534949746,2026-11-04T09:19:07.4133015Z,official,fold-third
 2026|GA|H|4,2026-11-05,262763.0,65.27745534949746,2026-11-05T17:29:04.724999Z,official,fold-third
 2026|GA|H|4,2026-11-06,262763.0,65.27745534949746,2026-11-07T00:58:49.5754876Z,official,fold-third
@@ -996,6 +1080,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|GA|H|4,2026-11-18,262984.0,65.28762206065768,2026-11-16T21:42:20.4174438Z,official,fold-third
 2026|GA|H|4,2026-11-19,262984.0,65.28762206065768,2026-11-19T17:50:33.5925878Z,official,fold-third
 2026|GA|H|4,2026-11-20,262984.0,65.28762206065768,2026-11-20T15:50:56.8414116Z,official,fold-third
+2026|GA|H|4,2026-11-21,262984.0,65.28762206065768,2026-11-20T15:50:56.8414116Z,official,fold-third
 2026|GA|H|5,2026-11-04,302234.0,80.38738196232059,2026-11-04T09:19:07.4133015Z,official,fold-third
 2026|GA|H|5,2026-11-05,302234.0,80.38738196232059,2026-11-05T17:29:04.724999Z,official,fold-third
 2026|GA|H|5,2026-11-06,304461.0,80.39617553643981,2026-11-07T00:58:49.5754876Z,official,fold-third
@@ -1009,6 +1094,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|GA|H|5,2026-11-18,304784.0,80.40448317496981,2026-11-16T21:42:20.4174438Z,official,fold-third
 2026|GA|H|5,2026-11-19,304784.0,80.40448317496981,2026-11-19T17:50:33.5925878Z,official,fold-third
 2026|GA|H|5,2026-11-20,304784.0,80.40448317496981,2026-11-20T15:50:56.8414116Z,official,fold-third
+2026|GA|H|5,2026-11-21,304784.0,80.40448317496981,2026-11-20T15:50:56.8414116Z,official,fold-third
 2026|GA|H|6,2026-11-04,324904.0,61.79917760323049,2026-11-04T09:19:07.4133015Z,official,fold-third
 2026|GA|H|6,2026-11-05,324904.0,61.79917760323049,2026-11-05T17:29:04.724999Z,official,fold-third
 2026|GA|H|6,2026-11-06,326138.0,61.7738503332945,2026-11-07T00:58:49.5754876Z,official,fold-third
@@ -1022,6 +1108,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|GA|H|6,2026-11-18,326403.0,61.77792483524968,2026-11-16T21:42:20.4174438Z,official,fold-third
 2026|GA|H|6,2026-11-19,326403.0,61.77792483524968,2026-11-19T17:50:33.5925878Z,official,fold-third
 2026|GA|H|6,2026-11-20,326403.0,61.77792483524968,2026-11-20T15:50:56.8414116Z,official,fold-third
+2026|GA|H|6,2026-11-21,326403.0,61.77792483524968,2026-11-20T15:50:56.8414116Z,official,fold-third
 2026|GA|H|7,2026-11-04,340862.0,-12.385070791111946,2026-11-04T09:19:07.4133015Z,official,fold-third
 2026|GA|H|7,2026-11-05,340862.0,-12.385070791111946,2026-11-05T17:29:04.724999Z,official,fold-third
 2026|GA|H|7,2026-11-06,340894.0,-12.382148116423288,2026-11-07T00:58:49.5754876Z,official,fold-third
@@ -1035,6 +1122,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|GA|H|7,2026-11-18,341082.0,-12.363009481590938,2026-11-16T21:42:20.4174438Z,official,fold-third
 2026|GA|H|7,2026-11-19,341082.0,-12.363009481590938,2026-11-19T17:50:33.5925878Z,official,fold-third
 2026|GA|H|7,2026-11-20,341082.0,-12.363009481590938,2026-11-20T15:50:56.8414116Z,official,fold-third
+2026|GA|H|7,2026-11-21,341082.0,-12.363009481590938,2026-11-20T15:50:56.8414116Z,official,fold-third
 2026|GA|H|8,2026-11-04,264650.0,-20.761760816172306,2026-11-04T09:19:07.4133015Z,official,fold-third
 2026|GA|H|8,2026-11-05,264982.0,-20.84896332581081,2026-11-05T17:29:04.724999Z,official,fold-third
 2026|GA|H|8,2026-11-06,265037.0,-20.83973181103016,2026-11-07T00:58:49.5754876Z,official,fold-third
@@ -1048,6 +1136,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|GA|H|8,2026-11-18,265176.0,-20.80354179865448,2026-11-16T21:42:20.4174438Z,official,fold-third
 2026|GA|H|8,2026-11-19,265176.0,-20.80354179865448,2026-11-19T17:50:33.5925878Z,official,fold-third
 2026|GA|H|8,2026-11-20,265179.0,-20.80217513453177,2026-11-20T15:50:56.8414116Z,official,fold-third
+2026|GA|H|8,2026-11-21,265179.0,-20.80217513453177,2026-11-20T15:50:56.8414116Z,official,fold-third
 2026|GA|H|9,2026-11-04,308412.0,-18.59849811291389,2026-11-04T09:19:07.4133015Z,official,fold-third
 2026|GA|H|9,2026-11-05,308412.0,-18.59849811291389,2026-11-05T17:29:04.724999Z,official,fold-third
 2026|GA|H|9,2026-11-06,308514.0,-18.587811250056724,2026-11-07T00:58:49.5754876Z,official,fold-third
@@ -1061,6 +1150,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|GA|H|9,2026-11-18,308639.0,-18.576071073325146,2026-11-16T21:42:20.4174438Z,official,fold-third
 2026|GA|H|9,2026-11-19,308639.0,-18.576071073325146,2026-11-19T17:50:33.5925878Z,official,fold-third
 2026|GA|H|9,2026-11-20,308639.0,-18.576071073325146,2026-11-20T15:50:56.8414116Z,official,fold-third
+2026|GA|H|9,2026-11-21,308639.0,-18.576071073325146,2026-11-20T15:50:56.8414116Z,official,fold-third
 2026|GA|H|9,2026-11-06,308412.0,-18.59849811291389,1384179081,wikipedia,two-party
 2026|GA|H|9,2026-11-07,308412.0,-18.59849811291389,1384179081,wikipedia,two-party
 2026|GA|H|9,2026-11-08,308412.0,-18.59849811291389,1384179081,wikipedia,two-party
@@ -1072,6 +1162,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|GA|H|9,2026-11-18,308412.0,-18.59849811291389,1386045029,wikipedia,fold-third
 2026|GA|H|9,2026-11-19,308412.0,-18.59849811291389,1386045029,wikipedia,fold-third
 2026|GA|H|9,2026-11-20,308412.0,-18.59849811291389,1386045029,wikipedia,fold-third
+2026|GA|H|9,2026-11-21,308412.0,-18.59849811291389,1386045029,wikipedia,fold-third
 2026|IA|H|1,2026-11-04,345826.0,9.5909176938537,11/4/2026 6:42:20 AM CST,official,fold-third
 2026|IA|H|1,2026-11-05,345826.0,9.5909176938537,11/4/2026 12:25:40 PM CST,official,fold-third
 2026|IA|H|1,2026-11-06,345826.0,9.5909176938537,11/4/2026 12:25:40 PM CST,official,fold-third
@@ -1082,6 +1173,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|IA|H|1,2026-11-15,347388.0,9.94458137276869,11/13/2026 4:23:11 PM CST,official,fold-third
 2026|IA|H|1,2026-11-16,347388.0,9.94458137276869,11/13/2026 4:23:11 PM CST,official,fold-third
 2026|IA|H|1,2026-11-17,347394.0,9.945598107136776,11/16/2026 8:58:15 AM CST,official,fold-third
+2026|IA|H|1,2026-11-21,347394.0,9.945598107136776,11/20/2026 2:47:00 PM CST,official,fold-third
 2026|IA|H|1,2026-11-09,345470.0,9.5909176938537,1384656659,wikipedia,two-party
 2026|IA|H|1,2026-11-10,345470.0,9.5909176938537,1384656659,wikipedia,two-party
 2026|IA|H|1,2026-11-15,345470.0,9.5909176938537,1385722498,wikipedia,two-party
@@ -1090,6 +1182,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|IA|H|1,2026-11-18,345470.0,9.5909176938537,1386336043,wikipedia,fold-third
 2026|IA|H|1,2026-11-19,345470.0,9.5909176938537,1386336043,wikipedia,fold-third
 2026|IA|H|1,2026-11-20,345470.0,9.5909176938537,1386336043,wikipedia,fold-third
+2026|IA|H|1,2026-11-21,347726.0,9.91374936580416,1386930356,wikipedia,fold-third
 2026|IA|H|2,2026-11-04,346401.0,4.180361232784335,11/4/2026 6:42:20 AM CST,official,fold-third
 2026|IA|H|2,2026-11-05,346401.0,4.180361232784335,11/4/2026 12:25:40 PM CST,official,fold-third
 2026|IA|H|2,2026-11-06,346401.0,4.180361232784335,11/4/2026 12:25:40 PM CST,official,fold-third
@@ -1099,7 +1192,8 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|IA|H|2,2026-11-10,346401.0,4.180361232784335,11/4/2026 12:25:40 PM CST,official,fold-third
 2026|IA|H|2,2026-11-15,346560.0,4.190653161359276,11/13/2026 4:23:11 PM CST,official,fold-third
 2026|IA|H|2,2026-11-16,346560.0,4.190653161359276,11/13/2026 4:23:11 PM CST,official,fold-third
-2026|IA|H|2,2026-11-17,346560.0,4.1906531613592755,11/16/2026 8:58:15 AM CST,official,fold-third
+2026|IA|H|2,2026-11-17,346560.0,4.190653161359276,11/16/2026 8:58:15 AM CST,official,fold-third
+2026|IA|H|2,2026-11-21,346560.0,4.1906531613592755,11/20/2026 2:47:00 PM CST,official,fold-third
 2026|IA|H|2,2026-11-09,336704.0,4.188510299665284,1384656659,wikipedia,two-party
 2026|IA|H|2,2026-11-10,336704.0,4.188510299665284,1384656659,wikipedia,two-party
 2026|IA|H|2,2026-11-15,336704.0,4.188510299665284,1385722498,wikipedia,two-party
@@ -1108,6 +1202,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|IA|H|2,2026-11-18,336704.0,4.188510299665284,1386336043,wikipedia,fold-third
 2026|IA|H|2,2026-11-19,336704.0,4.188510299665284,1386336043,wikipedia,fold-third
 2026|IA|H|2,2026-11-20,336704.0,4.188510299665284,1386336043,wikipedia,fold-third
+2026|IA|H|2,2026-11-21,346359.0,4.199139587767209,1386930356,wikipedia,fold-third
 2026|IA|H|3,2026-11-04,353527.0,7.309064305928123,11/4/2026 6:42:20 AM CST,official,fold-third
 2026|IA|H|3,2026-11-05,353527.0,7.309064305928123,11/4/2026 12:25:40 PM CST,official,fold-third
 2026|IA|H|3,2026-11-06,353527.0,7.309064305928123,11/4/2026 12:25:40 PM CST,official,fold-third
@@ -1118,6 +1213,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|IA|H|3,2026-11-15,353991.0,7.291530972298526,11/13/2026 4:23:11 PM CST,official,fold-third
 2026|IA|H|3,2026-11-16,353991.0,7.291530972298526,11/13/2026 4:23:11 PM CST,official,fold-third
 2026|IA|H|3,2026-11-17,353991.0,7.291530972298526,11/16/2026 8:58:15 AM CST,official,fold-third
+2026|IA|H|3,2026-11-21,353991.0,7.291530972298526,11/20/2026 2:47:00 PM CST,official,fold-third
 2026|IA|H|3,2026-11-09,352980.0,7.285965210493512,1384656659,wikipedia,two-party
 2026|IA|H|3,2026-11-10,352980.0,7.285965210493512,1384656659,wikipedia,two-party
 2026|IA|H|3,2026-11-15,352980.0,7.285965210493512,1385722498,wikipedia,two-party
@@ -1126,6 +1222,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|IA|H|3,2026-11-18,352980.0,7.285965210493512,1386336043,wikipedia,fold-third
 2026|IA|H|3,2026-11-19,352980.0,7.285965210493512,1386336043,wikipedia,fold-third
 2026|IA|H|3,2026-11-20,352980.0,7.285965210493512,1386336043,wikipedia,fold-third
+2026|IA|H|3,2026-11-21,353122.0,7.291530972298526,1386930356,wikipedia,fold-third
 2026|IA|H|4,2026-11-04,303137.0,-18.13332892976865,11/4/2026 6:42:20 AM CST,official,fold-third
 2026|IA|H|4,2026-11-05,303137.0,-18.13332892976865,11/4/2026 12:25:40 PM CST,official,fold-third
 2026|IA|H|4,2026-11-06,303137.0,-18.13332892976865,11/4/2026 12:25:40 PM CST,official,fold-third
@@ -1135,7 +1232,8 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|IA|H|4,2026-11-10,303137.0,-18.13332892976865,11/4/2026 12:25:40 PM CST,official,fold-third
 2026|IA|H|4,2026-11-15,303489.0,-18.090845202862543,11/13/2026 4:23:11 PM CST,official,fold-third
 2026|IA|H|4,2026-11-16,303489.0,-18.090845202862543,11/13/2026 4:23:11 PM CST,official,fold-third
-2026|IA|H|4,2026-11-17,303489.0,-18.090845202862546,11/16/2026 8:58:15 AM CST,official,fold-third
+2026|IA|H|4,2026-11-17,303489.0,-18.090845202862543,11/16/2026 8:58:15 AM CST,official,fold-third
+2026|IA|H|4,2026-11-21,303490.0,-18.091115451618013,11/20/2026 2:47:00 PM CST,official,fold-third
 2026|IA|H|4,2026-11-09,302785.0,-18.13332892976865,1384656659,wikipedia,two-party
 2026|IA|H|4,2026-11-10,302785.0,-18.13332892976865,1384656659,wikipedia,two-party
 2026|IA|H|4,2026-11-15,302785.0,-18.13332892976865,1385722498,wikipedia,two-party
@@ -1144,6 +1242,9 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|IA|H|4,2026-11-18,302785.0,-18.13332892976865,1386336043,wikipedia,fold-third
 2026|IA|H|4,2026-11-19,302785.0,-18.13332892976865,1386336043,wikipedia,fold-third
 2026|IA|H|4,2026-11-20,302785.0,-18.13332892976865,1386336043,wikipedia,fold-third
+2026|IA|H|4,2026-11-21,303087.0,-18.090845202862543,1386930356,wikipedia,fold-third
+2026|ID|H|1,2026-11-21,381356.0,-37.93517440795426,1386928801,wikipedia,fold-third
+2026|ID|H|2,2026-11-21,330667.0,-12.40428387232587,1386928801,wikipedia,fold-third
 2026|IN|H|1,2026-11-08,225681.0,26.030104439452145,1384546089,wikipedia,two-party
 2026|IN|H|1,2026-11-09,225681.0,26.030104439452145,1384621985,wikipedia,two-party
 2026|IN|H|1,2026-11-10,225681.0,26.030104439452145,1384771695,wikipedia,two-party
@@ -1153,6 +1254,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|IN|H|1,2026-11-18,225681.0,26.030104439452145,1386334840,wikipedia,fold-third
 2026|IN|H|1,2026-11-19,225681.0,26.030104439452145,1386334840,wikipedia,fold-third
 2026|IN|H|1,2026-11-20,225681.0,26.030104439452145,1386334840,wikipedia,fold-third
+2026|IN|H|1,2026-11-21,225681.0,26.030104439452145,1386334840,wikipedia,fold-third
 2026|IN|H|3,2026-11-08,199872.0,-9.762247838616714,1384546089,wikipedia,two-party
 2026|IN|H|3,2026-11-09,199872.0,-9.762247838616714,1384621985,wikipedia,two-party
 2026|IN|H|3,2026-11-10,199872.0,-9.762247838616714,1384771695,wikipedia,two-party
@@ -1162,6 +1264,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|IN|H|3,2026-11-18,199872.0,-9.762247838616714,1386334840,wikipedia,fold-third
 2026|IN|H|3,2026-11-19,199872.0,-9.762247838616714,1386334840,wikipedia,fold-third
 2026|IN|H|3,2026-11-20,199872.0,-9.762247838616714,1386334840,wikipedia,fold-third
+2026|IN|H|3,2026-11-21,199872.0,-9.762247838616714,1386334840,wikipedia,fold-third
 2026|IN|H|4,2026-11-08,212156.0,-8.423989894228775,1384546089,wikipedia,two-party
 2026|IN|H|4,2026-11-09,212156.0,-8.423989894228775,1384621985,wikipedia,two-party
 2026|IN|H|4,2026-11-10,212156.0,-8.423989894228775,1384771695,wikipedia,two-party
@@ -1171,6 +1274,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|IN|H|4,2026-11-18,212156.0,-8.423989894228775,1386334840,wikipedia,fold-third
 2026|IN|H|4,2026-11-19,212156.0,-8.423989894228775,1386334840,wikipedia,fold-third
 2026|IN|H|4,2026-11-20,212156.0,-8.423989894228775,1386334840,wikipedia,fold-third
+2026|IN|H|4,2026-11-21,212156.0,-8.423989894228775,1386334840,wikipedia,fold-third
 2026|IN|H|5,2026-11-08,260327.0,3.313140780633588,1384546089,wikipedia,two-party
 2026|IN|H|5,2026-11-09,260327.0,3.313140780633588,1384621985,wikipedia,two-party
 2026|IN|H|5,2026-11-10,260327.0,3.313140780633588,1384771695,wikipedia,two-party
@@ -1180,6 +1284,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|IN|H|5,2026-11-18,260327.0,3.313140780633588,1386334840,wikipedia,fold-third
 2026|IN|H|5,2026-11-19,260327.0,3.313140780633588,1386334840,wikipedia,fold-third
 2026|IN|H|5,2026-11-20,260327.0,3.313140780633588,1386334840,wikipedia,fold-third
+2026|IN|H|5,2026-11-21,260327.0,3.313140780633588,1386334840,wikipedia,fold-third
 2026|IN|H|6,2026-11-08,201692.0,-10.183844674057474,1384546089,wikipedia,two-party
 2026|IN|H|6,2026-11-09,201692.0,-10.183844674057474,1384621985,wikipedia,two-party
 2026|IN|H|6,2026-11-10,201692.0,-10.183844674057474,1384771695,wikipedia,two-party
@@ -1189,6 +1294,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|IN|H|6,2026-11-18,201692.0,-10.183844674057474,1386334840,wikipedia,fold-third
 2026|IN|H|6,2026-11-19,201692.0,-10.183844674057474,1386334840,wikipedia,fold-third
 2026|IN|H|6,2026-11-20,201692.0,-10.183844674057474,1386334840,wikipedia,fold-third
+2026|IN|H|6,2026-11-21,201692.0,-10.183844674057474,1386334840,wikipedia,fold-third
 2026|IN|H|7,2026-11-08,206871.0,58.08935601904488,1384546089,wikipedia,two-party
 2026|IN|H|7,2026-11-09,206871.0,58.08935601904488,1384621985,wikipedia,two-party
 2026|IN|H|7,2026-11-10,206871.0,58.08935601904488,1384771695,wikipedia,two-party
@@ -1198,6 +1304,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|IN|H|7,2026-11-18,206871.0,58.08935601904488,1386334840,wikipedia,fold-third
 2026|IN|H|7,2026-11-19,206871.0,58.08935601904488,1386334840,wikipedia,fold-third
 2026|IN|H|7,2026-11-20,206871.0,58.08935601904488,1386334840,wikipedia,fold-third
+2026|IN|H|7,2026-11-21,206871.0,58.08935601904488,1386334840,wikipedia,fold-third
 2026|IN|H|8,2026-11-08,212984.0,-10.493746009089884,1384546089,wikipedia,two-party
 2026|IN|H|8,2026-11-09,212984.0,-10.493746009089884,1384621985,wikipedia,two-party
 2026|IN|H|8,2026-11-10,212984.0,-10.493746009089884,1384771695,wikipedia,two-party
@@ -1207,6 +1314,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|IN|H|8,2026-11-18,212984.0,-10.493746009089884,1386334840,wikipedia,fold-third
 2026|IN|H|8,2026-11-19,212984.0,-10.493746009089884,1386334840,wikipedia,fold-third
 2026|IN|H|8,2026-11-20,212984.0,-10.493746009089884,1386334840,wikipedia,fold-third
+2026|IN|H|8,2026-11-21,212984.0,-10.493746009089884,1386334840,wikipedia,fold-third
 2026|IN|H|9,2026-11-08,226336.0,-10.799525375216254,1384546089,wikipedia,two-party
 2026|IN|H|9,2026-11-09,226336.0,-10.799525375216254,1384621985,wikipedia,two-party
 2026|IN|H|9,2026-11-10,226336.0,-10.799525375216254,1384771695,wikipedia,two-party
@@ -1216,6 +1324,11 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|IN|H|9,2026-11-18,226336.0,-10.799525375216254,1386334840,wikipedia,fold-third
 2026|IN|H|9,2026-11-19,226336.0,-10.799525375216254,1386334840,wikipedia,fold-third
 2026|IN|H|9,2026-11-20,226336.0,-10.799525375216254,1386334840,wikipedia,fold-third
+2026|IN|H|9,2026-11-21,226336.0,-10.799525375216254,1386334840,wikipedia,fold-third
+2026|KS|H|1,2026-11-21,256411.0,-21.72006109857156,1386932288,wikipedia,fold-third
+2026|KS|H|2,2026-11-21,248684.0,-6.08074222668004,1386932288,wikipedia,fold-third
+2026|KS|H|3,2026-11-21,343130.0,21.78524240873219,1386932288,wikipedia,fold-third
+2026|KS|H|4,2026-11-21,264906.0,-9.28646846561133,1386932288,wikipedia,fold-third
 2026|KY|H|1,2026-11-04,227902.0,-35.13878772454827,1383691309,wikipedia,two-party
 2026|KY|H|1,2026-11-05,229170.0,-35.19221538595802,1383915507,wikipedia,two-party
 2026|KY|H|1,2026-11-06,229170.0,-35.19221538595802,1383915507,wikipedia,two-party
@@ -1229,6 +1342,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|KY|H|1,2026-11-18,229170.0,-35.19221538595802,1386338152,wikipedia,fold-third
 2026|KY|H|1,2026-11-19,229170.0,-35.19221538595802,1386338152,wikipedia,fold-third
 2026|KY|H|1,2026-11-20,229170.0,-35.19221538595802,1386338152,wikipedia,fold-third
+2026|KY|H|1,2026-11-21,229170.0,-35.19221538595802,1386338152,wikipedia,fold-third
 2026|KY|H|2,2026-11-04,231057.0,-28.299668508287294,1383691309,wikipedia,two-party
 2026|KY|H|2,2026-11-05,231058.0,-28.29910144043562,1383915507,wikipedia,two-party
 2026|KY|H|2,2026-11-06,231058.0,-28.29910144043562,1383915507,wikipedia,two-party
@@ -1242,6 +1356,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|KY|H|2,2026-11-18,231058.0,-28.29910144043562,1386338152,wikipedia,fold-third
 2026|KY|H|2,2026-11-19,231058.0,-28.29910144043562,1386338152,wikipedia,fold-third
 2026|KY|H|2,2026-11-20,231058.0,-28.29910144043562,1386338152,wikipedia,fold-third
+2026|KY|H|2,2026-11-21,231058.0,-28.29910144043562,1386338152,wikipedia,fold-third
 2026|KY|H|3,2026-11-04,248492.0,40.66851246720216,1383691309,wikipedia,two-party
 2026|KY|H|3,2026-11-05,248500.0,40.66881287726358,1383915507,wikipedia,two-party
 2026|KY|H|3,2026-11-06,248500.0,40.66881287726358,1383915507,wikipedia,two-party
@@ -1255,6 +1370,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|KY|H|3,2026-11-18,248500.0,40.66881287726358,1386338152,wikipedia,fold-third
 2026|KY|H|3,2026-11-19,248500.0,40.66881287726358,1386338152,wikipedia,fold-third
 2026|KY|H|3,2026-11-20,248500.0,40.66881287726358,1386338152,wikipedia,fold-third
+2026|KY|H|3,2026-11-21,248500.0,40.66881287726358,1386338152,wikipedia,fold-third
 2026|KY|H|4,2026-11-04,253835.0,-14.050949713262836,1383691309,wikipedia,two-party
 2026|KY|H|4,2026-11-05,253835.0,-14.050949713262836,1383915507,wikipedia,two-party
 2026|KY|H|4,2026-11-06,253835.0,-14.050949713262836,1383915507,wikipedia,two-party
@@ -1268,6 +1384,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|KY|H|4,2026-11-18,253835.0,-14.050949713262836,1386338152,wikipedia,fold-third
 2026|KY|H|4,2026-11-19,253835.0,-14.050949713262836,1386338152,wikipedia,fold-third
 2026|KY|H|4,2026-11-20,253835.0,-14.050949713262836,1386338152,wikipedia,fold-third
+2026|KY|H|4,2026-11-21,253835.0,-14.050949713262836,1386338152,wikipedia,fold-third
 2026|KY|H|5,2026-11-04,196474.0,-47.46668213677332,1383691309,wikipedia,two-party
 2026|KY|H|5,2026-11-05,196474.0,-47.46668213677332,1383915507,wikipedia,two-party
 2026|KY|H|5,2026-11-06,196474.0,-47.46668213677332,1383915507,wikipedia,two-party
@@ -1281,6 +1398,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|KY|H|5,2026-11-18,196476.0,-47.46668213677332,1386338152,wikipedia,fold-third
 2026|KY|H|5,2026-11-19,196476.0,-47.46668213677332,1386338152,wikipedia,fold-third
 2026|KY|H|5,2026-11-20,196476.0,-47.46668213677332,1386338152,wikipedia,fold-third
+2026|KY|H|5,2026-11-21,196476.0,-47.46668213677332,1386338152,wikipedia,fold-third
 2026|KY|H|6,2026-11-04,263561.0,9.788890339270669,1383691309,wikipedia,two-party
 2026|KY|H|6,2026-11-05,263561.0,9.788890339270669,1383915507,wikipedia,two-party
 2026|KY|H|6,2026-11-06,263561.0,9.788890339270669,1383915507,wikipedia,two-party
@@ -1294,6 +1412,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|KY|H|6,2026-11-18,263561.0,9.788890339270669,1386338152,wikipedia,fold-third
 2026|KY|H|6,2026-11-19,263561.0,9.788890339270669,1386338152,wikipedia,fold-third
 2026|KY|H|6,2026-11-20,263561.0,9.788890339270669,1386338152,wikipedia,fold-third
+2026|KY|H|6,2026-11-21,263561.0,9.788890339270669,1386338152,wikipedia,fold-third
 2026|LA|H|1,2026-11-04,263373.0,-28.261898458996143,2026-11-04T05:00:19.380 (Louisiana time),official,fold-third
 2026|LA|H|1,2026-11-05,263373.0,-28.261898458996143,2026-11-05T05:00:31.140 (Louisiana time),official,fold-third
 2026|LA|H|1,2026-11-06,263375.0,-28.26247392908712,2026-11-06T15:01:30.853 (Louisiana time),official,fold-third
@@ -1307,10 +1426,12 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|LA|H|1,2026-11-18,263391.0,-28.257451791959443,2026-11-18T05:01:14.227 (Louisiana time),official,fold-third
 2026|LA|H|1,2026-11-19,263391.0,-28.257451791959443,2026-11-19T07:49:42.667 (Louisiana time),official,fold-third
 2026|LA|H|1,2026-11-20,263391.0,-28.257451791959443,2026-11-20T05:01:23.997 (Louisiana time),official,fold-third
+2026|LA|H|1,2026-11-21,263391.0,-28.257451791959443,2026-11-21T05:00:40.160 (Louisiana time),official,fold-third
 2026|LA|H|1,2026-11-17,263391.0,-28.257451791959443,1386270952,wikipedia,two-party
 2026|LA|H|1,2026-11-18,263391.0,-28.257451791959443,1386471147,wikipedia,fold-third
 2026|LA|H|1,2026-11-19,263391.0,-28.257451791959443,1386567040,wikipedia,fold-third
 2026|LA|H|1,2026-11-20,263391.0,-28.257451791959443,1386567040,wikipedia,fold-third
+2026|LA|H|1,2026-11-21,263391.0,-28.257451791959443,1386567040,wikipedia,fold-third
 2026|LA|H|2,2026-11-04,240582.0,68.18633132859486,2026-11-04T05:00:19.380 (Louisiana time),official,fold-third
 2026|LA|H|2,2026-11-05,240582.0,68.18633132859486,2026-11-05T05:00:31.140 (Louisiana time),official,fold-third
 2026|LA|H|2,2026-11-06,240582.0,68.18633132859486,2026-11-06T15:01:30.853 (Louisiana time),official,fold-third
@@ -1324,10 +1445,12 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|LA|H|2,2026-11-18,240616.0,68.18875598609259,2026-11-18T05:01:14.227 (Louisiana time),official,fold-third
 2026|LA|H|2,2026-11-19,240616.0,68.18875598609259,2026-11-19T07:49:42.667 (Louisiana time),official,fold-third
 2026|LA|H|2,2026-11-20,240616.0,68.18875598609259,2026-11-20T05:01:23.997 (Louisiana time),official,fold-third
+2026|LA|H|2,2026-11-21,240616.0,68.18875598609259,2026-11-21T05:00:40.160 (Louisiana time),official,fold-third
 2026|LA|H|2,2026-11-17,240616.0,68.18875598609259,1386270952,wikipedia,two-party
 2026|LA|H|2,2026-11-18,240616.0,68.18875598609259,1386471147,wikipedia,fold-third
 2026|LA|H|2,2026-11-19,240616.0,68.18875598609259,1386567040,wikipedia,fold-third
 2026|LA|H|2,2026-11-20,240616.0,68.18875598609259,1386567040,wikipedia,fold-third
+2026|LA|H|2,2026-11-21,240616.0,68.18875598609259,1386567040,wikipedia,fold-third
 2026|LA|H|3,2026-11-04,234994.0,-44.87483530961792,2026-11-04T05:00:19.380 (Louisiana time),official,fold-third
 2026|LA|H|3,2026-11-05,234994.0,-44.87483530961792,2026-11-05T05:00:31.140 (Louisiana time),official,fold-third
 2026|LA|H|3,2026-11-06,234995.0,-44.8740230761468,2026-11-06T15:01:30.853 (Louisiana time),official,fold-third
@@ -1341,10 +1464,12 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|LA|H|3,2026-11-18,234995.0,-44.8740230761468,2026-11-18T05:01:14.227 (Louisiana time),official,fold-third
 2026|LA|H|3,2026-11-19,234995.0,-44.8740230761468,2026-11-19T07:49:42.667 (Louisiana time),official,fold-third
 2026|LA|H|3,2026-11-20,234995.0,-44.8740230761468,2026-11-20T05:01:23.997 (Louisiana time),official,fold-third
+2026|LA|H|3,2026-11-21,234995.0,-44.8740230761468,2026-11-21T05:00:40.160 (Louisiana time),official,fold-third
 2026|LA|H|3,2026-11-17,234995.0,-44.8740230761468,1386270952,wikipedia,two-party
 2026|LA|H|3,2026-11-18,234995.0,-44.8740230761468,1386471147,wikipedia,fold-third
 2026|LA|H|3,2026-11-19,234995.0,-44.8740230761468,1386567040,wikipedia,fold-third
 2026|LA|H|3,2026-11-20,234995.0,-44.8740230761468,1386567040,wikipedia,fold-third
+2026|LA|H|3,2026-11-21,234995.0,-44.8740230761468,1386567040,wikipedia,fold-third
 2026|LA|H|4,2026-11-04,230339.0,-43.62049117421336,2026-11-04T05:00:19.380 (Louisiana time),official,fold-third
 2026|LA|H|4,2026-11-05,230339.0,-43.62049117421336,2026-11-05T05:00:31.140 (Louisiana time),official,fold-third
 2026|LA|H|4,2026-11-06,230352.0,-43.62059869006571,2026-11-06T15:01:30.853 (Louisiana time),official,fold-third
@@ -1357,39 +1482,48 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|LA|H|4,2026-11-17,230359.0,-43.6192039392696,2026-11-17T05:00:53.487 (Louisiana time),official,fold-third
 2026|LA|H|4,2026-11-18,230359.0,-43.6192039392696,2026-11-18T05:01:14.227 (Louisiana time),official,fold-third
 2026|LA|H|4,2026-11-19,230359.0,-43.6192039392696,2026-11-19T07:49:42.667 (Louisiana time),official,fold-third
-2026|LA|H|4,2026-11-20,230359.0,-43.619203939269596,2026-11-20T05:01:23.997 (Louisiana time),official,fold-third
+2026|LA|H|4,2026-11-20,230359.0,-43.6192039392696,2026-11-20T05:01:23.997 (Louisiana time),official,fold-third
+2026|LA|H|4,2026-11-21,230359.0,-43.619203939269596,2026-11-21T05:00:40.160 (Louisiana time),official,fold-third
 2026|LA|H|4,2026-11-17,230359.0,-43.6192039392696,1386270952,wikipedia,two-party
 2026|LA|H|4,2026-11-18,230359.0,-43.6192039392696,1386471147,wikipedia,fold-third
 2026|LA|H|4,2026-11-19,230359.0,-43.6192039392696,1386567040,wikipedia,fold-third
 2026|LA|H|4,2026-11-20,230359.0,-43.6192039392696,1386567040,wikipedia,fold-third
+2026|LA|H|4,2026-11-21,230359.0,-43.6192039392696,1386567040,wikipedia,fold-third
 2026|LA|H|5,2026-11-17,227988.0,2.083150875173596,1386270952,wikipedia,two-party
 2026|LA|H|5,2026-11-18,227988.0,2.083150875173596,1386471147,wikipedia,fold-third
 2026|LA|H|5,2026-11-19,227988.0,2.083150875173596,1386567040,wikipedia,fold-third
 2026|LA|H|5,2026-11-20,227988.0,2.083150875173596,1386567040,wikipedia,fold-third
+2026|LA|H|5,2026-11-21,227988.0,2.083150875173596,1386567040,wikipedia,fold-third
 2026|LA|H|6,2026-11-17,261963.0,0.6607580913191422,1386270952,wikipedia,two-party
 2026|LA|H|6,2026-11-18,261963.0,0.6607580913191422,1386471147,wikipedia,fold-third
 2026|LA|H|6,2026-11-19,261963.0,0.6607580913191422,1386567040,wikipedia,fold-third
 2026|LA|H|6,2026-11-20,261963.0,0.6607580913191422,1386567040,wikipedia,fold-third
+2026|LA|H|6,2026-11-21,261963.0,0.6607580913191422,1386567040,wikipedia,fold-third
 2026|MD|H|1,2026-11-15,317083.0,-4.4136462575148245,1385711739,wikipedia,two-party
 2026|MD|H|1,2026-11-16,317083.0,-4.4136462575148245,1386078469,wikipedia,two-party
 2026|MD|H|1,2026-11-17,317083.0,-4.4136462575148245,1386252348,wikipedia,two-party
 2026|MD|H|1,2026-11-18,317083.0,-4.4136462575148245,1386465301,wikipedia,fold-third
 2026|MD|H|1,2026-11-19,317083.0,-4.4136462575148245,1386631547,wikipedia,fold-third
 2026|MD|H|1,2026-11-20,317083.0,-4.4136462575148245,1386774327,wikipedia,fold-third
+2026|MD|H|1,2026-11-21,317083.0,-4.4136462575148245,1386933252,wikipedia,fold-third
 2026|MD|H|2,2026-11-17,291916.0,30.340696496919143,1386252348,wikipedia,two-party
 2026|MD|H|2,2026-11-18,291916.0,30.340696496919143,1386465301,wikipedia,fold-third
 2026|MD|H|2,2026-11-19,291920.0,30.34165296461954,1386631547,wikipedia,fold-third
 2026|MD|H|2,2026-11-20,291920.0,30.34165296461954,1386774327,wikipedia,fold-third
+2026|MD|H|2,2026-11-21,291920.0,30.34165296461954,1386933252,wikipedia,fold-third
 2026|MD|H|3,2026-11-16,313067.0,35.87699207175462,1386078469,wikipedia,two-party
 2026|MD|H|3,2026-11-17,313067.0,35.87699207175462,1386252348,wikipedia,two-party
 2026|MD|H|3,2026-11-18,313067.0,35.87699207175462,1386465301,wikipedia,fold-third
 2026|MD|H|3,2026-11-19,313067.0,35.87699207175462,1386631547,wikipedia,fold-third
 2026|MD|H|3,2026-11-20,313067.0,35.87699207175462,1386774327,wikipedia,fold-third
+2026|MD|H|3,2026-11-21,313067.0,35.87699207175462,1386933252,wikipedia,fold-third
 2026|MD|H|6,2026-11-20,278161.0,22.36984081664436,1386774327,wikipedia,fold-third
+2026|MD|H|6,2026-11-21,278186.0,22.375265560058285,1386933252,wikipedia,fold-third
 2026|MD|H|7,2026-11-17,219595.0,70.90882491439335,1386252348,wikipedia,two-party
 2026|MD|H|7,2026-11-18,219595.0,70.90882491439335,1386465301,wikipedia,fold-third
 2026|MD|H|7,2026-11-19,219664.0,70.91617078454493,1386631547,wikipedia,fold-third
 2026|MD|H|7,2026-11-20,219664.0,70.91617078454493,1386774327,wikipedia,fold-third
+2026|MD|H|7,2026-11-21,219664.0,70.91617078454493,1386933252,wikipedia,fold-third
 2026|MI|H|1,2026-11-05,403405.0,-9.758411093208142,1383944288,wikipedia,two-party
 2026|MI|H|1,2026-11-06,403405.0,-9.758411093208142,1384135040,wikipedia,two-party
 2026|MI|H|1,2026-11-07,403405.0,-9.758411093208142,1384135040,wikipedia,two-party
@@ -1402,6 +1536,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|MI|H|1,2026-11-18,403405.0,-9.758411093208142,1386397685,wikipedia,fold-third
 2026|MI|H|1,2026-11-19,403405.0,-9.758411093208142,1386637435,wikipedia,fold-third
 2026|MI|H|1,2026-11-20,404944.0,-9.733277897468849,1386802206,wikipedia,fold-third
+2026|MI|H|1,2026-11-21,404944.0,-9.733277897468849,1386828439,wikipedia,fold-third
 2026|MI|H|10,2026-11-05,358665.0,7.342798030962403,1383944288,wikipedia,two-party
 2026|MI|H|10,2026-11-06,358665.0,7.342798030962403,1384135040,wikipedia,two-party
 2026|MI|H|10,2026-11-07,358665.0,7.342798030962403,1384135040,wikipedia,two-party
@@ -1414,6 +1549,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|MI|H|10,2026-11-18,358665.0,7.342798030962403,1386397685,wikipedia,fold-third
 2026|MI|H|10,2026-11-19,358665.0,7.342798030962403,1386637435,wikipedia,fold-third
 2026|MI|H|10,2026-11-20,358835.0,7.3667877017687475,1386802206,wikipedia,fold-third
+2026|MI|H|10,2026-11-21,358835.0,7.3667877017687475,1386828439,wikipedia,fold-third
 2026|MI|H|11,2026-11-05,392301.0,24.582875659767428,1383944288,wikipedia,two-party
 2026|MI|H|11,2026-11-06,392301.0,24.582875659767428,1384135040,wikipedia,two-party
 2026|MI|H|11,2026-11-07,392301.0,24.582875659767428,1384135040,wikipedia,two-party
@@ -1426,6 +1562,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|MI|H|11,2026-11-18,392301.0,24.582875659767428,1386397685,wikipedia,fold-third
 2026|MI|H|11,2026-11-19,392301.0,24.582875659767428,1386637435,wikipedia,fold-third
 2026|MI|H|11,2026-11-20,392559.0,24.60947583326163,1386802206,wikipedia,fold-third
+2026|MI|H|11,2026-11-21,392559.0,24.60947583326163,1386828439,wikipedia,fold-third
 2026|MI|H|12,2026-11-05,325322.0,56.37444843347198,1383944288,wikipedia,two-party
 2026|MI|H|12,2026-11-06,325322.0,56.37444843347198,1384135040,wikipedia,two-party
 2026|MI|H|12,2026-11-07,325322.0,56.37444843347198,1384135040,wikipedia,two-party
@@ -1438,6 +1575,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|MI|H|12,2026-11-18,325322.0,56.37444843347198,1386397685,wikipedia,fold-third
 2026|MI|H|12,2026-11-19,325322.0,56.37444843347198,1386637435,wikipedia,fold-third
 2026|MI|H|12,2026-11-20,325745.0,56.35515849197273,1386802206,wikipedia,fold-third
+2026|MI|H|12,2026-11-21,325745.0,56.35515849197273,1386828439,wikipedia,fold-third
 2026|MI|H|13,2026-11-05,274324.0,58.78138641126317,1383944288,wikipedia,two-party
 2026|MI|H|13,2026-11-06,274324.0,58.78138641126317,1384135040,wikipedia,two-party
 2026|MI|H|13,2026-11-07,274324.0,58.78138641126317,1384135040,wikipedia,two-party
@@ -1450,6 +1588,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|MI|H|13,2026-11-18,274324.0,58.78138641126317,1386397685,wikipedia,fold-third
 2026|MI|H|13,2026-11-19,274324.0,58.78138641126317,1386637435,wikipedia,fold-third
 2026|MI|H|13,2026-11-20,274880.0,58.839695578642186,1386802206,wikipedia,fold-third
+2026|MI|H|13,2026-11-21,274923.0,58.839695578642186,1386828439,wikipedia,fold-third
 2026|MI|H|2,2026-11-05,357469.0,-24.89740704111676,1383944288,wikipedia,two-party
 2026|MI|H|2,2026-11-06,357469.0,-24.89740704111676,1384135040,wikipedia,two-party
 2026|MI|H|2,2026-11-07,357469.0,-24.89740704111676,1384135040,wikipedia,two-party
@@ -1462,6 +1601,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|MI|H|2,2026-11-18,357010.0,-24.8826184202289,1386397685,wikipedia,fold-third
 2026|MI|H|2,2026-11-19,357010.0,-24.8826184202289,1386637435,wikipedia,fold-third
 2026|MI|H|2,2026-11-20,359014.0,-24.90187922159874,1386802206,wikipedia,fold-third
+2026|MI|H|2,2026-11-21,359014.0,-24.90187922159874,1386828439,wikipedia,fold-third
 2026|MI|H|3,2026-11-05,369388.0,15.95197349807306,1383944288,wikipedia,two-party
 2026|MI|H|3,2026-11-06,369388.0,15.95197349807306,1384135040,wikipedia,two-party
 2026|MI|H|3,2026-11-07,369388.0,15.95197349807306,1384135040,wikipedia,two-party
@@ -1474,6 +1614,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|MI|H|3,2026-11-18,369388.0,15.95197349807306,1386397685,wikipedia,fold-third
 2026|MI|H|3,2026-11-19,369388.0,15.95197349807306,1386637435,wikipedia,fold-third
 2026|MI|H|3,2026-11-20,370255.0,16.00856099158425,1386802206,wikipedia,fold-third
+2026|MI|H|3,2026-11-21,370255.0,16.00856099158425,1386828439,wikipedia,fold-third
 2026|MI|H|4,2026-11-06,367662.0,1.7966354520593353,1384135040,wikipedia,two-party
 2026|MI|H|4,2026-11-07,367662.0,1.7966354520593353,1384135040,wikipedia,two-party
 2026|MI|H|4,2026-11-08,367662.0,1.7966354520593353,1384517308,wikipedia,two-party
@@ -1485,6 +1626,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|MI|H|4,2026-11-18,367662.0,1.7966354520593353,1386397685,wikipedia,fold-third
 2026|MI|H|4,2026-11-19,367662.0,1.7966354520593353,1386637435,wikipedia,fold-third
 2026|MI|H|4,2026-11-20,367778.0,1.809606128304471,1386802206,wikipedia,fold-third
+2026|MI|H|4,2026-11-21,367778.0,1.809606128304471,1386828439,wikipedia,fold-third
 2026|MI|H|5,2026-11-05,331983.0,-20.98220536578536,1383944288,wikipedia,two-party
 2026|MI|H|5,2026-11-06,331983.0,-20.98220536578536,1384135040,wikipedia,two-party
 2026|MI|H|5,2026-11-07,331983.0,-20.98220536578536,1384135040,wikipedia,two-party
@@ -1497,6 +1639,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|MI|H|5,2026-11-18,336990.0,-20.96181304493119,1386397685,wikipedia,fold-third
 2026|MI|H|5,2026-11-19,336990.0,-20.96181304493119,1386637435,wikipedia,fold-third
 2026|MI|H|5,2026-11-20,337486.0,-21.055377596583188,1386802206,wikipedia,fold-third
+2026|MI|H|5,2026-11-21,337486.0,-21.055377596583188,1386828439,wikipedia,fold-third
 2026|MI|H|6,2026-11-08,407161.0,37.98462466083811,1384517308,wikipedia,two-party
 2026|MI|H|6,2026-11-09,407161.0,37.98462466083811,1384517308,wikipedia,two-party
 2026|MI|H|6,2026-11-10,407161.0,37.98462466083811,1384517308,wikipedia,two-party
@@ -1506,6 +1649,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|MI|H|6,2026-11-18,407161.0,37.98462466083811,1386397685,wikipedia,fold-third
 2026|MI|H|6,2026-11-19,407161.0,37.98462466083811,1386637435,wikipedia,fold-third
 2026|MI|H|6,2026-11-20,407441.0,38.018975217732965,1386802206,wikipedia,fold-third
+2026|MI|H|6,2026-11-21,407452.0,38.018975217732965,1386828439,wikipedia,fold-third
 2026|MI|H|7,2026-11-05,397113.0,3.359778037889626,1383944288,wikipedia,two-party
 2026|MI|H|7,2026-11-06,397113.0,3.359778037889626,1384135040,wikipedia,two-party
 2026|MI|H|7,2026-11-07,397113.0,3.359778037889626,1384135040,wikipedia,two-party
@@ -1518,6 +1662,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|MI|H|7,2026-11-18,397113.0,3.359778037889626,1386397685,wikipedia,fold-third
 2026|MI|H|7,2026-11-19,397113.0,3.359778037889626,1386637435,wikipedia,fold-third
 2026|MI|H|7,2026-11-20,397273.0,3.390262554167729,1386802206,wikipedia,fold-third
+2026|MI|H|7,2026-11-21,397273.0,3.390262554167729,1386828439,wikipedia,fold-third
 2026|MI|H|8,2026-11-05,352770.0,13.96508583066628,1383944288,wikipedia,two-party
 2026|MI|H|8,2026-11-06,352770.0,13.96508583066628,1384135040,wikipedia,two-party
 2026|MI|H|8,2026-11-07,352770.0,13.96508583066628,1384135040,wikipedia,two-party
@@ -1530,6 +1675,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|MI|H|8,2026-11-18,352770.0,13.96508583066628,1386397685,wikipedia,fold-third
 2026|MI|H|8,2026-11-19,352770.0,13.96508583066628,1386637435,wikipedia,fold-third
 2026|MI|H|8,2026-11-20,352927.0,13.970464208646693,1386802206,wikipedia,fold-third
+2026|MI|H|8,2026-11-21,352927.0,13.970464208646693,1386828439,wikipedia,fold-third
 2026|MI|H|9,2026-11-05,395590.0,-28.70534833234656,1383944288,wikipedia,two-party
 2026|MI|H|9,2026-11-06,395590.0,-28.70534833234656,1384135040,wikipedia,two-party
 2026|MI|H|9,2026-11-07,395590.0,-28.70534833234656,1384135040,wikipedia,two-party
@@ -1542,12 +1688,14 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|MI|H|9,2026-11-18,395590.0,-28.70534833234656,1386397685,wikipedia,fold-third
 2026|MI|H|9,2026-11-19,395590.0,-28.70534833234656,1386637435,wikipedia,fold-third
 2026|MI|H|9,2026-11-20,395697.0,-28.6858050748454,1386802206,wikipedia,fold-third
+2026|MI|H|9,2026-11-21,395697.0,-28.6858050748454,1386828439,wikipedia,fold-third
 2026|MN|H|1,2026-11-15,326179.0,0.0988372806855992,"Fri, 13 Nov 2026 19:38:19 GMT",official,fold-third
 2026|MN|H|1,2026-11-16,326179.0,0.0988372806855992,"Fri, 13 Nov 2026 19:38:19 GMT",official,fold-third
 2026|MN|H|1,2026-11-17,326179.0,0.0988372806855992,"Fri, 13 Nov 2026 19:38:19 GMT",official,fold-third
 2026|MN|H|1,2026-11-18,326179.0,0.0988372806855992,"Fri, 13 Nov 2026 19:38:19 GMT",official,fold-third
 2026|MN|H|1,2026-11-19,326197.0,0.0994456823999558,"Thu, 19 Nov 2026 20:38:17 GMT",official,fold-third
 2026|MN|H|1,2026-11-20,326197.0,0.0994456823999558,"Thu, 19 Nov 2026 20:38:17 GMT",official,fold-third
+2026|MN|H|1,2026-11-21,326197.0,0.0994456823999558,"Thu, 19 Nov 2026 20:38:17 GMT",official,fold-third
 2026|MN|H|1,2026-11-05,326180.0,0.0991439244418933,1383981309,wikipedia,two-party
 2026|MN|H|1,2026-11-06,326180.0,0.0991439244418933,1384138071,wikipedia,two-party
 2026|MN|H|1,2026-11-07,326180.0,0.0991439244418933,1384138071,wikipedia,two-party
@@ -1560,12 +1708,14 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|MN|H|1,2026-11-18,326179.0,0.0988372806855992,1386435452,wikipedia,fold-third
 2026|MN|H|1,2026-11-19,326179.0,0.0988372806855992,1386435452,wikipedia,fold-third
 2026|MN|H|1,2026-11-20,326179.0,0.0988372806855992,1386435452,wikipedia,fold-third
+2026|MN|H|1,2026-11-21,326179.0,0.0988372806855992,1386810376,wikipedia,fold-third
 2026|MN|H|2,2026-11-15,375241.0,14.305984898393554,"Fri, 13 Nov 2026 19:38:19 GMT",official,fold-third
 2026|MN|H|2,2026-11-16,375241.0,14.305984898393554,"Fri, 13 Nov 2026 19:38:19 GMT",official,fold-third
 2026|MN|H|2,2026-11-17,375241.0,14.305984898393554,"Fri, 13 Nov 2026 19:38:19 GMT",official,fold-third
 2026|MN|H|2,2026-11-18,375241.0,14.305984898393554,"Fri, 13 Nov 2026 19:38:19 GMT",official,fold-third
 2026|MN|H|2,2026-11-19,375243.0,14.305680023897922,"Thu, 19 Nov 2026 20:38:17 GMT",official,fold-third
 2026|MN|H|2,2026-11-20,375243.0,14.305680023897922,"Thu, 19 Nov 2026 20:38:17 GMT",official,fold-third
+2026|MN|H|2,2026-11-21,375243.0,14.305680023897922,"Thu, 19 Nov 2026 20:38:17 GMT",official,fold-third
 2026|MN|H|2,2026-11-05,375226.0,14.302557276648413,1383981309,wikipedia,two-party
 2026|MN|H|2,2026-11-06,375226.0,14.302557276648413,1384138071,wikipedia,two-party
 2026|MN|H|2,2026-11-07,375226.0,14.302557276648413,1384138071,wikipedia,two-party
@@ -1578,12 +1728,14 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|MN|H|2,2026-11-18,375226.0,14.302557276648413,1386435452,wikipedia,fold-third
 2026|MN|H|2,2026-11-19,375226.0,14.302557276648413,1386435452,wikipedia,fold-third
 2026|MN|H|2,2026-11-20,375226.0,14.302557276648413,1386435452,wikipedia,fold-third
+2026|MN|H|2,2026-11-21,375226.0,14.302557276648413,1386810376,wikipedia,fold-third
 2026|MN|H|3,2026-11-15,377996.0,28.22558218987613,"Fri, 13 Nov 2026 19:38:19 GMT",official,fold-third
 2026|MN|H|3,2026-11-16,377996.0,28.22558218987613,"Fri, 13 Nov 2026 19:38:19 GMT",official,fold-third
 2026|MN|H|3,2026-11-17,377996.0,28.22558218987613,"Fri, 13 Nov 2026 19:38:19 GMT",official,fold-third
 2026|MN|H|3,2026-11-18,377996.0,28.22558218987613,"Fri, 13 Nov 2026 19:38:19 GMT",official,fold-third
 2026|MN|H|3,2026-11-19,378010.0,28.224725766555967,"Thu, 19 Nov 2026 20:38:17 GMT",official,fold-third
 2026|MN|H|3,2026-11-20,378010.0,28.224725766555967,"Thu, 19 Nov 2026 20:38:17 GMT",official,fold-third
+2026|MN|H|3,2026-11-21,378010.0,28.224725766555967,"Thu, 19 Nov 2026 20:38:17 GMT",official,fold-third
 2026|MN|H|3,2026-11-05,377997.0,28.22524259502521,1383981309,wikipedia,two-party
 2026|MN|H|3,2026-11-06,377997.0,28.22524259502521,1384138071,wikipedia,two-party
 2026|MN|H|3,2026-11-07,377997.0,28.22524259502521,1384138071,wikipedia,two-party
@@ -1596,12 +1748,14 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|MN|H|3,2026-11-18,377997.0,28.22524259502521,1386435452,wikipedia,fold-third
 2026|MN|H|3,2026-11-19,377997.0,28.22524259502521,1386435452,wikipedia,fold-third
 2026|MN|H|3,2026-11-20,377997.0,28.22524259502521,1386435452,wikipedia,fold-third
+2026|MN|H|3,2026-11-21,377997.0,28.22524259502521,1386810376,wikipedia,fold-third
 2026|MN|H|4,2026-11-15,336243.0,46.35132800819618,"Fri, 13 Nov 2026 19:38:19 GMT",official,fold-third
 2026|MN|H|4,2026-11-16,336243.0,46.35132800819618,"Fri, 13 Nov 2026 19:38:19 GMT",official,fold-third
 2026|MN|H|4,2026-11-17,336243.0,46.35132800819618,"Fri, 13 Nov 2026 19:38:19 GMT",official,fold-third
 2026|MN|H|4,2026-11-18,336243.0,46.35132800819618,"Fri, 13 Nov 2026 19:38:19 GMT",official,fold-third
 2026|MN|H|4,2026-11-19,336244.0,46.35148778766228,"Thu, 19 Nov 2026 20:38:17 GMT",official,fold-third
 2026|MN|H|4,2026-11-20,336244.0,46.35148778766228,"Thu, 19 Nov 2026 20:38:17 GMT",official,fold-third
+2026|MN|H|4,2026-11-21,336244.0,46.35148778766228,"Thu, 19 Nov 2026 20:38:17 GMT",official,fold-third
 2026|MN|H|4,2026-11-05,336244.0,46.35089213651133,1383981309,wikipedia,two-party
 2026|MN|H|4,2026-11-06,336244.0,46.35089213651133,1384138071,wikipedia,two-party
 2026|MN|H|4,2026-11-07,336244.0,46.35089213651133,1384138071,wikipedia,two-party
@@ -1614,12 +1768,14 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|MN|H|4,2026-11-18,336244.0,46.35089213651133,1386435452,wikipedia,fold-third
 2026|MN|H|4,2026-11-19,336244.0,46.35089213651133,1386435452,wikipedia,fold-third
 2026|MN|H|4,2026-11-20,336244.0,46.35089213651133,1386435452,wikipedia,fold-third
+2026|MN|H|4,2026-11-21,336244.0,46.35089213651133,1386810376,wikipedia,fold-third
 2026|MN|H|5,2026-11-15,344517.0,65.02174750349933,"Fri, 13 Nov 2026 19:38:19 GMT",official,fold-third
 2026|MN|H|5,2026-11-16,344517.0,65.02174750349933,"Fri, 13 Nov 2026 19:38:19 GMT",official,fold-third
 2026|MN|H|5,2026-11-17,344517.0,65.02174750349933,"Fri, 13 Nov 2026 19:38:19 GMT",official,fold-third
 2026|MN|H|5,2026-11-18,344517.0,65.02174750349933,"Fri, 13 Nov 2026 19:38:19 GMT",official,fold-third
 2026|MN|H|5,2026-11-19,344522.0,65.02218562021099,"Thu, 19 Nov 2026 20:38:17 GMT",official,fold-third
 2026|MN|H|5,2026-11-20,344522.0,65.02218562021099,"Thu, 19 Nov 2026 20:38:17 GMT",official,fold-third
+2026|MN|H|5,2026-11-21,344522.0,65.02218562021099,"Thu, 19 Nov 2026 20:38:17 GMT",official,fold-third
 2026|MN|H|5,2026-11-05,343508.0,64.97910301538307,1383981309,wikipedia,two-party
 2026|MN|H|5,2026-11-06,343508.0,64.97910301538307,1384138071,wikipedia,two-party
 2026|MN|H|5,2026-11-07,343508.0,64.97910301538307,1384138071,wikipedia,two-party
@@ -1632,12 +1788,14 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|MN|H|5,2026-11-18,343508.0,64.97910301538307,1386435452,wikipedia,fold-third
 2026|MN|H|5,2026-11-19,343508.0,64.97910301538307,1386435452,wikipedia,fold-third
 2026|MN|H|5,2026-11-20,343508.0,64.97910301538307,1386435452,wikipedia,fold-third
+2026|MN|H|5,2026-11-21,343508.0,64.97910301538307,1386810376,wikipedia,fold-third
 2026|MN|H|6,2026-11-15,367341.0,-11.580370332012404,"Fri, 13 Nov 2026 19:38:19 GMT",official,fold-third
 2026|MN|H|6,2026-11-16,367341.0,-11.580370332012404,"Fri, 13 Nov 2026 19:38:19 GMT",official,fold-third
 2026|MN|H|6,2026-11-17,367341.0,-11.580370332012404,"Fri, 13 Nov 2026 19:38:19 GMT",official,fold-third
 2026|MN|H|6,2026-11-18,367341.0,-11.580370332012404,"Fri, 13 Nov 2026 19:38:19 GMT",official,fold-third
 2026|MN|H|6,2026-11-19,367358.0,-11.579624396000316,"Thu, 19 Nov 2026 20:38:17 GMT",official,fold-third
 2026|MN|H|6,2026-11-20,367358.0,-11.579624396000316,"Thu, 19 Nov 2026 20:38:17 GMT",official,fold-third
+2026|MN|H|6,2026-11-21,367358.0,-11.579624396000316,"Thu, 19 Nov 2026 20:38:17 GMT",official,fold-third
 2026|MN|H|6,2026-11-05,367346.0,-11.58103014561797,1383981309,wikipedia,two-party
 2026|MN|H|6,2026-11-06,367346.0,-11.58103014561797,1384138071,wikipedia,two-party
 2026|MN|H|6,2026-11-07,367346.0,-11.58103014561797,1384138071,wikipedia,two-party
@@ -1650,12 +1808,14 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|MN|H|6,2026-11-18,367346.0,-11.58103014561797,1386435452,wikipedia,fold-third
 2026|MN|H|6,2026-11-19,367346.0,-11.58103014561797,1386435452,wikipedia,fold-third
 2026|MN|H|6,2026-11-20,367346.0,-11.58103014561797,1386435452,wikipedia,fold-third
+2026|MN|H|6,2026-11-21,367346.0,-11.58103014561797,1386810376,wikipedia,fold-third
 2026|MN|H|7,2026-11-15,330858.0,-29.89628966285064,"Fri, 13 Nov 2026 19:38:19 GMT",official,fold-third
 2026|MN|H|7,2026-11-16,330858.0,-29.89628966285064,"Fri, 13 Nov 2026 19:38:19 GMT",official,fold-third
 2026|MN|H|7,2026-11-17,330858.0,-29.89628966285064,"Fri, 13 Nov 2026 19:38:19 GMT",official,fold-third
 2026|MN|H|7,2026-11-18,330858.0,-29.89628966285064,"Fri, 13 Nov 2026 19:38:19 GMT",official,fold-third
 2026|MN|H|7,2026-11-19,330882.0,-29.89532913843175,"Thu, 19 Nov 2026 20:38:17 GMT",official,fold-third
 2026|MN|H|7,2026-11-20,330882.0,-29.89532913843175,"Thu, 19 Nov 2026 20:38:17 GMT",official,fold-third
+2026|MN|H|7,2026-11-21,330882.0,-29.89532913843175,"Thu, 19 Nov 2026 20:38:17 GMT",official,fold-third
 2026|MN|H|7,2026-11-05,330873.0,-29.8805962919457,1383981309,wikipedia,two-party
 2026|MN|H|7,2026-11-06,330873.0,-29.8805962919457,1384138071,wikipedia,two-party
 2026|MN|H|7,2026-11-07,330873.0,-29.8805962919457,1384138071,wikipedia,two-party
@@ -1668,12 +1828,14 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|MN|H|7,2026-11-18,330873.0,-29.8805962919457,1386435452,wikipedia,fold-third
 2026|MN|H|7,2026-11-19,330873.0,-29.8805962919457,1386435452,wikipedia,fold-third
 2026|MN|H|7,2026-11-20,330873.0,-29.8805962919457,1386435452,wikipedia,fold-third
+2026|MN|H|7,2026-11-21,330873.0,-29.8805962919457,1386810376,wikipedia,fold-third
 2026|MN|H|8,2026-11-15,359453.0,-6.193364411546837,"Fri, 13 Nov 2026 19:38:19 GMT",official,fold-third
 2026|MN|H|8,2026-11-16,359453.0,-6.193364411546837,"Fri, 13 Nov 2026 19:38:19 GMT",official,fold-third
 2026|MN|H|8,2026-11-17,359453.0,-6.193364411546837,"Fri, 13 Nov 2026 19:38:19 GMT",official,fold-third
 2026|MN|H|8,2026-11-18,359453.0,-6.193364411546837,"Fri, 13 Nov 2026 19:38:19 GMT",official,fold-third
 2026|MN|H|8,2026-11-19,359463.0,-6.192930719041612,"Thu, 19 Nov 2026 20:38:17 GMT",official,fold-third
 2026|MN|H|8,2026-11-20,359463.0,-6.192930719041612,"Thu, 19 Nov 2026 20:38:17 GMT",official,fold-third
+2026|MN|H|8,2026-11-21,359463.0,-6.192930719041612,"Thu, 19 Nov 2026 20:38:17 GMT",official,fold-third
 2026|MN|H|8,2026-11-05,359453.0,-6.236250118353412,1383981309,wikipedia,two-party
 2026|MN|H|8,2026-11-06,359453.0,-6.236250118353412,1384138071,wikipedia,two-party
 2026|MN|H|8,2026-11-07,359453.0,-6.236250118353412,1384138071,wikipedia,two-party
@@ -1686,6 +1848,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|MN|H|8,2026-11-18,359453.0,-6.236250118353412,1386435452,wikipedia,fold-third
 2026|MN|H|8,2026-11-19,359453.0,-6.236250118353412,1386435452,wikipedia,fold-third
 2026|MN|H|8,2026-11-20,359453.0,-6.236250118353412,1386435452,wikipedia,fold-third
+2026|MN|H|8,2026-11-21,359453.0,-6.236250118353412,1386810376,wikipedia,fold-third
 2026|MO|H|1,2026-11-07,232096.0,70.82575186357418,1384278763,wikipedia,two-party
 2026|MO|H|1,2026-11-08,232096.0,70.82575186357418,1384528981,wikipedia,two-party
 2026|MO|H|1,2026-11-09,232096.0,70.82575186357418,1384564034,wikipedia,two-party
@@ -1696,6 +1859,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|MO|H|1,2026-11-18,232096.0,70.82575186357418,1386344943,wikipedia,fold-third
 2026|MO|H|1,2026-11-19,232096.0,70.82575186357418,1386344943,wikipedia,fold-third
 2026|MO|H|1,2026-11-20,232096.0,70.82575186357418,1386344943,wikipedia,fold-third
+2026|MO|H|1,2026-11-21,232096.0,70.82575186357418,1386829124,wikipedia,fold-third
 2026|MO|H|2,2026-11-07,331391.0,5.066504654240892,1384278763,wikipedia,two-party
 2026|MO|H|2,2026-11-08,331391.0,5.066504654240892,1384528981,wikipedia,two-party
 2026|MO|H|2,2026-11-09,331391.0,5.066504654240892,1384564034,wikipedia,two-party
@@ -1706,6 +1870,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|MO|H|2,2026-11-18,331391.0,5.066504654240892,1386344943,wikipedia,fold-third
 2026|MO|H|2,2026-11-19,331391.0,5.066504654240892,1386344943,wikipedia,fold-third
 2026|MO|H|2,2026-11-20,331391.0,5.066504654240892,1386344943,wikipedia,fold-third
+2026|MO|H|2,2026-11-21,331391.0,5.066504654240892,1386829124,wikipedia,fold-third
 2026|MO|H|3,2026-11-07,189276.0,-64.40811470307965,1384278763,wikipedia,two-party
 2026|MO|H|3,2026-11-08,189276.0,-64.40811470307965,1384528981,wikipedia,two-party
 2026|MO|H|3,2026-11-09,189276.0,-64.40811470307965,1384564034,wikipedia,two-party
@@ -1716,6 +1881,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|MO|H|3,2026-11-18,189276.0,-64.40811470307965,1386344943,wikipedia,fold-third
 2026|MO|H|3,2026-11-19,189276.0,-64.40811470307965,1386344943,wikipedia,fold-third
 2026|MO|H|3,2026-11-20,189276.0,-64.40811470307965,1386344943,wikipedia,fold-third
+2026|MO|H|3,2026-11-21,189276.0,-64.40811470307965,1386829124,wikipedia,fold-third
 2026|MO|H|4,2026-11-07,250948.0,-26.72522163521186,1384278763,wikipedia,two-party
 2026|MO|H|4,2026-11-08,250948.0,-26.72522163521186,1384528981,wikipedia,two-party
 2026|MO|H|4,2026-11-09,250948.0,-26.72522163521186,1384564034,wikipedia,two-party
@@ -1726,6 +1892,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|MO|H|4,2026-11-18,250948.0,-26.72522163521186,1386344943,wikipedia,fold-third
 2026|MO|H|4,2026-11-19,250948.0,-26.72522163521186,1386344943,wikipedia,fold-third
 2026|MO|H|4,2026-11-20,250948.0,-26.72522163521186,1386344943,wikipedia,fold-third
+2026|MO|H|4,2026-11-21,250948.0,-26.72522163521186,1386829124,wikipedia,fold-third
 2026|MO|H|5,2026-11-07,217692.0,69.45794180484393,1384278763,wikipedia,two-party
 2026|MO|H|5,2026-11-08,217692.0,69.45794180484393,1384528981,wikipedia,two-party
 2026|MO|H|5,2026-11-09,217692.0,69.45794180484393,1384564034,wikipedia,two-party
@@ -1736,6 +1903,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|MO|H|5,2026-11-18,217692.0,69.45794180484393,1386344943,wikipedia,fold-third
 2026|MO|H|5,2026-11-19,217692.0,69.45794180484393,1386344943,wikipedia,fold-third
 2026|MO|H|5,2026-11-20,217692.0,69.45794180484393,1386344943,wikipedia,fold-third
+2026|MO|H|5,2026-11-21,217692.0,69.45794180484393,1386829124,wikipedia,fold-third
 2026|MO|H|6,2026-11-07,257824.0,-20.18916287479881,1384278763,wikipedia,two-party
 2026|MO|H|6,2026-11-08,257824.0,-20.18916287479881,1384528981,wikipedia,two-party
 2026|MO|H|6,2026-11-09,257824.0,-20.18916287479881,1384564034,wikipedia,two-party
@@ -1746,6 +1914,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|MO|H|6,2026-11-18,257824.0,-20.18916287479881,1386344943,wikipedia,fold-third
 2026|MO|H|6,2026-11-19,257824.0,-20.18916287479881,1386344943,wikipedia,fold-third
 2026|MO|H|6,2026-11-20,257824.0,-20.18916287479881,1386344943,wikipedia,fold-third
+2026|MO|H|6,2026-11-21,257824.0,-20.18916287479881,1386829124,wikipedia,fold-third
 2026|MO|H|7,2026-11-07,253572.0,-27.45108346238916,1384278763,wikipedia,two-party
 2026|MO|H|7,2026-11-08,253572.0,-27.45108346238916,1384528981,wikipedia,two-party
 2026|MO|H|7,2026-11-09,253572.0,-27.45108346238916,1384564034,wikipedia,two-party
@@ -1756,6 +1925,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|MO|H|7,2026-11-18,253572.0,-27.45108346238916,1386344943,wikipedia,fold-third
 2026|MO|H|7,2026-11-19,253572.0,-27.45108346238916,1386344943,wikipedia,fold-third
 2026|MO|H|7,2026-11-20,253572.0,-27.45108346238916,1386344943,wikipedia,fold-third
+2026|MO|H|7,2026-11-21,253572.0,-27.45108346238916,1386829124,wikipedia,fold-third
 2026|MO|H|8,2026-11-07,225424.0,-39.796179976926034,1384278763,wikipedia,two-party
 2026|MO|H|8,2026-11-08,225424.0,-39.796179976926034,1384528981,wikipedia,two-party
 2026|MO|H|8,2026-11-09,225424.0,-39.796179976926034,1384564034,wikipedia,two-party
@@ -1766,12 +1936,18 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|MO|H|8,2026-11-18,225424.0,-39.796179976926034,1386344943,wikipedia,fold-third
 2026|MO|H|8,2026-11-19,225424.0,-39.796179976926034,1386344943,wikipedia,fold-third
 2026|MO|H|8,2026-11-20,225424.0,-39.796179976926034,1386344943,wikipedia,fold-third
+2026|MO|H|8,2026-11-21,225424.0,-39.796179976926034,1386829124,wikipedia,fold-third
+2026|MS|H|1,2026-11-21,243938.0,-17.565724928080883,1386919762,wikipedia,fold-third
+2026|MS|H|2,2026-11-21,248993.0,39.140454917712326,1386919762,wikipedia,fold-third
+2026|MS|H|3,2026-11-21,257170.0,-16.005434247573294,1386919762,wikipedia,fold-third
+2026|MS|H|4,2026-11-21,219707.0,-25.47034712016565,1386919762,wikipedia,fold-third
 2026|MT|H|1,2026-11-15,267562.0,3.982789607570725,11/15/2026 3:20:24 PM MT (Montana time),official,fold-third
 2026|MT|H|1,2026-11-16,267562.0,3.9839288188297592,11/16/2026 2:55:24 PM MT (Montana time),official,fold-third
 2026|MT|H|1,2026-11-17,267686.0,3.962056576629252,11/17/2026 12:20:28 PM MT (Montana time),official,fold-third
 2026|MT|H|1,2026-11-18,267707.0,3.95328979252729,11/18/2026 12:00:10 PM MT (Montana time),official,fold-third
 2026|MT|H|1,2026-11-19,267707.0,3.95328979252729,11/19/2026 3:35:21 PM MT (Montana time),official,fold-third
 2026|MT|H|1,2026-11-20,267707.0,3.95328979252729,11/20/2026 9:40:17 AM MT (Montana time),official,fold-third
+2026|MT|H|1,2026-11-21,267707.0,3.95328979252729,11/20/2026 9:40:17 AM MT (Montana time),official,fold-third
 2026|MT|H|1,2026-11-05,262219.0,3.654931153488264,1383978940,wikipedia,two-party
 2026|MT|H|1,2026-11-06,262219.0,3.654931153488264,1384106508,wikipedia,two-party
 2026|MT|H|1,2026-11-07,262219.0,3.654931153488264,1384203389,wikipedia,two-party
@@ -1784,18 +1960,21 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|MT|H|1,2026-11-18,267542.0,3.990793732656462,1386345655,wikipedia,fold-third
 2026|MT|H|1,2026-11-19,267707.0,3.95328979252729,1386586954,wikipedia,fold-third
 2026|MT|H|1,2026-11-20,267707.0,3.95328979252729,1386586954,wikipedia,fold-third
+2026|MT|H|1,2026-11-21,267707.0,3.95328979252729,1386586954,wikipedia,fold-third
 2026|MT|H|2,2026-11-15,220609.0,-28.59392869324452,11/15/2026 3:20:24 PM MT (Montana time),official,fold-third
 2026|MT|H|2,2026-11-16,220610.0,-28.594286860782987,11/16/2026 2:55:24 PM MT (Montana time),official,fold-third
 2026|MT|H|2,2026-11-17,220596.0,-28.589272188250877,11/17/2026 12:20:28 PM MT (Montana time),official,fold-third
 2026|MT|H|2,2026-11-18,220596.0,-28.589272188250877,11/18/2026 12:00:10 PM MT (Montana time),official,fold-third
 2026|MT|H|2,2026-11-19,220596.0,-28.589272188250877,11/19/2026 3:35:21 PM MT (Montana time),official,fold-third
-2026|MT|H|2,2026-11-20,220596.0,-28.589272188250874,11/20/2026 9:40:17 AM MT (Montana time),official,fold-third
+2026|MT|H|2,2026-11-20,220596.0,-28.589272188250877,11/20/2026 9:40:17 AM MT (Montana time),official,fold-third
+2026|MT|H|2,2026-11-21,220596.0,-28.589272188250874,11/20/2026 9:40:17 AM MT (Montana time),official,fold-third
 2026|MT|H|2,2026-11-15,220611.0,-28.59500318508078,1385534167,wikipedia,two-party
 2026|MT|H|2,2026-11-16,220611.0,-28.59500318508078,1386058439,wikipedia,two-party
 2026|MT|H|2,2026-11-17,220611.0,-28.59500318508078,1386095976,wikipedia,two-party
 2026|MT|H|2,2026-11-18,220611.0,-28.59500318508078,1386345655,wikipedia,fold-third
 2026|MT|H|2,2026-11-19,220596.0,-28.58927218825088,1386586954,wikipedia,fold-third
 2026|MT|H|2,2026-11-20,220596.0,-28.58927218825088,1386586954,wikipedia,fold-third
+2026|MT|H|2,2026-11-21,220596.0,-28.58927218825088,1386586954,wikipedia,fold-third
 2026|NC|H|1,2026-11-08,312740.0,3.39596974169498,1384542712,wikipedia,two-party
 2026|NC|H|1,2026-11-09,312740.0,3.39596974169498,1384625541,wikipedia,two-party
 2026|NC|H|1,2026-11-10,312740.0,3.39596974169498,1384771321,wikipedia,two-party
@@ -1805,6 +1984,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|NC|H|1,2026-11-18,314130.0,3.5484867811141867,1386245557,wikipedia,fold-third
 2026|NC|H|1,2026-11-19,314130.0,3.5484867811141867,1386659897,wikipedia,fold-third
 2026|NC|H|1,2026-11-20,314130.0,3.5484867811141867,1386659897,wikipedia,fold-third
+2026|NC|H|1,2026-11-21,314130.0,3.5484867811141867,1386856241,wikipedia,fold-third
 2026|NC|H|10,2026-11-08,293976.0,-1.0469991669633567,1384542712,wikipedia,two-party
 2026|NC|H|10,2026-11-09,293976.0,-1.0469991669633567,1384625541,wikipedia,two-party
 2026|NC|H|10,2026-11-10,293976.0,-1.0469991669633567,1384771321,wikipedia,two-party
@@ -1814,6 +1994,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|NC|H|10,2026-11-18,295381.0,-0.8631752049568069,1386245557,wikipedia,fold-third
 2026|NC|H|10,2026-11-19,295381.0,-0.8631752049568069,1386659897,wikipedia,fold-third
 2026|NC|H|10,2026-11-20,295381.0,-0.8631752049568069,1386659897,wikipedia,fold-third
+2026|NC|H|10,2026-11-21,295373.0,-0.8656102276871418,1386856241,wikipedia,fold-third
 2026|NC|H|11,2026-11-08,342409.0,16.082999074359766,1384542712,wikipedia,two-party
 2026|NC|H|11,2026-11-09,342409.0,16.082999074359766,1384625541,wikipedia,two-party
 2026|NC|H|11,2026-11-10,342409.0,16.082999074359766,1384771321,wikipedia,two-party
@@ -1823,6 +2004,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|NC|H|11,2026-11-18,343505.0,16.07814607140322,1386245557,wikipedia,fold-third
 2026|NC|H|11,2026-11-19,343505.0,16.07814607140322,1386659897,wikipedia,fold-third
 2026|NC|H|11,2026-11-20,343505.0,16.07814607140322,1386659897,wikipedia,fold-third
+2026|NC|H|11,2026-11-21,343505.0,16.07814607140322,1386856241,wikipedia,fold-third
 2026|NC|H|12,2026-11-08,270536.0,62.39761066919005,1384542712,wikipedia,two-party
 2026|NC|H|12,2026-11-09,270536.0,62.39761066919005,1384625541,wikipedia,two-party
 2026|NC|H|12,2026-11-10,270536.0,62.39761066919005,1384771321,wikipedia,two-party
@@ -1832,6 +2014,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|NC|H|12,2026-11-18,271792.0,62.45511273326662,1386245557,wikipedia,fold-third
 2026|NC|H|12,2026-11-19,271792.0,62.45511273326662,1386659897,wikipedia,fold-third
 2026|NC|H|12,2026-11-20,271792.0,62.45511273326662,1386659897,wikipedia,fold-third
+2026|NC|H|12,2026-11-21,271792.0,62.45511273326662,1386856241,wikipedia,fold-third
 2026|NC|H|13,2026-11-08,316789.0,2.4501296788447378,1384542712,wikipedia,two-party
 2026|NC|H|13,2026-11-09,316789.0,2.4501296788447378,1384625541,wikipedia,two-party
 2026|NC|H|13,2026-11-10,316789.0,2.4501296788447378,1384771321,wikipedia,two-party
@@ -1841,6 +2024,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|NC|H|13,2026-11-18,318235.0,2.548737106501256,1386245557,wikipedia,fold-third
 2026|NC|H|13,2026-11-19,318235.0,2.548737106501256,1386659897,wikipedia,fold-third
 2026|NC|H|13,2026-11-20,318235.0,2.548737106501256,1386659897,wikipedia,fold-third
+2026|NC|H|13,2026-11-21,318235.0,2.548737106501256,1386856241,wikipedia,fold-third
 2026|NC|H|14,2026-11-06,288361.0,2.224642028568357,1384160228,wikipedia,two-party
 2026|NC|H|14,2026-11-07,288361.0,2.224642028568357,1384209988,wikipedia,two-party
 2026|NC|H|14,2026-11-08,288361.0,2.224642028568357,1384542712,wikipedia,two-party
@@ -1852,6 +2036,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|NC|H|14,2026-11-18,289273.0,2.2701738496161066,1386245557,wikipedia,fold-third
 2026|NC|H|14,2026-11-19,289273.0,2.2701738496161066,1386659897,wikipedia,fold-third
 2026|NC|H|14,2026-11-20,289273.0,2.2701738496161066,1386659897,wikipedia,fold-third
+2026|NC|H|14,2026-11-21,289273.0,2.2701738496161066,1386856241,wikipedia,fold-third
 2026|NC|H|2,2026-11-08,326962.0,52.34553722471404,1384542712,wikipedia,two-party
 2026|NC|H|2,2026-11-09,326962.0,52.34553722471404,1384625541,wikipedia,two-party
 2026|NC|H|2,2026-11-10,326962.0,52.34553722471404,1384771321,wikipedia,two-party
@@ -1861,6 +2046,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|NC|H|2,2026-11-18,328256.0,52.39903284254009,1386245557,wikipedia,fold-third
 2026|NC|H|2,2026-11-19,328256.0,52.39903284254009,1386659897,wikipedia,fold-third
 2026|NC|H|2,2026-11-20,328256.0,52.39903284254009,1386659897,wikipedia,fold-third
+2026|NC|H|2,2026-11-21,328256.0,52.39903284254009,1386856241,wikipedia,fold-third
 2026|NC|H|3,2026-11-08,237904.0,-0.0991772122264645,1384542712,wikipedia,two-party
 2026|NC|H|3,2026-11-09,237904.0,-0.0991772122264645,1384625541,wikipedia,two-party
 2026|NC|H|3,2026-11-10,237904.0,-0.0991772122264645,1384771321,wikipedia,two-party
@@ -1870,6 +2056,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|NC|H|3,2026-11-18,239614.0,0.109040192722201,1386245557,wikipedia,fold-third
 2026|NC|H|3,2026-11-19,239614.0,0.109040192722201,1386659897,wikipedia,fold-third
 2026|NC|H|3,2026-11-20,239614.0,0.109040192722201,1386659897,wikipedia,fold-third
+2026|NC|H|3,2026-11-21,239614.0,0.109040192722201,1386856241,wikipedia,fold-third
 2026|NC|H|4,2026-11-08,358015.0,61.37403362445664,1384542712,wikipedia,two-party
 2026|NC|H|4,2026-11-09,358015.0,61.37403362445664,1384625541,wikipedia,two-party
 2026|NC|H|4,2026-11-10,358015.0,61.37403362445664,1384771321,wikipedia,two-party
@@ -1879,6 +2066,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|NC|H|4,2026-11-18,359571.0,61.41499346223555,1386245557,wikipedia,fold-third
 2026|NC|H|4,2026-11-19,359571.0,61.41499346223555,1386659897,wikipedia,fold-third
 2026|NC|H|4,2026-11-20,359571.0,61.41499346223555,1386659897,wikipedia,fold-third
+2026|NC|H|4,2026-11-21,359571.0,61.41499346223555,1386856241,wikipedia,fold-third
 2026|NC|H|5,2026-11-08,285498.0,0.0356154823019833,1384542712,wikipedia,two-party
 2026|NC|H|5,2026-11-09,285498.0,0.0356154823019833,1384625541,wikipedia,two-party
 2026|NC|H|5,2026-11-10,285498.0,0.0356154823019833,1384771321,wikipedia,two-party
@@ -1888,6 +2076,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|NC|H|5,2026-11-18,286788.0,0.1185491871680354,1386245557,wikipedia,fold-third
 2026|NC|H|5,2026-11-19,286788.0,0.1185491871680354,1386659897,wikipedia,fold-third
 2026|NC|H|5,2026-11-20,286788.0,0.1185491871680354,1386659897,wikipedia,fold-third
+2026|NC|H|5,2026-11-21,286788.0,0.1185491871680354,1386856241,wikipedia,fold-third
 2026|NC|H|6,2026-11-08,273738.0,2.2883194879775552,1384542712,wikipedia,two-party
 2026|NC|H|6,2026-11-09,273738.0,2.2883194879775552,1384625541,wikipedia,two-party
 2026|NC|H|6,2026-11-10,273738.0,2.2883194879775552,1384771321,wikipedia,two-party
@@ -1897,6 +2086,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|NC|H|6,2026-11-18,274810.0,2.403114879371202,1386245557,wikipedia,fold-third
 2026|NC|H|6,2026-11-19,274810.0,2.403114879371202,1386659897,wikipedia,fold-third
 2026|NC|H|6,2026-11-20,274810.0,2.403114879371202,1386659897,wikipedia,fold-third
+2026|NC|H|6,2026-11-21,274810.0,2.403114879371202,1386856241,wikipedia,fold-third
 2026|NC|H|7,2026-11-08,320680.0,-0.7636712906832103,1384542712,wikipedia,two-party
 2026|NC|H|7,2026-11-09,320680.0,-0.7636712906832103,1384625541,wikipedia,two-party
 2026|NC|H|7,2026-11-10,320680.0,-0.7636712906832103,1384771321,wikipedia,two-party
@@ -1906,6 +2096,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|NC|H|7,2026-11-18,322266.0,-0.724240268511061,1386245557,wikipedia,fold-third
 2026|NC|H|7,2026-11-19,322266.0,-0.724240268511061,1386659897,wikipedia,fold-third
 2026|NC|H|7,2026-11-20,322266.0,-0.724240268511061,1386659897,wikipedia,fold-third
+2026|NC|H|7,2026-11-21,322266.0,-0.724240268511061,1386856241,wikipedia,fold-third
 2026|NC|H|8,2026-11-08,291899.0,-1.7919857167077842,1384542712,wikipedia,two-party
 2026|NC|H|8,2026-11-09,291899.0,-1.7919857167077842,1384625541,wikipedia,two-party
 2026|NC|H|8,2026-11-10,291899.0,-1.7919857167077842,1384771321,wikipedia,two-party
@@ -1915,6 +2106,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|NC|H|8,2026-11-18,293251.0,-1.7303731461517795,1386245557,wikipedia,fold-third
 2026|NC|H|8,2026-11-19,293251.0,-1.7303731461517795,1386659897,wikipedia,fold-third
 2026|NC|H|8,2026-11-20,293251.0,-1.7303731461517795,1386659897,wikipedia,fold-third
+2026|NC|H|8,2026-11-21,293251.0,-1.7303731461517795,1386856241,wikipedia,fold-third
 2026|NC|H|9,2026-11-06,271399.0,2.2162940909878075,1384160228,wikipedia,two-party
 2026|NC|H|9,2026-11-07,271399.0,2.2162940909878075,1384209988,wikipedia,two-party
 2026|NC|H|9,2026-11-08,271399.0,2.2162940909878075,1384542712,wikipedia,two-party
@@ -1926,18 +2118,21 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|NC|H|9,2026-11-18,272652.0,2.295967020230917,1386245557,wikipedia,fold-third
 2026|NC|H|9,2026-11-19,272652.0,2.295967020230917,1386659897,wikipedia,fold-third
 2026|NC|H|9,2026-11-20,272652.0,2.295967020230917,1386659897,wikipedia,fold-third
+2026|NC|H|9,2026-11-21,272652.0,2.295967020230917,1386856241,wikipedia,fold-third
 2026|NE|H|1,2026-11-15,259360.0,-2.97146878198567,,official,fold-third
 2026|NE|H|1,2026-11-16,259360.0,-2.97146878198567,,official,fold-third
 2026|NE|H|1,2026-11-17,259360.0,-2.97146878198567,,official,fold-third
 2026|NE|H|1,2026-11-18,259360.0,-2.97146878198567,,official,fold-third
 2026|NE|H|1,2026-11-19,259620.0,-3.008539907490993,,official,fold-third
-2026|NE|H|1,2026-11-20,259620.0,-3.008539907490993,None,official,fold-third
+2026|NE|H|1,2026-11-20,259620.0,-3.008539907490993,,official,fold-third
+2026|NE|H|1,2026-11-21,259636.0,-3.010744098733874,None,official,fold-third
 2026|NE|H|2,2026-11-15,256800.0,16.34934469881734,,official,fold-third
 2026|NE|H|2,2026-11-16,256800.0,16.34934469881734,,official,fold-third
 2026|NE|H|2,2026-11-17,256800.0,16.34934469881734,,official,fold-third
 2026|NE|H|2,2026-11-18,256800.0,16.34934469881734,,official,fold-third
 2026|NE|H|2,2026-11-19,259934.0,16.704593941117906,,official,fold-third
-2026|NE|H|2,2026-11-20,259934.0,16.704593941117906,None,official,fold-third
+2026|NE|H|2,2026-11-20,259934.0,16.704593941117906,,official,fold-third
+2026|NE|H|2,2026-11-21,259934.0,16.704593941117906,None,official,fold-third
 2026|NE|H|2,2026-11-05,245938.0,15.790308311215718,1383979688,wikipedia,two-party
 2026|NE|H|2,2026-11-06,245938.0,15.790308311215718,1384138490,wikipedia,two-party
 2026|NE|H|2,2026-11-07,245938.0,15.790308311215718,1384138490,wikipedia,two-party
@@ -1950,18 +2145,21 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|NE|H|2,2026-11-18,256577.0,16.368147258903562,1386346417,wikipedia,fold-third
 2026|NE|H|2,2026-11-19,256577.0,16.368147258903562,1386346417,wikipedia,fold-third
 2026|NE|H|2,2026-11-20,256577.0,16.368147258903562,1386754746,wikipedia,fold-third
+2026|NE|H|2,2026-11-21,256577.0,16.368147258903562,1386754746,wikipedia,fold-third
 2026|NE|H|3,2026-11-15,245480.0,-56.06456090080813,,official,fold-third
 2026|NE|H|3,2026-11-16,245480.0,-56.06456090080813,,official,fold-third
 2026|NE|H|3,2026-11-17,245480.0,-56.06456090080813,,official,fold-third
 2026|NE|H|3,2026-11-18,245480.0,-56.06456090080813,,official,fold-third
 2026|NE|H|3,2026-11-19,245814.0,-56.085564557958186,,official,fold-third
-2026|NE|H|3,2026-11-20,245814.0,-56.085564557958186,None,official,fold-third
+2026|NE|H|3,2026-11-20,245814.0,-56.085564557958186,,official,fold-third
+2026|NE|H|3,2026-11-21,245833.0,-56.086219770098495,None,official,fold-third
 2026|NJ|H|2,2026-11-15,271466.0,2.742806090161188,1385830622,wikipedia,two-party
 2026|NJ|H|2,2026-11-16,271466.0,2.742806090161188,1386058150,wikipedia,two-party
 2026|NJ|H|2,2026-11-17,271466.0,2.742806090161188,1386256304,wikipedia,two-party
 2026|NJ|H|2,2026-11-18,271466.0,2.742806090161188,1386332464,wikipedia,fold-third
 2026|NJ|H|2,2026-11-19,271466.0,2.742806090161188,1386558550,wikipedia,fold-third
 2026|NJ|H|2,2026-11-20,271466.0,2.742806090161188,1386558550,wikipedia,fold-third
+2026|NJ|H|2,2026-11-21,271466.0,2.742806090161188,1386558550,wikipedia,fold-third
 2026|NJ|H|7,2026-11-04,246308.0,22.257135914933222,1383735060,wikipedia,two-party
 2026|NJ|H|7,2026-11-05,246308.0,22.257135914933222,1383986114,wikipedia,two-party
 2026|NJ|H|7,2026-11-06,246308.0,22.257135914933222,1384161505,wikipedia,two-party
@@ -1975,36 +2173,42 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|NJ|H|7,2026-11-18,336263.0,16.889754859758032,1386332464,wikipedia,fold-third
 2026|NJ|H|7,2026-11-19,336263.0,16.889754859758032,1386558550,wikipedia,fold-third
 2026|NJ|H|7,2026-11-20,336263.0,16.889754859758032,1386558550,wikipedia,fold-third
+2026|NJ|H|7,2026-11-21,336263.0,16.889754859758032,1386558550,wikipedia,fold-third
 2026|NJ|H|8,2026-11-15,126543.0,,1385830622,wikipedia,two-party
 2026|NJ|H|8,2026-11-16,126543.0,,1386058150,wikipedia,two-party
 2026|NJ|H|8,2026-11-17,126543.0,,1386256304,wikipedia,two-party
 2026|NJ|H|8,2026-11-18,126543.0,,1386332464,wikipedia,fold-third
 2026|NJ|H|8,2026-11-19,126543.0,,1386558550,wikipedia,fold-third
 2026|NJ|H|8,2026-11-20,126543.0,,1386558550,wikipedia,fold-third
+2026|NJ|H|8,2026-11-21,126543.0,,1386558550,wikipedia,fold-third
 2026|NV|H|1,2026-11-15,239488.0,22.41283466704588,1385798115,wikipedia,two-party
 2026|NV|H|1,2026-11-16,239488.0,22.41283466704588,1386028048,wikipedia,two-party
 2026|NV|H|1,2026-11-17,239488.0,22.41283466704588,1386208637,wikipedia,two-party
 2026|NV|H|1,2026-11-18,239488.0,22.41283466704588,1386346907,wikipedia,fold-third
 2026|NV|H|1,2026-11-19,239488.0,22.41283466704588,1386346907,wikipedia,fold-third
 2026|NV|H|1,2026-11-20,239488.0,22.41283466704588,1386346907,wikipedia,fold-third
+2026|NV|H|1,2026-11-21,239488.0,22.41283466704588,1386836394,wikipedia,fold-third
 2026|NV|H|2,2026-11-15,324866.0,6.654640534793836,1385798115,wikipedia,two-party
 2026|NV|H|2,2026-11-16,324866.0,6.654640534793836,1386028048,wikipedia,two-party
 2026|NV|H|2,2026-11-17,324866.0,6.654640534793836,1386208637,wikipedia,two-party
 2026|NV|H|2,2026-11-18,324866.0,6.654640534793836,1386346907,wikipedia,fold-third
 2026|NV|H|2,2026-11-19,324866.0,6.654640534793836,1386346907,wikipedia,fold-third
 2026|NV|H|2,2026-11-20,324866.0,6.654640534793836,1386346907,wikipedia,fold-third
+2026|NV|H|2,2026-11-21,324866.0,6.654640534793836,1386836394,wikipedia,fold-third
 2026|NV|H|3,2026-11-15,272539.0,22.127079192482405,1385798115,wikipedia,two-party
 2026|NV|H|3,2026-11-16,272539.0,22.127079192482405,1386028048,wikipedia,two-party
 2026|NV|H|3,2026-11-17,272539.0,22.127079192482405,1386208637,wikipedia,two-party
 2026|NV|H|3,2026-11-18,272539.0,22.127079192482405,1386346907,wikipedia,fold-third
 2026|NV|H|3,2026-11-19,272539.0,22.127079192482405,1386346907,wikipedia,fold-third
 2026|NV|H|3,2026-11-20,272539.0,22.127079192482405,1386346907,wikipedia,fold-third
+2026|NV|H|3,2026-11-21,272539.0,22.127079192482405,1386836394,wikipedia,fold-third
 2026|NV|H|4,2026-11-15,253675.0,23.31016853097104,1385798115,wikipedia,two-party
 2026|NV|H|4,2026-11-16,253675.0,23.31016853097104,1386028048,wikipedia,two-party
 2026|NV|H|4,2026-11-17,253675.0,23.31016853097104,1386208637,wikipedia,two-party
 2026|NV|H|4,2026-11-18,253675.0,23.31016853097104,1386346907,wikipedia,fold-third
 2026|NV|H|4,2026-11-19,253675.0,23.31016853097104,1386346907,wikipedia,fold-third
-2026|NV|H|4,2026-11-20,253675.0,23.310168530971037,1386346907,wikipedia,fold-third
+2026|NV|H|4,2026-11-20,253675.0,23.31016853097104,1386346907,wikipedia,fold-third
+2026|NV|H|4,2026-11-21,253675.0,23.310168530971037,1386836394,wikipedia,fold-third
 2026|OH|H|1,2026-11-07,324471.0,11.75125714068576,1384205477,wikipedia,two-party
 2026|OH|H|1,2026-11-08,324471.0,11.75125714068576,1384468078,wikipedia,two-party
 2026|OH|H|1,2026-11-09,324471.0,11.75125714068576,1384468078,wikipedia,two-party
@@ -2015,6 +2219,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|OH|H|1,2026-11-18,324471.0,11.75125714068576,1386170333,wikipedia,fold-third
 2026|OH|H|1,2026-11-19,324471.0,11.75125714068576,1386655092,wikipedia,fold-third
 2026|OH|H|1,2026-11-20,324471.0,11.75125714068576,1386684370,wikipedia,fold-third
+2026|OH|H|1,2026-11-21,324471.0,11.75125714068576,1386684370,wikipedia,fold-third
 2026|OH|H|10,2026-11-08,302016.0,1.6846917539490294,1384468078,wikipedia,two-party
 2026|OH|H|10,2026-11-09,302016.0,1.6846917539490294,1384468078,wikipedia,two-party
 2026|OH|H|10,2026-11-10,302016.0,1.6846917539490294,1384819350,wikipedia,two-party
@@ -2024,6 +2229,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|OH|H|10,2026-11-18,302016.0,1.6846917539490294,1386170333,wikipedia,fold-third
 2026|OH|H|10,2026-11-19,302016.0,1.6846917539490294,1386655092,wikipedia,fold-third
 2026|OH|H|10,2026-11-20,302016.0,1.6846917539490294,1386684370,wikipedia,fold-third
+2026|OH|H|10,2026-11-21,302016.0,1.6846917539490294,1386684370,wikipedia,fold-third
 2026|OH|H|11,2026-11-08,263344.0,67.05981529862082,1384468078,wikipedia,two-party
 2026|OH|H|11,2026-11-09,263344.0,67.05981529862082,1384468078,wikipedia,two-party
 2026|OH|H|11,2026-11-10,263344.0,67.05981529862082,1384819350,wikipedia,two-party
@@ -2033,6 +2239,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|OH|H|11,2026-11-18,263344.0,67.05981529862082,1386170333,wikipedia,fold-third
 2026|OH|H|11,2026-11-19,263344.0,67.05981529862082,1386655092,wikipedia,fold-third
 2026|OH|H|11,2026-11-20,263344.0,67.05981529862082,1386684370,wikipedia,fold-third
+2026|OH|H|11,2026-11-21,263344.0,67.05981529862082,1386684370,wikipedia,fold-third
 2026|OH|H|12,2026-11-08,323137.0,-18.78924419054457,1384468078,wikipedia,two-party
 2026|OH|H|12,2026-11-09,323137.0,-18.78924419054457,1384468078,wikipedia,two-party
 2026|OH|H|12,2026-11-10,323137.0,-18.78924419054457,1384819350,wikipedia,two-party
@@ -2042,6 +2249,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|OH|H|12,2026-11-18,323137.0,-18.78924419054457,1386170333,wikipedia,fold-third
 2026|OH|H|12,2026-11-19,323137.0,-18.78924419054457,1386655092,wikipedia,fold-third
 2026|OH|H|12,2026-11-20,323137.0,-18.78924419054457,1386684370,wikipedia,fold-third
+2026|OH|H|12,2026-11-21,323137.0,-18.78924419054457,1386684370,wikipedia,fold-third
 2026|OH|H|13,2026-11-08,317775.0,21.91280931074516,1384468078,wikipedia,two-party
 2026|OH|H|13,2026-11-09,317775.0,21.91280931074516,1384468078,wikipedia,two-party
 2026|OH|H|13,2026-11-10,317775.0,21.91280931074516,1384819350,wikipedia,two-party
@@ -2051,6 +2259,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|OH|H|13,2026-11-18,317775.0,21.91280931074516,1386170333,wikipedia,fold-third
 2026|OH|H|13,2026-11-19,317775.0,21.91280931074516,1386655092,wikipedia,fold-third
 2026|OH|H|13,2026-11-20,317775.0,21.91280931074516,1386684370,wikipedia,fold-third
+2026|OH|H|13,2026-11-21,317775.0,21.91280931074516,1386684370,wikipedia,fold-third
 2026|OH|H|14,2026-11-08,326118.0,-10.062615372349883,1384468078,wikipedia,two-party
 2026|OH|H|14,2026-11-09,326118.0,-10.062615372349883,1384468078,wikipedia,two-party
 2026|OH|H|14,2026-11-10,326118.0,-10.062615372349883,1384819350,wikipedia,two-party
@@ -2060,6 +2269,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|OH|H|14,2026-11-18,326118.0,-10.062615372349883,1386170333,wikipedia,fold-third
 2026|OH|H|14,2026-11-19,326118.0,-10.062615372349883,1386655092,wikipedia,fold-third
 2026|OH|H|14,2026-11-20,326118.0,-10.062615372349883,1386684370,wikipedia,fold-third
+2026|OH|H|14,2026-11-21,326118.0,-10.062615372349883,1386684370,wikipedia,fold-third
 2026|OH|H|15,2026-11-08,287647.0,6.8197429806233725,1384468078,wikipedia,two-party
 2026|OH|H|15,2026-11-09,287647.0,6.8197429806233725,1384468078,wikipedia,two-party
 2026|OH|H|15,2026-11-10,287647.0,6.8197429806233725,1384819350,wikipedia,two-party
@@ -2069,6 +2279,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|OH|H|15,2026-11-18,287647.0,6.8197429806233725,1386170333,wikipedia,fold-third
 2026|OH|H|15,2026-11-19,287647.0,6.8197429806233725,1386655092,wikipedia,fold-third
 2026|OH|H|15,2026-11-20,287647.0,6.8197429806233725,1386684370,wikipedia,fold-third
+2026|OH|H|15,2026-11-21,287647.0,6.8197429806233725,1386684370,wikipedia,fold-third
 2026|OH|H|2,2026-11-08,273049.0,-28.48316602514567,1384468078,wikipedia,two-party
 2026|OH|H|2,2026-11-09,273049.0,-28.48316602514567,1384468078,wikipedia,two-party
 2026|OH|H|2,2026-11-10,273049.0,-28.48316602514567,1384819350,wikipedia,two-party
@@ -2078,6 +2289,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|OH|H|2,2026-11-18,273049.0,-28.48316602514567,1386170333,wikipedia,fold-third
 2026|OH|H|2,2026-11-19,273049.0,-28.48316602514567,1386655092,wikipedia,fold-third
 2026|OH|H|2,2026-11-20,273049.0,-28.48316602514567,1386684370,wikipedia,fold-third
+2026|OH|H|2,2026-11-21,273049.0,-28.48316602514567,1386684370,wikipedia,fold-third
 2026|OH|H|3,2026-11-08,300332.0,54.44574670697761,1384468078,wikipedia,two-party
 2026|OH|H|3,2026-11-09,300332.0,54.44574670697761,1384468078,wikipedia,two-party
 2026|OH|H|3,2026-11-10,300332.0,54.44574670697761,1384819350,wikipedia,two-party
@@ -2087,6 +2299,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|OH|H|3,2026-11-18,300332.0,54.44574670697761,1386170333,wikipedia,fold-third
 2026|OH|H|3,2026-11-19,300332.0,54.44574670697761,1386655092,wikipedia,fold-third
 2026|OH|H|3,2026-11-20,300332.0,54.44574670697761,1386684370,wikipedia,fold-third
+2026|OH|H|3,2026-11-21,300332.0,54.44574670697761,1386684370,wikipedia,fold-third
 2026|OH|H|4,2026-11-06,305586.0,-34.72098324908316,1384182718,wikipedia,two-party
 2026|OH|H|4,2026-11-07,305586.0,-34.72098324908316,1384205477,wikipedia,two-party
 2026|OH|H|4,2026-11-08,305586.0,-34.72098324908316,1384468078,wikipedia,two-party
@@ -2098,6 +2311,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|OH|H|4,2026-11-18,305586.0,-34.72098324908316,1386170333,wikipedia,fold-third
 2026|OH|H|4,2026-11-19,305586.0,-34.72098324908316,1386655092,wikipedia,fold-third
 2026|OH|H|4,2026-11-20,305586.0,-34.72098324908316,1386684370,wikipedia,fold-third
+2026|OH|H|4,2026-11-21,305586.0,-34.72098324908316,1386684370,wikipedia,fold-third
 2026|OH|H|5,2026-11-08,301101.0,-12.088198570272088,1384468078,wikipedia,two-party
 2026|OH|H|5,2026-11-09,301101.0,-12.088198570272088,1384468078,wikipedia,two-party
 2026|OH|H|5,2026-11-10,301101.0,-12.088198570272088,1384819350,wikipedia,two-party
@@ -2107,6 +2321,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|OH|H|5,2026-11-18,301101.0,-12.088198570272088,1386170333,wikipedia,fold-third
 2026|OH|H|5,2026-11-19,301101.0,-12.088198570272088,1386655092,wikipedia,fold-third
 2026|OH|H|5,2026-11-20,301101.0,-12.088198570272088,1386684370,wikipedia,fold-third
+2026|OH|H|5,2026-11-21,301101.0,-12.088198570272088,1386684370,wikipedia,fold-third
 2026|OH|H|6,2026-11-08,270985.0,-20.80004428289389,1384468078,wikipedia,two-party
 2026|OH|H|6,2026-11-09,270985.0,-20.80004428289389,1384468078,wikipedia,two-party
 2026|OH|H|6,2026-11-10,270985.0,-20.80004428289389,1384819350,wikipedia,two-party
@@ -2116,6 +2331,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|OH|H|6,2026-11-18,270985.0,-20.80004428289389,1386170333,wikipedia,fold-third
 2026|OH|H|6,2026-11-19,270985.0,-20.80004428289389,1386655092,wikipedia,fold-third
 2026|OH|H|6,2026-11-20,270985.0,-20.80004428289389,1386684370,wikipedia,fold-third
+2026|OH|H|6,2026-11-21,270985.0,-20.80004428289389,1386684370,wikipedia,fold-third
 2026|OH|H|7,2026-11-08,328791.0,9.865537681992512,1384468078,wikipedia,two-party
 2026|OH|H|7,2026-11-09,328791.0,9.865537681992512,1384468078,wikipedia,two-party
 2026|OH|H|7,2026-11-10,328791.0,9.865537681992512,1384819350,wikipedia,two-party
@@ -2125,6 +2341,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|OH|H|7,2026-11-18,328791.0,9.865537681992512,1386170333,wikipedia,fold-third
 2026|OH|H|7,2026-11-19,328791.0,9.865537681992512,1386655092,wikipedia,fold-third
 2026|OH|H|7,2026-11-20,328791.0,9.865537681992512,1386684370,wikipedia,fold-third
+2026|OH|H|7,2026-11-21,328791.0,9.865537681992512,1386684370,wikipedia,fold-third
 2026|OH|H|8,2026-11-08,323517.0,-4.2844734588908775,1384468078,wikipedia,two-party
 2026|OH|H|8,2026-11-09,323517.0,-4.2844734588908775,1384468078,wikipedia,two-party
 2026|OH|H|8,2026-11-10,323517.0,-4.2844734588908775,1384819350,wikipedia,two-party
@@ -2134,6 +2351,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|OH|H|8,2026-11-18,323517.0,-4.2844734588908775,1386170333,wikipedia,fold-third
 2026|OH|H|8,2026-11-19,323517.0,-4.2844734588908775,1386655092,wikipedia,fold-third
 2026|OH|H|8,2026-11-20,323517.0,-4.2844734588908775,1386684370,wikipedia,fold-third
+2026|OH|H|8,2026-11-21,323517.0,-4.2844734588908775,1386684370,wikipedia,fold-third
 2026|OH|H|9,2026-11-08,302136.0,5.453173405353881,1384468078,wikipedia,two-party
 2026|OH|H|9,2026-11-09,302136.0,5.453173405353881,1384468078,wikipedia,two-party
 2026|OH|H|9,2026-11-10,302136.0,5.453173405353881,1384819350,wikipedia,two-party
@@ -2143,6 +2361,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|OH|H|9,2026-11-18,302136.0,5.453173405353881,1386170333,wikipedia,fold-third
 2026|OH|H|9,2026-11-19,302136.0,5.453173405353881,1386655092,wikipedia,fold-third
 2026|OH|H|9,2026-11-20,302136.0,5.453173405353881,1386684370,wikipedia,fold-third
+2026|OH|H|9,2026-11-21,302136.0,5.453173405353881,1386684370,wikipedia,fold-third
 2026|OK|H|1,2026-11-04,231781.0,-4.633252941354123,1383707570,wikipedia,two-party
 2026|OK|H|1,2026-11-05,231781.0,-4.633252941354123,1383866358,wikipedia,two-party
 2026|OK|H|1,2026-11-06,231781.0,-4.633252941354123,1384139117,wikipedia,two-party
@@ -2156,6 +2375,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|OK|H|1,2026-11-18,232104.0,-4.605693999241719,1386263993,wikipedia,fold-third
 2026|OK|H|1,2026-11-19,232104.0,-4.605693999241719,1386522228,wikipedia,fold-third
 2026|OK|H|1,2026-11-20,232104.0,-4.605693999241719,1386522228,wikipedia,fold-third
+2026|OK|H|1,2026-11-21,232104.0,-4.605693999241719,1386522228,wikipedia,fold-third
 2026|OK|H|2,2026-11-04,211874.0,-40.224287961200034,1383707570,wikipedia,two-party
 2026|OK|H|2,2026-11-05,211874.0,-40.224287961200034,1383866358,wikipedia,two-party
 2026|OK|H|2,2026-11-06,211874.0,-40.224287961200034,1384139117,wikipedia,two-party
@@ -2169,6 +2389,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|OK|H|2,2026-11-18,211983.0,-40.22378725123258,1386263993,wikipedia,fold-third
 2026|OK|H|2,2026-11-19,211983.0,-40.22378725123258,1386522228,wikipedia,fold-third
 2026|OK|H|2,2026-11-20,211983.0,-40.22378725123258,1386522228,wikipedia,fold-third
+2026|OK|H|2,2026-11-21,211983.0,-40.22378725123258,1386522228,wikipedia,fold-third
 2026|OK|H|3,2026-11-04,190925.0,-27.94343328532146,1383707570,wikipedia,two-party
 2026|OK|H|3,2026-11-05,190925.0,-27.94343328532146,1383866358,wikipedia,two-party
 2026|OK|H|3,2026-11-06,190925.0,-27.94343328532146,1384139117,wikipedia,two-party
@@ -2182,6 +2403,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|OK|H|3,2026-11-18,191013.0,-27.9295126509714,1386263993,wikipedia,fold-third
 2026|OK|H|3,2026-11-19,191013.0,-27.9295126509714,1386522228,wikipedia,fold-third
 2026|OK|H|3,2026-11-20,191013.0,-27.9295126509714,1386522228,wikipedia,fold-third
+2026|OK|H|3,2026-11-21,191013.0,-27.9295126509714,1386522228,wikipedia,fold-third
 2026|OK|H|4,2026-11-05,213955.0,-19.4549700281663,1383866358,wikipedia,two-party
 2026|OK|H|4,2026-11-06,213955.0,-19.4549700281663,1384139117,wikipedia,two-party
 2026|OK|H|4,2026-11-07,213955.0,-19.4549700281663,1384139117,wikipedia,two-party
@@ -2194,6 +2416,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|OK|H|4,2026-11-18,218128.0,-18.66590472232324,1386263993,wikipedia,fold-third
 2026|OK|H|4,2026-11-19,218128.0,-18.66590472232324,1386522228,wikipedia,fold-third
 2026|OK|H|4,2026-11-20,218128.0,-18.66590472232324,1386522228,wikipedia,fold-third
+2026|OK|H|4,2026-11-21,218128.0,-18.66590472232324,1386522228,wikipedia,fold-third
 2026|OK|H|5,2026-11-04,264647.0,-1.3009513496790162,1383707570,wikipedia,two-party
 2026|OK|H|5,2026-11-05,264647.0,-1.3009513496790162,1383866358,wikipedia,two-party
 2026|OK|H|5,2026-11-06,264647.0,-1.3009513496790162,1384139117,wikipedia,two-party
@@ -2207,6 +2430,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|OK|H|5,2026-11-18,264784.0,-1.2894747014031154,1386263993,wikipedia,fold-third
 2026|OK|H|5,2026-11-19,264784.0,-1.2894747014031154,1386522228,wikipedia,fold-third
 2026|OK|H|5,2026-11-20,264784.0,-1.2894747014031154,1386522228,wikipedia,fold-third
+2026|OK|H|5,2026-11-21,264784.0,-1.2894747014031154,1386522228,wikipedia,fold-third
 2026|SC|H|1,2026-11-04,326012.0,1.0323047733173556,11/4/2026 2:12:11 AM EST,official,fold-third
 2026|SC|H|1,2026-11-05,326012.0,1.0323047733173556,11/4/2026 2:12:11 AM EST,official,fold-third
 2026|SC|H|1,2026-11-06,326423.0,1.0447119250500227,11/6/2026 6:25:36 PM EST,official,fold-third
@@ -2217,6 +2441,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|SC|H|1,2026-11-15,326423.0,1.0447119250500227,11/10/2026 5:22:26 PM EST,official,fold-third
 2026|SC|H|1,2026-11-16,326423.0,1.0447119250500227,11/10/2026 5:22:26 PM EST,official,fold-third
 2026|SC|H|1,2026-11-17,326423.0,1.0447119250500227,11/10/2026 5:22:26 PM EST,official,fold-third
+2026|SC|H|1,2026-11-21,326423.0,1.0447119250500227,11/10/2026 5:22:26 PM EST,official,fold-third
 2026|SC|H|1,2026-11-05,326012.0,1.0323047733173556,1383842148,wikipedia,two-party
 2026|SC|H|1,2026-11-06,326423.0,1.0447119250500227,1384183735,wikipedia,two-party
 2026|SC|H|1,2026-11-07,326423.0,1.0447119250500227,1384210144,wikipedia,two-party
@@ -2229,6 +2454,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|SC|H|1,2026-11-18,326423.0,1.0447119250500227,1386161980,wikipedia,fold-third
 2026|SC|H|1,2026-11-19,326423.0,1.0447119250500227,1386514910,wikipedia,fold-third
 2026|SC|H|1,2026-11-20,326423.0,1.0447119250500227,1386514910,wikipedia,fold-third
+2026|SC|H|1,2026-11-21,326423.0,1.0447119250500227,1386514910,wikipedia,fold-third
 2026|SC|H|2,2026-11-04,296210.0,-1.0358882048368827,11/4/2026 2:12:11 AM EST,official,fold-third
 2026|SC|H|2,2026-11-05,296210.0,-1.0358882048368827,11/4/2026 2:12:11 AM EST,official,fold-third
 2026|SC|H|2,2026-11-06,296664.0,-0.9998086490623804,11/6/2026 6:25:36 PM EST,official,fold-third
@@ -2239,6 +2465,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|SC|H|2,2026-11-15,296664.0,-0.9998086490623804,11/10/2026 5:22:26 PM EST,official,fold-third
 2026|SC|H|2,2026-11-16,296664.0,-0.9998086490623804,11/10/2026 5:22:26 PM EST,official,fold-third
 2026|SC|H|2,2026-11-17,296664.0,-0.9998086490623804,11/10/2026 5:22:26 PM EST,official,fold-third
+2026|SC|H|2,2026-11-21,296664.0,-0.9998086490623804,11/10/2026 5:22:26 PM EST,official,fold-third
 2026|SC|H|2,2026-11-10,296664.0,-0.9998086490623804,1384808067,wikipedia,two-party
 2026|SC|H|2,2026-11-15,296664.0,-0.9998086490623804,1385585603,wikipedia,two-party
 2026|SC|H|2,2026-11-16,296664.0,-0.9998086490623804,1385585603,wikipedia,two-party
@@ -2246,6 +2473,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|SC|H|2,2026-11-18,296664.0,-0.9998086490623804,1386161980,wikipedia,fold-third
 2026|SC|H|2,2026-11-19,296664.0,-0.9998086490623804,1386514910,wikipedia,fold-third
 2026|SC|H|2,2026-11-20,296664.0,-0.9998086490623804,1386514910,wikipedia,fold-third
+2026|SC|H|2,2026-11-21,296664.0,-0.9998086490623804,1386514910,wikipedia,fold-third
 2026|SC|H|3,2026-11-04,272866.0,-29.88543542758069,11/4/2026 2:12:11 AM EST,official,fold-third
 2026|SC|H|3,2026-11-05,272866.0,-29.88543542758069,11/4/2026 2:12:11 AM EST,official,fold-third
 2026|SC|H|3,2026-11-06,273168.0,-29.862083123378685,11/6/2026 6:25:36 PM EST,official,fold-third
@@ -2256,6 +2484,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|SC|H|3,2026-11-15,273168.0,-29.862083123378685,11/10/2026 5:22:26 PM EST,official,fold-third
 2026|SC|H|3,2026-11-16,273168.0,-29.862083123378685,11/10/2026 5:22:26 PM EST,official,fold-third
 2026|SC|H|3,2026-11-17,273168.0,-29.862083123378685,11/10/2026 5:22:26 PM EST,official,fold-third
+2026|SC|H|3,2026-11-21,273168.0,-29.862083123378685,11/10/2026 5:22:26 PM EST,official,fold-third
 2026|SC|H|3,2026-11-10,273168.0,-29.862083123378685,1384808067,wikipedia,two-party
 2026|SC|H|3,2026-11-15,273168.0,-29.862083123378685,1385585603,wikipedia,two-party
 2026|SC|H|3,2026-11-16,273168.0,-29.862083123378685,1385585603,wikipedia,two-party
@@ -2263,6 +2492,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|SC|H|3,2026-11-18,273168.0,-29.862083123378685,1386161980,wikipedia,fold-third
 2026|SC|H|3,2026-11-19,273168.0,-29.862083123378685,1386514910,wikipedia,fold-third
 2026|SC|H|3,2026-11-20,273168.0,-29.862083123378685,1386514910,wikipedia,fold-third
+2026|SC|H|3,2026-11-21,273168.0,-29.862083123378685,1386514910,wikipedia,fold-third
 2026|SC|H|4,2026-11-04,283866.0,-6.240569673154369,11/4/2026 2:12:11 AM EST,official,fold-third
 2026|SC|H|4,2026-11-05,283866.0,-6.240569673154369,11/4/2026 2:12:11 AM EST,official,fold-third
 2026|SC|H|4,2026-11-06,284193.0,-6.217155909587041,11/6/2026 6:25:36 PM EST,official,fold-third
@@ -2273,6 +2503,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|SC|H|4,2026-11-15,284193.0,-6.217155909587041,11/10/2026 5:22:26 PM EST,official,fold-third
 2026|SC|H|4,2026-11-16,284193.0,-6.217155909587041,11/10/2026 5:22:26 PM EST,official,fold-third
 2026|SC|H|4,2026-11-17,284193.0,-6.217155909587041,11/10/2026 5:22:26 PM EST,official,fold-third
+2026|SC|H|4,2026-11-21,284193.0,-6.217155909587041,11/10/2026 5:22:26 PM EST,official,fold-third
 2026|SC|H|5,2026-11-04,286865.0,-5.718670433539116,11/4/2026 2:12:11 AM EST,official,fold-third
 2026|SC|H|5,2026-11-05,286865.0,-5.718670433539116,11/4/2026 2:12:11 AM EST,official,fold-third
 2026|SC|H|5,2026-11-06,286858.0,-5.683292640390652,11/6/2026 6:25:36 PM EST,official,fold-third
@@ -2283,6 +2514,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|SC|H|5,2026-11-15,286858.0,-5.683292640390652,11/10/2026 5:22:26 PM EST,official,fold-third
 2026|SC|H|5,2026-11-16,286858.0,-5.683292640390652,11/10/2026 5:22:26 PM EST,official,fold-third
 2026|SC|H|5,2026-11-17,286858.0,-5.683292640390652,11/10/2026 5:22:26 PM EST,official,fold-third
+2026|SC|H|5,2026-11-21,286858.0,-5.683292640390652,11/10/2026 5:22:26 PM EST,official,fold-third
 2026|SC|H|5,2026-11-10,286858.0,-5.683292640390652,1384808067,wikipedia,two-party
 2026|SC|H|5,2026-11-15,286858.0,-5.683292640390652,1385585603,wikipedia,two-party
 2026|SC|H|5,2026-11-16,286858.0,-5.683292640390652,1385585603,wikipedia,two-party
@@ -2290,6 +2522,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|SC|H|5,2026-11-18,286858.0,-5.683292640390652,1386161980,wikipedia,fold-third
 2026|SC|H|5,2026-11-19,286858.0,-5.683292640390652,1386514910,wikipedia,fold-third
 2026|SC|H|5,2026-11-20,286858.0,-5.683292640390652,1386514910,wikipedia,fold-third
+2026|SC|H|5,2026-11-21,286858.0,-5.683292640390652,1386514910,wikipedia,fold-third
 2026|SC|H|6,2026-11-04,260374.0,38.8616298028117,11/4/2026 2:12:11 AM EST,official,fold-third
 2026|SC|H|6,2026-11-05,260374.0,38.8616298028117,11/4/2026 2:12:11 AM EST,official,fold-third
 2026|SC|H|6,2026-11-06,260742.0,38.8812091051516,11/6/2026 6:25:36 PM EST,official,fold-third
@@ -2299,7 +2532,8 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|SC|H|6,2026-11-10,260742.0,38.8812091051516,11/6/2026 6:26:12 PM EST,official,fold-third
 2026|SC|H|6,2026-11-15,261334.0,38.77923192447973,11/10/2026 5:22:26 PM EST,official,fold-third
 2026|SC|H|6,2026-11-16,261334.0,38.77923192447973,11/10/2026 5:22:26 PM EST,official,fold-third
-2026|SC|H|6,2026-11-17,261334.0,38.779231924479724,11/10/2026 5:22:26 PM EST,official,fold-third
+2026|SC|H|6,2026-11-17,261334.0,38.77923192447973,11/10/2026 5:22:26 PM EST,official,fold-third
+2026|SC|H|6,2026-11-21,261334.0,38.779231924479724,11/10/2026 5:22:26 PM EST,official,fold-third
 2026|SC|H|6,2026-11-10,260742.0,38.8812091051516,1384808067,wikipedia,two-party
 2026|SC|H|6,2026-11-15,260742.0,38.8812091051516,1385585603,wikipedia,two-party
 2026|SC|H|6,2026-11-16,260742.0,38.8812091051516,1385585603,wikipedia,two-party
@@ -2307,6 +2541,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|SC|H|6,2026-11-18,260742.0,38.8812091051516,1386161980,wikipedia,fold-third
 2026|SC|H|6,2026-11-19,260742.0,38.8812091051516,1386514910,wikipedia,fold-third
 2026|SC|H|6,2026-11-20,260742.0,38.8812091051516,1386514910,wikipedia,fold-third
+2026|SC|H|6,2026-11-21,260742.0,38.8812091051516,1386514910,wikipedia,fold-third
 2026|SC|H|7,2026-11-04,303831.0,-13.49978756829926,11/4/2026 2:12:11 AM EST,official,fold-third
 2026|SC|H|7,2026-11-05,303831.0,-13.49978756829926,11/4/2026 2:12:11 AM EST,official,fold-third
 2026|SC|H|7,2026-11-06,304088.0,-13.49001592713009,11/6/2026 6:25:36 PM EST,official,fold-third
@@ -2317,6 +2552,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|SC|H|7,2026-11-15,304088.0,-13.49001592713009,11/10/2026 5:22:26 PM EST,official,fold-third
 2026|SC|H|7,2026-11-16,304088.0,-13.49001592713009,11/10/2026 5:22:26 PM EST,official,fold-third
 2026|SC|H|7,2026-11-17,304088.0,-13.49001592713009,11/10/2026 5:22:26 PM EST,official,fold-third
+2026|SC|H|7,2026-11-21,304088.0,-13.49001592713009,11/10/2026 5:22:26 PM EST,official,fold-third
 2026|SC|H|7,2026-11-10,304088.0,-13.49001592713009,1384808067,wikipedia,two-party
 2026|SC|H|7,2026-11-15,304088.0,-13.49001592713009,1385585603,wikipedia,two-party
 2026|SC|H|7,2026-11-16,304088.0,-13.49001592713009,1385585603,wikipedia,two-party
@@ -2324,6 +2560,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|SC|H|7,2026-11-18,304088.0,-13.49001592713009,1386161980,wikipedia,fold-third
 2026|SC|H|7,2026-11-19,304088.0,-13.49001592713009,1386514910,wikipedia,fold-third
 2026|SC|H|7,2026-11-20,304088.0,-13.49001592713009,1386514910,wikipedia,fold-third
+2026|SC|H|7,2026-11-21,304088.0,-13.49001592713009,1386514910,wikipedia,fold-third
 2026|SD|H|0,2026-11-06,305580.0,-28.010340990902545,1384066008,wikipedia,two-party
 2026|SD|H|0,2026-11-07,305580.0,-28.010340990902545,1384066008,wikipedia,two-party
 2026|SD|H|0,2026-11-08,305580.0,-28.010340990902545,1384066008,wikipedia,two-party
@@ -2335,6 +2572,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|SD|H|0,2026-11-18,305586.0,-28.00913654421341,1386138684,wikipedia,fold-third
 2026|SD|H|0,2026-11-19,305586.0,-28.00913654421341,1386138684,wikipedia,fold-third
 2026|SD|H|0,2026-11-20,305586.0,-28.00913654421341,1386138684,wikipedia,fold-third
+2026|SD|H|0,2026-11-21,305586.0,-28.00913654421341,1386138684,wikipedia,fold-third
 2026|TX|H|1,2026-11-04,263585.0,-38.08600641159399,district numbers 481dd6d4dd07,official,fold-third
 2026|TX|H|1,2026-11-05,263585.0,-38.08600641159399,district numbers 481dd6d4dd07,official,fold-third
 2026|TX|H|1,2026-11-06,263585.0,-38.08600641159399,district numbers 481dd6d4dd07,official,fold-third
@@ -2347,7 +2585,8 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|TX|H|1,2026-11-17,263585.0,-38.08600641159399,district numbers 481dd6d4dd07,official,fold-third
 2026|TX|H|1,2026-11-18,263585.0,-38.08600641159399,district numbers 481dd6d4dd07,official,fold-third
 2026|TX|H|1,2026-11-19,263585.0,-38.08600641159399,district numbers 481dd6d4dd07,official,fold-third
-2026|TX|H|1,2026-11-20,263585.0,-38.086006411593985,district numbers 481dd6d4dd07,official,fold-third
+2026|TX|H|1,2026-11-20,263585.0,-38.08600641159399,district numbers 481dd6d4dd07,official,fold-third
+2026|TX|H|1,2026-11-21,263585.0,-38.086006411593985,district numbers 481dd6d4dd07,official,fold-third
 2026|TX|H|10,2026-11-04,300257.0,-7.524553965436276,district numbers 87fe58171081,official,fold-third
 2026|TX|H|10,2026-11-05,300257.0,-7.524553965436276,district numbers 87fe58171081,official,fold-third
 2026|TX|H|10,2026-11-06,300257.0,-7.524553965436276,district numbers 87fe58171081,official,fold-third
@@ -2361,6 +2600,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|TX|H|10,2026-11-18,300257.0,-7.524553965436276,district numbers 87fe58171081,official,fold-third
 2026|TX|H|10,2026-11-19,300257.0,-7.524553965436276,district numbers 87fe58171081,official,fold-third
 2026|TX|H|10,2026-11-20,300257.0,-7.524553965436276,district numbers 87fe58171081,official,fold-third
+2026|TX|H|10,2026-11-21,300257.0,-7.524553965436276,district numbers 87fe58171081,official,fold-third
 2026|TX|H|11,2026-11-04,232980.0,-19.003347926860677,district numbers ac25f00def4d,official,fold-third
 2026|TX|H|11,2026-11-05,232980.0,-19.003347926860677,district numbers ac25f00def4d,official,fold-third
 2026|TX|H|11,2026-11-06,232980.0,-19.003347926860677,district numbers ac25f00def4d,official,fold-third
@@ -2373,7 +2613,8 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|TX|H|11,2026-11-17,232980.0,-19.003347926860677,district numbers ac25f00def4d,official,fold-third
 2026|TX|H|11,2026-11-18,232980.0,-19.003347926860677,district numbers ac25f00def4d,official,fold-third
 2026|TX|H|11,2026-11-19,232980.0,-19.003347926860677,district numbers ac25f00def4d,official,fold-third
-2026|TX|H|11,2026-11-20,232980.0,-19.003347926860673,district numbers ac25f00def4d,official,fold-third
+2026|TX|H|11,2026-11-20,232980.0,-19.003347926860677,district numbers ac25f00def4d,official,fold-third
+2026|TX|H|11,2026-11-21,232980.0,-19.003347926860673,district numbers ac25f00def4d,official,fold-third
 2026|TX|H|12,2026-11-04,271894.0,-6.245816384326245,district numbers 8d36177c5825,official,fold-third
 2026|TX|H|12,2026-11-05,271894.0,-6.245816384326245,district numbers 8d36177c5825,official,fold-third
 2026|TX|H|12,2026-11-06,271894.0,-6.245816384326245,district numbers 8d36177c5825,official,fold-third
@@ -2387,6 +2628,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|TX|H|12,2026-11-18,271894.0,-6.245816384326245,district numbers 8d36177c5825,official,fold-third
 2026|TX|H|12,2026-11-19,271894.0,-6.245816384326245,district numbers 8d36177c5825,official,fold-third
 2026|TX|H|12,2026-11-20,271894.0,-6.245816384326245,district numbers 8d36177c5825,official,fold-third
+2026|TX|H|12,2026-11-21,271894.0,-6.245816384326245,district numbers 8d36177c5825,official,fold-third
 2026|TX|H|13,2026-11-04,242331.0,-30.5107476963327,district numbers d278b9f745e5,official,fold-third
 2026|TX|H|13,2026-11-05,242331.0,-30.5107476963327,district numbers d278b9f745e5,official,fold-third
 2026|TX|H|13,2026-11-06,242331.0,-30.5107476963327,district numbers d278b9f745e5,official,fold-third
@@ -2400,6 +2642,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|TX|H|13,2026-11-18,242331.0,-30.5107476963327,district numbers d278b9f745e5,official,fold-third
 2026|TX|H|13,2026-11-19,242331.0,-30.5107476963327,district numbers d278b9f745e5,official,fold-third
 2026|TX|H|13,2026-11-20,242331.0,-30.5107476963327,district numbers d278b9f745e5,official,fold-third
+2026|TX|H|13,2026-11-21,242331.0,-30.5107476963327,district numbers d278b9f745e5,official,fold-third
 2026|TX|H|14,2026-11-04,277790.0,-8.458187839735052,district numbers 283fb64f34e2,official,fold-third
 2026|TX|H|14,2026-11-05,282549.0,-8.029403749438151,district numbers 664d46e395be,official,fold-third
 2026|TX|H|14,2026-11-06,282549.0,-8.029403749438151,district numbers 664d46e395be,official,fold-third
@@ -2413,6 +2656,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|TX|H|14,2026-11-18,282549.0,-8.029403749438151,district numbers 664d46e395be,official,fold-third
 2026|TX|H|14,2026-11-19,282549.0,-8.029403749438151,district numbers 664d46e395be,official,fold-third
 2026|TX|H|14,2026-11-20,282549.0,-8.029403749438151,district numbers 664d46e395be,official,fold-third
+2026|TX|H|14,2026-11-21,282549.0,-8.029403749438151,district numbers 664d46e395be,official,fold-third
 2026|TX|H|15,2026-11-04,202509.0,24.64038635319912,district numbers ea0f71ca3ed1,official,fold-third
 2026|TX|H|15,2026-11-05,202509.0,24.64038635319912,district numbers ea0f71ca3ed1,official,fold-third
 2026|TX|H|15,2026-11-06,202509.0,24.64038635319912,district numbers ea0f71ca3ed1,official,fold-third
@@ -2425,7 +2669,8 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|TX|H|15,2026-11-17,202509.0,24.64038635319912,district numbers ea0f71ca3ed1,official,fold-third
 2026|TX|H|15,2026-11-18,202509.0,24.64038635319912,district numbers ea0f71ca3ed1,official,fold-third
 2026|TX|H|15,2026-11-19,202509.0,24.64038635319912,district numbers ea0f71ca3ed1,official,fold-third
-2026|TX|H|15,2026-11-20,202509.0,24.640386353199116,district numbers ea0f71ca3ed1,official,fold-third
+2026|TX|H|15,2026-11-20,202509.0,24.64038635319912,district numbers ea0f71ca3ed1,official,fold-third
+2026|TX|H|15,2026-11-21,202509.0,24.640386353199116,district numbers ea0f71ca3ed1,official,fold-third
 2026|TX|H|16,2026-11-04,195790.0,41.52203891925021,district numbers 50ef1b0cbe5e,official,fold-third
 2026|TX|H|16,2026-11-05,195790.0,41.52203891925021,district numbers 50ef1b0cbe5e,official,fold-third
 2026|TX|H|16,2026-11-06,195790.0,41.52203891925021,district numbers 50ef1b0cbe5e,official,fold-third
@@ -2438,7 +2683,8 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|TX|H|16,2026-11-17,195790.0,41.52203891925021,district numbers 50ef1b0cbe5e,official,fold-third
 2026|TX|H|16,2026-11-18,195790.0,41.52203891925021,district numbers 50ef1b0cbe5e,official,fold-third
 2026|TX|H|16,2026-11-19,195790.0,41.52203891925021,district numbers 50ef1b0cbe5e,official,fold-third
-2026|TX|H|16,2026-11-20,195790.0,41.522038919250214,district numbers 50ef1b0cbe5e,official,fold-third
+2026|TX|H|16,2026-11-20,195790.0,41.52203891925021,district numbers 50ef1b0cbe5e,official,fold-third
+2026|TX|H|16,2026-11-21,195790.0,41.522038919250214,district numbers 50ef1b0cbe5e,official,fold-third
 2026|TX|H|17,2026-11-04,267957.0,-7.124650596924133,district numbers 822408a8407b,official,fold-third
 2026|TX|H|17,2026-11-05,267957.0,-7.124650596924133,district numbers 822408a8407b,official,fold-third
 2026|TX|H|17,2026-11-06,267957.0,-7.124650596924133,district numbers 822408a8407b,official,fold-third
@@ -2452,6 +2698,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|TX|H|17,2026-11-18,267957.0,-7.124650596924133,district numbers 822408a8407b,official,fold-third
 2026|TX|H|17,2026-11-19,267957.0,-7.124650596924133,district numbers 822408a8407b,official,fold-third
 2026|TX|H|17,2026-11-20,267957.0,-7.124650596924133,district numbers 822408a8407b,official,fold-third
+2026|TX|H|17,2026-11-21,267957.0,-7.124650596924133,district numbers 822408a8407b,official,fold-third
 2026|TX|H|18,2026-11-04,214750.0,72.74505238649593,district numbers 7fbf831e20a4,official,fold-third
 2026|TX|H|18,2026-11-05,224477.0,72.08355421713583,district numbers ab7d63a727b7,official,fold-third
 2026|TX|H|18,2026-11-06,224477.0,72.08355421713583,district numbers ab7d63a727b7,official,fold-third
@@ -2465,6 +2712,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|TX|H|18,2026-11-18,224477.0,72.08355421713583,district numbers ab7d63a727b7,official,fold-third
 2026|TX|H|18,2026-11-19,224477.0,72.08355421713583,district numbers ab7d63a727b7,official,fold-third
 2026|TX|H|18,2026-11-20,224477.0,72.08355421713583,district numbers ab7d63a727b7,official,fold-third
+2026|TX|H|18,2026-11-21,224477.0,72.08355421713583,district numbers ab7d63a727b7,official,fold-third
 2026|TX|H|19,2026-11-04,221753.0,-38.964523591563584,district numbers dc99fbd49d89,official,fold-third
 2026|TX|H|19,2026-11-05,221753.0,-38.964523591563584,district numbers dc99fbd49d89,official,fold-third
 2026|TX|H|19,2026-11-06,221753.0,-38.964523591563584,district numbers dc99fbd49d89,official,fold-third
@@ -2478,6 +2726,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|TX|H|19,2026-11-18,221753.0,-38.964523591563584,district numbers dc99fbd49d89,official,fold-third
 2026|TX|H|19,2026-11-19,221753.0,-38.964523591563584,district numbers dc99fbd49d89,official,fold-third
 2026|TX|H|19,2026-11-20,221753.0,-38.964523591563584,district numbers dc99fbd49d89,official,fold-third
+2026|TX|H|19,2026-11-21,221753.0,-38.964523591563584,district numbers dc99fbd49d89,official,fold-third
 2026|TX|H|2,2026-11-04,283414.0,-2.001312567480788,district numbers b35c79dd6070,official,fold-third
 2026|TX|H|2,2026-11-05,283915.0,-1.9657291795079512,district numbers 81f12558830c,official,fold-third
 2026|TX|H|2,2026-11-06,283915.0,-1.9657291795079512,district numbers 81f12558830c,official,fold-third
@@ -2491,6 +2740,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|TX|H|2,2026-11-18,283915.0,-1.9657291795079512,district numbers 81f12558830c,official,fold-third
 2026|TX|H|2,2026-11-19,283915.0,-1.9657291795079512,district numbers 81f12558830c,official,fold-third
 2026|TX|H|2,2026-11-20,283915.0,-1.9657291795079512,district numbers 81f12558830c,official,fold-third
+2026|TX|H|2,2026-11-21,283915.0,-1.9657291795079512,district numbers 81f12558830c,official,fold-third
 2026|TX|H|20,2026-11-04,192494.0,55.22250044157221,district numbers ea116fd9990b,official,fold-third
 2026|TX|H|20,2026-11-05,192494.0,55.22250044157221,district numbers ea116fd9990b,official,fold-third
 2026|TX|H|20,2026-11-06,192494.0,55.22250044157221,district numbers ea116fd9990b,official,fold-third
@@ -2504,6 +2754,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|TX|H|20,2026-11-18,192494.0,55.22250044157221,district numbers ea116fd9990b,official,fold-third
 2026|TX|H|20,2026-11-19,192494.0,55.22250044157221,district numbers ea116fd9990b,official,fold-third
 2026|TX|H|20,2026-11-20,192494.0,55.22250044157221,district numbers ea116fd9990b,official,fold-third
+2026|TX|H|20,2026-11-21,192494.0,55.22250044157221,district numbers ea116fd9990b,official,fold-third
 2026|TX|H|21,2026-11-04,356390.0,-9.03897415752406,district numbers ce5421b0aad4,official,fold-third
 2026|TX|H|21,2026-11-05,356390.0,-9.03897415752406,district numbers ce5421b0aad4,official,fold-third
 2026|TX|H|21,2026-11-06,356390.0,-9.03897415752406,district numbers ce5421b0aad4,official,fold-third
@@ -2516,7 +2767,8 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|TX|H|21,2026-11-17,356390.0,-9.03897415752406,district numbers ce5421b0aad4,official,fold-third
 2026|TX|H|21,2026-11-18,356390.0,-9.03897415752406,district numbers ce5421b0aad4,official,fold-third
 2026|TX|H|21,2026-11-19,356390.0,-9.03897415752406,district numbers ce5421b0aad4,official,fold-third
-2026|TX|H|21,2026-11-20,356390.0,-9.038974157524061,district numbers ce5421b0aad4,official,fold-third
+2026|TX|H|21,2026-11-20,356390.0,-9.03897415752406,district numbers ce5421b0aad4,official,fold-third
+2026|TX|H|21,2026-11-21,356390.0,-9.038974157524061,district numbers ce5421b0aad4,official,fold-third
 2026|TX|H|22,2026-11-04,258996.0,-3.5614449644009945,district numbers 2fef63e21da2,official,fold-third
 2026|TX|H|22,2026-11-05,289765.0,-3.645367798043242,district numbers 0a2260695213,official,fold-third
 2026|TX|H|22,2026-11-06,289765.0,-3.645367798043242,district numbers 0a2260695213,official,fold-third
@@ -2530,6 +2782,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|TX|H|22,2026-11-18,289765.0,-3.645367798043242,district numbers 0a2260695213,official,fold-third
 2026|TX|H|22,2026-11-19,289765.0,-3.645367798043242,district numbers 0a2260695213,official,fold-third
 2026|TX|H|22,2026-11-20,289765.0,-3.645367798043242,district numbers 0a2260695213,official,fold-third
+2026|TX|H|22,2026-11-21,289765.0,-3.645367798043242,district numbers 0a2260695213,official,fold-third
 2026|TX|H|23,2026-11-04,272437.0,8.493012561729692,district numbers 55910f0b812a,official,fold-third
 2026|TX|H|23,2026-11-05,272437.0,8.493012561729692,district numbers 55910f0b812a,official,fold-third
 2026|TX|H|23,2026-11-06,272437.0,8.493012561729692,district numbers 55910f0b812a,official,fold-third
@@ -2543,6 +2796,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|TX|H|23,2026-11-18,272437.0,8.493012561729692,district numbers 55910f0b812a,official,fold-third
 2026|TX|H|23,2026-11-19,272437.0,8.493012561729692,district numbers 55910f0b812a,official,fold-third
 2026|TX|H|23,2026-11-20,272437.0,8.493012561729692,district numbers 55910f0b812a,official,fold-third
+2026|TX|H|23,2026-11-21,272437.0,8.493012561729692,district numbers 55910f0b812a,official,fold-third
 2026|TX|H|24,2026-11-04,321448.0,-6.860829745402056,district numbers cae64be3d683,official,fold-third
 2026|TX|H|24,2026-11-05,321448.0,-6.860829745402056,district numbers cae64be3d683,official,fold-third
 2026|TX|H|24,2026-11-06,321448.0,-6.860829745402056,district numbers cae64be3d683,official,fold-third
@@ -2555,7 +2809,8 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|TX|H|24,2026-11-17,321448.0,-6.860829745402056,district numbers cae64be3d683,official,fold-third
 2026|TX|H|24,2026-11-18,321448.0,-6.860829745402056,district numbers cae64be3d683,official,fold-third
 2026|TX|H|24,2026-11-19,321448.0,-6.860829745402056,district numbers cae64be3d683,official,fold-third
-2026|TX|H|24,2026-11-20,321448.0,-6.8608297454020555,district numbers cae64be3d683,official,fold-third
+2026|TX|H|24,2026-11-20,321448.0,-6.860829745402056,district numbers cae64be3d683,official,fold-third
+2026|TX|H|24,2026-11-21,321448.0,-6.8608297454020555,district numbers cae64be3d683,official,fold-third
 2026|TX|H|25,2026-11-04,265575.0,-7.480749317518592,district numbers 3ac8dfe4638b,official,fold-third
 2026|TX|H|25,2026-11-05,265575.0,-7.480749317518592,district numbers 3ac8dfe4638b,official,fold-third
 2026|TX|H|25,2026-11-06,265575.0,-7.480749317518592,district numbers 3ac8dfe4638b,official,fold-third
@@ -2569,6 +2824,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|TX|H|25,2026-11-18,265575.0,-7.480749317518592,district numbers 3ac8dfe4638b,official,fold-third
 2026|TX|H|25,2026-11-19,265575.0,-7.480749317518592,district numbers 3ac8dfe4638b,official,fold-third
 2026|TX|H|25,2026-11-20,265575.0,-7.480749317518592,district numbers 3ac8dfe4638b,official,fold-third
+2026|TX|H|25,2026-11-21,265575.0,-7.480749317518592,district numbers 3ac8dfe4638b,official,fold-third
 2026|TX|H|26,2026-11-04,334900.0,-10.497531700706611,district numbers 6e2dc3c6f55c,official,fold-third
 2026|TX|H|26,2026-11-05,334900.0,-10.497531700706611,district numbers 6e2dc3c6f55c,official,fold-third
 2026|TX|H|26,2026-11-06,334900.0,-10.497531700706611,district numbers 6e2dc3c6f55c,official,fold-third
@@ -2582,6 +2838,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|TX|H|26,2026-11-18,334900.0,-10.497531700706611,district numbers 6e2dc3c6f55c,official,fold-third
 2026|TX|H|26,2026-11-19,334900.0,-10.497531700706611,district numbers 6e2dc3c6f55c,official,fold-third
 2026|TX|H|26,2026-11-20,334900.0,-10.497531700706611,district numbers 6e2dc3c6f55c,official,fold-third
+2026|TX|H|26,2026-11-21,334900.0,-10.497531700706611,district numbers 6e2dc3c6f55c,official,fold-third
 2026|TX|H|27,2026-11-04,282416.0,-2.3159132276181507,district numbers 4b99e06db824,official,fold-third
 2026|TX|H|27,2026-11-05,282416.0,-2.3159132276181507,district numbers 4b99e06db824,official,fold-third
 2026|TX|H|27,2026-11-06,282416.0,-2.3159132276181507,district numbers 4b99e06db824,official,fold-third
@@ -2595,6 +2852,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|TX|H|27,2026-11-18,282416.0,-2.3159132276181507,district numbers 4b99e06db824,official,fold-third
 2026|TX|H|27,2026-11-19,282416.0,-2.3159132276181507,district numbers 4b99e06db824,official,fold-third
 2026|TX|H|27,2026-11-20,282416.0,-2.3159132276181507,district numbers 4b99e06db824,official,fold-third
+2026|TX|H|27,2026-11-21,282416.0,-2.3159132276181507,district numbers 4b99e06db824,official,fold-third
 2026|TX|H|28,2026-11-04,172312.0,37.86957050736099,district numbers 9af3e7c55bb9,official,fold-third
 2026|TX|H|28,2026-11-05,172312.0,37.86957050736099,district numbers 9af3e7c55bb9,official,fold-third
 2026|TX|H|28,2026-11-06,172312.0,37.86957050736099,district numbers 9af3e7c55bb9,official,fold-third
@@ -2608,6 +2866,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|TX|H|28,2026-11-18,172312.0,37.86957050736099,district numbers 9af3e7c55bb9,official,fold-third
 2026|TX|H|28,2026-11-19,172312.0,37.86957050736099,district numbers 9af3e7c55bb9,official,fold-third
 2026|TX|H|28,2026-11-20,172312.0,37.86957050736099,district numbers 9af3e7c55bb9,official,fold-third
+2026|TX|H|28,2026-11-21,172312.0,37.86957050736099,district numbers 9af3e7c55bb9,official,fold-third
 2026|TX|H|29,2026-11-04,167190.0,59.87678688916801,district numbers 26de7d4ecf0d,official,fold-third
 2026|TX|H|29,2026-11-05,167608.0,59.883776430719294,district numbers 1be9afaf1f69,official,fold-third
 2026|TX|H|29,2026-11-06,167608.0,59.883776430719294,district numbers 1be9afaf1f69,official,fold-third
@@ -2621,6 +2880,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|TX|H|29,2026-11-18,167608.0,59.883776430719294,district numbers 1be9afaf1f69,official,fold-third
 2026|TX|H|29,2026-11-19,167608.0,59.883776430719294,district numbers 1be9afaf1f69,official,fold-third
 2026|TX|H|29,2026-11-20,167608.0,59.883776430719294,district numbers 1be9afaf1f69,official,fold-third
+2026|TX|H|29,2026-11-21,167608.0,59.883776430719294,district numbers 1be9afaf1f69,official,fold-third
 2026|TX|H|3,2026-11-04,320910.0,-5.476924994546757,district numbers e1fe912c805f,official,fold-third
 2026|TX|H|3,2026-11-05,320910.0,-5.476924994546757,district numbers e1fe912c805f,official,fold-third
 2026|TX|H|3,2026-11-06,320910.0,-5.476924994546757,district numbers e1fe912c805f,official,fold-third
@@ -2634,6 +2894,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|TX|H|3,2026-11-18,320910.0,-5.476924994546757,district numbers e1fe912c805f,official,fold-third
 2026|TX|H|3,2026-11-19,320910.0,-5.476924994546757,district numbers e1fe912c805f,official,fold-third
 2026|TX|H|3,2026-11-20,320910.0,-5.476924994546757,district numbers e1fe912c805f,official,fold-third
+2026|TX|H|3,2026-11-21,320910.0,-5.476924994546757,district numbers e1fe912c805f,official,fold-third
 2026|TX|H|30,2026-11-04,226118.0,65.2862664626434,district numbers 5fe9686af170,official,fold-third
 2026|TX|H|30,2026-11-05,226118.0,65.2862664626434,district numbers 5fe9686af170,official,fold-third
 2026|TX|H|30,2026-11-06,226118.0,65.2862664626434,district numbers 5fe9686af170,official,fold-third
@@ -2647,6 +2908,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|TX|H|30,2026-11-18,226118.0,65.2862664626434,district numbers 5fe9686af170,official,fold-third
 2026|TX|H|30,2026-11-19,226118.0,65.2862664626434,district numbers 5fe9686af170,official,fold-third
 2026|TX|H|30,2026-11-20,226118.0,65.2862664626434,district numbers 5fe9686af170,official,fold-third
+2026|TX|H|30,2026-11-21,226118.0,65.2862664626434,district numbers 5fe9686af170,official,fold-third
 2026|TX|H|31,2026-11-04,304973.0,-9.07011232069587,district numbers 5c92fb52227c,official,fold-third
 2026|TX|H|31,2026-11-05,304973.0,-9.07011232069587,district numbers 5c92fb52227c,official,fold-third
 2026|TX|H|31,2026-11-06,304973.0,-9.07011232069587,district numbers 5c92fb52227c,official,fold-third
@@ -2660,6 +2922,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|TX|H|31,2026-11-18,304973.0,-9.07011232069587,district numbers 5c92fb52227c,official,fold-third
 2026|TX|H|31,2026-11-19,304973.0,-9.07011232069587,district numbers 5c92fb52227c,official,fold-third
 2026|TX|H|31,2026-11-20,304973.0,-9.07011232069587,district numbers 5c92fb52227c,official,fold-third
+2026|TX|H|31,2026-11-21,304973.0,-9.07011232069587,district numbers 5c92fb52227c,official,fold-third
 2026|TX|H|32,2026-11-04,277615.0,-2.9007798569962,district numbers 9e21a0dc1782,official,fold-third
 2026|TX|H|32,2026-11-05,277615.0,-2.9007798569962,district numbers 9e21a0dc1782,official,fold-third
 2026|TX|H|32,2026-11-06,277615.0,-2.9007798569962,district numbers 9e21a0dc1782,official,fold-third
@@ -2673,6 +2936,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|TX|H|32,2026-11-18,277615.0,-2.9007798569962,district numbers 9e21a0dc1782,official,fold-third
 2026|TX|H|32,2026-11-19,277615.0,-2.9007798569962,district numbers 9e21a0dc1782,official,fold-third
 2026|TX|H|32,2026-11-20,277615.0,-2.9007798569962,district numbers 9e21a0dc1782,official,fold-third
+2026|TX|H|32,2026-11-21,277615.0,-2.9007798569962,district numbers 9e21a0dc1782,official,fold-third
 2026|TX|H|33,2026-11-04,192100.0,57.13884028992752,district numbers 27a3f0e61105,official,fold-third
 2026|TX|H|33,2026-11-05,192100.0,57.13884028992752,district numbers 27a3f0e61105,official,fold-third
 2026|TX|H|33,2026-11-06,192100.0,57.13884028992752,district numbers 27a3f0e61105,official,fold-third
@@ -2685,7 +2949,8 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|TX|H|33,2026-11-17,192100.0,57.13884028992752,district numbers 27a3f0e61105,official,fold-third
 2026|TX|H|33,2026-11-18,192100.0,57.13884028992752,district numbers 27a3f0e61105,official,fold-third
 2026|TX|H|33,2026-11-19,192100.0,57.13884028992752,district numbers 27a3f0e61105,official,fold-third
-2026|TX|H|33,2026-11-20,192100.0,57.138840289927515,district numbers 27a3f0e61105,official,fold-third
+2026|TX|H|33,2026-11-20,192100.0,57.13884028992752,district numbers 27a3f0e61105,official,fold-third
+2026|TX|H|33,2026-11-21,192100.0,57.138840289927515,district numbers 27a3f0e61105,official,fold-third
 2026|TX|H|34,2026-11-04,202091.0,16.80149443478712,district numbers d5723694d6ae,official,fold-third
 2026|TX|H|34,2026-11-05,202091.0,16.80149443478712,district numbers d5723694d6ae,official,fold-third
 2026|TX|H|34,2026-11-06,202091.0,16.80149443478712,district numbers d5723694d6ae,official,fold-third
@@ -2699,6 +2964,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|TX|H|34,2026-11-18,202091.0,16.80149443478712,district numbers d5723694d6ae,official,fold-third
 2026|TX|H|34,2026-11-19,202091.0,16.80149443478712,district numbers d5723694d6ae,official,fold-third
 2026|TX|H|34,2026-11-20,202091.0,16.80149443478712,district numbers d5723694d6ae,official,fold-third
+2026|TX|H|34,2026-11-21,202091.0,16.80149443478712,district numbers d5723694d6ae,official,fold-third
 2026|TX|H|35,2026-11-04,252558.0,10.852952589108243,district numbers de4032312fd0,official,fold-third
 2026|TX|H|35,2026-11-05,252558.0,10.852952589108243,district numbers de4032312fd0,official,fold-third
 2026|TX|H|35,2026-11-06,252558.0,10.852952589108243,district numbers de4032312fd0,official,fold-third
@@ -2711,7 +2977,8 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|TX|H|35,2026-11-17,252558.0,10.852952589108243,district numbers de4032312fd0,official,fold-third
 2026|TX|H|35,2026-11-18,252558.0,10.852952589108243,district numbers de4032312fd0,official,fold-third
 2026|TX|H|35,2026-11-19,252558.0,10.852952589108243,district numbers de4032312fd0,official,fold-third
-2026|TX|H|35,2026-11-20,252558.0,10.852952589108245,district numbers de4032312fd0,official,fold-third
+2026|TX|H|35,2026-11-20,252558.0,10.852952589108243,district numbers de4032312fd0,official,fold-third
+2026|TX|H|35,2026-11-21,252558.0,10.852952589108245,district numbers de4032312fd0,official,fold-third
 2026|TX|H|36,2026-11-04,257376.0,-7.148296655476812,district numbers 6ac6f5cf2df4,official,fold-third
 2026|TX|H|36,2026-11-05,257689.0,-7.112061438400553,district numbers 7ead238be480,official,fold-third
 2026|TX|H|36,2026-11-06,257689.0,-7.112061438400553,district numbers 7ead238be480,official,fold-third
@@ -2725,6 +2992,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|TX|H|36,2026-11-18,257689.0,-7.112061438400553,district numbers 7ead238be480,official,fold-third
 2026|TX|H|36,2026-11-19,257689.0,-7.112061438400553,district numbers 7ead238be480,official,fold-third
 2026|TX|H|36,2026-11-20,257689.0,-7.112061438400553,district numbers 7ead238be480,official,fold-third
+2026|TX|H|36,2026-11-21,257689.0,-7.112061438400553,district numbers 7ead238be480,official,fold-third
 2026|TX|H|37,2026-11-04,304426.0,67.50014781917444,district numbers 2fd35d37812f,official,fold-third
 2026|TX|H|37,2026-11-05,304426.0,67.50014781917444,district numbers 2fd35d37812f,official,fold-third
 2026|TX|H|37,2026-11-06,304426.0,67.50014781917444,district numbers 2fd35d37812f,official,fold-third
@@ -2738,6 +3006,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|TX|H|37,2026-11-18,304426.0,67.50014781917444,district numbers 2fd35d37812f,official,fold-third
 2026|TX|H|37,2026-11-19,304426.0,67.50014781917444,district numbers 2fd35d37812f,official,fold-third
 2026|TX|H|37,2026-11-20,304426.0,67.50014781917444,district numbers 2fd35d37812f,official,fold-third
+2026|TX|H|37,2026-11-21,304426.0,67.50014781917444,district numbers 2fd35d37812f,official,fold-third
 2026|TX|H|38,2026-11-04,304048.0,-4.341057421711275,district numbers b9a5fa4dfa20,official,fold-third
 2026|TX|H|38,2026-11-05,305101.0,-4.26443190633101,district numbers 4d2b1de2c22e,official,fold-third
 2026|TX|H|38,2026-11-06,305101.0,-4.26443190633101,district numbers 4d2b1de2c22e,official,fold-third
@@ -2751,6 +3020,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|TX|H|38,2026-11-18,305101.0,-4.26443190633101,district numbers 4d2b1de2c22e,official,fold-third
 2026|TX|H|38,2026-11-19,305101.0,-4.26443190633101,district numbers 4d2b1de2c22e,official,fold-third
 2026|TX|H|38,2026-11-20,305101.0,-4.26443190633101,district numbers 4d2b1de2c22e,official,fold-third
+2026|TX|H|38,2026-11-21,305101.0,-4.26443190633101,district numbers 4d2b1de2c22e,official,fold-third
 2026|TX|H|4,2026-11-04,306215.0,-12.112078115049885,district numbers b0333bdbe9e2,official,fold-third
 2026|TX|H|4,2026-11-05,306215.0,-12.112078115049885,district numbers b0333bdbe9e2,official,fold-third
 2026|TX|H|4,2026-11-06,306215.0,-12.112078115049885,district numbers b0333bdbe9e2,official,fold-third
@@ -2763,7 +3033,8 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|TX|H|4,2026-11-17,306215.0,-12.112078115049885,district numbers b0333bdbe9e2,official,fold-third
 2026|TX|H|4,2026-11-18,306215.0,-12.112078115049885,district numbers b0333bdbe9e2,official,fold-third
 2026|TX|H|4,2026-11-19,306215.0,-12.112078115049885,district numbers b0333bdbe9e2,official,fold-third
-2026|TX|H|4,2026-11-20,306215.0,-12.112078115049883,district numbers b0333bdbe9e2,official,fold-third
+2026|TX|H|4,2026-11-20,306215.0,-12.112078115049885,district numbers b0333bdbe9e2,official,fold-third
+2026|TX|H|4,2026-11-21,306215.0,-12.112078115049883,district numbers b0333bdbe9e2,official,fold-third
 2026|TX|H|5,2026-11-04,253133.0,-2.9324505299585595,district numbers 5633bd36c8d2,official,fold-third
 2026|TX|H|5,2026-11-05,253133.0,-2.9324505299585595,district numbers 5633bd36c8d2,official,fold-third
 2026|TX|H|5,2026-11-06,253133.0,-2.9324505299585595,district numbers 5633bd36c8d2,official,fold-third
@@ -2777,6 +3048,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|TX|H|5,2026-11-18,253133.0,-2.9324505299585595,district numbers 5633bd36c8d2,official,fold-third
 2026|TX|H|5,2026-11-19,253133.0,-2.9324505299585595,district numbers 5633bd36c8d2,official,fold-third
 2026|TX|H|5,2026-11-20,253133.0,-2.9324505299585595,district numbers 5633bd36c8d2,official,fold-third
+2026|TX|H|5,2026-11-21,253133.0,-2.9324505299585595,district numbers 5633bd36c8d2,official,fold-third
 2026|TX|H|6,2026-11-04,268408.0,-4.329230127268934,district numbers de48aa4d01a5,official,fold-third
 2026|TX|H|6,2026-11-05,268408.0,-4.329230127268934,district numbers de48aa4d01a5,official,fold-third
 2026|TX|H|6,2026-11-06,268408.0,-4.329230127268934,district numbers de48aa4d01a5,official,fold-third
@@ -2790,6 +3062,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|TX|H|6,2026-11-18,268408.0,-4.329230127268934,district numbers de48aa4d01a5,official,fold-third
 2026|TX|H|6,2026-11-19,268408.0,-4.329230127268934,district numbers de48aa4d01a5,official,fold-third
 2026|TX|H|6,2026-11-20,268408.0,-4.329230127268934,district numbers de48aa4d01a5,official,fold-third
+2026|TX|H|6,2026-11-21,268408.0,-4.329230127268934,district numbers de48aa4d01a5,official,fold-third
 2026|TX|H|7,2026-11-04,214983.0,44.25234947529566,district numbers 55fe3c4aade6,official,fold-third
 2026|TX|H|7,2026-11-05,226490.0,44.008652025238064,district numbers 1f3a685d04b0,official,fold-third
 2026|TX|H|7,2026-11-06,226490.0,44.008652025238064,district numbers 1f3a685d04b0,official,fold-third
@@ -2803,6 +3076,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|TX|H|7,2026-11-18,226490.0,44.008652025238064,district numbers 1f3a685d04b0,official,fold-third
 2026|TX|H|7,2026-11-19,226490.0,44.008652025238064,district numbers 1f3a685d04b0,official,fold-third
 2026|TX|H|7,2026-11-20,226490.0,44.008652025238064,district numbers 1f3a685d04b0,official,fold-third
+2026|TX|H|7,2026-11-21,226490.0,44.008652025238064,district numbers 1f3a685d04b0,official,fold-third
 2026|TX|H|8,2026-11-04,266101.0,-6.470851293305925,district numbers aa11198045c0,official,fold-third
 2026|TX|H|8,2026-11-05,266466.0,-6.419580734502714,district numbers e2d408c2c278,official,fold-third
 2026|TX|H|8,2026-11-06,266466.0,-6.419580734502714,district numbers e2d408c2c278,official,fold-third
@@ -2816,6 +3090,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|TX|H|8,2026-11-18,266466.0,-6.419580734502714,district numbers e2d408c2c278,official,fold-third
 2026|TX|H|8,2026-11-19,266466.0,-6.419580734502714,district numbers e2d408c2c278,official,fold-third
 2026|TX|H|8,2026-11-20,266466.0,-6.419580734502714,district numbers e2d408c2c278,official,fold-third
+2026|TX|H|8,2026-11-21,266466.0,-6.419580734502714,district numbers e2d408c2c278,official,fold-third
 2026|TX|H|9,2026-11-04,170115.0,15.084501660641331,district numbers b6d9197f8237,official,fold-third
 2026|TX|H|9,2026-11-05,170419.0,15.103362887940898,district numbers 66028b79382a,official,fold-third
 2026|TX|H|9,2026-11-06,170419.0,15.103362887940898,district numbers 66028b79382a,official,fold-third
@@ -2829,6 +3104,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|TX|H|9,2026-11-18,170419.0,15.103362887940898,district numbers 66028b79382a,official,fold-third
 2026|TX|H|9,2026-11-19,170419.0,15.103362887940898,district numbers 66028b79382a,official,fold-third
 2026|TX|H|9,2026-11-20,170419.0,15.103362887940898,district numbers 66028b79382a,official,fold-third
+2026|TX|H|9,2026-11-21,170419.0,15.103362887940898,district numbers 66028b79382a,official,fold-third
 2026|TX|H|9,2026-11-05,170419.0,15.103362887940898,1383988754,wikipedia,two-party
 2026|TX|H|9,2026-11-06,170419.0,15.103362887940898,1384178951,wikipedia,two-party
 2026|TX|H|9,2026-11-07,170419.0,15.103362887940898,1384230002,wikipedia,two-party
@@ -2841,6 +3117,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|TX|H|9,2026-11-18,170419.0,15.103362887940898,1386416302,wikipedia,fold-third
 2026|TX|H|9,2026-11-19,170419.0,15.103362887940898,1386580270,wikipedia,fold-third
 2026|TX|H|9,2026-11-20,170419.0,15.103362887940898,1386580270,wikipedia,fold-third
+2026|TX|H|9,2026-11-21,170419.0,15.103362887940898,1386580270,wikipedia,fold-third
 2026|UT|H|1,2026-11-05,173768.0,48.4289397357396,1383954751,wikipedia,two-party
 2026|UT|H|1,2026-11-06,173768.0,48.4289397357396,1384140489,wikipedia,two-party
 2026|UT|H|1,2026-11-07,173768.0,48.4289397357396,1384140489,wikipedia,two-party
@@ -2853,6 +3130,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|UT|H|1,2026-11-18,235209.0,45.970033355099446,1386260146,wikipedia,fold-third
 2026|UT|H|1,2026-11-19,235209.0,45.970033355099446,1386641596,wikipedia,fold-third
 2026|UT|H|1,2026-11-20,235209.0,45.970033355099446,1386783395,wikipedia,fold-third
+2026|UT|H|1,2026-11-21,235209.0,45.970033355099446,1386783395,wikipedia,fold-third
 2026|UT|H|2,2026-11-08,253386.0,-8.56986526229396,1384466416,wikipedia,two-party
 2026|UT|H|2,2026-11-09,253386.0,-8.56986526229396,1384643510,wikipedia,two-party
 2026|UT|H|2,2026-11-10,253386.0,-8.56986526229396,1384643510,wikipedia,two-party
@@ -2862,6 +3140,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|UT|H|2,2026-11-18,253386.0,-8.56986526229396,1386260146,wikipedia,fold-third
 2026|UT|H|2,2026-11-19,253386.0,-8.56986526229396,1386641596,wikipedia,fold-third
 2026|UT|H|2,2026-11-20,253386.0,-8.56986526229396,1386783395,wikipedia,fold-third
+2026|UT|H|2,2026-11-21,253386.0,-8.56986526229396,1386783395,wikipedia,fold-third
 2026|UT|H|3,2026-11-09,246582.0,-23.56196588530048,1384643510,wikipedia,two-party
 2026|UT|H|3,2026-11-10,246582.0,-23.56196588530048,1384643510,wikipedia,two-party
 2026|UT|H|3,2026-11-15,246582.0,-23.56196588530048,1385283184,wikipedia,two-party
@@ -2870,8 +3149,11 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|UT|H|3,2026-11-18,246582.0,-23.56196588530048,1386260146,wikipedia,fold-third
 2026|UT|H|3,2026-11-19,246582.0,-23.56196588530048,1386641596,wikipedia,fold-third
 2026|UT|H|3,2026-11-20,246582.0,-23.56196588530048,1386783395,wikipedia,fold-third
+2026|UT|H|3,2026-11-21,246582.0,-23.56196588530048,1386783395,wikipedia,fold-third
 2026|UT|H|4,2026-11-19,271236.0,-14.95759567898772,1386641596,wikipedia,fold-third
 2026|UT|H|4,2026-11-20,271236.0,-14.95759567898772,1386783395,wikipedia,fold-third
+2026|UT|H|4,2026-11-21,271236.0,-14.95759567898772,1386783395,wikipedia,fold-third
+2026|VA|H|5,2026-11-21,369275.0,-1.5855064628421058,1386934889,wikipedia,fold-third
 2026|VT|H|0,2026-11-06,304769.0,35.75197123314335,1384065058,wikipedia,two-party
 2026|VT|H|0,2026-11-07,304769.0,35.75197123314335,1384065058,wikipedia,two-party
 2026|VT|H|0,2026-11-08,304769.0,35.75197123314335,1384065058,wikipedia,two-party
@@ -2883,6 +3165,7 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|VT|H|0,2026-11-18,304769.0,35.75197123314335,1386393407,wikipedia,fold-third
 2026|VT|H|0,2026-11-19,304769.0,35.75197123314335,1386393407,wikipedia,fold-third
 2026|VT|H|0,2026-11-20,304769.0,35.75197123314335,1386393407,wikipedia,fold-third
+2026|VT|H|0,2026-11-21,304769.0,35.75197123314335,1386393407,wikipedia,fold-third
 2026|WY|H|0,2026-11-06,183203.0,-23.644308012229388,1384140956,wikipedia,two-party
 2026|WY|H|0,2026-11-07,183203.0,-23.644308012229388,1384238503,wikipedia,two-party
 2026|WY|H|0,2026-11-08,183203.0,-23.644308012229388,1384238503,wikipedia,two-party
@@ -2894,3 +3177,4 @@ race_key,day,cand_sum,margin,evidence,source,rule
 2026|WY|H|0,2026-11-18,184254.0,-23.64986540425137,1385184070,wikipedia,fold-third
 2026|WY|H|0,2026-11-19,184254.0,-23.64986540425137,1385184070,wikipedia,fold-third
 2026|WY|H|0,2026-11-20,184254.0,-23.64986540425137,1385184070,wikipedia,fold-third
+2026|WY|H|0,2026-11-21,184254.0,-23.64986540425137,1386826761,wikipedia,fold-third

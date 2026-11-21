@@ -1,0 +1,21 @@
+{
+  "raceTitle": "U.S. House of Representatives District 14 - Districtwide Results",
+  "Reporting": "100% (351 of 351) precincts reporting",
+  "ReportingTime": "November 20, 2026, 6:26 p.m.",
+  "candidates": [
+    {
+      "Name": "Melissa Hernandez",
+      "Party": "Dem",
+      "Votes": "90,133",
+      "Percent": "42.4",
+      "incumbent": false
+    },
+    {
+      "Name": "Aisha Wahab",
+      "Party": "Dem",
+      "Votes": "122,290",
+      "Percent": "57.6",
+      "incumbent": false
+    }
+  ]
+}
